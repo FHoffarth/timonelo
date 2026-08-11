@@ -12,7 +12,7 @@ Cruise booking presents cabins as inventory: category, price, a short descriptio
 
 ## Current status
 
-Timonelo is at repository foundation stage. The project currently contains its product direction, architectural boundaries, data conventions, and a minimal Python package. There is no public product, booking integration, database, or user interface yet.
+Timonelo is at an early foundation stage. The repository contains its product direction, architectural boundaries, data conventions, a minimal Python package, and the initial landing page. There is no booking integration or database yet.
 
 ## Planned architecture
 
@@ -32,6 +32,7 @@ Responsibilities and boundaries are described in [docs/architecture.md](docs/arc
 ├── assets/          Documentation and brand assets
 ├── data/            Source, processed, and ship-specific data
 ├── docs/            Vision, product, roadmap, and architecture
+├── frontend/        Standalone Vite landing page
 ├── src/timonelo/    Python package
 └── tests/           Package and future contract tests
 ```
@@ -43,6 +44,14 @@ The foundation has no runtime dependencies. Python 3.12 or later is required.
 ```bash
 python -m pip install -e .
 python -m unittest discover -s tests
+```
+
+The landing page lives in `frontend/` and is developed independently:
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ## Documentation
