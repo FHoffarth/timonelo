@@ -27,7 +27,7 @@ RECORD_FOLDERS = {
     "sources",
 }
 ENTITY_FOLDERS = RECORD_FOLDERS - {"glossary", "sources"}
-ROOT_FILES = {"README.md", "CONTRIBUTING.md", "INDEX.md"}
+ROOT_FILES = {"README.md", "CONTRIBUTING.md", "INDEX.md", "GRAPH.md"}
 TEMPLATE_FILES = {
     "KNOWLEDGE_RECORD_TEMPLATE.md",
     "SOURCE_TEMPLATE.md",

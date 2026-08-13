@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""Discover, validate, and document Timonelo knowledge records."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from collections import Counter
+from dataclasses import dataclass
+from pathlib import Path
+
+
+FIELD_RE = re.compile(r"^-\s+([^:]+):\s*(.*)$")
+ITEM_RE = re.compile(r"^\s*[-*+]\s+(.+?)\s*$")
+ID_FIELDS = ("ID", "Entity ID", "Term ID", "Source ID")
+TITLE_FIELDS = ("Canonical name", "Canonical term", "Title")
+STATUS_FIELDS = ("Status", "Review status")
+SKIPPED_NAMES = {"README.md", "CONTRIBUTING.md", "INDEX.md", "GRAPH.md"}
+SKIPPED_FOLDERS = {"templates", "images"}
+
+
+@dataclass(frozen=True)
+class Record:
+    record_id: str
+    title: str
+    category: str
+    status: str
+    folder: str
+    related_ids: tuple[str, ...]
+    source_ids: tuple[str, ...]
+    path: str
+
+
+def first(metadata: dict[str, str], names: tuple[str, ...]) -> str:
+    return next((metadata[name] for name in names if metadata.get(name)), "")
+
+
+def items(lines: list[str]) -> tuple[str, ...]:
+    return tuple(dict.fromkeys(
+        match.group(1).strip()
+        for line in lines
+        if (match := ITEM_RE.match(line)) and match.group(1).strip()
+    ))
+
+
+def read_record(path: Path, root: Path) -> tuple[Record | None, list[str]]:
+    lines = path.read_text(encoding="utf-8").splitlines()
+    heading = next((line[2:].strip() for line in lines if line.startswith("# ")), "")
+    sections: dict[str, list[str]] = {}
+    section: str | None = None
+    for line in lines:
+        if line.startswith("## "):
+            section = line[3:].strip()
+            sections.setdefault(section, [])
+        elif section:
+            sections[section].append(line)
+
+    metadata: dict[str, str] = {}
+    for line in sections.get("Metadata", []):
+        if match := FIELD_RE.match(line):
+            metadata[match.group(1).strip()] = match.group(2).strip()
+
+    record_id = first(metadata, ID_FIELDS)
+    title = first(metadata, TITLE_FIELDS) or heading
+    status = first(metadata, STATUS_FIELDS)
+    errors = [
+        f"{path.relative_to(root).as_posix()}: missing {label}"
+        for label, value in (("Knowledge ID", record_id), ("Title", title), ("Status", status))
+        if not value
+    ]
+    if errors:
+        return None, errors
+
+    if metadata.get("Source ID"):
+        category = "Source"
+    elif metadata.get("Term ID"):
+        category = "Glossary"
+    elif metadata.get("Entity ID"):
+        category = metadata.get("Entity type") or "Entity"
+    else:
+        category = metadata.get("Record type") or "Knowledge"
+    relative = path.relative_to(root)
+    return Record(
+        record_id, title, category, status, relative.parent.as_posix(),
+        items(sections.get("Relationships", [])),
+        items(sections.get("Sources", [])), relative.as_posix(),
+    ), []
+
+
+def discover(root: Path) -> tuple[list[Record], list[str]]:
+    records: list[Record] = []
+    findings: list[str] = []
+    for path in sorted(root.rglob("*.md")):
+        relative = path.relative_to(root)
+        if path.name in SKIPPED_NAMES or relative.parts[0] in SKIPPED_FOLDERS:
+            continue
+        try:
+            record, errors = read_record(path, root)
+        except (OSError, UnicodeError) as exc:
+            findings.append(f"{relative.as_posix()}: unreadable Markdown: {exc}")
+            continue
+        findings.extend(errors)
+        if record:
+            records.append(record)
+
+    counts = Counter(record.record_id.casefold() for record in records)
+    for record in records:
+        if counts[record.record_id.casefold()] > 1:
+            findings.append(f"{record.path}: duplicate ID {record.record_id}")
+
+    known = {record.record_id.casefold() for record in records}
+    sources = {record.record_id.casefold() for record in records if record.category == "Source"}
+    incoming = Counter(reference.casefold() for record in records for reference in record.related_ids)
+    for record in records:
+        for reference in record.related_ids:
+            if reference.casefold() not in known:
+                findings.append(f"{record.path}: broken related-record reference {reference}")
+        for reference in record.source_ids:
+            if reference.casefold() not in sources:
+                findings.append(f"{record.path}: unknown source ID {reference}")
+        if record.category != "Source" and not record.related_ids and not incoming[record.record_id.casefold()]:
+            findings.append(f"{record.path}: orphan record {record.record_id}")
+    return sorted(records, key=lambda record: (record.record_id.casefold(), record.path)), sorted(set(findings))
+
+
+def escape(value: object) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ")
+
+
+def render_index(records: list[Record], findings: list[str]) -> str:
+    invalid = {finding.split(":", 1)[0] for finding in findings}
+    lines = [
+        "# Knowledge Index", "",
+        "<!-- Generated by tools/knowledge_explorer.py. Do not edit manually. -->", "",
+        "| Knowledge ID | Title | Category | Status | Folder | Related Records | Source IDs | Source Count | Validation |",
+        "| --- | --- | --- | --- | --- | --- | --- | ---: | --- |",
+    ]
+    for record in records:
+        values = (
+            record.record_id, record.title, record.category, record.status, record.folder,
+            ", ".join(record.related_ids) or "—", ", ".join(record.source_ids) or "—",
+            len(record.source_ids), "FAIL" if record.path in invalid else "PASS",
+        )
+        lines.append("| " + " | ".join(escape(value) for value in values) + " |")
+    return "\n".join(lines) + "\n"
+
+
+def node_id(record_id: str) -> str:
+    return "R_" + re.sub(r"[^A-Za-z0-9_]", "_", record_id)
+
+
+def mermaid_label(value: str) -> str:
+    return value.replace('"', "'")
+
+
+def render_graph(records: list[Record], findings: list[str]) -> str:
+    by_id = {record.record_id.casefold(): record for record in records}
+    lines = [
+        "# Knowledge Graph", "",
+        "<!-- Generated by tools/knowledge_explorer.py. Do not edit manually. -->", "",
+        "```mermaid", "flowchart TD",
+    ]
+    if not records:
+        lines.append('    EMPTY["No knowledge records"]')
+    else:
+        for record in records:
+            lines.append(f'    {node_id(record.record_id)}["{mermaid_label(record.record_id)} · {mermaid_label(record.title)}"]')
+        for record in records:
+            for reference in record.related_ids:
+                target = by_id.get(reference.casefold())
+                if target:
+                    lines.append(f"    {node_id(record.record_id)} -->|related to| {node_id(target.record_id)}")
+            for reference in record.source_ids:
+                target = by_id.get(reference.casefold())
+                if target:
+                    lines.append(f"    {node_id(target.record_id)} -->|supports| {node_id(record.record_id)}")
+    lines.extend(["```", "", "## Validation", ""])
+    lines.append("- PASS — no relationship findings." if not findings else "- FAIL — relationship findings exist.")
+    lines.extend(f"- {finding}" for finding in findings)
+    return "\n".join(lines) + "\n"
+
+
+def main(argv: list[str] | None = None) -> int:
+    repository = Path(__file__).resolve().parents[1]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--knowledge-dir", type=Path, default=repository / "knowledge")
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args(argv)
+    root = args.knowledge_dir.resolve()
+    if not root.is_dir():
+        print(f"Knowledge Explorer: FAIL\nMissing knowledge directory: {root}")
+        return 1
+
+    records, findings = discover(root)
+    outputs = {root / "INDEX.md": render_index(records, findings), root / "GRAPH.md": render_graph(records, findings)}
+    if args.check:
+        stale = [path.name for path, content in outputs.items() if not path.exists() or path.read_text(encoding="utf-8") != content]
+        if stale:
+            print(f"Knowledge Explorer: FAIL\nStale generated file(s): {', '.join(stale)}")
+            return 1
+    else:
+        for path, content in outputs.items():
+            path.write_text(content, encoding="utf-8", newline="\n")
+
+    result = "PASS" if not findings else "FAIL"
+    print(f"Knowledge Explorer: {result}")
+    print(f"Discovered {len(records)} record(s); found {len(findings)} issue(s).")
+    for finding in findings:
+        print(f"- {finding}")
+    return 0 if not findings else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
