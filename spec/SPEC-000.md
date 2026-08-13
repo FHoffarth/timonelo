@@ -162,7 +162,104 @@ A **Value Object** expresses a descriptive value and has no independent continui
 
 ## 5 Knowledge Architecture
 
-TODO (Architecture)
+### 5.1 Purpose of the Knowledge Layer
+
+The **Knowledge Layer** is the constitutional boundary within which Timonelo represents observable reality. It SHALL represent that reality through canonical Entities, Attributes, Relationships, Domain Contexts, Evidence Records, and Findings.
+
+The Knowledge Layer SHALL never perform interpretation. It SHALL never contain Assessments or recommendations.
+
+### 5.2 Canonical Knowledge
+
+Canonical knowledge SHALL consist only of the concepts defined in this section. Each concept SHALL retain its stated meaning and boundary.
+
+#### 5.2.1 Entity
+
+The definition of **Entity** in Section 4.10 applies. Within canonical knowledge, an Entity is a domain subject whose continuity and stable identity are preserved independently of its current description.
+
+#### 5.2.2 Attribute
+
+An **Attribute** is a Value Object that expresses a descriptive factual property of an Entity within a Domain Context. An Attribute SHALL NOT express interpretation, preference, or recommendation.
+
+#### 5.2.3 Relationship
+
+A **Relationship** is a sourced or derived association between domain subjects. A Relationship SHALL preserve its applicable Domain Context, provenance, qualification, and supporting Evidence. A Relationship is not automatically an Entity.
+
+#### 5.2.4 Domain Context
+
+The definition of **Domain Context** in Section 4.6 applies. Within canonical knowledge, a Domain Context identifies the domain subject and the factual or structural circumstances that bound an Entity, Attribute, Relationship, Evidence Record, or Finding. It SHALL remain independent of traveler preferences and booking choices.
+
+#### 5.2.5 Evidence Record
+
+An **Evidence Record** is the canonical representation of one unit of Evidence within the Knowledge Layer. It SHALL preserve the Evidence, its provenance, scope, applicability, qualifications, known limitations, and relationship to the factual claims it supports or contradicts.
+
+Evidence denotes the provenance-bearing information. An Evidence Record denotes the canonical identity and historical continuity through which that Evidence remains traceable.
+
+#### 5.2.6 Finding
+
+The **Finding** concept is defined in Section 5.6. Within canonical knowledge, no broader or interpretive meaning applies beyond the boundary established by Section 4.4.
+
+### 5.3 Knowledge Principles
+
+- Knowledge SHALL be reproducible from its identified Evidence and, where derived, its explicit derivation basis.
+- Knowledge SHALL be traceable to its Domain Context and supporting Evidence.
+- Knowledge SHALL preserve provenance and known limitations.
+- Knowledge SHALL never silently overwrite history. Prior states SHALL remain traceable when knowledge changes.
+- Unknown SHALL remain explicit. Missing, insufficient, or unresolved Evidence MUST NOT be replaced by inference.
+- Knowledge SHALL remain independent of presentation. Presentation MUST NOT alter canonical knowledge or strengthen its claims.
+
+### 5.4 Evidence
+
+Consistent with Section 4.3, **Evidence** is a provenance-bearing information record that contains Source material or the result of a reproducible derivation and that supports or contradicts factual claims.
+
+Evidence is not truth. Evidence supports evaluation of truth claims. It SHALL preserve provenance, scope, qualifications, and known limitations so that the factual claims it supports or contradicts remain traceable.
+
+### 5.5 Source Evaluation Model
+
+A Source SHALL be evaluated through the dimensions defined in this section. These dimensions SHALL replace any implicit Source hierarchy. They MUST NOT be collapsed into a score, weighting, or rank.
+
+#### 5.5.1 Authority
+
+**Authority** identifies the recognized competence or responsibility of a Source's origin in relation to a factual claim.
+
+#### 5.5.2 Authenticity
+
+**Authenticity** identifies whether a Source is verifiably what it purports to be and whether its content retains its original meaning.
+
+#### 5.5.3 Applicability
+
+**Applicability** identifies the extent to which a Source addresses the Entity, time, and Domain Context of a factual claim.
+
+#### 5.5.4 Directness
+
+**Directness** identifies the proximity of a Source to the observable subject or fact, without intervening interpretation.
+
+#### 5.5.5 Independence
+
+**Independence** identifies the extent to which a Source's factual claims are formed independently of parties with an interest in their acceptance.
+
+#### 5.5.6 Specificity
+
+**Specificity** identifies the precision with which a Source addresses the Entity, Attribute, Relationship, or Domain Context of a factual claim.
+
+#### 5.5.7 Recency
+
+**Recency** identifies the temporal currency of a Source in relation to the factual claim and the state of its subject.
+
+#### 5.5.8 Completeness
+
+**Completeness** identifies the extent to which a Source contains the information necessary to evaluate a factual claim and its known limitations.
+
+### 5.6 Findings
+
+A **Finding** is a derived factual statement supported by traceable Evidence. It SHALL remain bounded by its Domain Context, provenance, qualifications, and known limitations.
+
+A Finding is factual. An Assessment is interpretive. A Finding SHALL NOT express traveler preference, trade-offs, or recommendation. Such interpretation constitutes an Assessment and belongs to the Reasoning Layer.
+
+### 5.7 Knowledge Boundary
+
+The Knowledge Layer ends at Findings. It SHALL provide canonical knowledge and Findings without interpreting their meaning for a decision.
+
+Assessments belong to the Reasoning Layer. The Knowledge Layer SHALL NOT produce, contain, or present Assessments.
 
 ## 6 Reasoning Architecture
 
