@@ -1,35 +1,99 @@
 # SPEC-000 — Specification Standard
 
-## Table of Contents
-
-1. [Metadata](#metadata)
-2. [Title](#title)
-3. [Version](#version)
-4. [Status](#status)
-5. [Table of Contents](#table-of-contents)
-6. [Approved Chapter Structure](#approved-chapter-structure)
-
 ## Metadata
 
-SPEC-000
+| Field | Value |
+| --- | --- |
+| Document ID | SPEC-000 |
+| Title | Specification Standard |
+| Version | 0.1 |
+| Status | In Progress |
+| Document Classification | TODO (Architecture) |
+| Owner | TODO (Architecture) |
+| Canonical Location | `/spec/SPEC-000.md` |
 
-## Title
+## Change History
 
-Specification Standard
+| Version | Date | Status | Change |
+| --- | --- | --- | --- |
+| 0.1 | 2026-08-13 | In Progress | Initialized canonical working document. |
 
-## Version
+## Table of Contents
 
-0.1
+- [Metadata](#metadata)
+- [Change History](#change-history)
+- [1 Foundation](#1-foundation)
+- [2 Product Constitution](#2-product-constitution)
+- [3 Normative Language](#3-normative-language)
+- [4 Core Concepts](#4-core-concepts)
+- [5 Knowledge Architecture](#5-knowledge-architecture)
+- [6 Reasoning Architecture](#6-reasoning-architecture)
+- [7 Trust Model](#7-trust-model)
+- [8 Decision & Presentation](#8-decision--presentation)
+- [9 Governance](#9-governance)
+- [10 Examples & Anti-Patterns](#10-examples--anti-patterns)
+- [11 Canonical Glossary](#11-canonical-glossary)
+- [Appendix A — Architecture](#appendix-a--architecture)
+- [Appendix B — Constitutional Laws](#appendix-b--constitutional-laws)
+- [Appendix C — Conformance Checklist](#appendix-c--conformance-checklist)
+- [Appendix D — Amendment Process](#appendix-d--amendment-process)
 
-## Status
+## 1 Foundation
 
-In Progress
+TODO (Architecture)
 
-## Approved Chapter Structure
+## 2 Product Constitution
 
-1. Metadata
-2. Title
-3. Version
-4. Status
-5. Table of Contents
-6. Approved Chapter Structure
+TODO (Architecture)
+
+## 3 Normative Language
+
+TODO (Architecture)
+
+## 4 Core Concepts
+
+TODO (Architecture)
+
+## 5 Knowledge Architecture
+
+TODO (Architecture)
+
+## 6 Reasoning Architecture
+
+TODO (Architecture)
+
+## 7 Trust Model
+
+TODO (Architecture)
+
+## 8 Decision & Presentation
+
+TODO (Architecture)
+
+## 9 Governance
+
+TODO (Architecture)
+
+## 10 Examples & Anti-Patterns
+
+TODO (Architecture)
+
+## 11 Canonical Glossary
+
+TODO (Architecture)
+
+## Appendix A — Architecture
+
+TODO (Architecture)
+
+## Appendix B — Constitutional Laws
+
+TODO (Architecture)
+
+## Appendix C — Conformance Checklist
+
+TODO (Architecture)
+
+## Appendix D — Amendment Process
+
+TODO (Architecture)
