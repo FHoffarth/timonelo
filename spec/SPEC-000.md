@@ -263,7 +263,83 @@ Assessments belong to the Reasoning Layer. The Knowledge Layer SHALL NOT produce
 
 ## 6 Reasoning Architecture
 
-TODO (Architecture)
+### 6.1 Purpose of the Reasoning Layer
+
+The **Reasoning Layer** is the constitutional boundary within which Timonelo transforms factual knowledge into explainable Assessments.
+
+The Reasoning Layer SHALL interpret knowledge. It SHALL never modify canonical knowledge, create Observations, overwrite Evidence, or change provenance.
+
+### 6.2 Layer Boundary
+
+The architectural direction SHALL be:
+
+```text
+Knowledge Layer
+      ↓
+Reasoning Layer
+      ↓
+Decision Layer
+```
+
+The Knowledge Layer represents observable reality and ends at Findings. The Reasoning Layer receives Findings without modifying them and produces Assessments. The Decision Layer is the downstream boundary; its constitutional rules are outside the scope of this chapter.
+
+Knowledge ends at Findings. Reasoning begins with Assessments.
+
+### 6.3 Assessment
+
+An **Assessment** is a structured interpretation of Findings supported by traceable Evidence. It SHALL remain bounded by an explicit Decision Context and SHALL NOT modify its supporting Findings or Evidence.
+
+Every Assessment SHALL contain:
+
+- a statement expressing the bounded interpretation;
+- the supporting Findings;
+- all material limitations;
+- all material Unknowns; and
+- a Confidence Attribute.
+
+Alternative interpretations SHALL be included only where materially applicable.
+
+### 6.4 Confidence
+
+**Confidence** is an Attribute of an Assessment. It qualifies the strength and limits of the Assessment's support in relation to its Findings, Evidence, material limitations, and material Unknowns.
+
+Confidence is not a pipeline stage. It SHALL NOT modify an Assessment's supporting Findings, Evidence, or provenance. This chapter prescribes neither a numerical representation nor a derivation method for Confidence.
+
+### 6.5 Reasoning Principles
+
+- Reasoning SHALL remain explainable through traceable Findings, Evidence, and Sources.
+- Reasoning SHALL remain reproducible from its identified Findings, Evidence, Decision Context, material limitations, and material Unknowns.
+- Reasoning SHALL preserve uncertainty, material limitations, and material Unknowns.
+- Reasoning SHALL never replace an Unknown with an assumption.
+- Reasoning SHALL distinguish deterministic derivation from interpretation. A Finding is derived and factual; an Assessment is interpretive.
+
+### 6.6 Explainability
+
+The required traceability direction SHALL be:
+
+```text
+Assessment
+    ↓
+Finding
+    ↓
+Evidence
+    ↓
+Source
+```
+
+Every material Assessment SHALL be reconstructable through this chain. The trace SHALL identify the Findings supporting the Assessment, the Evidence supporting each Finding, and the Sources associated with that Evidence. It SHALL preserve material limitations, material Unknowns, and alternative interpretations included in the Assessment.
+
+### 6.7 Assessment Boundary
+
+The Reasoning Layer SHALL NOT produce or perform:
+
+- recommendations;
+- rankings;
+- commercial optimisation;
+- user preference adaptation; or
+- presentation logic.
+
+These concerns belong to later layers. They MUST NOT be included in an Assessment produced by the Reasoning Layer.
 
 ## 7 Trust Model
 
