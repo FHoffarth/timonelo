@@ -1,266 +1,159 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+import { motion, useReducedMotion } from 'motion/react';
+import { type FormEvent, type ReactNode, useState } from 'react';
 
-import { motion } from 'motion/react';
-import type { ReactNode } from 'react';
-import { Anchor, DoorClosed, Eye, Footprints, Map, ShieldCheck, Volume2, Waves } from 'lucide-react';
+import chevronRight from './assets/chevron-right.svg';
+import heroCruise from './assets/hero-cruise-golden-hour.png';
+
+const intelligenceAreas = [
+  {
+    number: '01',
+    title: 'Structural context',
+    text: 'The cabin, its deck, and the spaces that surround it—kept specific to the ship being examined.',
+  },
+  {
+    number: '02',
+    title: 'Evidence boundaries',
+    text: 'What the available sources support, how the finding was reached, and where the evidence stops.',
+  },
+  {
+    number: '03',
+    title: 'Material unknowns',
+    text: 'What cannot be concluded remains visible instead of being softened into certainty.',
+  },
+];
+
+const cabinDifferences = [
+  ['Position', 'Forward, midship, or aft changes the physical context.'],
+  ['Surroundings', 'What sits above, below, and beside a cabin matters.'],
+  ['Access', 'Routes to lifts, stairs, and public spaces are not interchangeable.'],
+  ['Evidence', 'The source and its limits determine what can responsibly be said.'],
+];
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#F5F7F9] text-[#1A1C1E] font-sans selection:bg-[#102A43] selection:text-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <CabinPreview />
-        <TrustSection />
+    <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <Hero />
+      <main id="main-content">
+        <DecisionComplexity />
+        <CabinStory />
+        <ExplainableIntelligence />
+        <CabinIntelligence />
+        <Vision />
+        <Waitlist />
       </main>
       <Footer />
     </div>
   );
 }
 
-function Navbar() {
+function Hero() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white border-b border-[#DDE2E7]">
-      <div className="max-w-7xl mx-auto px-12 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-[#102A43] flex items-center justify-center">
-            <div className="w-1 h-3 bg-white rotate-45"></div>
+    <header className="relative min-h-[100svh] overflow-hidden bg-ink text-white" data-node-id="5:16" id="top">
+      <img
+        alt="Cruise ship sailing across calm water at golden hour"
+        className="absolute inset-0 h-full w-full object-cover object-[57%_center] sm:object-center"
+        fetchPriority="high"
+        src={heroCruise}
+      />
+      <div className="hero-overlay absolute inset-0" aria-hidden="true" />
+      <Navigation />
+
+      <div className="page-shell relative z-10 flex min-h-[100svh] items-end pb-14 pt-32 sm:pb-20 lg:pb-24">
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-4xl"
+          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="eyebrow mb-6 text-white/85">Independent cabin intelligence</p>
+          <h1 className="max-w-[13ch] text-balance font-display text-[clamp(3.35rem,11vw,7.5rem)] leading-[0.93] tracking-[-0.045em]">
+            Understand your cruise cabin before you book.
+          </h1>
+          <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/88 sm:text-lg sm:leading-8">
+            Travel decisions have become easier to search—but harder to understand. Timonelo brings evidence,
+            context, and clear limits to the cabin decision.
+          </p>
+          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+            <a className="button button-light" href="#waitlist">
+              Join the waitlist
+            </a>
+            <a className="text-link text-white" href="#intelligence">
+              See how it works
+              <img alt="" aria-hidden="true" className="h-4 w-4" src={chevronRight} />
+            </a>
           </div>
-          <span className="font-semibold text-lg tracking-tight uppercase text-[#102A43]">Timonelo</span>
+        </motion.div>
+      </div>
+
+      <div className="absolute bottom-5 right-5 z-10 hidden text-[0.65rem] uppercase tracking-[0.18em] text-white/70 sm:block lg:bottom-8 lg:right-10">
+        Evidence before opinion
+      </div>
+    </header>
+  );
+}
+
+function Navigation() {
+  return (
+    <nav aria-label="Primary navigation" className="absolute inset-x-0 top-0 z-20 border-b border-white/15">
+      <div className="page-shell flex h-20 items-center justify-between sm:h-24">
+        <a className="font-display text-2xl tracking-[-0.02em] text-white" href="#top" aria-label="Timonelo home">
+          Timonelo
+        </a>
+        <div className="hidden items-center gap-8 text-xs font-medium tracking-[0.02em] text-white/90 md:flex">
+          <a className="nav-link" href="#why">Why Timonelo</a>
+          <a className="nav-link" href="#intelligence">Intelligence</a>
+          <a className="nav-link" href="#vision">Vision</a>
         </div>
-        <div className="hidden sm:flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.15em] text-[#627D98]">
-          <a href="#preview" className="hover:text-[#102A43] transition-colors">Cabin Briefing</a>
-          <a href="#methodology" className="hover:text-[#102A43] transition-colors">Methodology</a>
-          <a href="#how-it-works" className="hover:text-[#102A43] transition-colors">How it Works</a>
-          <button className="bg-transparent text-[#627D98] hover:text-[#102A43] transition-colors uppercase tracking-[0.15em] text-[10px] font-bold ml-4">
-            Join Waitlist
-          </button>
-        </div>
+        <a className="nav-cta" href="#waitlist">Join waitlist</a>
       </div>
     </nav>
   );
 }
 
-function Hero() {
+function DecisionComplexity() {
   return (
-    <section className="pt-56 pb-40 px-12 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center"
-        >
-          <span className="inline-block py-1.5 px-4 border border-[#BCCCDC] text-[10px] font-bold tracking-[0.2em] uppercase mb-12 text-[#627D98] bg-white">
-            Independent Cabin Intelligence
-          </span>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] text-[#102A43] mb-8 max-w-4xl mx-auto tracking-tight">
-            Know your cabin<br />before you book.
-          </h1>
-          <p className="text-lg md:text-xl text-[#486581] max-w-2xl mx-auto leading-relaxed mb-16 font-light">
-            Independent cabin intelligence that helps you make better cruise booking decisions through objective spatial evidence.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <button className="w-full sm:w-auto px-8 py-4 bg-[#102A43] text-white text-[13px] font-medium tracking-wide flex items-center justify-center gap-2 hover:bg-[#1A1C1E] transition-colors">
-              Join the waitlist
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-transparent text-[#102A43] border border-[#BCCCDC] text-[13px] font-medium tracking-wide hover:bg-white transition-colors">
-              See an example Briefing
-            </button>
+    <section className="section-space bg-paper" id="why">
+      <div className="page-shell">
+        <Reveal>
+          <SectionHeading
+            eyebrow="01 — The decision"
+            title="The booking looks simple. The context is not."
+            text="Cabin selection is a high-information decision presented through low-information interfaces. A number, a category, and a deck plan rarely explain the physical reality around a cabin."
+          />
+        </Reveal>
+        <Reveal className="mt-16 border-y border-ink/15 py-8 sm:mt-24 sm:py-10" delay={0.08}>
+          <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
+            <EditorialStat value="Thousands" label="of distinct cabin positions" />
+            <EditorialStat value="One" label="generic category description" bordered />
+            <EditorialStat value="Too little" label="explainable context" bordered />
           </div>
-
-          <div className="flex items-center justify-center gap-4 text-[10px] uppercase tracking-[0.2em] text-[#627D98] font-bold">
-            <span>Built on evidence.</span>
-            <span className="w-1 h-1 bg-[#DDE2E7] rounded-full"></span>
-            <span>Not advertising.</span>
-          </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-function CabinPreview() {
+function CabinStory() {
   return (
-    <section id="preview" className="py-40 px-12 bg-white border-y border-[#DDE2E7]">
-      <div className="max-w-[85rem] mx-auto">
-        <div className="mb-24 text-center max-w-2xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#102A43] mb-6">The Cabin Briefing</h2>
-          <p className="text-[#486581] font-normal text-lg">A premium editorial report replacing marketing ambiguity with architectural truth.</p>
-        </div>
-
-        <div className="grid lg:grid-cols-12 gap-20 items-start">
-
-          {/* Briefing Mockup */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 xl:col-span-8 bg-white border border-[#DDE2E7] shadow-xl relative overflow-hidden flex flex-col"
-          >
-            <div className="relative z-10">
-              <header className="border-b border-[#F0F4F8] p-10 pb-8">
-                <div className="flex justify-between items-end mb-4">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#9FB3C8] font-bold">Cabin Briefing ID: 8204-CB-VY</span>
-                  <span className="text-[11px] font-mono tracking-wide text-[#627D98]">Deck 7 • Midship</span>
-                </div>
-                <h3 className="font-serif text-4xl text-[#102A43] mt-2">Veranda Stateroom</h3>
-                <p className="text-[#627D98] mt-2 text-sm tracking-wide">Viking Ocean Cruises • Viking Star class</p>
-              </header>
-
-              <div className="p-10 space-y-10 bg-[#F5F7F9]">
-                <BriefingSection
-                  icon={<Volume2 className="w-4 h-4" />}
-                  title="Noise Profile"
-                  status="Quiet"
-                  content="Located between passenger decks. No public venues immediately above or below. Negligible engine vibration due to mid-forward placement."
-                />
-                <BriefingSection
-                  icon={<Waves className="w-4 h-4" />}
-                  title="Motion & Stability"
-                  status="Optimal"
-                  content="Close to the ship's center of gravity. Minimal pitch and roll felt during standard sea conditions. Highly recommended for sensitive passengers."
-                />
-                <BriefingSection
-                  icon={<Eye className="w-4 h-4" />}
-                  title="View & Balcony"
-                  status="Unobstructed"
-                  content="Clear sightlines straight down to the waterline. No lifeboat obstructions. Balcony depth is 1.2m (standard), fully shaded by Deck 8 overhang."
-                />
-                <div className="grid sm:grid-cols-2 gap-10 border-t border-[#DDE2E7] pt-10">
-                  <BriefingSection
-                    icon={<Footprints className="w-4 h-4" />}
-                    title="Walking Distance"
-                    content="45m to midship elevators. 120m to main dining."
-                    compact
-                  />
-                  <BriefingSection
-                    icon={<DoorClosed className="w-4 h-4" />}
-                    title="Privacy"
-                    content="Not adjacent to crew stairs or high-traffic corridors."
-                    compact
-                  />
-                </div>
+    <section className="section-space bg-white" id="story">
+      <div className="page-shell grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+        <Reveal>
+          <p className="eyebrow text-muted">02 — Every cabin is specific</p>
+          <h2 className="section-title mt-5 max-w-[12ch]">Every cabin tells a different story.</h2>
+        </Reveal>
+        <div className="border-t border-ink/20">
+          {cabinDifferences.map(([title, text], index) => (
+            <Reveal key={title} delay={index * 0.04}>
+              <div className="grid gap-3 border-b border-ink/20 py-7 sm:grid-cols-[10rem_1fr] sm:gap-8 sm:py-9">
+                <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">{title}</h3>
+                <p className="max-w-xl text-base leading-7 text-muted">{text}</p>
               </div>
-
-              <div className="bg-[#102A43] p-10 text-white flex justify-between items-center">
-                <div>
-                  <h4 className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#9FB3C8] mb-2">Final Intelligence Verdict</h4>
-                  <p className="text-2xl font-serif">Highly Recommended</p>
-                </div>
-                <div className="text-right">
-                  <h4 className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#9FB3C8] mb-2">Evidence Confidence</h4>
-                  <p className="text-[13px] font-semibold tracking-wide uppercase text-white">Extensive Evidence</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Context / Explanation */}
-          <div className="lg:col-span-5 xl:col-span-4 space-y-16 lg:sticky lg:top-32 mt-12 lg:mt-0">
-            <div>
-              <h3 className="font-serif text-3xl md:text-4xl text-[#102A43] mb-6 leading-tight">Never sound more certain than the evidence.</h3>
-              <p className="text-[#486581] font-normal leading-relaxed text-lg">
-                Brochures sell a fantasy. We provide the architectural reality. Our briefings analyze deck plans, structural blueprints, and historical vessel data to give you absolute clarity on what you are booking.
-              </p>
-            </div>
-
-            <ul className="space-y-8">
-              {[
-                "Exact distances to elevators and venues.",
-                "Analysis of adjacent and vertical noise sources.",
-                "Truthful assessment of balcony obstructions.",
-                "Pitch and roll stability ratings."
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-[#102A43]"
-                    style={{ borderLeft: '2px solid #DDE2E7', paddingLeft: '1.25rem' }}>
-                  <span className="font-light text-base leading-relaxed tracking-wide">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BriefingSection({ icon, title, status, content, compact = false }: { icon: ReactNode, title: string, status?: string, content: string, compact?: boolean }) {
-  return (
-    <div className={compact ? "" : "border-b border-[#DDE2E7] pb-10 last:border-0 last:pb-0"}>
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <div className="text-[#627D98]">{icon}</div>
-          <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#486581]">{title}</h4>
-        </div>
-        {status && (
-          <span className="text-[10px] font-bold px-2.5 py-1 bg-white border border-[#DDE2E7] text-[#102A43] uppercase tracking-[0.15em]">
-            {status}
-          </span>
-        )}
-      </div>
-      <p className="text-[#627D98] text-[13px] leading-relaxed pl-7">
-        {content}
-      </p>
-    </div>
-  );
-}
-
-function TrustSection() {
-  const cards = [
-    {
-      icon: <Map className="w-5 h-5" />,
-      title: "Spatial Evidence",
-      description: "Verification through technical deck plans and architect blueprints, not marketing renders.",
-      borderColor: "#102A43"
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5" />,
-      title: "Independent Analysis",
-      description: "Zero commission-based links. We are funded by travelers, not the cruise lines we analyze.",
-      borderColor: "#BCCCDC"
-    },
-    {
-      icon: <Anchor className="w-5 h-5" />,
-      title: "No Sponsored Rankings",
-      description: "Rankings are purely mathematical based on vibration, noise, and spatial geometry.",
-      borderColor: "#BCCCDC"
-    }
-  ];
-
-  return (
-    <section id="trust" className="py-40 px-12 bg-[#F5F7F9]">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-24 max-w-2xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#102A43] mb-6">Independent by design.</h2>
-          <p className="text-[#486581] font-normal text-lg">Our only loyalty is to objective truth and the traveler.</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-10 shadow-sm border-y border-r border-[#DDE2E7] flex flex-col"
-              style={{ borderLeft: `2px solid ${card.borderColor}` }}
-            >
-              <div className="w-12 h-12 border border-[#DDE2E7] flex items-center justify-center text-[#102A43] mb-8 bg-[#F5F7F9]">
-                {card.icon}
-              </div>
-              <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#102A43] mb-4">{card.title}</h3>
-              <p className="text-[#627D98] text-[13px] leading-relaxed">
-                {card.description}
-              </p>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -268,25 +161,191 @@ function TrustSection() {
   );
 }
 
+function ExplainableIntelligence() {
+  const steps = ['Source', 'Evidence', 'Finding', 'Assessment'];
+
+  return (
+    <section className="section-space overflow-hidden bg-ink text-white" id="intelligence">
+      <div className="page-shell">
+        <Reveal>
+          <SectionHeading
+            dark
+            eyebrow="03 — Explainable travel intelligence"
+            title="A conclusion should show its working."
+            text="Timonelo separates what a source says, what the evidence supports, what can be established as fact, and what remains interpretation. Each layer keeps the limits of the one before it."
+          />
+        </Reveal>
+        <Reveal className="mt-16 sm:mt-24" delay={0.1}>
+          <ol className="trace-grid" aria-label="Explainability chain">
+            {steps.map((step, index) => (
+              <li className="trace-step" key={step}>
+                <span className="text-[0.65rem] tracking-[0.18em] text-white/38">0{index + 1}</span>
+                <span className="mt-4 font-display text-3xl sm:text-4xl">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+        <Reveal className="mt-12 border-l border-gold/70 pl-6 sm:ml-auto sm:mt-16 sm:max-w-xl sm:pl-8" delay={0.16}>
+          <p className="font-display text-2xl leading-snug text-white/88 sm:text-3xl">
+            Never sound more certain than the evidence.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function CabinIntelligence() {
+  return (
+    <section className="section-space bg-paper" id="cabin-intelligence">
+      <div className="page-shell">
+        <Reveal>
+          <div className="grid gap-8 border-b border-ink/20 pb-12 lg:grid-cols-[1fr_1fr] lg:items-end">
+            <div>
+              <p className="eyebrow text-muted">04 — Cabin intelligence</p>
+              <h2 className="section-title mt-5 max-w-[13ch]">Not a score. A clearer account of place.</h2>
+            </div>
+            <p className="max-w-xl text-base leading-7 text-muted lg:justify-self-end sm:text-lg sm:leading-8">
+              Cabin intelligence preserves the difference between structural fact, supported finding, and bounded
+              assessment. It does not turn uncertainty into a rating.
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-4">
+          {intelligenceAreas.map((area, index) => (
+            <Reveal key={area.number} delay={index * 0.05}>
+              <article className="grid gap-4 border-b border-ink/20 py-9 sm:grid-cols-[5rem_0.8fr_1.2fr] sm:items-baseline sm:gap-8 sm:py-12">
+                <span className="text-xs tracking-[0.14em] text-muted">{area.number}</span>
+                <h3 className="font-display text-3xl leading-tight sm:text-4xl">{area.title}</h3>
+                <p className="max-w-xl text-base leading-7 text-muted">{area.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Vision() {
+  return (
+    <section className="section-space bg-sand" id="vision">
+      <div className="page-shell">
+        <Reveal>
+          <p className="eyebrow text-ink/55">05 — The vision</p>
+          <blockquote className="mt-8 max-w-5xl font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.04em]">
+            “The long-term value is not a universal cabin score.”
+          </blockquote>
+        </Reveal>
+        <Reveal className="mt-12 grid gap-8 border-t border-ink/20 pt-8 sm:mt-16 sm:grid-cols-2 sm:pt-10" delay={0.08}>
+          <p className="max-w-lg text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
+            It is a durable body of cabin-specific knowledge: independent, reproducible, and appropriately cautious as
+            coverage grows.
+          </p>
+          <p className="max-w-lg text-base leading-7 text-ink/70 sm:justify-self-end sm:text-lg sm:leading-8">
+            A traveler should see the physical context, the evidence behind each statement, and the limit of what can be
+            concluded.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Waitlist() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitted(true);
+  }
+
+  return (
+    <section className="section-space bg-white" id="waitlist">
+      <div className="page-shell grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-24">
+        <Reveal>
+          <p className="eyebrow text-muted">Early access</p>
+          <h2 className="section-title mt-5 max-w-[11ch]">Make the cabin decision legible.</h2>
+          <p className="mt-7 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+            Join the early-access list for product updates and the first cabin briefings.
+          </p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          {submitted ? (
+            <div className="border-l-2 border-gold py-2 pl-6" aria-live="polite">
+              <p className="font-display text-3xl">Thank you.</p>
+              <p className="mt-2 text-sm leading-6 text-muted">Your early-access request has been noted.</p>
+            </div>
+          ) : (
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <label className="block text-xs font-semibold tracking-[0.04em] text-ink" htmlFor="waitlist-email">
+                Email address
+              </label>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <input
+                  autoComplete="email"
+                  className="min-h-14 flex-1 border border-ink/25 bg-paper px-4 text-base text-ink outline-none transition focus:border-ink focus:ring-2 focus:ring-gold/60"
+                  id="waitlist-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                  type="email"
+                />
+                <button className="button button-dark min-h-14" type="submit">Request access</button>
+              </div>
+              <p className="text-xs leading-5 text-muted">Product updates only. No booking offers or sponsored rankings.</p>
+            </form>
+          )}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
-    <footer className="py-12 border-t border-[#DDE2E7] px-12 flex flex-col md:flex-row items-center justify-between bg-white text-[10px] uppercase tracking-[0.15em] font-medium text-[#9FB3C8]">
-      <div className="flex items-center gap-3 mb-6 md:mb-0">
-        <div className="w-4 h-4 bg-[#102A43] flex items-center justify-center opacity-40">
-          <div className="w-0.5 h-2 bg-white rotate-45"></div>
-        </div>
-        <span>© {new Date().getFullYear()} Timonelo Intelligence</span>
-      </div>
-      <div className="mb-6 md:mb-0 text-center tracking-[0.2em] opacity-80">
-        Never sound more certain than the evidence.
-      </div>
-      <div className="flex gap-6 text-center">
-        <a href="#" className="hover:text-[#102A43] transition-colors">Privacy</a>
-        <span>•</span>
-        <a href="#" className="hover:text-[#102A43] transition-colors">Terms</a>
-        <span>•</span>
-        <a href="#" className="hover:text-[#102A43] transition-colors">Ethics Statement</a>
+    <footer className="border-t border-ink/15 bg-white py-8">
+      <div className="page-shell flex flex-col gap-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Timonelo</p>
+        <p className="max-w-md sm:text-right">Independent cabin intelligence. Evidence before opinion.</p>
       </div>
     </footer>
+  );
+}
+
+function SectionHeading({ eyebrow, title, text, dark = false }: { eyebrow: string; title: string; text: string; dark?: boolean }) {
+  return (
+    <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-20">
+      <div>
+        <p className={`eyebrow ${dark ? 'text-white/48' : 'text-muted'}`}>{eyebrow}</p>
+        <h2 className="section-title mt-5 max-w-[14ch]">{title}</h2>
+      </div>
+      <p className={`max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${dark ? 'text-white/62' : 'text-muted'}`}>{text}</p>
+    </div>
+  );
+}
+
+function EditorialStat({ value, label, bordered = false }: { value: string; label: string; bordered?: boolean }) {
+  return (
+    <div className={`sm:px-8 ${bordered ? 'sm:border-l sm:border-ink/15' : ''}`}>
+      <p className="font-display text-4xl tracking-[-0.03em] sm:text-5xl">{value}</p>
+      <p className="mt-2 text-sm leading-6 text-muted">{label}</p>
+    </div>
+  );
+}
+
+function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      className={className}
+      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: '-10% 0px' }}
+      whileInView={{ opacity: 1, y: 0 }}
+    >
+      {children}
+    </motion.div>
   );
 }
