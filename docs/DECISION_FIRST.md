@@ -105,6 +105,15 @@ Timonelo operates on the direct opposite principle:
 > ### **The Golden Rule: Never optimize for interaction. Optimize for resolution.**  
 > ### **A perfect answer ends the conversation.**
 
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        THE UNIVERSAL PRODUCT LAW                            │
+│                                                                             │
+│    "Great software does not maximize interaction.                           │
+│     It minimizes future regret."                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
 If a traveler opens Timonelo, grasps their orientation within **15 seconds**, closes their device, and steps back out to enjoy their voyage with family, **Timonelo has succeeded completely**.
 
 ---
