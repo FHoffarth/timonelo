@@ -1,7 +1,7 @@
 """
-Knowledge Factory Stage 03/04: Industrial-Scale Stateroom Archetype Generator.
-Generates fully classified, non-overlapping staterooms across all decks of Meraviglia-class vessels.
-Follows naval architectural rules defined in docs/BELLISSIMA_NUMBERING.md.
+Knowledge Factory Stage 03/04: Complete Industrial Stateroom Archetype Generator.
+Generates the entire ~2,217 stateroom fleet ontology across all passenger decks (Decks 05, 08-16, 18-19)
+for MSC Bellissima (IMO 9766205) and Meraviglia-class vessels.
 """
 
 from typing import Dict, List, Tuple, Optional
@@ -27,8 +27,7 @@ class StateroomArchetypeGenerator:
         evidence_links: List[EvidenceLink],
     ) -> Tuple[Dict[str, Cabin], Dict[str, CorridorNode], List[CorridorEdge]]:
         """
-        Generates staterooms and circulation graph for a residential deck tier.
-        Covers Forward (Bow), Midship, and Aft corridor stations.
+        Generates staterooms and circulation graph for any residential or suite deck tier.
         """
         cabins: Dict[str, Cabin] = {}
         nodes: Dict[str, CorridorNode] = {}
@@ -43,7 +42,7 @@ class StateroomArchetypeGenerator:
         nodes[core_mid] = CorridorNode(core_mid, deck_number, Coordinate2D(0.50, 0.0), is_elevator_lobby=True, is_stairwell_access=True, vertical_core_id="CORE_MID")
         nodes[core_fwd] = CorridorNode(core_fwd, deck_number, Coordinate2D(0.75, 0.0), is_elevator_lobby=True, is_stairwell_access=True, vertical_core_id="CORE_FWD")
 
-        # Longitudinal elevator connections
+        # Longitudinal elevator spine connections
         edges.append(CorridorEdge(core_aft, core_mid, 78.0, is_step_free=True))
         edges.append(CorridorEdge(core_mid, core_fwd, 78.0, is_step_free=True))
 
@@ -79,22 +78,49 @@ class StateroomArchetypeGenerator:
         has_lifeboats = (deck_number == 8)
         default_balcony = BalconyType.PARTIAL_OBSTRUCTION_LIFEBOAT if has_lifeboats else BalconyType.UNOBSTRUCTED
 
-        # 3. Generate Staterooms across Station Ranges
-        # Ranges: Forward (002-046), Mid (048-120), Aft (122-250)
-        station_configs = [
-            # Zone 1: Forward (Bow) -> Snaps to FWD lift
-            ("FWD", 2, 48, corr_stbd_fwd, corr_port_fwd, 0.72, 0.90),
-            # Zone 2: Midship -> Snaps to MID lift
-            ("MID", 48, 120, corr_stbd_mid, corr_port_mid, 0.38, 0.71),
-            # Zone 3: Aft (Stern) -> Snaps to AFT lift
-            ("AFT", 120, 252, corr_stbd_aft, corr_port_aft, 0.15, 0.38),
-        ]
+        # Deck Capacity Specifications
+        deck_capacities = {
+            5: (2, 14),        # 12 cabins
+            8: (2, 314),       # 312 cabins
+            9: (2, 350),       # 348 cabins
+            10: (2, 358),      # 356 cabins
+            11: (2, 358),      # 356 cabins
+            12: (2, 354),      # 352 cabins
+            13: (2, 350),      # 348 cabins
+            14: (2, 320),      # 318 cabins
+            15: (2, 32),       # 30 Yacht Club suites
+            16: (2, 38),       # 36 Yacht Club suites
+            18: (2, 32),       # 30 Yacht Club suites
+            19: (2, 12),       # 10 Yacht Club Royal Cabanas/Suites
+        }
 
-        # Specific Accessible numbers per Meraviglia GA layout
+        min_idx, max_idx = deck_capacities.get(deck_number, (2, 252))
+
+        # Station Configuration based on capacity
+        if deck_number in [15, 16, 18, 19]:
+            # Forward Yacht Club Enclave
+            station_configs = [
+                ("YC_FWD", min_idx, max_idx, corr_stbd_fwd, corr_port_fwd, 0.74, 0.90),
+            ]
+        elif deck_number == 5:
+            # Forward Oceanview Deck 5
+            station_configs = [
+                ("D05_FWD", min_idx, max_idx, corr_stbd_fwd, corr_port_fwd, 0.70, 0.82),
+            ]
+        else:
+            # Full Residential Decks 08-14
+            # Ranges: Forward (002-054), Midship (056-118), Aft (120-max_idx)
+            station_configs = [
+                ("FWD", min_idx, 56, corr_stbd_fwd, corr_port_fwd, 0.72, 0.90),
+                ("MID", 56, 120, corr_stbd_mid, corr_port_mid, 0.40, 0.71),
+                ("AFT", 120, max_idx, corr_stbd_aft, corr_port_aft, 0.12, 0.39),
+            ]
+
+        # Specific Accessible stateroom numbers per Meraviglia GA layout
         accessible_staterooms = {
             f"{deck_number}006", f"{deck_number}008", f"{deck_number}010",
             f"{deck_number}121", f"{deck_number}123", f"{deck_number}125",
-            f"{deck_number}216", f"{deck_number}218"
+            f"{deck_number}216", f"{deck_number}218", f"{deck_number}302", f"{deck_number}304"
         }
 
         # Specific Connecting Pairs
@@ -105,6 +131,10 @@ class StateroomArchetypeGenerator:
             (f"{deck_number}119", f"{deck_number}121"),
             (f"{deck_number}180", f"{deck_number}182"),
             (f"{deck_number}179", f"{deck_number}181"),
+            (f"{deck_number}240", f"{deck_number}242"),
+            (f"{deck_number}239", f"{deck_number}241"),
+            (f"{deck_number}290", f"{deck_number}292"),
+            (f"{deck_number}289", f"{deck_number}291"),
         ]
         conn_map = {}
         for c1, c2 in connecting_pairs:
@@ -115,7 +145,6 @@ class StateroomArchetypeGenerator:
             step_count = (end_idx - start_idx) // 2
             x_delta = (x_max - x_min) / max(step_count, 1)
 
-            # Generate Starboard (Even) and Port (Odd) cabins
             for idx in range(start_idx, end_idx, 2):
                 fraction_idx = (idx - start_idx) // 2
                 x_pos = x_min + (fraction_idx * x_delta)
@@ -123,17 +152,19 @@ class StateroomArchetypeGenerator:
                 # --- STARBOARD (EVEN) ---
                 c_num_stbd = f"{deck_number}{idx:03d}"
                 is_acc_stbd = c_num_stbd in accessible_staterooms
-                is_suite_stbd = (idx <= 12)
-                cat_stbd = "SL1" if is_suite_stbd else ("BA_ACC" if is_acc_stbd else ("OB" if has_lifeboats else "BA"))
-                area_stbd = 27.0 if is_suite_stbd else (28.0 if is_acc_stbd else 19.0)
-                width_stbd = 950 if is_acc_stbd else (900 if is_suite_stbd else 850)
-                socket_m_stbd = socket_acc if is_acc_stbd else (socket_suite if is_suite_stbd else socket_std)
+                is_suite_stbd = (deck_number >= 15) or (idx <= 12)
+                is_yc_stbd = (deck_number >= 15)
+                
+                cat_stbd = "YC1" if is_yc_stbd else ("SL1" if is_suite_stbd else ("BA_ACC" if is_acc_stbd else ("OB" if has_lifeboats else "BA")))
+                area_stbd = 28.0 if is_yc_stbd else (27.0 if is_suite_stbd else (28.0 if is_acc_stbd else 19.0))
+                width_stbd = 950 if is_acc_stbd else (900 if (is_suite_stbd or is_yc_stbd) else 850)
+                socket_m_stbd = socket_acc if is_acc_stbd else (socket_suite if (is_suite_stbd or is_yc_stbd) else socket_std)
 
                 poly_stbd = [
-                    Coordinate2D(x_pos - 0.003, 0.35),
-                    Coordinate2D(x_pos + 0.003, 0.35),
-                    Coordinate2D(x_pos + 0.003, 0.65),
-                    Coordinate2D(x_pos - 0.003, 0.65),
+                    Coordinate2D(x_pos - 0.002, 0.35),
+                    Coordinate2D(x_pos + 0.002, 0.35),
+                    Coordinate2D(x_pos + 0.002, 0.65),
+                    Coordinate2D(x_pos - 0.002, 0.65),
                 ]
                 door_stbd = DoorNode(
                     door_id=f"DOOR_{c_num_stbd}",
@@ -162,17 +193,19 @@ class StateroomArchetypeGenerator:
                 port_idx = idx - 1
                 c_num_port = f"{deck_number}{port_idx:03d}"
                 is_acc_port = c_num_port in accessible_staterooms
-                is_suite_port = (port_idx <= 11)
-                cat_port = "SL1" if is_suite_port else ("BA_ACC" if is_acc_port else ("OB" if has_lifeboats else "BA"))
-                area_port = 27.0 if is_suite_port else (28.0 if is_acc_port else 19.0)
-                width_port = 950 if is_acc_port else (900 if is_suite_port else 850)
-                socket_m_port = socket_acc if is_acc_port else (socket_suite if is_suite_port else socket_std)
+                is_suite_port = (deck_number >= 15) or (port_idx <= 11)
+                is_yc_port = (deck_number >= 15)
+                
+                cat_port = "YC1" if is_yc_port else ("SL1" if is_suite_port else ("BA_ACC" if is_acc_port else ("OB" if has_lifeboats else "BA")))
+                area_port = 28.0 if is_yc_port else (27.0 if is_suite_port else (28.0 if is_acc_port else 19.0))
+                width_port = 950 if is_acc_port else (900 if (is_suite_port or is_yc_port) else 850)
+                socket_m_port = socket_acc if is_acc_port else (socket_suite if (is_suite_port or is_yc_port) else socket_std)
 
                 poly_port = [
-                    Coordinate2D(x_pos - 0.003, -0.65),
-                    Coordinate2D(x_pos + 0.003, -0.65),
-                    Coordinate2D(x_pos + 0.003, -0.35),
-                    Coordinate2D(x_pos - 0.003, -0.35),
+                    Coordinate2D(x_pos - 0.002, -0.65),
+                    Coordinate2D(x_pos + 0.002, -0.65),
+                    Coordinate2D(x_pos + 0.002, -0.35),
+                    Coordinate2D(x_pos - 0.002, -0.35),
                 ]
                 door_port = DoorNode(
                     door_id=f"DOOR_{c_num_port}",
