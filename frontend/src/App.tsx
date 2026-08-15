@@ -1,462 +1,663 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
+import {
+  Compass,
+  Anchor,
+  Waves,
+  Volume2,
+  ArrowUp,
+  ArrowDown,
+  MapPin,
+  Plug,
+  Accessibility,
+  Users,
+  Moon,
+  Search,
+  ArrowRight,
+  Ruler,
+  Ship as ShipIcon,
+} from 'lucide-react';
 import type { ShipData, CabinData } from './types';
+import { useMedia, Photo } from './media';
+import { CabinReport, ExportBar, type LensId } from './report';
+import { cabinFromUrl, updateSocialHead } from './share';
+import { BoardingIntelligence } from './boarding';
 
 export default function App() {
   const [ship, setShip] = useState<ShipData | null>(null);
   const [selectedCabinNum, setSelectedCabinNum] = useState<string>('14122');
-  const [activeLens, setActiveLens] = useState<'default' | 'accessibility' | 'family' | 'quiet'>('default');
-  const [selectedVenueDestination, setSelectedVenueDestination] = useState<'buffet' | 'theater' | 'elevator'>('buffet');
   const [searchQuery, setSearchQuery] = useState<string>('14122');
+  const [lens, setLens] = useState<LensId>('accessibility');
   const [loading, setLoading] = useState<boolean>(true);
+  const media = useMedia();
 
   useEffect(() => {
     fetch('/data/msc-bellissima.json')
       .then((res) => res.json())
       .then((data: ShipData) => {
         setShip(data);
+        const fromUrl = cabinFromUrl();
+        if (fromUrl && data.cabins[fromUrl]) {
+          setSelectedCabinNum(fromUrl);
+          setSearchQuery(fromUrl);
+        }
         setLoading(false);
       })
-      .catch((err) => {
-        console.error('Failed to load MSC Bellissima spatial pack:', err);
-        setLoading(false);
-      });
+      .catch(() => setLoading(false));
   }, []);
 
   const cabin: CabinData | undefined = ship?.cabins[selectedCabinNum];
 
+  // Keep the title, canonical URL and social preview in step with the cabin.
+  useEffect(() => {
+    if (ship && cabin) updateSocialHead(ship, cabin);
+  }, [ship, cabin]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const query = searchQuery.trim();
-    if (ship?.cabins[query]) {
-      setSelectedCabinNum(query);
-    }
+    const q = searchQuery.trim();
+    if (ship?.cabins[q]) setSelectedCabinNum(q);
   };
 
-  if (loading || !ship) {
+  if (loading || !ship || !cabin) {
     return (
-      <div className="min-h-screen bg-paper flex items-center justify-center text-ink font-sans">
-        <div className="text-center space-y-3">
-          <p className="eyebrow text-muted">Timonelo Spatial Engine</p>
-          <h1 className="font-display text-3xl">Loading MSC Bellissima Orientation Map...</h1>
+      <div className="min-h-screen bg-paper grid place-items-center text-ink">
+        <div className="text-center">
+          <p className="eyebrow-mist">Timonelo Spatial Engine</p>
+          <h1 className="font-display text-3xl mt-3">Opening your orientation…</h1>
         </div>
       </div>
     );
   }
 
-  const activeDistance = cabin?.distances[selectedVenueDestination];
+  return (
+    <>
+      <div className="screen-app min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink pb-16">
+        <Masthead ship={ship} cabin={cabin} />
+        <Hero
+          ship={ship}
+          cabin={cabin}
+          media={media}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          onSearch={handleSearch}
+          onSelect={(n) => {
+            setSelectedCabinNum(n);
+            setSearchQuery(n);
+          }}
+        />
+
+        <main className="page-shell mt-12 space-y-16">
+          <BoardingIntelligence ship={ship} cabin={cabin} />
+          <TakeItWithYou ship={ship} cabin={cabin} />
+          <HullPosition ship={ship} cabin={cabin} />
+          <ViewAndPhotos cabin={cabin} media={media} />
+          <Surroundings cabin={cabin} />
+          <GettingAround cabin={cabin} />
+          <DeckContext ship={ship} cabin={cabin} media={media} />
+          <Lenses cabin={cabin} lens={lens} setLens={setLens} />
+          <Evidence cabin={cabin} />
+          <Discovery ship={ship} current={selectedCabinNum} onSelect={(n) => { setSelectedCabinNum(n); setSearchQuery(n); }} />
+        </main>
+
+        <Footer />
+      </div>
+
+      {/* Dedicated Cabin Orientation Report — print / PDF only on screen */}
+      <CabinReport ship={ship} cabin={cabin} lens={lens} />
+    </>
+  );
+}
+
+function TakeItWithYou({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
+  return (
+    <section className="card p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="max-w-xl">
+        <p className="eyebrow-mist">Take it with you</p>
+        <h2 className="font-display text-2xl mt-1.5">Cabin Orientation Report</h2>
+        <p className="text-[14px] text-muted mt-1.5 leading-relaxed">
+          A clean, printable orientation dossier for Cabin {cabin.cabin_number} — save it as a PDF, print it for the
+          terminal, or send it to family. Searchable text, no marketing.
+        </p>
+      </div>
+      <ExportBar ship={ship} cabin={cabin} />
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ helpers */
+
+function sideLabel(s: CabinData['hull_side']): string {
+  return s === 'STARBOARD' ? 'Starboard (right)' : s === 'PORT' ? 'Port (left)' : 'Centreline';
+}
+function elevationOf(ship: ShipData, deck: number): number | null {
+  return ship.decks[String(deck)]?.elevation_m ?? null;
+}
+/** Longitudinal fraction (0 = aft, 1 = forward) from the zone label. */
+function zoneFraction(zone: string): number {
+  const z = zone.toLowerCase();
+  const fwd = z.includes('forward') || z.includes('bow');
+  const aft = z.includes('aft') || z.includes('stern');
+  if (z.includes('midship') && aft) return 0.36;
+  if (z.includes('midship') && fwd) return 0.64;
+  if (aft) return 0.22;
+  if (fwd) return 0.78;
+  return 0.5;
+}
+
+/* ------------------------------------------------------------------ masthead */
+
+function Masthead({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
+  return (
+    <header className="sticky top-0 z-30 bg-paper/95 border-b hairline">
+      <div className="page-shell h-14 flex items-center justify-between">
+        <a href="/" className="flex items-center gap-2">
+          <span className="w-5 h-5 bg-ink grid place-items-center">
+            <span className="w-0.5 h-2.5 bg-paper rotate-45" />
+          </span>
+          <span className="font-display text-xl tracking-tight text-ink">Timonelo</span>
+        </a>
+        <div className="flex items-center gap-4 text-right">
+          <div className="hidden sm:block">
+            <span className="block text-xs font-semibold text-ink">{ship.name}</span>
+            <span className="block text-[11px] text-muted">Cabin {cabin.cabin_number} · Deck {cabin.deck_number}</span>
+          </div>
+          <span className="h-2 w-2 rounded-full bg-emerald-600" title="Spatial Engine connected" />
+        </div>
+      </div>
+    </header>
+  );
+}
+
+/* ------------------------------------------------------------------ hero */
+
+function Hero({
+  ship,
+  cabin,
+  media,
+  searchQuery,
+  setSearchQuery,
+  onSearch,
+  onSelect,
+}: {
+  ship: ShipData;
+  cabin: CabinData;
+  media: (id: string) => string | null;
+  searchQuery: string;
+  setSearchQuery: (v: string) => void;
+  onSearch: (e: React.FormEvent) => void;
+  onSelect: (n: string) => void;
+}) {
+  const elev = elevationOf(ship, cabin.deck_number);
+  const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed sea view';
+  return (
+    <header className="relative ground-navy chart-lines text-white overflow-hidden">
+      {media(`ship:${ship.imo}`) && (
+        <img src={media(`ship:${ship.imo}`)!} alt={ship.name} className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      )}
+      <div className="relative page-shell pt-14 pb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <p className="eyebrow-mist text-gold">Your stateroom orientation</p>
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mt-3">Cabin {cabin.cabin_number}</h1>
+            <p className="text-white/75 text-lg mt-4">
+              On <span className="text-white">Deck {cabin.deck_number} ({cabin.deck_name})</span>, {sideLabel(cabin.hull_side).toLowerCase()},
+              toward the {cabin.zone.toLowerCase()} of {ship.name}.
+            </p>
+          </div>
+
+          <form onSubmit={onSearch} className="flex items-center gap-2 shrink-0">
+            <div className="relative">
+              <Search className="w-4 h-4 text-white/40 absolute left-3 top-1/2 -translate-y-1/2" aria-hidden />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Enter cabin"
+                aria-label="Cabin number"
+                className="h-12 border border-white/25 bg-white/10 pl-9 pr-4 font-mono text-sm text-white placeholder:text-white/50 outline-none focus:border-gold w-44"
+              />
+            </div>
+            <button type="submit" className="h-12 px-5 bg-white text-ink text-xs font-semibold hover:bg-gold transition-colors">
+              Find
+            </button>
+          </form>
+        </div>
+
+        {/* 15-second answer strip */}
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
+          <HeroFact label="Deck" value={`${cabin.deck_number} · ${cabin.deck_name}`} />
+          <HeroFact label="Ship side" value={sideLabel(cabin.hull_side)} />
+          <HeroFact label="Nearest lift" value={`${cabin.distances.elevator?.meters ?? '—'} m`} />
+          <HeroFact label="Balcony view" value={view} />
+        </div>
+
+        <div className="mt-6 flex items-center gap-3 flex-wrap text-xs">
+          <span className="text-white/55">Sample verified cabins:</span>
+          {Object.keys(ship.cabins).map((n) => (
+            <button
+              key={n}
+              onClick={() => onSelect(n)}
+              className={`px-3 py-1.5 font-mono transition ${
+                n === cabin.cabin_number ? 'bg-gold text-ink font-semibold' : 'bg-white/10 text-white/85 hover:bg-white/20'
+              }`}
+            >
+              {n}
+              {ship.cabins[n].is_accessible ? ' ♿' : ''}
+            </button>
+          ))}
+          {elev != null && <span className="text-white/45 ml-auto hidden md:block">Deck elevation {elev} m above sea</span>}
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function HeroFact({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="bg-ink px-4 py-4">
+      <div className="text-[10px] uppercase tracking-[0.18em] text-white/45">{label}</div>
+      <div className="text-[15px] font-medium text-white mt-1 leading-snug">{value}</div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ sections */
+
+function SectionHead({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
+  return (
+    <div className="mb-6 max-w-2xl">
+      <p className="eyebrow-mist">{eyebrow}</p>
+      <h2 className="font-display text-3xl md:text-4xl mt-2 leading-tight">{title}</h2>
+      {intro && <p className="text-muted text-[15px] leading-relaxed mt-3">{intro}</p>}
+    </div>
+  );
+}
+
+function HullPosition({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
+  const frac = zoneFraction(cabin.zone);
+  const elevs = Object.values(ship.decks).map((d) => d.elevation_m);
+  const maxE = Math.max(...elevs, 1);
+  const elev = elevationOf(ship, cabin.deck_number) ?? 0;
+  const top = 12 + (1 - elev / maxE) * 60; // higher deck → nearer the top
 
   return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink font-sans pb-20">
-      {/* 1. MASTHEAD */}
-      <header className="border-b border-ink/15 bg-white sticky top-0 z-30">
-        <div className="page-shell flex items-center justify-between h-18">
-          <div className="flex items-center gap-4">
-            <a href="/" className="font-display text-2xl font-semibold tracking-tight text-ink">
-              Timonelo
-            </a>
-            <span className="text-xs text-muted border-l border-ink/20 pl-4 hidden sm:inline font-sans">
-              Ship Orientation Platform
-            </span>
+    <section>
+      <SectionHead eyebrow="Where you are" title="Your position on the hull" />
+      <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-stretch">
+        <div className="card p-6 md:p-8">
+          <div className="flex justify-between text-[11px] text-muted font-mono uppercase tracking-wider mb-3">
+            <span>Aft · stern</span>
+            <span>Midship</span>
+            <span>Forward · bow</span>
           </div>
-
-          <div className="flex items-center gap-3">
-            <div className="text-right hidden sm:block">
-              <span className="block text-xs font-semibold text-ink">{ship.name}</span>
-              <span className="block text-[11px] text-muted">{ship.ship_class} · 315.8m Length</span>
+          <div className="relative h-40 rounded-xs border hairline bg-paper overflow-hidden">
+            {/* hull silhouette */}
+            <div className="absolute inset-x-6 inset-y-6 border hairline rounded-[40%_40%_46%_46%/60%_60%_40%_40%] bg-white/60" />
+            <div className="absolute inset-x-0 bottom-0 h-2 bg-sky-200/50" aria-hidden />
+            {/* cabin pin */}
+            <div className="absolute z-10 flex flex-col items-center -translate-x-1/2" style={{ left: `${frac * 100}%`, top: `${top}%` }}>
+              <div className="h-3.5 w-3.5 rounded-full bg-gold border-2 border-ink" />
+              <span className="mt-1 text-[10px] font-mono font-bold bg-ink text-white px-1.5 py-0.5">{cabin.cabin_number}</span>
             </div>
-            <div className="h-2 w-2 rounded-full bg-emerald-500" title="Spatial Engine Connected" />
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+            <Fact icon={<ShipIcon className="w-3.5 h-3.5" />} label="Deck" value={`${cabin.deck_number}`} />
+            <Fact icon={<Compass className="w-3.5 h-3.5" />} label="Side" value={sideLabel(cabin.hull_side)} />
+            <Fact icon={<Anchor className="w-3.5 h-3.5" />} label="Longitudinal" value={cabin.zone} />
+            <Fact icon={<Ruler className="w-3.5 h-3.5" />} label="Living space" value={`${cabin.square_meters} m²`} />
           </div>
         </div>
-      </header>
 
-      {/* 2. CABIN SELECTION & SEARCH HERO */}
-      <section className="bg-ink text-white py-10 px-4">
-        <div className="page-shell">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="space-y-2">
-              <p className="eyebrow text-gold font-medium tracking-widest">Selected Stateroom</p>
-              <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-                {cabin ? `Cabin ${cabin.cabin_number}` : 'Select Cabin'}
-              </h1>
-              <p className="text-sm text-white/70">
-                Deck {cabin?.deck_number} ({cabin?.deck_name}) · {cabin?.hull_side === 'STARBOARD' ? 'Starboard (Right)' : 'Port (Left)'} · {cabin?.zone}
+        <div className="card p-6 flex flex-col gap-4">
+          <p className="eyebrow-mist">Light & orientation</p>
+          <p className="text-[15px] text-ink leading-relaxed">
+            A {sideLabel(cabin.hull_side).toLowerCase()} balcony. Sun and sea are on the{' '}
+            {cabin.hull_side === 'STARBOARD' ? 'starboard' : cabin.hull_side === 'PORT' ? 'port' : 'centre'} beam — the exact
+            aspect depends on the ship’s heading during your voyage.
+          </p>
+          <div className="mt-auto flex items-center gap-2 text-[12px] text-muted">
+            <Moon className="w-3.5 h-3.5 text-gold" aria-hidden />
+            Solar aspect is a geometric projection, not a forecast.
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Fact({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+  return (
+    <div className="bg-paper border hairline rounded-xs p-3">
+      <div className="flex items-center gap-1.5 text-muted text-[10px] uppercase tracking-[0.12em]">
+        <span className="text-gold">{icon}</span>
+        {label}
+      </div>
+      <div className="text-[14px] font-semibold text-ink mt-1.5 leading-tight">{value}</div>
+    </div>
+  );
+}
+
+function ViewAndPhotos({ cabin, media }: { cabin: CabinData; media: (id: string) => string | null }) {
+  return (
+    <section>
+      <SectionHead eyebrow="A first look" title="Your view and your room" intro="Photography is added stateroom by stateroom; until then, the spatial facts stand on their own." />
+      <div className="grid md:grid-cols-3 gap-4">
+        <div className="md:col-span-2">
+          <Photo src={media(`view:${cabin.cabin_number}`)} kind="view" label="Balcony view" ratio="16 / 9" priority />
+          <div className="card mt-4 p-5 flex items-start gap-3">
+            <Waves className="w-4 h-4 text-gold mt-0.5 shrink-0" aria-hidden />
+            <div>
+              <div className="eyebrow-mist mb-1">Balcony sightline</div>
+              <p className="text-[14px] text-ink leading-relaxed">{cabin.sightlines.description}</p>
+              <p className="text-[12px] text-muted mt-1">
+                {cabin.sightlines.horizon_angle_deg}° horizon ·{' '}
+                {cabin.sightlines.has_lifeboat_obstruction ? 'Lifeboat obstruction present' : 'No lifeboat obstruction'}
               </p>
             </div>
-
-            {/* Cabin Search Input */}
-            <form onSubmit={handleSearch} className="flex items-center gap-2">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Enter cabin (e.g. 14122)"
-                  aria-label="Cabin Number"
-                  className="h-12 border border-white/20 bg-white/10 px-4 font-mono text-sm text-white placeholder:text-white/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold w-44"
-                />
-              </div>
-              <button type="submit" className="button button-light h-12 px-5 text-xs">
-                Find
-              </button>
-            </form>
-          </div>
-
-          {/* Quick Select Verification Cabins */}
-          <div className="max-w-4xl mx-auto mt-6 pt-4 border-t border-white/15 flex items-center gap-2 text-xs flex-wrap">
-            <span className="text-white/60">Sample Verified Cabins:</span>
-            {Object.keys(ship.cabins).map((cNum) => (
-              <button
-                key={cNum}
-                onClick={() => {
-                  setSelectedCabinNum(cNum);
-                  setSearchQuery(cNum);
-                }}
-                className={`px-3 py-1 font-mono transition text-xs ${
-                  selectedCabinNum === cNum
-                    ? 'bg-gold text-ink font-semibold'
-                    : 'bg-white/10 text-white/80 hover:bg-white/20'
-                }`}
-              >
-                {cNum} {ship.cabins[cNum].is_accessible ? '(Accessible)' : ''}
-              </button>
-            ))}
           </div>
         </div>
-      </section>
+        <div className="flex flex-col gap-4">
+          <Photo src={media(`cabin:${cabin.cabin_number}`)} kind="cabin" label="Stateroom" ratio="4 / 3" />
+          <div className="card p-5">
+            <div className="eyebrow-mist mb-2">Balcony type</div>
+            <div className="font-display text-xl text-ink capitalize">{cabin.balcony_type.toLowerCase()}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      {/* 3. MAIN ORIENTATION CONTAINER */}
-      <main className="page-shell mt-8 space-y-8">
-        {cabin && (
-          <>
-            {/* GRID: PRIORITY 1 & 2 (Where am I on this ship?) */}
-            <div className="grid lg:grid-cols-12 gap-8 items-start">
-              
-              {/* PRIORITY 1: Spatial Hull Orientation Card (5 Columns) */}
-              <section className="lg:col-span-5 bg-white border border-ink/15 p-6 shadow-xs space-y-6">
-                <div className="border-b border-ink/10 pb-4">
-                  <p className="eyebrow text-muted">Hull Position</p>
-                  <h2 className="font-display text-2xl mt-1">Where Your Cabin Sits</h2>
-                </div>
+function Surroundings({ cabin }: { cabin: CabinData }) {
+  const { overhead, underfoot } = cabin.surroundings;
+  return (
+    <section>
+      <SectionHead eyebrow="What surrounds you" title="Above, below and beside" />
+      <div className="grid md:grid-cols-3 gap-4">
+        <div className="card p-6">
+          <p className="eyebrow-mist mb-4">Vertical context</p>
+          <VerticalRow
+            dir="above"
+            deck={overhead.deck_number}
+            name={overhead.deck_name}
+            venues={overhead.venues}
+            noise={overhead.is_noise_generator}
+          />
+          <div className="my-3 p-3.5 bg-white border-2 border-gold rounded-xs">
+            <div className="text-[11px] font-bold uppercase tracking-wide text-ink">Your cabin · Deck {cabin.deck_number}</div>
+            <div className="text-[12px] text-muted">Cabin {cabin.cabin_number} · {cabin.square_meters} m²</div>
+          </div>
+          <VerticalRow
+            dir="below"
+            deck={underfoot.deck_number}
+            name={underfoot.deck_name}
+            venues={underfoot.venues}
+            noise={underfoot.is_noise_generator}
+          />
+        </div>
 
-                {/* Volumetric Vessel Silhouette Diagram */}
-                <div className="relative border border-ink/15 bg-paper p-6 text-center rounded-xs space-y-4">
-                  <div className="flex justify-between text-[11px] text-muted font-mono uppercase">
-                    <span>Aft (Stern)</span>
-                    <span>Midship</span>
-                    <span>Forward (Bow)</span>
-                  </div>
+        <div className="card p-6">
+          <p className="eyebrow-mist mb-4">Room specifics</p>
+          <Spec label="Bed position" value={cabin.bed_near_balcony == null ? 'Unknown' : cabin.bed_near_balcony ? 'Next to the balcony' : 'Next to the bathroom'} />
+          <Spec label="Connecting door" value={cabin.connecting_cabin_number ? `Yes — to ${cabin.connecting_cabin_number}` : 'None (private wall)'} />
+          <Spec label="Doorway width" value={`${cabin.door_width_mm} mm`} mono />
+          <Spec label="Category" value={cabin.category_code} mono />
+          <Spec label="Accessible" value={cabin.is_accessible ? 'Certified accessible' : 'Standard'} last />
+        </div>
 
-                  {/* Ship Silhouette Box */}
-                  <div className="relative h-20 bg-white border border-ink/20 rounded-xs flex items-center px-4 overflow-hidden">
-                    {/* Waterline indicator */}
-                    <div className="absolute inset-x-0 bottom-0 h-1.5 bg-sky-200/50" />
-
-                    {/* Ship decks grid lines */}
-                    <div className="w-full h-full flex flex-col justify-between py-2 opacity-20">
-                      <div className="w-full border-b border-ink" />
-                      <div className="w-full border-b border-ink" />
-                      <div className="w-full border-b border-ink" />
-                    </div>
-
-                    {/* Pin for Selected Cabin */}
-                    <div 
-                      className="absolute z-10 flex flex-col items-center"
-                      style={{ left: '28%', top: '22%' }}
-                    >
-                      <div className="h-4 w-4 rounded-full bg-gold border-2 border-ink shadow-md animate-pulse" />
-                      <span className="text-[10px] font-mono font-bold bg-ink text-white px-1.5 py-0.5 rounded-xs mt-1">
-                        {cabin.cabin_number}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-2 text-center text-xs pt-2">
-                    <div className="p-2 bg-white border border-ink/10">
-                      <span className="text-muted block text-[10px] uppercase">Deck Level</span>
-                      <span className="font-bold text-ink">Deck {cabin.deck_number}</span>
-                    </div>
-                    <div className="p-2 bg-white border border-ink/10">
-                      <span className="text-muted block text-[10px] uppercase">Ship Side</span>
-                      <span className="font-bold text-ink">{cabin.hull_side === 'STARBOARD' ? 'Starboard (Right)' : 'Port (Left)'}</span>
-                    </div>
-                    <div className="p-2 bg-white border border-ink/10">
-                      <span className="text-muted block text-[10px] uppercase">Longitudinal</span>
-                      <span className="font-bold text-ink">{cabin.zone}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Spatial Summary Points */}
-                <ul className="space-y-2.5 text-xs text-muted leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold">✓</span>
-                    <span><strong>Daylight & Sun:</strong> Facing Starboard. Receives morning light when sailing South, afternoon light sailing North.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold">✓</span>
-                    <span><strong>Elevator Access:</strong> {cabin.distances.elevator?.meters}m ({cabin.distances.elevator?.steps} steps) to the Aft Elevator Core.</span>
-                  </li>
-                </ul>
-              </section>
-
-              {/* PRIORITY 2: Mini Deck Context & Nearby Venues (7 Columns) */}
-              <section className="lg:col-span-7 bg-white border border-ink/15 p-6 shadow-xs space-y-6">
-                <div className="border-b border-ink/10 pb-4 flex justify-between items-end">
-                  <div>
-                    <p className="eyebrow text-muted">Corridor Context</p>
-                    <h2 className="font-display text-2xl mt-1">Deck {cabin.deck_number} ({cabin.deck_name})</h2>
-                  </div>
-                  <span className="text-xs text-muted font-mono">Elevation: 42.0m above sea</span>
-                </div>
-
-                {/* Simplified Schematic Corridor Map */}
-                <div className="border border-ink/15 bg-paper p-6 rounded-xs space-y-4">
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wider">Walkable Corridor Anatomy</p>
-                  
-                  {/* Schematic Track */}
-                  <div className="bg-white border border-ink/20 p-4 rounded-xs flex items-center justify-between relative">
-                    {/* Aft Lift Node */}
-                    <div className="text-center z-10">
-                      <div className="px-2.5 py-1.5 bg-ink text-white font-mono text-xs font-bold rounded-xs">
-                        AFT LIFT
-                      </div>
-                      <span className="text-[10px] text-muted mt-1 block">Lobby & Stairs</span>
-                    </div>
-
-                    {/* Connecting Corridor Line */}
-                    <div className="flex-1 mx-4 relative flex items-center justify-center">
-                      <div className="w-full h-1 bg-ink/20 absolute" />
-                      
-                      {/* Highlighted Cabin */}
-                      <div className="z-10 px-3 py-1.5 bg-gold border border-ink text-ink font-mono font-bold text-xs shadow-sm flex items-center gap-1.5">
-                        <span>🚪</span>
-                        <span>Cabin {cabin.cabin_number}</span>
-                      </div>
-                    </div>
-
-                    {/* Midship Lift Node */}
-                    <div className="text-center z-10">
-                      <div className="px-2.5 py-1.5 bg-paper border border-ink/30 text-ink font-mono text-xs font-bold rounded-xs">
-                        MID LIFT
-                      </div>
-                      <span className="text-[10px] text-muted mt-1 block">Central Core</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-muted leading-relaxed">
-                    Your cabin door opens onto the Starboard corridor branch, <strong>{cabin.distances.elevator?.meters} meters</strong> from the nearest elevator vestibule.
-                  </p>
-                </div>
-
-                {/* PRIORITY 3: Interactive Route Preview */}
-                <div className="border-t border-ink/10 pt-4 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <p className="eyebrow text-muted">Calculate Route To</p>
-                    <span className="text-[11px] text-muted font-mono">Deterministic Spatial Calculus</span>
-                  </div>
-
-                  {/* Destination Toggle Chips */}
-                  <div className="flex gap-2">
-                    {[
-                      { id: 'buffet', label: '🍳 Marketplace Buffet (Deck 15)' },
-                      { id: 'theater', label: '🎭 London Theatre (Deck 06)' },
-                      { id: 'elevator', label: '🛗 Nearest Elevator (Deck 14)' },
-                    ].map((dest) => (
-                      <button
-                        key={dest.id}
-                        onClick={() => setSelectedVenueDestination(dest.id as any)}
-                        className={`px-3 py-2 text-xs font-medium border transition ${
-                          selectedVenueDestination === dest.id
-                            ? 'border-ink bg-ink text-white font-semibold'
-                            : 'border-ink/20 bg-paper text-ink hover:bg-sand/30'
-                        }`}
-                      >
-                        {dest.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Route Metric Card */}
-                  {activeDistance && (
-                    <div className="p-4 bg-paper border border-ink/15 rounded-xs flex items-center justify-between">
-                      <div>
-                        <span className="text-xs text-muted uppercase font-semibold block">Walking Distance</span>
-                        <span className="font-display text-3xl text-ink font-medium">{activeDistance.meters} m</span>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-xs text-muted uppercase font-semibold block">Estimated Effort</span>
-                        <span className="text-sm font-semibold text-ink">
-                          {activeDistance.steps} steps (~{activeDistance.seconds}s walk)
-                        </span>
-                        <span className="text-[11px] text-emerald-700 block font-medium">
-                          {activeDistance.step_free ? '✓ 100% Step-free (Elevator accessible)' : 'Stair route'}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </section>
-            </div>
-
-            {/* PRIORITY 4: SURROUNDINGS & CONTEXT (What sits above and below me?) */}
-            <div className="grid md:grid-cols-3 gap-8">
-              
-              {/* Vertical Surroundings (3D Sandwich) */}
-              <section className="bg-white border border-ink/15 p-6 shadow-xs space-y-4">
-                <p className="eyebrow text-muted">Vertical Context</p>
-                <h3 className="font-display text-2xl">What Sits Around You</h3>
-
-                {/* Ceiling (Deck Above) */}
-                <div className="p-3.5 bg-paper border border-ink/15 rounded-xs space-y-1">
-                  <div className="flex justify-between text-xs font-bold">
-                    <span>ABOVE YOU (Deck {cabin.surroundings.overhead.deck_number})</span>
-                    {cabin.surroundings.overhead.is_noise_generator && (
-                      <span className="text-[10px] text-amber-800 bg-amber-100 px-1.5 py-0.5 border border-amber-300">Active Space</span>
-                    )}
-                  </div>
-                  <p className="text-xs text-muted">
-                    {cabin.surroundings.overhead.venues.length > 0
-                      ? `${cabin.surroundings.overhead.venues.join(', ')}`
-                      : 'Quiet residential cabins directly above.'}
-                  </p>
-                </div>
-
-                {/* Cabin Level */}
-                <div className="p-3.5 bg-white border-2 border-gold rounded-xs">
-                  <span className="text-xs font-bold text-ink block">YOUR CABIN (Deck {cabin.deck_number})</span>
-                  <span className="text-xs text-muted">Cabin {cabin.cabin_number} · 19 m² living space</span>
-                </div>
-
-                {/* Floor (Deck Below) */}
-                <div className="p-3.5 bg-paper border border-ink/15 rounded-xs space-y-1">
-                  <span className="text-xs font-bold block">BELOW YOU (Deck {cabin.surroundings.underfoot.deck_number})</span>
-                  <p className="text-xs text-muted">
-                    {cabin.surroundings.underfoot.venues.length > 0
-                      ? `${cabin.surroundings.underfoot.venues.join(', ')}`
-                      : 'Quiet residential cabins directly below.'}
-                  </p>
-                </div>
-              </section>
-
-              {/* Physical Fixtures & Balcony View */}
-              <section className="bg-white border border-ink/15 p-6 shadow-xs space-y-4">
-                <p className="eyebrow text-muted">Room Specifics</p>
-                <h3 className="font-display text-2xl">Physical Details</h3>
-
-                <div className="space-y-3 text-xs">
-                  <div className="flex justify-between py-1.5 border-b border-ink/10">
-                    <span className="text-muted">Balcony Sightline</span>
-                    <span className="font-semibold text-emerald-800">180° Unobstructed</span>
-                  </div>
-                  <div className="flex justify-between py-1.5 border-b border-ink/10">
-                    <span className="text-muted">Bed Position</span>
-                    <span className="font-medium">{cabin.bed_near_balcony ? 'Adjacent to Balcony' : 'Adjacent to Bathroom'}</span>
-                  </div>
-                  <div className="flex justify-between py-1.5 border-b border-ink/10">
-                    <span className="text-muted">Connecting Door</span>
-                    <span className="font-medium">{cabin.connecting_cabin_number ? `Yes (To Cabin ${cabin.connecting_cabin_number})` : 'None (Private Wall)'}</span>
-                  </div>
-                  <div className="flex justify-between py-1.5 border-b border-ink/10">
-                    <span className="text-muted">Doorway Width</span>
-                    <span className="font-mono font-medium">{cabin.door_width_mm} mm</span>
-                  </div>
-                </div>
-
-                {/* Sockets */}
-                <div className="pt-2">
-                  <span className="text-[11px] font-semibold text-muted uppercase tracking-wider block mb-2">Available Power Outlets</span>
-                  <div className="grid grid-cols-4 gap-1.5 text-center text-xs">
-                    <div className="p-1.5 bg-paper border border-ink/10 font-mono"><strong>{cabin.sockets.eu_count}x</strong> EU</div>
-                    <div className="p-1.5 bg-paper border border-ink/10 font-mono"><strong>{cabin.sockets.us_count}x</strong> US</div>
-                    <div className="p-1.5 bg-paper border border-ink/10 font-mono"><strong>{cabin.sockets.usb_a_count}x</strong> USB-A</div>
-                    <div className="p-1.5 bg-paper border border-ink/10 font-mono"><strong>{cabin.sockets.usb_c_count}x</strong> USB-C</div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Contextual Lens Perspective (Plane 4) */}
-              <section className="bg-white border border-ink/15 p-6 shadow-xs space-y-4">
-                <div className="flex justify-between items-center">
-                  <p className="eyebrow text-gold font-bold">Traveler Lens</p>
-                  <span className="text-[10px] text-muted">Switch Perspective</span>
-                </div>
-
-                {/* Lens Switcher Buttons */}
-                <div className="grid grid-cols-3 gap-1 text-[11px] font-semibold">
-                  <button
-                    onClick={() => setActiveLens('accessibility')}
-                    className={`p-1.5 border transition ${activeLens === 'accessibility' ? 'bg-gold text-ink border-gold' : 'bg-paper border-ink/15 text-muted'}`}
-                  >
-                    Mobility
-                  </button>
-                  <button
-                    onClick={() => setActiveLens('family')}
-                    className={`p-1.5 border transition ${activeLens === 'family' ? 'bg-gold text-ink border-gold' : 'bg-paper border-ink/15 text-muted'}`}
-                  >
-                    Family
-                  </button>
-                  <button
-                    onClick={() => setActiveLens('quiet')}
-                    className={`p-1.5 border transition ${activeLens === 'quiet' ? 'bg-gold text-ink border-gold' : 'bg-paper border-ink/15 text-muted'}`}
-                  >
-                    Quiet
-                  </button>
-                </div>
-
-                {/* Dynamic Lens Output Box */}
-                <div className="p-4 bg-paper border border-ink/15 rounded-xs space-y-2 text-xs">
-                  {activeLens === 'accessibility' && (
-                    <>
-                      <p className="font-bold text-ink">{cabin.lenses.accessibility.is_certified ? '✓ Certified Accessible Cabin' : 'Standard Stateroom'}</p>
-                      <p className="text-muted leading-relaxed">{cabin.lenses.accessibility.summary}</p>
-                    </>
-                  )}
-
-                  {activeLens === 'family' && (
-                    <>
-                      <p className="font-bold text-ink">{cabin.lenses.family.has_connecting ? '✓ Family Adjoining Pair' : 'Single Stateroom'}</p>
-                      <p className="text-muted leading-relaxed">{cabin.lenses.family.summary}</p>
-                    </>
-                  )}
-
-                  {activeLens === 'quiet' && (
-                    <>
-                      <p className="font-bold text-ink">{cabin.lenses.quiet.is_quiet_tier ? '✓ Acoustically Buffered' : '⚠ Active Space Adjacency'}</p>
-                      <p className="text-muted leading-relaxed">{cabin.lenses.quiet.summary}</p>
-                    </>
-                  )}
-
-                  {activeLens === 'default' && (
-                    <>
-                      <p className="font-bold text-ink">General Overview</p>
-                      <p className="text-muted leading-relaxed">
-                        Well-proportioned stateroom situated in a mid-aft location on Deck 14 with rapid access to Aft elevators.
-                      </p>
-                    </>
-                  )}
-                </div>
-
-                {/* Evidence Source Footer */}
-                <div className="pt-2 text-[10px] text-muted border-t border-ink/10 flex justify-between">
-                  <span>Source: Naval GA Blueprints</span>
-                  <span className="font-mono">SHA-256 Verified</span>
-                </div>
-              </section>
-
-            </div>
-          </>
-        )}
-      </main>
-
-      {/* 4. FOOTER */}
-      <footer className="border-t border-ink/15 bg-white py-8 mt-20 text-xs text-muted">
-        <div className="page-shell flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Timonelo · MSC Bellissima Reference Spatial System</p>
-          <p className="text-center sm:text-right">
-            Independent cruise orientation. Never sound more certain than the evidence.
+        <div className="card p-6">
+          <p className="eyebrow-mist mb-4 flex items-center gap-2"><Plug className="w-3.5 h-3.5 text-gold" /> Power outlets</p>
+          <div className="grid grid-cols-2 gap-2 text-center">
+            <Socket n={cabin.sockets.eu_count} label="EU" />
+            <Socket n={cabin.sockets.us_count} label="US" />
+            <Socket n={cabin.sockets.usb_a_count} label="USB-A" />
+            <Socket n={cabin.sockets.usb_c_count} label="USB-C" />
+          </div>
+          <p className="text-[12px] text-muted mt-4">
+            {cabin.sockets.bedside_usb ? 'Bedside USB charging available.' : 'No bedside USB charging.'}
           </p>
         </div>
-      </footer>
+      </div>
+    </section>
+  );
+}
+
+function VerticalRow({ dir, deck, name, venues, noise }: { dir: 'above' | 'below'; deck: number | null; name: string | null; venues: string[]; noise?: boolean }) {
+  const Icon = dir === 'above' ? ArrowUp : ArrowDown;
+  return (
+    <div className="p-3.5 bg-paper border hairline rounded-xs">
+      <div className="flex justify-between items-center">
+        <span className="text-[11px] font-bold uppercase tracking-wide text-ink flex items-center gap-1.5">
+          <Icon className="w-3.5 h-3.5 text-gold" aria-hidden /> {dir === 'above' ? 'Above you' : 'Below you'}
+          {deck != null && ` · Deck ${deck}`}
+        </span>
+        {noise && (
+          <span className="text-[10px] text-amber-900 bg-amber-100 border border-amber-300 px-1.5 py-0.5 inline-flex items-center gap-1">
+            <Volume2 className="w-3 h-3" aria-hidden /> Active space
+          </span>
+        )}
+      </div>
+      <p className="text-[12px] text-muted mt-1">
+        {venues.length > 0 ? venues.join(', ') : `Quiet residential cabins${name ? ` (${name})` : ''}.`}
+      </p>
     </div>
+  );
+}
+
+function Spec({ label, value, mono, last }: { label: string; value: string; mono?: boolean; last?: boolean }) {
+  return (
+    <div className={`flex justify-between items-center py-2.5 ${last ? '' : 'border-b hairline'}`}>
+      <span className="text-[12px] text-muted">{label}</span>
+      <span className={`text-[13px] font-medium text-ink ${mono ? 'font-mono' : ''}`}>{value}</span>
+    </div>
+  );
+}
+
+function Socket({ n, label }: { n: number; label: string }) {
+  return (
+    <div className="bg-paper border hairline rounded-xs py-2.5">
+      <div className="font-display text-2xl text-ink leading-none">{n}<span className="text-sm text-muted">×</span></div>
+      <div className="text-[10px] uppercase tracking-[0.12em] text-muted mt-1">{label}</div>
+    </div>
+  );
+}
+
+const DEST_LABELS: Record<string, string> = { buffet: 'Marketplace Buffet', theater: 'London Theatre', elevator: 'Nearest elevator' };
+
+function GettingAround({ cabin }: { cabin: CabinData }) {
+  const dests = Object.keys(cabin.distances);
+  const [dest, setDest] = useState<string>(dests.includes('buffet') ? 'buffet' : dests[0]);
+  const d = cabin.distances[dest];
+  return (
+    <section>
+      <SectionHead eyebrow="Getting around" title="Walkable distances" intro="Deterministic routes through the ship’s circulation graph — measured, not estimated." />
+      <div className="card p-6 md:p-8">
+        <div className="flex flex-wrap gap-2">
+          {dests.map((id) => (
+            <button
+              key={id}
+              onClick={() => setDest(id)}
+              className={`px-3.5 py-2 text-[13px] font-medium border transition ${
+                dest === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/15 hover:border-ink/40'
+              }`}
+            >
+              {DEST_LABELS[id] ?? id}
+            </button>
+          ))}
+        </div>
+        {d && (
+          <div className="mt-6 grid sm:grid-cols-3 gap-6 items-end">
+            <div>
+              <div className="eyebrow-mist mb-1">Distance</div>
+              <div className="font-display text-5xl text-ink leading-none">{d.meters}<span className="text-2xl text-muted"> m</span></div>
+            </div>
+            <div>
+              <div className="eyebrow-mist mb-1">Effort</div>
+              <div className="text-[15px] text-ink font-medium">{d.steps} steps · ~{Math.round(d.seconds)} s</div>
+            </div>
+            <div>
+              <div className="eyebrow-mist mb-1">Access</div>
+              <div className={`text-[14px] font-medium ${d.step_free ? 'text-emerald-800' : 'text-amber-800'}`}>
+                {d.step_free ? 'Step-free (elevator)' : 'Includes stairs'}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function DeckContext({ ship, cabin, media }: { ship: ShipData; cabin: CabinData; media: (id: string) => string | null }) {
+  const decks = Object.values(ship.decks).sort((a, b) => b.deck_number - a.deck_number);
+  return (
+    <section>
+      <SectionHead eyebrow="Your deck" title={`Deck ${cabin.deck_number} — ${cabin.deck_name}`} intro="The deck plan becomes part of the Explorer as imagery is added; the mapped decks and venues are shown below." />
+      <div className="grid lg:grid-cols-[1fr_16rem] gap-6">
+        <div>
+          <Photo src={media(`plan:${cabin.deck_number}`)} kind="plan" label={`Deck ${cabin.deck_number} plan`} ratio="21 / 9" />
+          <div className="card mt-4 p-6">
+            <div className="eyebrow-mist mb-3">Venues on nearby decks</div>
+            <ul className="space-y-2">
+              {decks.filter((d) => d.venues.length > 0).map((d) => (
+                <li key={d.deck_number} className="flex items-start gap-3 text-[13px]">
+                  <span className="font-mono text-muted w-14 shrink-0">Deck {d.deck_number}</span>
+                  <span className="text-ink">{d.venues.map((v) => v.name).join(' · ')}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* deck rail */}
+        <aside className="card p-4">
+          <div className="eyebrow-mist mb-3">Decks</div>
+          <ol className="border-l hairline">
+            {decks.map((d) => {
+              const active = d.deck_number === cabin.deck_number;
+              return (
+                <li key={d.deck_number} className={`-ml-px border-l-2 pl-3 py-2 ${active ? 'border-gold' : 'border-transparent'}`}>
+                  <div className="flex items-baseline gap-2">
+                    <span className={`font-mono text-[12px] w-6 ${active ? 'text-ink font-bold' : 'text-muted'}`}>{d.deck_number}</span>
+                    <div>
+                      <div className={`text-[13px] leading-tight ${active ? 'text-ink font-semibold' : 'text-muted'}`}>{d.name}</div>
+                      <div className="text-[10px] text-muted">{d.elevation_m} m · {d.zone.replace(/_/g, ' ').toLowerCase()}</div>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
+const LENSES = [
+  { id: 'accessibility', label: 'Mobility', Icon: Accessibility },
+  { id: 'family', label: 'Family', Icon: Users },
+  { id: 'quiet', label: 'Quiet', Icon: Moon },
+] as const;
+
+function Lenses({ cabin, lens, setLens }: { cabin: CabinData; lens: LensId; setLens: (l: LensId) => void }) {
+  const summary =
+    lens === 'accessibility' ? cabin.lenses.accessibility.summary : lens === 'family' ? cabin.lenses.family.summary : cabin.lenses.quiet.summary;
+  const headline =
+    lens === 'accessibility'
+      ? cabin.lenses.accessibility.is_certified ? 'Certified accessible stateroom' : 'Standard stateroom'
+      : lens === 'family'
+        ? cabin.lenses.family.has_connecting ? 'Adjoining family pair' : 'Single stateroom'
+        : cabin.lenses.quiet.is_quiet_tier ? 'Acoustically buffered' : 'Near an active space';
+  return (
+    <section>
+      <SectionHead eyebrow="Through a lens" title="One cabin, several perspectives" intro="Lenses are optical filters over the same spatial facts — they change the view, never the ship." />
+      <div className="card p-6 md:p-8">
+        <div className="flex gap-2">
+          {LENSES.map(({ id, label, Icon }) => (
+            <button
+              key={id}
+              onClick={() => setLens(id)}
+              className={`flex items-center gap-2 px-4 py-2.5 text-[13px] font-medium border transition ${
+                lens === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/15 hover:border-ink/40'
+              }`}
+            >
+              <Icon className="w-4 h-4" aria-hidden /> {label}
+            </button>
+          ))}
+        </div>
+        <div className="mt-6">
+          <h3 className="font-display text-2xl text-ink">{headline}</h3>
+          <p className="text-[15px] text-muted leading-relaxed mt-2 max-w-2xl">{summary}</p>
+          {lens === 'quiet' && cabin.lenses.quiet.acoustic_flags.length > 0 && (
+            <ul className="mt-4 space-y-1.5">
+              {cabin.lenses.quiet.acoustic_flags.map((f) => (
+                <li key={f} className="flex items-center gap-2 text-[13px] text-ink">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold" /> {f}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Evidence({ cabin }: { cabin: CabinData }) {
+  return (
+    <section>
+      <SectionHead eyebrow="Where this comes from" title="Evidence & provenance" intro="Every orientation traces to immutable, content-addressed sources. Timonelo never sounds more certain than its evidence." />
+      <div className="grid sm:grid-cols-2 gap-4">
+        {cabin.evidence.map((e) => (
+          <div key={e.source_id} className="card p-5">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-gold" aria-hidden />
+              <span className="text-[14px] font-medium text-ink">{e.source_id}</span>
+            </div>
+            <div className="text-[12px] text-muted mt-2">{e.locator.replace(/_/g, ' ')}</div>
+            <div className="font-mono text-[11px] text-muted mt-3 break-all">sha256:{e.sha256}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Discovery({ ship, current, onSelect }: { ship: ShipData; current: string; onSelect: (n: string) => void }) {
+  const others = Object.values(ship.cabins).filter((c) => c.cabin_number !== current);
+  if (others.length === 0) return null;
+  return (
+    <section>
+      <SectionHead eyebrow="Keep exploring" title="Other staterooms nearby" />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {others.map((c) => (
+          <button
+            key={c.cabin_number}
+            onClick={() => onSelect(c.cabin_number)}
+            className="group card p-5 text-left hover:border-ink/40 transition-colors flex items-center justify-between"
+          >
+            <div>
+              <div className="font-mono text-lg text-ink">Cabin {c.cabin_number}</div>
+              <div className="text-[12px] text-muted mt-0.5">
+                Deck {c.deck_number} · {sideLabel(c.hull_side)}{c.is_accessible ? ' · Accessible' : ''}
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-muted group-hover:text-ink transition-colors" aria-hidden />
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t hairline mt-20">
+      <div className="page-shell py-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-muted">
+        <span className="inline-flex items-center gap-2"><Anchor className="w-3.5 h-3.5" /> © {new Date().getFullYear()} Timonelo</span>
+        <span className="tracking-[0.2em]">Never more certain than the evidence.</span>
+      </div>
+    </footer>
   );
 }

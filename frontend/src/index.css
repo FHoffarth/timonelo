@@ -287,3 +287,129 @@ button {
     transform: none;
   }
 }
+
+/* ===========================================================================
+   Explorer presentation utilities (Plane 5). Reuse the site tokens; add a
+   premium card, a photography placeholder, and calm nautical textures.
+   =========================================================================== */
+.eyebrow-mist {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgb(12 27 42 / 0.12);
+  border-radius: var(--radius-control);
+}
+
+.hairline { border-color: rgb(12 27 42 / 0.10); }
+
+/* Deep hero / photo placeholder ground */
+.ground-navy {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(120% 100% at 82% 6%, rgba(201, 154, 91, 0.16), transparent 60%),
+    radial-gradient(90% 90% at 6% 100%, rgba(44, 95, 124, 0.4), transparent 55%);
+}
+
+/* Calm nautical line texture (pure CSS, no SVG layout cost) */
+.chart-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    24deg,
+    rgba(215, 197, 170, 0.10) 0,
+    rgba(215, 197, 170, 0.10) 1px,
+    transparent 1px,
+    transparent 26px
+  );
+}
+
+.media-placeholder {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(120% 120% at 78% 12%, rgba(201, 154, 91, 0.15), transparent 60%),
+    radial-gradient(100% 100% at 12% 100%, rgba(44, 95, 124, 0.45), transparent 55%);
+}
+
+/* ===========================================================================
+   Cabin Orientation Report — dedicated document layout for Print / PDF.
+   Architectural, grayscale-friendly, high-contrast, selectable text.
+   =========================================================================== */
+.report-doc { display: none; }
+
+@media screen {
+  /* A subtle on-screen preview when explicitly opened */
+  .report-doc.report-preview {
+    display: block;
+    background: #fff;
+    color: #111;
+    max-width: 210mm;
+    margin: 2rem auto;
+    padding: 18mm 16mm;
+    border: 1px solid #d8d3c8;
+    box-shadow: 0 1rem 3rem rgb(5 15 25 / 0.12);
+  }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 15mm 14mm 16mm; }
+  html, body { background: #fff !important; }
+  .screen-app, .no-print { display: none !important; }
+  .report-doc { display: block !important; color: #111; }
+  .report-doc * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .report-section { break-inside: avoid; page-break-inside: avoid; }
+  .report-break { break-before: page; page-break-before: always; }
+  a { color: inherit; text-decoration: none; }
+}
+
+/* Report internal typography (shared by print and preview) */
+.report-doc {
+  font-family: var(--font-sans);
+  color: #111;
+  line-height: 1.5;
+}
+.report-doc .r-serif { font-family: var(--font-display); }
+.report-doc h1, .report-doc h2, .report-doc h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+.report-doc .r-eyebrow {
+  font-size: 8.5pt; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #555;
+}
+.report-doc .r-rule { border-top: 1.5px solid #111; }
+.report-doc .r-hair { border-top: 1px solid #cfc9bd; }
+.report-doc table { width: 100%; border-collapse: collapse; }
+.report-doc th, .report-doc td { text-align: left; padding: 5pt 0; border-bottom: 1px solid #ddd; font-size: 10pt; }
+.report-doc th { color: #555; font-weight: 600; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; }
+.report-doc .r-unknown { color: #777; font-style: italic; }
+
+/* ===========================================================================
+   Metric-matched fallback fonts — eliminate web-font swap CLS with zero
+   network cost (no preload). The fallback occupies the same space as the web
+   font, so swap-in causes no layout shift on large headings.
+   =========================================================================== */
+@font-face {
+  font-family: "Inter-fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}
+@font-face {
+  font-family: "Newsreader-fallback";
+  src: local("Georgia");
+  ascent-override: 90%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 102%;
+}
+:root {
+  --font-display: "Newsreader Variable", "Newsreader-fallback", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter-fallback", "Helvetica Neue", Arial, sans-serif;
+}
