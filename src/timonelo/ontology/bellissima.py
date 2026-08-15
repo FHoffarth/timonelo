@@ -159,68 +159,36 @@ def create_bellissima_ontology() -> VesselSpatialOntology:
     decks[7] = Deck(7, "Mirabilis", 17.5, [Coordinate2D(0.0, 0.0), Coordinate2D(0.05, 0.7), Coordinate2D(0.95, 0.6), Coordinate2D(1.0, 0.0)], DeckVerticalZone.PROMENADE, venues=d7_venues, corridor_nodes=d7_nodes, corridor_edges=d7_edges)
 
     # =============================================================
-    # RESIDENTIAL TIERS: DECKS 08 TO 14
+    # RESIDENTIAL TIERS: DECKS 08 TO 14 (Generated via Factory Archetype Engine)
     # =============================================================
+    from timonelo.factory.archetype_generator import StateroomArchetypeGenerator
+
     residential_specs = [
-        (8, "Camellia", 21.0, DeckVerticalZone.RESIDENTIAL_LOWER, True),
-        (9, "Magnolia", 24.5, DeckVerticalZone.RESIDENTIAL_LOWER, False),
-        (10, "Mirto", 28.0, DeckVerticalZone.RESIDENTIAL_LOWER, False),
-        (11, "Ortensia", 31.5, DeckVerticalZone.RESIDENTIAL_LOWER, False),
-        (12, "Rosa", 35.0, DeckVerticalZone.RESIDENTIAL_UPPER, False),
-        (13, "Ciclamino", 38.5, DeckVerticalZone.RESIDENTIAL_UPPER, False),
-        (14, "Girasole", 42.0, DeckVerticalZone.RESIDENTIAL_UPPER, False),
+        (8, "Camellia", 21.0, DeckVerticalZone.RESIDENTIAL_LOWER),
+        (9, "Magnolia", 24.5, DeckVerticalZone.RESIDENTIAL_LOWER),
+        (10, "Mirto", 28.0, DeckVerticalZone.RESIDENTIAL_LOWER),
+        (11, "Ortensia", 31.5, DeckVerticalZone.RESIDENTIAL_LOWER),
+        (12, "Rosa", 35.0, DeckVerticalZone.RESIDENTIAL_UPPER),
+        (13, "Ciclamino", 38.5, DeckVerticalZone.RESIDENTIAL_UPPER),
+        (14, "Girasole", 42.0, DeckVerticalZone.RESIDENTIAL_UPPER),
     ]
 
-    for d_num, d_name, d_elev, d_zone, has_lifeboats in residential_specs:
-        nodes = create_deck_cores(d_num, d_elev)
+    for d_num, d_name, d_elev, d_zone in residential_specs:
+        cabins, nodes, edges = StateroomArchetypeGenerator.generate_full_deck_staterooms(
+            deck_number=d_num,
+            evidence_links=[ev_ga_full, ev_survey],
+        )
 
-        # Corridor wayfinding branch nodes
-        nodes[f"D{d_num:02d}_AFT_CORR_STBD_1"] = CorridorNode(f"D{d_num:02d}_AFT_CORR_STBD_1", d_num, Coordinate2D(0.28, 0.35))
-        nodes[f"D{d_num:02d}_AFT_CORR_PORT_1"] = CorridorNode(f"D{d_num:02d}_AFT_CORR_PORT_1", d_num, Coordinate2D(0.28, -0.35))
-        nodes[f"D{d_num:02d}_MID_CORR_STBD_1"] = CorridorNode(f"D{d_num:02d}_MID_CORR_STBD_1", d_num, Coordinate2D(0.53, 0.35))
-        nodes[f"D{d_num:02d}_MID_CORR_PORT_1"] = CorridorNode(f"D{d_num:02d}_MID_CORR_PORT_1", d_num, Coordinate2D(0.53, -0.35))
-        nodes[f"D{d_num:02d}_FWD_CORR_STBD_1"] = CorridorNode(f"D{d_num:02d}_FWD_CORR_STBD_1", d_num, Coordinate2D(0.78, 0.35))
-        nodes[f"D{d_num:02d}_FWD_CORR_PORT_1"] = CorridorNode(f"D{d_num:02d}_FWD_CORR_PORT_1", d_num, Coordinate2D(0.78, -0.35))
-
-        edges = [
-            # Main longitudinal spine connecting lift lobbies
-            CorridorEdge(f"D{d_num:02d}_AFT_LIFT", f"D{d_num:02d}_MID_LIFT", 78.0, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_MID_LIFT", f"D{d_num:02d}_FWD_LIFT", 78.0, is_step_free=True),
-            # Lateral corridor branch connections
-            CorridorEdge(f"D{d_num:02d}_AFT_LIFT", f"D{d_num:02d}_AFT_CORR_STBD_1", 12.5, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_AFT_LIFT", f"D{d_num:02d}_AFT_CORR_PORT_1", 12.5, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_MID_LIFT", f"D{d_num:02d}_MID_CORR_STBD_1", 12.5, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_MID_LIFT", f"D{d_num:02d}_MID_CORR_PORT_1", 12.5, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_FWD_LIFT", f"D{d_num:02d}_FWD_CORR_STBD_1", 12.5, is_step_free=True),
-            CorridorEdge(f"D{d_num:02d}_FWD_LIFT", f"D{d_num:02d}_FWD_CORR_PORT_1", 12.5, is_step_free=True),
-        ]
-
-        cabins: Dict[str, Cabin] = {}
-        b_type = BalconyType.PARTIAL_OBSTRUCTION_LIFEBOAT if has_lifeboats else BalconyType.UNOBSTRUCTED
-
-        # 1. Starboard Mid-Aft Balcony Staterooms (Connecting Pair)
-        c_stbd_1 = f"{d_num}122"
-        c_stbd_2 = f"{d_num}120"
-        cabins[c_stbd_1] = Cabin(c_stbd_1, d_num, HullSide.STARBOARD, "BA" if not has_lifeboats else "OB", [Coordinate2D(0.275, 0.35), Coordinate2D(0.285, 0.35), Coordinate2D(0.285, 0.65), Coordinate2D(0.275, 0.65)], DoorNode(f"DOOR_{c_stbd_1}", d_num, Coordinate2D(0.28, 0.35), f"D{d_num:02d}_AFT_CORR_STBD_1", clear_width_mm=850), 19.0, b_type, socket_std, connecting_cabin_number=c_stbd_2, bed_near_balcony=True, is_accessible_stateroom=False, evidence_links=[ev_ga_full, ev_survey])
-        cabins[c_stbd_2] = Cabin(c_stbd_2, d_num, HullSide.STARBOARD, "BA" if not has_lifeboats else "OB", [Coordinate2D(0.255, 0.35), Coordinate2D(0.265, 0.35), Coordinate2D(0.265, 0.65), Coordinate2D(0.255, 0.65)], DoorNode(f"DOOR_{c_stbd_2}", d_num, Coordinate2D(0.26, 0.35), f"D{d_num:02d}_AFT_CORR_STBD_1", clear_width_mm=850), 19.0, b_type, socket_std, connecting_cabin_number=c_stbd_1, bed_near_balcony=False, is_accessible_stateroom=False, evidence_links=[ev_ga_full])
-
-        # 2. Port Side Certified Accessible Stateroom
-        c_port_acc = f"{d_num}121"
-        cabins[c_port_acc] = Cabin(c_port_acc, d_num, HullSide.PORT, "BA_ACC", [Coordinate2D(0.270, -0.35), Coordinate2D(0.285, -0.35), Coordinate2D(0.285, -0.70), Coordinate2D(0.270, -0.70)], DoorNode(f"DOOR_{c_port_acc}", d_num, Coordinate2D(0.28, -0.35), f"D{d_num:02d}_AFT_CORR_PORT_1", clear_width_mm=950), 28.0, BalconyType.UNOBSTRUCTED, socket_acc, connecting_cabin_number=None, bed_near_balcony=True, is_accessible_stateroom=True, evidence_links=[ev_ga_full, ev_builder_spec])
-
-        # 3. Midship Deluxe Balcony Stateroom (Quiet residential core)
-        c_mid_stbd = f"{d_num}088"
-        cabins[c_mid_stbd] = Cabin(c_mid_stbd, d_num, HullSide.STARBOARD, "BR1", [Coordinate2D(0.525, 0.35), Coordinate2D(0.535, 0.35), Coordinate2D(0.535, 0.65), Coordinate2D(0.525, 0.65)], DoorNode(f"DOOR_{c_mid_stbd}", d_num, Coordinate2D(0.53, 0.35), f"D{d_num:02d}_MID_CORR_STBD_1", clear_width_mm=850), 19.0, BalconyType.UNOBSTRUCTED, socket_std, connecting_cabin_number=None, bed_near_balcony=True, is_accessible_stateroom=False, evidence_links=[ev_ga_full])
-
-        # 4. Midship Interior Quiet Stateroom (Acoustic benchmark)
-        c_mid_int = f"{d_num}089"
-        cabins[c_mid_int] = Cabin(c_mid_int, d_num, HullSide.PORT, "IR1", [Coordinate2D(0.525, -0.15), Coordinate2D(0.535, -0.15), Coordinate2D(0.535, -0.35), Coordinate2D(0.525, -0.35)], DoorNode(f"DOOR_{c_mid_int}", d_num, Coordinate2D(0.53, -0.35), f"D{d_num:02d}_MID_CORR_PORT_1", clear_width_mm=850), 16.0, BalconyType.NO_BALCONY, socket_std, connecting_cabin_number=None, bed_near_balcony=False, is_accessible_stateroom=False, evidence_links=[ev_ga_full])
-
-        # 5. Forward Premium Stateroom / Suite
-        c_fwd_suite = f"{d_num}002"
-        cabins[c_fwd_suite] = Cabin(c_fwd_suite, d_num, HullSide.STARBOARD, "SL1", [Coordinate2D(0.775, 0.35), Coordinate2D(0.790, 0.35), Coordinate2D(0.790, 0.70), Coordinate2D(0.775, 0.70)], DoorNode(f"DOOR_{c_fwd_suite}", d_num, Coordinate2D(0.78, 0.35), f"D{d_num:02d}_FWD_CORR_STBD_1", clear_width_mm=900), 27.0, BalconyType.UNOBSTRUCTED, socket_suite, connecting_cabin_number=None, bed_near_balcony=True, is_accessible_stateroom=False, evidence_links=[ev_ga_full])
-
-        decks[d_num] = Deck(d_num, d_name, d_elev, [Coordinate2D(0.0, 0.0), Coordinate2D(0.05, 0.7), Coordinate2D(0.95, 0.6), Coordinate2D(1.0, 0.0)], d_zone, cabins=cabins, corridor_nodes=nodes, corridor_edges=edges)
+        decks[d_num] = Deck(
+            deck_number=d_num,
+            name=d_name,
+            elevation_meters=d_elev,
+            perimeter_polygon=[Coordinate2D(0.0, 0.0), Coordinate2D(0.05, 0.7), Coordinate2D(0.95, 0.6), Coordinate2D(1.0, 0.0)],
+            zone=d_zone,
+            cabins=cabins,
+            corridor_nodes=nodes,
+            corridor_edges=edges,
+        )
 
     # =============================================================
     # DECK 15: RODODENDRO (Atmosphere Pool, Grand Canyon Solarium & Buffet)
