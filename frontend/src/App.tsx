@@ -111,8 +111,9 @@ function Navigation() {
           <a className="nav-link" href="#intelligence">How it works</a>
           <a className="nav-link" href="#trust">Trust</a>
           <a className="nav-link" href="#vision">Vision</a>
+          <a className="nav-link" href="/explore">Explore a ship</a>
         </div>
-        <a className="nav-cta" href="#waitlist">Join waitlist</a>
+        <a className="nav-cta" href="/explore">Explore a ship</a>
       </div>
     </nav>
   );

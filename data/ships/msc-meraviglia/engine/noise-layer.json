@@ -1,0 +1,11820 @@
+[
+  {
+    "cabin": "5001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5007",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5008",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5009",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5010",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5011",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5012",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "5013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5014",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "5015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5055",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5057",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5064",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5066",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5068",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5070",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5094",
+    "noise_sources": [
+      "bar_adjacent"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "5095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "5115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8055",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8057",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8064",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8066",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8068",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8070",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8125",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8126",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8127",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8128",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8129",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8130",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8131",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "8132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8139",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8141",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8153",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8155",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8157",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8159",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8160",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8161",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8162",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8163",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8164",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8165",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "8166",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "8167",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "8168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8169",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8170",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8171",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8173",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8175",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8176",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8177",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8178",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8192",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8194",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8196",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8198",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8200",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8208",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8210",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8212",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8214",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8216",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8222",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8228",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8230",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8232",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "8239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9055",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9057",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9064",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9066",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9068",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9070",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9125",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9127",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9129",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9131",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9139",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "9140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9141",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "9142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9143",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "9144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9145",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "9146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9147",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "9148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9153",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9155",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9157",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9158",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "9159",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9160",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "9161",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9162",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "9163",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9164",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "9165",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9166",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9167",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9169",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9170",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9171",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9173",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "9174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9175",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "9176",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9177",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "9178",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9179",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "9180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9192",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "9193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9194",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "9195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9196",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "9197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9198",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "9199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9200",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9208",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9210",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9212",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9214",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9216",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9222",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9228",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9230",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9232",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9241",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9243",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9244",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9245",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9246",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9247",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9249",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9251",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9253",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9255",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9257",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9259",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9261",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9263",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9265",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9267",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9269",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9270",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9271",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9272",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9273",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9274",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9275",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9276",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9277",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9278",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9279",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9280",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9282",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9284",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9286",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9288",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9290",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9292",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9294",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9296",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "9298",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10055",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10057",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10064",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10066",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10068",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10070",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10125",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10127",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10129",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "10130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10131",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "10132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10133",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "10134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10139",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10141",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10153",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10155",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10157",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10159",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10160",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10161",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10162",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10163",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10164",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10165",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10166",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10167",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10169",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "10170",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10171",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10173",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10175",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10176",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10177",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10178",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "10179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10192",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10194",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10196",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10198",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "10199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10200",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10208",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10210",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10212",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10214",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10216",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10222",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10228",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10230",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10232",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "10233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10234",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "10235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10241",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10243",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10244",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10245",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10246",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10247",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10249",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10251",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10253",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10255",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10257",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10259",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10261",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10263",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10265",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10267",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10270",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10272",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10274",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10276",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10278",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10280",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10282",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10284",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10286",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10288",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10290",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10292",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10294",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10296",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10298",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10300",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10302",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10304",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10306",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10308",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10310",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10312",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10314",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10316",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10318",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10320",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10322",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10324",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10326",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10328",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10330",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10332",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10334",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10336",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10338",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10340",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10342",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10344",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10346",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10348",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10350",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10352",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10354",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10356",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10358",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10360",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10362",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10364",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10366",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10368",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10370",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10372",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10374",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10376",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10378",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10380",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10382",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10384",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10386",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10388",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10390",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10392",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "10394",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11055",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11057",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11064",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11066",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11068",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11070",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11125",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11127",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11129",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11131",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11137",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "11138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11139",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "11140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11141",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "11142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11153",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11155",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11157",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11159",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11160",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11161",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11162",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11163",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11164",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11165",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11166",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11167",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11169",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11170",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "11171",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11173",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11175",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11176",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11177",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "11178",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11190",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "11191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11192",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "11193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11194",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11196",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11198",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11200",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11208",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11210",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11212",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11214",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11216",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11222",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11224",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11226",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "11227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11228",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "11229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11230",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11232",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11241",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11243",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11244",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "11245",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11246",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "11247",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11249",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11251",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11253",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11255",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11257",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11259",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11261",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11263",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11265",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11267",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11269",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11270",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11271",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11272",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11273",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11274",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11275",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11276",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11278",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11280",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11282",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11284",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11286",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11288",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11290",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11292",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11294",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11296",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11298",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11300",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11302",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11304",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11306",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11308",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11310",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11312",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11314",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11316",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11318",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11320",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11322",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11324",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11326",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11328",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11330",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11332",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11334",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11336",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11338",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11340",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11342",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11344",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11346",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11348",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11350",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11352",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11354",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11356",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11358",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11360",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11362",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11364",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11366",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11368",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11370",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11372",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11374",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11376",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11378",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11380",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11382",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11384",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11386",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11388",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11390",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11392",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11394",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11396",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11398",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11400",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11402",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11404",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11406",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "11408",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12051",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12053",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12055",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "12056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12057",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12059",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12061",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12064",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "12065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12066",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12068",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12070",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "12071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12125",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "12126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12127",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12129",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12131",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12139",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12141",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12153",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12155",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12156",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "12157",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12159",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "12160",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12161",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12162",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12163",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12164",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12165",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "12166",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12167",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12169",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12170",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12171",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12173",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12175",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12176",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12177",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12178",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "12179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12192",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12194",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12196",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12198",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12200",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12208",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "12209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12210",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12212",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "12213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12214",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "12215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12216",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12222",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12228",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12230",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "12231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12232",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "12233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12241",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12243",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12244",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12245",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12246",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12247",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12249",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12251",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12253",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12255",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12257",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12259",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12261",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12263",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12270",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12272",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12274",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12276",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12278",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12280",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12282",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12284",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12286",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12288",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12290",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12292",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12294",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12296",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12298",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12300",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12302",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12304",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12306",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12308",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12310",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12312",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12314",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12316",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12318",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12320",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12322",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12324",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12326",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12328",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12330",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12332",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12334",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12336",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12338",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12340",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12342",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12344",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12346",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12348",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12350",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12352",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12354",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12356",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12358",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12360",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12362",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12364",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12366",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12368",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "12370",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13022",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13024",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13026",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13028",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13030",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13032",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13033",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13034",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13035",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13036",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13037",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13038",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13039",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13040",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13041",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13042",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13043",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13044",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13045",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13046",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13047",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13048",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13049",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13050",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13051",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "13052",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13053",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13054",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13055",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13056",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13057",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13058",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13059",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13060",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13061",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13062",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13063",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13064",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "13065",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13066",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13067",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13068",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13069",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13070",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "13071",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13072",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13073",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13074",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13075",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13076",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13077",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13078",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13079",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13080",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13081",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13082",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13083",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13084",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13085",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13086",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13087",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13088",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13089",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13090",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13091",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13092",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13093",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13094",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13095",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13096",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13097",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13098",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13099",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13100",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13101",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13102",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13103",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13104",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13105",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13106",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13107",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13108",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13109",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13110",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13111",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13113",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13115",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "13116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13118",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13119",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13120",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13121",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13122",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13123",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13124",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13125",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13127",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13129",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13131",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13139",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13140",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13141",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13142",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13144",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13146",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13148",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.85
+  },
+  {
+    "cabin": "13149",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13150",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13151",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13153",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "13154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13155",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13157",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13159",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "13160",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13161",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13162",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13163",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13164",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13165",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13166",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13167",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13168",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13169",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13170",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13171",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13172",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13173",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13174",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13175",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13176",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13177",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13178",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13180",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13182",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13184",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13192",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "13193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13194",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13196",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.92
+  },
+  {
+    "cabin": "13197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13198",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "13199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13200",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13202",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13204",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13206",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13208",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13210",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13212",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13214",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "13215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13216",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.91
+  },
+  {
+    "cabin": "13218",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13220",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13222",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13228",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13229",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13230",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13231",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13232",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13233",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13235",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13237",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13239",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13241",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13243",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13244",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13245",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13246",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13247",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13249",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13251",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13253",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13255",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13270",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13272",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13274",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13276",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13278",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13280",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13282",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13284",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13286",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13288",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13290",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13292",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13294",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13296",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13298",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13300",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13302",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13304",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13306",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13308",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13310",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13312",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13314",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13316",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13318",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13320",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13322",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13324",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13326",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13328",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13330",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13332",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13334",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13336",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13338",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13340",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13342",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13344",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13346",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13348",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13350",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13352",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13354",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13356",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13358",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13360",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13362",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13364",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13366",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13368",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "13370",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14001",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14002",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14006",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14008",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14010",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14011",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14012",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14013",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14015",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14020",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14022",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14024",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14026",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14028",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14030",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14031",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14032",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14033",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14034",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14035",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14036",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14037",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "14038",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.78
+  },
+  {
+    "cabin": "14039",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14040",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14041",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "14042",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14043",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14044",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14045",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14046",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14047",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14048",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14049",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.78
+  },
+  {
+    "cabin": "14050",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.8
+  },
+  {
+    "cabin": "14051",
+    "noise_sources": [
+      "bar_above",
+      "pool_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14052",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "14053",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14054",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14055",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14056",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14057",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14058",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14059",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14060",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.78
+  },
+  {
+    "cabin": "14061",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14062",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14063",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.78
+  },
+  {
+    "cabin": "14064",
+    "noise_sources": [
+      "dance_floor_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14065",
+    "noise_sources": [
+      "bar_above",
+      "dance_floor_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14066",
+    "noise_sources": [
+      "dance_floor_above",
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14067",
+    "noise_sources": [
+      "dance_floor_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14068",
+    "noise_sources": [
+      "dance_floor_above",
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14069",
+    "noise_sources": [
+      "dance_floor_above",
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14070",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14071",
+    "noise_sources": [
+      "dance_floor_above",
+      "pool_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14072",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.73
+  },
+  {
+    "cabin": "14073",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14074",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14075",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "14076",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14077",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "14078",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14079",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14080",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14081",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14082",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14083",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14084",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.79
+  },
+  {
+    "cabin": "14085",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14086",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent",
+      "pool_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "14087",
+    "noise_sources": [
+      "pool_above"
+    ],
+    "confidence": 0.79
+  },
+  {
+    "cabin": "14088",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14089",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent",
+      "pool_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "14090",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14091",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14092",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14093",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14094",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "14095",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14096",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14097",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "14098",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "14099",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14100",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14101",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "14102",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14103",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14104",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14105",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14106",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14107",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14108",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14109",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14110",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14111",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14112",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14113",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14114",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14115",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14116",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14118",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "14119",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14120",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "14121",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14122",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.89
+  },
+  {
+    "cabin": "14123",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14124",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "14125",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "14126",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14127",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "14128",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14129",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.9
+  },
+  {
+    "cabin": "14130",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14131",
+    "noise_sources": [
+      "lift_adjacent"
+    ],
+    "confidence": 0.86
+  },
+  {
+    "cabin": "14132",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14133",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14134",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14135",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14136",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14137",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14138",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14139",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14140",
+    "noise_sources": [
+      "bar_above",
+      "lift_adjacent"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14141",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14142",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14143",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14144",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14145",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14146",
+    "noise_sources": [
+      "bar_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14147",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14148",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14149",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14150",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14151",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14152",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14153",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14154",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14155",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14156",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14157",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14158",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14159",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14160",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14161",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14162",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14163",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14164",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14165",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14166",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14167",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14168",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14169",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14170",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14171",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14172",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14173",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14174",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14175",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14176",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14177",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14178",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "14179",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14180",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.81
+  },
+  {
+    "cabin": "14181",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14182",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14183",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14184",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14185",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14186",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14187",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14188",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14189",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14190",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14191",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14192",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14193",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14194",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14195",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14196",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14197",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14198",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14199",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14200",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "14201",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14202",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.77
+  },
+  {
+    "cabin": "14203",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14204",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.82
+  },
+  {
+    "cabin": "14205",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14206",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.87
+  },
+  {
+    "cabin": "14207",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14208",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "14209",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14210",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.83
+  },
+  {
+    "cabin": "14211",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14212",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.78
+  },
+  {
+    "cabin": "14213",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14214",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14215",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14216",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14218",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14219",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14220",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "14221",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14222",
+    "noise_sources": [
+      "restaurant_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "14223",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14224",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14225",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14226",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14227",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14228",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14230",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14232",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14234",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14236",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14238",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14240",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14242",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14244",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14246",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14248",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14250",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14252",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14254",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14256",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14258",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14260",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14262",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14264",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14266",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "14268",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15001",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "15002",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.88
+  },
+  {
+    "cabin": "15003",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "15004",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.84
+  },
+  {
+    "cabin": "15005",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "15006",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.8
+  },
+  {
+    "cabin": "15007",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "15008",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15009",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.8
+  },
+  {
+    "cabin": "15010",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15011",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15012",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "15013",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15015",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "15016",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15018",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15019",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15020",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "15021",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15022",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15023",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15024",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15025",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15026",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15027",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15029",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15031",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "15033",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "15035",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15037",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "15039",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16001",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16002",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "restaurant_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16003",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "16004",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "restaurant_above"
+    ],
+    "confidence": 0.72
+  },
+  {
+    "cabin": "16005",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "16006",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "restaurant_above"
+    ],
+    "confidence": 0.7
+  },
+  {
+    "cabin": "16007",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "16008",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "restaurant_above"
+    ],
+    "confidence": 0.7
+  },
+  {
+    "cabin": "16009",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "16010",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "16011",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "16012",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "16013",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16014",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "16015",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16016",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "16018",
+    "noise_sources": [
+      "nightlife_above"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16019",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16020",
+    "noise_sources": [
+      "nightlife_above",
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "16022",
+    "noise_sources": [
+      "nightlife_above",
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16024",
+    "noise_sources": [
+      "nightlife_above",
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "16026",
+    "noise_sources": [
+      "nightlife_above",
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "18001",
+    "noise_sources": [
+      "nightlife_below",
+      "restaurant_adjacent"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18002",
+    "noise_sources": [
+      "nightlife_below",
+      "restaurant_adjacent"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18003",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "18004",
+    "noise_sources": [],
+    "confidence": 0.5
+  },
+  {
+    "cabin": "18005",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18006",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18007",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "18008",
+    "noise_sources": [
+      "nightlife_adjacent"
+    ],
+    "confidence": 0.76
+  },
+  {
+    "cabin": "18009",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.74
+  },
+  {
+    "cabin": "18010",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18011",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.79
+  },
+  {
+    "cabin": "18012",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18013",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.8
+  },
+  {
+    "cabin": "18014",
+    "noise_sources": [
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18015",
+    "noise_sources": [
+      "lift_adjacent",
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.8
+  },
+  {
+    "cabin": "18016",
+    "noise_sources": [
+      "lift_adjacent",
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18018",
+    "noise_sources": [
+      "lift_adjacent",
+      "nightlife_adjacent",
+      "nightlife_below"
+    ],
+    "confidence": 0.71
+  },
+  {
+    "cabin": "18019",
+    "noise_sources": [
+      "lift_adjacent",
+      "nightlife_adjacent",
+      "nightlife_below",
+      "pool_below"
+    ],
+    "confidence": 0.7
+  }
+]

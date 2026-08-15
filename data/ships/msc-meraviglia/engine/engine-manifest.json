@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "engine": {
+    "name": "Lighthouse Spatial Evidence Engine",
+    "version": "0.1.0"
+  },
+  "runtime": {
+    "python": "3.14.7",
+    "pymupdf": "1.26.4",
+    "pillow": "12.3.0"
+  },
+  "determinism": {
+    "deterministic": true,
+    "timestamp_included": false,
+    "composite_assessment": false
+  },
+  "algorithms": {
+    "ship_graph": "E-001/vector-text-geometry-v2",
+    "noise": "E-002/structural-proximity-v2",
+    "motion": "E-003/normalized-geometry-v1"
+  },
+  "inputs": {
+    "source_pdf": {
+      "file": "msc-meraviglia-deckplan.pdf",
+      "sha256": "6c343a1b321319c900df3ff8c4f7d24194fee8d0ca227a74aff1a21f238787f2"
+    },
+    "motion_config": {
+      "file": "motion-geometry.json",
+      "sha256": "a2acec7c85709387b4cbfc784e757815e20f29c5a191ed1549f68f8c64435a5b"
+    },
+    "extraction_config": {
+      "file": "extraction-meraviglia.json",
+      "sha256": "eac5c065c925ba853765122751ec3f23e5980c5f40bba7af72865720771da9ac"
+    }
+  },
+  "artifacts": {
+    "ship_graph": {
+      "file": "ship-graph.json",
+      "sha256": "7f2e114f1bf6366035aabb60abf0ec9b24dbcd4d71c70b6297781ec55688a149"
+    },
+    "noise_layer": {
+      "file": "noise-layer.json",
+      "sha256": "07c2ae8f49d92395ee1b14232251c1da72b0bee72b0234c60dfe17dd17ddbf4e"
+    },
+    "motion_layer": {
+      "file": "motion-layer.json",
+      "sha256": "34261e81ee9da7a9b68173a000b2b435a85916cdc555473126212d05be2a8a92"
+    },
+    "visualization": {
+      "file": "extraction-pipeline.png",
+      "sha256": "9f148f397914236b65bd672df41375969c8250d3f1f906529c4128e3fe2ec9ca"
+    }
+  },
+  "validation": {
+    "status": "passed",
+    "ship_graph": {
+      "decks": 11,
+      "cabins": 2228,
+      "elevators": 51,
+      "public_areas": 71,
+      "nodes": 2361,
+      "edges": 4398
+    },
+    "noise_layer": {
+      "records": 2228,
+      "records_with_evidence": 310
+    },
+    "motion_layer": {
+      "records": 2228
+    },
+    "cabin_identity_equal_across_layers": true
+  }
+}

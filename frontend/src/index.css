@@ -287,3 +287,69 @@ button {
     transform: none;
   }
 }
+
+/* ============================================================
+   Cruise Explorer — additive design tokens and utilities.
+   Scoped under .explorer so the public landing is untouched.
+   ============================================================ */
+@theme {
+  --font-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --color-navy: #0d243b;
+  --color-navy-700: #16324f;
+  --color-navy-600: #234863;
+  --color-sea: #2c5f7c;
+  --color-mist: #4f6576;
+  --color-fog: #556b79;
+  --color-paper-2: #ece7dd;
+  --color-card: #ffffff;
+  --color-line: #e2ddd2;
+  --color-line-cool: #d5dde4;
+  --color-brass: #a9814a;
+  --color-brass-soft: #cbb489;
+  --color-mint: #3f7d6e;
+  --color-amber: #8f6327;
+}
+
+.explorer {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.explorer .eyebrow {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+.explorer .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+/* Nautical-chart hero backdrop: layered depth contours, self-contained */
+.chart-bg {
+  background-color: var(--color-navy);
+  background-image:
+    radial-gradient(120% 90% at 82% 8%, rgba(203, 180, 137, 0.16), transparent 60%),
+    radial-gradient(90% 80% at 8% 100%, rgba(44, 95, 124, 0.5), transparent 55%);
+  position: relative;
+  overflow: hidden;
+}
+
+.explorer .card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+}
+
+.rail-tick {
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.explorer a:focus-visible,
+.explorer button:focus-visible {
+  outline: 2px solid var(--color-sea);
+  outline-offset: 2px;
+}
