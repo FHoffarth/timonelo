@@ -1,6 +1,7 @@
 import { type CSSProperties, type FormEvent, type ReactNode, useEffect, useRef, useState } from 'react';
 
 import chevronRight from './assets/chevron-right.svg';
+import Explorer from './explorer/Explorer';
 
 const heroCruise = '/hero-cruise-golden-hour.webp';
 
@@ -36,6 +37,10 @@ const trustPrinciples = [
 ];
 
 export default function App() {
+  if (window.location.pathname.startsWith('/explore')) {
+    return <Explorer />;
+  }
+
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink">
       <a className="skip-link" href="#main-content">
@@ -110,6 +115,7 @@ function Navigation() {
           <a className="nav-link" href="#why">The problem</a>
           <a className="nav-link" href="#intelligence">How it works</a>
           <a className="nav-link" href="#trust">Trust</a>
+          <a className="nav-link" href="/explore/ships/msc-bellissima">Explore ship</a>
           <a className="nav-link" href="#vision">Vision</a>
         </div>
         <a className="nav-cta" href="#waitlist">Join waitlist</a>
@@ -252,6 +258,12 @@ function CabinIntelligence() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 flex flex-col items-start gap-4 border-l-2 border-gold pl-6 sm:flex-row sm:items-center sm:justify-between sm:pl-8" delay={0.08}>
+          <p className="max-w-xl text-sm leading-6 text-muted">
+            Explore the first canonical Knowledge Pack with complete source provenance.
+          </p>
+          <a className="button button-dark" href="/explore/ships/msc-bellissima">Explore MSC Bellissima</a>
+        </Reveal>
       </div>
     </section>
   );
