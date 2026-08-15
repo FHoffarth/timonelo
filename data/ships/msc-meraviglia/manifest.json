@@ -1,0 +1,16 @@
+{
+  "name": "MSC Meraviglia",
+  "imo_number": "IMO9647710",
+  "ship_class": "Meraviglia Class",
+  "builder": "STX France (Chantiers de l'Atlantique, Saint-Nazaire)",
+  "hull_number": "B34",
+  "delivery_date": "2017-05-31",
+  "maiden_voyage": "2017-06-10",
+  "length_overall_meters": 315.83,
+  "beam_meters": 43.0,
+  "gross_tonnage": 171598,
+  "total_decks": 19,
+  "passenger_decks": 14,
+  "baseline_reference_vessel": "MSC Bellissima (IMO9766205)",
+  "inheritance_type": "SPEC-008_DIRECT_SISTER_PATCH"
+}

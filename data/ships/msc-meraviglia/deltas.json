@@ -1,0 +1,53 @@
+{
+  "$schema": "https://timonelo.org/schemas/ship-patch-v1.json",
+  "patch_version": "1.0.0",
+  "target_imo": "IMO9647710",
+  "target_name": "MSC Meraviglia",
+  "ship_class": "Meraviglia Class",
+  "base_vessel_imo": "IMO9766205",
+  "base_vessel_name": "MSC Bellissima",
+  "operations": [
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_THEATER",
+      "new_name": "Broadway Theatre (Lower Level)"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 7,
+      "venue_id": "VENUE_THEATER_UPPER",
+      "new_name": "Broadway Theatre (Balcony Level)"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_PROMENADE",
+      "new_name": "Galleria Meraviglia (80m LED Dome)"
+    },
+    {
+      "op": "REPLACE_VENUE",
+      "deck": 7,
+      "venue_id": "VENUE_HOLA_TAPAS",
+      "replacement": {
+        "venue_id": "VENUE_EATALY",
+        "name": "Eataly Ristorante Italiano & Food Market",
+        "category": "DINING",
+        "is_noise_generator": false,
+        "is_open_deck": false
+      }
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_IL_CILIEGIO",
+      "new_name": "Waves & Panorama Restaurant"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 7,
+      "venue_id": "VENUE_CAROUSEL_LOUNGE",
+      "new_name": "Carousel Lounge (Cirque du Soleil at Sea Arena)"
+    }
+  ]
+}

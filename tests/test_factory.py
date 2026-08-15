@@ -9,6 +9,7 @@ from timonelo.factory.manifest_importer import ManifestImporter, CabinManifestRe
 from timonelo.factory.corridor_generator import CorridorMeshGenerator
 from timonelo.factory.validator import SpatialIntegrityValidator
 from timonelo.factory.compiler import KnowledgeFactoryCompiler
+from timonelo.factory.patch_engine import ShipPatchEngine
 from timonelo.ontology.bellissima import create_bellissima_ontology
 from timonelo.ontology.models import HullSide, BalconyType, EvidenceLink
 
@@ -91,6 +92,41 @@ class TestKnowledgeFactory(unittest.TestCase):
         self.assertIn("GATE_3_SANDWICH_INTEGRITY", report.quality_gates_passed)
         self.assertIn("GATE_4_CIRCULATION_CONNECTED", report.quality_gates_passed)
 
+    def test_ship_patch_engine_meraviglia(self):
+        patch_data = {
+            "target_imo": "IMO9647710",
+            "target_name": "MSC Meraviglia",
+            "operations": [
+                {
+                    "op": "RENAME_VENUE",
+                    "deck": 6,
+                    "venue_id": "VENUE_THEATER",
+                    "new_name": "Broadway Theatre (Lower Level)",
+                },
+                {
+                    "op": "REPLACE_VENUE",
+                    "deck": 7,
+                    "venue_id": "VENUE_HOLA_TAPAS",
+                    "replacement": {
+                        "venue_id": "VENUE_EATALY",
+                        "name": "Eataly Ristorante Italiano & Food Market",
+                        "category": "DINING",
+                    },
+                },
+            ],
+        }
+        derivative = ShipPatchEngine.apply_patch(self.ontology, patch_data)
+        self.assertEqual(derivative.name, "MSC Meraviglia")
+        self.assertEqual(derivative.imo_number, "IMO9647710")
+        self.assertEqual(derivative.decks[6].venues["VENUE_THEATER"].name, "Broadway Theatre (Lower Level)")
+        self.assertIn("VENUE_EATALY", derivative.decks[7].venues)
+        self.assertNotIn("VENUE_HOLA_TAPAS", derivative.decks[7].venues)
+        # Ensure baseline ontology was not mutated
+        self.assertEqual(self.ontology.name, "MSC Bellissima")
+        self.assertEqual(self.ontology.decks[6].venues["VENUE_THEATER"].name, "London Theatre (Lower Level)")
+
 
 if __name__ == "__main__":
     unittest.main()
+
+

@@ -20,7 +20,7 @@ import type { ShipData, CabinData } from './types';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
 import { updateSocialHead, shipSlug } from './share';
-import { cabinFromLocation, cabinPath } from './routing';
+import { cabinFromLocation, cabinPath, parseCabinRoute } from './routing';
 import { BoardingIntelligence } from './boarding';
 
 const DEFAULT_CABIN = '14122';
@@ -34,7 +34,11 @@ export default function App() {
   const media = useMedia();
 
   useEffect(() => {
-    fetch('/data/msc-bellissima.json')
+    const parsed = parseCabinRoute(window.location.pathname);
+    const slugQuery = new URLSearchParams(window.location.search).get('ship');
+    const targetSlug = parsed?.shipSlug || slugQuery || 'msc-bellissima';
+
+    fetch(`/data/${targetSlug}.json`)
       .then((res) => res.json())
       .then((data: ShipData) => {
         setShip(data);

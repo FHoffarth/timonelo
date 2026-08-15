@@ -84,6 +84,7 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ## 4. Technical Audits & Operational Certifications
 
+- **[MERAVIGLIA_FACTORY_VALIDATION.md](MERAVIGLIA_FACTORY_VALIDATION.md)**: Official Factory Validation Report & Platform Proof through compilation of Ship #2 (*MSC Meraviglia*).
 - **[REALITY_CERTIFICATION.md](REALITY_CERTIFICATION.md)**: Naval Surveyor ground-truth comparison and reality classification ledger.
 - **[PRODUCTION_READINESS_REPORT.md](PRODUCTION_READINESS_REPORT.md)**: Final QA stress test, 100 simulated passenger journeys, and Production Launch Certification (GO).
 - **[SHIPYARD_READY.md](SHIPYARD_READY.md)**: Formal shipyard readiness certification and multi-vessel scaling blueprint.
