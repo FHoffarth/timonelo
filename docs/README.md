@@ -80,6 +80,7 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ## 4. Technical Audits & Operational Certifications
 
+- **[PRODUCTION_READINESS_REPORT.md](PRODUCTION_READINESS_REPORT.md)**: Final QA stress test, 100 simulated passenger journeys, and Production Launch Certification (GO).
 - **[SHIPYARD_READY.md](SHIPYARD_READY.md)**: Formal shipyard readiness certification and multi-vessel scaling blueprint.
 - **[MERAVIGLIA_INHERITANCE.md](MERAVIGLIA_INHERITANCE.md)**: Class-level inheritance and shipyard reuse analysis across the Meraviglia & Meraviglia-Plus fleet.
 - **[BELLISSIMA_COMPLETENESS_REPORT.md](BELLISSIMA_COMPLETENESS_REPORT.md)**: Formal certification and completeness matrix of MSC Bellissima as a 100% Operational Digital Twin.
