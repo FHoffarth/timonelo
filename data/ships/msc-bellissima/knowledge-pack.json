@@ -19,8 +19,32 @@
           "is_noise_generator": false
         },
         {
+          "id": "VENUE_INFINITY_ATRIUM_L5",
+          "name": "Infinity Atrium & Swarovski Stairs (Deck 5)",
+          "category": "PROMENADE_ATRIUM",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_INFINITY_BAR",
+          "name": "Infinity Bar",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": false
+        },
+        {
           "id": "VENUE_MEDICAL",
           "name": "Medical Centre",
+          "category": "SERVICE_PANTRY",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_EXCURSIONS",
+          "name": "MSC Shore Excursions Desk",
+          "category": "PROMENADE_ATRIUM",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_BUSINESS_CENTRE",
+          "name": "Business Centre & Conference Rooms",
           "category": "SERVICE_PANTRY",
           "is_noise_generator": false
         }
@@ -34,13 +58,13 @@
       "venues": [
         {
           "id": "VENUE_THEATER",
-          "name": "London Theatre",
+          "name": "London Theatre (Lower Level)",
           "category": "THEATER",
           "is_noise_generator": true
         },
         {
           "id": "VENUE_PROMENADE",
-          "name": "Galleria Bellissima (LED Dome)",
+          "name": "Galleria Bellissima (80m LED Dome)",
           "category": "PROMENADE_ATRIUM",
           "is_noise_generator": true
         },
@@ -49,6 +73,24 @@
           "name": "Il Ciliegio & Le Cerisier Restaurant",
           "category": "DINING",
           "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_MASTERS_OF_THE_SEA",
+          "name": "Masters of the Sea British Pub",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_JEAN_PHILIPPE_CHOCOLAT",
+          "name": "Jean-Philippe Maury Chocolat & Caf\u00e9",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_TV_STUDIO",
+          "name": "TV Studio & Comedy Bar",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": true
         }
       ]
     },
@@ -71,10 +113,34 @@
           "is_noise_generator": true
         },
         {
+          "id": "VENUE_CHAMPAGNE_BAR",
+          "name": "Champagne Bar & Grand Staircase",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": false
+        },
+        {
           "id": "VENUE_BUTCHERS_CUT",
           "name": "Butcher's Cut Steakhouse",
           "category": "DINING",
           "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_KAITO_TEPPANYAKI",
+          "name": "Kaito Teppanyaki & Sushi Bar",
+          "category": "DINING",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_HOLA_TAPAS",
+          "name": "HOLA! Tapas Bar by Ram\u00f3n Freixa",
+          "category": "DINING",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_THEATER_UPPER",
+          "name": "London Theatre (Balcony Level)",
+          "category": "THEATER",
+          "is_noise_generator": true
         }
       ]
     },
@@ -135,15 +201,27 @@
       "venues": [
         {
           "id": "VENUE_BUFFET",
-          "name": "Marketplace Buffet",
+          "name": "Marketplace Buffet (Forward & Mid)",
           "category": "BUFFET",
           "is_noise_generator": true
         },
         {
-          "id": "VENUE_ATMOSPHERE_POOL",
-          "name": "Atmosphere Pool & Solarium",
+          "id": "VENUE_GRAND_CANYON_POOL",
+          "name": "Grand Canyon Covered Pool (Solarium)",
           "category": "POOL_SOLARIUM",
           "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_ATMOSPHERE_POOL",
+          "name": "Atmosphere Pool & Main Sun Deck",
+          "category": "POOL_SOLARIUM",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_TOP_SAIL_LOUNGE_L15",
+          "name": "MSC Yacht Club Top Sail Lounge (Deck 15)",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": false
         }
       ]
     },
@@ -154,15 +232,33 @@
       "zone": "LIDO_SPORTS",
       "venues": [
         {
+          "id": "VENUE_BUFFET_AFT",
+          "name": "Marketplace Buffet (Aft Terrace & Pizzeria)",
+          "category": "BUFFET",
+          "is_noise_generator": true
+        },
+        {
           "id": "VENUE_GYM",
           "name": "MSC Gym by Technogym",
           "category": "SPA_FITNESS",
           "is_noise_generator": false
         },
         {
+          "id": "VENUE_SPORTPLEX",
+          "name": "Sportplex Arena & F1 Simulator",
+          "category": "SPA_FITNESS",
+          "is_noise_generator": true
+        },
+        {
           "id": "VENUE_AUREA_SPA",
           "name": "MSC Aurea Spa & Thermal Suite",
           "category": "SPA_FITNESS",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_TOP_SAIL_RESTAURANT",
+          "name": "MSC Yacht Club Restaurant",
+          "category": "DINING",
           "is_noise_generator": false
         }
       ]
@@ -174,16 +270,28 @@
       "zone": "LIDO_SPORTS",
       "venues": [
         {
+          "id": "VENUE_HORIZON_AMPHITHEATRE",
+          "name": "Horizon Amphitheatre & Sunset Bar",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": true
+        },
+        {
           "id": "VENUE_DOREMI_KIDS",
-          "name": "DOREMI Studio & Junior Club (LEGO)",
+          "name": "DOREMI Studio & Junior Club (LEGO / Chicco)",
           "category": "YOUTH_KIDS",
           "is_noise_generator": false
         },
         {
           "id": "VENUE_AQUAPARK",
-          "name": "Arizona Aquapark & Himalayan Bridge",
+          "name": "Arizona Aquapark & Himalayan Bridge (82m above sea)",
           "category": "POOL_SOLARIUM",
           "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_TOP_SAIL_LOUNGE_L18",
+          "name": "MSC Yacht Club Top Sail Lounge (Deck 18)",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": false
         }
       ]
     },
@@ -198,11 +306,293 @@
           "name": "Top Deck Solarium & The One Pool",
           "category": "POOL_SOLARIUM",
           "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_THE_ONE_GRILL",
+          "name": "The One Grill & Bar (Yacht Club Exclusive)",
+          "category": "DINING",
+          "is_noise_generator": false
         }
       ]
     }
   },
   "cabins": {
+    "8002": {
+      "cabin_number": "8002",
+      "deck_number": 8,
+      "deck_name": "Camellia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 7,
+          "deck_name": "Mirabilis",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 183.5,
+          "seconds": 146.8,
+          "steps": 245,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 49.5,
+          "seconds": 39.6,
+          "steps": 66,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 217.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 217.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "8088": {
+      "cabin_number": "8088",
+      "deck_number": 8,
+      "deck_name": "Camellia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 7,
+          "deck_name": "Mirabilis",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 105.5,
+          "seconds": 84.4,
+          "steps": 141,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 127.5,
+          "seconds": 102.0,
+          "steps": 170,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 139.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 139.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "8089": {
+      "cabin_number": "8089",
+      "deck_number": 8,
+      "deck_name": "Camellia",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 7,
+          "deck_name": "Mirabilis",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 105.5,
+          "seconds": 84.4,
+          "steps": 141,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 127.5,
+          "seconds": 102.0,
+          "steps": 170,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 139.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 139.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
     "8120": {
       "cabin_number": "8120",
       "deck_number": 8,
@@ -486,6 +876,285 @@
           "source_id": "EVID-SURVEY-2024-COMPREHENSIVE",
           "sha256": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
           "locator": "Onboard_Survey_2024_All_Residential_Corridors"
+        }
+      ]
+    },
+    "9002": {
+      "cabin_number": "9002",
+      "deck_number": 9,
+      "deck_name": "Magnolia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 8,
+          "deck_name": "Camellia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 180.0,
+          "seconds": 144.0,
+          "steps": 240,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 53.0,
+          "seconds": 42.4,
+          "steps": 71,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 214.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 214.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 10",
+            "Protected underfoot: Residential cabins on Deck 8",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "9088": {
+      "cabin_number": "9088",
+      "deck_number": 9,
+      "deck_name": "Magnolia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 8,
+          "deck_name": "Camellia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 102.0,
+          "seconds": 81.6,
+          "steps": 136,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 131.0,
+          "seconds": 104.8,
+          "steps": 175,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 136.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 136.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 10",
+            "Protected underfoot: Residential cabins on Deck 8",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "9089": {
+      "cabin_number": "9089",
+      "deck_number": 9,
+      "deck_name": "Magnolia",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 8,
+          "deck_name": "Camellia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 102.0,
+          "seconds": 81.6,
+          "steps": 136,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 131.0,
+          "seconds": 104.8,
+          "steps": 175,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 136.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 136.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 10",
+            "Protected underfoot: Residential cabins on Deck 8",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
         }
       ]
     },
@@ -778,6 +1447,285 @@
         }
       ]
     },
+    "10002": {
+      "cabin_number": "10002",
+      "deck_number": 10,
+      "deck_name": "Mirto",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 176.5,
+          "seconds": 141.2,
+          "steps": 235,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 56.5,
+          "seconds": 45.2,
+          "steps": 75,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 210.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 210.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 11",
+            "Protected underfoot: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "10088": {
+      "cabin_number": "10088",
+      "deck_number": 10,
+      "deck_name": "Mirto",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 98.5,
+          "seconds": 78.8,
+          "steps": 131,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 134.5,
+          "seconds": 107.6,
+          "steps": 179,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 132.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 132.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 11",
+            "Protected underfoot: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "10089": {
+      "cabin_number": "10089",
+      "deck_number": 10,
+      "deck_name": "Mirto",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 9,
+          "deck_name": "Magnolia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 98.5,
+          "seconds": 78.8,
+          "steps": 131,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 134.5,
+          "seconds": 107.6,
+          "steps": 179,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 132.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 132.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 11",
+            "Protected underfoot: Residential cabins on Deck 9",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
     "10120": {
       "cabin_number": "10120",
       "deck_number": 10,
@@ -1064,6 +2012,285 @@
           "source_id": "EVID-SURVEY-2024-COMPREHENSIVE",
           "sha256": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
           "locator": "Onboard_Survey_2024_All_Residential_Corridors"
+        }
+      ]
+    },
+    "11002": {
+      "cabin_number": "11002",
+      "deck_number": 11,
+      "deck_name": "Ortensia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 173.0,
+          "seconds": 138.4,
+          "steps": 231,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 60.0,
+          "seconds": 48.0,
+          "steps": 80,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 207.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 207.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 12",
+            "Protected underfoot: Residential cabins on Deck 10",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "11088": {
+      "cabin_number": "11088",
+      "deck_number": 11,
+      "deck_name": "Ortensia",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 95.0,
+          "seconds": 76.0,
+          "steps": 127,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 138.0,
+          "seconds": 110.4,
+          "steps": 184,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 129.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 129.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 12",
+            "Protected underfoot: Residential cabins on Deck 10",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "11089": {
+      "cabin_number": "11089",
+      "deck_number": 11,
+      "deck_name": "Ortensia",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 10,
+          "deck_name": "Mirto",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 95.0,
+          "seconds": 76.0,
+          "steps": 127,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 138.0,
+          "seconds": 110.4,
+          "steps": 184,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 129.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 129.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 12",
+            "Protected underfoot: Residential cabins on Deck 10",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
         }
       ]
     },
@@ -1356,6 +2583,285 @@
         }
       ]
     },
+    "12002": {
+      "cabin_number": "12002",
+      "deck_number": 12,
+      "deck_name": "Rosa",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 169.5,
+          "seconds": 135.6,
+          "steps": 226,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 63.5,
+          "seconds": 50.8,
+          "steps": 85,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 203.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 203.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 13",
+            "Protected underfoot: Residential cabins on Deck 11",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "12088": {
+      "cabin_number": "12088",
+      "deck_number": 12,
+      "deck_name": "Rosa",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 91.5,
+          "seconds": 73.2,
+          "steps": 122,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 141.5,
+          "seconds": 113.2,
+          "steps": 189,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 125.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 125.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 13",
+            "Protected underfoot: Residential cabins on Deck 11",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "12089": {
+      "cabin_number": "12089",
+      "deck_number": 12,
+      "deck_name": "Rosa",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 11,
+          "deck_name": "Ortensia",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 91.5,
+          "seconds": 73.2,
+          "steps": 122,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 141.5,
+          "seconds": 113.2,
+          "steps": 189,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 125.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 125.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 13",
+            "Protected underfoot: Residential cabins on Deck 11",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
     "12120": {
       "cabin_number": "12120",
       "deck_number": 12,
@@ -1642,6 +3148,285 @@
           "source_id": "EVID-SURVEY-2024-COMPREHENSIVE",
           "sha256": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
           "locator": "Onboard_Survey_2024_All_Residential_Corridors"
+        }
+      ]
+    },
+    "13002": {
+      "cabin_number": "13002",
+      "deck_number": 13,
+      "deck_name": "Ciclamino",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 14,
+          "deck_name": "Girasole",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 166.0,
+          "seconds": 132.8,
+          "steps": 221,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 67.0,
+          "seconds": 53.6,
+          "steps": 89,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 200.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 200.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 14",
+            "Protected underfoot: Residential cabins on Deck 12",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "13088": {
+      "cabin_number": "13088",
+      "deck_number": 13,
+      "deck_name": "Ciclamino",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 14,
+          "deck_name": "Girasole",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 88.0,
+          "seconds": 70.4,
+          "steps": 117,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 145.0,
+          "seconds": 116.0,
+          "steps": 193,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 122.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 122.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 14",
+            "Protected underfoot: Residential cabins on Deck 12",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "13089": {
+      "cabin_number": "13089",
+      "deck_number": 13,
+      "deck_name": "Ciclamino",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 14,
+          "deck_name": "Girasole",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 12,
+          "deck_name": "Rosa",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 88.0,
+          "seconds": 70.4,
+          "steps": 117,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 145.0,
+          "seconds": 116.0,
+          "steps": 193,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 122.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 122.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 14",
+            "Protected underfoot: Residential cabins on Deck 12",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
         }
       ]
     },
@@ -1934,6 +3719,290 @@
         }
       ]
     },
+    "14002": {
+      "cabin_number": "14002",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "SL1",
+      "square_meters": 27.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 900,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "MSC Yacht Club Top Sail Lounge (Deck 15)"
+          ],
+          "is_residential": false,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 162.5,
+          "seconds": 130.0,
+          "steps": 217,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 70.5,
+          "seconds": 56.4,
+          "steps": 94,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 168.5,
+          "seconds": 134.8,
+          "steps": 225,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 900mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 196.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 196.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected underfoot: Residential cabins on Deck 13",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "14088": {
+      "cabin_number": "14088",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "BR1",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "Atmosphere Pool & Main Sun Deck"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 84.5,
+          "seconds": 67.6,
+          "steps": 113,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 148.5,
+          "seconds": 118.8,
+          "steps": 198,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 118.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 118.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Atmosphere Pool & Main Sun Deck on Deck 15",
+            "Protected underfoot: Residential cabins on Deck 13",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
+    "14089": {
+      "cabin_number": "14089",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "IR1",
+      "square_meters": 16.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "Atmosphere Pool & Main Sun Deck"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 84.5,
+          "seconds": 67.6,
+          "steps": 113,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 148.5,
+          "seconds": 118.8,
+          "steps": 198,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 90.5,
+          "seconds": 72.4,
+          "steps": 121,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 118.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 118.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Atmosphere Pool & Main Sun Deck on Deck 15",
+            "Protected underfoot: Residential cabins on Deck 13",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Full_Decks_01_19"
+        }
+      ]
+    },
     "14120": {
       "cabin_number": "14120",
       "deck_number": 14,
@@ -1959,7 +4028,7 @@
           "deck_number": 15,
           "deck_name": "Rododendro",
           "venues": [
-            "Marketplace Buffet"
+            "Marketplace Buffet (Forward & Mid)"
           ],
           "is_residential": false,
           "is_noise_generator": true
@@ -2014,7 +4083,7 @@
         "quiet": {
           "is_quiet_tier": false,
           "acoustic_flags": [
-            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Overhead venue: Marketplace Buffet (Forward & Mid) on Deck 15",
             "Protected underfoot: Residential cabins on Deck 13",
             "Buffered from elevator lobby (12.5m distance)"
           ],
@@ -2054,7 +4123,7 @@
           "deck_number": 15,
           "deck_name": "Rododendro",
           "venues": [
-            "Marketplace Buffet"
+            "Marketplace Buffet (Forward & Mid)"
           ],
           "is_residential": false,
           "is_noise_generator": true
@@ -2109,7 +4178,7 @@
         "quiet": {
           "is_quiet_tier": false,
           "acoustic_flags": [
-            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Overhead venue: Marketplace Buffet (Forward & Mid) on Deck 15",
             "Protected underfoot: Residential cabins on Deck 13",
             "Buffered from elevator lobby (12.5m distance)"
           ],
@@ -2154,7 +4223,7 @@
           "deck_number": 15,
           "deck_name": "Rododendro",
           "venues": [
-            "Marketplace Buffet"
+            "Marketplace Buffet (Forward & Mid)"
           ],
           "is_residential": false,
           "is_noise_generator": true
@@ -2209,7 +4278,7 @@
         "quiet": {
           "is_quiet_tier": false,
           "acoustic_flags": [
-            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Overhead venue: Marketplace Buffet (Forward & Mid) on Deck 15",
             "Protected underfoot: Residential cabins on Deck 13",
             "Buffered from elevator lobby (12.5m distance)"
           ],

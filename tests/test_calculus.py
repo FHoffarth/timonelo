@@ -41,7 +41,7 @@ class TestSpatialCalculus(unittest.TestCase):
         # Overhead is Deck 15 (Marketplace Buffet area)
         self.assertIsNotNone(report.overhead_layer)
         self.assertEqual(report.overhead_layer.deck_number, 15)
-        self.assertIn("Marketplace Buffet", report.overhead_layer.intersecting_venues)
+        self.assertTrue(any("Marketplace Buffet" in v for v in report.overhead_layer.intersecting_venues))
         self.assertTrue(report.overhead_layer.is_active_noise_generator)
 
     def test_sightline_calculation(self):
