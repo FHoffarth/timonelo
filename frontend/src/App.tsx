@@ -19,13 +19,16 @@ import {
 import type { ShipData, CabinData } from './types';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
-import { cabinFromUrl, updateSocialHead } from './share';
+import { updateSocialHead, shipSlug } from './share';
+import { cabinFromLocation, cabinPath } from './routing';
 import { BoardingIntelligence } from './boarding';
+
+const DEFAULT_CABIN = '14122';
 
 export default function App() {
   const [ship, setShip] = useState<ShipData | null>(null);
-  const [selectedCabinNum, setSelectedCabinNum] = useState<string>('14122');
-  const [searchQuery, setSearchQuery] = useState<string>('14122');
+  const [selectedCabinNum, setSelectedCabinNum] = useState<string>(DEFAULT_CABIN);
+  const [searchQuery, setSearchQuery] = useState<string>(DEFAULT_CABIN);
   const [lens, setLens] = useState<LensId>('accessibility');
   const [loading, setLoading] = useState<boolean>(true);
   const media = useMedia();
@@ -35,11 +38,13 @@ export default function App() {
       .then((res) => res.json())
       .then((data: ShipData) => {
         setShip(data);
-        const fromUrl = cabinFromUrl();
-        if (fromUrl && data.cabins[fromUrl]) {
-          setSelectedCabinNum(fromUrl);
-          setSearchQuery(fromUrl);
-        }
+        // Resolve the cabin from the canonical path (or legacy ?cabin=), then
+        // normalise the address bar to the canonical URL without a new entry.
+        const fromUrl = cabinFromLocation(window.location);
+        const initial = fromUrl && data.cabins[fromUrl] ? fromUrl : DEFAULT_CABIN;
+        setSelectedCabinNum(initial);
+        setSearchQuery(initial);
+        window.history.replaceState({ cabin: initial }, '', cabinPath(shipSlug(data), initial));
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -52,10 +57,32 @@ export default function App() {
     if (ship && cabin) updateSocialHead(ship, cabin);
   }, [ship, cabin]);
 
+  // Back/forward navigation resolves the cabin from the URL (no new entry).
+  useEffect(() => {
+    if (!ship) return;
+    const onPop = () => {
+      const n = cabinFromLocation(window.location);
+      if (n && ship.cabins[n]) {
+        setSelectedCabinNum(n);
+        setSearchQuery(n);
+      }
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [ship]);
+
+  // Navigate to a cabin, pushing a new history entry (its own permanent URL).
+  const goToCabin = (n: string) => {
+    if (!ship?.cabins[n]) return;
+    setSelectedCabinNum(n);
+    setSearchQuery(n);
+    window.history.pushState({ cabin: n }, '', cabinPath(shipSlug(ship), n));
+    window.scrollTo({ top: 0 });
+  };
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const q = searchQuery.trim();
-    if (ship?.cabins[q]) setSelectedCabinNum(q);
+    goToCabin(searchQuery.trim());
   };
 
   if (loading || !ship || !cabin) {
@@ -80,10 +107,7 @@ export default function App() {
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           onSearch={handleSearch}
-          onSelect={(n) => {
-            setSelectedCabinNum(n);
-            setSearchQuery(n);
-          }}
+          onSelect={goToCabin}
         />
 
         <main className="page-shell mt-12 space-y-16">
@@ -96,7 +120,7 @@ export default function App() {
           <DeckContext ship={ship} cabin={cabin} media={media} />
           <Lenses cabin={cabin} lens={lens} setLens={setLens} />
           <Evidence cabin={cabin} />
-          <Discovery ship={ship} current={selectedCabinNum} onSelect={(n) => { setSelectedCabinNum(n); setSearchQuery(n); }} />
+          <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
         </main>
 
         <Footer />

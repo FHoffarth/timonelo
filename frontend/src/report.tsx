@@ -61,7 +61,7 @@ export function ExportBar({ ship, cabin }: { ship: ShipData; cabin: CabinData })
         <Share2 className="w-4 h-4" aria-hidden /> Share
       </button>
       <button
-        onClick={async () => flash((await copyLink(cabin.cabin_number)) ? 'Link copied' : 'Copy failed')}
+        onClick={async () => flash((await copyLink(ship, cabin.cabin_number)) ? 'Link copied' : 'Copy failed')}
         className="inline-flex items-center gap-2 border border-ink/20 bg-white px-4 py-2.5 text-[13px] font-medium text-ink hover:border-ink/50 transition-colors"
       >
         <LinkIcon className="w-4 h-4" aria-hidden /> Copy link

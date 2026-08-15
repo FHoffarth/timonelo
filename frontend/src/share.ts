@@ -4,20 +4,21 @@
  * carried in a query param so the link loads the same briefing when opened.
  */
 import type { ShipData, CabinData } from './types';
+import { cabinPath } from './routing';
 
 export function shipSlug(ship: ShipData): string {
   return ship.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-/** Functional shareable URL that reopens this cabin (?cabin=NNNN). */
-export function cabinUrl(cabinNumber: string): string {
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://timonelo.com';
-  return `${origin}/?cabin=${encodeURIComponent(cabinNumber)}`;
+/** The canonical, permanent public path: /{ship}/cabin/{number}. */
+export function canonicalPath(ship: ShipData, cabinNumber: string): string {
+  return cabinPath(shipSlug(ship), cabinNumber);
 }
 
-/** The canonical, human-readable path form (intended production URL). */
-export function canonicalPath(ship: ShipData, cabinNumber: string): string {
-  return `/${shipSlug(ship)}/cabin/${cabinNumber}`;
+/** Absolute canonical URL that reopens this cabin. */
+export function cabinUrl(ship: ShipData, cabinNumber: string): string {
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://timonelo.com';
+  return `${origin}${canonicalPath(ship, cabinNumber)}`;
 }
 
 export function briefingTitle(ship: ShipData, cabin: CabinData): string {
@@ -48,11 +49,14 @@ function setLink(id: string, href: string) {
   if (el) el.setAttribute('href', href);
 }
 
-/** Update document title + OpenGraph/Twitter/canonical for the current cabin. */
+/**
+ * Update document title + OpenGraph/Twitter/canonical for the current cabin.
+ * History (the address-bar URL) is owned by the router in App, not here.
+ */
 export function updateSocialHead(ship: ShipData, cabin: CabinData) {
   const title = briefingTitle(ship, cabin);
   const desc = briefingDescription(cabin);
-  const url = cabinUrl(cabin.cabin_number);
+  const url = cabinUrl(ship, cabin.cabin_number);
   document.title = `${title} — Timonelo`;
   setMeta('meta[name="description"]', desc);
   setMeta('meta[property="og:title"]', title);
@@ -60,15 +64,8 @@ export function updateSocialHead(ship: ShipData, cabin: CabinData) {
   setMeta('meta[name="twitter:title"]', title);
   setMeta('meta[name="twitter:description"]', desc);
   setLink('canonical-url', url);
-  setMeta('#og-url', url); // guarded: only if present
   const og = document.getElementById('og-url');
   if (og) og.setAttribute('content', url);
-  // Keep the address bar shareable without a full navigation.
-  try {
-    window.history.replaceState(null, '', `/?cabin=${cabin.cabin_number}`);
-  } catch {
-    /* no-op */
-  }
 }
 
 export type ShareResult = 'shared' | 'copied' | 'unavailable';
@@ -78,7 +75,7 @@ export async function shareBriefing(ship: ShipData, cabin: CabinData): Promise<S
   const data = {
     title: briefingTitle(ship, cabin),
     text: `${briefingTitle(ship, cabin)} — ${briefingDescription(cabin)}`,
-    url: cabinUrl(cabin.cabin_number),
+    url: cabinUrl(ship, cabin.cabin_number),
   };
   if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
     try {
@@ -88,11 +85,11 @@ export async function shareBriefing(ship: ShipData, cabin: CabinData): Promise<S
       return 'unavailable';
     }
   }
-  return (await copyLink(cabin.cabin_number)) ? 'copied' : 'unavailable';
+  return (await copyLink(ship, cabin.cabin_number)) ? 'copied' : 'unavailable';
 }
 
-export async function copyLink(cabinNumber: string): Promise<boolean> {
-  const url = cabinUrl(cabinNumber);
+export async function copyLink(ship: ShipData, cabinNumber: string): Promise<boolean> {
+  const url = cabinUrl(ship, cabinNumber);
   try {
     if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(url);
@@ -114,13 +111,4 @@ export async function copyLink(cabinNumber: string): Promise<boolean> {
   } catch {
     return false;
   }
-}
-
-/** Read a cabin number from the URL (?cabin= or /ship/cabin/NNNN path). */
-export function cabinFromUrl(): string | null {
-  const params = new URLSearchParams(window.location.search);
-  const q = params.get('cabin');
-  if (q) return q;
-  const m = window.location.pathname.match(/\/cabin\/([A-Za-z0-9]+)/);
-  return m ? m[1] : null;
 }
