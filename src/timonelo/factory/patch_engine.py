@@ -105,6 +105,29 @@ class ShipPatchEngine:
                         evidence_links=old_v.evidence_links,
                     )
 
+            elif op_type == "ADD_VENUE":
+                venue_data = op.get("venue", {})
+                v_id = venue_data.get("venue_id")
+                cat_str = venue_data.get("category", "BAR_LOUNGE")
+                cat_enum = VenueCategory[cat_str] if hasattr(VenueCategory, cat_str) else VenueCategory.BAR_LOUNGE
+                poly_coords = [Coordinate2D(pt[0], pt[1]) for pt in venue_data.get("boundary_polygon", [])]
+                ev_links = [
+                    EvidenceLink(source_id=e.get("source_id", "EVID-GA-PLUS"), sha256=e.get("sha256", "0"*64), locator=e.get("locator", "GA_Plus"))
+                    for e in venue_data.get("evidence_links", [])
+                ] or list(next(iter(target_deck.venues.values())).evidence_links if target_deck.venues else [])
+
+                target_deck.venues[v_id] = Venue(
+                    venue_id=v_id,
+                    name=venue_data.get("name", v_id),
+                    deck_number=deck_num,
+                    category=cat_enum,
+                    boundary_polygon=poly_coords or [Coordinate2D(0.5, -0.3), Coordinate2D(0.6, -0.3), Coordinate2D(0.6, 0.3), Coordinate2D(0.5, 0.3)],
+                    entrance_node_ids=venue_data.get("entrance_node_ids", [f"D{deck_num:02d}_MID_LIFT"]),
+                    is_noise_generator=venue_data.get("is_noise_generator", False),
+                    is_open_deck=venue_data.get("is_open_deck", False),
+                    evidence_links=ev_links,
+                )
+
             elif op_type == "RENAME_DECK":
                 new_deck_name = op.get("new_name")
                 new_decks[deck_num] = Deck(
@@ -119,12 +142,16 @@ class ShipPatchEngine:
                     corridor_edges=target_deck.corridor_edges,
                 )
 
+        target_loa = patch_data.get("length_overall_meters", base_ontology.length_overall_meters)
+        target_beam = patch_data.get("beam_meters", base_ontology.beam_meters)
+        target_total_decks = patch_data.get("total_decks", base_ontology.total_decks)
+
         return VesselSpatialOntology(
             imo_number=target_imo,
             name=target_name,
             ship_class=target_class,
-            length_overall_meters=base_ontology.length_overall_meters,
-            beam_meters=base_ontology.beam_meters,
-            total_decks=base_ontology.total_decks,
+            length_overall_meters=target_loa,
+            beam_meters=target_beam,
+            total_decks=target_total_decks,
             decks=new_decks,
         )

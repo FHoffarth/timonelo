@@ -233,11 +233,11 @@ from timonelo.factory.patch_engine import ShipPatchEngine
 
 
 def compile_fleet(root_dir: Path) -> bool:
-    """Compiles the complete fleet: Reference Vessel (Bellissima) and derivative patch ships."""
+    """Compiles the complete fleet: Reference Vessel (Bellissima) and all derivative patch ships."""
     compiler = KnowledgeFactoryCompiler()
 
     # 1. Compile Reference Baseline: MSC Bellissima
-    print(">>> 1/2 COMPILING REFERENCE BASELINE: MSC BELLISSIMA (IMO 9766205)")
+    print(">>> [1/FLEET] COMPILING REFERENCE BASELINE: MSC BELLISSIMA (IMO 9766205)")
     bellissima_ontology = create_bellissima_ontology()
     ok_bellissima = compiler.compile_vessel(
         ontology=bellissima_ontology,
@@ -247,20 +247,26 @@ def compile_fleet(root_dir: Path) -> bool:
     if not ok_bellissima:
         return False
 
-    # 2. Compile Derivative Sister Ship #2: MSC Meraviglia using SPEC-008 Ship Patch
-    meraviglia_deltas_file = root_dir / "data/ships/msc-meraviglia/deltas.json"
-    if meraviglia_deltas_file.exists():
-        print("\n>>> 2/2 COMPILING SHIP #2: MSC MERAVIGLIA (IMO 9647710) VIA SPEC-008 SHIP PATCH")
-        with open(meraviglia_deltas_file, "r", encoding="utf-8") as f:
+    # 2. Automatically discover and compile all derivative vessels in data/ships/*/deltas.json
+    ships_dir = root_dir / "data/ships"
+    derivative_dirs = sorted([d for d in ships_dir.iterdir() if d.is_dir() and (d / "deltas.json").exists()])
+
+    for idx, ship_dir in enumerate(derivative_dirs, start=2):
+        deltas_file = ship_dir / "deltas.json"
+        with open(deltas_file, "r", encoding="utf-8") as f:
             patch_data = json.load(f)
 
-        meraviglia_ontology = ShipPatchEngine.apply_patch(bellissima_ontology, patch_data)
-        ok_meraviglia = compiler.compile_vessel(
-            ontology=meraviglia_ontology,
+        target_name = patch_data.get("target_name", ship_dir.name)
+        target_imo = patch_data.get("target_imo", "UNKNOWN")
+        print(f"\n>>> [{idx}/FLEET] COMPILING SHIP: {target_name} ({target_imo}) VIA SPEC-008 SHIP PATCH")
+
+        derivative_ontology = ShipPatchEngine.apply_patch(bellissima_ontology, patch_data)
+        ok_derivative = compiler.compile_vessel(
+            ontology=derivative_ontology,
             output_data_dir=root_dir,
             output_frontend_dir=root_dir / "frontend",
         )
-        if not ok_meraviglia:
+        if not ok_derivative:
             return False
 
     return True
