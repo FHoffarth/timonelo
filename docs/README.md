@@ -28,8 +28,9 @@ Recommended reading sequence:
 │  5. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
 │  6. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
 │  7. [ BRIDGE_OFFICER.md ] ───── Constitutional voice & conversational guide │
-│  8. [ ROADMAP.md ] ──────────── Milestone progression & future scaling      │
-│  9. [ CONTRIBUTING.md ] ─────── How to contribute code, data & cartography  │
+│  8. [ SHIPBOOK.md ] ─────────── How a vessel becomes Timonelo (Shipbook)    │
+│  9. [ ROADMAP.md ] ──────────── Milestone progression & future scaling      │
+│  10. [ CONTRIBUTING.md ] ────── How to contribute code, data & cartography  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -44,6 +45,7 @@ Recommended reading sequence:
 | **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero layout shifts, and offline-first capability. |
 | **[TRUST_FRAMEWORK.md](TRUST_FRAMEWORK.md)** | Five-tier evidence hierarchy, two-source verification rule, and non-commercial independence. |
 | **[BRIDGE_OFFICER.md](BRIDGE_OFFICER.md)** | The permanent Bridge Officer Constitution, Conversational Canon, and Oath. |
+| **[SHIPBOOK.md](SHIPBOOK.md)** | The permanent operational handbook for vessel ingestion, compilation, and certification. |
 | **[ROADMAP.md](ROADMAP.md)** | Milestone execution plan spanning from M0 foundation through multi-ship scaling. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contribution standards for code, vector cartography, field photography, and knowledge records. |
 
