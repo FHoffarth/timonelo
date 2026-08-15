@@ -23,15 +23,16 @@ Recommended reading sequence:
 │                                                                             │
 │  1. [ MANIFESTO.md ] ────────── Why Timonelo exists & core philosophy       │
 │  2. [ CANON.md ] ────────────── Epistemic definitions & 20 spatial laws     │
-│  3. [ CRUISE_INTELLIGENCE.md ] ─ Complete journey lifecycle & pillars A & B │
-│  4. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
-│  5. [ ARCHITECTURE.md ] ─────── Technical boundaries & Five-Plane model     │
-│  6. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
-│  7. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
-│  8. [ BRIDGE_OFFICER.md ] ───── Constitutional voice & conversational guide │
-│  9. [ SHIPBOOK.md ] ─────────── How a vessel becomes Timonelo (Shipbook)    │
-│  10. [ ROADMAP.md ] ─────────── Milestone progression & future scaling      │
-│  11. [ CONTRIBUTING.md ] ────── How to contribute code, data & cartography  │
+│  3. [ DECISION_FIRST.md ] ───── The Decision Pyramid & certainty philosophy │
+│  4. [ CRUISE_INTELLIGENCE.md ] ─ Complete journey lifecycle & pillars A & B │
+│  5. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
+│  6. [ ARCHITECTURE.md ] ─────── Technical boundaries & Five-Plane model     │
+│  7. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
+│  8. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
+│  9. [ BRIDGE_OFFICER.md ] ───── Constitutional voice & conversational guide │
+│  10. [ SHIPBOOK.md ] ────────── How a vessel becomes Timonelo (Shipbook)    │
+│  11. [ ROADMAP.md ] ─────────── Milestone progression & future scaling      │
+│  12. [ CONTRIBUTING.md ] ────── How to contribute code, data & cartography  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -41,6 +42,7 @@ Recommended reading sequence:
 | :--- | :--- |
 | **[MANIFESTO.md](MANIFESTO.md)** | Purpose, negative boundaries, and experience hierarchy ($Experience \uparrow Orientation \uparrow Knowledge \uparrow Assets$). |
 | **[CANON.md](CANON.md)** | Immutable definitions (*Canonical, Verified, Unknown, Experience Ready*), strict terminology, and the 20 Spatial Laws. |
+| **[DECISION_FIRST.md](DECISION_FIRST.md)** | The Decision-First Constitution: Decision Pyramid, certainty optimization, and resolution over interaction. |
 | **[CRUISE_INTELLIGENCE.md](CRUISE_INTELLIGENCE.md)** | Constitutional expansion from Ship Intelligence to Cruise Intelligence and the Travel Operating System. |
 | **[PRODUCT.md](PRODUCT.md)** | Cabin Briefing standards, the 16 Human Experience Dimensions, and 8 User Personas. |
 | **[ARCHITECTURE.md](ARCHITECTURE.md)** | Technical module boundaries, Spatial Engine specification, and pipeline data flow. |
