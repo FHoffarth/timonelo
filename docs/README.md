@@ -80,6 +80,8 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ## 4. Technical Audits & Operational Certifications
 
+- **[SHIPYARD_READY.md](SHIPYARD_READY.md)**: Formal shipyard readiness certification and multi-vessel scaling blueprint.
+- **[MERAVIGLIA_INHERITANCE.md](MERAVIGLIA_INHERITANCE.md)**: Class-level inheritance and shipyard reuse analysis across the Meraviglia & Meraviglia-Plus fleet.
 - **[BELLISSIMA_COMPLETENESS_REPORT.md](BELLISSIMA_COMPLETENESS_REPORT.md)**: Formal certification and completeness matrix of MSC Bellissima as a 100% Operational Digital Twin.
 - **[AUDIT_BELLISSIMA_v1.md](AUDIT_BELLISSIMA_v1.md)**: Formal adversarial audit and epistemic verification of the MSC Bellissima reference implementation v1.0.
 - **[AUDIT_BELLISSIMA_v2.md](AUDIT_BELLISSIMA_v2.md)**: Scientific peer review and spatial systems audit of industrial-scale ontology, graph circulation, and Knowledge Factory maturity.
