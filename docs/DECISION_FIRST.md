@@ -139,7 +139,34 @@ No cruise line, tour provider, port authority, or advertiser may purchase influe
 
 ---
 
-## 7. How Decision-First Unifies the Constitutional Suite
+## 7. Negative Intelligence: The Decisions Avoided
+
+A fundamental tenet of Decision Intelligence is the recognition of **Negative Intelligence**:
+
+> ### **The value of Timonelo is measured by decisions avoided as much as by decisions made.**
+
+In traditional software, success is counted only by positive actions (items bought, buttons pressed, miles navigated). In Timonelo, true quality is measured by **the friction, mistakes, and regret that never occurred** because the traveler was given calm, verified orientation beforehand.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      THE SPECTRUM OF NEGATIVE INTELLIGENCE                  │
+│                                                                             │
+│  • The noisy cabin under the nightclub that was NEVER booked.               │
+│  • The lifeboat-obstructed balcony that was NEVER chosen.                   │
+│  • The exhausting stair climbing with a stroller that NEVER happened.      │
+│  • The missed border entry or invalid passport panic that was PREVENTED.    │
+│  • The chaotic tender boat scramble that was CALMLY NAVIGATED.              │
+│  • The severe seasickness in a high-pitch forward cabin that was AVOIDED.   │
+│  • The disappointment of a closed or dress-restricted dinner that was SPARED│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Negative Intelligence is the purest form of travel assurance.**  
+We measure our worth not merely by what happens on board, but by what *no longer goes wrong*.
+
+---
+
+## 8. How Decision-First Unifies the Constitutional Suite
 
 `DECISION_FIRST.md` is the keystone that connects every foundational document in this repository:
 
@@ -154,7 +181,7 @@ No cruise line, tour provider, port authority, or advertiser may purchase influe
 
 ---
 
-## 8. Final Constitutional Declaration
+## 9. Final Constitutional Declaration
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
