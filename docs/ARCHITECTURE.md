@@ -11,12 +11,23 @@ last_updated: 2026-08-15
 
 ---
 
-## 1. Architecture Freeze Declaration (v1.0)
+## 1. Architecture Decision Reference
 
-> **NOTICE OF ARCHITECTURE FREEZE:**
-> As of Milestone v1.0, the core architectural layers of Timonelo—including the **Canonical Knowledge Pack Schema**, the **Spatial Evidence Engine Contracts**, the **Knowledge Factory Foundation**, and the **Explorer Runtime Architecture**—are **FROZEN**.
->
-> Any proposed modifications to core boundaries, schema contracts, or data formats require an explicit Pull Request and maintainer review.
+Timonelo's system architecture is governed by **[ADR-0001: Adopt the Five-Plane Spatial Architecture](adr/ADR-0001.md)**. 
+
+The system decouples data, geometry, mathematics, human context, and rendering into five strictly independent planes:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    THE FIVE-PLANE ARCHITECTURAL MODEL                       │
+│                                                                             │
+│   Plane 1: Evidence Plane          ── Content-addressed raw sensory records │
+│   Plane 2: Spatial Ontology Plane  ── Metric geometry & topological graphs  │
+│   Plane 3: Spatial Calculus Plane  ── Pure mathematical derivations         │
+│   Plane 4: Contextual Lens Plane   ── Stateless human orientation functions │
+│   Plane 5: Presentation Runtime    ── Multi-surface headless client runtimes│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -25,16 +36,17 @@ last_updated: 2026-08-15
 Timonelo operates as a unidirectional spatial processing pipeline:
 
 ```text
-Verified Source Material (Shipyard GA Drawings, On-site Surveys)
-                           ↓
-               Ship Knowledge Factory
-                           ↓
-              Canonical Knowledge Pack
-               (Immutable Data Layer)
-                           ↓
-               Spatial Evidence Engine
-                           ↓
-               Cruise Explorer Runtime
+Verified Source Material (Shipyard GA Drawings, On-site Surveys) [Plane 1]
+                                 ↓
+                     Ship Knowledge Factory
+                                 ↓
+                    Canonical Spatial Ontology [Plane 2]
+                                 ↓
+                    Spatial Calculus Engine [Plane 3]
+                                 ↓
+                    Contextual Lens Engine [Plane 4]
+                                 ↓
+                    Cruise Explorer Runtime [Plane 5]
 ```
 
 ### Architectural Boundaries
@@ -48,21 +60,21 @@ Verified Source Material (Shipyard GA Drawings, On-site Surveys)
 ## 3. Core Technical Modules
 
 ### 3.1 Spatial Evidence Engine (`timonelo.engine`)
-* **Role**: Computes reproducible geometric relationships, line-of-sight raycasting, walking paths, and overhead vertical sandwiches from normalized CAD coordinates.
+* **Role**: Computes reproducible geometric relationships, line-of-sight raycasting, walking paths, and overhead vertical sandwiches from normalized coordinates (Plane 3: Spatial Calculus).
 * **Contracts**: Emits deterministic claims backed by derivation rules and evidence references.
 
 ### 3.2 Canonical Knowledge Pack (`timonelo.knowledge_pack`)
-* **Role**: The authoritative, sealed, immutable data artifact representing a ship's complete spatial state.
-* **Format**: Self-validating JSON schema encapsulating vessel metadata, deck meshes, stateroom polygons, venue nodes, claims, sources, and limitations.
-* **Distribution**: Distributed as lightweight, cacheable static assets (approx. 2–15 MB per ship) capable of operating offline.
+* **Role**: The authoritative, sealed, immutable data artifact representing a ship's complete spatial state (Plane 2: Spatial Ontology).
+* **Format**: Self-validating schema encapsulating vessel metadata, deck meshes, stateroom polygons, venue nodes, claims, sources, and limitations.
+* **Distribution**: Distributed as lightweight, cacheable static assets capable of operating offline.
 
 ### 3.3 Knowledge Factory (`docs/factory/`)
-* **Role**: Ingests, lints, correlates, and compiles raw shipyard GA drawings and survey data into candidate Knowledge Packs.
+* **Role**: Ingests, lints, correlates, and compiles raw shipyard GA drawings and survey data into candidate Knowledge Packs (Planes 1 $\rightarrow$ 2).
 * **Sub-systems**: Source Registry, Importer Architecture, Relationship Builder, and Validation Framework.
 
 ### 3.4 Cruise Explorer Runtime (`frontend/`)
-* **Role**: High-performance client rendering engine that consumes canonical Knowledge Packs.
-* **Performance Standard**: Sub-second spatial snapping, zero layout shift ($CLS = 0$), and instant deck transitions.
+* **Role**: High-performance client rendering engine that evaluates contextual lenses and presents orientation interfaces (Planes 4 $\rightarrow$ 5).
+* **Performance Standard**: Sub-second spatial snapping, zero layout shift, and instant deck transitions.
 
 ---
 
@@ -85,6 +97,7 @@ All geometries are normalized within the vessel’s bounding envelope ($X \in [0
 
 ## 5. Cross-References
 
+- Architectural Decision: [ADR-0001: Adopt the Five-Plane Spatial Architecture](adr/ADR-0001.md)
 - Canon: [CANON.md](CANON.md)
 - Engineering Principles: [ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)
 - Domain Model: [architecture/DOMAIN_MODEL.md](architecture/DOMAIN_MODEL.md)

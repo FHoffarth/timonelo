@@ -24,7 +24,7 @@ Recommended reading sequence:
 │  1. [ MANIFESTO.md ] ────────── Why Timonelo exists & core philosophy       │
 │  2. [ CANON.md ] ────────────── Epistemic definitions & 20 spatial laws     │
 │  3. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
-│  4. [ ARCHITECTURE.md ] ─────── Technical boundaries & Spatial Engine v1.0  │
+│  4. [ ARCHITECTURE.md ] ─────── Technical boundaries & Five-Plane model     │
 │  5. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
 │  6. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
 │  7. [ ROADMAP.md ] ──────────── Milestone progression & future scaling      │
@@ -39,15 +39,23 @@ Recommended reading sequence:
 | **[MANIFESTO.md](MANIFESTO.md)** | Purpose, negative boundaries, and experience hierarchy ($Experience \uparrow Orientation \uparrow Knowledge \uparrow Assets$). |
 | **[CANON.md](CANON.md)** | Immutable definitions (*Canonical, Verified, Unknown, Experience Ready*), strict terminology, and the 20 Spatial Laws. |
 | **[PRODUCT.md](PRODUCT.md)** | Cabin Briefing standards, the 16 Human Experience Dimensions, and 8 User Personas. |
-| **[ARCHITECTURE.md](ARCHITECTURE.md)** | Module boundaries, Spatial Engine specification, and the **Architecture Freeze (v1.0)** declaration. |
-| **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero-CLS performance, and offline-first capability. |
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** | Technical module boundaries, Spatial Engine specification, and pipeline data flow. |
+| **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero layout shifts, and offline-first capability. |
 | **[TRUST_FRAMEWORK.md](TRUST_FRAMEWORK.md)** | Five-tier evidence hierarchy, two-source verification rule, and non-commercial independence. |
 | **[ROADMAP.md](ROADMAP.md)** | Milestone execution plan spanning from M0 foundation through multi-ship scaling. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contribution standards for code, vector cartography, field photography, and knowledge records. |
 
 ---
 
-## 2. Technical & Factory Specifications
+## 2. Architecture Decision Records (ADRs)
+
+Foundational architectural choices are captured and maintained under [`docs/adr/`](adr/README.md):
+
+- **[ADR-0001: Adopt the Five-Plane Spatial Architecture](adr/ADR-0001.md)**: Establishes the decoupled five-plane spatial architecture (Evidence, Spatial Ontology, Spatial Calculus, Contextual Lenses, Presentation Runtime).
+
+---
+
+## 3. Technical & Factory Specifications
 
 - **[Explorer Architecture](explorer-architecture.md)**: Web runtime specification for rendering canonical Knowledge Packs.
 - **[Domain Model Specification](architecture/DOMAIN_MODEL.md)**: Entity-relationship specifications for spatial domains.
@@ -66,6 +74,6 @@ Recommended reading sequence:
 
 ---
 
-## 3. Governance Policy
+## 4. Governance Policy
 
-As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Pull Request and maintainer review.
+As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Architecture Decision Record (ADR) and maintainer review.

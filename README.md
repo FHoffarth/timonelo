@@ -16,14 +16,22 @@ The Timonelo foundations are established and **Frozen at Milestone v1.0**. The r
 
 ## Architecture
 
-The system operates as an end-to-end spatial evidence pipeline:
+The system operates as an end-to-end spatial evidence pipeline governed by **[ADR-0001: The Five-Plane Spatial Architecture](docs/adr/ADR-0001.md)**:
 
-- **Spatial Evidence Engine** — derives reproducible spatial evidence from ship geometry.
-- **Canonical Knowledge Pack** — immutable, self-validating spatial twin data contract.
-- **Ship Knowledge Factory** — multi-source blueprint ingestion, verification, and linting.
-- **Cruise Explorer Platform** — publishes spatial orientation without modifying claims.
+- **Plane 1: Evidence Plane** — immutable, content-addressed raw sensory records.
+- **Plane 2: Spatial Ontology Plane** — canonical metric geometry & topological circulation graphs.
+- **Plane 3: Spatial Calculus Plane** — deterministic mathematical derivations (distances, raycasts).
+- **Plane 4: Contextual Lens Plane** — stateless human orientation projections (mobility, acoustics, routines).
+- **Plane 5: Presentation Runtime Plane** — multi-surface headless client runtimes.
 
 Detailed boundaries and technical contracts are specified in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Architecture Decisions
+
+Foundational architectural choices are recorded in Architecture Decision Records (ADRs):
+
+- **[ADR-0001: Adopt the Five-Plane Spatial Architecture](docs/adr/ADR-0001.md)** — Formal decision adopting the decoupled five-plane spatial model.
+- **[ADR Index](docs/adr/README.md)** — Complete index of all Architecture Decision Records.
 
 ## Repository Structure
 
@@ -31,7 +39,8 @@ Detailed boundaries and technical contracts are specified in [docs/ARCHITECTURE.
 .
 ├── assets/          Documentation and brand assets
 ├── data/            Source, processed, and ship-specific canonical packs
-├── docs/            The Timonelo Foundation Documentation Suite
+├── docs/            The Timonelo Foundation Documentation Suite & ADRs
+├── factory/         Knowledge Factory compilation pipeline specifications
 ├── frontend/        Vite / React Cruise Explorer runtime
 ├── knowledge/       Structured markdown knowledge base & templates
 ├── src/timonelo/    Python package (Engine & Knowledge Pack schema)
@@ -63,7 +72,7 @@ The complete documentation suite is housed under [`docs/`](docs/README.md):
 - **[Manifesto](docs/MANIFESTO.md)** — Mission, philosophy, and negative boundaries
 - **[Canon](docs/CANON.md)** — Epistemic definitions, terminology, and 20 spatial laws
 - **[Product Specification](docs/PRODUCT.md)** — Cabin briefings, 16 experience dimensions, and user personas
-- **[Architecture](docs/ARCHITECTURE.md)** — Technical module boundaries & Spatial Engine v1.0
+- **[Architecture](docs/ARCHITECTURE.md)** — Technical module boundaries & Five-Plane model
 - **[Engineering Principles](docs/ENGINEERING_PRINCIPLES.md)** — Invariants, determinism, and code standards
 - **[Trust Framework](docs/TRUST_FRAMEWORK.md)** — Evidence hierarchy, provenance, and neutrality
 - **[Roadmap](docs/ROADMAP.md)** — Milestone execution plan & scaling roadmap
