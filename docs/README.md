@@ -70,6 +70,10 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
   - [SPEC-005: Importer Architecture](factory/SPEC-005-importer-architecture.md)
   - [SPEC-006: Relationship Builder](factory/SPEC-006-relationship-builder.md)
   - [SPEC-007: Validation Framework](factory/SPEC-007-validation-framework.md)
+  - **[SPEC-008: Ship Patch Specification](SHIP_PATCH_SPECIFICATION.md)**: Non-destructive delta compilation schema for fleet inheritance.
+- **Fleet Scaling Blueprints**:
+  - **[MERAVIGLIA_BUILD_PLAN.md](MERAVIGLIA_BUILD_PLAN.md)**: Build plan & delta inheritance for Ship #2 (*MSC Meraviglia*).
+  - **[FLEET_ROADMAP.md](FLEET_ROADMAP.md)**: Global fleet roadmap spanning 500+ cruise vessels across major global operators.
 - **Knowledge Explorer Tooling**:
   - [Knowledge Explorer Guide](Knowledge%20Explorer.md)
   - [Knowledge Index Guide](Knowledge%20Index.md)
