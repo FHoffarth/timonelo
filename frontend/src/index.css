@@ -8,9 +8,15 @@
   --color-sand: #d7c5aa;
   --color-gold: #c99a5b;
   --color-muted: #5b6570;
+  --radius-control: 0.125rem;
+  --shadow-lift: 0 0.75rem 2.5rem rgb(5 15 25 / 0.14);
+  --ease-calm: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root {
+  --duration-fast: 180ms;
+  --duration-calm: 700ms;
+  --section-space: clamp(5.5rem, 11vw, 10rem);
   color: #0c1b2a;
   background: #f4f2ed;
   font-family: "Inter Variable", "Helvetica Neue", Arial, sans-serif;
@@ -51,7 +57,7 @@ button {
 }
 
 .section-space {
-  padding-block: clamp(5.5rem, 11vw, 10rem);
+  padding-block: var(--section-space);
 }
 
 .section-title {
@@ -77,20 +83,56 @@ button {
     linear-gradient(90deg, rgba(5, 15, 25, 0.45), transparent 70%);
 }
 
+.hero-content {
+  animation: hero-enter 900ms var(--ease-calm) both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.375rem);
+  transition:
+    opacity var(--duration-calm) var(--ease-calm) var(--reveal-delay, 0s),
+    transform var(--duration-calm) var(--ease-calm) var(--reveal-delay, 0s);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .button {
   display: inline-flex;
   min-height: 3.25rem;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+  border-radius: var(--radius-control);
   padding-inline: 1.5rem;
   font-size: 0.78rem;
   font-weight: 650;
   letter-spacing: 0.01em;
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
 }
 
 .button:hover {
+  box-shadow: var(--shadow-lift);
   transform: translateY(-1px);
 }
 
@@ -120,7 +162,7 @@ button {
   padding-block: 0.35rem;
   font-size: 0.78rem;
   font-weight: 600;
-  transition: opacity 180ms ease;
+  transition: opacity var(--duration-fast) ease;
 }
 
 .text-link:hover,
@@ -129,16 +171,17 @@ button {
 }
 
 .nav-link {
-  transition: opacity 180ms ease;
+  transition: opacity var(--duration-fast) ease;
 }
 
 .nav-cta {
   border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: var(--radius-control);
   padding: 0.7rem 0.9rem;
   font-size: 0.68rem;
   font-weight: 650;
   color: #fff;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
 }
 
 .nav-cta:hover {
@@ -235,5 +278,12 @@ button {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-content,
+  .reveal {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
   }
 }

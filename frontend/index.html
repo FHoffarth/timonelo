@@ -3,9 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Independent cabin intelligence for clearer cruise decisions." />
+    <meta name="description" content="Understand your cruise cabin before you book with traceable evidence, clear context, and explicit limits." />
     <meta name="theme-color" content="#0c1b2a" />
-    <title>Timonelo — Independent cabin intelligence</title>
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Timonelo" />
+    <meta property="og:title" content="Timonelo — Explainable Cruise Intelligence" />
+    <meta property="og:description" content="Understand your cruise cabin before you book with traceable evidence, clear context, and explicit limits." />
+    <meta id="og-url" property="og:url" content="/" />
+    <meta id="og-image" property="og:image" content="/social-preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Timonelo — Explainable Cruise Intelligence" />
+    <meta name="twitter:description" content="Understand your cruise cabin before you book with traceable evidence, clear context, and explicit limits." />
+    <meta id="twitter-image" name="twitter:image" content="/social-preview.jpg" />
+    <link id="canonical-url" rel="canonical" href="/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Timonelo — Explainable Cruise Intelligence</title>
+    <script>
+      const siteUrl = new URL('/', window.location.origin).href;
+      const socialImageUrl = new URL('/social-preview.jpg', window.location.origin).href;
+      document.querySelector('#canonical-url').href = siteUrl;
+      document.querySelector('#og-url').content = siteUrl;
+      document.querySelector('#og-image').content = socialImageUrl;
+      document.querySelector('#twitter-image').content = socialImageUrl;
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,8 +1,8 @@
-import { motion, useReducedMotion } from 'motion/react';
-import { type FormEvent, type ReactNode, useState } from 'react';
+import { type CSSProperties, type FormEvent, type ReactNode, useEffect, useRef, useState } from 'react';
 
 import chevronRight from './assets/chevron-right.svg';
-import heroCruise from './assets/hero-cruise-golden-hour.png';
+
+const heroCruise = '/hero-cruise-golden-hour.webp';
 
 const intelligenceAreas = [
   {
@@ -29,6 +29,12 @@ const cabinDifferences = [
   ['Evidence', 'The source and its limits determine what can responsibly be said.'],
 ];
 
+const trustPrinciples = [
+  ['Traceable', 'Material statements retain a clear path back to the sources and evidence that support them.'],
+  ['Bounded', 'Evidence limits and alternative interpretations remain visible where they matter.'],
+  ['Explicit', 'Unknowns stay unknown. Timonelo does not quietly replace missing knowledge with assumptions.'],
+];
+
 export default function App() {
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink">
@@ -41,6 +47,7 @@ export default function App() {
         <CabinStory />
         <ExplainableIntelligence />
         <CabinIntelligence />
+        <Trust />
         <Vision />
         <Waitlist />
       </main>
@@ -50,26 +57,21 @@ export default function App() {
 }
 
 function Hero() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <header className="relative min-h-[100svh] overflow-hidden bg-ink text-white" data-node-id="5:16" id="top">
       <img
         alt="Cruise ship sailing across calm water at golden hour"
         className="absolute inset-0 h-full w-full object-cover object-[57%_center] sm:object-center"
         fetchPriority="high"
+        height="1024"
         src={heroCruise}
+        width="1440"
       />
       <div className="hero-overlay absolute inset-0" aria-hidden="true" />
       <Navigation />
 
       <div className="page-shell relative z-10 flex min-h-[100svh] items-end pb-14 pt-32 sm:pb-20 lg:pb-24">
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl"
-          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        >
+        <div className="hero-content max-w-4xl">
           <p className="eyebrow mb-6 text-white/85">Independent cabin intelligence</p>
           <h1 className="max-w-[13ch] text-balance font-display text-[clamp(3.35rem,11vw,7.5rem)] leading-[0.93] tracking-[-0.045em]">
             Understand your cruise cabin before you book.
@@ -87,7 +89,7 @@ function Hero() {
               <img alt="" aria-hidden="true" className="h-4 w-4" src={chevronRight} />
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-5 right-5 z-10 hidden text-[0.65rem] uppercase tracking-[0.18em] text-white/70 sm:block lg:bottom-8 lg:right-10">
@@ -105,8 +107,9 @@ function Navigation() {
           Timonelo
         </a>
         <div className="hidden items-center gap-8 text-xs font-medium tracking-[0.02em] text-white/90 md:flex">
-          <a className="nav-link" href="#why">Why Timonelo</a>
-          <a className="nav-link" href="#intelligence">Intelligence</a>
+          <a className="nav-link" href="#why">The problem</a>
+          <a className="nav-link" href="#intelligence">How it works</a>
+          <a className="nav-link" href="#trust">Trust</a>
           <a className="nav-link" href="#vision">Vision</a>
         </div>
         <a className="nav-cta" href="#waitlist">Join waitlist</a>
@@ -128,9 +131,9 @@ function DecisionComplexity() {
         </Reveal>
         <Reveal className="mt-16 border-y border-ink/15 py-8 sm:mt-24 sm:py-10" delay={0.08}>
           <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
-            <EditorialStat value="Thousands" label="of distinct cabin positions" />
-            <EditorialStat value="One" label="generic category description" bordered />
-            <EditorialStat value="Too little" label="explainable context" bordered />
+            <DecisionLayer value="Cabin" label="A specific physical place" />
+            <DecisionLayer value="Category" label="A commercial grouping" bordered />
+            <DecisionLayer value="Context" label="The difference between them" bordered />
           </div>
         </Reveal>
       </div>
@@ -170,7 +173,7 @@ function ExplainableIntelligence() {
         <Reveal>
           <SectionHeading
             dark
-            eyebrow="03 — Explainable travel intelligence"
+            eyebrow="03 — How Timonelo works"
             title="A conclusion should show its working."
             text="Timonelo separates what a source says, what the evidence supports, what can be established as fact, and what remains interpretation. Each layer keeps the limits of the one before it."
           />
@@ -190,6 +193,33 @@ function ExplainableIntelligence() {
             Never sound more certain than the evidence.
           </p>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Trust() {
+  return (
+    <section className="section-space bg-white" id="trust">
+      <div className="page-shell">
+        <Reveal>
+          <SectionHeading
+            eyebrow="05 — Why trust Timonelo"
+            title="Trust is a chain, not a claim."
+            text="Timonelo earns confidence by making the basis and limits of each material assessment inspectable. Certainty is never added for presentation."
+          />
+        </Reveal>
+        <div className="mt-16 border-t border-ink/20 sm:mt-24">
+          {trustPrinciples.map(([title, text], index) => (
+            <Reveal key={title} delay={index * 0.05}>
+              <div className="grid gap-4 border-b border-ink/20 py-9 sm:grid-cols-[5rem_0.75fr_1.25fr] sm:items-baseline sm:gap-8 sm:py-12">
+                <span className="text-xs tracking-[0.14em] text-muted">0{index + 1}</span>
+                <h3 className="font-display text-3xl leading-tight sm:text-4xl">{title}</h3>
+                <p className="max-w-xl text-base leading-7 text-muted">{text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -232,7 +262,7 @@ function Vision() {
     <section className="section-space bg-sand" id="vision">
       <div className="page-shell">
         <Reveal>
-          <p className="eyebrow text-ink/55">05 — The vision</p>
+          <p className="eyebrow text-ink/55">06 — The vision</p>
           <blockquote className="mt-8 max-w-5xl font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.04em]">
             “The long-term value is not a universal cabin score.”
           </blockquote>
@@ -257,6 +287,7 @@ function Waitlist() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    // This is the intentional integration boundary for the future waitlist service.
     setSubmitted(true);
   }
 
@@ -264,7 +295,7 @@ function Waitlist() {
     <section className="section-space bg-white" id="waitlist">
       <div className="page-shell grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-24">
         <Reveal>
-          <p className="eyebrow text-muted">Early access</p>
+          <p className="eyebrow text-muted">07 — Early access</p>
           <h2 className="section-title mt-5 max-w-[11ch]">Make the cabin decision legible.</h2>
           <p className="mt-7 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
             Join the early-access list for product updates and the first cabin briefings.
@@ -273,17 +304,20 @@ function Waitlist() {
         <Reveal delay={0.08}>
           {submitted ? (
             <div className="border-l-2 border-gold py-2 pl-6" aria-live="polite">
-              <p className="font-display text-3xl">Thank you.</p>
-              <p className="mt-2 text-sm leading-6 text-muted">Your early-access request has been noted.</p>
+              <p className="font-display text-3xl">The form is ready.</p>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                No address was transmitted or stored in this preview.
+              </p>
             </div>
           ) : (
-            <form className="space-y-5" onSubmit={handleSubmit}>
+            <form className="space-y-5" data-integration="waitlist" onSubmit={handleSubmit}>
               <label className="block text-xs font-semibold tracking-[0.04em] text-ink" htmlFor="waitlist-email">
                 Email address
               </label>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <input
                   autoComplete="email"
+                  aria-describedby="waitlist-privacy"
                   className="min-h-14 flex-1 border border-ink/25 bg-paper px-4 text-base text-ink outline-none transition focus:border-ink focus:ring-2 focus:ring-gold/60"
                   id="waitlist-email"
                   name="email"
@@ -293,7 +327,9 @@ function Waitlist() {
                 />
                 <button className="button button-dark min-h-14" type="submit">Request access</button>
               </div>
-              <p className="text-xs leading-5 text-muted">Product updates only. No booking offers or sponsored rankings.</p>
+              <p className="text-xs leading-5 text-muted" id="waitlist-privacy">
+                Product updates only. No booking offers or sponsored rankings. This preview does not transmit data.
+              </p>
             </form>
           )}
         </Reveal>
@@ -325,7 +361,7 @@ function SectionHeading({ eyebrow, title, text, dark = false }: { eyebrow: strin
   );
 }
 
-function EditorialStat({ value, label, bordered = false }: { value: string; label: string; bordered?: boolean }) {
+function DecisionLayer({ value, label, bordered = false }: { value: string; label: string; bordered?: boolean }) {
   return (
     <div className={`sm:px-8 ${bordered ? 'sm:border-l sm:border-ink/15' : ''}`}>
       <p className="font-display text-4xl tracking-[-0.03em] sm:text-5xl">{value}</p>
@@ -335,17 +371,37 @@ function EditorialStat({ value, label, bordered = false }: { value: string; labe
 }
 
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const reduceMotion = useReducedMotion();
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '0px 0px -10% 0px' },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-      viewport={{ once: true, margin: '-10% 0px' }}
-      whileInView={{ opacity: 1, y: 0 }}
+    <div
+      className={`reveal ${isVisible ? 'reveal-visible' : ''} ${className}`}
+      ref={elementRef}
+      style={{ '--reveal-delay': `${delay}s` } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

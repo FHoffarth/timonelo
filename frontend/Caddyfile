@@ -17,9 +17,26 @@
         format json
     }
 
-    rewrite /health /*
-    root * dist
-    encode gzip
-    file_server
-    try_files {path} /index.html
+    handle /sitemap.xml {
+        header Content-Type "application/xml; charset=utf-8"
+        respond <<XML
+            <?xml version="1.0" encoding="UTF-8"?>
+            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+              <url><loc>{http.request.scheme}://{http.request.host}/</loc></url>
+            </urlset>
+            XML 200
+    }
+
+    handle /robots.txt {
+        header Content-Type "text/plain; charset=utf-8"
+        respond "User-agent: *\nAllow: /\nSitemap: {http.request.scheme}://{http.request.host}/sitemap.xml\n" 200
+    }
+
+    handle {
+        rewrite /health /*
+        root * dist
+        encode gzip
+        try_files {path} /index.html
+        file_server
+    }
 }
