@@ -1,4 +1,15 @@
-# Vision
+---
+status: Archived (Superseded by MANIFESTO.md)
+version: 0.1.0
+authority: Historical Archive
+owner: Documentation Council
+applies_to: Initial Foundation Archive
+last_updated: 2026-08-11
+---
+
+# Vision (Historical Foundation)
+
+> **Note:** This early draft has been officially integrated into [docs/MANIFESTO.md](../MANIFESTO.md) and [docs/CANON.md](../CANON.md) as part of the Architecture Freeze v1.0 milestone.
 
 ## Why Timonelo exists
 
@@ -34,4 +45,3 @@ Every conclusion should be traceable to a source, calculation, or explicit rule.
 Timonelo should become a trusted reference for understanding cabins across ships and cruise lines. A traveler should be able to open a cabin briefing and see a consistent account of its physical context, the evidence supporting each statement, and the limits of what can be concluded.
 
 The long-term value is not a universal cabin score. It is a durable body of cabin-specific knowledge that remains independent, reproducible, and appropriately cautious as its coverage grows.
-
