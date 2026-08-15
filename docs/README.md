@@ -43,7 +43,7 @@ Recommended reading sequence:
 | **[ARCHITECTURE.md](ARCHITECTURE.md)** | Technical module boundaries, Spatial Engine specification, and pipeline data flow. |
 | **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero layout shifts, and offline-first capability. |
 | **[TRUST_FRAMEWORK.md](TRUST_FRAMEWORK.md)** | Five-tier evidence hierarchy, two-source verification rule, and non-commercial independence. |
-| **[BRIDGE_OFFICER.md](BRIDGE_OFFICER.md)** | Constitutional voice and guidance standard for conversational, voice, and interactive interfaces. |
+| **[BRIDGE_OFFICER.md](BRIDGE_OFFICER.md)** | The permanent Bridge Officer Constitution, Conversational Canon, and Oath. |
 | **[ROADMAP.md](ROADMAP.md)** | Milestone execution plan spanning from M0 foundation through multi-ship scaling. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contribution standards for code, vector cartography, field photography, and knowledge records. |
 
