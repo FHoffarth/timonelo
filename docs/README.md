@@ -78,6 +78,12 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ---
 
-## 4. Governance Policy
+## 4. Historical Records & Milestones
+
+- **[FOUNDING.md](FOUNDING.md)**: The founding record of August 2026, marking the transition from concept to permanent spatial platform.
+
+---
+
+## 5. Governance Policy
 
 As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Architecture Decision Record (ADR) and maintainer review.
