@@ -2,39 +2,40 @@
 
 **Know your cabin before you book.**
 
-Timonelo is an independent cabin intelligence platform. It helps travelers understand a cabin through objective spatial evidence before making a booking decision. Timonelo does not sell cruises and does not rank cabins on behalf of cruise lines.
+Timonelo is an independent cruise knowledge platform. It helps travelers understand a cabin through objective spatial evidence before making a booking decision. Timonelo does not sell cruises and does not rank cabins on behalf of cruise lines.
 
 > **Core principle:** Timonelo must never sound more certain than its evidence.
 
 ## Mission
 
-Cruise booking presents cabins as inventory: category, price, a short description, and sometimes a simplified deck plan. Timonelo is being built to turn verifiable ship geometry into clear, appropriately qualified cabin information.
+Cruise booking presents cabins as inventory: category, price, a short description, and sometimes a simplified deck plan. Timonelo is built to turn verifiable ship geometry into clear, appropriately qualified spatial orientation and cabin information.
 
-## Current status
+## Current Status: Foundation Freeze v1.0
 
-Timonelo is at an early foundation stage. The repository contains its product direction, architectural boundaries, data conventions, a minimal Python package, and the initial landing page. There is no booking integration or database yet.
+The Timonelo foundations are established and **Frozen at Milestone v1.0**. The repository contains the canonical Knowledge Pack architecture, the Spatial Evidence Engine contracts, the Knowledge Factory foundation, the Explorer runtime MVP, and the authoritative Foundation Documentation Suite.
 
-## Planned architecture
+## Architecture
 
-The system is planned as four independent modules:
+The system operates as an end-to-end spatial evidence pipeline:
 
 - **Spatial Evidence Engine** — derives reproducible spatial evidence from ship geometry.
-- **Ship Knowledge Graph** — represents cabins, decks, venues, connections, and provenance.
-- **Cabin Briefing Generator** — translates available evidence into a bounded cabin briefing.
-- **Web Platform** — publishes cabin briefings and supporting evidence without participating in their calculation.
+- **Canonical Knowledge Pack** — immutable, self-validating spatial twin data contract.
+- **Ship Knowledge Factory** — multi-source blueprint ingestion, verification, and linting.
+- **Cruise Explorer Platform** — publishes spatial orientation without modifying claims.
 
-Responsibilities and boundaries are described in [docs/architecture.md](docs/architecture.md).
+Detailed boundaries and technical contracts are specified in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-## Repository structure
+## Repository Structure
 
 ```text
 .
 ├── assets/          Documentation and brand assets
-├── data/            Source, processed, and ship-specific data
-├── docs/            Vision, product, roadmap, and architecture
-├── frontend/        Standalone Vite landing page
-├── src/timonelo/    Python package
-└── tests/           Package and future contract tests
+├── data/            Source, processed, and ship-specific canonical packs
+├── docs/            The Timonelo Foundation Documentation Suite
+├── frontend/        Vite / React Cruise Explorer runtime
+├── knowledge/       Structured markdown knowledge base & templates
+├── src/timonelo/    Python package (Engine & Knowledge Pack schema)
+└── tests/           Package unit and schema contract tests
 ```
 
 ## Development
@@ -46,7 +47,7 @@ python -m pip install -e .
 python -m unittest discover -s tests
 ```
 
-The landing page lives in `frontend/` and is developed independently:
+The Cruise Explorer lives in `frontend/` and is developed independently:
 
 ```bash
 cd frontend
@@ -54,12 +55,19 @@ npm install
 npm run dev
 ```
 
-## Documentation
+## Documentation Suite (v1.0 Frozen)
 
-- [Vision](docs/vision.md)
-- [Product](docs/product.md)
-- [Architecture](docs/architecture.md)
-- [Roadmap](docs/roadmap.md)
+The complete documentation suite is housed under [`docs/`](docs/README.md):
+
+- **[Documentation Hub](docs/README.md)** — Master documentation index & reading guide
+- **[Manifesto](docs/MANIFESTO.md)** — Mission, philosophy, and negative boundaries
+- **[Canon](docs/CANON.md)** — Epistemic definitions, terminology, and 20 spatial laws
+- **[Product Specification](docs/PRODUCT.md)** — Cabin briefings, 16 experience dimensions, and user personas
+- **[Architecture](docs/ARCHITECTURE.md)** — Technical module boundaries & Spatial Engine v1.0
+- **[Engineering Principles](docs/ENGINEERING_PRINCIPLES.md)** — Invariants, determinism, and code standards
+- **[Trust Framework](docs/TRUST_FRAMEWORK.md)** — Evidence hierarchy, provenance, and neutrality
+- **[Roadmap](docs/ROADMAP.md)** — Milestone execution plan & scaling roadmap
+- **[Contributing](docs/CONTRIBUTING.md)** — Contribution standards for code, cartography, and data
 
 ## License
 

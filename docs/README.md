@@ -1,0 +1,71 @@
+---
+status: Frozen (v1.0)
+version: 1.0.0
+authority: Timonelo
+owner: Maintainers
+applies_to: Entire Timonelo Ecosystem
+last_updated: 2026-08-15
+---
+
+# Timonelo Documentation Hub
+
+Welcome to the Timonelo documentation repository. Timonelo is an independent cruise knowledge platform and spatial orientation engine.
+
+---
+
+## 1. Foundation Suite (v1.0 Frozen)
+
+Recommended reading sequence:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       FOUNDATION READING SEQUENCE                           │
+│                                                                             │
+│  1. [ MANIFESTO.md ] ────────── Why Timonelo exists & core philosophy       │
+│  2. [ CANON.md ] ────────────── Epistemic definitions & 20 spatial laws     │
+│  3. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
+│  4. [ ARCHITECTURE.md ] ─────── Technical boundaries & Spatial Engine v1.0  │
+│  5. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
+│  6. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
+│  7. [ ROADMAP.md ] ──────────── Milestone progression & future scaling      │
+│  8. [ CONTRIBUTING.md ] ─────── How to contribute code, data & cartography  │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Document Directory
+
+| Document | Purpose |
+| :--- | :--- |
+| **[MANIFESTO.md](MANIFESTO.md)** | Purpose, negative boundaries, and experience hierarchy ($Experience \uparrow Orientation \uparrow Knowledge \uparrow Assets$). |
+| **[CANON.md](CANON.md)** | Immutable definitions (*Canonical, Verified, Unknown, Experience Ready*), strict terminology, and the 20 Spatial Laws. |
+| **[PRODUCT.md](PRODUCT.md)** | Cabin Briefing standards, the 16 Human Experience Dimensions, and 8 User Personas. |
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** | Module boundaries, Spatial Engine specification, and the **Architecture Freeze (v1.0)** declaration. |
+| **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero-CLS performance, and offline-first capability. |
+| **[TRUST_FRAMEWORK.md](TRUST_FRAMEWORK.md)** | Five-tier evidence hierarchy, two-source verification rule, and non-commercial independence. |
+| **[ROADMAP.md](ROADMAP.md)** | Milestone execution plan spanning from M0 foundation through multi-ship scaling. |
+| **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contribution standards for code, vector cartography, field photography, and knowledge records. |
+
+---
+
+## 2. Technical & Factory Specifications
+
+- **[Explorer Architecture](explorer-architecture.md)**: Web runtime specification for rendering canonical Knowledge Packs.
+- **[Domain Model Specification](architecture/DOMAIN_MODEL.md)**: Entity-relationship specifications for spatial domains.
+- **[Knowledge Factory Specifications](factory/README.md)**:
+  - [SPEC-002: Knowledge Factory](factory/SPEC-002-knowledge-factory.md)
+  - [SPEC-003: Source Registry](factory/SPEC-003-source-registry.md)
+  - [SPEC-004: Ship Maturity Model](factory/SPEC-004-ship-maturity-model.md)
+  - [SPEC-005: Importer Architecture](factory/SPEC-005-importer-architecture.md)
+  - [SPEC-006: Relationship Builder](factory/SPEC-006-relationship-builder.md)
+  - [SPEC-007: Validation Framework](factory/SPEC-007-validation-framework.md)
+- **Knowledge Explorer Tooling**:
+  - [Knowledge Explorer Guide](Knowledge%20Explorer.md)
+  - [Knowledge Index Guide](Knowledge%20Index.md)
+  - [Knowledge Loader Guide](Knowledge%20Loader.md)
+  - [Knowledge Validation Guide](Knowledge%20Validation.md)
+
+---
+
+## 3. Governance Policy
+
+As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Pull Request and maintainer review.
