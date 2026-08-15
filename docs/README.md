@@ -81,6 +81,7 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 ## 4. Technical Audits & Assurance
 
 - **[AUDIT_BELLISSIMA_v1.md](AUDIT_BELLISSIMA_v1.md)**: Formal adversarial audit and epistemic verification of the MSC Bellissima reference implementation v1.0.
+- **[AUDIT_BELLISSIMA_v2.md](AUDIT_BELLISSIMA_v2.md)**: Scientific peer review and spatial systems audit of industrial-scale ontology, graph circulation, and Knowledge Factory maturity.
 
 ---
 

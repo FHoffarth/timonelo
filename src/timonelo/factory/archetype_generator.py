@@ -159,7 +159,7 @@ class StateroomArchetypeGenerator:
                 )
 
                 # --- PORT (ODD) ---
-                port_idx = idx - 1 if idx > start_idx else idx + 1
+                port_idx = idx - 1
                 c_num_port = f"{deck_number}{port_idx:03d}"
                 is_acc_port = c_num_port in accessible_staterooms
                 is_suite_port = (port_idx <= 11)
