@@ -22,6 +22,7 @@ import { CabinReport, ExportBar, type LensId } from './report';
 import { updateSocialHead, shipSlug } from './share';
 import { cabinFromLocation, cabinPath, parseCabinRoute } from './routing';
 import { BoardingIntelligence } from './boarding';
+import { CruiseBriefingView } from './briefing';
 
 const DEFAULT_CABIN = '14122';
 
@@ -115,6 +116,7 @@ export default function App() {
         />
 
         <main className="page-shell mt-12 space-y-16">
+          <CruiseBriefingView ship={ship} cabin={cabin} />
           <BoardingIntelligence ship={ship} cabin={cabin} />
           <TakeItWithYou ship={ship} cabin={cabin} />
           <HullPosition ship={ship} cabin={cabin} />
