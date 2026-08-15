@@ -78,12 +78,18 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ---
 
-## 4. Historical Records & Milestones
+## 4. Technical Audits & Assurance
+
+- **[AUDIT_BELLISSIMA_v1.md](AUDIT_BELLISSIMA_v1.md)**: Formal adversarial audit and epistemic verification of the MSC Bellissima reference implementation v1.0.
+
+---
+
+## 5. Historical Records & Milestones
 
 - **[FOUNDING.md](FOUNDING.md)**: The founding record of August 2026, marking the transition from concept to permanent spatial platform.
 
 ---
 
-## 5. Governance Policy
+## 6. Governance Policy
 
 As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Architecture Decision Record (ADR) and maintainer review.
