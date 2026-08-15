@@ -5,14 +5,20 @@ Includes all passenger residential tiers (Decks 08-14), Lido (Deck 15), Promenad
 """
 
 import json
+import sys
 from pathlib import Path
-from src.timonelo.ontology.bellissima import create_bellissima_ontology
-from src.timonelo.calculus.router import DeterministicSpatialRouter
-from src.timonelo.calculus.sandwich import DeterministicSandwichResolver
-from src.timonelo.calculus.sightlines import DeterministicSightlineCalculator
-from src.timonelo.lenses.accessibility import AccessibilityLens
-from src.timonelo.lenses.family import FamilyLens
-from src.timonelo.lenses.quiet import QuietCabinLens
+
+# Ensure src is in python path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT_DIR / "src"))
+
+from timonelo.ontology.bellissima import create_bellissima_ontology
+from timonelo.calculus.router import DeterministicSpatialRouter
+from timonelo.calculus.sandwich import DeterministicSandwichResolver
+from timonelo.calculus.sightlines import DeterministicSightlineCalculator
+from timonelo.lenses.accessibility import AccessibilityLens
+from timonelo.lenses.family import FamilyLens
+from timonelo.lenses.quiet import QuietCabinLens
 
 
 def generate_explorer_pack():
