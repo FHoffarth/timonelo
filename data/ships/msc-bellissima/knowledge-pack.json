@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "knowledge-pack:msc-bellissima",
+  "version": "2022.10.0",
+  "effective_date": "2022-10-01",
+  "status": "reference",
+  "limitations": [
+    "This pack represents the configuration shown in the official MSC Bellissima technical sheet marked 10.2022.",
+    "MSC states that configuration, data, and descriptions may vary by season and destination and must be verified at booking time.",
+    "Current MSC web deck labels differ from the 2022 technical sheet; this version preserves the internally consistent 2022 snapshot.",
+    "Cabin coverage is intentionally representative rather than exhaustive; unknown category assignments remain explicit."
+  ],
+  "sources": [
+    {
+      "source_id": "source:msc:bellissima-technical-sheet-2022",
+      "title": "MSC Bellissima Technical Sheet",
+      "publisher": "MSC Cruises",
+      "url": "https://info.msccruises.com/rs/271-DJN-199/images/MSC_BELLISSIMA_TECHNICAL_SHEET_ENG%20%281%29.pdf?version=0",
+      "accessed_at": "2026-08-15",
+      "source_type": "official_technical_sheet",
+      "published_at": null,
+      "limitations": [
+        "The document is marked 10.2022 but does not provide a complete ISO publication date.",
+        "The publisher requires configuration to be verified at booking time."
+      ]
+    },
+    {
+      "source_id": "source:msc:bellissima-ship-page-2026",
+      "title": "MSC Bellissima Cruise Ship and Deck Plan",
+      "publisher": "MSC Cruises",
+      "url": "https://www.msccruises.com/int/our-cruises/ships/msc-bellissima",
+      "accessed_at": "2026-08-15",
+      "source_type": "official_web_page",
+      "published_at": null,
+      "limitations": [
+        "The page is dynamic and may change without a version identifier.",
+        "Its current deck labels differ from the official technical sheet marked 10.2022."
+      ]
+    },
+    {
+      "source_id": "source:msc:bellissima-cabins-page-2026",
+      "title": "MSC Bellissima Cabins and Suites",
+      "publisher": "MSC Cruises",
+      "url": "https://www.msccruises.com/int/our-cruises/ships/msc-bellissima/cabins-suites",
+      "accessed_at": "2026-08-15",
+      "source_type": "official_web_page",
+      "published_at": null,
+      "limitations": [
+        "Descriptions are category-level and do not establish an individual cabin assignment.",
+        "MSC states that size, layout, and furniture may vary within a category."
+      ]
+    }
+  ],
+  "ship": {
+    "entity_id": "ship:msc-bellissima",
+    "name": "MSC Bellissima",
+    "operator_name": "MSC Cruises",
+    "cabin_count": 2201,
+    "guest_capacity": 5655,
+    "source_ids": [
+      "source:msc:bellissima-technical-sheet-2022",
+      "source:msc:bellissima-ship-page-2026"
+    ],
+    "source_locator": "Technical sheet, page 2; official ship page, Overview"
+  },
+  "decks": [
+    {"entity_id":"deck:msc-bellissima:04","ship_id":"ship:msc-bellissima","number":4,"name":"Lirica","ordinal":1,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 4"},
+    {"entity_id":"deck:msc-bellissima:05","ship_id":"ship:msc-bellissima","number":5,"name":"Opera","ordinal":2,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 5"},
+    {"entity_id":"deck:msc-bellissima:06","ship_id":"ship:msc-bellissima","number":6,"name":"Musica","ordinal":3,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 6"},
+    {"entity_id":"deck:msc-bellissima:07","ship_id":"ship:msc-bellissima","number":7,"name":"Fantasia","ordinal":4,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 7"},
+    {"entity_id":"deck:msc-bellissima:08","ship_id":"ship:msc-bellissima","number":8,"name":"Meraviglia","ordinal":5,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 8"},
+    {"entity_id":"deck:msc-bellissima:09","ship_id":"ship:msc-bellissima","number":9,"name":"Seaside","ordinal":6,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 9"},
+    {"entity_id":"deck:msc-bellissima:10","ship_id":"ship:msc-bellissima","number":10,"name":"Seaside Evo","ordinal":7,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 10"},
+    {"entity_id":"deck:msc-bellissima:11","ship_id":"ship:msc-bellissima","number":11,"name":"Bellissima","ordinal":8,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 11"},
+    {"entity_id":"deck:msc-bellissima:12","ship_id":"ship:msc-bellissima","number":12,"name":"Grandiosa","ordinal":9,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 12"},
+    {"entity_id":"deck:msc-bellissima:13","ship_id":"ship:msc-bellissima","number":13,"name":"Magnifica","ordinal":10,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 13"},
+    {"entity_id":"deck:msc-bellissima:14","ship_id":"ship:msc-bellissima","number":14,"name":"World Class","ordinal":11,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 14"},
+    {"entity_id":"deck:msc-bellissima:15","ship_id":"ship:msc-bellissima","number":15,"name":"Preziosa","ordinal":12,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 15"},
+    {"entity_id":"deck:msc-bellissima:16","ship_id":"ship:msc-bellissima","number":16,"name":"Seaview","ordinal":13,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 16"},
+    {"entity_id":"deck:msc-bellissima:18","ship_id":"ship:msc-bellissima","number":18,"name":"Divina","ordinal":14,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 18"},
+    {"entity_id":"deck:msc-bellissima:19","ship_id":"ship:msc-bellissima","number":19,"name":"Splendida","ordinal":15,"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 19"}
+  ],
+  "cabin_categories": [
+    {"entity_id":"cabin-category:msc-bellissima:yc3","code":"YC3","name":"MSC Yacht Club Royal Suite","accommodation_type":"suite","deck_numbers":[15],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Royal Suite"},
+    {"entity_id":"cabin-category:msc-bellissima:yjd","code":"YJD","name":"MSC Yacht Club Duplex Suite with whirlpool","accommodation_type":"suite","deck_numbers":[9,10,11,12],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Duplex Suite"},
+    {"entity_id":"cabin-category:msc-bellissima:yc1","code":"YC1","name":"MSC Yacht Club Deluxe Suite","accommodation_type":"suite","deck_numbers":[14,15,16,18],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Yacht Club Deluxe Suite"},
+    {"entity_id":"cabin-category:msc-bellissima:yin","code":"YIN","name":"MSC Yacht Club Interior Suite","accommodation_type":"interior","deck_numbers":[14,15,16],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Yacht Club Interior Suite"},
+    {"entity_id":"cabin-category:msc-bellissima:sxj","code":"SXJ","name":"Grand Suite Aurea with terrace and whirlpool","accommodation_type":"suite","deck_numbers":[12],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Grand Suite Aurea"},
+    {"entity_id":"cabin-category:msc-bellissima:slj","code":"SLJ","name":"Premium Suite Aurea with terrace and whirlpool","accommodation_type":"suite","deck_numbers":[9,10,11,12,13],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Premium Suite Aurea with terrace"},
+    {"entity_id":"cabin-category:msc-bellissima:sl1","code":"SL1","name":"Premium Suite Aurea","accommodation_type":"suite","deck_numbers":[9,10,11,12,13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Premium Suite Aurea"},
+    {"entity_id":"cabin-category:msc-bellissima:ba","code":"BA","name":"Deluxe Balcony Aurea","accommodation_type":"balcony","deck_numbers":[11,12,13],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Deluxe Balcony Aurea"},
+    {"entity_id":"cabin-category:msc-bellissima:br3","code":"BR3","name":"Deluxe Balcony","accommodation_type":"balcony","deck_numbers":[13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin categories, page 14"},
+    {"entity_id":"cabin-category:msc-bellissima:br2","code":"BR2","name":"Deluxe Balcony","accommodation_type":"balcony","deck_numbers":[11,12],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin categories, page 14"},
+    {"entity_id":"cabin-category:msc-bellissima:br1","code":"BR1","name":"Deluxe Balcony","accommodation_type":"balcony","deck_numbers":[8,9,10],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin categories, page 14"},
+    {"entity_id":"cabin-category:msc-bellissima:bp","code":"BP","name":"Deluxe Balcony with partial view","accommodation_type":"balcony","deck_numbers":[8,9,10,11,12,13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, partial-view balcony"},
+    {"entity_id":"cabin-category:msc-bellissima:bs","code":"BS","name":"Studio Balcony","accommodation_type":"balcony","deck_numbers":[13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Studio Balcony"},
+    {"entity_id":"cabin-category:msc-bellissima:ol2","code":"OL2","name":"Premium Ocean View","accommodation_type":"ocean_view","deck_numbers":[9,10,11],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Premium Ocean View"},
+    {"entity_id":"cabin-category:msc-bellissima:or1","code":"OR1","name":"Deluxe Ocean View","accommodation_type":"ocean_view","deck_numbers":[5],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Deluxe Ocean View"},
+    {"entity_id":"cabin-category:msc-bellissima:om2","code":"OM2","name":"Junior Ocean View","accommodation_type":"ocean_view","deck_numbers":[8],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Junior Ocean View"},
+    {"entity_id":"cabin-category:msc-bellissima:oo","code":"OO","name":"Junior Ocean View with obstructed view","accommodation_type":"ocean_view","deck_numbers":[8],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, obstructed-view Junior Ocean View"},
+    {"entity_id":"cabin-category:msc-bellissima:ir2","code":"IR2","name":"Deluxe Interior","accommodation_type":"interior","deck_numbers":[10,11,12,13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin categories, page 14"},
+    {"entity_id":"cabin-category:msc-bellissima:ir1","code":"IR1","name":"Deluxe Interior","accommodation_type":"interior","deck_numbers":[5,6,7,8,9,10],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin categories, page 14"},
+    {"entity_id":"cabin-category:msc-bellissima:is","code":"IS","name":"Studio Interior","accommodation_type":"interior","deck_numbers":[5,6,7,8,9,10,11,12,13,14],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-cabins-page-2026"],"source_locator":"Cabin categories, page 14; cabins page, Studio Interior"}
+  ],
+  "cabins": [
+    {"entity_id":"cabin:msc-bellissima:5001","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:05","number":"5001","category_id":"cabin-category:msc-bellissima:or1","feature_codes":[],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 5, cabin 5001","limitations":[]},
+    {"entity_id":"cabin:msc-bellissima:13245","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:13","number":"13245","category_id":null,"feature_codes":["bunk-bed-only"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin notes, page 14; Deck 13 plan, page 16","limitations":["Category assignment is intentionally unknown in this pack."]},
+    {"entity_id":"cabin:msc-bellissima:13247","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:13","number":"13247","category_id":null,"feature_codes":[],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 13, cabin 13247","limitations":["Category assignment is intentionally unknown in this pack."]},
+    {"entity_id":"cabin:msc-bellissima:13342","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:13","number":"13342","category_id":null,"feature_codes":["bunk-bed-only"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin notes, page 14; Deck 13 plan, page 16","limitations":["Category assignment is intentionally unknown in this pack."]},
+    {"entity_id":"cabin:msc-bellissima:14213","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:14","number":"14213","category_id":null,"feature_codes":["bunk-bed-only"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin notes, page 14; Deck 14 plan, page 17","limitations":["Category assignment is intentionally unknown in this pack."]},
+    {"entity_id":"cabin:msc-bellissima:14256","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:14","number":"14256","category_id":null,"feature_codes":["bunk-bed-only"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin notes, page 14; Deck 14 plan, page 17","limitations":["Category assignment is intentionally unknown in this pack."]},
+    {"entity_id":"cabin:msc-bellissima:16018","ship_id":"ship:msc-bellissima","deck_id":"deck:msc-bellissima:16","number":"16018","category_id":"cabin-category:msc-bellissima:yc1","feature_codes":["crystal-cabin"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"MSC Yacht Club accommodations, page 7; Deck 16 plan, page 17","limitations":[]}
+  ],
+  "public_areas": [
+    {"entity_id":"public-area:msc-bellissima:london-theatre","ship_id":"ship:msc-bellissima","name":"London Theatre","kind":"entertainment","deck_ids":["deck:msc-bellissima:05","deck:msc-bellissima:06"],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-ship-page-2026"],"source_locator":"Deck plans, page 15, Decks 5-6; ship page, London Theatre","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:galleria-bellissima","ship_id":"ship:msc-bellissima","name":"Galleria Bellissima","kind":"promenade","deck_ids":["deck:msc-bellissima:06","deck:msc-bellissima:07"],"source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-ship-page-2026"],"source_locator":"Deck plans, page 15, Decks 6-7; ship page, main features","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:posidonia-restaurant","ship_id":"ship:msc-bellissima","name":"Posidonia Restaurant","kind":"dining","deck_ids":["deck:msc-bellissima:05"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 5","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:lighthouse-restaurant","ship_id":"ship:msc-bellissima","name":"Lighthouse Restaurant","kind":"dining","deck_ids":["deck:msc-bellissima:06"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 6","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:imperial-casino","ship_id":"ship:msc-bellissima","name":"Imperial Casino","kind":"entertainment","deck_ids":["deck:msc-bellissima:07"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 7","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:carousel-lounge","ship_id":"ship:msc-bellissima","name":"Carousel Lounge","kind":"entertainment","deck_ids":["deck:msc-bellissima:07"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 7","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:msc-aurea-spa","ship_id":"ship:msc-bellissima","name":"MSC Aurea Spa","kind":"wellness","deck_ids":["deck:msc-bellissima:07"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 7","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:butchers-cut","ship_id":"ship:msc-bellissima","name":"Butcher's Cut","kind":"dining","deck_ids":["deck:msc-bellissima:07"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 15, Deck 7","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:marketplace-buffet","ship_id":"ship:msc-bellissima","name":"Marketplace Buffet","kind":"dining","deck_ids":["deck:msc-bellissima:15"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 15","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:atmosphere-sports-bar","ship_id":"ship:msc-bellissima","name":"Atmosphere Sports Bar","kind":"lounge","deck_ids":["deck:msc-bellissima:15"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 15","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:top-sail-lounge","ship_id":"ship:msc-bellissima","name":"Top Sail Lounge","kind":"lounge","deck_ids":["deck:msc-bellissima:16"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 16","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:horizon-pool","ship_id":"ship:msc-bellissima","name":"Horizon Pool","kind":"recreation","deck_ids":["deck:msc-bellissima:16"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 16","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:msc-yacht-club-restaurant","ship_id":"ship:msc-bellissima","name":"MSC Yacht Club Restaurant","kind":"dining","deck_ids":["deck:msc-bellissima:18"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 18","limitations":[]},
+    {"entity_id":"public-area:msc-bellissima:msc-yacht-club-grill-and-bar","ship_id":"ship:msc-bellissima","name":"MSC Yacht Club Grill & Bar","kind":"dining","deck_ids":["deck:msc-bellissima:19"],"source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 17, Deck 19","limitations":[]}
+  ],
+  "relationships": [
+    {"relationship_id":"relationship:deck-04-below-deck-05","source_entity_id":"deck:msc-bellissima:04","target_entity_id":"deck:msc-bellissima:05","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-05-below-deck-06","source_entity_id":"deck:msc-bellissima:05","target_entity_id":"deck:msc-bellissima:06","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-06-below-deck-07","source_entity_id":"deck:msc-bellissima:06","target_entity_id":"deck:msc-bellissima:07","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-07-below-deck-08","source_entity_id":"deck:msc-bellissima:07","target_entity_id":"deck:msc-bellissima:08","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-08-below-deck-09","source_entity_id":"deck:msc-bellissima:08","target_entity_id":"deck:msc-bellissima:09","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-09-below-deck-10","source_entity_id":"deck:msc-bellissima:09","target_entity_id":"deck:msc-bellissima:10","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-10-below-deck-11","source_entity_id":"deck:msc-bellissima:10","target_entity_id":"deck:msc-bellissima:11","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-11-below-deck-12","source_entity_id":"deck:msc-bellissima:11","target_entity_id":"deck:msc-bellissima:12","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-12-below-deck-13","source_entity_id":"deck:msc-bellissima:12","target_entity_id":"deck:msc-bellissima:13","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-13-below-deck-14","source_entity_id":"deck:msc-bellissima:13","target_entity_id":"deck:msc-bellissima:14","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-14-below-deck-15","source_entity_id":"deck:msc-bellissima:14","target_entity_id":"deck:msc-bellissima:15","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-15-below-deck-16","source_entity_id":"deck:msc-bellissima:15","target_entity_id":"deck:msc-bellissima:16","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:deck-16-below-deck-18","source_entity_id":"deck:msc-bellissima:16","target_entity_id":"deck:msc-bellissima:18","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Deck 17 is not represented in the source plan; this relates consecutive represented structural levels only."},
+    {"relationship_id":"relationship:deck-18-below-deck-19","source_entity_id":"deck:msc-bellissima:18","target_entity_id":"deck:msc-bellissima:19","kind":"below","evidence_kind":"deterministic_derivation","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, pages 15-17","derivation_rule":"deck-ordinal-consecutive-v1","limitation":"Structural ordering only; no passenger impact is implied."},
+    {"relationship_id":"relationship:cabin-13245-adjacent-to-13247","source_entity_id":"cabin:msc-bellissima:13245","target_entity_id":"cabin:msc-bellissima:13247","kind":"adjacent_to","evidence_kind":"source_assertion","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans, page 16, Deck 13","derivation_rule":null,"limitation":"Plan adjacency only; no connecting door or passenger impact is asserted."}
+  ],
+  "claims": [
+    {"claim_id":"claim:msc-bellissima:cabin-count-2022","subject_entity_id":"ship:msc-bellissima","predicate":"cabin_count","statement":"The technical sheet states that MSC Bellissima has 2,201 cabins.","value":2201,"unit":"cabins","evidence_kind":"source_assertion","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans and accommodations, page 14","derivation_rule":null,"limitation":"Configuration must be verified for the applicable season and destination."},
+    {"claim_id":"claim:msc-bellissima:guest-capacity-2022","subject_entity_id":"ship:msc-bellissima","predicate":"guest_capacity","statement":"The technical sheet states a guest capacity of 5,655.","value":5655,"unit":"guests","evidence_kind":"source_assertion","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Deck plans and accommodations, page 14","derivation_rule":null,"limitation":"The source does not qualify the operational occupancy assumptions in this statement."},
+    {"claim_id":"claim:msc-bellissima:bunk-bed-only-cabins","subject_entity_id":"ship:msc-bellissima","predicate":"bunk_bed_only_cabin_numbers","statement":"The technical sheet identifies cabins 13245, 13342, 14213, and 14256 as having only bunk bed.","value":["13245","13342","14213","14256"],"unit":null,"evidence_kind":"source_assertion","source_ids":["source:msc:bellissima-technical-sheet-2022"],"source_locator":"Cabin notes, page 14","derivation_rule":null,"limitation":"The statement is preserved using the source wording and does not infer bed suitability."},
+    {"claim_id":"claim:galleria-bellissima:two-deck-promenade","subject_entity_id":"public-area:msc-bellissima:galleria-bellissima","predicate":"deck_span_count","statement":"Galleria Bellissima is represented as a two-deck indoor promenade.","value":2,"unit":"decks","evidence_kind":"source_assertion","source_ids":["source:msc:bellissima-technical-sheet-2022","source:msc:bellissima-ship-page-2026"],"source_locator":"Deck plans, page 15, Decks 6-7; ship page, Beauty at sea","derivation_rule":null,"limitation":"The claim identifies structural span only and does not characterize activity impact."}
+  ]
+}
