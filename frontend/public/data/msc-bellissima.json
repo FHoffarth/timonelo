@@ -1,0 +1,367 @@
+{
+  "imo": "IMO9766205",
+  "name": "MSC Bellissima",
+  "ship_class": "Meraviglia Class",
+  "length_m": 315.83,
+  "beam_m": 43.0,
+  "total_decks": 19,
+  "decks": {
+    "14": {
+      "deck_number": 14,
+      "name": "Girasole",
+      "elevation_m": 42.0,
+      "zone": "RESIDENTIAL_UPPER",
+      "venues": []
+    },
+    "15": {
+      "deck_number": 15,
+      "name": "Rododendro",
+      "elevation_m": 45.5,
+      "zone": "LIDO_SPORTS",
+      "venues": [
+        {
+          "id": "VENUE_BUFFET",
+          "name": "Marketplace Buffet",
+          "category": "BUFFET",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_ATMOSPHERE_POOL",
+          "name": "Atmosphere Pool",
+          "category": "POOL_SOLARIUM",
+          "is_noise_generator": true
+        }
+      ]
+    },
+    "13": {
+      "deck_number": 13,
+      "name": "Ciclamino",
+      "elevation_m": 38.5,
+      "zone": "RESIDENTIAL_UPPER",
+      "venues": []
+    },
+    "6": {
+      "deck_number": 6,
+      "name": "Posidonia",
+      "elevation_m": 14.0,
+      "zone": "PROMENADE",
+      "venues": [
+        {
+          "id": "VENUE_THEATER",
+          "name": "London Theatre",
+          "category": "THEATER",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_PROMENADE",
+          "name": "Galleria Bellissima",
+          "category": "PROMENADE_ATRIUM",
+          "is_noise_generator": true
+        }
+      ]
+    },
+    "18": {
+      "deck_number": 18,
+      "name": "Ninfea",
+      "elevation_m": 55.0,
+      "zone": "LIDO_SPORTS",
+      "venues": [
+        {
+          "id": "VENUE_DOREMI_KIDS",
+          "name": "DOREMI Studio & Junior Club",
+          "category": "YOUTH_KIDS",
+          "is_noise_generator": false
+        }
+      ]
+    }
+  },
+  "cabins": {
+    "14122": {
+      "cabin_number": "14122",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "BA",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": "14120",
+      "bed_near_balcony": true,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "Marketplace Buffet"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": "14120"
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 26.0,
+          "seconds": 20.8,
+          "steps": 35,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 226.5,
+          "seconds": 181.2,
+          "steps": 302,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 12.5,
+          "seconds": 10.0,
+          "steps": 17,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 12.5m.",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": true,
+          "has_connecting": true,
+          "connecting_cabin": "14120",
+          "kids_club_distance_m": 40.5,
+          "summary": "Adjoining cabin connection verified with Cabin 14120. Distance to DOREMI Youth Club is 40.5m (via elevator core)."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Sheet_01_19"
+        },
+        {
+          "source_id": "EVID-SURVEY-2024-DECK14",
+          "sha256": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+          "locator": "Onboard_Survey_2024_Deck14_Corridor_Aft"
+        }
+      ]
+    },
+    "14120": {
+      "cabin_number": "14120",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "BA",
+      "square_meters": 19.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": "14122",
+      "bed_near_balcony": false,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 2,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 1,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "Marketplace Buffet"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": "14122"
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 34.0,
+          "seconds": 27.2,
+          "steps": 45,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 234.5,
+          "seconds": 187.6,
+          "steps": 313,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 20.5,
+          "seconds": 16.4,
+          "steps": 27,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 20.5m.",
+          "lift_distance_m": 20.5
+        },
+        "family": {
+          "is_optimized": true,
+          "has_connecting": true,
+          "connecting_cabin": "14122",
+          "kids_club_distance_m": 48.5,
+          "summary": "Adjoining cabin connection verified with Cabin 14122. Distance to DOREMI Youth Club is 48.5m (via elevator core)."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Buffered from elevator lobby (20.5m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Sheet_01_19"
+        }
+      ]
+    },
+    "14121": {
+      "cabin_number": "14121",
+      "deck_number": 14,
+      "deck_name": "Girasole",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "BA_ACC",
+      "square_meters": 28.0,
+      "balcony_type": "UNOBSTRUCTED",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": true,
+      "is_accessible": true,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 3,
+        "us_count": 3,
+        "usb_a_count": 3,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 15,
+          "deck_name": "Rododendro",
+          "venues": [
+            "Marketplace Buffet"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 13,
+          "deck_name": "Ciclamino",
+          "venues": [],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 75.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Direct 180\u00b0 unobstructed ocean horizon view. Downward sea view clear."
+      },
+      "distances": {
+        "buffet": {
+          "meters": 26.0,
+          "seconds": 20.8,
+          "steps": 35,
+          "step_free": true
+        },
+        "theater": {
+          "meters": 226.5,
+          "seconds": 181.2,
+          "steps": 302,
+          "step_free": true
+        },
+        "elevator": {
+          "meters": 12.5,
+          "seconds": 10.0,
+          "steps": 17,
+          "step_free": true
+        }
+      },
+      "lenses": {
+        "accessibility": {
+          "is_certified": true,
+          "summary": "Certified Accessible Stateroom with 950mm doorway. Step-free route to elevator core is 12.5m (17 steps).",
+          "lift_distance_m": 12.5
+        },
+        "family": {
+          "is_optimized": true,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": 40.5,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is 40.5m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Marketplace Buffet on Deck 15",
+            "Buffered from elevator lobby (12.5m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-GA-BELLISSIMA-REV4",
+          "sha256": "4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+          "locator": "Chantiers_de_l_Atlantique_GA_Sheet_01_19"
+        }
+      ]
+    }
+  }
+}

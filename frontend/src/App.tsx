@@ -1,407 +1,465 @@
-import { type CSSProperties, type FormEvent, type ReactNode, useEffect, useRef, useState } from 'react';
-
-import chevronRight from './assets/chevron-right.svg';
-
-const heroCruise = '/hero-cruise-golden-hour.webp';
-
-const intelligenceAreas = [
-  {
-    number: '01',
-    title: 'Structural context',
-    text: 'The cabin, its deck, and the spaces that surround it—kept specific to the ship being examined.',
-  },
-  {
-    number: '02',
-    title: 'Evidence boundaries',
-    text: 'What the available sources support, how the finding was reached, and where the evidence stops.',
-  },
-  {
-    number: '03',
-    title: 'Material unknowns',
-    text: 'What cannot be concluded remains visible instead of being softened into certainty.',
-  },
-];
-
-const cabinDifferences = [
-  ['Position', 'Forward, midship, or aft changes the physical context.'],
-  ['Surroundings', 'What sits above, below, and beside a cabin matters.'],
-  ['Access', 'Routes to lifts, stairs, and public spaces are not interchangeable.'],
-  ['Evidence', 'The source and its limits determine what can responsibly be said.'],
-];
-
-const trustPrinciples = [
-  ['Traceable', 'Material statements retain a clear path back to the sources and evidence that support them.'],
-  ['Bounded', 'Evidence limits and alternative interpretations remain visible where they matter.'],
-  ['Explicit', 'Unknowns stay unknown. Timonelo does not quietly replace missing knowledge with assumptions.'],
-];
+import { useState, useEffect } from 'react';
+import type { ShipData, CabinData } from './types';
 
 export default function App() {
-  return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink">
-      <a className="skip-link" href="#main-content">
-        Skip to content
-      </a>
-      <Hero />
-      <main id="main-content">
-        <DecisionComplexity />
-        <CabinStory />
-        <ExplainableIntelligence />
-        <CabinIntelligence />
-        <Trust />
-        <Vision />
-        <Waitlist />
-      </main>
-      <Footer />
-    </div>
-  );
-}
+  const [ship, setShip] = useState<ShipData | null>(null);
+  const [selectedCabinNum, setSelectedCabinNum] = useState<string>('14122');
+  const [activeLens, setActiveLens] = useState<'default' | 'accessibility' | 'family' | 'quiet'>('default');
+  const [searchQuery, setSearchQuery] = useState<string>('14122');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [activeTab, setActiveTab] = useState<'briefing' | 'deck' | 'distances' | 'evidence'>('briefing');
 
-function Hero() {
-  return (
-    <header className="relative min-h-[100svh] overflow-hidden bg-ink text-white" data-node-id="5:16" id="top">
-      <img
-        alt="Cruise ship sailing across calm water at golden hour"
-        className="absolute inset-0 h-full w-full object-cover object-[57%_center] sm:object-center"
-        fetchPriority="high"
-        height="1024"
-        src={heroCruise}
-        width="1440"
-      />
-      <div className="hero-overlay absolute inset-0" aria-hidden="true" />
-      <Navigation />
+  useEffect(() => {
+    fetch('/data/msc-bellissima.json')
+      .then((res) => res.json())
+      .then((data: ShipData) => {
+        setShip(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to load MSC Bellissima spatial pack:', err);
+        setLoading(false);
+      });
+  }, []);
 
-      <div className="page-shell relative z-10 flex min-h-[100svh] items-end pb-14 pt-32 sm:pb-20 lg:pb-24">
-        <div className="hero-content max-w-4xl">
-          <p className="eyebrow mb-6 text-white/85">Independent cabin intelligence</p>
-          <h1 className="max-w-[13ch] text-balance font-display text-[clamp(3.35rem,11vw,7.5rem)] leading-[0.93] tracking-[-0.045em]">
-            Understand your cruise cabin before you book.
-          </h1>
-          <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/88 sm:text-lg sm:leading-8">
-            Travel decisions have become easier to search—but harder to understand. Timonelo brings evidence,
-            context, and clear limits to the cabin decision.
-          </p>
-          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-            <a className="button button-light" href="#waitlist">
-              Join the waitlist
-            </a>
-            <a className="text-link text-white" href="#intelligence">
-              See how it works
-              <img alt="" aria-hidden="true" className="h-4 w-4" src={chevronRight} />
-            </a>
-          </div>
+  const cabin: CabinData | undefined = ship?.cabins[selectedCabinNum];
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const query = searchQuery.trim();
+    if (ship?.cabins[query]) {
+      setSelectedCabinNum(query);
+    }
+  };
+
+  if (loading || !ship) {
+    return (
+      <div className="min-h-screen bg-paper flex items-center justify-center text-ink font-sans">
+        <div className="text-center space-y-3">
+          <p className="eyebrow text-muted">Timonelo Spatial Engine</p>
+          <h1 className="font-display text-3xl">Loading MSC Bellissima Spatial Ontology...</h1>
         </div>
       </div>
-
-      <div className="absolute bottom-5 right-5 z-10 hidden text-[0.65rem] uppercase tracking-[0.18em] text-white/70 sm:block lg:bottom-8 lg:right-10">
-        Evidence before opinion
-      </div>
-    </header>
-  );
-}
-
-function Navigation() {
-  return (
-    <nav aria-label="Primary navigation" className="absolute inset-x-0 top-0 z-20 border-b border-white/15">
-      <div className="page-shell flex h-20 items-center justify-between sm:h-24">
-        <a className="font-display text-2xl tracking-[-0.02em] text-white" href="#top" aria-label="Timonelo home">
-          Timonelo
-        </a>
-        <div className="hidden items-center gap-8 text-xs font-medium tracking-[0.02em] text-white/90 md:flex">
-          <a className="nav-link" href="#why">The problem</a>
-          <a className="nav-link" href="#intelligence">How it works</a>
-          <a className="nav-link" href="#trust">Trust</a>
-          <a className="nav-link" href="#vision">Vision</a>
-        </div>
-        <a className="nav-cta" href="#waitlist">Join waitlist</a>
-      </div>
-    </nav>
-  );
-}
-
-function DecisionComplexity() {
-  return (
-    <section className="section-space bg-paper" id="why">
-      <div className="page-shell">
-        <Reveal>
-          <SectionHeading
-            eyebrow="01 — The decision"
-            title="The booking looks simple. The context is not."
-            text="Cabin selection is a high-information decision presented through low-information interfaces. A number, a category, and a deck plan rarely explain the physical reality around a cabin."
-          />
-        </Reveal>
-        <Reveal className="mt-16 border-y border-ink/15 py-8 sm:mt-24 sm:py-10" delay={0.08}>
-          <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
-            <DecisionLayer value="Cabin" label="A specific physical place" />
-            <DecisionLayer value="Category" label="A commercial grouping" bordered />
-            <DecisionLayer value="Context" label="The difference between them" bordered />
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function CabinStory() {
-  return (
-    <section className="section-space bg-white" id="story">
-      <div className="page-shell grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-        <Reveal>
-          <p className="eyebrow text-muted">02 — Every cabin is specific</p>
-          <h2 className="section-title mt-5 max-w-[12ch]">Every cabin tells a different story.</h2>
-        </Reveal>
-        <div className="border-t border-ink/20">
-          {cabinDifferences.map(([title, text], index) => (
-            <Reveal key={title} delay={index * 0.04}>
-              <div className="grid gap-3 border-b border-ink/20 py-7 sm:grid-cols-[10rem_1fr] sm:gap-8 sm:py-9">
-                <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">{title}</h3>
-                <p className="max-w-xl text-base leading-7 text-muted">{text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ExplainableIntelligence() {
-  const steps = ['Source', 'Evidence', 'Finding', 'Assessment'];
-
-  return (
-    <section className="section-space overflow-hidden bg-ink text-white" id="intelligence">
-      <div className="page-shell">
-        <Reveal>
-          <SectionHeading
-            dark
-            eyebrow="03 — How Timonelo works"
-            title="A conclusion should show its working."
-            text="Timonelo separates what a source says, what the evidence supports, what can be established as fact, and what remains interpretation. Each layer keeps the limits of the one before it."
-          />
-        </Reveal>
-        <Reveal className="mt-16 sm:mt-24" delay={0.1}>
-          <ol className="trace-grid" aria-label="Explainability chain">
-            {steps.map((step, index) => (
-              <li className="trace-step" key={step}>
-                <span className="text-[0.65rem] tracking-[0.18em] text-white/38">0{index + 1}</span>
-                <span className="mt-4 font-display text-3xl sm:text-4xl">{step}</span>
-              </li>
-            ))}
-          </ol>
-        </Reveal>
-        <Reveal className="mt-12 border-l border-gold/70 pl-6 sm:ml-auto sm:mt-16 sm:max-w-xl sm:pl-8" delay={0.16}>
-          <p className="font-display text-2xl leading-snug text-white/88 sm:text-3xl">
-            Never sound more certain than the evidence.
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function Trust() {
-  return (
-    <section className="section-space bg-white" id="trust">
-      <div className="page-shell">
-        <Reveal>
-          <SectionHeading
-            eyebrow="05 — Why trust Timonelo"
-            title="Trust is a chain, not a claim."
-            text="Timonelo earns confidence by making the basis and limits of each material assessment inspectable. Certainty is never added for presentation."
-          />
-        </Reveal>
-        <div className="mt-16 border-t border-ink/20 sm:mt-24">
-          {trustPrinciples.map(([title, text], index) => (
-            <Reveal key={title} delay={index * 0.05}>
-              <div className="grid gap-4 border-b border-ink/20 py-9 sm:grid-cols-[5rem_0.75fr_1.25fr] sm:items-baseline sm:gap-8 sm:py-12">
-                <span className="text-xs tracking-[0.14em] text-muted">0{index + 1}</span>
-                <h3 className="font-display text-3xl leading-tight sm:text-4xl">{title}</h3>
-                <p className="max-w-xl text-base leading-7 text-muted">{text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CabinIntelligence() {
-  return (
-    <section className="section-space bg-paper" id="cabin-intelligence">
-      <div className="page-shell">
-        <Reveal>
-          <div className="grid gap-8 border-b border-ink/20 pb-12 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <div>
-              <p className="eyebrow text-muted">04 — Cabin intelligence</p>
-              <h2 className="section-title mt-5 max-w-[13ch]">Not a score. A clearer account of place.</h2>
-            </div>
-            <p className="max-w-xl text-base leading-7 text-muted lg:justify-self-end sm:text-lg sm:leading-8">
-              Cabin intelligence preserves the difference between structural fact, supported finding, and bounded
-              assessment. It does not turn uncertainty into a rating.
-            </p>
-          </div>
-        </Reveal>
-        <div className="mt-4">
-          {intelligenceAreas.map((area, index) => (
-            <Reveal key={area.number} delay={index * 0.05}>
-              <article className="grid gap-4 border-b border-ink/20 py-9 sm:grid-cols-[5rem_0.8fr_1.2fr] sm:items-baseline sm:gap-8 sm:py-12">
-                <span className="text-xs tracking-[0.14em] text-muted">{area.number}</span>
-                <h3 className="font-display text-3xl leading-tight sm:text-4xl">{area.title}</h3>
-                <p className="max-w-xl text-base leading-7 text-muted">{area.text}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Vision() {
-  return (
-    <section className="section-space bg-sand" id="vision">
-      <div className="page-shell">
-        <Reveal>
-          <p className="eyebrow text-ink/55">06 — The vision</p>
-          <blockquote className="mt-8 max-w-5xl font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.04em]">
-            “The long-term value is not a universal cabin score.”
-          </blockquote>
-        </Reveal>
-        <Reveal className="mt-12 grid gap-8 border-t border-ink/20 pt-8 sm:mt-16 sm:grid-cols-2 sm:pt-10" delay={0.08}>
-          <p className="max-w-lg text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
-            It is a durable body of cabin-specific knowledge: independent, reproducible, and appropriately cautious as
-            coverage grows.
-          </p>
-          <p className="max-w-lg text-base leading-7 text-ink/70 sm:justify-self-end sm:text-lg sm:leading-8">
-            A traveler should see the physical context, the evidence behind each statement, and the limit of what can be
-            concluded.
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function Waitlist() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    // This is the intentional integration boundary for the future waitlist service.
-    setSubmitted(true);
+    );
   }
 
   return (
-    <section className="section-space bg-white" id="waitlist">
-      <div className="page-shell grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-24">
-        <Reveal>
-          <p className="eyebrow text-muted">07 — Early access</p>
-          <h2 className="section-title mt-5 max-w-[11ch]">Make the cabin decision legible.</h2>
-          <p className="mt-7 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            Join the early-access list for product updates and the first cabin briefings.
-          </p>
-        </Reveal>
-        <Reveal delay={0.08}>
-          {submitted ? (
-            <div className="border-l-2 border-gold py-2 pl-6" aria-live="polite">
-              <p className="font-display text-3xl">The form is ready.</p>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                No address was transmitted or stored in this preview.
+    <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink font-sans">
+      {/* Masthead Navigation */}
+      <header className="border-b border-ink/15 bg-white sticky top-0 z-30 shadow-xs">
+        <div className="page-shell flex items-center justify-between h-20">
+          <div className="flex items-center gap-6">
+            <a href="/" className="font-display text-2xl tracking-tight text-ink font-semibold">
+              Timonelo
+            </a>
+            <span className="text-xs text-muted border-l border-ink/20 pl-4 hidden sm:inline">
+              Cruise Spatial Orientation
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center px-3 py-1 bg-sand/30 border border-sand text-ink text-xs font-mono font-medium rounded-xs">
+              {ship.name} (IMO {ship.imo.replace('IMO', '')})
+            </span>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Explorer Shell */}
+      <main className="page-shell py-8">
+        {/* Search & Ship Breadcrumb Bar */}
+        <section className="bg-white border border-ink/15 p-6 mb-8 shadow-sm">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <p className="eyebrow text-muted mb-1">Select Cabin</p>
+              <h2 className="font-display text-3xl text-ink">
+                {cabin ? `Cabin ${cabin.cabin_number}` : 'Select a Cabin'}
+              </h2>
+              <p className="text-xs text-muted mt-1">
+                Deck {cabin?.deck_number} ({cabin?.deck_name}) · {cabin?.hull_side} · {cabin?.zone}
               </p>
             </div>
-          ) : (
-            <form className="space-y-5" data-integration="waitlist" onSubmit={handleSubmit}>
-              <label className="block text-xs font-semibold tracking-[0.04em] text-ink" htmlFor="waitlist-email">
-                Email address
-              </label>
-              <div className="flex flex-col gap-3 sm:flex-row">
+
+            {/* Cabin Number Input */}
+            <form onSubmit={handleSearch} className="flex items-center gap-3">
+              <div className="relative">
                 <input
-                  autoComplete="email"
-                  aria-describedby="waitlist-privacy"
-                  className="min-h-14 flex-1 border border-ink/25 bg-paper px-4 text-base text-ink outline-none transition focus:border-ink focus:ring-2 focus:ring-gold/60"
-                  id="waitlist-email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                  type="email"
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="e.g. 14122, 14120, 14121"
+                  className="min-h-12 border border-ink/25 bg-paper px-4 font-mono text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold/60 w-48"
                 />
-                <button className="button button-dark min-h-14" type="submit">Request access</button>
               </div>
-              <p className="text-xs leading-5 text-muted" id="waitlist-privacy">
-                Product updates only. No booking offers or sponsored rankings. This preview does not transmit data.
-              </p>
+              <button type="submit" className="button button-dark min-h-12 px-6">
+                Locate
+              </button>
             </form>
-          )}
-        </Reveal>
-      </div>
-    </section>
-  );
-}
+          </div>
 
-function Footer() {
-  return (
-    <footer className="border-t border-ink/15 bg-white py-8">
-      <div className="page-shell flex flex-col gap-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Timonelo</p>
-        <p className="max-w-md sm:text-right">Independent cabin intelligence. Evidence before opinion.</p>
-      </div>
-    </footer>
-  );
-}
+          {/* Quick Cabin Chips */}
+          <div className="mt-4 pt-4 border-t border-ink/10 flex items-center gap-2 text-xs">
+            <span className="text-muted">Verified Test Cabins:</span>
+            {Object.keys(ship.cabins).map((cNum) => (
+              <button
+                key={cNum}
+                onClick={() => {
+                  setSelectedCabinNum(cNum);
+                  setSearchQuery(cNum);
+                }}
+                className={`px-2.5 py-1 border font-mono transition ${
+                  selectedCabinNum === cNum
+                    ? 'border-ink bg-ink text-white font-semibold'
+                    : 'border-ink/20 bg-paper hover:bg-sand/30'
+                }`}
+              >
+                {cNum} {ship.cabins[cNum].is_accessible ? '(Acc)' : ''}
+              </button>
+            ))}
+          </div>
+        </section>
 
-function SectionHeading({ eyebrow, title, text, dark = false }: { eyebrow: string; title: string; text: string; dark?: boolean }) {
-  return (
-    <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-20">
-      <div>
-        <p className={`eyebrow ${dark ? 'text-white/48' : 'text-muted'}`}>{eyebrow}</p>
-        <h2 className="section-title mt-5 max-w-[14ch]">{title}</h2>
-      </div>
-      <p className={`max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${dark ? 'text-white/62' : 'text-muted'}`}>{text}</p>
-    </div>
-  );
-}
+        {/* Plane 4: Contextual Lens Selector */}
+        <section className="bg-white border border-ink/15 p-4 mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted">Contextual Lens:</span>
+          </div>
 
-function DecisionLayer({ value, label, bordered = false }: { value: string; label: string; bordered?: boolean }) {
-  return (
-    <div className={`sm:px-8 ${bordered ? 'sm:border-l sm:border-ink/15' : ''}`}>
-      <p className="font-display text-4xl tracking-[-0.03em] sm:text-5xl">{value}</p>
-      <p className="mt-2 text-sm leading-6 text-muted">{label}</p>
-    </div>
-  );
-}
+          <div className="flex flex-wrap gap-2">
+            {[
+              { id: 'default', label: '01 Standard View' },
+              { id: 'accessibility', label: '02 Accessibility Lens' },
+              { id: 'family', label: '03 Family Lens' },
+              { id: 'quiet', label: '04 Quiet Cabin Lens' },
+            ].map((lens) => (
+              <button
+                key={lens.id}
+                onClick={() => setActiveLens(lens.id as any)}
+                className={`px-4 py-2 text-xs font-semibold transition rounded-xs border ${
+                  activeLens === lens.id
+                    ? 'border-gold bg-gold/15 text-ink shadow-xs'
+                    : 'border-ink/15 bg-white text-muted hover:border-ink/40'
+                }`}
+              >
+                {lens.label}
+              </button>
+            ))}
+          </div>
+        </section>
 
-function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+        {/* Explorer Content Tabs */}
+        <div className="flex border-b border-ink/20 mb-8 space-x-6 text-sm font-semibold">
+          {[
+            { id: 'briefing', label: 'Cabin Briefing' },
+            { id: 'deck', label: 'Deck Anatomy & Topology' },
+            { id: 'distances', label: 'Calculated Walking Distances' },
+            { id: 'evidence', label: 'Physical Evidence & Sources' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`pb-3 transition border-b-2 ${
+                activeTab === tab.id
+                  ? 'border-ink text-ink'
+                  : 'border-transparent text-muted hover:text-ink'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setIsVisible(true);
-      return;
-    }
+        {/* TAB 1: CABIN BRIEFING */}
+        {activeTab === 'briefing' && cabin && (
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Column 1: Core Spatial Identity */}
+            <div className="bg-white border border-ink/15 p-6 space-y-6">
+              <div>
+                <p className="eyebrow text-muted">Physical Dimensions</p>
+                <p className="font-display text-4xl mt-1">{cabin.square_meters} m²</p>
+                <p className="text-xs text-muted mt-1">
+                  Category {cabin.category_code} · {cabin.balcony_type.replace(/_/g, ' ')}
+                </p>
+              </div>
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '0px 0px -10% 0px' },
-    );
+              <div className="border-t border-ink/10 pt-4 space-y-3 text-xs">
+                <div className="flex justify-between py-1 border-b border-ink/5">
+                  <span className="text-muted">Bed Placement</span>
+                  <span className="font-medium">{cabin.bed_near_balcony ? 'Near Balcony' : 'Near Bathroom'}</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-ink/5">
+                  <span className="text-muted">Door Clearance</span>
+                  <span className="font-medium font-mono">{cabin.door_width_mm} mm</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-ink/5">
+                  <span className="text-muted">Connecting Cabin</span>
+                  <span className="font-medium font-mono">{cabin.connecting_cabin_number ?? 'None'}</span>
+                </div>
+                <div className="flex justify-between py-1">
+                  <span className="text-muted">Hull Side</span>
+                  <span className="font-medium">{cabin.hull_side} (Sun exposure oriented)</span>
+                </div>
+              </div>
 
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
+              {/* Power Socket Matrix */}
+              <div className="border-t border-ink/10 pt-4">
+                <p className="eyebrow text-muted mb-2">Electrical Fixture Matrix</p>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="p-2 bg-paper border border-ink/10">
+                    <span className="text-muted block">EU Type F</span>
+                    <span className="font-mono font-bold text-sm">{cabin.sockets.eu_count}x</span>
+                  </div>
+                  <div className="p-2 bg-paper border border-ink/10">
+                    <span className="text-muted block">US Type A/B</span>
+                    <span className="font-mono font-bold text-sm">{cabin.sockets.us_count}x</span>
+                  </div>
+                  <div className="p-2 bg-paper border border-ink/10">
+                    <span className="text-muted block">USB-A</span>
+                    <span className="font-mono font-bold text-sm">{cabin.sockets.usb_a_count}x</span>
+                  </div>
+                  <div className="p-2 bg-paper border border-ink/10">
+                    <span className="text-muted block">USB-C</span>
+                    <span className="font-mono font-bold text-sm">{cabin.sockets.usb_c_count}x</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  return (
-    <div
-      className={`reveal ${isVisible ? 'reveal-visible' : ''} ${className}`}
-      ref={elementRef}
-      style={{ '--reveal-delay': `${delay}s` } as CSSProperties}
-    >
-      {children}
+            {/* Column 2: Surroundings & 3D Sandwich */}
+            <div className="bg-white border border-ink/15 p-6 space-y-6">
+              <div>
+                <p className="eyebrow text-muted">Surroundings & Overhead</p>
+                <h3 className="font-display text-2xl mt-1">3D Spatial Sandwich</h3>
+              </div>
+
+              {/* Overhead Layer (Deck N+1) */}
+              <div className="p-4 border border-ink/15 bg-paper rounded-xs space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="font-bold">OVERHEAD (Deck {cabin.surroundings.overhead.deck_number}: {cabin.surroundings.overhead.deck_name})</span>
+                  {cabin.surroundings.overhead.is_noise_generator && (
+                    <span className="px-2 py-0.5 bg-amber-100 border border-amber-300 text-amber-900 text-[10px] font-semibold uppercase">
+                      Active Venue
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-muted">
+                  {cabin.surroundings.overhead.venues.length > 0
+                    ? `Directly beneath: ${cabin.surroundings.overhead.venues.join(', ')}`
+                    : 'Residential stateroom deck directly overhead (buffered).'}
+                </p>
+              </div>
+
+              {/* Cabin Level (Deck N) */}
+              <div className="p-4 border-2 border-gold bg-white rounded-xs space-y-1">
+                <p className="text-xs font-bold text-ink">CURRENT STATEROOM (Deck {cabin.deck_number})</p>
+                <p className="text-xs text-muted">
+                  Cabin {cabin.cabin_number} · Midship-Aft corridor corridor snap.
+                </p>
+              </div>
+
+              {/* Underfoot Layer (Deck N-1) */}
+              <div className="p-4 border border-ink/15 bg-paper rounded-xs space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="font-bold">UNDERFOOT (Deck {cabin.surroundings.underfoot.deck_number}: {cabin.surroundings.underfoot.deck_name})</span>
+                </div>
+                <p className="text-xs text-muted">
+                  {cabin.surroundings.underfoot.venues.length > 0
+                    ? `Directly above: ${cabin.surroundings.underfoot.venues.join(', ')}`
+                    : 'Residential stateroom deck directly underfoot (insulated).'}
+                </p>
+              </div>
+
+              {/* Sightlines */}
+              <div className="border-t border-ink/10 pt-4">
+                <p className="eyebrow text-muted mb-1">Balcony Horizon Sightline</p>
+                <p className="text-xs text-ink font-medium">{cabin.sightlines.description}</p>
+                <p className="text-[11px] text-muted mt-1">
+                  Horizon View: {cabin.sightlines.horizon_angle_deg}° · Downward Sea View: {cabin.sightlines.downward_angle_deg}°
+                </p>
+              </div>
+            </div>
+
+            {/* Column 3: Active Contextual Lens Output */}
+            <div className="bg-white border border-ink/15 p-6 space-y-6">
+              <div>
+                <p className="eyebrow text-gold font-bold">Plane 4 Evaluation</p>
+                <h3 className="font-display text-2xl mt-1">
+                  {activeLens === 'default' && 'Standard Briefing'}
+                  {activeLens === 'accessibility' && 'Accessibility Assessment'}
+                  {activeLens === 'family' && 'Family Adjacency Context'}
+                  {activeLens === 'quiet' && 'Acoustic Buffer Context'}
+                </h3>
+              </div>
+
+              {activeLens === 'default' && (
+                <div className="space-y-4 text-xs leading-relaxed text-muted">
+                  <p>
+                    This stateroom is located on residential Tier {cabin.deck_number} with direct step-free access
+                    to the Aft elevator lobby ({cabin.distances.elevator?.meters}m walking distance).
+                  </p>
+                  <p>
+                    Balcony sightline to the horizon is mathematically unobstructed ({cabin.sightlines.horizon_angle_deg}° arc).
+                  </p>
+                </div>
+              )}
+
+              {activeLens === 'accessibility' && (
+                <div className="space-y-4 text-xs">
+                  <div className={`p-3 border ${cabin.lenses.accessibility.is_certified ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-paper border-ink/15'}`}>
+                    <p className="font-semibold">{cabin.lenses.accessibility.is_certified ? '✓ Certified Accessible' : 'Standard Mobility Stateroom'}</p>
+                    <p className="mt-1 text-muted leading-relaxed">{cabin.lenses.accessibility.summary}</p>
+                  </div>
+                  <div className="p-3 bg-paper border border-ink/10">
+                    <p className="text-muted">Door Clear Width: <span className="font-mono font-bold text-ink">{cabin.door_width_mm} mm</span></p>
+                    <p className="text-muted mt-1">Step-Free Lift Route: <span className="font-mono font-bold text-ink">{cabin.lenses.accessibility.lift_distance_m} m</span></p>
+                  </div>
+                </div>
+              )}
+
+              {activeLens === 'family' && (
+                <div className="space-y-4 text-xs">
+                  <div className={`p-3 border ${cabin.lenses.family.has_connecting ? 'bg-blue-50 border-blue-200 text-blue-950' : 'bg-paper border-ink/15'}`}>
+                    <p className="font-semibold">{cabin.lenses.family.has_connecting ? '✓ Adjoining Cabin Pair' : 'Single Stateroom'}</p>
+                    <p className="mt-1 text-muted leading-relaxed">{cabin.lenses.family.summary}</p>
+                  </div>
+                  <div className="p-3 bg-paper border border-ink/10">
+                    <p className="text-muted">Connecting Door: <span className="font-mono font-bold text-ink">{cabin.lenses.family.connecting_cabin ?? 'None'}</span></p>
+                    <p className="text-muted mt-1">DOREMI Kids Club: <span className="font-mono font-bold text-ink">{cabin.lenses.family.kids_club_distance_m} m</span></p>
+                  </div>
+                </div>
+              )}
+
+              {activeLens === 'quiet' && (
+                <div className="space-y-4 text-xs">
+                  <div className={`p-3 border ${cabin.lenses.quiet.is_quiet_tier ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-amber-50 border-amber-200 text-amber-950'}`}>
+                    <p className="font-semibold">{cabin.lenses.quiet.is_quiet_tier ? '✓ Acoustically Buffered' : '⚠ Active Venue Adjacency'}</p>
+                    <p className="mt-1 leading-relaxed">{cabin.lenses.quiet.summary}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-semibold text-ink">Acoustic Flags:</p>
+                    {cabin.lenses.quiet.acoustic_flags.map((flag, idx) => (
+                      <div key={idx} className="p-2 bg-paper border border-ink/10 text-muted">
+                        • {flag}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: DECK ANATOMY & TOPOLOGY */}
+        {activeTab === 'deck' && cabin && (
+          <div className="bg-white border border-ink/15 p-6 space-y-6">
+            <div>
+              <p className="eyebrow text-muted">Plane 2 Topological Visualizer</p>
+              <h3 className="font-display text-3xl">Deck {cabin.deck_number} ({cabin.deck_name}) Corridor Topology</h3>
+            </div>
+
+            {/* Topological Schematic Map */}
+            <div className="border border-ink/20 p-8 bg-paper rounded-xs text-center space-y-6">
+              <div className="max-w-xl mx-auto flex items-center justify-between text-xs text-muted border-b border-ink/10 pb-2">
+                <span>◀ AFT (Stern)</span>
+                <span>MIDSHIP</span>
+                <span>BOW (Forward) ▶</span>
+              </div>
+
+              {/* Corridor Track Graphic */}
+              <div className="relative h-24 bg-white border border-ink/20 rounded-xs flex items-center px-12 justify-between">
+                <div className="text-center">
+                  <span className="p-2 bg-ink text-white text-xs font-mono font-bold rounded-xs">AFT LIFT</span>
+                  <span className="block text-[10px] text-muted mt-1">Core A</span>
+                </div>
+
+                <div className="flex-1 mx-8 relative flex items-center justify-center">
+                  <div className="w-full h-1 bg-ink/20 absolute" />
+                  <div className="z-10 p-3 bg-gold border border-ink text-ink font-mono font-bold text-xs shadow-md">
+                    Cabin {cabin.cabin_number} (Selected)
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <span className="p-2 bg-paper border border-ink/30 text-ink text-xs font-mono font-bold rounded-xs">MID LIFT</span>
+                  <span className="block text-[10px] text-muted mt-1">Core M</span>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted max-w-md mx-auto">
+                Cabin door opens directly onto the Starboard Aft residential corridor branch.
+                Distance to Aft elevator core is {cabin.distances.elevator?.meters}m ({cabin.distances.elevator?.steps} steps).
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: CALCULATED WALKING DISTANCES */}
+        {activeTab === 'distances' && cabin && (
+          <div className="bg-white border border-ink/15 p-6 space-y-6">
+            <div>
+              <p className="eyebrow text-muted">Plane 3 Deterministic Spatial Calculus</p>
+              <h3 className="font-display text-3xl">Wayfinding Graph Distances from Cabin {cabin.cabin_number}</h3>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="p-5 border border-ink/15 bg-paper space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">Marketplace Buffet (Deck 15)</p>
+                <p className="font-display text-4xl text-ink">{cabin.distances.buffet?.meters} m</p>
+                <p className="text-xs text-muted">
+                  {cabin.distances.buffet?.steps} steps · ~{cabin.distances.buffet?.seconds}s walk (via Aft Elevator)
+                </p>
+              </div>
+
+              <div className="p-5 border border-ink/15 bg-paper space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">London Theatre (Deck 06)</p>
+                <p className="font-display text-4xl text-ink">{cabin.distances.theater?.meters} m</p>
+                <p className="text-xs text-muted">
+                  {cabin.distances.theater?.steps} steps · ~{cabin.distances.theater?.seconds}s walk (Multi-Deck)
+                </p>
+              </div>
+
+              <div className="p-5 border border-ink/15 bg-paper space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">Nearest Elevator Core</p>
+                <p className="font-display text-4xl text-ink">{cabin.distances.elevator?.meters} m</p>
+                <p className="text-xs text-muted">
+                  {cabin.distances.elevator?.steps} steps · ~{cabin.distances.elevator?.seconds}s walk (Same Deck)
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: PHYSICAL EVIDENCE & SOURCES */}
+        {activeTab === 'evidence' && cabin && (
+          <div className="bg-white border border-ink/15 p-6 space-y-6">
+            <div>
+              <p className="eyebrow text-muted">Plane 1 Content-Addressed Evidence Ledger</p>
+              <h3 className="font-display text-3xl">Primary Sources & Audit Trails</h3>
+            </div>
+
+            <div className="space-y-4">
+              {cabin.evidence.map((ev, idx) => (
+                <div key={idx} className="p-4 border border-ink/15 bg-paper rounded-xs space-y-2 font-mono text-xs">
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-ink">{ev.source_id}</span>
+                    <span className="text-[10px] text-muted">SHA-256 Verified</span>
+                  </div>
+                  <p className="text-muted text-[11px]">Locator: {ev.locator}</p>
+                  <p className="text-[10px] text-muted/70 break-all">Hash: {ev.sha256}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-ink/15 bg-white py-8 mt-16 text-xs text-muted">
+        <div className="page-shell flex justify-between items-center">
+          <p>© {new Date().getFullYear()} Timonelo Spatial Engine · MSC Bellissima Reference Implementation</p>
+          <p>Never sound more certain than the evidence.</p>
+        </div>
+      </footer>
     </div>
   );
 }
