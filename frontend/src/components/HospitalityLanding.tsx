@@ -229,9 +229,9 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 3 · YOUR VOYAGE
+          SECTION 3 · YOUR VOYAGE & FLEET GALLERY
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 px-6 max-w-5xl mx-auto space-y-10">
+      <section id="fleet-gallery" className="py-20 md:py-28 px-6 max-w-5xl mx-auto space-y-10">
         <div className="space-y-3">
           <div className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
             {t.yourVoyage.badge}
@@ -338,7 +338,7 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4 · QUIET CERTAINTY (PHILOSOPHY)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 px-6 max-w-5xl mx-auto space-y-10">
+      <section id="platform-principles" className="py-20 md:py-28 px-6 max-w-5xl mx-auto space-y-10">
         <div className="space-y-3">
           <div className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
             {t.philosophy.badge}

@@ -138,4 +138,52 @@ export interface Translations {
     copyright: string;
     principles: string;
   };
+  notFound: {
+    title: string;
+    officerNote: string;
+    returnToBridge: string;
+    searchRegistry: string;
+  };
+  cabinNotice: {
+    unmappedWarning: string;
+    verifiedReference: string;
+  };
+  ports: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    officerObservation: string;
+    gangwayAccess: string;
+    distanceToCity: string;
+    terminalFacilities: string;
+    localTransit: string;
+    emergencyNumbers: string;
+    callingFleet: string;
+  };
+  crew: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    officerObservation: string;
+    pillar1Title: string;
+    pillar1Desc: string;
+    pillar2Title: string;
+    pillar2Desc: string;
+    pillar3Title: string;
+    pillar3Desc: string;
+  };
+  mission: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    officerObservation: string;
+    article1Title: string;
+    article1Desc: string;
+    article2Title: string;
+    article2Desc: string;
+    article3Title: string;
+    article3Desc: string;
+    article4Title: string;
+    article4Desc: string;
+  };
 }

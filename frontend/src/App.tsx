@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import type { ShipData, CabinData } from './types';
 import { FLEET_REGISTRY, getVesselBySlug, type FleetVessel } from './fleet';
+import { useI18n } from './i18n';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
 import { updateSocialHead } from './share';
@@ -53,6 +54,7 @@ import { ShipLogbookDashboard } from './components/ShipLogbookDashboard';
 import { LivingShipDashboard } from './components/LivingShipDashboard';
 
 export default function App() {
+  const { t, locale } = useI18n();
   const [viewMode, setViewMode] = useState<'landing' | 'vessel' | 'cabin' | 'port' | 'crew' | 'mission'>('landing');
   const [currentSlug, setCurrentSlug] = useState<string>('msc-bellissima');
   const [selectedPortSlug, setSelectedPortSlug] = useState<string>('genoa');
@@ -64,6 +66,9 @@ export default function App() {
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
   const media = useMedia();
 
+  const [notFoundVessel, setNotFoundVessel] = useState<string | null>(null);
+  const [unmappedCabinNumber, setUnmappedCabinNumber] = useState<string | null>(null);
+
   // Load ship data and resolve cabin
   const loadShipData = (
     slug: string,
@@ -73,16 +78,26 @@ export default function App() {
     pushHistory: boolean = false
   ) => {
     setLoading(true);
+    setNotFoundVessel(null);
     const vesselMeta = getVesselBySlug(slug);
 
     fetch(`/data/${slug}.json`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
       .then((data: ShipData) => {
         setShip(data);
         setCurrentSlug(slug);
         setViewMode(mode);
 
         let resolvedCabin = targetCabin && data.cabins[targetCabin] ? targetCabin : undefined;
+        if (targetCabin && !data.cabins[targetCabin]) {
+          setUnmappedCabinNumber(targetCabin);
+        } else {
+          setUnmappedCabinNumber(null);
+        }
+
         if (!resolvedCabin && targetDeck) {
           const deckCabins = Object.values(data.cabins).filter((c) => c.deck_number === targetDeck);
           if (deckCabins.length > 0) resolvedCabin = deckCabins[0].cabin_number;
@@ -104,6 +119,7 @@ export default function App() {
       })
       .catch((err) => {
         console.error('Failed to load ship pack:', err);
+        setNotFoundVessel(slug);
         setLoading(false);
       });
   };
@@ -305,7 +321,40 @@ export default function App() {
           onOpenSearch={() => setSearchModalOpen(true)}
         />
 
-        {viewMode === 'landing' ? (
+        {notFoundVessel ? (
+          <div className="min-h-[70vh] flex items-center justify-center p-6 text-center">
+            <div className="max-w-md bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-xs space-y-6">
+              <div className="w-14 h-14 bg-[#0c1b2a] text-amber-400 rounded-full grid place-items-center mx-auto shadow-md">
+                <Compass className="w-7 h-7" />
+              </div>
+              <div className="space-y-2">
+                <span className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
+                  {locale === 'de' ? 'Offiziers-Meldung' : 'Bridge Notice'}
+                </span>
+                <h2 className="font-serif text-2xl md:text-3xl text-slate-900 font-normal">
+                  {t.notFound.title}
+                </h2>
+                <p className="font-serif italic text-slate-700 pt-2 text-base leading-relaxed">
+                  » {t.notFound.officerNote} «
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 justify-center">
+                <button
+                  onClick={handleNavigateHome}
+                  className="px-6 py-3 rounded-full bg-[#0c1b2a] text-white hover:bg-slate-800 text-xs font-medium transition cursor-pointer shadow-xs"
+                >
+                  {t.notFound.returnToBridge}
+                </button>
+                <button
+                  onClick={() => setSearchModalOpen(true)}
+                  className="px-6 py-3 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium transition cursor-pointer"
+                >
+                  {t.notFound.searchRegistry}
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : viewMode === 'landing' ? (
           <HospitalityLanding
             onSelectVessel={handleSelectVessel}
             onOpenPreparation={() => handleSelectVessel('msc-bellissima')}
@@ -338,6 +387,7 @@ export default function App() {
               onSearch={handleSearch}
               onSelect={goToCabin}
               onBackToFleet={handleNavigateHome}
+              unmappedCabinNumber={unmappedCabinNumber}
             />
 
             <main className="page-shell mt-14 space-y-20">
@@ -428,6 +478,7 @@ function Hero({
   onSearch,
   onSelect,
   onBackToFleet,
+  unmappedCabinNumber,
 }: {
   ship: ShipData;
   cabin: CabinData;
@@ -438,7 +489,9 @@ function Hero({
   onSearch: (e: React.FormEvent) => void;
   onSelect: (n: string) => void;
   onBackToFleet: () => void;
+  unmappedCabinNumber?: string | null;
 }) {
+  const { locale } = useI18n();
   const elev = elevationOf(ship, cabin.deck_number);
   const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed view';
   const cabinKeys = Object.keys(ship.cabins);
@@ -449,6 +502,25 @@ function Hero({
         <img src={media(`ship:${ship.imo}`)!} alt={ship.name} className="absolute inset-0 h-full w-full object-cover opacity-35" />
       )}
       <div className="relative page-shell pt-10 pb-12">
+        {/* Unmapped Cabin Warning Banner */}
+        {unmappedCabinNumber && (
+          <div className="mb-6 p-4 rounded-xs bg-amber-500/20 border border-amber-400/40 text-amber-100 flex items-start gap-3 backdrop-blur-sm">
+            <span className="text-amber-300 font-bold text-base mt-0.5">ℹ</span>
+            <div className="text-xs space-y-1">
+              <p className="font-semibold text-white">
+                {locale === 'de'
+                  ? `Hinweis: Kabine ${unmappedCabinNumber} ist noch nicht mit individuellem Bauplan erfasst.`
+                  : `Notice: Cabin ${unmappedCabinNumber} is not yet blueprint-verified.`}
+              </p>
+              <p className="text-white/80">
+                {locale === 'de'
+                  ? `Sie sehen die verifizierte Referenzkabine ${cabin.cabin_number} (${cabin.category_name}) auf Deck ${cabin.deck_number}.`
+                  : `Displaying verified reference Cabin ${cabin.cabin_number} (${cabin.category_name}) on Deck ${cabin.deck_number}.`}
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Back breadcrumb */}
         <div className="mb-6">
           <button
