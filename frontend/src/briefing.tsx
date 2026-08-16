@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import {
-  Compass,
   Anchor,
   ShieldCheck,
-  Clock,
-  Utensils,
   MapPin,
   FileCheck,
   CreditCard,
   ChevronRight,
   Sun,
-  ShieldAlert,
 } from 'lucide-react';
 import type { ShipData, CabinData } from './types';
 
@@ -23,14 +19,14 @@ interface CruiseBriefingProps {
 export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps) {
   const [activeTab, setActiveTab] = useState<'summary' | 'ship' | 'port' | 'travel'>('summary');
 
-  const cabinNumStr = String(cabin.cabin_number || cabin.number || '14122');
+  const cabinNumStr = String(cabin.cabin_number || '14122');
   const isStarboard = parseInt(cabinNumStr.slice(-1), 10) % 2 === 0;
-  const isForward = (cabin.bounds?.[0]?.[0] ?? 0.5) > 0.55;
+  const isForward = (cabin.zone ?? '').toLowerCase().includes('forward');
   const musterStation = isForward
     ? isStarboard ? 'Muster Station A (Forward Starboard)' : 'Muster Station D (Forward Port)'
     : isStarboard ? 'Muster Station C (Aft Starboard)' : 'Muster Station F (Aft Port)';
   const musterDeck = isStarboard ? 6 : 7;
-  const deckNum = cabin.deck_number ?? cabin.deck ?? 14;
+  const deckNum = cabin.deck_number ?? 14;
 
   const isRiver = ship.total_decks <= 5;
   const portName = isRiver ? 'Porto (Douro Valley), Portugal' : 'Genoa (Genova), Italy';
@@ -155,7 +151,7 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-ink/6 text-[11px] font-mono text-muted">
-                ✓ Verified return timing
+                Estimated return timing · class reference model
               </div>
             </div>
 
@@ -178,7 +174,7 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-ink/6 text-[11px] font-mono text-muted">
-                ✓ Verified evening dining route
+                Modelled evening dining route · class reference model
               </div>
             </div>
           </div>

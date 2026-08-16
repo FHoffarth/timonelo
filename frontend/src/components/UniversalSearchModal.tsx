@@ -85,7 +85,7 @@ export function UniversalSearchModal({
         id: `cabin:bellissima:${q}`,
         type: 'cabin',
         title: `Cabin ${q} (MSC Bellissima)`,
-        subtitle: 'Open verified stateroom geometry and orientation dossier',
+        subtitle: 'Open the stateroom geometry and orientation dossier',
         badge: 'Stateroom',
         action: () => {
           onSelectCabin('msc-bellissima', q);
@@ -181,7 +181,7 @@ export function UniversalSearchModal({
             </div>
           ) : results.length === 0 ? (
             <div className="p-8 text-center text-xs text-muted">
-              No verified records match "{query}". Try a cabin number or port name.
+              No records match "{query}". Try a cabin number or port name.
             </div>
           ) : (
             <div className="space-y-1">

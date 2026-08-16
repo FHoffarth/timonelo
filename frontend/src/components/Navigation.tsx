@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { ChevronDown, Check, ArrowLeft, Search, Globe } from 'lucide-react';
+import { ChevronDown, Check, ArrowLeft, Search } from 'lucide-react';
 import { FLEET_REGISTRY, getVesselBySlug } from '../fleet';
 import type { ShipData, CabinData } from '../types';
-import { useI18n, Locale } from '../i18n';
+import { useI18n } from '../i18n';
 
 interface NavigationProps {
   currentView: 'landing' | 'vessel' | 'cabin' | 'port' | 'crew' | 'mission';
@@ -21,8 +21,6 @@ interface NavigationProps {
 export function Navigation({
   currentView,
   currentSlug,
-  ship,
-  cabin,
   onNavigateHome,
   onNavigateFleet,
   onNavigatePorts,
@@ -172,7 +170,7 @@ export function Navigation({
                       const isCurrent = vessel.slug === currentSlug && currentView !== 'landing';
                       return (
                         <button
-                          key={vessel.id}
+                          key={vessel.slug}
                           onClick={() => {
                             onSelectVessel(vessel.slug);
                             setDropdownOpen(false);
@@ -185,11 +183,11 @@ export function Navigation({
                             <div className="text-xs font-serif font-medium text-slate-900 flex items-center gap-1.5">
                               <span>{vessel.name}</span>
                               <span className="text-[10px] text-slate-400 font-sans">
-                                ({vessel.builtYear})
+                                ({vessel.buildYear})
                               </span>
                             </div>
                             <div className="text-[10px] text-slate-500 font-sans mt-0.5">
-                              {vessel.operator} · {vessel.stateroomCount} Staterooms
+                              {vessel.operator} · {vessel.cabinCount} Staterooms
                             </div>
                           </div>
                           {isCurrent && (

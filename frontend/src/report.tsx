@@ -189,7 +189,7 @@ export function CabinReport({ ship, cabin, lens }: { ship: ShipData; cabin: Cabi
               </tr>
             ))}
             <tr>
-              <td>Verified photography</td>
+              <td>Photography</td>
               <td className="r-unknown" colSpan={2}>Official architectural schematic on file</td>
             </tr>
           </tbody>

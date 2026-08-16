@@ -1,7 +1,6 @@
-import { useState, useEffect, lazy, Suspense, type ReactNode } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import {
   Compass,
-  Anchor,
   Waves,
   Volume2,
   ArrowUp,
@@ -13,16 +12,14 @@ import {
   Moon,
   Search,
   ArrowRight,
-  Ruler,
-  Ship as ShipIcon,
   ArrowLeft,
 } from 'lucide-react';
 import type { ShipData, CabinData } from './types';
-import { FLEET_REGISTRY, getVesselBySlug, type FleetVessel } from './fleet';
+import { getVesselBySlug, type FleetVessel } from './fleet';
 import { useI18n } from './i18n';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
-import { updateSocialHead } from './share';
+import { updateSocialHead, categoryLabel } from './share';
 import { routeFromLocation, cabinPath, portPath, vesselPath } from './routing';
 import { BoardingIntelligence } from './boarding';
 import { CruiseBriefingView } from './briefing';
@@ -39,7 +36,7 @@ const UniversalSearchModal = lazy(() => import('./components/UniversalSearchModa
 const InteractiveVesselSilhouette = lazy(() => import('./components/InteractiveVesselSilhouette').then((m) => ({ default: m.InteractiveVesselSilhouette })));
 
 export default function App() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const [viewMode, setViewMode] = useState<'landing' | 'vessel' | 'cabin' | 'port' | 'crew' | 'mission'>('landing');
   const [currentSlug, setCurrentSlug] = useState<string>('msc-bellissima');
   const [selectedPortSlug, setSelectedPortSlug] = useState<string>('genoa');
@@ -162,7 +159,7 @@ export default function App() {
     } else if (viewMode === 'port') {
       document.title = 'Timonelo — Strategic Cruise Ports';
     } else if (viewMode === 'crew') {
-      document.title = 'Timonelo — Verified Crew Contributor Programme';
+      document.title = 'Timonelo — Crew Contributor Programme';
     } else if (viewMode === 'mission') {
       document.title = 'Timonelo — Why Timonelo Exists';
     } else if (viewMode === 'vessel') {
@@ -452,18 +449,6 @@ function sideLabel(s: CabinData['hull_side']): string {
 function elevationOf(ship: ShipData, deck: number): number | null {
   return ship.decks[String(deck)]?.elevation_m ?? null;
 }
-/** Longitudinal fraction (0 = aft, 1 = forward) from the zone label. */
-function zoneFraction(zone: string): number {
-  const z = zone.toLowerCase();
-  const fwd = z.includes('forward') || z.includes('bow');
-  const aft = z.includes('aft') || z.includes('stern');
-  if (z.includes('midship') && aft) return 0.36;
-  if (z.includes('midship') && fwd) return 0.64;
-  if (aft) return 0.22;
-  if (fwd) return 0.78;
-  return 0.5;
-}
-
 /* ------------------------------------------------------------------ hero */
 
 function Hero({
@@ -490,6 +475,7 @@ function Hero({
   unmappedCabinNumber?: string | null;
 }) {
   const { locale } = useI18n();
+  const isGerman = locale === 'de';
   const elev = elevationOf(ship, cabin.deck_number);
   const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed view';
   const cabinKeys = Object.keys(ship.cabins);
@@ -512,8 +498,8 @@ function Hero({
               </p>
               <p className="text-white/80">
                 {isGerman
-                  ? `Angezeigt wird Referenzkabine ${cabin.cabin_number} (${cabin.category_name}) auf Deck ${cabin.deck_number} (Abgeleitet vom Referenzmodell).`
-                  : `Displaying reference Cabin ${cabin.cabin_number} (${cabin.category_name}) on Deck ${cabin.deck_number} (Inherited from reference model).`}
+                  ? `Angezeigt wird die Referenzkabine ${cabin.cabin_number} (${categoryLabel(cabin)}) auf Deck ${cabin.deck_number}. Werte sind vom Meraviglia-Klasse-Referenzmodell abgeleitet, nicht einzeln für diese Kabine erfasst.`
+                  : `Showing reference Cabin ${cabin.cabin_number} (${categoryLabel(cabin)}) on Deck ${cabin.deck_number}. Values are derived from the Meraviglia-class reference model, not individually surveyed for this cabin.`}
               </p>
             </div>
           </div>
@@ -577,7 +563,7 @@ function Hero({
         </div>
 
         <div className="mt-6 flex items-center gap-2 flex-wrap text-xs">
-          <span className="text-white/50 text-[11px]">Verified cabins:</span>
+          <span className="text-white/50 text-[11px]">Reference cabins:</span>
           {cabinKeys.slice(0, 12).map((n) => (
             <button
               key={n}
@@ -626,18 +612,6 @@ function HullPosition({ ship, cabin, onSelect }: { ship: ShipData; cabin: CabinD
         <InteractiveVesselSilhouette ship={ship} cabin={cabin} onSelectCabin={onSelect} />
       </div>
     </section>
-  );
-}
-
-function Fact({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
-  return (
-    <div className="bg-paper/50 border border-ink/6 rounded-xs p-3">
-      <div className="flex items-center gap-1.5 text-muted text-[10px] uppercase tracking-wider font-mono">
-        <span className="text-gold">{icon}</span>
-        {label}
-      </div>
-      <div className="font-display text-base text-ink mt-1 font-medium">{value}</div>
-    </div>
   );
 }
 
@@ -790,7 +764,7 @@ function GettingAround({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
 
   return (
     <section>
-      <SectionHead eyebrow="Wayfinding" title="Measured Walking Distances" intro="Exact walking distances and step counts from your door to key venues." />
+      <SectionHead eyebrow="Wayfinding" title="Measured Walking Distances" intro="Walking distances and step counts from your door to key venues, derived from the Meraviglia-class reference model." />
       <div className="card p-6 md:p-8 bg-white border border-ink/8">
         <div className="flex flex-wrap gap-2">
           {dests.map((id) => (
@@ -928,7 +902,7 @@ function Lenses({ cabin, lens, setLens }: { cabin: CabinData; lens: LensId; setL
 function Evidence({ cabin }: { cabin: CabinData }) {
   return (
     <section>
-      <SectionHead eyebrow="Provenance" title="Evidence & Official Sources" intro="Every orientation traces to official general arrangement deck plans and physical survey audits." />
+      <SectionHead eyebrow="Provenance" title="Evidence & Reference Sources" intro="Orientation is modelled from the Meraviglia-class general-arrangement reference plans. The hash below identifies that shared class reference document — it is not a per-ship or per-cabin survey." />
       <div className="grid sm:grid-cols-2 gap-4">
         {cabin.evidence.map((e) => (
           <div key={e.source_id} className="card p-5 bg-white border border-ink/8">
@@ -937,7 +911,8 @@ function Evidence({ cabin }: { cabin: CabinData }) {
               <span className="text-[13px] font-medium text-ink">{e.source_id}</span>
             </div>
             <div className="text-[12px] text-muted mt-2">{e.locator.replace(/_/g, ' ')}</div>
-            <div className="font-mono text-[10px] text-muted/70 mt-3 break-all bg-paper/60 p-2 rounded-xs">Source hash: {e.sha256}</div>
+            <div className="font-mono text-[10px] text-muted/70 mt-3 break-all bg-paper/60 p-2 rounded-xs">Class reference source · SHA-256: {e.sha256}</div>
+            <div className="text-[10px] text-muted/70 mt-1">Shared across Meraviglia-class sister ships.</div>
           </div>
         ))}
       </div>

@@ -94,7 +94,7 @@ export const de: Translations = {
     bellissimaSubtitle: 'Meraviglia-Klasse · 5.686 Passagiere · IMO 9766205',
     bellissimaDesc: 'Erkunden Sie Balkonkabine 14122 auf Deck 14. Echte Gehdistanzen zu den Aufzügen, Akustik unter reinen Wohnkabinen und stufenlose Gangway-Wege.',
     bellissimaMuster: 'Station F (London Theatre)',
-    bellissimaStatus: 'Aktiver Digital Twin',
+    bellissimaStatus: 'Aktives Referenzmodell',
     andorinhaTitle: 'MS Andorinha · Douro-Flussreise',
     andorinhaSubtitle: 'Douro-Luxusklasse · 84 Gäste · ENI 02338573',
     andorinhaDesc: 'Erkunden Sie Suite 218 auf dem Oberdeck. Maßgeschneidert für die engen Schleusen des portugiesischen Douro-Tals mit extrem leiser Antriebstechnik.',
@@ -127,7 +127,7 @@ export const de: Translations = {
   },
   connectedSystems: {
     badge: 'Verbundene Systeme',
-    title: 'Der Digital Twin jeder Reise.',
+    title: 'Das Referenzmodell jeder Reise.',
     subtitle: 'Bridge Officer Tim verknüpft kontinuierlich Daten aus maritimen Schiffbauquellen.',
     system1Badge: 'Werft-Baupläne',
     system1Title: 'Deckplan-Geometrie',
@@ -154,7 +154,7 @@ export const de: Translations = {
     finalQuote: '» Wir erfinden nichts. Wir nehmen Ungewissheit. Wir schaffen Ruhe. «',
   },
   footer: {
-    platformDescription: '4 aktive Digital Twins · 108 Schiffe im maritimen Schiffsregister. Keine Werbung. Kein Affiliate-Tracking. Reine maritime Evidenz.',
+    platformDescription: '4 aktive Referenzmodelle · 108 Schiffe im maritimen Schiffsregister. Keine Werbung. Kein Affiliate-Tracking. Reine maritime Evidenz.',
     navigationHeader: 'Navigation',
     shipsHeader: 'Aktive Schiffe',
     copyright: '© 2026 Timonelo. Unabhängige maritime Intelligenz.',

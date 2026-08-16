@@ -94,7 +94,7 @@ export const en: Translations = {
     bellissimaSubtitle: 'Meraviglia-Class · 5,686 Passengers · IMO 9766205',
     bellissimaDesc: 'Explore Deck 14 Balcony Stateroom 14122. Real walking distances to central elevators, acoustics under residential decks, and step-free gangway paths.',
     bellissimaMuster: 'Station F (London Theatre)',
-    bellissimaStatus: 'Live Digital Twin',
+    bellissimaStatus: 'Active Reference Model',
     andorinhaTitle: 'MS Andorinha · Douro River Harmony',
     andorinhaSubtitle: 'Douro Luxury Class · 84 Guests · ENI 02338573',
     andorinhaDesc: 'Explore Upper Deck Suite 218. Custom-built for the dramatic locks of the Portuguese Douro valley with ultra-low noise propulsion and panoramic views.',
@@ -127,7 +127,7 @@ export const en: Translations = {
   },
   connectedSystems: {
     badge: 'Connected Systems',
-    title: 'The Digital Twin of every voyage.',
+    title: 'The reference model of every voyage.',
     subtitle: 'Bridge Officer Tim continuously correlates data from naval architectural sources.',
     system1Badge: 'Naval Blueprints',
     system1Title: 'Deck Plan Geometry',
@@ -154,7 +154,7 @@ export const en: Translations = {
     finalQuote: '» We do not invent anything. We remove uncertainty. We create calm. «',
   },
   footer: {
-    platformDescription: '4 Active Digital Twins · 108 Global Vessels in Naval Registry. Zero advertising. Zero affiliate tracking. Factual maritime evidence.',
+    platformDescription: '4 Active Reference Models · 108 Global Vessels in Naval Registry. Zero advertising. Zero affiliate tracking. Factual maritime evidence.',
     navigationHeader: 'Platform Navigation',
     shipsHeader: 'Active Vessels',
     copyright: '© 2026 Timonelo. Independent Maritime Intelligence.',

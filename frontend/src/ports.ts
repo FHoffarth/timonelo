@@ -1,4 +1,4 @@
-import { PORTS_REGISTRY as RAW_PORTS, type PortData as RawPortData } from './generated/ports';
+import { PORTS_REGISTRY as RAW_PORTS } from './generated/ports';
 
 export interface CuratedPort {
   slug: string;

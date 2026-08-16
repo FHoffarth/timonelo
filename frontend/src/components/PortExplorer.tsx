@@ -2,18 +2,11 @@ import { useState } from 'react';
 import {
   MapPin,
   Compass,
-  ArrowRight,
   ShieldCheck,
   Plane,
   Footprints,
-  CreditCard,
-  PhoneCall,
-  ExternalLink,
   ChevronRight,
-  Clock,
-  Navigation as NavIcon,
   CheckCircle2,
-  AlertCircle,
 } from 'lucide-react';
 import { PORTS_REGISTRY, type CuratedPort } from '../ports';
 import { useI18n } from '../i18n';
@@ -143,7 +136,7 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                       {selectedPort.distanceToCenterKm} km
                     </p>
                     <p className="text-xs text-muted mt-1">
-                      {selectedPort.walkingTimeMin > 0
+                      {(selectedPort.walkingTimeMin ?? 0) > 0
                         ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit (stufenlos)` : `approx. ${selectedPort.walkingTimeMin} min walk (step-free)`)
                         : (isGerman ? 'Shuttle-Transfer oder Taxi empfohlen' : 'Shuttle transfer or taxi recommended')}
                     </p>
@@ -196,7 +189,7 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     <div>
                       <span className="text-xs font-medium text-ink block">{ship.name}</span>
                       <span className="text-[11px] font-mono text-muted">
-                        {isGerman ? 'Aktiver Digital Twin' : 'Active Digital Twin'}
+                        {isGerman ? 'Aktives Referenzmodell' : 'Active reference model'}
                       </span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-muted group-hover:text-ink transition-transform group-hover:translate-x-0.5" />

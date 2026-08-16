@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import type { ShipData, CabinData } from '../types';
 
 interface InteractiveVesselSilhouetteProps {
@@ -10,7 +9,6 @@ interface InteractiveVesselSilhouetteProps {
 export function InteractiveVesselSilhouette({
   ship,
   cabin,
-  onSelectCabin,
 }: InteractiveVesselSilhouetteProps) {
   const isRiver = ship.total_decks <= 5;
   const currentDeckNum = cabin.deck_number;

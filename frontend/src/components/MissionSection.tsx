@@ -1,4 +1,4 @@
-import { ShieldCheck, Compass, Anchor, Scale, Check, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useI18n } from '../i18n';
 
 interface MissionSectionProps {

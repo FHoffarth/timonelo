@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import {
-  ShieldCheck,
   Lock,
   Anchor,
   Check,
   Award,
   HeartHandshake,
-  Compass,
 } from 'lucide-react';
 import { useI18n } from '../i18n';
 
@@ -103,7 +101,7 @@ export function CrewSection() {
           ) : (
             <div className="mt-6 p-4 bg-emerald-950/60 border border-emerald-500/40 rounded-xs text-sm text-emerald-300 font-mono">
               <Check className="w-4 h-4 inline mr-2 text-emerald-400" />
-              Verified Officer Contributor #4192 · Active Session
+              Preview access · contributor verification is not yet live
             </div>
           )}
 

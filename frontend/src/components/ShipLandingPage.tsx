@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Compass, ShieldCheck, MapPin, Layers, ExternalLink, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ShieldCheck, MapPin, ArrowLeft } from 'lucide-react';
 import type { FleetVessel } from '../fleet';
 import { FLEET_REGISTRY } from '../fleet';
 import { PORTS_REGISTRY } from '../ports';
@@ -18,7 +18,6 @@ export function ShipLandingPage({
   onBackToFleet,
 }: ShipLandingPageProps) {
   const { t, locale } = useI18n();
-  const isRiver = vessel.totalDecks <= 5;
   const relatedShips = FLEET_REGISTRY.filter((v) => v.slug !== vessel.slug);
   const callingPorts = PORTS_REGISTRY.filter((p) =>
     p.callingShips.some((cs) => cs.slug === vessel.slug)
@@ -163,7 +162,7 @@ export function ShipLandingPage({
                     <span>{port.unLocode}</span>
                   </div>
                   <h3 className="font-display text-lg text-ink">{port.name.split('(')[0].trim()}</h3>
-                  <p className="text-xs text-muted mt-1">{port.terminalName}</p>
+                  <p className="text-xs text-muted mt-1">{port.terminalPier}</p>
                 </div>
               ))}
             </div>
@@ -194,7 +193,7 @@ export function ShipLandingPage({
         {/* Related Fleet Twins */}
         <section>
           <div className="text-xs font-mono uppercase tracking-widest text-muted/70 mb-6 pb-2 border-b border-ink/6">
-            <span>{locale === 'de' ? 'Weitere aktive Digital Twins' : 'Explore Other Fleet Twins'}</span>
+            <span>{locale === 'de' ? 'Weitere Referenzmodelle' : 'Explore Other Reference Models'}</span>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {relatedShips.map((other) => (

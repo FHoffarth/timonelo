@@ -7,7 +7,6 @@ export function Footer({
   onNavigatePorts,
   onNavigateCrew,
   onNavigateMission,
-  onNavigatePrinciples,
 }: {
   onNavigateHome: () => void;
   onNavigateFleet: () => void;

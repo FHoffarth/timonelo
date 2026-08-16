@@ -60,5 +60,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Type Check (strict — fails the build on any TS error)
+        run: npm run typecheck
+
       - name: Build Frontend Bundle
         run: npm run build

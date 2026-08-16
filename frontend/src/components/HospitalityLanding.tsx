@@ -7,15 +7,11 @@ import {
   CheckCircle2,
   AlertTriangle,
   Clock,
-  Sparkles,
-  Ship,
   MapPin,
-  Heart,
   ChevronRight,
   BookOpen,
   Waves,
   Radio,
-  Layers,
 } from 'lucide-react';
 import { useI18n } from '../i18n';
 
@@ -29,6 +25,7 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
   onOpenPreparation,
 }) => {
   const { t, locale, formatTime } = useI18n();
+  const isGerman = locale === 'de';
   const [selectedVoyageTab, setSelectedVoyageTab] = useState<'bellissima' | 'andorinha'>('bellissima');
   const [activeScenarioKey, setActiveScenarioKey] = useState<'embarkation' | 'seaday' | 'portday' | 'evening'>('embarkation');
   
