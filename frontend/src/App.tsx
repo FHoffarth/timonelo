@@ -474,8 +474,7 @@ function Hero({
   onBackToFleet: () => void;
   unmappedCabinNumber?: string | null;
 }) {
-  const { locale } = useI18n();
-  const isGerman = locale === 'de';
+  const { isGerman } = useI18n();
   const elev = elevationOf(ship, cabin.deck_number);
   const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed view';
   const cabinKeys = Object.keys(ship.cabins);

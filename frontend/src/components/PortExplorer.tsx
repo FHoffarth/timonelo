@@ -17,12 +17,10 @@ interface PortExplorerProps {
 }
 
 export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProps) {
-  const { t, locale } = useI18n();
+  const { t, isGerman } = useI18n();
   const [selectedPort, setSelectedPort] = useState<CuratedPort>(
     PORTS_REGISTRY.find((p) => p.slug === initialPortSlug) ?? PORTS_REGISTRY[0]
   );
-
-  const isGerman = locale === 'de';
   const headline = isGerman ? selectedPort.headlineDe : selectedPort.headlineEn;
   const story = isGerman ? selectedPort.storyDe : selectedPort.storyEn;
   const transit = isGerman ? selectedPort.transitNoteDe : selectedPort.transitNoteEn;

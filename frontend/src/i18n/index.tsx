@@ -12,6 +12,8 @@ const TRANSLATIONS: Record<Locale, Translations> = {
 
 interface I18nContextValue {
   locale: Locale;
+  /** Single source of truth for the German check. Derive nothing locally. */
+  isGerman: boolean;
   setLocale: (locale: Locale) => void;
   t: Translations;
   formatDate: (date: Date | string | number, options?: Intl.DateTimeFormatOptions) => string;
@@ -87,6 +89,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
     return {
       locale,
+      isGerman: locale === 'de',
       setLocale,
       t,
       formatDate,

@@ -24,8 +24,7 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
   onSelectVessel,
   onOpenPreparation,
 }) => {
-  const { t, locale, formatTime } = useI18n();
-  const isGerman = locale === 'de';
+  const { t, formatTime, isGerman } = useI18n();
   const [selectedVoyageTab, setSelectedVoyageTab] = useState<'bellissima' | 'andorinha'>('bellissima');
   const [activeScenarioKey, setActiveScenarioKey] = useState<'embarkation' | 'seaday' | 'portday' | 'evening'>('embarkation');
   
