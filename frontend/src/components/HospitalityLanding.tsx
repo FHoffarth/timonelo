@@ -73,8 +73,10 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
           <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[85%] lg:w-[70%] xl:w-[62%] h-full flex items-center justify-end">
             <div className="relative w-full h-full">
               <img
-                src="/hero-cruise-mist.jpg"
+                src="/hero-cruise-mist.webp"
                 alt="Luxury Cruise Vessel sailing through morning sea mist"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover object-[65%_center] lg:object-right opacity-85 mix-blend-multiply filter contrast-[1.04] brightness-[1.02]"
               />
               

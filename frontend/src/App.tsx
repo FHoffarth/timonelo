@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, lazy, Suspense, type ReactNode } from 'react';
 import {
   Compass,
   Anchor,
@@ -29,12 +29,14 @@ import { CruiseBriefingView } from './briefing';
 import { Navigation } from './components/Navigation';
 import { HospitalityLanding } from './components/HospitalityLanding';
 import { Footer } from './components/Footer';
-import { PortExplorer } from './components/PortExplorer';
-import { CrewSection } from './components/CrewSection';
-import { MissionSection } from './components/MissionSection';
-import { UniversalSearchModal } from './components/UniversalSearchModal';
-import { ShipLandingPage } from './components/ShipLandingPage';
-import { InteractiveVesselSilhouette } from './components/InteractiveVesselSilhouette';
+
+// Lazy-loaded secondary route components for zero landing payload overhead
+const PortExplorer = lazy(() => import('./components/PortExplorer').then((m) => ({ default: m.PortExplorer })));
+const CrewSection = lazy(() => import('./components/CrewSection').then((m) => ({ default: m.CrewSection })));
+const MissionSection = lazy(() => import('./components/MissionSection').then((m) => ({ default: m.MissionSection })));
+const ShipLandingPage = lazy(() => import('./components/ShipLandingPage').then((m) => ({ default: m.ShipLandingPage })));
+const UniversalSearchModal = lazy(() => import('./components/UniversalSearchModal').then((m) => ({ default: m.UniversalSearchModal })));
+const InteractiveVesselSilhouette = lazy(() => import('./components/InteractiveVesselSilhouette').then((m) => ({ default: m.InteractiveVesselSilhouette })));
 
 export default function App() {
   const { t, locale } = useI18n();
@@ -305,26 +307,31 @@ export default function App() {
         />
 
         {notFoundVessel ? (
-          <div className="min-h-[70vh] flex items-center justify-center p-6 text-center">
-            <div className="max-w-md bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-xs space-y-6">
-              <div className="w-14 h-14 bg-[#0c1b2a] text-amber-400 rounded-full grid place-items-center mx-auto shadow-md">
-                <Compass className="w-7 h-7" />
+          <div className="py-24 px-6 max-w-2xl mx-auto text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-slate-200/60 border border-slate-300/80 flex items-center justify-center mx-auto">
+              <Compass className="w-8 h-8 text-slate-700 stroke-[1.5]" />
+            </div>
+            <div className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
+              {t.notFound.title}
+            </div>
+            <h1 className="font-serif text-3xl sm:text-4xl text-[#0c1b2a]">
+              "{notFoundVessel}"
+            </h1>
+            <p className="text-slate-600 text-base leading-relaxed font-light">
+              » {t.notFound.officerNote} «
+            </p>
+            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs text-left">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-900 mb-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span>Bridge Officer Tim</span>
               </div>
-              <div className="space-y-2">
-                <span className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
-                  {locale === 'de' ? 'Offiziers-Meldung' : 'Bridge Notice'}
-                </span>
-                <h2 className="font-serif text-2xl md:text-3xl text-slate-900 font-normal">
-                  {t.notFound.title}
-                </h2>
-                <p className="font-serif italic text-slate-700 pt-2 text-base leading-relaxed">
-                  » {t.notFound.officerNote} «
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 justify-center">
+              <p className="font-serif italic text-slate-700 text-sm">
+                » Wir erfinden keine Schiffe, für die wir keine verifizierten Pläne besitzen. Wählen Sie eines unserer aktiven Schiffe aus dem Register. «
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
                 <button
                   onClick={handleNavigateHome}
-                  className="px-6 py-3 rounded-full bg-[#0c1b2a] text-white hover:bg-slate-800 text-xs font-medium transition cursor-pointer shadow-xs"
+                  className="px-6 py-3 rounded-full bg-[#0c1b2a] text-white hover:bg-slate-800 text-xs font-medium transition cursor-pointer"
                 >
                   {t.notFound.returnToBridge}
                 </button>
@@ -342,55 +349,59 @@ export default function App() {
             onSelectVessel={handleSelectVessel}
             onOpenPreparation={() => handleSelectVessel('msc-bellissima')}
           />
-        ) : viewMode === 'port' ? (
-          <PortExplorer
-            initialPortSlug={selectedPortSlug}
-            onSelectShip={handleSelectVessel}
-          />
-        ) : viewMode === 'crew' ? (
-          <CrewSection />
-        ) : viewMode === 'mission' ? (
-          <MissionSection onExploreFleet={handleNavigateFleet} />
-        ) : viewMode === 'vessel' ? (
-          <ShipLandingPage
-            vessel={currentVesselMeta}
-            onExploreCabins={(c) => handleExploreCabins(currentSlug, c)}
-            onSelectShip={handleSelectVessel}
-            onBackToFleet={handleNavigateHome}
-          />
-        ) : ship && cabin ? (
-          <div className="screen-app pb-20">
-            <Hero
-              ship={ship}
-              cabin={cabin}
-              vesselMeta={currentVesselMeta}
-              media={media}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-              onSearch={handleSearch}
-              onSelect={goToCabin}
-              onBackToFleet={handleNavigateHome}
-              unmappedCabinNumber={unmappedCabinNumber}
-            />
+        ) : (
+          <Suspense fallback={<div className="min-h-[70vh] flex items-center justify-center text-slate-400 font-serif italic">Orientierung wird vorbereitet…</div>}>
+            {viewMode === 'port' ? (
+              <PortExplorer
+                initialPortSlug={selectedPortSlug}
+                onSelectShip={handleSelectVessel}
+              />
+            ) : viewMode === 'crew' ? (
+              <CrewSection />
+            ) : viewMode === 'mission' ? (
+              <MissionSection onExploreFleet={handleNavigateFleet} />
+            ) : viewMode === 'vessel' ? (
+              <ShipLandingPage
+                vessel={currentVesselMeta}
+                onExploreCabins={(c) => handleExploreCabins(currentSlug, c)}
+                onSelectShip={handleSelectVessel}
+                onBackToFleet={handleNavigateHome}
+              />
+            ) : ship && cabin ? (
+              <div className="screen-app pb-20">
+                <Hero
+                  ship={ship}
+                  cabin={cabin}
+                  vesselMeta={currentVesselMeta}
+                  media={media}
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  onSearch={handleSearch}
+                  onSelect={goToCabin}
+                  onBackToFleet={handleNavigateHome}
+                  unmappedCabinNumber={unmappedCabinNumber}
+                />
 
-            <main className="page-shell mt-14 space-y-20">
-              <CruiseBriefingView ship={ship} cabin={cabin} />
-              <BoardingIntelligence ship={ship} cabin={cabin} />
-              <TakeItWithYou ship={ship} cabin={cabin} />
-              <HullPosition ship={ship} cabin={cabin} onSelect={goToCabin} />
-              <ViewAndPhotos cabin={cabin} media={media} isRiver={ship.total_decks <= 5} />
-              <Surroundings cabin={cabin} />
-              <GettingAround ship={ship} cabin={cabin} />
-              <DeckContext ship={ship} cabin={cabin} media={media} />
-              <Lenses cabin={cabin} lens={lens} setLens={setLens} />
-              <Evidence cabin={cabin} />
-              <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
-            </main>
+                <main className="page-shell mt-14 space-y-20">
+                  <CruiseBriefingView ship={ship} cabin={cabin} />
+                  <BoardingIntelligence ship={ship} cabin={cabin} />
+                  <TakeItWithYou ship={ship} cabin={cabin} />
+                  <HullPosition ship={ship} cabin={cabin} onSelect={goToCabin} />
+                  <ViewAndPhotos cabin={cabin} media={media} isRiver={ship.total_decks <= 5} />
+                  <Surroundings cabin={cabin} />
+                  <GettingAround ship={ship} cabin={cabin} />
+                  <DeckContext ship={ship} cabin={cabin} media={media} />
+                  <Lenses cabin={cabin} lens={lens} setLens={setLens} />
+                  <Evidence cabin={cabin} />
+                  <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
+                </main>
 
-            {/* Dedicated Cabin Orientation Report — print / PDF only */}
-            <CabinReport ship={ship} cabin={cabin} lens={lens} />
-          </div>
-        ) : null}
+                {/* Dedicated Cabin Orientation Report — print / PDF only */}
+                <CabinReport ship={ship} cabin={cabin} lens={lens} />
+              </div>
+            ) : null}
+          </Suspense>
+        )}
       </div>
 
       <Footer
@@ -402,14 +413,18 @@ export default function App() {
         onNavigatePrinciples={handleNavigatePrinciples}
       />
 
-      {/* Universal Search Modal */}
-      <UniversalSearchModal
-        isOpen={searchModalOpen}
-        onClose={() => setSearchModalOpen(false)}
-        onSelectShip={handleSelectVessel}
-        onSelectCabin={(shipSlug, cabinNum) => handleExploreCabins(shipSlug, cabinNum)}
-        onSelectPort={(portSlug) => handleNavigatePorts(portSlug)}
-      />
+      {/* Universal Search Modal (Lazy) */}
+      <Suspense fallback={null}>
+        {searchModalOpen && (
+          <UniversalSearchModal
+            isOpen={searchModalOpen}
+            onClose={() => setSearchModalOpen(false)}
+            onSelectShip={handleSelectVessel}
+            onSelectCabin={(shipSlug, cabinNum) => handleExploreCabins(shipSlug, cabinNum)}
+            onSelectPort={(portSlug) => handleNavigatePorts(portSlug)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

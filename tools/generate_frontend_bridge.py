@@ -50,13 +50,13 @@ def generate_bridge():
 
         vessel_type = "River Cruise" if "andorinha" in slug or "viking" in slug and "river" in str(operator).lower() else "Ocean Cruise"
         
-        hero = "/media/msc-bellissima-hero.jpg"
+        hero = "/media/msc-bellissima-hero.webp"
         if "meraviglia" in slug:
-            hero = "/media/msc-meraviglia-hero.jpg"
+            hero = "/media/msc-meraviglia-hero.webp"
         elif "grandiosa" in slug:
-            hero = "/media/msc-grandiosa-hero.jpg"
+            hero = "/media/msc-grandiosa-hero.webp"
         elif "andorinha" in slug:
-            hero = "/media/ms-andorinha-hero.jpg"
+            hero = "/media/ms-andorinha-hero.webp"
 
         fleet_vessels.append({
             "slug": slug,
