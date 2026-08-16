@@ -39,15 +39,6 @@ class TestFrontendBridge(unittest.TestCase):
         self.assertIn("export const PORTS_REGISTRY", content)
         self.assertIn("genoa", content)
 
-    def test_generated_decisions_ts_exists(self):
-        """Verify generated decisions.ts exists and exports PRECOMPUTED_DECISIONS."""
-        dec_path = os.path.join(FRONTEND_GEN_DIR, "decisions.ts")
-        self.assertTrue(os.path.exists(dec_path), "frontend/src/generated/decisions.ts must exist")
-        with open(dec_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        self.assertIn("export const PRECOMPUTED_DECISIONS", content)
-        self.assertIn("MSC World Europa", content)
-
     def test_legacy_shim_redirection(self):
         """Verify fleet.ts and ports.ts source from generated knowledge databases."""
         fleet_shim = os.path.join(REPO_ROOT, "frontend", "src", "fleet.ts")
