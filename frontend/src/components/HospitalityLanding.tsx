@@ -61,62 +61,75 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
     <div className="bg-[#f4f2ed] text-[#0c1b2a] min-h-screen selection:bg-amber-200 selection:text-slate-900">
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1 · WELCOME ABOARD (LIVING BRIDGE HERO)
-          Tim is on watch. Dynamic greeting and time formatting.
+          Atmospheric background composition: Tim is on watch.
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative pt-20 pb-20 md:pt-32 md:pb-28 px-6 max-w-5xl mx-auto flex flex-col items-start justify-center min-h-[78vh]">
-        {/* Dynamic Status Indicator */}
-        <div className="flex flex-wrap items-center gap-3 mb-8">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200/80 shadow-xs text-xs font-medium text-slate-800">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-            </span>
-            <span className="font-semibold text-slate-900">{t.hero.officerStatus}</span>
-            <span className="text-slate-300">|</span>
-            <span className="text-slate-600">{t.hero.deckLocation}</span>
-          </div>
-
-          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-xs text-slate-600 font-sans">
-            <Clock className="w-3.5 h-3.5 text-slate-400" />
-            <span>{formatTime(currentTime)} · {utcString || '17:42 UTC'}</span>
+      <section className="relative overflow-hidden min-h-[84vh] flex flex-col justify-center border-b border-slate-200/80">
+        {/* Atmospheric Ship Background Layer */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
+          <div className="absolute -right-10 top-0 bottom-0 w-full sm:w-[80%] lg:w-[65%] xl:w-[60%]">
+            <img
+              src="/hero-cruise-golden-hour.webp"
+              alt="Luxury Cruise Vessel at Sea"
+              className="w-full h-full object-cover object-center lg:object-right opacity-30 lg:opacity-40 mix-blend-multiply contrast-[1.08] filter"
+            />
+            {/* Subtle Gradient Masks protecting text legibility on left & bottom */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ed] via-[#f4f2ed]/90 to-transparent lg:via-[#f4f2ed]/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#f4f2ed] via-transparent to-[#f4f2ed]/40" />
           </div>
         </div>
 
-        {/* Main Title */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#0c1b2a] leading-[1.1] max-w-3xl">
-          {t.hero.welcome}
-        </h1>
+        <div className="relative z-10 pt-16 pb-20 md:pt-24 md:pb-28 px-6 max-w-5xl mx-auto w-full flex flex-col items-start justify-center">
+          {/* Dynamic Status Indicator */}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-xs text-xs font-medium text-slate-800 backdrop-blur-xs">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <span className="font-semibold text-slate-900">{t.hero.officerStatus}</span>
+              <span className="text-slate-300">|</span>
+              <span className="text-slate-600">{t.hero.deckLocation}</span>
+            </div>
 
-        {/* Tim's Living Dialogue */}
-        <div className="mt-8 space-y-3 max-w-2xl text-slate-700 text-lg md:text-xl font-sans leading-relaxed font-light">
-          <p className="font-serif italic text-2xl md:text-3xl text-slate-900">
-            » {greeting} {t.hero.readyNotice} «
-          </p>
-          <p className="text-base md:text-lg text-slate-600 font-light pt-1">
-            {t.hero.leadNotice}
-          </p>
+            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 border border-slate-200/60 text-xs text-slate-600 font-sans backdrop-blur-xs">
+              <Clock className="w-3.5 h-3.5 text-slate-400" />
+              <span>{formatTime(currentTime)} · {utcString || '17:42 UTC'}</span>
+            </div>
+          </div>
+
+          {/* Main Title */}
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#0c1b2a] leading-[1.08] max-w-3xl drop-shadow-2xs">
+            {t.hero.welcome}
+          </h1>
+
+          {/* Tim's Living Dialogue */}
+          <div className="mt-8 space-y-3 max-w-2xl text-slate-700 text-lg md:text-xl font-sans leading-relaxed font-light">
+            <p className="font-serif italic text-2xl md:text-3xl text-slate-900 leading-snug">
+              » {greeting} {t.hero.readyNotice} «
+            </p>
+            <p className="text-base md:text-lg text-slate-600 font-light pt-1">
+              {t.hero.leadNotice}
+            </p>
+          </div>
+
+          {/* Primary CTA */}
+          <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
+            <button
+              onClick={() => {
+                if (onOpenPreparation) {
+                  onOpenPreparation();
+                } else {
+                  const el = document.getElementById('live-watch');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0c1b2a] text-white hover:bg-slate-800 transition-all text-base font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
+            >
+              <span>{t.hero.primaryCta}</span>
+              <ArrowRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
-
-        {/* Primary CTA */}
-        <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
-          <button
-            onClick={() => {
-              if (onOpenPreparation) {
-                onOpenPreparation();
-              } else {
-                const el = document.getElementById('live-watch');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0c1b2a] text-white hover:bg-slate-800 transition-all text-base font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
-          >
-            <span>{t.hero.primaryCta}</span>
-            <ArrowRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-
-        {/* Ambient Divider */}
-        <div className="absolute bottom-0 left-6 right-6 h-px bg-slate-200" />
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
