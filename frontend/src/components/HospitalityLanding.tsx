@@ -314,7 +314,7 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
                   <span>·</span>
                   <span>{t.yourVoyage.bellissimaStatus}</span>
                   <span>·</span>
-                  <span>{t.common.readiness}: 82%</span>
+                  <span>{isGerman ? 'Deck 14 · Mittschiffs' : 'Deck 14 · Midship'}</span>
                 </div>
               </div>
 

@@ -40,13 +40,14 @@ class TestFrontendBridge(unittest.TestCase):
         self.assertIn("genoa", content)
 
     def test_legacy_shim_redirection(self):
-        """Verify fleet.ts and ports.ts source from generated knowledge databases."""
+        """Verify fleet.ts and ports.ts export curated fleet and port registries."""
         fleet_shim = os.path.join(REPO_ROOT, "frontend", "src", "fleet.ts")
         ports_shim = os.path.join(REPO_ROOT, "frontend", "src", "ports.ts")
 
         with open(fleet_shim, "r", encoding="utf-8") as f:
             content = f.read()
-            self.assertTrue("./generated/fleet" in content)
+            self.assertTrue("msc-bellissima" in content)
+            self.assertTrue("ms-andorinha" in content)
 
         with open(ports_shim, "r", encoding="utf-8") as f:
             content = f.read()
