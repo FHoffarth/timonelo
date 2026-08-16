@@ -60,28 +60,40 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
   return (
     <div className="bg-[#f4f2ed] text-[#0c1b2a] min-h-screen selection:bg-amber-200 selection:text-slate-900">
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1 · WELCOME ABOARD (LIVING BRIDGE HERO)
-          Atmospheric background composition: Tim is on watch.
+          SECTION 1 · WELCOME ABOARD (ATMOSPHERIC MARITIME HERO)
+          Spatial Staging: Deep light, physical ocean presence & mist.
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[84vh] flex flex-col justify-center border-b border-slate-200/80">
-        {/* Atmospheric Ship Background Layer */}
+      <section className="relative overflow-hidden min-h-[88vh] flex flex-col justify-center border-b border-slate-200/80">
+        {/* Atmosphere & Ocean Spatial Stage */}
         <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-          <div className="absolute -right-10 top-0 bottom-0 w-full sm:w-[80%] lg:w-[65%] xl:w-[60%]">
-            <img
-              src="/hero-cruise-golden-hour.webp"
-              alt="Luxury Cruise Vessel at Sea"
-              className="w-full h-full object-cover object-center lg:object-right opacity-30 lg:opacity-40 mix-blend-multiply contrast-[1.08] filter"
-            />
-            {/* Subtle Gradient Masks protecting text legibility on left & bottom */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ed] via-[#f4f2ed]/90 to-transparent lg:via-[#f4f2ed]/50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#f4f2ed] via-transparent to-[#f4f2ed]/40" />
+          {/* Luminous Sun & Horizon Glow */}
+          <div className="absolute top-0 right-0 w-[800px] h-[500px] bg-gradient-to-bl from-amber-200/35 via-amber-100/20 to-transparent blur-3xl opacity-70" />
+          
+          {/* Physical Vessel emerging through morning ocean mist */}
+          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[85%] lg:w-[70%] xl:w-[62%] h-full flex items-center justify-end">
+            <div className="relative w-full h-full">
+              <img
+                src="/hero-cruise-mist.jpg"
+                alt="Luxury Cruise Vessel sailing through morning sea mist"
+                className="w-full h-full object-cover object-[65%_center] lg:object-right opacity-85 mix-blend-multiply filter contrast-[1.04] brightness-[1.02]"
+              />
+              
+              {/* Volumetric Sea Mist & Gradient Falloffs (Seamless integration into #f4f2ed) */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ed] via-[#f4f2ed]/90 to-[#f4f2ed]/30 sm:via-[#f4f2ed]/80 sm:to-transparent w-full lg:w-[65%]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#f4f2ed] via-transparent to-transparent h-full" />
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#f4f2ed] to-transparent" />
+              
+              {/* Soft Ambient Horizon Haze */}
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#f4f2ed] via-[#f4f2ed]/60 to-transparent backdrop-blur-[1px]" />
+            </div>
           </div>
         </div>
 
+        {/* Foreground Content */}
         <div className="relative z-10 pt-16 pb-20 md:pt-24 md:pb-28 px-6 max-w-5xl mx-auto w-full flex flex-col items-start justify-center">
           {/* Dynamic Status Indicator */}
           <div className="flex flex-wrap items-center gap-3 mb-8">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-xs text-xs font-medium text-slate-800 backdrop-blur-xs">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-xs text-xs font-medium text-slate-800 backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
@@ -91,14 +103,14 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({
               <span className="text-slate-600">{t.hero.deckLocation}</span>
             </div>
 
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 border border-slate-200/60 text-xs text-slate-600 font-sans backdrop-blur-xs">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-slate-200/70 text-xs text-slate-600 font-sans backdrop-blur-md shadow-2xs">
               <Clock className="w-3.5 h-3.5 text-slate-400" />
               <span>{formatTime(currentTime)} · {utcString || '17:42 UTC'}</span>
             </div>
           </div>
 
           {/* Main Title */}
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#0c1b2a] leading-[1.08] max-w-3xl drop-shadow-2xs">
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-normal tracking-tight text-[#0c1b2a] leading-[1.05] max-w-2xl">
             {t.hero.welcome}
           </h1>
 
