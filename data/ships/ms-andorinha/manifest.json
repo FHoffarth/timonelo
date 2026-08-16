@@ -1,19 +1,21 @@
 {
-  "$schema": "https://timonelo.org/schemas/vessel-manifest-v1.json",
   "name": "MS Andorinha",
-  "imo": "ENI02338573",
+  "imo_number": "ENI02338573",
   "ship_class": "Douro River Class",
   "operator": "Tauck / Scylla AG",
-  "flag": "Portugal",
-  "year_built": 2020,
-  "builder": "Vahali Shipyards",
+  "vessel_type": "River Cruise Vessel",
+  "builder": "Vahali Shipyards (Gendt / Zasavica)",
+  "hull_number": "V-602",
+  "delivery_date": "2020-03-15",
+  "maiden_voyage": "2020-08-01",
   "length_overall_meters": 80.0,
   "beam_meters": 11.4,
   "draft_meters": 1.5,
   "air_draft_meters": 4.5,
   "total_decks": 4,
+  "passenger_decks": 4,
   "stateroom_count": 42,
   "passenger_capacity": 84,
-  "crew_capacity": 36,
-  "primary_region": "Douro River (Portugal & Spain)"
+  "baseline_reference_vessel": null,
+  "inheritance_type": "PRIMARY_RIVER_BASELINE"
 }

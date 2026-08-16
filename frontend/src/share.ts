@@ -36,6 +36,10 @@ export function categoryLabel(cabin: CabinData): string {
     IB: 'Interior Stateroom',
     OV: 'Ocean View Stateroom',
     YC: 'Yacht Club Suite',
+    ES: 'Emerald Riverview Stateroom',
+    RFB: 'Ruby French Balcony Stateroom',
+    DSU: 'Diamond Master Suite',
+    DFB: 'Diamond French Balcony Stateroom',
   };
   return map[cabin.category_code] ?? `Category ${cabin.category_code}`;
 }

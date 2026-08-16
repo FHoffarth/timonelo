@@ -65,6 +65,7 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ## 3. Technical & Factory Specifications
 
+- **[UNIVERSAL_PLATFORM.md](UNIVERSAL_PLATFORM.md)**: Universal Vessel Intelligence Platform architecture & cross-category validation.
 - **[Explorer Architecture](explorer-architecture.md)**: Web runtime specification for rendering canonical Knowledge Packs.
 - **[Domain Model Specification](architecture/DOMAIN_MODEL.md)**: Entity-relationship specifications for spatial domains.
 - **[Knowledge Factory Specifications](factory/README.md)**:

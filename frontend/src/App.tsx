@@ -15,44 +15,70 @@ import {
   ArrowRight,
   Ruler,
   Ship as ShipIcon,
+  ChevronDown,
+  Layers,
+  Sparkles,
+  CheckCircle2,
 } from 'lucide-react';
 import type { ShipData, CabinData } from './types';
+import { FLEET_REGISTRY, getVesselBySlug, type FleetVessel } from './fleet';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
 import { updateSocialHead, shipSlug } from './share';
-import { cabinFromLocation, cabinPath, parseCabinRoute } from './routing';
+import { routeFromLocation, cabinPath } from './routing';
 import { BoardingIntelligence } from './boarding';
 import { CruiseBriefingView } from './briefing';
 
-const DEFAULT_CABIN = '14122';
-
 export default function App() {
+  const [currentSlug, setCurrentSlug] = useState<string>('msc-bellissima');
   const [ship, setShip] = useState<ShipData | null>(null);
-  const [selectedCabinNum, setSelectedCabinNum] = useState<string>(DEFAULT_CABIN);
-  const [searchQuery, setSearchQuery] = useState<string>(DEFAULT_CABIN);
+  const [selectedCabinNum, setSelectedCabinNum] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [lens, setLens] = useState<LensId>('accessibility');
   const [loading, setLoading] = useState<boolean>(true);
+  const [fleetSelectorOpen, setFleetSelectorOpen] = useState<boolean>(false);
   const media = useMedia();
 
-  useEffect(() => {
-    const parsed = parseCabinRoute(window.location.pathname);
-    const slugQuery = new URLSearchParams(window.location.search).get('ship');
-    const targetSlug = parsed?.shipSlug || slugQuery || 'msc-bellissima';
-
-    fetch(`/data/${targetSlug}.json`)
+  // Load ship and resolve initial cabin based on route
+  const loadShipAndCabin = (slug: string, targetCabin?: string, targetDeck?: number, pushHistory: boolean = false) => {
+    setLoading(true);
+    const vesselMeta = getVesselBySlug(slug);
+    fetch(`/data/${slug}.json`)
       .then((res) => res.json())
       .then((data: ShipData) => {
         setShip(data);
-        // Resolve the cabin from the canonical path (or legacy ?cabin=), then
-        // normalise the address bar to the canonical URL without a new entry.
-        const fromUrl = cabinFromLocation(window.location);
-        const initial = fromUrl && data.cabins[fromUrl] ? fromUrl : DEFAULT_CABIN;
-        setSelectedCabinNum(initial);
-        setSearchQuery(initial);
-        window.history.replaceState({ cabin: initial }, '', cabinPath(shipSlug(data), initial));
+        setCurrentSlug(slug);
+
+        // Determine cabin: targetCabin -> targetDeck first cabin -> vessel default -> first key in cabins
+        let resolvedCabin = targetCabin && data.cabins[targetCabin] ? targetCabin : undefined;
+        if (!resolvedCabin && targetDeck) {
+          const deckCabins = Object.values(data.cabins).filter((c) => c.deck_number === targetDeck);
+          if (deckCabins.length > 0) resolvedCabin = deckCabins[0].cabin_number;
+        }
+        if (!resolvedCabin) {
+          resolvedCabin = data.cabins[vesselMeta.defaultCabin] ? vesselMeta.defaultCabin : Object.keys(data.cabins)[0];
+        }
+
+        setSelectedCabinNum(resolvedCabin);
+        setSearchQuery(resolvedCabin);
+
+        const newPath = cabinPath(slug, resolvedCabin);
+        if (pushHistory) {
+          window.history.pushState({ ship: slug, cabin: resolvedCabin }, '', newPath);
+        } else {
+          window.history.replaceState({ ship: slug, cabin: resolvedCabin }, '', newPath);
+        }
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch((err) => {
+        console.error('Failed to load ship pack:', err);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    const route = routeFromLocation(window.location);
+    loadShipAndCabin(route.shipSlug, route.cabinNumber, route.deckNumber, false);
   }, []);
 
   const cabin: CabinData | undefined = ship?.cabins[selectedCabinNum];
@@ -62,32 +88,45 @@ export default function App() {
     if (ship && cabin) updateSocialHead(ship, cabin);
   }, [ship, cabin]);
 
-  // Back/forward navigation resolves the cabin from the URL (no new entry).
+  // Back/forward navigation resolves the vessel and cabin from the URL
   useEffect(() => {
-    if (!ship) return;
     const onPop = () => {
-      const n = cabinFromLocation(window.location);
-      if (n && ship.cabins[n]) {
-        setSelectedCabinNum(n);
-        setSearchQuery(n);
+      const route = routeFromLocation(window.location);
+      if (route.shipSlug !== currentSlug) {
+        loadShipAndCabin(route.shipSlug, route.cabinNumber, route.deckNumber, false);
+      } else if (ship && route.cabinNumber && ship.cabins[route.cabinNumber]) {
+        setSelectedCabinNum(route.cabinNumber);
+        setSearchQuery(route.cabinNumber);
       }
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
-  }, [ship]);
+  }, [currentSlug, ship]);
 
-  // Navigate to a cabin, pushing a new history entry (its own permanent URL).
+  // Navigate to a cabin on the current ship
   const goToCabin = (n: string) => {
     if (!ship?.cabins[n]) return;
     setSelectedCabinNum(n);
     setSearchQuery(n);
-    window.history.pushState({ cabin: n }, '', cabinPath(shipSlug(ship), n));
-    window.scrollTo({ top: 0 });
+    window.history.pushState({ ship: currentSlug, cabin: n }, '', cabinPath(currentSlug, n));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Switch to another vessel in the fleet
+  const handleSelectVessel = (newSlug: string) => {
+    setFleetSelectorOpen(false);
+    if (newSlug === currentSlug) return;
+    const meta = getVesselBySlug(newSlug);
+    loadShipAndCabin(newSlug, meta.defaultCabin, undefined, true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    goToCabin(searchQuery.trim());
+    const query = searchQuery.trim();
+    if (ship?.cabins[query]) {
+      goToCabin(query);
+    }
   };
 
   if (loading || !ship || !cabin) {
@@ -101,13 +140,23 @@ export default function App() {
     );
   }
 
+  const currentVesselMeta = getVesselBySlug(currentSlug);
+
   return (
     <>
       <div className="screen-app min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink pb-16">
-        <Masthead ship={ship} cabin={cabin} />
+        <Masthead
+          ship={ship}
+          cabin={cabin}
+          currentSlug={currentSlug}
+          fleetSelectorOpen={fleetSelectorOpen}
+          setFleetSelectorOpen={setFleetSelectorOpen}
+          onSelectVessel={handleSelectVessel}
+        />
         <Hero
           ship={ship}
           cabin={cabin}
+          vesselMeta={currentVesselMeta}
           media={media}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -122,10 +171,11 @@ export default function App() {
           <HullPosition ship={ship} cabin={cabin} />
           <ViewAndPhotos cabin={cabin} media={media} />
           <Surroundings cabin={cabin} />
-          <GettingAround cabin={cabin} />
+          <GettingAround ship={ship} cabin={cabin} />
           <DeckContext ship={ship} cabin={cabin} media={media} />
           <Lenses cabin={cabin} lens={lens} setLens={setLens} />
           <Evidence cabin={cabin} />
+          <FleetGallery currentSlug={currentSlug} onSelectVessel={handleSelectVessel} />
           <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
         </main>
 
@@ -145,8 +195,8 @@ function TakeItWithYou({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
         <p className="eyebrow-mist">Take it with you</p>
         <h2 className="font-display text-2xl mt-1.5">Cabin Orientation Report</h2>
         <p className="text-[14px] text-muted mt-1.5 leading-relaxed">
-          A clean, printable orientation dossier for Cabin {cabin.cabin_number} — save it as a PDF, print it for the
-          terminal, or send it to family. Searchable text, no marketing.
+          A clean, printable orientation dossier for Cabin {cabin.cabin_number} on {ship.name} — save it as a PDF, print it for the
+          terminal or river pier, or send it to family. Searchable text, no marketing.
         </p>
       </div>
       <ExportBar ship={ship} cabin={cabin} />
@@ -176,22 +226,99 @@ function zoneFraction(zone: string): number {
 
 /* ------------------------------------------------------------------ masthead */
 
-function Masthead({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
+function Masthead({
+  ship,
+  cabin,
+  currentSlug,
+  fleetSelectorOpen,
+  setFleetSelectorOpen,
+  onSelectVessel,
+}: {
+  ship: ShipData;
+  cabin: CabinData;
+  currentSlug: string;
+  fleetSelectorOpen: boolean;
+  setFleetSelectorOpen: (v: boolean | ((prev: boolean) => boolean)) => void;
+  onSelectVessel: (slug: string) => void;
+}) {
+  const activeMeta = getVesselBySlug(currentSlug);
+
   return (
-    <header className="sticky top-0 z-30 bg-paper/95 border-b hairline">
+    <header className="sticky top-0 z-30 bg-paper/95 border-b hairline backdrop-blur-xs">
       <div className="page-shell h-14 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <span className="w-5 h-5 bg-ink grid place-items-center">
-            <span className="w-0.5 h-2.5 bg-paper rotate-45" />
-          </span>
-          <span className="font-display text-xl tracking-tight text-ink">Timonelo</span>
-        </a>
+        <div className="flex items-center gap-6">
+          <a href="/" className="flex items-center gap-2">
+            <span className="w-5 h-5 bg-ink grid place-items-center">
+              <span className="w-0.5 h-2.5 bg-paper rotate-45" />
+            </span>
+            <span className="font-display text-xl tracking-tight text-ink">Timonelo</span>
+          </a>
+
+          {/* Interactive Vessel Selector */}
+          <div className="relative">
+            <button
+              onClick={() => setFleetSelectorOpen((prev) => !prev)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xs bg-paper border hairline hover:border-ink/40 text-left transition"
+              aria-expanded={fleetSelectorOpen}
+            >
+              <ShipIcon className="w-3.5 h-3.5 text-gold" />
+              <div>
+                <span className="block text-xs font-semibold text-ink leading-none">{ship.name}</span>
+                <span className="block text-[10px] text-muted leading-tight mt-0.5">
+                  {activeMeta.operator} · {activeMeta.vesselType}
+                </span>
+              </div>
+              <ChevronDown className={`w-3.5 h-3.5 text-muted transition-transform ml-1 ${fleetSelectorOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Fleet Selector Dropdown */}
+            {fleetSelectorOpen && (
+              <div className="absolute left-0 mt-2 w-80 bg-white border hairline shadow-xl rounded-xs p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="px-3 py-2 border-b hairline mb-1">
+                  <p className="eyebrow-mist text-[10px]">Universal Fleet Registry</p>
+                  <p className="text-xs font-medium text-ink mt-0.5">Select a compiled digital twin</p>
+                </div>
+                <div className="space-y-1">
+                  {FLEET_REGISTRY.map((v) => (
+                    <button
+                      key={v.slug}
+                      onClick={() => onSelectVessel(v.slug)}
+                      className={`w-full text-left px-3 py-2.5 rounded-xs flex items-start justify-between gap-2 transition ${
+                        v.slug === currentSlug ? 'bg-gold/15 border border-gold/30' : 'hover:bg-paper'
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold text-ink">{v.name}</span>
+                          <span
+                            className={`text-[9px] px-1.5 py-0.2 rounded-xs font-mono uppercase ${
+                              v.vesselType === 'River Cruise'
+                                ? 'bg-blue-100 text-blue-900 border border-blue-200'
+                                : 'bg-slate-100 text-slate-800 border border-slate-200'
+                            }`}
+                          >
+                            {v.vesselType}
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-muted mt-0.5">
+                          {v.operator} · {v.totalDecks} Decks · {v.cabinCount} Cabins
+                        </div>
+                      </div>
+                      {v.slug === currentSlug && <CheckCircle2 className="w-4 h-4 text-ink shrink-0 mt-0.5" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="flex items-center gap-4 text-right">
           <div className="hidden sm:block">
-            <span className="block text-xs font-semibold text-ink">{ship.name}</span>
-            <span className="block text-[11px] text-muted">Cabin {cabin.cabin_number} · Deck {cabin.deck_number}</span>
+            <span className="block text-xs font-semibold text-ink">Cabin {cabin.cabin_number}</span>
+            <span className="block text-[11px] text-muted">Deck {cabin.deck_number} ({cabin.deck_name})</span>
           </div>
-          <span className="h-2 w-2 rounded-full bg-emerald-600" title="Spatial Engine connected" />
+          <span className="h-2 w-2 rounded-full bg-emerald-600" title="Universal Spatial Engine connected" />
         </div>
       </div>
     </header>
@@ -203,6 +330,7 @@ function Masthead({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
 function Hero({
   ship,
   cabin,
+  vesselMeta,
   media,
   searchQuery,
   setSearchQuery,
@@ -211,6 +339,7 @@ function Hero({
 }: {
   ship: ShipData;
   cabin: CabinData;
+  vesselMeta: FleetVessel;
   media: (id: string) => string | null;
   searchQuery: string;
   setSearchQuery: (v: string) => void;
@@ -218,7 +347,9 @@ function Hero({
   onSelect: (n: string) => void;
 }) {
   const elev = elevationOf(ship, cabin.deck_number);
-  const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed sea view';
+  const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed view';
+  const cabinKeys = Object.keys(ship.cabins);
+
   return (
     <header className="relative ground-navy chart-lines text-white overflow-hidden">
       {media(`ship:${ship.imo}`) && (
@@ -227,7 +358,11 @@ function Hero({
       <div className="relative page-shell pt-14 pb-12">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <p className="eyebrow-mist text-gold">Your stateroom orientation</p>
+            <div className="flex items-center gap-2">
+              <span className="eyebrow-mist text-gold">{vesselMeta.vesselType} Orientation</span>
+              <span className="text-white/40">·</span>
+              <span className="text-[11px] font-mono text-white/70 uppercase">{vesselMeta.operator}</span>
+            </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mt-3">Cabin {cabin.cabin_number}</h1>
             <p className="text-white/75 text-lg mt-4">
               On <span className="text-white">Deck {cabin.deck_number} ({cabin.deck_name})</span>, {sideLabel(cabin.hull_side).toLowerCase()},
@@ -256,14 +391,14 @@ function Hero({
         {/* 15-second answer strip */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
           <HeroFact label="Deck" value={`${cabin.deck_number} · ${cabin.deck_name}`} />
-          <HeroFact label="Ship side" value={sideLabel(cabin.hull_side)} />
-          <HeroFact label="Nearest lift" value={`${cabin.distances.elevator?.meters ?? '—'} m`} />
-          <HeroFact label="Balcony view" value={view} />
+          <HeroFact label="Vessel side" value={sideLabel(cabin.hull_side)} />
+          <HeroFact label="Nearest vertical core" value={`${cabin.distances.elevator?.meters ?? '—'} m`} />
+          <HeroFact label="Sightline view" value={view} />
         </div>
 
         <div className="mt-6 flex items-center gap-3 flex-wrap text-xs">
-          <span className="text-white/55">Sample verified cabins:</span>
-          {Object.keys(ship.cabins).map((n) => (
+          <span className="text-white/55">Verified staterooms:</span>
+          {cabinKeys.slice(0, 14).map((n) => (
             <button
               key={n}
               onClick={() => onSelect(n)}
@@ -275,7 +410,7 @@ function Hero({
               {ship.cabins[n].is_accessible ? ' ♿' : ''}
             </button>
           ))}
-          {elev != null && <span className="text-white/45 ml-auto hidden md:block">Deck elevation {elev} m above sea</span>}
+          {elev != null && <span className="text-white/45 ml-auto hidden md:block">Deck elevation {elev} m above water</span>}
         </div>
       </div>
     </header>
@@ -341,9 +476,9 @@ function HullPosition({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
         <div className="card p-6 flex flex-col gap-4">
           <p className="eyebrow-mist">Light & orientation</p>
           <p className="text-[15px] text-ink leading-relaxed">
-            A {sideLabel(cabin.hull_side).toLowerCase()} balcony. Sun and sea are on the{' '}
+            A {sideLabel(cabin.hull_side).toLowerCase()} orientation. Sun and water are on the{' '}
             {cabin.hull_side === 'STARBOARD' ? 'starboard' : cabin.hull_side === 'PORT' ? 'port' : 'centre'} beam — the exact
-            aspect depends on the ship’s heading during your voyage.
+            aspect depends on the vessel’s heading during your cruise.
           </p>
           <div className="mt-auto flex items-center gap-2 text-[12px] text-muted">
             <Moon className="w-3.5 h-3.5 text-gold" aria-hidden />
@@ -381,7 +516,7 @@ function ViewAndPhotos({ cabin, media }: { cabin: CabinData; media: (id: string)
               <p className="text-[14px] text-ink leading-relaxed">{cabin.sightlines.description}</p>
               <p className="text-[12px] text-muted mt-1">
                 {cabin.sightlines.horizon_angle_deg}° horizon ·{' '}
-                {cabin.sightlines.has_lifeboat_obstruction ? 'Lifeboat obstruction present' : 'No lifeboat obstruction'}
+                {cabin.sightlines.has_lifeboat_obstruction ? 'Obstruction present' : 'Unobstructed panorama'}
               </p>
             </div>
           </div>
@@ -390,7 +525,7 @@ function ViewAndPhotos({ cabin, media }: { cabin: CabinData; media: (id: string)
           <Photo src={media(`cabin:${cabin.cabin_number}`)} kind="cabin" label="Stateroom" ratio="4 / 3" />
           <div className="card p-5">
             <div className="eyebrow-mist mb-2">Balcony type</div>
-            <div className="font-display text-xl text-ink capitalize">{cabin.balcony_type.toLowerCase()}</div>
+            <div className="font-display text-xl text-ink capitalize">{cabin.balcony_type.toLowerCase().replace(/_/g, ' ')}</div>
           </div>
         </div>
       </div>
@@ -428,7 +563,7 @@ function Surroundings({ cabin }: { cabin: CabinData }) {
 
         <div className="card p-6">
           <p className="eyebrow-mist mb-4">Room specifics</p>
-          <Spec label="Bed position" value={cabin.bed_near_balcony == null ? 'Unknown' : cabin.bed_near_balcony ? 'Next to the balcony' : 'Next to the bathroom'} />
+          <Spec label="Bed position" value={cabin.bed_near_balcony == null ? 'Private arrangement' : cabin.bed_near_balcony ? 'Next to the balcony' : 'Next to the entrance'} />
           <Spec label="Connecting door" value={cabin.connecting_cabin_number ? `Yes — to ${cabin.connecting_cabin_number}` : 'None (private wall)'} />
           <Spec label="Doorway width" value={`${cabin.door_width_mm} mm`} mono />
           <Spec label="Category" value={cabin.category_code} mono />
@@ -492,15 +627,31 @@ function Socket({ n, label }: { n: number; label: string }) {
   );
 }
 
-const DEST_LABELS: Record<string, string> = { buffet: 'Marketplace Buffet', theater: 'London Theatre', elevator: 'Nearest elevator' };
+function getDestinationLabel(id: string, ship: ShipData): string {
+  const isRiver = ship.total_decks <= 5;
+  const customMap: Record<string, string> = {
+    buffet: isRiver ? "Arthur's Bistro / Buffet" : 'Marketplace Buffet',
+    theater: isRiver ? 'Panorama Lounge & Bar' : 'London Theatre',
+    elevator: 'Nearest vertical core / lift',
+  };
+  return customMap[id] ?? id;
+}
 
-function GettingAround({ cabin }: { cabin: CabinData }) {
+function GettingAround({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
   const dests = Object.keys(cabin.distances);
-  const [dest, setDest] = useState<string>(dests.includes('buffet') ? 'buffet' : dests[0]);
+  const [dest, setDest] = useState<string>(dests.length > 0 ? dests[0] : '');
+
+  useEffect(() => {
+    if (dests.length > 0 && !dests.includes(dest)) {
+      setDest(dests[0]);
+    }
+  }, [cabin]);
+
   const d = cabin.distances[dest];
+
   return (
     <section>
-      <SectionHead eyebrow="Getting around" title="Walkable distances" intro="Deterministic routes through the ship’s circulation graph — measured, not estimated." />
+      <SectionHead eyebrow="Getting around" title="Walkable distances" intro="Deterministic routes through the circulation graph — measured, not estimated." />
       <div className="card p-6 md:p-8">
         <div className="flex flex-wrap gap-2">
           {dests.map((id) => (
@@ -511,7 +662,7 @@ function GettingAround({ cabin }: { cabin: CabinData }) {
                 dest === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/15 hover:border-ink/40'
               }`}
             >
-              {DEST_LABELS[id] ?? id}
+              {getDestinationLabel(id, ship)}
             </button>
           ))}
         </div>
@@ -542,16 +693,16 @@ function DeckContext({ ship, cabin, media }: { ship: ShipData; cabin: CabinData;
   const decks = Object.values(ship.decks).sort((a, b) => b.deck_number - a.deck_number);
   return (
     <section>
-      <SectionHead eyebrow="Your deck" title={`Deck ${cabin.deck_number} — ${cabin.deck_name}`} intro="The deck plan becomes part of the Explorer as imagery is added; the mapped decks and venues are shown below." />
+      <SectionHead eyebrow="Your deck" title={`Deck ${cabin.deck_number} — ${cabin.deck_name}`} intro="The deck layout and verified venues are detailed below." />
       <div className="grid lg:grid-cols-[1fr_16rem] gap-6">
         <div>
           <Photo src={media(`plan:${cabin.deck_number}`)} kind="plan" label={`Deck ${cabin.deck_number} plan`} ratio="21 / 9" />
           <div className="card mt-4 p-6">
-            <div className="eyebrow-mist mb-3">Venues on nearby decks</div>
+            <div className="eyebrow-mist mb-3">Venues across decks</div>
             <ul className="space-y-2">
               {decks.filter((d) => d.venues.length > 0).map((d) => (
                 <li key={d.deck_number} className="flex items-start gap-3 text-[13px]">
-                  <span className="font-mono text-muted w-14 shrink-0">Deck {d.deck_number}</span>
+                  <span className="font-mono text-muted w-16 shrink-0">Deck {d.deck_number}</span>
                   <span className="text-ink">{d.venues.map((v) => v.name).join(' · ')}</span>
                 </li>
               ))}
@@ -654,14 +805,98 @@ function Evidence({ cabin }: { cabin: CabinData }) {
   );
 }
 
+/* ------------------------------------------------------------------ Fleet Gallery */
+
+function FleetGallery({ currentSlug, onSelectVessel }: { currentSlug: string; onSelectVessel: (slug: string) => void }) {
+  return (
+    <section className="border-t hairline pt-12">
+      <SectionHead
+        eyebrow="Universal Maritime Platform"
+        title="Compiled Fleet Gallery"
+        intro="Timonelo processes ocean mega-liners and luxury riverboats through the exact same spatial calculus."
+      />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {FLEET_REGISTRY.map((v) => {
+          const isActive = v.slug === currentSlug;
+          return (
+            <div
+              key={v.slug}
+              className={`card p-5 flex flex-col justify-between transition-all ${
+                isActive ? 'border-2 border-gold ring-1 ring-gold/20 shadow-md bg-white' : 'hover:border-ink/40'
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span
+                    className={`text-[9px] px-2 py-0.5 font-mono uppercase font-semibold rounded-xs ${
+                      v.vesselType === 'River Cruise'
+                        ? 'bg-blue-100 text-blue-900 border border-blue-200'
+                        : 'bg-stone-100 text-stone-800 border border-stone-200'
+                    }`}
+                  >
+                    {v.vesselType}
+                  </span>
+                  <span className="text-[10px] text-emerald-800 font-medium flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Compiled
+                  </span>
+                </div>
+
+                <h3 className="font-display text-xl text-ink leading-tight">{v.name}</h3>
+                <p className="text-[11px] font-semibold text-gold uppercase tracking-wide mt-0.5">{v.operator}</p>
+
+                <p className="text-[12px] text-muted leading-relaxed mt-2.5 line-clamp-3">{v.description}</p>
+
+                <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t hairline text-[11px]">
+                  <div>
+                    <span className="text-muted block text-[10px] uppercase">Decks</span>
+                    <span className="font-mono font-bold text-ink">{v.totalDecks}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted block text-[10px] uppercase">Cabins</span>
+                    <span className="font-mono font-bold text-ink">{v.cabinCount}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted block text-[10px] uppercase">LOA</span>
+                    <span className="font-mono font-bold text-ink">{v.lengthM} m</span>
+                  </div>
+                  <div>
+                    <span className="text-muted block text-[10px] uppercase">Class</span>
+                    <span className="font-mono font-bold text-ink truncate block" title={v.shipClass}>{v.shipClass}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3">
+                {isActive ? (
+                  <div className="w-full py-2 text-center text-xs font-semibold text-ink bg-gold/20 rounded-xs border border-gold/40">
+                    Currently Viewing
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => onSelectVessel(v.slug)}
+                    className="w-full py-2 text-center text-xs font-semibold bg-ink text-white hover:bg-gold hover:text-ink transition-colors rounded-xs flex items-center justify-center gap-1.5"
+                  >
+                    <span>Open Orientation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function Discovery({ ship, current, onSelect }: { ship: ShipData; current: string; onSelect: (n: string) => void }) {
   const others = Object.values(ship.cabins).filter((c) => c.cabin_number !== current);
   if (others.length === 0) return null;
   return (
     <section>
-      <SectionHead eyebrow="Keep exploring" title="Other staterooms nearby" />
+      <SectionHead eyebrow="Keep exploring" title="Other staterooms on this vessel" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {others.map((c) => (
+        {others.slice(0, 9).map((c) => (
           <button
             key={c.cabin_number}
             onClick={() => onSelect(c.cabin_number)}
@@ -670,7 +905,7 @@ function Discovery({ ship, current, onSelect }: { ship: ShipData; current: strin
             <div>
               <div className="font-mono text-lg text-ink">Cabin {c.cabin_number}</div>
               <div className="text-[12px] text-muted mt-0.5">
-                Deck {c.deck_number} · {sideLabel(c.hull_side)}{c.is_accessible ? ' · Accessible' : ''}
+                Deck {c.deck_number} ({c.deck_name}) · {sideLabel(c.hull_side)}{c.is_accessible ? ' · Accessible' : ''}
               </div>
             </div>
             <ArrowRight className="w-4 h-4 text-muted group-hover:text-ink transition-colors" aria-hidden />
@@ -685,8 +920,8 @@ function Footer() {
   return (
     <footer className="border-t hairline mt-20">
       <div className="page-shell py-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-muted">
-        <span className="inline-flex items-center gap-2"><Anchor className="w-3.5 h-3.5" /> © {new Date().getFullYear()} Timonelo</span>
-        <span className="tracking-[0.2em]">Never more certain than the evidence.</span>
+        <span className="inline-flex items-center gap-2"><Anchor className="w-3.5 h-3.5" /> © {new Date().getFullYear()} Timonelo Platform</span>
+        <span className="tracking-[0.2em]">Universal Spatial Intelligence · Ocean & River Twins.</span>
       </div>
     </footer>
   );
