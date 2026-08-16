@@ -12,8 +12,10 @@ import {
   ChevronRight,
   Clock,
   Navigation as NavIcon,
+  CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
-import { PORTS_REGISTRY, type PortData } from '../ports';
+import { PORTS_REGISTRY, type CuratedPort } from '../ports';
 import { useI18n } from '../i18n';
 
 interface PortExplorerProps {
@@ -23,9 +25,16 @@ interface PortExplorerProps {
 
 export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProps) {
   const { t, locale } = useI18n();
-  const [selectedPort, setSelectedPort] = useState<PortData>(
+  const [selectedPort, setSelectedPort] = useState<CuratedPort>(
     PORTS_REGISTRY.find((p) => p.slug === initialPortSlug) ?? PORTS_REGISTRY[0]
   );
+
+  const isGerman = locale === 'de';
+  const headline = isGerman ? selectedPort.headlineDe : selectedPort.headlineEn;
+  const story = isGerman ? selectedPort.storyDe : selectedPort.storyEn;
+  const transit = isGerman ? selectedPort.transitNoteDe : selectedPort.transitNoteEn;
+  const airport = isGerman ? selectedPort.airportTransitDe : selectedPort.airportTransitEn;
+  const essentials = isGerman ? selectedPort.timEssentialsDe : selectedPort.timEssentialsEn;
 
   return (
     <div className="section-space">
@@ -39,9 +48,6 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
           <p className="text-muted text-base sm:text-lg leading-relaxed mt-3 font-display italic">
             {t.ports.subtitle}
           </p>
-          <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/20 rounded-xs text-xs text-slate-800 font-serif italic">
-            {t.ports.officerObservation}
-          </div>
         </div>
 
         {/* Port Selector Tabs */}
@@ -57,10 +63,31 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               }`}
             >
               <MapPin className="w-3.5 h-3.5 text-gold" />
-              <span>{port.name.split('(')[0].trim()}</span>
+              <span>{port.shortName}</span>
               <span className="text-[10px] font-mono opacity-60">({port.unLocode})</span>
             </button>
           ))}
+        </div>
+
+        {/* PRIORITY 1: TIM'S ESSENTIALS FIRST */}
+        <div className="mb-10 bg-[#0c1b2a] text-white p-6 sm:p-8 rounded-2xl shadow-md border border-amber-900/30">
+          <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-3">
+            <Compass className="w-4 h-4 text-amber-400" />
+            <span className="text-xs uppercase font-mono tracking-widest text-amber-300 font-semibold">
+              {isGerman ? 'Heute auf der Brücke wichtig' : "Today's Bridge Essentials"}
+            </span>
+            <span className="text-slate-500 text-xs">·</span>
+            <span className="text-xs text-slate-400 font-medium">{selectedPort.shortName} ({selectedPort.unLocode})</span>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 text-sm font-light leading-relaxed">
+            {essentials.map((item, idx) => (
+              <div key={idx} className="flex items-start gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span className="text-slate-200">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Active Port Dossier */}
@@ -74,7 +101,7 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     {selectedPort.region}
                   </span>
                   <h2 className="font-display text-3xl sm:text-4xl text-ink mt-1 font-normal">
-                    {selectedPort.name}
+                    {selectedPort.shortName}
                   </h2>
                 </div>
                 <div className="text-right font-mono text-xs text-muted">
@@ -84,28 +111,44 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               </div>
 
               <p className="text-ink/85 text-base sm:text-lg leading-relaxed mt-6 font-display italic">
-                "{selectedPort.headline}"
+                "{headline}"
               </p>
 
-              {/* Verified Port Metrics Grid */}
-              <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                <div className="p-4 bg-paper rounded-xs border border-ink/6">
-                  <div className="flex items-center gap-2 text-xs font-mono text-gold mb-1">
-                    <Compass className="w-4 h-4" />
-                    <span>{t.ports.gangwayAccess}</span>
-                  </div>
-                  <p className="text-sm font-medium text-ink">Deck {selectedPort.gangwayDeck}</p>
-                  <p className="text-xs text-muted mt-1">{selectedPort.terminalPier}</p>
-                </div>
+              <p className="text-[15px] text-slate-700 font-light leading-relaxed mt-4">
+                {story}
+              </p>
 
-                <div className="p-4 bg-paper rounded-xs border border-ink/6">
-                  <div className="flex items-center gap-2 text-xs font-mono text-gold mb-1">
-                    <Footprints className="w-4 h-4" />
-                    <span>{t.ports.distanceToCity}</span>
+              {/* Verified Port Metrics Grid (Never render empty) */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                {selectedPort.gangwayDeck !== null && (
+                  <div className="p-4 bg-paper rounded-xs border border-ink/6">
+                    <div className="flex items-center gap-2 text-xs font-mono text-gold mb-1">
+                      <Compass className="w-4 h-4" />
+                      <span>{t.ports.gangwayAccess}</span>
+                    </div>
+                    <p className="text-sm font-medium text-ink">
+                      {isGerman ? `Deck ${selectedPort.gangwayDeck} regulär` : `Deck ${selectedPort.gangwayDeck} (Regular)`}
+                    </p>
+                    <p className="text-xs text-muted mt-1">{selectedPort.terminalPier}</p>
                   </div>
-                  <p className="text-sm font-medium text-ink">{selectedPort.distanceToCenterKm} km</p>
-                  <p className="text-xs text-muted mt-1">{selectedPort.walkingTimeMin} min walking time</p>
-                </div>
+                )}
+
+                {selectedPort.distanceToCenterKm !== null && (
+                  <div className="p-4 bg-paper rounded-xs border border-ink/6">
+                    <div className="flex items-center gap-2 text-xs font-mono text-gold mb-1">
+                      <Footprints className="w-4 h-4" />
+                      <span>{t.ports.distanceToCity}</span>
+                    </div>
+                    <p className="text-sm font-medium text-ink">
+                      {selectedPort.distanceToCenterKm} km
+                    </p>
+                    <p className="text-xs text-muted mt-1">
+                      {selectedPort.walkingTimeMin > 0
+                        ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit (stufenlos)` : `approx. ${selectedPort.walkingTimeMin} min walk (step-free)`)
+                        : (isGerman ? 'Shuttle-Transfer oder Taxi empfohlen' : 'Shuttle transfer or taxi recommended')}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -115,18 +158,22 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
-                  <Plane className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <Footprints className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">Airport Transfer</span>
-                    <p className="text-sm text-ink mt-0.5">{selectedPort.airportTransfer}</p>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">
+                      {isGerman ? 'Öffentlicher Nahverkehr & Fußweg' : 'Local Transit & Walking Path'}
+                    </span>
+                    <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{transit}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
-                  <CreditCard className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <Plane className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">Taxi & Payment</span>
-                    <p className="text-sm text-ink mt-0.5">{selectedPort.taxiPricingAdvice}</p>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">
+                      {isGerman ? 'Flughafen-Transfer' : 'Airport Connection'}
+                    </span>
+                    <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{airport}</p>
                   </div>
                 </div>
               </div>
@@ -136,17 +183,21 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
           {/* Sidebar: Calling Ships & Emergency */}
           <div className="space-y-6">
             <div className="bg-white border border-ink/8 p-6 rounded-xs shadow-xs">
-              <h3 className="font-display text-lg text-ink font-normal mb-4">{t.ports.callingFleet}</h3>
+              <h3 className="font-display text-lg text-ink font-normal mb-4">
+                {isGerman ? 'Schiffe in diesem Hafen' : 'Vessels Calling Here'}
+              </h3>
               <div className="space-y-3">
                 {selectedPort.callingShips.map((ship) => (
                   <button
                     key={ship.slug}
                     onClick={() => onSelectShip(ship.slug)}
-                    className="w-full p-3 bg-paper hover:bg-gold/10 border border-ink/6 rounded-xs text-left transition-colors flex items-center justify-between group cursor-pointer"
+                    className="w-full p-3.5 bg-paper hover:bg-gold/10 border border-ink/6 rounded-xs text-left transition-colors flex items-center justify-between group cursor-pointer"
                   >
                     <div>
                       <span className="text-xs font-medium text-ink block">{ship.name}</span>
-                      <span className="text-[11px] font-mono text-muted">{ship.role}</span>
+                      <span className="text-[11px] font-mono text-muted">
+                        {isGerman ? 'Verifizierter Digital Twin' : 'Verified Digital Twin'}
+                      </span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-muted group-hover:text-ink transition-transform group-hover:translate-x-0.5" />
                   </button>
@@ -159,12 +210,14 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                 <ShieldCheck className="w-4 h-4" />
                 <span className="text-xs font-mono uppercase tracking-wider">{t.ports.emergencyNumbers}</span>
               </div>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Direct emergency port authority dispatch and medical coordination:
+              <p className="text-xs text-white/70 leading-relaxed font-light">
+                {isGerman
+                  ? 'Verifizierte Notrufzentralen und Hafenbehörden vor Ort:'
+                  : 'Verified local port authority dispatch and emergency channels:'}
               </p>
-              <div className="p-3 bg-white/10 rounded-xs border border-white/15 text-xs font-mono text-white">
-                <p>Port Police: {selectedPort.emergencyPolice}</p>
-                <p className="mt-1">Medical Duty: {selectedPort.emergencyMedical}</p>
+              <div className="p-3 bg-white/10 rounded-xs border border-white/15 text-xs font-mono text-white space-y-1">
+                <p>{isGerman ? 'Hafen / Polizei:' : 'Port / Police:'} {selectedPort.policePhone}</p>
+                <p>{isGerman ? 'Notarzt & Rettung:' : 'Medical & Emergency:'} {selectedPort.emergencyPhone}</p>
               </div>
             </div>
           </div>
