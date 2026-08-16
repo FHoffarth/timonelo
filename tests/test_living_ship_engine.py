@@ -41,8 +41,8 @@ class TestLivingShipEngine(unittest.TestCase):
         self.assertIn("I remain on the bridge", live.bridge_sign_off)
 
     def test_foundation_constitution_file(self):
-        """Verify FOUNDATION.md exists and contains the 11 foundational laws."""
-        foundation_path = os.path.join(REPO_ROOT, "FOUNDATION.md")
+        """Verify docs/CONSTITUTION.md exists and contains the foundational laws."""
+        foundation_path = os.path.join(REPO_ROOT, "docs", "CONSTITUTION.md")
         self.assertTrue(os.path.exists(foundation_path))
         with open(foundation_path, "r", encoding="utf-8") as f:
             content = f.read()
