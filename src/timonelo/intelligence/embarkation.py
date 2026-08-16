@@ -24,25 +24,30 @@ class EmbarkationIntelligenceEvaluator:
         stateroom_ready = term_data.get("stateroom_ready_time", "14:00")
         drill_deadline = term_data.get("mandatory_safety_drill_deadline", "16:30 (Prior to departure)")
 
-        # Determine muster station based on deck & cabin parity
-        deck_num = cabin.deck_number
+        # Determine muster station based on deck count & cabin location
         is_starboard = (int(cabin.cabin_number[-1]) % 2 == 0)
         station_x = cabin.boundary_polygon[0].x if cabin.boundary_polygon else 0.5
 
-        if station_x > 0.65:
-            assigned_muster = "Muster Station A (Forward)" if is_starboard else "Muster Station D (Forward Port)"
-            muster_deck = 6 if is_starboard else 7
-        elif station_x > 0.35:
-            assigned_muster = "Muster Station B (Promenade)" if is_starboard else "Muster Station E (Mid Port)"
-            muster_deck = 6 if is_starboard else 7
+        if ontology.total_decks <= 5:
+            # River / Expedition / Small Vessel Muster Station
+            muster_deck = min(ontology.total_decks, 3)
+            assigned_muster = "Muster Station 1 (Panorama Lounge & Atrium)" if station_x > 0.45 else "Muster Station 2 (Main Restaurant / Reception)"
         else:
-            assigned_muster = "Muster Station C (Aft)" if is_starboard else "Muster Station F (Aft Port)"
-            muster_deck = 6 if is_starboard else 7
+            # Ocean Mega-Vessel Muster Station
+            if station_x > 0.65:
+                assigned_muster = "Muster Station A (Forward)" if is_starboard else "Muster Station D (Forward Port)"
+                muster_deck = 6 if is_starboard else 7
+            elif station_x > 0.35:
+                assigned_muster = "Muster Station B (Promenade)" if is_starboard else "Muster Station E (Mid Port)"
+                muster_deck = 6 if is_starboard else 7
+            else:
+                assigned_muster = "Muster Station C (Aft)" if is_starboard else "Muster Station F (Aft Port)"
+                muster_deck = 6 if is_starboard else 7
 
-        route_guidance = f"Take nearest elevator down to Deck {muster_deck:02d}, follow emergency signage to {assigned_muster}."
+        route_guidance = f"Take nearest stairs/elevator to Deck {muster_deck:02d}, follow emergency signage to {assigned_muster}."
 
         ev_links = list(cabin.evidence_links) if cabin.evidence_links else [
-            EvidenceLink(source_id="EVID-SOLAS-BELLISSIMA", sha256="4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d", locator="SOLAS_Safety_Plan_Rev4")
+            EvidenceLink(source_id="EVID-SOLAS-PLAN", sha256="4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d", locator="SOLAS_Safety_Plan")
         ]
 
         return EmbarkationIntelligence(

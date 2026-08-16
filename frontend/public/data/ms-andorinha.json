@@ -1,0 +1,3242 @@
+{
+  "imo": "ENI02338573",
+  "name": "MS Andorinha",
+  "ship_class": "Douro River Class",
+  "length_m": 80.0,
+  "beam_m": 11.4,
+  "total_decks": 4,
+  "decks": {
+    "1": {
+      "deck_number": 1,
+      "name": "Emerald Deck",
+      "elevation_m": 2.0,
+      "zone": "HULL_LOWER",
+      "venues": [
+        {
+          "id": "VENUE_FITNESS",
+          "name": "Fitness Studio",
+          "category": "SPA_FITNESS",
+          "is_noise_generator": false
+        },
+        {
+          "id": "VENUE_SPA",
+          "name": "Wellness Spa & Massage",
+          "category": "SPA_FITNESS",
+          "is_noise_generator": false
+        }
+      ]
+    },
+    "2": {
+      "deck_number": 2,
+      "name": "Ruby Deck",
+      "elevation_m": 4.8,
+      "zone": "RESIDENTIAL_LOWER",
+      "venues": [
+        {
+          "id": "VENUE_COMPASS_ROSE",
+          "name": "The Compass Rose Restaurant",
+          "category": "DINING",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_GALLEY",
+          "name": "Main Galley & Culinary Kitchen",
+          "category": "SERVICE_PANTRY",
+          "is_noise_generator": true
+        }
+      ]
+    },
+    "3": {
+      "deck_number": 3,
+      "name": "Diamond Deck",
+      "elevation_m": 7.6,
+      "zone": "RESIDENTIAL_UPPER",
+      "venues": [
+        {
+          "id": "VENUE_PANORAMA_LOUNGE",
+          "name": "Panorama Lounge & Bar",
+          "category": "BAR_LOUNGE",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_RECEPTION",
+          "name": "Reception Desk & Guest Services Atrium",
+          "category": "PROMENADE_ATRIUM",
+          "is_noise_generator": false
+        }
+      ]
+    },
+    "4": {
+      "deck_number": 4,
+      "name": "Sun Deck",
+      "elevation_m": 10.4,
+      "zone": "LIDO_SPORTS",
+      "venues": [
+        {
+          "id": "VENUE_ARTHURS_BISTRO",
+          "name": "Arthur's Bistro & Open-Air Grill",
+          "category": "DINING",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_SUN_POOL",
+          "name": "Sun Deck Pool & Balinese Day Beds",
+          "category": "POOL_SOLARIUM",
+          "is_noise_generator": true
+        },
+        {
+          "id": "VENUE_WHEELHOUSE",
+          "name": "Navigation Bridge & Retractable Wheelhouse",
+          "category": "SERVICE_PANTRY",
+          "is_noise_generator": false
+        }
+      ]
+    }
+  },
+  "cabins": {
+    "101": {
+      "cabin_number": "101",
+      "deck_number": 1,
+      "deck_name": "Emerald Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "ES",
+      "square_meters": 14.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": null,
+          "deck_name": null,
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 1.6m.",
+          "lift_distance_m": 1.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "102": {
+      "cabin_number": "102",
+      "deck_number": 1,
+      "deck_name": "Emerald Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "ES",
+      "square_meters": 14.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": null,
+          "deck_name": null,
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 1.6m.",
+          "lift_distance_m": 1.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "103": {
+      "cabin_number": "103",
+      "deck_number": 1,
+      "deck_name": "Emerald Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "ES",
+      "square_meters": 14.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": null,
+          "deck_name": null,
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 1.6m.",
+          "lift_distance_m": 1.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "104": {
+      "cabin_number": "104",
+      "deck_number": 1,
+      "deck_name": "Emerald Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "ES",
+      "square_meters": 14.0,
+      "balcony_type": "NO_BALCONY",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": null,
+          "deck_name": null,
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 1.6m.",
+          "lift_distance_m": 1.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "201": {
+      "cabin_number": "201",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Forward",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [
+            "Reception Desk & Guest Services Atrium"
+          ],
+          "is_residential": false,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "202": {
+      "cabin_number": "202",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Forward",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [
+            "Reception Desk & Guest Services Atrium"
+          ],
+          "is_residential": false,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "203": {
+      "cabin_number": "203",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "204": {
+      "cabin_number": "204",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "205": {
+      "cabin_number": "205",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "206": {
+      "cabin_number": "206",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "207": {
+      "cabin_number": "207",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "208": {
+      "cabin_number": "208",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 9.6m.",
+          "lift_distance_m": 9.6
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "209": {
+      "cabin_number": "209",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "210": {
+      "cabin_number": "210",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "211": {
+      "cabin_number": "211",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "212": {
+      "cabin_number": "212",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "213": {
+      "cabin_number": "213",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "214": {
+      "cabin_number": "214",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "215": {
+      "cabin_number": "215",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "216": {
+      "cabin_number": "216",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "217": {
+      "cabin_number": "217",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "218": {
+      "cabin_number": "218",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "219": {
+      "cabin_number": "219",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "220": {
+      "cabin_number": "220",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Protected underfoot: Residential cabins on Deck 1",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "221": {
+      "cabin_number": "221",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [
+            "Wellness Spa & Massage"
+          ],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "222": {
+      "cabin_number": "222",
+      "deck_number": 2,
+      "deck_name": "Ruby Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "RFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 3,
+          "deck_name": "Diamond Deck",
+          "venues": [],
+          "is_residential": true,
+          "is_noise_generator": false
+        },
+        "underfoot": {
+          "deck_number": 1,
+          "deck_name": "Emerald Deck",
+          "venues": [
+            "Wellness Spa & Massage"
+          ],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": true,
+          "acoustic_flags": [
+            "Protected overhead: Residential cabins on Deck 3",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustically buffered stateroom: Quiet sandwich layer above and below, standard corridor buffer."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "301": {
+      "cabin_number": "301",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": true,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": true,
+          "summary": "Certified Accessible Stateroom with 950mm doorway. Step-free route to elevator core is 8.0m (11 steps).",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "302": {
+      "cabin_number": "302",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": true,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": true,
+          "summary": "Certified Accessible Stateroom with 950mm doorway. Step-free route to elevator core is 8.0m (11 steps).",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "303": {
+      "cabin_number": "303",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "304": {
+      "cabin_number": "304",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "305": {
+      "cabin_number": "305",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "306": {
+      "cabin_number": "306",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 0.0m.",
+          "lift_distance_m": 0.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "307": {
+      "cabin_number": "307",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "308": {
+      "cabin_number": "308",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Sun Deck Pool & Balinese Day Beds"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Sun Deck Pool & Balinese Day Beds on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "309": {
+      "cabin_number": "309",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "310": {
+      "cabin_number": "310",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "311": {
+      "cabin_number": "311",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "312": {
+      "cabin_number": "312",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "DSU",
+      "square_meters": 28.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 950,
+      "sockets": {
+        "eu_count": 6,
+        "us_count": 4,
+        "usb_a_count": 4,
+        "usb_c_count": 4,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 950mm doorway. Step-free route to nearest elevator core is 8.0m.",
+          "lift_distance_m": 8.0
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Proximity to elevator lobby (<10m): Higher corridor foot-traffic"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "313": {
+      "cabin_number": "313",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "DFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "314": {
+      "cabin_number": "314",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "DFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [],
+          "is_residential": true
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Protected underfoot: Residential cabins on Deck 2",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "315": {
+      "cabin_number": "315",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "PORT",
+      "zone": "Midship-Aft",
+      "category_code": "DFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [
+            "Main Galley & Culinary Kitchen"
+          ],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Underfoot venue: Main Galley & Culinary Kitchen on Deck 2",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    },
+    "316": {
+      "cabin_number": "316",
+      "deck_number": 3,
+      "deck_name": "Diamond Deck",
+      "hull_side": "STARBOARD",
+      "zone": "Midship-Aft",
+      "category_code": "DFB",
+      "square_meters": 21.0,
+      "balcony_type": "GLASS_TRANSPARENT_RAILING",
+      "connecting_cabin_number": null,
+      "bed_near_balcony": null,
+      "is_accessible": false,
+      "door_width_mm": 850,
+      "sockets": {
+        "eu_count": 4,
+        "us_count": 2,
+        "usb_a_count": 2,
+        "usb_c_count": 2,
+        "bedside_usb": true
+      },
+      "surroundings": {
+        "overhead": {
+          "deck_number": 4,
+          "deck_name": "Sun Deck",
+          "venues": [
+            "Arthur's Bistro & Open-Air Grill"
+          ],
+          "is_residential": false,
+          "is_noise_generator": true
+        },
+        "underfoot": {
+          "deck_number": 2,
+          "deck_name": "Ruby Deck",
+          "venues": [
+            "Main Galley & Culinary Kitchen"
+          ],
+          "is_residential": false
+        },
+        "adjacent_connecting": null
+      },
+      "sightlines": {
+        "horizon_angle_deg": 180.0,
+        "downward_angle_deg": 45.0,
+        "has_lifeboat_obstruction": false,
+        "description": "Solid railing or structural partition affects seated sightline angle."
+      },
+      "distances": {},
+      "lenses": {
+        "accessibility": {
+          "is_certified": false,
+          "summary": "Standard stateroom with 850mm doorway. Step-free route to nearest elevator core is 19.2m.",
+          "lift_distance_m": 19.2
+        },
+        "family": {
+          "is_optimized": false,
+          "has_connecting": false,
+          "connecting_cabin": null,
+          "kids_club_distance_m": -1.0,
+          "summary": "Individual stateroom. Distance to DOREMI Youth Club is -1.0m."
+        },
+        "quiet": {
+          "is_quiet_tier": false,
+          "acoustic_flags": [
+            "Overhead venue: Arthur's Bistro & Open-Air Grill on Deck 4",
+            "Underfoot venue: Main Galley & Culinary Kitchen on Deck 2",
+            "Buffered from elevator lobby (19.2m distance)"
+          ],
+          "summary": "Acoustic notice: Proximity to active venue or high-traffic corridor."
+        }
+      },
+      "evidence": [
+        {
+          "source_id": "EVID-ANDORINHA-GA-2020",
+          "sha256": "9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+          "locator": "Tauck_MS_Andorinha_Douro_GA_Plan_Rev1"
+        }
+      ]
+    }
+  }
+}

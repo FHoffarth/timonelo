@@ -15,6 +15,7 @@ if str(SRC_DIR) not in sys.path:
 
 from timonelo.ontology.models import VesselSpatialOntology
 from timonelo.ontology.bellissima import create_bellissima_ontology
+from timonelo.ontology.andorinha import create_andorinha_ontology
 from timonelo.calculus.router import DeterministicSpatialRouter
 from timonelo.calculus.sandwich import DeterministicSandwichResolver
 from timonelo.calculus.sightlines import DeterministicSightlineCalculator
@@ -211,16 +212,19 @@ class KnowledgeFactoryCompiler:
                     ],
                 }
 
-        # 5. Write Canonical Files
-        vessel_data_file = output_data_dir / f"data/ships/{ship_slug}/knowledge-pack.json"
-        vessel_data_file.parent.mkdir(parents=True, exist_ok=True)
-        with open(vessel_data_file, "w", encoding="utf-8") as f:
+        # 5. Write Canonical Knowledge Pack Artifacts
+        vessel_data_dir = output_data_dir / f"data/ships/{ship_slug}"
+        vessel_data_dir.mkdir(parents=True, exist_ok=True)
+        canonical_file = vessel_data_dir / "knowledge-pack.json"
+        with open(canonical_file, "w", encoding="utf-8") as f:
             json.dump(ship_data, f, indent=2)
-        print(f"  [EXPORT] Written Canonical Knowledge Pack: {vessel_data_file}")
+        print(f"  [EXPORT] Written Canonical Knowledge Pack: {canonical_file}")
 
+        # 6. Write Frontend Runtime Asset
         if output_frontend_dir:
-            frontend_file = output_frontend_dir / f"public/data/{ship_slug}.json"
-            frontend_file.parent.mkdir(parents=True, exist_ok=True)
+            frontend_public_dir = output_frontend_dir / "public/data"
+            frontend_public_dir.mkdir(parents=True, exist_ok=True)
+            frontend_file = frontend_public_dir / f"{ship_slug}.json"
             with open(frontend_file, "w", encoding="utf-8") as f:
                 json.dump(ship_data, f, indent=2)
             print(f"  [EXPORT] Written Cruise Explorer Pack:     {frontend_file}")
@@ -233,11 +237,11 @@ from timonelo.factory.patch_engine import ShipPatchEngine
 
 
 def compile_fleet(root_dir: Path) -> bool:
-    """Compiles the complete fleet: Reference Vessel (Bellissima) and all derivative patch ships."""
+    """Compiles the complete fleet: Reference Baselines and all derivative patch ships."""
     compiler = KnowledgeFactoryCompiler()
 
-    # 1. Compile Reference Baseline: MSC Bellissima
-    print(">>> [1/FLEET] COMPILING REFERENCE BASELINE: MSC BELLISSIMA (IMO 9766205)")
+    # 1. Compile Primary Ocean Baseline: MSC Bellissima
+    print(">>> [1/FLEET] COMPILING PRIMARY OCEAN BASELINE: MSC BELLISSIMA (IMO 9766205)")
     bellissima_ontology = create_bellissima_ontology()
     ok_bellissima = compiler.compile_vessel(
         ontology=bellissima_ontology,
@@ -247,11 +251,22 @@ def compile_fleet(root_dir: Path) -> bool:
     if not ok_bellissima:
         return False
 
-    # 2. Automatically discover and compile all derivative vessels in data/ships/*/deltas.json
+    # 2. Compile Primary River Baseline: MS Andorinha
+    print("\n>>> [2/FLEET] COMPILING PRIMARY RIVER BASELINE: MS ANDORINHA (ENI 02338573)")
+    andorinha_ontology = create_andorinha_ontology()
+    ok_andorinha = compiler.compile_vessel(
+        ontology=andorinha_ontology,
+        output_data_dir=root_dir,
+        output_frontend_dir=root_dir / "frontend",
+    )
+    if not ok_andorinha:
+        return False
+
+    # 3. Automatically discover and compile all derivative patch vessels in data/ships/*/deltas.json
     ships_dir = root_dir / "data/ships"
     derivative_dirs = sorted([d for d in ships_dir.iterdir() if d.is_dir() and (d / "deltas.json").exists()])
 
-    for idx, ship_dir in enumerate(derivative_dirs, start=2):
+    for idx, ship_dir in enumerate(derivative_dirs, start=3):
         deltas_file = ship_dir / "deltas.json"
         with open(deltas_file, "r", encoding="utf-8") as f:
             patch_data = json.load(f)

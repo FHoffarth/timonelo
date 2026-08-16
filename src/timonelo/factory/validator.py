@@ -76,13 +76,13 @@ class SpatialIntegrityValidator:
         # 4. Gate 4: Router Multi-Deck Wayfinding Audit
         routing_failures = 0
         for deck_num, deck in ontology.decks.items():
-            for cabin_num, cabin in deck.cabins.items():
-                # Test route to nearest elevator on deck
-                nearest_lift = f"D{deck_num:02d}_AFT_LIFT"
-                if nearest_lift in deck.corridor_nodes:
-                    route = router.find_shortest_path(cabin.door.corridor_snap_node_id, nearest_lift)
+            vertical_nodes = [n_id for n_id, n in deck.corridor_nodes.items() if n.is_elevator_lobby or n.is_stairwell_access]
+            if vertical_nodes:
+                target_node = vertical_nodes[0]
+                for cabin_num, cabin in deck.cabins.items():
+                    route = router.find_shortest_path(cabin.door.corridor_snap_node_id, target_node)
                     if not route:
-                        issues.append(f"Cabin {cabin_num} cannot route to on-deck elevator {nearest_lift}")
+                        issues.append(f"Cabin {cabin_num} cannot route to vertical circulation node {target_node}")
                         routing_failures += 1
 
         if routing_failures == 0:
