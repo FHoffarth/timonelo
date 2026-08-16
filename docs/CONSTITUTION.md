@@ -17,6 +17,7 @@
 9. **We translate complexity into calm.** We turn complex AIS logs, deck arrangements, and port logistics into simple passenger understanding.
 10. **Hospitality comes before technology.** Software must feel like a warm, well-run ship, not a noisy computer interface.
 11. **We remain on the bridge.** Welcome aboard. The bridge is yours whenever you need it.
+12. **Production is the only truth.** Kein Sprint gilt als abgeschlossen, bevor die Änderung auf timonelo.com live, sichtbar und geprüft ist. Nicht der Commit zählt. Nicht der Test-Report. Sondern das echte Produkt.
 
 ---
 

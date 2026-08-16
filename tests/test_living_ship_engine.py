@@ -51,6 +51,7 @@ class TestLivingShipEngine(unittest.TestCase):
         self.assertIn("Hospitality comes before technology.", content)
         self.assertIn("We build calm.", content)
         self.assertIn("Welcome aboard. The bridge is yours whenever you need it.", content)
+        self.assertIn("Production is the only truth.", content)
 
 
 if __name__ == "__main__":
