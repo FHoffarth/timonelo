@@ -344,7 +344,7 @@ export default function App() {
         ) : viewMode === 'landing' ? (
           <HospitalityLanding
             onSelectVessel={handleSelectVessel}
-            onOpenPreparation={() => handleSelectVessel('msc-bellissima')}
+            onExploreCabin={(slug, cabinNum) => handleExploreCabins(slug, cabinNum)}
           />
         ) : (
           <Suspense fallback={<div className="min-h-[70vh] flex items-center justify-center text-slate-400 font-serif italic">Orientierung wird vorbereitet…</div>}>
