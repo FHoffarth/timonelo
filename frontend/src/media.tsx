@@ -96,7 +96,7 @@ export function Photo({
     <div
       style={style}
       role="img"
-      aria-label={label ? `${label} — photography coming soon` : 'Photography coming soon'}
+      aria-label={label ? `${label} — archival illustration` : 'Shipyard illustration'}
       className={`media-placeholder relative w-full overflow-hidden grid place-items-center rounded-xs ${className}`}
     >
       <div className="flex flex-col items-center gap-2 text-white/70">

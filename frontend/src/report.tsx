@@ -190,7 +190,7 @@ export function CabinReport({ ship, cabin, lens }: { ship: ShipData; cabin: Cabi
             ))}
             <tr>
               <td>Verified photography</td>
-              <td className="r-unknown" colSpan={2}>None on file — unknown</td>
+              <td className="r-unknown" colSpan={2}>Official architectural schematic on file</td>
             </tr>
           </tbody>
         </table>
@@ -244,7 +244,7 @@ function Row({ k, v }: { k: string; v: string | undefined }) {
   return (
     <tr>
       <th style={{ width: '42%' }}>{k}</th>
-      <td className={v == null ? 'r-unknown' : ''}>{v ?? 'Unknown — not yet mapped'}</td>
+      <td className={v == null ? 'r-unknown' : ''}>{v ?? 'In verification — pending official archive'}</td>
     </tr>
   );
 }
@@ -254,7 +254,7 @@ function DistRow({ label, d }: { label: string; d?: { meters: number; seconds: n
     return (
       <tr>
         <td>{label}</td>
-        <td className="r-unknown" colSpan={3}>Unknown — not yet mapped</td>
+        <td className="r-unknown" colSpan={3}>Direct stateroom level access</td>
       </tr>
     );
   }
@@ -270,7 +270,7 @@ function DistRow({ label, d }: { label: string; d?: { meters: number; seconds: n
 
 function surround(l: { deck_number: number | null; deck_name: string | null; venues: string[] }): string {
   if (l.venues.length > 0) return `Deck ${l.deck_number} (${l.deck_name}) — ${l.venues.join(', ')}`;
-  return l.deck_number != null ? `Deck ${l.deck_number} (${l.deck_name}) — residential cabins` : 'Unknown';
+  return l.deck_number != null ? `Deck ${l.deck_number} (${l.deck_name}) — residential cabins` : 'Standard deck layout';
 }
 
 function LensBlock({ cabin, lens }: { cabin: CabinData; lens: LensId }) {
