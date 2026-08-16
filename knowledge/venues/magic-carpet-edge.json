@@ -1,0 +1,15 @@
+{
+  "slug": "magic-carpet-edge",
+  "name": "The Magic Carpet",
+  "ship_slug": "celebrity-ascent",
+  "venue_type": "BAR_LOUNGE",
+  "deck_number": 14,
+  "deck_span": [2, 5, 14, 16],
+  "longitudinal_zone": "MIDSHIP",
+  "hull_side": "STARBOARD",
+  "cantilevered_m": 4.0,
+  "description": "World's first cantilevered floating platform that moves vertically along the starboard superstructure between Deck 2 (luxury tender embarkation) and Deck 16 (open-air specialty dining lounge).",
+  "nearest_elevators": "Midship Starboard Lift Bank",
+  "noise_profile": "MODERATE_OCEAN_BREEZE",
+  "sources": ["src:chantiers-atlantique", "src:celebrity-corporate"]
+}

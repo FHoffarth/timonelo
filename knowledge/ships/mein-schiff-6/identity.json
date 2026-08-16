@@ -1,0 +1,89 @@
+{
+  "slug": "mein-schiff-6",
+  "name": {
+    "value": "Mein Schiff 6",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9753208",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "TUI Cruises (Mein Schiff)",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Intuition Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "intuition-class",
+  "builder": {
+    "value": "Meyer Turku",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2017-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 295.3,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 35.8,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 98811,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 2790,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2232,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1000,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1267,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Mein Schiff 6 Main Dining Room",
+    "Mein Schiff 6 Panorama Lounge & Bar",
+    "Mein Schiff 6 Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "piraeus",
+    "heraklion",
+    "santorini",
+    "mykonos",
+    "rhodes",
+    "limassol"
+  ]
+}

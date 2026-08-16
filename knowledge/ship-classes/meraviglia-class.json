@@ -1,0 +1,14 @@
+{
+  "slug": "meraviglia-class",
+  "name": "Original Meraviglia Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Chantiers de l'Atlantique (Saint-Nazaire)",
+  "lead_ship_name": "MSC Meraviglia",
+  "lead_ship_year": 2017,
+  "gross_tonnage_typical": 171598,
+  "length_m_typical": 315.8,
+  "beam_m_typical": 43.0,
+  "passenger_capacity_max": 5655,
+  "description": "Prototype Meraviglia platform with 80m LED sky dome promenade and aft dual-deck theatre."
+}

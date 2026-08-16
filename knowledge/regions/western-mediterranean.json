@@ -1,0 +1,30 @@
+{
+  "slug": "western-mediterranean",
+  "name": "Western Mediterranean",
+  "ocean_basin": "Mediterranean Sea",
+  "countries": [
+    "Italy",
+    "Spain",
+    "France",
+    "Malta"
+  ],
+  "key_ports": [
+    "genoa",
+    "barcelona",
+    "marseille",
+    "civitavecchia",
+    "naples",
+    "valletta",
+    "palma-de-mallorca"
+  ],
+  "season_peak": "May to October",
+  "sea_state_typical": "Calm to Moderate (0.5m - 1.5m)",
+  "highlights": [
+    "Historic maritime capitals",
+    "UNESCO Gothic architecture",
+    "Balearic coastal beaches",
+    "Italian Riviera"
+  ],
+  "navigation_notes": "Dense summer traffic; strict 0.1% ECA low-sulfur fuel in EU port waters.",
+  "source": "src:imo-med-maritime-zone"
+}

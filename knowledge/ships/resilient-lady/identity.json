@@ -1,0 +1,90 @@
+{
+  "slug": "resilient-lady",
+  "name": {
+    "value": "Resilient Lady",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9854129",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Virgin Voyages",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Lady Ship Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "lady-ship-class",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2023-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 277.2,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 38.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 110000,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 2770,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2216,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1160,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1408,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Resilient Lady Main Dining Room",
+    "Resilient Lady Panorama Lounge & Bar",
+    "Resilient Lady Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "piraeus",
+    "santorini",
+    "mykonos",
+    "dubrovnik",
+    "split",
+    "kotor",
+    "sydney"
+  ]
+}

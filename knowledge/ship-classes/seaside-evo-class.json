@@ -1,0 +1,14 @@
+{
+  "slug": "seaside-evo-class",
+  "name": "Seaside EVO Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Fincantieri (Monfalcone, Italy)",
+  "lead_ship_name": "MSC Seashore",
+  "lead_ship_year": 2021,
+  "gross_tonnage_typical": 170412,
+  "length_m_typical": 339.0,
+  "beam_m_typical": 41.0,
+  "passenger_capacity_max": 5877,
+  "description": "Extended Seaside evolution with enlarged Yacht Club, redesigned aft lounge, and advanced SCR catalytic systems."
+}

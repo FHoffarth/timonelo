@@ -1,0 +1,56 @@
+{
+  "slug": "alaska-inside-passage-7n",
+  "title": "7-Night Alaska Glacier & Inside Passage",
+  "region": "Alaska",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "seattle",
+      "port_name": "Seattle",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "juneau",
+      "port_name": "Juneau",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "skagway",
+      "port_name": "Skagway",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "ketchikan",
+      "port_name": "Ketchikan",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "vancouver",
+      "port_name": "Vancouver",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "victoria",
+      "port_name": "Seattle Gateway",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "seattle",
+      "port_name": "Seattle",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Princess Cruises",
+    "Holland America Line",
+    "Celebrity Cruises",
+    "NCL"
+  ]
+}

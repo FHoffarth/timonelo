@@ -1,0 +1,56 @@
+{
+  "slug": "norwegian-fjords-7n",
+  "title": "7-Night Majestic Norwegian Fjords",
+  "region": "Norwegian Fjords",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "southampton",
+      "port_name": "Southampton",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "stavanger",
+      "port_name": "Stavanger",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "flam",
+      "port_name": "Flåm",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "geiranger",
+      "port_name": "Geiranger",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "alesund",
+      "port_name": "Ålesund",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "bergen",
+      "port_name": "Bergen",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "southampton",
+      "port_name": "Southampton",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "P&O Cruises",
+    "Princess Cruises",
+    "Celebrity Cruises",
+    "AIDA Cruises"
+  ]
+}

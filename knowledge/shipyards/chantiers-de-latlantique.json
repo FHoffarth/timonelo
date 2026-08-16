@@ -1,0 +1,26 @@
+{
+  "slug": "chantiers-de-latlantique",
+  "name": "Chantiers de l'Atlantique",
+  "country": "France",
+  "city": "Saint-Nazaire",
+  "coordinates": {
+    "latitude": 47.2833,
+    "longitude": -2.1833
+  },
+  "facilities": "Drydock Louis Joubert (Forme Joubert) 350m, Basin C, Giant 1400-ton gantry crane",
+  "notable_builds": [
+    "Queen Mary 2",
+    "MSC Meraviglia",
+    "MSC Bellissima",
+    "MSC World Europa",
+    "Celebrity Edge",
+    "Symphony of the Seas"
+  ],
+  "specialties": [
+    "Ultra-large mega-cruise ships",
+    "LNG propulsion",
+    "Solid oxide fuel cells",
+    "Silenseas sail-assisted yachts"
+  ],
+  "source": "src:chantiers-corporate-dossier"
+}

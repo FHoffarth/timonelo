@@ -1,0 +1,16 @@
+{
+  "deployment_id": "dep:andorinha:summer-2026",
+  "ship_slug": "ms-andorinha",
+  "season": "SUMMER_2026",
+  "region_slug": "douro-river-valley",
+  "homeports": [
+    "porto-leixoes"
+  ],
+  "primary_routes": [
+    "douro-valley-wine-7n"
+  ],
+  "start_date": "2026-04-01",
+  "end_date": "2026-10-25",
+  "notes": "Exclusive 7-night Douro river yacht journeys from Porto to Vega de Terron.",
+  "source_id": "src:tauck-river-operations-2026"
+}

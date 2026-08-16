@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "galleria-bellissima",
+    "name": "Galleria Bellissima",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 6,
+    "deck_name": "Leonardo da Vinci",
+    "venue_type": "PROMENADE",
+    "category": "PUBLIC_SANCTUARY",
+    "capacity": 800,
+    "opening_context": "24 Hours Open",
+    "noise_level": "VIBRANT",
+    "step_free_access": true,
+    "dress_code": "Casual / Resort Casual",
+    "signature_features": [
+      "80-meter curved LED Sky Screen dome",
+      "Swarovski crystal staircase flanking midship atrium",
+      "Jean-Philippe Maury Chocolat & Café boutique"
+    ],
+    "nearest_lift": "Midship Panoramic Elevators (Central Bank)",
+    "trust_level": "OFFICIAL"
+  },
+  {
+    "slug": "london-theatre",
+    "name": "London Theatre",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 5,
+    "deck_name": "Corbett",
+    "venue_type": "THEATRE",
+    "category": "INCLUDED",
+    "capacity": 975,
+    "opening_context": "Showtimes 19:30, 21:00, 22:30",
+    "noise_level": "VIBRANT",
+    "step_free_access": true,
+    "dress_code": "Smart Casual",
+    "signature_features": [
+      "Broadway-style theatrical productions",
+      "Two-tier auditorium seating spanning Decks 5 & 6",
+      "Direct step-free corridor from Deck 5 Forward Lobby"
+    ],
+    "nearest_lift": "Forward Elevator Bank (Decks 4-19)",
+    "trust_level": "OFFICIAL"
+  },
+  {
+    "slug": "marketplace-buffet-bellissima",
+    "name": "Marketplace Buffet",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 15,
+    "deck_name": "Tintoretto",
+    "venue_type": "RESTAURANT",
+    "category": "INCLUDED",
+    "capacity": 1345,
+    "opening_context": "06:00 - 02:00 (20 Hours Daily)",
+    "noise_level": "LIVELY",
+    "step_free_access": true,
+    "dress_code": "Casual (Cover-up and footwear mandatory)",
+    "signature_features": [
+      "Fresh on-board Mozzarella production laboratory",
+      "Open-air aft dining terrace overlooking the wake",
+      "Dedicated Mediterranean pizza oven station"
+    ],
+    "nearest_lift": "Aft Elevator Bank",
+    "trust_level": "OFFICIAL"
+  },
+  {
+    "slug": "butchers-cut-bellissima",
+    "name": "Butcher's Cut Steakhouse",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 7,
+    "deck_name": "Michelangelo",
+    "venue_type": "RESTAURANT",
+    "category": "SPECIALTY",
+    "capacity": 120,
+    "opening_context": "Dinner 18:00 - 22:30",
+    "noise_level": "MODERATE",
+    "step_free_access": true,
+    "dress_code": "Smart Casual",
+    "signature_features": [
+      "Dry-aged Linz Heritage prime beef cuts",
+      "Open kitchen concept overlooking Galleria",
+      "Curated New World wine list"
+    ],
+    "nearest_lift": "Midship Elevators",
+    "trust_level": "OFFICIAL"
+  },
+  {
+    "slug": "msc-aurea-spa-bellissima",
+    "name": "MSC Aurea Spa & Thermal Area",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 7,
+    "deck_name": "Michelangelo",
+    "venue_type": "SPA",
+    "category": "WELLNESS",
+    "capacity": 150,
+    "opening_context": "09:00 - 21:00",
+    "noise_level": "QUIET",
+    "step_free_access": true,
+    "dress_code": "Spa Attire / Robe",
+    "signature_features": [
+      "Authentic Balinese thermal bath complex",
+      "Snow room and salt relaxation grotto",
+      "Panoramic forward ocean view relaxation loungers"
+    ],
+    "nearest_lift": "Forward Elevator Bank",
+    "trust_level": "OFFICIAL"
+  }
+]

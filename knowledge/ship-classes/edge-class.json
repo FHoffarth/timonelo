@@ -1,0 +1,14 @@
+{
+  "slug": "edge-class",
+  "name": "Edge Class",
+  "operator": "Celebrity Cruises",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Chantiers de l'Atlantique (Saint-Nazaire)",
+  "lead_ship_name": "Celebrity Edge",
+  "lead_ship_year": 2018,
+  "gross_tonnage_typical": 140600,
+  "length_m_typical": 327.0,
+  "beam_m_typical": 39.0,
+  "passenger_capacity_max": 3950,
+  "description": "Outward-facing luxury design with the cantilevered Magic Carpet platform and infinite verandas."
+}

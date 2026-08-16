@@ -4,13 +4,29 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "timonelo"
-version = "0.1.0"
-description = "Independent cabin intelligence built from objective spatial evidence."
+version = "1.0.0"
+description = "Personal cruise operating system and living digital twin built from objective spatial evidence."
 readme = "README.md"
-requires-python = ">=3.12"
-license = "MIT"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Timonelo Architecture Team" }
+]
+keywords = [
+    "cruise",
+    "maritime",
+    "digital-twin",
+    "operating-system",
+    "travel-intelligence",
+    "decision-engine",
+    "bridge-officer-tim"
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/timonelo/timonelo"
+Documentation = "https://github.com/timonelo/timonelo/tree/main/docs"
+Repository = "https://github.com/timonelo/timonelo.git"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

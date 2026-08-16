@@ -1,0 +1,66 @@
+{
+  "slug": "msc-splendida",
+  "name": {
+    "value": "MSC Splendida",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9359802",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248359802",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA9802",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Panama",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "fantasia-class",
+  "builder": "STX France (Saint-Nazaire)",
+  "delivery_year": 2009,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 137936,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 333.3,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 37.9,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 4363,
+    "crew_capacity": 1370
+  },
+  "propulsion_and_fuel": "Marine Diesel (Closed-Loop Scrubber)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Splendida Main Dining Room",
+    "MSC Splendida Panorama Lounge & Bar",
+    "MSC Splendida Solarium & Pool Deck"
+  ]
+}

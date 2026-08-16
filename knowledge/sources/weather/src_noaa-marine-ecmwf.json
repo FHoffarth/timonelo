@@ -1,0 +1,19 @@
+{
+  "category_folder": "weather",
+  "source_id": "src:noaa-marine-ecmwf",
+  "name": "NOAA Marine Forecast & ECMWF Wave Models",
+  "owner": "National Oceanic and Atmospheric Administration",
+  "category": "WEATHER_METEOROLOGY",
+  "website": "https://marine.weather.gov",
+  "country": "USA / European Union",
+  "jurisdiction": "Global Ocean Meteorology",
+  "licence": "Public Domain Atmospheric and Wave Forecasts",
+  "terms": "Wave height (swell), wind velocity, and sea state forecasts.",
+  "access_method": "API",
+  "allowed_usage": "Dynamic weather and comfort zone contextualization.",
+  "update_frequency": "DAILY",
+  "last_retrieved": "2026-08-16",
+  "freshness_days": 0,
+  "priority": 4,
+  "trust_score": 0.96
+}

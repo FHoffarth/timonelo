@@ -1,0 +1,89 @@
+{
+  "slug": "icon-of-the-seas",
+  "name": {
+    "value": "Icon of the Seas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9829930",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Royal Caribbean International",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Icon Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "icon-class",
+  "builder": {
+    "value": "Meyer Turku",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2024-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 364.8,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 48.5,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 248663,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 7600,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 6080,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 2350,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2805,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Icon of the Seas Main Dining Room",
+    "Icon of the Seas Panorama Lounge & Bar",
+    "Icon of the Seas Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "miami",
+    "st-thomas",
+    "st-maarten",
+    "cozumel",
+    "costa-maya",
+    "roatan"
+  ]
+}

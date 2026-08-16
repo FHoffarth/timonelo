@@ -1,0 +1,61 @@
+{
+  "slug": "msc-lirica",
+  "name": {
+    "value": "MSC Lirica",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9246102",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248246102",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA6102",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Panama",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "lirica-class",
+  "builder": "Chantiers de l'Atlantique",
+  "delivery_year": 2003,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 65591,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 274.9,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 28.8,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 2679,
+    "crew_capacity": 728
+  },
+  "propulsion_and_fuel": "Marine Diesel (24m Renaissance stretch 2015)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "ship_slug": "msc-meraviglia",
+  "embarkation": {
+    "recommended_arrival_window": "30 minutes prior to assigned check-in slot",
+    "security_boarding_deck": 5,
+    "stateroom_readiness_hour": "14:00",
+    "mandatory_safety_drill": "Watch safety briefing on cabin TV -> Confirm via cabin phone 881 -> Scan at Muster Station"
+  },
+  "gangway_operations": {
+    "default_gangway_deck": 5,
+    "tender_ports_gangway_deck": 4
+  }
+}

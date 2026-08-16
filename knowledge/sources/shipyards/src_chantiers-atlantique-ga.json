@@ -1,0 +1,19 @@
+{
+  "category_folder": "shipyards",
+  "source_id": "src:chantiers-atlantique-ga",
+  "name": "Chantiers de l'Atlantique General Arrangement Specifications",
+  "owner": "Chantiers de l'Atlantique (Saint-Nazaire)",
+  "category": "SHIPYARD",
+  "website": "https://chantiers-atlantique.com",
+  "country": "France",
+  "jurisdiction": "French Naval Engineering",
+  "licence": "Shipyard Press Releases & Technical Sheets",
+  "terms": "Engineering blueprints for Meraviglia and World Class hulls.",
+  "access_method": "PDF",
+  "allowed_usage": "Vessel spatial modeling and deck dimensioning.",
+  "update_frequency": "EVENT_DRIVEN",
+  "last_retrieved": "2026-08-16",
+  "freshness_days": 0,
+  "priority": 2,
+  "trust_score": 0.98
+}

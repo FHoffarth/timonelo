@@ -1,0 +1,14 @@
+{
+  "slug": "freedom-class",
+  "name": "Freedom Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Aker Finnyards (Turku, Finland)",
+  "lead_ship_name": "Freedom of the Seas",
+  "lead_ship_year": 2006,
+  "gross_tonnage_typical": 156271,
+  "length_m_typical": 338.8,
+  "beam_m_typical": 38.6,
+  "passenger_capacity_max": 4515,
+  "description": "Pioneered the FlowRider surf simulator at sea, cantilevered whirlpools extending 12 feet over the ocean, and the H2O Zone waterpark."
+}

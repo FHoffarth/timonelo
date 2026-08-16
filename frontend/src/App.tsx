@@ -15,41 +15,73 @@ import {
   ArrowRight,
   Ruler,
   Ship as ShipIcon,
-  ChevronDown,
-  Layers,
-  Sparkles,
-  CheckCircle2,
+  ArrowLeft,
 } from 'lucide-react';
 import type { ShipData, CabinData } from './types';
 import { FLEET_REGISTRY, getVesselBySlug, type FleetVessel } from './fleet';
 import { useMedia, Photo } from './media';
 import { CabinReport, ExportBar, type LensId } from './report';
-import { updateSocialHead, shipSlug } from './share';
-import { routeFromLocation, cabinPath } from './routing';
+import { updateSocialHead } from './share';
+import { routeFromLocation, cabinPath, portPath, vesselPath } from './routing';
 import { BoardingIntelligence } from './boarding';
 import { CruiseBriefingView } from './briefing';
+import { Navigation } from './components/Navigation';
+import { HospitalityLanding } from './components/HospitalityLanding';
+import { FleetLanding } from './components/FleetLanding';
+import { Footer } from './components/Footer';
+import { PortExplorer } from './components/PortExplorer';
+import { CrewSection } from './components/CrewSection';
+import { MissionSection } from './components/MissionSection';
+import { UniversalSearchModal } from './components/UniversalSearchModal';
+import { ShipLandingPage } from './components/ShipLandingPage';
+import { InteractiveVesselSilhouette } from './components/InteractiveVesselSilhouette';
+import { DecisionEngineSection } from './components/DecisionEngineSection';
+import { TravelIntelligenceCompanion } from './components/TravelIntelligenceCompanion';
+import { MyJourneySection } from './components/MyJourneySection';
+import { DestinationIntelligenceSection } from './components/DestinationIntelligenceSection';
+import { PersonalTravelBriefing } from './components/PersonalTravelBriefing';
+import { GlobalCompanionSection } from './components/GlobalCompanionSection';
+import { SafetyCompanion } from './components/SafetyCompanion';
+import { BridgeBriefingCard } from './components/BridgeBriefingCard';
+import { TravelPreparationDashboard } from './components/TravelPreparationDashboard';
+import { DestinationCompanionDashboard } from './components/DestinationCompanionDashboard';
+import { ContextBriefingDashboard } from './components/ContextBriefingDashboard';
+import { BridgeOfficerTimDashboard } from './components/BridgeOfficerTimDashboard';
+import { FirstVoyageDashboard } from './components/FirstVoyageDashboard';
+import { ExperienceDashboard } from './components/ExperienceDashboard';
+import { ShipLogbookDashboard } from './components/ShipLogbookDashboard';
+import { LivingShipDashboard } from './components/LivingShipDashboard';
 
 export default function App() {
+  const [viewMode, setViewMode] = useState<'landing' | 'vessel' | 'cabin' | 'port' | 'crew' | 'mission'>('landing');
   const [currentSlug, setCurrentSlug] = useState<string>('msc-bellissima');
+  const [selectedPortSlug, setSelectedPortSlug] = useState<string>('genoa');
   const [ship, setShip] = useState<ShipData | null>(null);
   const [selectedCabinNum, setSelectedCabinNum] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [lens, setLens] = useState<LensId>('accessibility');
-  const [loading, setLoading] = useState<boolean>(true);
-  const [fleetSelectorOpen, setFleetSelectorOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
   const media = useMedia();
 
-  // Load ship and resolve initial cabin based on route
-  const loadShipAndCabin = (slug: string, targetCabin?: string, targetDeck?: number, pushHistory: boolean = false) => {
+  // Load ship data and resolve cabin
+  const loadShipData = (
+    slug: string,
+    targetCabin?: string,
+    targetDeck?: number,
+    mode: 'landing' | 'vessel' | 'cabin' = 'cabin',
+    pushHistory: boolean = false
+  ) => {
     setLoading(true);
     const vesselMeta = getVesselBySlug(slug);
+
     fetch(`/data/${slug}.json`)
       .then((res) => res.json())
       .then((data: ShipData) => {
         setShip(data);
         setCurrentSlug(slug);
+        setViewMode(mode);
 
-        // Determine cabin: targetCabin -> targetDeck first cabin -> vessel default -> first key in cabins
         let resolvedCabin = targetCabin && data.cabins[targetCabin] ? targetCabin : undefined;
         if (!resolvedCabin && targetDeck) {
           const deckCabins = Object.values(data.cabins).filter((c) => c.deck_number === targetDeck);
@@ -62,11 +94,11 @@ export default function App() {
         setSelectedCabinNum(resolvedCabin);
         setSearchQuery(resolvedCabin);
 
-        const newPath = cabinPath(slug, resolvedCabin);
+        const newPath = mode === 'landing' ? '/' : mode === 'vessel' ? vesselPath(slug) : cabinPath(slug, resolvedCabin);
         if (pushHistory) {
-          window.history.pushState({ ship: slug, cabin: resolvedCabin }, '', newPath);
+          window.history.pushState({ viewMode: mode, ship: slug, cabin: resolvedCabin }, '', newPath);
         } else {
-          window.history.replaceState({ ship: slug, cabin: resolvedCabin }, '', newPath);
+          window.history.replaceState({ viewMode: mode, ship: slug, cabin: resolvedCabin }, '', newPath);
         }
         setLoading(false);
       })
@@ -76,48 +108,162 @@ export default function App() {
       });
   };
 
+  // Keyboard shortcut for search (⌘K or /)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchModalOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Initial routing resolution
   useEffect(() => {
     const route = routeFromLocation(window.location);
-    loadShipAndCabin(route.shipSlug, route.cabinNumber, route.deckNumber, false);
+    if (route.viewMode === 'landing') {
+      setViewMode('landing');
+      fetch(`/data/msc-bellissima.json`)
+        .then((res) => res.json())
+        .then((data: ShipData) => {
+          setShip(data);
+          setSelectedCabinNum('14122');
+          setSearchQuery('14122');
+        })
+        .catch(() => {});
+      if (route.sectionTarget === 'fleet') {
+        setTimeout(() => {
+          const el = document.getElementById('fleet-gallery');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (route.viewMode === 'port') {
+      setViewMode('port');
+      if (route.portSlug) setSelectedPortSlug(route.portSlug);
+    } else if (route.viewMode === 'crew') {
+      setViewMode('crew');
+    } else if (route.viewMode === 'mission') {
+      setViewMode('mission');
+    } else {
+      const slug = route.shipSlug || 'msc-bellissima';
+      loadShipData(slug, route.cabinNumber, route.deckNumber, route.viewMode, false);
+    }
   }, []);
 
   const cabin: CabinData | undefined = ship?.cabins[selectedCabinNum];
 
-  // Keep the title, canonical URL and social preview in step with the cabin.
+  // Keep title & social preview updated
   useEffect(() => {
-    if (ship && cabin) updateSocialHead(ship, cabin);
-  }, [ship, cabin]);
+    if (viewMode === 'cabin' && ship && cabin) {
+      updateSocialHead(ship, cabin);
+    } else if (viewMode === 'port') {
+      document.title = 'Timonelo — Strategic Cruise Ports';
+    } else if (viewMode === 'crew') {
+      document.title = 'Timonelo — Verified Crew Contributor Programme';
+    } else if (viewMode === 'mission') {
+      document.title = 'Timonelo — Why Timonelo Exists';
+    } else if (viewMode === 'vessel') {
+      const meta = getVesselBySlug(currentSlug);
+      document.title = `Timonelo — ${meta.name} (${meta.shipClass})`;
+    } else {
+      document.title = 'Timonelo — Universal Vessel Intelligence';
+    }
+  }, [viewMode, ship, cabin, currentSlug]);
 
-  // Back/forward navigation resolves the vessel and cabin from the URL
+  // Back/forward browser navigation
   useEffect(() => {
     const onPop = () => {
       const route = routeFromLocation(window.location);
-      if (route.shipSlug !== currentSlug) {
-        loadShipAndCabin(route.shipSlug, route.cabinNumber, route.deckNumber, false);
-      } else if (ship && route.cabinNumber && ship.cabins[route.cabinNumber]) {
-        setSelectedCabinNum(route.cabinNumber);
-        setSearchQuery(route.cabinNumber);
+      if (route.viewMode === 'landing') {
+        setViewMode('landing');
+      } else if (route.viewMode === 'port') {
+        setViewMode('port');
+        if (route.portSlug) setSelectedPortSlug(route.portSlug);
+      } else if (route.viewMode === 'crew') {
+        setViewMode('crew');
+      } else if (route.viewMode === 'mission') {
+        setViewMode('mission');
+      } else {
+        const slug = route.shipSlug || 'msc-bellissima';
+        if (slug !== currentSlug || !ship) {
+          loadShipData(slug, route.cabinNumber, route.deckNumber, route.viewMode, false);
+        } else if (route.cabinNumber && ship.cabins[route.cabinNumber]) {
+          setViewMode('cabin');
+          setSelectedCabinNum(route.cabinNumber);
+          setSearchQuery(route.cabinNumber);
+        }
       }
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, [currentSlug, ship]);
 
-  // Navigate to a cabin on the current ship
+  // Navigation handlers
+  const handleNavigateHome = () => {
+    setViewMode('landing');
+    window.history.pushState({ viewMode: 'landing' }, '', '/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateFleet = () => {
+    if (viewMode !== 'landing') {
+      setViewMode('landing');
+      window.history.pushState({ viewMode: 'landing' }, '', '/fleet');
+    }
+    setTimeout(() => {
+      const el = document.getElementById('fleet-gallery');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
+  const handleNavigatePorts = (portSlug?: string) => {
+    setViewMode('port');
+    if (portSlug) setSelectedPortSlug(portSlug);
+    window.history.pushState({ viewMode: 'port' }, '', portSlug ? portPath(portSlug) : '/ports');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateCrew = () => {
+    setViewMode('crew');
+    window.history.pushState({ viewMode: 'crew' }, '', '/crew');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateMission = () => {
+    setViewMode('mission');
+    window.history.pushState({ viewMode: 'mission' }, '', '/mission');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigatePrinciples = () => {
+    if (viewMode !== 'landing') {
+      setViewMode('landing');
+      window.history.pushState({ viewMode: 'landing' }, '', '/about');
+    }
+    setTimeout(() => {
+      const el = document.getElementById('platform-principles');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
+  const handleSelectVessel = (slug: string) => {
+    const meta = getVesselBySlug(slug);
+    loadShipData(slug, meta.defaultCabin, undefined, 'vessel', true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleExploreCabins = (slug: string, cabinNum?: string) => {
+    loadShipData(slug, cabinNum, undefined, 'cabin', true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const goToCabin = (n: string) => {
     if (!ship?.cabins[n]) return;
     setSelectedCabinNum(n);
     setSearchQuery(n);
-    window.history.pushState({ ship: currentSlug, cabin: n }, '', cabinPath(currentSlug, n));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Switch to another vessel in the fleet
-  const handleSelectVessel = (newSlug: string) => {
-    setFleetSelectorOpen(false);
-    if (newSlug === currentSlug) return;
-    const meta = getVesselBySlug(newSlug);
-    loadShipAndCabin(newSlug, meta.defaultCabin, undefined, true);
+    window.history.pushState({ viewMode: 'cabin', ship: currentSlug, cabin: n }, '', cabinPath(currentSlug, n));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -129,12 +275,12 @@ export default function App() {
     }
   };
 
-  if (loading || !ship || !cabin) {
+  if (loading && viewMode !== 'landing') {
     return (
       <div className="min-h-screen bg-paper grid place-items-center text-ink">
         <div className="text-center">
-          <p className="eyebrow-mist">Timonelo Spatial Engine</p>
-          <h1 className="font-display text-3xl mt-3">Opening your orientation…</h1>
+          <p className="eyebrow text-gold">Timonelo</p>
+          <h1 className="font-display text-3xl mt-3 font-normal">Opening ship orientation…</h1>
         </div>
       </div>
     );
@@ -143,60 +289,106 @@ export default function App() {
   const currentVesselMeta = getVesselBySlug(currentSlug);
 
   return (
-    <>
-      <div className="screen-app min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink pb-16">
-        <Masthead
-          ship={ship}
-          cabin={cabin}
+    <div className="min-h-screen bg-paper text-ink selection:bg-gold selection:text-ink flex flex-col justify-between">
+      <div>
+        <Navigation
+          currentView={viewMode}
           currentSlug={currentSlug}
-          fleetSelectorOpen={fleetSelectorOpen}
-          setFleetSelectorOpen={setFleetSelectorOpen}
-          onSelectVessel={handleSelectVessel}
-        />
-        <Hero
           ship={ship}
-          cabin={cabin}
-          vesselMeta={currentVesselMeta}
-          media={media}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          onSearch={handleSearch}
-          onSelect={goToCabin}
+          cabin={cabin || null}
+          onNavigateHome={handleNavigateHome}
+          onNavigateFleet={handleNavigateFleet}
+          onNavigatePorts={() => handleNavigatePorts()}
+          onNavigateCrew={handleNavigateCrew}
+          onNavigateMission={handleNavigateMission}
+          onSelectVessel={handleSelectVessel}
+          onOpenSearch={() => setSearchModalOpen(true)}
         />
 
-        <main className="page-shell mt-12 space-y-16">
-          <CruiseBriefingView ship={ship} cabin={cabin} />
-          <BoardingIntelligence ship={ship} cabin={cabin} />
-          <TakeItWithYou ship={ship} cabin={cabin} />
-          <HullPosition ship={ship} cabin={cabin} />
-          <ViewAndPhotos cabin={cabin} media={media} />
-          <Surroundings cabin={cabin} />
-          <GettingAround ship={ship} cabin={cabin} />
-          <DeckContext ship={ship} cabin={cabin} media={media} />
-          <Lenses cabin={cabin} lens={lens} setLens={setLens} />
-          <Evidence cabin={cabin} />
-          <FleetGallery currentSlug={currentSlug} onSelectVessel={handleSelectVessel} />
-          <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
-        </main>
+        {viewMode === 'landing' ? (
+          <HospitalityLanding
+            onSelectVessel={handleSelectVessel}
+            onOpenPreparation={() => handleSelectVessel('msc-bellissima')}
+          />
+        ) : viewMode === 'port' ? (
+          <PortExplorer
+            initialPortSlug={selectedPortSlug}
+            onSelectShip={handleSelectVessel}
+          />
+        ) : viewMode === 'crew' ? (
+          <CrewSection />
+        ) : viewMode === 'mission' ? (
+          <MissionSection onExploreFleet={handleNavigateFleet} />
+        ) : viewMode === 'vessel' ? (
+          <ShipLandingPage
+            vessel={currentVesselMeta}
+            onExploreCabins={(c) => handleExploreCabins(currentSlug, c)}
+            onSelectShip={handleSelectVessel}
+            onBackToFleet={handleNavigateHome}
+          />
+        ) : ship && cabin ? (
+          <div className="screen-app pb-20">
+            <Hero
+              ship={ship}
+              cabin={cabin}
+              vesselMeta={currentVesselMeta}
+              media={media}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              onSearch={handleSearch}
+              onSelect={goToCabin}
+              onBackToFleet={handleNavigateHome}
+            />
 
-        <Footer />
+            <main className="page-shell mt-14 space-y-20">
+              <CruiseBriefingView ship={ship} cabin={cabin} />
+              <BoardingIntelligence ship={ship} cabin={cabin} />
+              <TakeItWithYou ship={ship} cabin={cabin} />
+              <HullPosition ship={ship} cabin={cabin} onSelect={goToCabin} />
+              <ViewAndPhotos cabin={cabin} media={media} isRiver={ship.total_decks <= 5} />
+              <Surroundings cabin={cabin} />
+              <GettingAround ship={ship} cabin={cabin} />
+              <DeckContext ship={ship} cabin={cabin} media={media} />
+              <Lenses cabin={cabin} lens={lens} setLens={setLens} />
+              <Evidence cabin={cabin} />
+              <Discovery ship={ship} current={selectedCabinNum} onSelect={goToCabin} />
+            </main>
+
+            {/* Dedicated Cabin Orientation Report — print / PDF only */}
+            <CabinReport ship={ship} cabin={cabin} lens={lens} />
+          </div>
+        ) : null}
       </div>
 
-      {/* Dedicated Cabin Orientation Report — print / PDF only on screen */}
-      <CabinReport ship={ship} cabin={cabin} lens={lens} />
-    </>
+      <Footer
+        onNavigateHome={handleNavigateHome}
+        onNavigateFleet={handleNavigateFleet}
+        onNavigatePorts={() => handleNavigatePorts()}
+        onNavigateCrew={handleNavigateCrew}
+        onNavigateMission={handleNavigateMission}
+        onNavigatePrinciples={handleNavigatePrinciples}
+      />
+
+      {/* Universal Search Modal */}
+      <UniversalSearchModal
+        isOpen={searchModalOpen}
+        onClose={() => setSearchModalOpen(false)}
+        onSelectShip={handleSelectVessel}
+        onSelectCabin={(shipSlug, cabinNum) => handleExploreCabins(shipSlug, cabinNum)}
+        onSelectPort={(portSlug) => handleNavigatePorts(portSlug)}
+      />
+    </div>
   );
 }
 
 function TakeItWithYou({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
   return (
-    <section className="card p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-5">
+    <section className="card p-7 md:p-8 bg-white border border-ink/8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs">
       <div className="max-w-xl">
-        <p className="eyebrow-mist">Take it with you</p>
-        <h2 className="font-display text-2xl mt-1.5">Cabin Orientation Report</h2>
-        <p className="text-[14px] text-muted mt-1.5 leading-relaxed">
-          A clean, printable orientation dossier for Cabin {cabin.cabin_number} on {ship.name} — save it as a PDF, print it for the
-          terminal or river pier, or send it to family. Searchable text, no marketing.
+        <p className="eyebrow text-gold">Summary Dossier</p>
+        <h2 className="font-display text-2xl md:text-3xl mt-1.5 font-normal">Cabin Orientation Report</h2>
+        <p className="text-[14px] text-muted mt-2 leading-relaxed">
+          A clean orientation summary for Cabin {cabin.cabin_number} on {ship.name} — save it as a PDF, print it for boarding, or share with family. Factual details with zero advertising.
         </p>
       </div>
       <ExportBar ship={ship} cabin={cabin} />
@@ -224,107 +416,6 @@ function zoneFraction(zone: string): number {
   return 0.5;
 }
 
-/* ------------------------------------------------------------------ masthead */
-
-function Masthead({
-  ship,
-  cabin,
-  currentSlug,
-  fleetSelectorOpen,
-  setFleetSelectorOpen,
-  onSelectVessel,
-}: {
-  ship: ShipData;
-  cabin: CabinData;
-  currentSlug: string;
-  fleetSelectorOpen: boolean;
-  setFleetSelectorOpen: (v: boolean | ((prev: boolean) => boolean)) => void;
-  onSelectVessel: (slug: string) => void;
-}) {
-  const activeMeta = getVesselBySlug(currentSlug);
-
-  return (
-    <header className="sticky top-0 z-30 bg-paper/95 border-b hairline backdrop-blur-xs">
-      <div className="page-shell h-14 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <a href="/" className="flex items-center gap-2">
-            <span className="w-5 h-5 bg-ink grid place-items-center">
-              <span className="w-0.5 h-2.5 bg-paper rotate-45" />
-            </span>
-            <span className="font-display text-xl tracking-tight text-ink">Timonelo</span>
-          </a>
-
-          {/* Interactive Vessel Selector */}
-          <div className="relative">
-            <button
-              onClick={() => setFleetSelectorOpen((prev) => !prev)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xs bg-paper border hairline hover:border-ink/40 text-left transition"
-              aria-expanded={fleetSelectorOpen}
-            >
-              <ShipIcon className="w-3.5 h-3.5 text-gold" />
-              <div>
-                <span className="block text-xs font-semibold text-ink leading-none">{ship.name}</span>
-                <span className="block text-[10px] text-muted leading-tight mt-0.5">
-                  {activeMeta.operator} · {activeMeta.vesselType}
-                </span>
-              </div>
-              <ChevronDown className={`w-3.5 h-3.5 text-muted transition-transform ml-1 ${fleetSelectorOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {/* Fleet Selector Dropdown */}
-            {fleetSelectorOpen && (
-              <div className="absolute left-0 mt-2 w-80 bg-white border hairline shadow-xl rounded-xs p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                <div className="px-3 py-2 border-b hairline mb-1">
-                  <p className="eyebrow-mist text-[10px]">Universal Fleet Registry</p>
-                  <p className="text-xs font-medium text-ink mt-0.5">Select a compiled digital twin</p>
-                </div>
-                <div className="space-y-1">
-                  {FLEET_REGISTRY.map((v) => (
-                    <button
-                      key={v.slug}
-                      onClick={() => onSelectVessel(v.slug)}
-                      className={`w-full text-left px-3 py-2.5 rounded-xs flex items-start justify-between gap-2 transition ${
-                        v.slug === currentSlug ? 'bg-gold/15 border border-gold/30' : 'hover:bg-paper'
-                      }`}
-                    >
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-ink">{v.name}</span>
-                          <span
-                            className={`text-[9px] px-1.5 py-0.2 rounded-xs font-mono uppercase ${
-                              v.vesselType === 'River Cruise'
-                                ? 'bg-blue-100 text-blue-900 border border-blue-200'
-                                : 'bg-slate-100 text-slate-800 border border-slate-200'
-                            }`}
-                          >
-                            {v.vesselType}
-                          </span>
-                        </div>
-                        <div className="text-[11px] text-muted mt-0.5">
-                          {v.operator} · {v.totalDecks} Decks · {v.cabinCount} Cabins
-                        </div>
-                      </div>
-                      {v.slug === currentSlug && <CheckCircle2 className="w-4 h-4 text-ink shrink-0 mt-0.5" />}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="flex items-center gap-4 text-right">
-          <div className="hidden sm:block">
-            <span className="block text-xs font-semibold text-ink">Cabin {cabin.cabin_number}</span>
-            <span className="block text-[11px] text-muted">Deck {cabin.deck_number} ({cabin.deck_name})</span>
-          </div>
-          <span className="h-2 w-2 rounded-full bg-emerald-600" title="Universal Spatial Engine connected" />
-        </div>
-      </div>
-    </header>
-  );
-}
-
 /* ------------------------------------------------------------------ hero */
 
 function Hero({
@@ -336,6 +427,7 @@ function Hero({
   setSearchQuery,
   onSearch,
   onSelect,
+  onBackToFleet,
 }: {
   ship: ShipData;
   cabin: CabinData;
@@ -345,6 +437,7 @@ function Hero({
   setSearchQuery: (v: string) => void;
   onSearch: (e: React.FormEvent) => void;
   onSelect: (n: string) => void;
+  onBackToFleet: () => void;
 }) {
   const elev = elevationOf(ship, cabin.deck_number);
   const view = cabin.sightlines.has_lifeboat_obstruction ? 'Partially obstructed' : 'Unobstructed view';
@@ -353,18 +446,35 @@ function Hero({
   return (
     <header className="relative ground-navy chart-lines text-white overflow-hidden">
       {media(`ship:${ship.imo}`) && (
-        <img src={media(`ship:${ship.imo}`)!} alt={ship.name} className="absolute inset-0 h-full w-full object-cover opacity-40" />
+        <img src={media(`ship:${ship.imo}`)!} alt={ship.name} className="absolute inset-0 h-full w-full object-cover opacity-35" />
       )}
-      <div className="relative page-shell pt-14 pb-12">
+      <div className="relative page-shell pt-10 pb-12">
+        {/* Back breadcrumb */}
+        <div className="mb-6">
+          <button
+            onClick={onBackToFleet}
+            className="inline-flex items-center gap-1.5 text-xs text-white/65 hover:text-white transition font-mono uppercase tracking-wider cursor-pointer"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>The Fleet</span>
+            <span className="text-white/30">/</span>
+            <span className="text-gold font-medium">{ship.name}</span>
+          </button>
+        </div>
+
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2">
-              <span className="eyebrow-mist text-gold">{vesselMeta.vesselType} Orientation</span>
-              <span className="text-white/40">·</span>
-              <span className="text-[11px] font-mono text-white/70 uppercase">{vesselMeta.operator}</span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-[11px] font-mono text-gold tracking-wide uppercase">{vesselMeta.vesselType}</span>
+              <span className="text-white/30">·</span>
+              <span className="text-[11px] font-mono text-white/65 uppercase">{vesselMeta.operator}</span>
+              <span className="text-white/30">·</span>
+              <span className="text-[11px] font-mono text-white/65">{ship.imo}</span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mt-3">Cabin {cabin.cabin_number}</h1>
-            <p className="text-white/75 text-lg mt-4">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.98] font-normal text-white">
+              Cabin {cabin.cabin_number}
+            </h1>
+            <p className="text-white/80 text-base sm:text-lg mt-4 font-display italic">
               On <span className="text-white">Deck {cabin.deck_number} ({cabin.deck_name})</span>, {sideLabel(cabin.hull_side).toLowerCase()},
               toward the {cabin.zone.toLowerCase()} of {ship.name}.
             </p>
@@ -379,10 +489,10 @@ function Hero({
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Enter cabin"
                 aria-label="Cabin number"
-                className="h-12 border border-white/25 bg-white/10 pl-9 pr-4 font-mono text-sm text-white placeholder:text-white/50 outline-none focus:border-gold w-44"
+                className="h-11 border border-white/20 bg-white/8 pl-9 pr-4 font-mono text-xs text-white placeholder:text-white/40 outline-none focus:border-gold w-40 rounded-xs"
               />
             </div>
-            <button type="submit" className="h-12 px-5 bg-white text-ink text-xs font-semibold hover:bg-gold transition-colors">
+            <button type="submit" className="h-11 px-4 bg-white text-ink text-xs font-medium hover:bg-gold transition-colors cursor-pointer rounded-xs">
               Find
             </button>
           </form>
@@ -392,25 +502,25 @@ function Hero({
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
           <HeroFact label="Deck" value={`${cabin.deck_number} · ${cabin.deck_name}`} />
           <HeroFact label="Vessel side" value={sideLabel(cabin.hull_side)} />
-          <HeroFact label="Nearest vertical core" value={`${cabin.distances.elevator?.meters ?? '—'} m`} />
+          <HeroFact label="Nearest elevator" value={`${cabin.distances.elevator?.meters ?? '—'} m`} />
           <HeroFact label="Sightline view" value={view} />
         </div>
 
-        <div className="mt-6 flex items-center gap-3 flex-wrap text-xs">
-          <span className="text-white/55">Verified staterooms:</span>
-          {cabinKeys.slice(0, 14).map((n) => (
+        <div className="mt-6 flex items-center gap-2 flex-wrap text-xs">
+          <span className="text-white/50 text-[11px]">Verified cabins:</span>
+          {cabinKeys.slice(0, 12).map((n) => (
             <button
               key={n}
               onClick={() => onSelect(n)}
-              className={`px-3 py-1.5 font-mono transition ${
-                n === cabin.cabin_number ? 'bg-gold text-ink font-semibold' : 'bg-white/10 text-white/85 hover:bg-white/20'
+              className={`px-2.5 py-1 font-mono text-[11px] rounded-xs transition cursor-pointer ${
+                n === cabin.cabin_number ? 'bg-gold text-ink font-medium' : 'bg-white/8 text-white/80 hover:bg-white/16'
               }`}
             >
               {n}
               {ship.cabins[n].is_accessible ? ' ♿' : ''}
             </button>
           ))}
-          {elev != null && <span className="text-white/45 ml-auto hidden md:block">Deck elevation {elev} m above water</span>}
+          {elev != null && <span className="text-white/40 ml-auto hidden md:block text-[11px]">Deck elevation {elev} m above water</span>}
         </div>
       </div>
     </header>
@@ -419,9 +529,9 @@ function Hero({
 
 function HeroFact({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-ink px-4 py-4">
-      <div className="text-[10px] uppercase tracking-[0.18em] text-white/45">{label}</div>
-      <div className="text-[15px] font-medium text-white mt-1 leading-snug">{value}</div>
+    <div className="bg-ink/75 p-4">
+      <div className="text-[10px] uppercase font-mono tracking-widest text-white/45">{label}</div>
+      <div className="font-display text-lg text-white mt-0.5 leading-snug font-normal">{value}</div>
     </div>
   );
 }
@@ -431,60 +541,19 @@ function HeroFact({ label, value }: { label: string; value: string }) {
 function SectionHead({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
   return (
     <div className="mb-6 max-w-2xl">
-      <p className="eyebrow-mist">{eyebrow}</p>
-      <h2 className="font-display text-3xl md:text-4xl mt-2 leading-tight">{title}</h2>
-      {intro && <p className="text-muted text-[15px] leading-relaxed mt-3">{intro}</p>}
+      <p className="eyebrow text-muted/70">{eyebrow}</p>
+      <h2 className="section-title text-3xl sm:text-4xl md:text-5xl mt-1.5 font-normal">{title}</h2>
+      {intro && <p className="text-muted text-[15px] leading-relaxed mt-2">{intro}</p>}
     </div>
   );
 }
 
-function HullPosition({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
-  const frac = zoneFraction(cabin.zone);
-  const elevs = Object.values(ship.decks).map((d) => d.elevation_m);
-  const maxE = Math.max(...elevs, 1);
-  const elev = elevationOf(ship, cabin.deck_number) ?? 0;
-  const top = 12 + (1 - elev / maxE) * 60; // higher deck → nearer the top
-
+function HullPosition({ ship, cabin, onSelect }: { ship: ShipData; cabin: CabinData; onSelect?: (n: string) => void }) {
   return (
     <section>
-      <SectionHead eyebrow="Where you are" title="Your position on the hull" />
-      <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-stretch">
-        <div className="card p-6 md:p-8">
-          <div className="flex justify-between text-[11px] text-muted font-mono uppercase tracking-wider mb-3">
-            <span>Aft · stern</span>
-            <span>Midship</span>
-            <span>Forward · bow</span>
-          </div>
-          <div className="relative h-40 rounded-xs border hairline bg-paper overflow-hidden">
-            {/* hull silhouette */}
-            <div className="absolute inset-x-6 inset-y-6 border hairline rounded-[40%_40%_46%_46%/60%_60%_40%_40%] bg-white/60" />
-            <div className="absolute inset-x-0 bottom-0 h-2 bg-sky-200/50" aria-hidden />
-            {/* cabin pin */}
-            <div className="absolute z-10 flex flex-col items-center -translate-x-1/2" style={{ left: `${frac * 100}%`, top: `${top}%` }}>
-              <div className="h-3.5 w-3.5 rounded-full bg-gold border-2 border-ink" />
-              <span className="mt-1 text-[10px] font-mono font-bold bg-ink text-white px-1.5 py-0.5">{cabin.cabin_number}</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-            <Fact icon={<ShipIcon className="w-3.5 h-3.5" />} label="Deck" value={`${cabin.deck_number}`} />
-            <Fact icon={<Compass className="w-3.5 h-3.5" />} label="Side" value={sideLabel(cabin.hull_side)} />
-            <Fact icon={<Anchor className="w-3.5 h-3.5" />} label="Longitudinal" value={cabin.zone} />
-            <Fact icon={<Ruler className="w-3.5 h-3.5" />} label="Living space" value={`${cabin.square_meters} m²`} />
-          </div>
-        </div>
-
-        <div className="card p-6 flex flex-col gap-4">
-          <p className="eyebrow-mist">Light & orientation</p>
-          <p className="text-[15px] text-ink leading-relaxed">
-            A {sideLabel(cabin.hull_side).toLowerCase()} orientation. Sun and water are on the{' '}
-            {cabin.hull_side === 'STARBOARD' ? 'starboard' : cabin.hull_side === 'PORT' ? 'port' : 'centre'} beam — the exact
-            aspect depends on the vessel’s heading during your cruise.
-          </p>
-          <div className="mt-auto flex items-center gap-2 text-[12px] text-muted">
-            <Moon className="w-3.5 h-3.5 text-gold" aria-hidden />
-            Solar aspect is a geometric projection, not a forecast.
-          </div>
-        </div>
+      <SectionHead eyebrow="Vessel Geometry" title="Position on the Hull" />
+      <div className="space-y-6">
+        <InteractiveVesselSilhouette ship={ship} cabin={cabin} onSelectCabin={onSelect} />
       </div>
     </section>
   );
@@ -492,40 +561,40 @@ function HullPosition({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
 
 function Fact({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
   return (
-    <div className="bg-paper border hairline rounded-xs p-3">
-      <div className="flex items-center gap-1.5 text-muted text-[10px] uppercase tracking-[0.12em]">
+    <div className="bg-paper/50 border border-ink/6 rounded-xs p-3">
+      <div className="flex items-center gap-1.5 text-muted text-[10px] uppercase tracking-wider font-mono">
         <span className="text-gold">{icon}</span>
         {label}
       </div>
-      <div className="text-[14px] font-semibold text-ink mt-1.5 leading-tight">{value}</div>
+      <div className="font-display text-base text-ink mt-1 font-medium">{value}</div>
     </div>
   );
 }
 
-function ViewAndPhotos({ cabin, media }: { cabin: CabinData; media: (id: string) => string | null }) {
+function ViewAndPhotos({ cabin, media, isRiver }: { cabin: CabinData; media: (id: string, isRiver?: boolean) => string | null; isRiver?: boolean }) {
   return (
     <section>
-      <SectionHead eyebrow="A first look" title="Your view and your room" intro="Photography is added stateroom by stateroom; until then, the spatial facts stand on their own." />
-      <div className="grid md:grid-cols-3 gap-4">
+      <SectionHead eyebrow="Visual Sightlines" title="View & Stateroom Photos" intro="Onboard photography is cataloged cabin by cabin; spatial dimensions stand permanently on their own." />
+      <div className="grid md:grid-cols-3 gap-5">
         <div className="md:col-span-2">
-          <Photo src={media(`view:${cabin.cabin_number}`)} kind="view" label="Balcony view" ratio="16 / 9" priority />
-          <div className="card mt-4 p-5 flex items-start gap-3">
+          <Photo src={media(`view:${cabin.cabin_number}`, isRiver)} kind="view" label="Balcony view" ratio="16 / 9" priority />
+          <div className="card mt-4 p-5 bg-white border border-ink/8 flex items-start gap-3">
             <Waves className="w-4 h-4 text-gold mt-0.5 shrink-0" aria-hidden />
             <div>
-              <div className="eyebrow-mist mb-1">Balcony sightline</div>
+              <div className="eyebrow text-gold mb-0.5">Balcony Sightline</div>
               <p className="text-[14px] text-ink leading-relaxed">{cabin.sightlines.description}</p>
-              <p className="text-[12px] text-muted mt-1">
-                {cabin.sightlines.horizon_angle_deg}° horizon ·{' '}
-                {cabin.sightlines.has_lifeboat_obstruction ? 'Obstruction present' : 'Unobstructed panorama'}
+              <p className="text-[12px] text-muted mt-1 font-mono">
+                {cabin.sightlines.horizon_angle_deg}° horizon view ·{' '}
+                {cabin.sightlines.has_lifeboat_obstruction ? 'Lifeboat obstruction present' : 'Unobstructed view'}
               </p>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <Photo src={media(`cabin:${cabin.cabin_number}`)} kind="cabin" label="Stateroom" ratio="4 / 3" />
-          <div className="card p-5">
-            <div className="eyebrow-mist mb-2">Balcony type</div>
-            <div className="font-display text-xl text-ink capitalize">{cabin.balcony_type.toLowerCase().replace(/_/g, ' ')}</div>
+          <Photo src={media(`cabin:${cabin.cabin_number}`, isRiver)} kind="cabin" label="Stateroom" ratio="4 / 3" />
+          <div className="card p-5 bg-white border border-ink/8">
+            <div className="eyebrow text-muted/70 mb-1">Balcony Type</div>
+            <div className="font-display text-xl text-ink font-normal capitalize">{cabin.balcony_type.toLowerCase().replace(/_/g, ' ')}</div>
           </div>
         </div>
       </div>
@@ -537,10 +606,10 @@ function Surroundings({ cabin }: { cabin: CabinData }) {
   const { overhead, underfoot } = cabin.surroundings;
   return (
     <section>
-      <SectionHead eyebrow="What surrounds you" title="Above, below and beside" />
-      <div className="grid md:grid-cols-3 gap-4">
-        <div className="card p-6">
-          <p className="eyebrow-mist mb-4">Vertical context</p>
+      <SectionHead eyebrow="Vertical Neighborhood" title="Above, Below & Beside" intro="Knowing what sits directly above your ceiling and below your floor prevents noise surprises." />
+      <div className="grid md:grid-cols-3 gap-5">
+        <div className="card p-6 bg-white border border-ink/8">
+          <p className="eyebrow text-muted/70 mb-4">Vertical Context</p>
           <VerticalRow
             dir="above"
             deck={overhead.deck_number}
@@ -548,9 +617,9 @@ function Surroundings({ cabin }: { cabin: CabinData }) {
             venues={overhead.venues}
             noise={overhead.is_noise_generator}
           />
-          <div className="my-3 p-3.5 bg-white border-2 border-gold rounded-xs">
-            <div className="text-[11px] font-bold uppercase tracking-wide text-ink">Your cabin · Deck {cabin.deck_number}</div>
-            <div className="text-[12px] text-muted">Cabin {cabin.cabin_number} · {cabin.square_meters} m²</div>
+          <div className="my-3 p-3.5 bg-paper/60 border border-gold/40 rounded-xs">
+            <div className="text-[11px] font-medium uppercase tracking-wider text-ink font-mono">Your Cabin · Deck {cabin.deck_number}</div>
+            <div className="text-[12px] text-muted mt-0.5">Cabin {cabin.cabin_number} · {cabin.square_meters} m²</div>
           </div>
           <VerticalRow
             dir="below"
@@ -561,24 +630,24 @@ function Surroundings({ cabin }: { cabin: CabinData }) {
           />
         </div>
 
-        <div className="card p-6">
-          <p className="eyebrow-mist mb-4">Room specifics</p>
-          <Spec label="Bed position" value={cabin.bed_near_balcony == null ? 'Private arrangement' : cabin.bed_near_balcony ? 'Next to the balcony' : 'Next to the entrance'} />
-          <Spec label="Connecting door" value={cabin.connecting_cabin_number ? `Yes — to ${cabin.connecting_cabin_number}` : 'None (private wall)'} />
-          <Spec label="Doorway width" value={`${cabin.door_width_mm} mm`} mono />
+        <div className="card p-6 bg-white border border-ink/8">
+          <p className="eyebrow text-muted/70 mb-4">Room Details</p>
+          <Spec label="Bed Placement" value={cabin.bed_near_balcony == null ? 'Private layout' : cabin.bed_near_balcony ? 'Next to balcony' : 'Next to doorway'} />
+          <Spec label="Connecting Door" value={cabin.connecting_cabin_number ? `Yes — to ${cabin.connecting_cabin_number}` : 'None (private wall)'} />
+          <Spec label="Doorway Width" value={`${cabin.door_width_mm} mm`} mono />
           <Spec label="Category" value={cabin.category_code} mono />
-          <Spec label="Accessible" value={cabin.is_accessible ? 'Certified accessible' : 'Standard'} last />
+          <Spec label="Accessibility" value={cabin.is_accessible ? 'Certified accessible' : 'Standard'} last />
         </div>
 
-        <div className="card p-6">
-          <p className="eyebrow-mist mb-4 flex items-center gap-2"><Plug className="w-3.5 h-3.5 text-gold" /> Power outlets</p>
+        <div className="card p-6 bg-white border border-ink/8">
+          <p className="eyebrow text-muted/70 mb-4 flex items-center gap-1.5"><Plug className="w-3.5 h-3.5 text-gold" /> Power Sockets</p>
           <div className="grid grid-cols-2 gap-2 text-center">
-            <Socket n={cabin.sockets.eu_count} label="EU" />
-            <Socket n={cabin.sockets.us_count} label="US" />
+            <Socket n={cabin.sockets.eu_count} label="EU Sockets" />
+            <Socket n={cabin.sockets.us_count} label="US Sockets" />
             <Socket n={cabin.sockets.usb_a_count} label="USB-A" />
             <Socket n={cabin.sockets.usb_c_count} label="USB-C" />
           </div>
-          <p className="text-[12px] text-muted mt-4">
+          <p className="text-[12px] text-muted mt-4 leading-relaxed">
             {cabin.sockets.bedside_usb ? 'Bedside USB charging available.' : 'No bedside USB charging.'}
           </p>
         </div>
@@ -590,20 +659,20 @@ function Surroundings({ cabin }: { cabin: CabinData }) {
 function VerticalRow({ dir, deck, name, venues, noise }: { dir: 'above' | 'below'; deck: number | null; name: string | null; venues: string[]; noise?: boolean }) {
   const Icon = dir === 'above' ? ArrowUp : ArrowDown;
   return (
-    <div className="p-3.5 bg-paper border hairline rounded-xs">
+    <div className="p-3.5 bg-paper/40 border border-ink/6 rounded-xs">
       <div className="flex justify-between items-center">
-        <span className="text-[11px] font-bold uppercase tracking-wide text-ink flex items-center gap-1.5">
-          <Icon className="w-3.5 h-3.5 text-gold" aria-hidden /> {dir === 'above' ? 'Above you' : 'Below you'}
+        <span className="text-[11px] font-medium uppercase tracking-wider text-ink flex items-center gap-1.5 font-mono">
+          <Icon className="w-3.5 h-3.5 text-gold" aria-hidden /> {dir === 'above' ? 'Above' : 'Below'}
           {deck != null && ` · Deck ${deck}`}
         </span>
         {noise && (
-          <span className="text-[10px] text-amber-900 bg-amber-100 border border-amber-300 px-1.5 py-0.5 inline-flex items-center gap-1">
-            <Volume2 className="w-3 h-3" aria-hidden /> Active space
+          <span className="text-[10px] text-amber-900 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded-xs inline-flex items-center gap-1 font-mono">
+            <Volume2 className="w-3 h-3" aria-hidden /> Active Area
           </span>
         )}
       </div>
-      <p className="text-[12px] text-muted mt-1">
-        {venues.length > 0 ? venues.join(', ') : `Quiet residential cabins${name ? ` (${name})` : ''}.`}
+      <p className="text-[12px] text-muted mt-1 leading-snug">
+        {venues.length > 0 ? venues.join(', ') : `Residential cabins${name ? ` (${name})` : ''}.`}
       </p>
     </div>
   );
@@ -611,18 +680,18 @@ function VerticalRow({ dir, deck, name, venues, noise }: { dir: 'above' | 'below
 
 function Spec({ label, value, mono, last }: { label: string; value: string; mono?: boolean; last?: boolean }) {
   return (
-    <div className={`flex justify-between items-center py-2.5 ${last ? '' : 'border-b hairline'}`}>
+    <div className={`flex justify-between items-center py-2.5 ${last ? '' : 'border-b border-ink/6'}`}>
       <span className="text-[12px] text-muted">{label}</span>
-      <span className={`text-[13px] font-medium text-ink ${mono ? 'font-mono' : ''}`}>{value}</span>
+      <span className={`text-[13px] text-ink ${mono ? 'font-mono' : 'font-medium'}`}>{value}</span>
     </div>
   );
 }
 
 function Socket({ n, label }: { n: number; label: string }) {
   return (
-    <div className="bg-paper border hairline rounded-xs py-2.5">
-      <div className="font-display text-2xl text-ink leading-none">{n}<span className="text-sm text-muted">×</span></div>
-      <div className="text-[10px] uppercase tracking-[0.12em] text-muted mt-1">{label}</div>
+    <div className="bg-paper/40 border border-ink/6 rounded-xs py-2.5">
+      <div className="font-display text-2xl text-ink leading-none">{n}<span className="text-xs text-muted">×</span></div>
+      <div className="text-[10px] uppercase tracking-wider text-muted font-mono mt-1">{label}</div>
     </div>
   );
 }
@@ -632,7 +701,7 @@ function getDestinationLabel(id: string, ship: ShipData): string {
   const customMap: Record<string, string> = {
     buffet: isRiver ? "Arthur's Bistro / Buffet" : 'Marketplace Buffet',
     theater: isRiver ? 'Panorama Lounge & Bar' : 'London Theatre',
-    elevator: 'Nearest vertical core / lift',
+    elevator: 'Nearest elevator / lift',
   };
   return customMap[id] ?? id;
 }
@@ -651,15 +720,15 @@ function GettingAround({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
 
   return (
     <section>
-      <SectionHead eyebrow="Getting around" title="Walkable distances" intro="Deterministic routes through the circulation graph — measured, not estimated." />
-      <div className="card p-6 md:p-8">
+      <SectionHead eyebrow="Wayfinding" title="Measured Walking Distances" intro="Exact walking distances and step counts from your door to key venues." />
+      <div className="card p-6 md:p-8 bg-white border border-ink/8">
         <div className="flex flex-wrap gap-2">
           {dests.map((id) => (
             <button
               key={id}
               onClick={() => setDest(id)}
-              className={`px-3.5 py-2 text-[13px] font-medium border transition ${
-                dest === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/15 hover:border-ink/40'
+              className={`px-3.5 py-1.5 text-xs font-medium border rounded-xs transition cursor-pointer ${
+                dest === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/10 hover:border-ink/25'
               }`}
             >
               {getDestinationLabel(id, ship)}
@@ -667,19 +736,19 @@ function GettingAround({ ship, cabin }: { ship: ShipData; cabin: CabinData }) {
           ))}
         </div>
         {d && (
-          <div className="mt-6 grid sm:grid-cols-3 gap-6 items-end">
+          <div className="mt-8 grid sm:grid-cols-3 gap-6 items-end">
             <div>
-              <div className="eyebrow-mist mb-1">Distance</div>
-              <div className="font-display text-5xl text-ink leading-none">{d.meters}<span className="text-2xl text-muted"> m</span></div>
+              <div className="eyebrow text-muted/70 mb-1">Distance</div>
+              <div className="font-display text-4xl sm:text-5xl text-ink leading-none font-normal">{d.meters}<span className="text-xl text-muted font-sans"> m</span></div>
             </div>
             <div>
-              <div className="eyebrow-mist mb-1">Effort</div>
-              <div className="text-[15px] text-ink font-medium">{d.steps} steps · ~{Math.round(d.seconds)} s</div>
+              <div className="eyebrow text-muted/70 mb-1">Estimated Walk</div>
+              <div className="text-[14px] text-ink font-medium">{d.steps} steps · ~{Math.round(d.seconds)} s</div>
             </div>
             <div>
-              <div className="eyebrow-mist mb-1">Access</div>
-              <div className={`text-[14px] font-medium ${d.step_free ? 'text-emerald-800' : 'text-amber-800'}`}>
-                {d.step_free ? 'Step-free (elevator)' : 'Includes stairs'}
+              <div className="eyebrow text-muted/70 mb-1">Route Type</div>
+              <div className={`text-[13px] font-medium ${d.step_free ? 'text-emerald-800' : 'text-amber-800'}`}>
+                {d.step_free ? 'Step-free (Elevator route)' : 'Includes stairs'}
               </div>
             </div>
           </div>
@@ -693,16 +762,16 @@ function DeckContext({ ship, cabin, media }: { ship: ShipData; cabin: CabinData;
   const decks = Object.values(ship.decks).sort((a, b) => b.deck_number - a.deck_number);
   return (
     <section>
-      <SectionHead eyebrow="Your deck" title={`Deck ${cabin.deck_number} — ${cabin.deck_name}`} intro="The deck layout and verified venues are detailed below." />
+      <SectionHead eyebrow="Deck Structure" title={`Deck ${cabin.deck_number} — ${cabin.deck_name}`} intro="The layout and public venues across this ship level." />
       <div className="grid lg:grid-cols-[1fr_16rem] gap-6">
         <div>
           <Photo src={media(`plan:${cabin.deck_number}`)} kind="plan" label={`Deck ${cabin.deck_number} plan`} ratio="21 / 9" />
-          <div className="card mt-4 p-6">
-            <div className="eyebrow-mist mb-3">Venues across decks</div>
+          <div className="card mt-4 p-6 bg-white border border-ink/8">
+            <div className="eyebrow text-muted/70 mb-3">Public Venues Across Decks</div>
             <ul className="space-y-2">
               {decks.filter((d) => d.venues.length > 0).map((d) => (
                 <li key={d.deck_number} className="flex items-start gap-3 text-[13px]">
-                  <span className="font-mono text-muted w-16 shrink-0">Deck {d.deck_number}</span>
+                  <span className="font-mono text-muted/80 w-16 shrink-0">Deck {d.deck_number}</span>
                   <span className="text-ink">{d.venues.map((v) => v.name).join(' · ')}</span>
                 </li>
               ))}
@@ -711,18 +780,18 @@ function DeckContext({ ship, cabin, media }: { ship: ShipData; cabin: CabinData;
         </div>
 
         {/* deck rail */}
-        <aside className="card p-4">
-          <div className="eyebrow-mist mb-3">Decks</div>
-          <ol className="border-l hairline">
+        <aside className="card p-4 bg-white border border-ink/8">
+          <div className="eyebrow text-muted/70 mb-3">Decks</div>
+          <ol className="border-l border-ink/10">
             {decks.map((d) => {
               const active = d.deck_number === cabin.deck_number;
               return (
                 <li key={d.deck_number} className={`-ml-px border-l-2 pl-3 py-2 ${active ? 'border-gold' : 'border-transparent'}`}>
                   <div className="flex items-baseline gap-2">
-                    <span className={`font-mono text-[12px] w-6 ${active ? 'text-ink font-bold' : 'text-muted'}`}>{d.deck_number}</span>
+                    <span className={`font-mono text-[12px] w-5 ${active ? 'text-ink font-bold' : 'text-muted/70'}`}>{d.deck_number}</span>
                     <div>
-                      <div className={`text-[13px] leading-tight ${active ? 'text-ink font-semibold' : 'text-muted'}`}>{d.name}</div>
-                      <div className="text-[10px] text-muted">{d.elevation_m} m · {d.zone.replace(/_/g, ' ').toLowerCase()}</div>
+                      <div className={`text-[13px] leading-tight ${active ? 'text-ink font-medium' : 'text-muted'}`}>{d.name}</div>
+                      <div className="text-[10px] text-muted/60 font-mono mt-0.5">{d.elevation_m}m · {d.zone.replace(/_/g, ' ').toLowerCase()}</div>
                     </div>
                   </div>
                 </li>
@@ -736,9 +805,9 @@ function DeckContext({ ship, cabin, media }: { ship: ShipData; cabin: CabinData;
 }
 
 const LENSES = [
-  { id: 'accessibility', label: 'Mobility', Icon: Accessibility },
-  { id: 'family', label: 'Family', Icon: Users },
-  { id: 'quiet', label: 'Quiet', Icon: Moon },
+  { id: 'accessibility', label: 'Mobility & Step-Free', Icon: Accessibility },
+  { id: 'family', label: 'Family & Adjoining', Icon: Users },
+  { id: 'quiet', label: 'Acoustics & Quiet', Icon: Moon },
 ] as const;
 
 function Lenses({ cabin, lens, setLens }: { cabin: CabinData; lens: LensId; setLens: (l: LensId) => void }) {
@@ -746,34 +815,35 @@ function Lenses({ cabin, lens, setLens }: { cabin: CabinData; lens: LensId; setL
     lens === 'accessibility' ? cabin.lenses.accessibility.summary : lens === 'family' ? cabin.lenses.family.summary : cabin.lenses.quiet.summary;
   const headline =
     lens === 'accessibility'
-      ? cabin.lenses.accessibility.is_certified ? 'Certified accessible stateroom' : 'Standard stateroom'
+      ? cabin.lenses.accessibility.is_certified ? 'Certified accessible stateroom' : 'Standard step-free stateroom'
       : lens === 'family'
-        ? cabin.lenses.family.has_connecting ? 'Adjoining family pair' : 'Single stateroom'
-        : cabin.lenses.quiet.is_quiet_tier ? 'Acoustically buffered' : 'Near an active space';
+        ? cabin.lenses.family.has_connecting ? 'Adjoining family stateroom pair' : 'Single stateroom configuration'
+        : cabin.lenses.quiet.is_quiet_tier ? 'Acoustically buffered location' : 'Near active public space';
+
   return (
     <section>
-      <SectionHead eyebrow="Through a lens" title="One cabin, several perspectives" intro="Lenses are optical filters over the same spatial facts — they change the view, never the ship." />
-      <div className="card p-6 md:p-8">
-        <div className="flex gap-2">
+      <SectionHead eyebrow="Travel Filters" title="One Cabin, Three Perspectives" intro="Tailored evaluations for your specific travel needs without changing the underlying deck facts." />
+      <div className="card p-6 md:p-8 bg-white border border-ink/8">
+        <div className="flex gap-2 flex-wrap">
           {LENSES.map(({ id, label, Icon }) => (
             <button
               key={id}
               onClick={() => setLens(id)}
-              className={`flex items-center gap-2 px-4 py-2.5 text-[13px] font-medium border transition ${
-                lens === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/15 hover:border-ink/40'
+              className={`flex items-center gap-2 px-4 py-2 text-xs font-medium border rounded-xs transition cursor-pointer ${
+                lens === id ? 'bg-ink text-white border-ink' : 'bg-paper text-ink border-ink/10 hover:border-ink/25'
               }`}
             >
-              <Icon className="w-4 h-4" aria-hidden /> {label}
+              <Icon className="w-3.5 h-3.5" aria-hidden /> {label}
             </button>
           ))}
         </div>
         <div className="mt-6">
-          <h3 className="font-display text-2xl text-ink">{headline}</h3>
-          <p className="text-[15px] text-muted leading-relaxed mt-2 max-w-2xl">{summary}</p>
+          <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">{headline}</h3>
+          <p className="text-[14px] text-muted leading-relaxed mt-2.5 max-w-2xl">{summary}</p>
           {lens === 'quiet' && cabin.lenses.quiet.acoustic_flags.length > 0 && (
-            <ul className="mt-4 space-y-1.5">
+            <ul className="mt-4 space-y-1">
               {cabin.lenses.quiet.acoustic_flags.map((f) => (
-                <li key={f} className="flex items-center gap-2 text-[13px] text-ink">
+                <li key={f} className="flex items-center gap-2 text-[13px] text-ink font-sans">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold" /> {f}
                 </li>
               ))}
@@ -788,102 +858,18 @@ function Lenses({ cabin, lens, setLens }: { cabin: CabinData; lens: LensId; setL
 function Evidence({ cabin }: { cabin: CabinData }) {
   return (
     <section>
-      <SectionHead eyebrow="Where this comes from" title="Evidence & provenance" intro="Every orientation traces to immutable, content-addressed sources. Timonelo never sounds more certain than its evidence." />
+      <SectionHead eyebrow="Provenance" title="Evidence & Official Sources" intro="Every orientation traces to official general arrangement deck plans and physical survey audits." />
       <div className="grid sm:grid-cols-2 gap-4">
         {cabin.evidence.map((e) => (
-          <div key={e.source_id} className="card p-5">
+          <div key={e.source_id} className="card p-5 bg-white border border-ink/8">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-gold" aria-hidden />
-              <span className="text-[14px] font-medium text-ink">{e.source_id}</span>
+              <MapPin className="w-3.5 h-3.5 text-gold" aria-hidden />
+              <span className="text-[13px] font-medium text-ink">{e.source_id}</span>
             </div>
             <div className="text-[12px] text-muted mt-2">{e.locator.replace(/_/g, ' ')}</div>
-            <div className="font-mono text-[11px] text-muted mt-3 break-all">sha256:{e.sha256}</div>
+            <div className="font-mono text-[10px] text-muted/70 mt-3 break-all bg-paper/60 p-2 rounded-xs">Source hash: {e.sha256}</div>
           </div>
         ))}
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ Fleet Gallery */
-
-function FleetGallery({ currentSlug, onSelectVessel }: { currentSlug: string; onSelectVessel: (slug: string) => void }) {
-  return (
-    <section className="border-t hairline pt-12">
-      <SectionHead
-        eyebrow="Universal Maritime Platform"
-        title="Compiled Fleet Gallery"
-        intro="Timonelo processes ocean mega-liners and luxury riverboats through the exact same spatial calculus."
-      />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {FLEET_REGISTRY.map((v) => {
-          const isActive = v.slug === currentSlug;
-          return (
-            <div
-              key={v.slug}
-              className={`card p-5 flex flex-col justify-between transition-all ${
-                isActive ? 'border-2 border-gold ring-1 ring-gold/20 shadow-md bg-white' : 'hover:border-ink/40'
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span
-                    className={`text-[9px] px-2 py-0.5 font-mono uppercase font-semibold rounded-xs ${
-                      v.vesselType === 'River Cruise'
-                        ? 'bg-blue-100 text-blue-900 border border-blue-200'
-                        : 'bg-stone-100 text-stone-800 border border-stone-200'
-                    }`}
-                  >
-                    {v.vesselType}
-                  </span>
-                  <span className="text-[10px] text-emerald-800 font-medium flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Compiled
-                  </span>
-                </div>
-
-                <h3 className="font-display text-xl text-ink leading-tight">{v.name}</h3>
-                <p className="text-[11px] font-semibold text-gold uppercase tracking-wide mt-0.5">{v.operator}</p>
-
-                <p className="text-[12px] text-muted leading-relaxed mt-2.5 line-clamp-3">{v.description}</p>
-
-                <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t hairline text-[11px]">
-                  <div>
-                    <span className="text-muted block text-[10px] uppercase">Decks</span>
-                    <span className="font-mono font-bold text-ink">{v.totalDecks}</span>
-                  </div>
-                  <div>
-                    <span className="text-muted block text-[10px] uppercase">Cabins</span>
-                    <span className="font-mono font-bold text-ink">{v.cabinCount}</span>
-                  </div>
-                  <div>
-                    <span className="text-muted block text-[10px] uppercase">LOA</span>
-                    <span className="font-mono font-bold text-ink">{v.lengthM} m</span>
-                  </div>
-                  <div>
-                    <span className="text-muted block text-[10px] uppercase">Class</span>
-                    <span className="font-mono font-bold text-ink truncate block" title={v.shipClass}>{v.shipClass}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-5 pt-3">
-                {isActive ? (
-                  <div className="w-full py-2 text-center text-xs font-semibold text-ink bg-gold/20 rounded-xs border border-gold/40">
-                    Currently Viewing
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => onSelectVessel(v.slug)}
-                    className="w-full py-2 text-center text-xs font-semibold bg-ink text-white hover:bg-gold hover:text-ink transition-colors rounded-xs flex items-center justify-center gap-1.5"
-                  >
-                    <span>Open Orientation</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })}
       </div>
     </section>
   );
@@ -894,35 +880,24 @@ function Discovery({ ship, current, onSelect }: { ship: ShipData; current: strin
   if (others.length === 0) return null;
   return (
     <section>
-      <SectionHead eyebrow="Keep exploring" title="Other staterooms on this vessel" />
+      <SectionHead eyebrow="Explore Staterooms" title="Other Verified Cabins on this Vessel" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {others.slice(0, 9).map((c) => (
           <button
             key={c.cabin_number}
             onClick={() => onSelect(c.cabin_number)}
-            className="group card p-5 text-left hover:border-ink/40 transition-colors flex items-center justify-between"
+            className="group card p-5 bg-white border border-ink/8 text-left hover:border-ink/30 transition-colors flex items-center justify-between cursor-pointer"
           >
             <div>
-              <div className="font-mono text-lg text-ink">Cabin {c.cabin_number}</div>
-              <div className="text-[12px] text-muted mt-0.5">
+              <div className="font-display text-lg text-ink">Cabin {c.cabin_number}</div>
+              <div className="text-[11px] text-muted mt-0.5">
                 Deck {c.deck_number} ({c.deck_name}) · {sideLabel(c.hull_side)}{c.is_accessible ? ' · Accessible' : ''}
               </div>
             </div>
-            <ArrowRight className="w-4 h-4 text-muted group-hover:text-ink transition-colors" aria-hidden />
+            <ArrowRight className="w-3.5 h-3.5 text-muted group-hover:text-ink transition-colors" aria-hidden />
           </button>
         ))}
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t hairline mt-20">
-      <div className="page-shell py-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-muted">
-        <span className="inline-flex items-center gap-2"><Anchor className="w-3.5 h-3.5" /> © {new Date().getFullYear()} Timonelo Platform</span>
-        <span className="tracking-[0.2em]">Universal Spatial Intelligence · Ocean & River Twins.</span>
-      </div>
-    </footer>
   );
 }

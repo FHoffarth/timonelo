@@ -4,13 +4,10 @@ import {
   Anchor,
   ShieldCheck,
   Clock,
-  Waves,
   Utensils,
   MapPin,
   FileCheck,
   CreditCard,
-  AlertCircle,
-  Sparkles,
   ChevronRight,
   Sun,
   ShieldAlert,
@@ -26,34 +23,37 @@ interface CruiseBriefingProps {
 export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps) {
   const [activeTab, setActiveTab] = useState<'summary' | 'ship' | 'port' | 'travel'>('summary');
 
-  const isStarboard = parseInt(cabin.number.slice(-1), 10) % 2 === 0;
-  const isForward = (cabin.bounds[0]?.[0] || 0.5) > 0.55;
+  const cabinNumStr = String(cabin.cabin_number || cabin.number || '14122');
+  const isStarboard = parseInt(cabinNumStr.slice(-1), 10) % 2 === 0;
+  const isForward = (cabin.bounds?.[0]?.[0] ?? 0.5) > 0.55;
   const musterStation = isForward
-    ? isStarboard ? 'Muster Station A (Forward)' : 'Muster Station D (Forward Port)'
-    : isStarboard ? 'Muster Station C (Aft)' : 'Muster Station F (Aft Port)';
+    ? isStarboard ? 'Muster Station A (Forward Starboard)' : 'Muster Station D (Forward Port)'
+    : isStarboard ? 'Muster Station C (Aft Starboard)' : 'Muster Station F (Aft Port)';
   const musterDeck = isStarboard ? 6 : 7;
+  const deckNum = cabin.deck_number ?? cabin.deck ?? 14;
+
+  const isRiver = ship.total_decks <= 5;
+  const portName = isRiver ? 'Porto (Douro Valley), Portugal' : 'Genoa (Genova), Italy';
+  const diningVenue = isRiver ? "The Compass Rose (Emerald Deck)" : "Il Ciliegio (Deck 06 Aft)";
 
   return (
-    <section className="bg-paper border border-mist/30 rounded-2xl p-6 sm:p-8 shadow-sm my-8 text-ink">
+    <section className="bg-white border border-ink/8 rounded-xs p-7 sm:p-10 shadow-xs text-ink">
       {/* Top Banner: Bridge Officer Voice */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-mist/20 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-ink/6 pb-6">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-mist">
-            <Compass className="w-4 h-4 text-ink" />
-            Plane 6 · Cruise Intelligence Runtime
-          </div>
-          <h2 className="font-display text-2xl sm:text-3xl text-ink mt-2">
-            Today's Cruise Briefing
+          <p className="eyebrow text-gold">Morning Guidance · Bridge Officer</p>
+          <h2 className="font-display text-3xl sm:text-4xl text-ink mt-1 font-normal">
+            Today’s Cruise Briefing
           </h2>
-          <p className="text-sm text-mist mt-1 font-serif italic">
-            {ship.name} · Day 01: Genoa (Genova), Italy · Stateroom {cabin.number} (Deck {cabin.deck})
+          <p className="text-sm text-muted mt-1.5 font-display italic">
+            {ship.name} · Day 01: {portName} · Cabin {cabinNumStr} (Deck {deckNum})
           </p>
         </div>
 
         {onClose && (
           <button
             onClick={onClose}
-            className="text-xs font-mono uppercase tracking-wider text-mist hover:text-ink px-3 py-1.5 rounded-lg border border-mist/20 hover:border-mist/50 transition-colors self-start sm:self-auto"
+            className="text-xs font-mono uppercase tracking-wider text-muted hover:text-ink px-3 py-1.5 rounded-xs border border-ink/10 transition-colors self-start sm:self-auto cursor-pointer"
           >
             Close Briefing
           </button>
@@ -61,155 +61,150 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex gap-2 border-b border-mist/15 mt-6 pb-2 overflow-x-auto">
+      <div className="flex gap-2 border-b border-ink/6 mt-6 pb-2 overflow-x-auto">
         <button
           onClick={() => setActiveTab('summary')}
-          className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 text-xs font-medium rounded-xs transition-colors cursor-pointer ${
             activeTab === 'summary'
-              ? 'bg-ink text-paper font-semibold shadow-xs'
-              : 'text-mist hover:text-ink hover:bg-mist/10'
+              ? 'bg-ink text-white shadow-xs'
+              : 'text-muted hover:text-ink hover:bg-paper'
           }`}
         >
-          <Sparkles className="w-3.5 h-3.5" />
           The Three Clearances
         </button>
         <button
           onClick={() => setActiveTab('ship')}
-          className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 text-xs font-medium rounded-xs transition-colors cursor-pointer ${
             activeTab === 'ship'
-              ? 'bg-ink text-paper font-semibold shadow-xs'
-              : 'text-mist hover:text-ink hover:bg-mist/10'
+              ? 'bg-ink text-white shadow-xs'
+              : 'text-muted hover:text-ink hover:bg-paper'
           }`}
         >
-          <Anchor className="w-3.5 h-3.5" />
           Ship & Safety
         </button>
         <button
           onClick={() => setActiveTab('port')}
-          className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 text-xs font-medium rounded-xs transition-colors cursor-pointer ${
             activeTab === 'port'
-              ? 'bg-ink text-paper font-semibold shadow-xs'
-              : 'text-mist hover:text-ink hover:bg-mist/10'
+              ? 'bg-ink text-white shadow-xs'
+              : 'text-muted hover:text-ink hover:bg-paper'
           }`}
         >
-          <MapPin className="w-3.5 h-3.5" />
           Port & Gangway
         </button>
         <button
           onClick={() => setActiveTab('travel')}
-          className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 text-xs font-medium rounded-xs transition-colors cursor-pointer ${
             activeTab === 'travel'
-              ? 'bg-ink text-paper font-semibold shadow-xs'
-              : 'text-mist hover:text-ink hover:bg-mist/10'
+              ? 'bg-ink text-white shadow-xs'
+              : 'text-muted hover:text-ink hover:bg-paper'
           }`}
         >
-          <CreditCard className="w-3.5 h-3.5" />
           Travel & Etiquette
         </button>
       </div>
 
-      {/* Tab 1: The Three Clearances (Decision First & Negative Intelligence) */}
+      {/* Tab 1: The Three Clearances */}
       {activeTab === 'summary' && (
         <div className="space-y-6 mt-6">
-          <div className="bg-paper-light border border-mist/25 rounded-xl p-5">
-            <p className="text-xs font-mono uppercase tracking-widest text-mist">
-              Bridge Officer Perspective
-            </p>
-            <p className="font-serif text-base text-ink mt-2 leading-relaxed">
-              "Good morning. For today in Genoa, there are strictly three timeframes that require your attention. Everything else is taken care of."
+          <div className="bg-paper/60 border border-ink/6 rounded-xs p-5">
+            <p className="eyebrow text-muted/70">Officer Summary</p>
+            <p className="font-display text-lg text-ink/90 mt-1 leading-relaxed italic">
+              "Good morning. For today in {isRiver ? 'Porto' : 'Genoa'}, there are strictly three timeframes that require your attention. Everything else is taken care of."
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Clearance 1 */}
-            <div className="border border-mist/20 rounded-xl p-5 bg-paper flex flex-col justify-between">
+            <div className="border border-ink/8 rounded-xs p-6 bg-white flex flex-col justify-between shadow-xs">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-700 font-medium">
-                  <ShieldAlert className="w-4 h-4" />
+                <span className="text-[11px] font-mono text-amber-800 uppercase tracking-wider block font-medium">
                   1. Mandatory Safety Drill
-                </div>
-                <h3 className="font-display text-lg text-ink mt-2">
+                </span>
+                <h3 className="font-display text-xl text-ink mt-2 font-normal">
                   {musterStation}
                 </h3>
-                <p className="text-xs text-mist mt-1 font-mono">
+                <p className="text-xs text-muted mt-1 font-mono">
                   Deck {String(musterDeck).padStart(2, '0')} · Before 16:30
                 </p>
-                <p className="text-sm text-ink/80 mt-3 leading-normal">
-                  Take your nearest elevator core down to Deck {String(musterDeck).padStart(2, '0')}. Follow emergency pathfinding to validate your safety check.
+                <p className="text-[13px] text-muted leading-relaxed mt-3">
+                  Take your nearest elevator core down to Deck {String(musterDeck).padStart(2, '0')}. Follow emergency pathfinding to validate your check.
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-mist/15 text-[11px] font-mono text-mist">
-                ✓ Solves SOLAS statutory compliance
+              <div className="mt-4 pt-3 border-t border-ink/6 text-[11px] font-mono text-muted">
+                ✓ Mandatory statutory compliance
               </div>
             </div>
 
             {/* Clearance 2 */}
-            <div className="border border-mist/20 rounded-xl p-5 bg-paper flex flex-col justify-between">
+            <div className="border border-ink/8 rounded-xs p-6 bg-white flex flex-col justify-between shadow-xs">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-700 font-medium">
-                  <Clock className="w-4 h-4" />
+                <span className="text-[11px] font-mono text-sky-800 uppercase tracking-wider block font-medium">
                   2. All-Aboard Deadline
-                </div>
-                <h3 className="font-display text-lg text-ink mt-2">
-                  17:30 Gangway Deck 05
+                </span>
+                <h3 className="font-display text-xl text-ink mt-2 font-normal">
+                  {isRiver ? '18:00 Pier Gangway' : '17:30 Gangway Deck 05'}
                 </h3>
-                <p className="text-xs text-mist mt-1 font-mono">
-                  Berth 10 · 450m from center
+                <p className="text-xs text-muted mt-1 font-mono">
+                  {isRiver ? 'Ribeira Pier · Downtown' : 'Berth 10 · 450m from center'}
                 </p>
-                <p className="text-sm text-ink/80 mt-3 leading-normal">
-                  Piazza Principe and the Old Port are an easy 8-minute level walk via the pedestrian skybridge.
+                <p className="text-[13px] text-muted leading-relaxed mt-3">
+                  {isRiver
+                    ? 'The historic Ribeira riverbank promenade is right at the foot of the gangway.'
+                    : 'The Old Port and Piazza Principe are an easy 8-minute level walk via the skybridge.'}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-mist/15 text-[11px] font-mono text-mist">
-                ✓ Solves port return timing
+              <div className="mt-4 pt-3 border-t border-ink/6 text-[11px] font-mono text-muted">
+                ✓ Verified return timing
               </div>
             </div>
 
             {/* Clearance 3 */}
-            <div className="border border-mist/20 rounded-xl p-5 bg-paper flex flex-col justify-between">
+            <div className="border border-ink/8 rounded-xs p-6 bg-white flex flex-col justify-between shadow-xs">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-700 font-medium">
-                  <Utensils className="w-4 h-4" />
+                <span className="text-[11px] font-mono text-emerald-800 uppercase tracking-wider block font-medium">
                   3. Dinner Logistics
-                </div>
-                <h3 className="font-display text-lg text-ink mt-2">
-                  Il Ciliegio (Deck 06 Aft)
+                </span>
+                <h3 className="font-display text-xl text-ink mt-2 font-normal">
+                  {diningVenue}
                 </h3>
-                <p className="text-xs text-mist mt-1 font-mono">
-                  Dress: Casual Elegant · 45m walk
+                <p className="text-xs text-muted mt-1 font-mono">
+                  Dress: Casual Elegant · Level walk
                 </p>
-                <p className="text-sm text-ink/80 mt-3 leading-normal">
-                  Direct lift down to Deck 06 Aft. The Marketplace Buffet (Deck 15) is also open 06:00–01:30.
+                <p className="text-[13px] text-muted leading-relaxed mt-3">
+                  {isRiver
+                    ? 'Dinner is served in one open seating with regional Douro wine pairings.'
+                    : 'Direct lift down to Deck 06 Aft. The Marketplace Buffet on Deck 15 is also open.'}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-mist/15 text-[11px] font-mono text-mist">
-                ✓ Solves evening dining route
+              <div className="mt-4 pt-3 border-t border-ink/6 text-[11px] font-mono text-muted">
+                ✓ Verified evening dining route
               </div>
             </div>
           </div>
 
-          {/* Negative Intelligence Section (Decisions Avoided) */}
-          <div className="border border-ink/15 rounded-xl p-5 bg-paper-light">
+          {/* Negative Intelligence Section */}
+          <div className="border border-ink/8 rounded-xs p-6 bg-paper/50">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-ink font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              Negative Intelligence · Friction Prevented Today
+              <ShieldCheck className="w-4 h-4 text-emerald-700" />
+              <span>Negative Intelligence · Friction Prevented Today</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 text-xs text-ink/80">
-              <div className="flex items-start gap-2 bg-paper p-3 rounded-lg border border-mist/15">
-                <ChevronRight className="w-3.5 h-3.5 text-mist shrink-0 mt-0.5" />
-                <span><strong>No roaming shock:</strong> Turn on Airplane Mode upon departure from port waters to block satellite cellular costs.</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 text-[13px] text-muted">
+              <div className="flex items-start gap-2 bg-white p-3.5 rounded-xs border border-ink/6">
+                <ChevronRight className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+                <span><strong>No roaming shock:</strong> Turn on Airplane Mode upon departure from port waters to block satellite cellular fees.</span>
               </div>
-              <div className="flex items-start gap-2 bg-paper p-3 rounded-lg border border-mist/15">
-                <ChevronRight className="w-3.5 h-3.5 text-mist shrink-0 mt-0.5" />
-                <span><strong>No stair barrier:</strong> Route to Gangway Deck 05 is 100% step-free via midship elevator core.</span>
+              <div className="flex items-start gap-2 bg-white p-3.5 rounded-xs border border-ink/6">
+                <ChevronRight className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+                <span><strong>Step-free access:</strong> Route to the gangway is 100% step-free via the central elevator core.</span>
               </div>
-              <div className="flex items-start gap-2 bg-paper p-3 rounded-lg border border-mist/15">
-                <ChevronRight className="w-3.5 h-3.5 text-mist shrink-0 mt-0.5" />
-                <span><strong>No dress code mismatch:</strong> Collared shirts/dresses recommended for Deck 6 dining tonight.</span>
+              <div className="flex items-start gap-2 bg-white p-3.5 rounded-xs border border-ink/6">
+                <ChevronRight className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+                <span><strong>Dress guidance:</strong> Smart casual recommended for tonight’s welcome dinner.</span>
               </div>
-              <div className="flex items-start gap-2 bg-paper p-3 rounded-lg border border-mist/15">
-                <ChevronRight className="w-3.5 h-3.5 text-mist shrink-0 mt-0.5" />
-                <span><strong>No taxi surcharge:</strong> Official municipality flat fare from pier into center is €15.</span>
+              <div className="flex items-start gap-2 bg-white p-3.5 rounded-xs border border-ink/6">
+                <ChevronRight className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+                <span><strong>Transit clarity:</strong> Official municipality flat fare from pier into center is €15.</span>
               </div>
             </div>
           </div>
@@ -218,28 +213,28 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
 
       {/* Tab 2: Ship & Safety */}
       {activeTab === 'ship' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <Anchor className="w-4 h-4 text-mist" /> Stateroom Orientation
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <Anchor className="w-4 h-4 text-gold" /> Stateroom Orientation
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
-              <li><strong>Cabin:</strong> {cabin.number} (Deck {cabin.deck})</li>
-              <li><strong>Side:</strong> {cabin.side.toUpperCase()} ({isStarboard ? 'Starboard / Right' : 'Port / Left'})</li>
-              <li><strong>Door Width:</strong> {cabin.doorWidthMm} mm clear aperture</li>
-              <li><strong>Sockets:</strong> {cabin.sockets.euStandard}x EU, {cabin.sockets.usStandard}x US, {cabin.sockets.usbA}x USB-A</li>
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
+              <li><strong>Cabin:</strong> {cabinNumStr} (Deck {deckNum})</li>
+              <li><strong>Side:</strong> {isStarboard ? 'Starboard (Right)' : 'Port (Left)'}</li>
+              <li><strong>Door Width:</strong> {cabin.door_width_mm ?? 800} mm clear doorway</li>
+              <li><strong>Sockets:</strong> {cabin.sockets?.eu_count ?? 2}x EU, {cabin.sockets?.us_count ?? 2}x US, {cabin.sockets?.usb_a_count ?? 2}x USB-A</li>
             </ul>
           </div>
 
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Life Safety Logistics
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <ShieldCheck className="w-4 h-4 text-emerald-700" /> Life Safety Logistics
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
               <li><strong>Assembly Point:</strong> {musterStation}</li>
-              <li><strong>Deck:</strong> Deck {String(musterDeck).padStart(2, '0')}</li>
-              <li><strong>Drill Deadline:</strong> 16:30 (Mandatory SOLAS)</li>
-              <li><strong>Accessibility:</strong> 100% step-free via central elevator core</li>
+              <li><strong>Assembly Deck:</strong> Deck {String(musterDeck).padStart(2, '0')}</li>
+              <li><strong>Drill Deadline:</strong> 16:30 (Mandatory Maritime Drill)</li>
+              <li><strong>Route:</strong> Step-free via central elevator core</li>
             </ul>
           </div>
         </div>
@@ -247,28 +242,28 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
 
       {/* Tab 3: Port & Gangway */}
       {activeTab === 'port' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-mist" /> Port Navigation · Genoa
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <MapPin className="w-4 h-4 text-gold" /> Port Navigation · {portName}
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
-              <li><strong>Berth:</strong> Stazione Marittima, Berth 10</li>
-              <li><strong>Gangway Deck:</strong> Deck 05 (Midship Starboard)</li>
-              <li><strong>All-Aboard:</strong> 17:30 Prompt</li>
-              <li><strong>Distance to Town:</strong> 450 m (8 min walk via skybridge)</li>
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
+              <li><strong>Berth:</strong> {isRiver ? 'Ribeira Pier 2' : 'Stazione Marittima, Berth 10'}</li>
+              <li><strong>Gangway:</strong> {isRiver ? 'Emerald Deck (Fwd)' : 'Deck 05 (Midship Starboard)'}</li>
+              <li><strong>All-Aboard:</strong> {isRiver ? '18:00' : '17:30'} Prompt</li>
+              <li><strong>Distance to Town:</strong> {isRiver ? '0 m (Downtown)' : '450 m (8 min walk via skybridge)'}</li>
             </ul>
           </div>
 
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <Sun className="w-4 h-4 text-amber-600" /> Weather & Sea State
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <Sun className="w-4 h-4 text-gold" /> Weather & Sea Conditions
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
-              <li><strong>Forecast:</strong> 24.5°C, Gentle coastal breeze</li>
-              <li><strong>Sea Swell:</strong> 0.6 m (Beaufort 2 - Smooth)</li>
-              <li><strong>Stabilizers:</strong> Active Fin Stabilizers Deployed</li>
-              <li><strong>Sun Exposure:</strong> Starboard afternoon sun</li>
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
+              <li><strong>Forecast:</strong> 24.5°C, Sunny with gentle breeze</li>
+              <li><strong>Water State:</strong> {isRiver ? 'Calm river waters' : '0.6 m swell (Beaufort 2 - Smooth)'}</li>
+              <li><strong>Stabilization:</strong> {isRiver ? 'River flat hull' : 'Active fin stabilizers deployed'}</li>
+              <li><strong>Sunlight:</strong> Afternoon sun on {isStarboard ? 'Starboard' : 'Port'} beam</li>
             </ul>
           </div>
         </div>
@@ -276,28 +271,28 @@ export function CruiseBriefingView({ ship, cabin, onClose }: CruiseBriefingProps
 
       {/* Tab 4: Travel & Etiquette */}
       {activeTab === 'travel' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <FileCheck className="w-4 h-4 text-mist" /> Sovereign Entry & Customs
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <FileCheck className="w-4 h-4 text-gold" /> Customs & Border Entry
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
-              <li><strong>Country:</strong> Italy (Schengen Zone)</li>
-              <li><strong>Passport Validity:</strong> 6 months required</li>
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
+              <li><strong>Country:</strong> {isRiver ? 'Portugal' : 'Italy'} (Schengen Zone)</li>
+              <li><strong>Passport:</strong> 6 months validity recommended</li>
               <li><strong>Visa:</strong> EU/EEA/US/UK/CAN visa-free transit</li>
-              <li><strong>Currency Limit:</strong> Declarations required for ≥ €10,000</li>
+              <li><strong>Currency Rule:</strong> Declaration for ≥ €10,000 in cash</li>
             </ul>
           </div>
 
-          <div className="border border-mist/20 rounded-xl p-5 bg-paper">
-            <h3 className="font-display text-lg text-ink flex items-center gap-2">
-              <CreditCard className="w-4 h-4 text-mist" /> Currency & Etiquette
+          <div className="border border-ink/8 rounded-xs p-6 bg-white">
+            <h3 className="font-display text-xl text-ink flex items-center gap-2 font-normal">
+              <CreditCard className="w-4 h-4 text-gold" /> Currency & Local Customs
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-ink/80 font-mono">
+            <ul className="mt-4 space-y-2 text-xs text-muted font-mono">
               <li><strong>Currency:</strong> Euro (€ / EUR)</li>
-              <li><strong>Card Acceptance:</strong> 98% Contactless / Apple Pay</li>
-              <li><strong>Tipping:</strong> Service included (Coperto); 5–10% optional</li>
-              <li><strong>Emergency Phone:</strong> 112 (European Emergency)</li>
+              <li><strong>Payment:</strong> 98% Contactless / Apple Pay accepted</li>
+              <li><strong>Tipping:</strong> Service included; 5–10% optional for excellence</li>
+              <li><strong>Emergency Phone:</strong> 112 (European Emergency Number)</li>
             </ul>
           </div>
         </div>

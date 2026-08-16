@@ -1,0 +1,14 @@
+{
+  "slug": "icon-class",
+  "name": "Icon Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Turku (Turku, Finland)",
+  "lead_ship_name": "Icon of the Seas",
+  "lead_ship_year": 2024,
+  "gross_tonnage_typical": 248663,
+  "length_m_typical": 364.8,
+  "beam_m_typical": 48.5,
+  "passenger_capacity_max": 7600,
+  "description": "World's largest cruise ships featuring the AquaDome geodesic glass dome and Category 6 waterpark."
+}

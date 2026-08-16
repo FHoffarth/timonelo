@@ -1,0 +1,41 @@
+{
+  "slug": "victoria",
+  "name": "Port of Victoria (Ogden Point)",
+  "un_locode": "CAVIC",
+  "country": "Canada",
+  "region": "Pacific Northwest / Alaska",
+  "coordinates": {
+    "latitude": 48.415,
+    "longitude": -123.385
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Ogden Point Terminal (Piers A & B)",
+      "berths": [
+        "Victoria Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Victoria.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

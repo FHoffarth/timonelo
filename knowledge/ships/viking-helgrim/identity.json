@@ -1,0 +1,86 @@
+{
+  "slug": "viking-helgrim",
+  "name": {
+    "value": "Viking Helgrim",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "ENI 02338144",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Viking River Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Douro River Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "douro-river-class",
+  "builder": {
+    "value": "Neptun Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2019-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 80.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 11.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 1.6,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 1800,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 106,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 84,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 36,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 53,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 1,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Viking Helgrim Main Dining Room",
+    "Viking Helgrim Panorama Lounge & Bar",
+    "Viking Helgrim Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "porto",
+    "regua",
+    "pinhao"
+  ]
+}

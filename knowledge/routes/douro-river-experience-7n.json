@@ -1,0 +1,56 @@
+{
+  "slug": "douro-river-experience-7n",
+  "title": "7-Night Enchanting Douro River Valley",
+  "region": "Douro River",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "porto",
+      "port_name": "Porto (Ribeira)",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "regua",
+      "port_name": "Peso da Régua",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "pinhao",
+      "port_name": "Pinhão",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "pinhao",
+      "port_name": "Pinhão Wine Estate",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "regua",
+      "port_name": "Régua Palace",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "porto",
+      "port_name": "Porto Gaia",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "porto",
+      "port_name": "Porto (Ribeira)",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Tauck",
+    "Viking River",
+    "AmaWaterways",
+    "Uniworld"
+  ]
+}

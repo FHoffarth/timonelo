@@ -1,0 +1,41 @@
+{
+  "slug": "shanghai",
+  "name": "Shanghai Wusongkou International Cruise Terminal",
+  "un_locode": "CNSHG",
+  "country": "China",
+  "region": "East Asia",
+  "coordinates": {
+    "latitude": 31.396,
+    "longitude": 121.505
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Baoshan Wusongkou Terminal",
+      "berths": [
+        "Shanghai Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "999"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Shanghai Wusongkou International Cruise Terminal.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

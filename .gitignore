@@ -1,20 +1,27 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.egg-info/
+*.egg
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .coverage
 htmlcov/
+.coverage.*
 
-# Packaging
-build/
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+node_modules/
 dist/
 
 # Environments and local configuration
 .venv/
 venv/
+ENV/
 .env
 .env.*
 !.env.example
@@ -23,8 +30,10 @@ venv/
 .idea/
 .vscode/
 *.swp
+*.swo
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Local or generated data
 data/source/*
@@ -32,3 +41,8 @@ data/source/*
 data/processed/*
 !data/processed/.gitignore
 
+# Test / Scratch artifacts
+scratch/*.png
+scratch/*.jpg
+scratch/*.log
+*.log

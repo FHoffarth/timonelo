@@ -1,0 +1,42 @@
+{
+  "slug": "basel",
+  "name": "Port of Basel (Rhine Hub)",
+  "un_locode": "CHBSL",
+  "country": "Switzerland",
+  "region": "Rhine River",
+  "coordinates": {
+    "latitude": 47.585,
+    "longitude": 7.59
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "St. Johann & Dreiländereck Piers",
+      "berths": [
+        "Basel Berth 1",
+        "Basel Berth 2"
+      ],
+      "gangway_deck_default": 2,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Basel.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

@@ -124,7 +124,7 @@ Verdict: PARTIALLY (70% Industrial Automation)
 ```
 
 1. **What works out-of-the-box**:
-   - Sister ships sharing the Meraviglia Hull B34 geometry (*MSC Meraviglia, MSC Grandiosa, MSC Virtuosa*) can inherit the entire 1,750-stateroom circulation graph and core topology instantly by altering the vessel IMO and deck specifications.
+   - Meraviglia family vessels (*MSC Meraviglia* as true sister, *MSC Grandiosa* and *MSC Virtuosa* as Meraviglia Plus subclass) can inherit the 1,750-stateroom circulation graph and core topology instantly by altering the vessel IMO and deck specifications.
    - Quality gate enforcement, sandwich calculation, and JSON packaging are 100% automated.
 2. **What requires human cartography**:
    - Custom venue renames (e.g. *Cirque du Soleil Lounge* vs. *Carousel Lounge*) and ship-specific interior decor variations require configuration entry.

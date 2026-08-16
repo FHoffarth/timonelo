@@ -1,0 +1,42 @@
+[
+  {
+    "id": "neg:bellissima:buffet-overhead-noise",
+    "title": "Overhead Trolley & Cleaning Noise on Deck 14 Aft",
+    "category": "ACOUSTIC",
+    "severity": "HIGH",
+    "impact": "Cabins directly below Marketplace Buffet (Deck 15 Aft, especially cabins 14200 to 14280) experience early morning cart rolling and deck washing vibrations between 05:30 and 07:00.",
+    "mitigation": "Select staterooms between Deck 9 and Deck 12 buffered by residential staterooms both above and below (e.g. Deck 11 Caravaggio or Deck 12 Giotto).",
+    "verification_type": "CREW_VERIFIED",
+    "evidence": "Corroborated by stateroom stewards and field acoustic audits during 2024/2025 Mediterranean sailings."
+  },
+  {
+    "id": "neg:bellissima:midship-elevator-peak-bottleneck",
+    "title": "Midship Panoramic Elevator Bottleneck at 19:30 & 21:15",
+    "category": "ELEVATOR_CONGESTION",
+    "severity": "MEDIUM",
+    "impact": "The central panoramic lifts flanking the Galleria suffer 8-12 minute wait times immediately preceding the first and second seating theatre shows.",
+    "mitigation": "Use the Forward or Aft vertical stairwell banks, or board the forward express elevators located 40m forward of the central atrium.",
+    "verification_type": "FIELD_MEASURED",
+    "evidence": "Measured 11.4 min peak queue at Deck 6 Galleria landing during Gala Night show exit."
+  },
+  {
+    "id": "neg:bellissima:maritime-cellular-roaming-trap",
+    "title": "Cellular At Sea Satellite Roaming Expense",
+    "category": "ROAMING",
+    "severity": "CRITICAL",
+    "impact": "Phones connecting to 'CellularAtSea' or 'TIM Maritime' satellite networks outside 12 nautical miles incur standard carrier charges of €6-€15 per megabyte.",
+    "mitigation": "Engage Airplane Mode prior to vessel cast-off from port quayside and enable Wi-Fi calling over the shipboard Starlink package.",
+    "verification_type": "OFFICIAL",
+    "evidence": "MSC Cruises Guest Information Directive & ITU Maritime Telecommunication Standards."
+  },
+  {
+    "id": "neg:bellissima:lifeboat-tender-view-obstruction-deck-8",
+    "title": "Lifeboat Tender Davit Obstruction on Deck 8 Promenade Staterooms",
+    "category": "VIEW_OBSTRUCTION",
+    "severity": "MEDIUM",
+    "impact": "Outer balcony staterooms 8060 to 8120 overlook the fiberglass hulls of the 150-person survival craft suspended directly at rail level.",
+    "mitigation": "Book staterooms on Deck 9 Botticelli or higher, or choose Category B2/B3 Deluxe Balcony for uninterrupted 180-degree ocean horizon.",
+    "verification_type": "FIELD_MEASURED",
+    "evidence": "Verified from Chantiers de l'Atlantique General Arrangement drawing Frame 120-180."
+  }
+]

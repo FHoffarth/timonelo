@@ -1,0 +1,88 @@
+{
+  "slug": "disney-magic",
+  "name": {
+    "value": "Disney Magic",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9126807",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Disney Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Dream Class Disney",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "dream-class-disney",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "1998-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 294.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 32.2,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 83969,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 2713,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2170,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 950,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 875,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Disney Magic Main Dining Room",
+    "Disney Magic Panorama Lounge & Bar",
+    "Disney Magic Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "galveston",
+    "new-orleans",
+    "san-juan",
+    "cozumel",
+    "costa-maya"
+  ]
+}

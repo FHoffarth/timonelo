@@ -1,0 +1,42 @@
+{
+  "slug": "tampa",
+  "name": "Port Tampa Bay",
+  "un_locode": "USTPA",
+  "country": "United States",
+  "region": "Florida / Gulf Coast",
+  "coordinates": {
+    "latitude": 27.942,
+    "longitude": -82.448
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Cruise Terminals 2, 3, 6",
+      "berths": [
+        "Tampa Berth 1",
+        "Tampa Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "USD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port Tampa Bay.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

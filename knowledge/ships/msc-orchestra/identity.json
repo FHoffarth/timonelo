@@ -1,0 +1,66 @@
+{
+  "slug": "msc-orchestra",
+  "name": {
+    "value": "MSC Orchestra",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9320099",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248320099",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA0099",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Panama",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "musica-class",
+  "builder": "Aker Yards (Saint-Nazaire)",
+  "delivery_year": 2007,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 92409,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 293.8,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 32.2,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 3223,
+    "crew_capacity": 1014
+  },
+  "propulsion_and_fuel": "Marine Diesel",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Orchestra Main Dining Room",
+    "MSC Orchestra Panorama Lounge & Bar",
+    "MSC Orchestra Solarium & Pool Deck"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "category_folder": "official",
+  "source_id": "src:imo-gisis",
+  "name": "IMO Global Integrated Shipping Information System (GISIS)",
+  "owner": "International Maritime Organization (UN Specialized Agency)",
+  "category": "IMO_GISIS",
+  "website": "https://gisis.imo.org",
+  "country": "International (UN)",
+  "jurisdiction": "Global Maritime Safety",
+  "licence": "Public Statutory Maritime Safety Data",
+  "terms": "Official statutory registry for IMO ship numbers, tonnages, and flag states.",
+  "access_method": "API",
+  "allowed_usage": "Statutory vessel identity verification and flag state tracking.",
+  "update_frequency": "DAILY",
+  "last_retrieved": "2026-08-16",
+  "freshness_days": 0,
+  "priority": 1,
+  "trust_score": 1.0
+}

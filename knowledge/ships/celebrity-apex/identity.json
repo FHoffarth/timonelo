@@ -1,0 +1,89 @@
+{
+  "slug": "celebrity-apex",
+  "name": {
+    "value": "Celebrity Apex",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9838383",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Celebrity Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Edge Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "edge-class",
+  "builder": {
+    "value": "Chantiers de l'Atlantique",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2020-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 306.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 39.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 130818,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3405,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2724,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1320,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1467,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Celebrity Apex Main Dining Room",
+    "Celebrity Apex Panorama Lounge & Bar",
+    "Celebrity Apex Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "southampton",
+    "rotterdam",
+    "bergen",
+    "geiranger",
+    "flam",
+    "fort-lauderdale"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "quantum-ultra-class",
+  "name": "Quantum Ultra Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Spectrum of the Seas",
+  "lead_ship_year": 2019,
+  "gross_tonnage_typical": 169379,
+  "length_m_typical": 347.1,
+  "beam_m_typical": 41.4,
+  "passenger_capacity_max": 5622,
+  "description": "High-tech platform featuring North Star observation capsule, Two70 kinetic robotic screens, and SeaPlex."
+}

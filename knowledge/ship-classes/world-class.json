@@ -1,0 +1,14 @@
+{
+  "slug": "world-class",
+  "name": "World Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Chantiers de l'Atlantique (Saint-Nazaire)",
+  "lead_ship_name": "MSC World Europa",
+  "lead_ship_year": 2022,
+  "gross_tonnage_typical": 215863,
+  "length_m_typical": 333.3,
+  "beam_m_typical": 47.0,
+  "passenger_capacity_max": 6762,
+  "description": "LNG flagship breakthrough with distinctive 104m Y-shaped outdoor ocean promenade and plumb bow."
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "solstice-class",
+  "name": "Solstice Class",
+  "operator": "Celebrity Cruises",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Celebrity Solstice",
+  "lead_ship_year": 2008,
+  "gross_tonnage_typical": 121878,
+  "length_m_typical": 317.2,
+  "beam_m_typical": 36.8,
+  "passenger_capacity_max": 3148,
+  "description": "Features the real grass Lawn Club on the top deck and central glass atrium with floating live tree."
+}

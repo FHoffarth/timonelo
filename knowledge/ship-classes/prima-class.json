@@ -1,0 +1,14 @@
+{
+  "slug": "prima-class",
+  "name": "Prima Class",
+  "operator": "Norwegian Cruise Line",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Fincantieri (Marghera, Italy)",
+  "lead_ship_name": "Norwegian Prima",
+  "lead_ship_year": 2022,
+  "gross_tonnage_typical": 143535,
+  "length_m_typical": 293.4,
+  "beam_m_typical": 40.5,
+  "passenger_capacity_max": 3100,
+  "description": "Spacious premium design with Ocean Boulevard outdoor wrap-around walkway and three-deck go-kart racetrack."
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "viking-longship-class",
+  "name": "Viking Longship Class",
+  "operator": "Viking River Cruises",
+  "category": "RIVER_YACHT",
+  "builder_shipyard": "Neptun Werft (Rostock, Germany)",
+  "lead_ship_name": "Viking Odin",
+  "lead_ship_year": 2012,
+  "gross_tonnage_typical": 3100,
+  "length_m_typical": 135.0,
+  "beam_m_typical": 11.45,
+  "passenger_capacity_max": 190,
+  "description": "Patented asymmetric corridor design providing true two-room Explorer Suites and the Aquavit Terrace indoor/outdoor lounge."
+}

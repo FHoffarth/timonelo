@@ -1,0 +1,14 @@
+{
+  "slug": "voyager-class",
+  "name": "Voyager Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Kværner Masa-Yards (Turku, Finland)",
+  "lead_ship_name": "Voyager of the Seas",
+  "lead_ship_year": 1999,
+  "gross_tonnage_typical": 139863,
+  "length_m_typical": 311.1,
+  "beam_m_typical": 38.6,
+  "passenger_capacity_max": 4000,
+  "description": "Revolutionized cruise design with the first 4-deck indoor Royal Promenade, Studio B ice-skating rink, and rock-climbing wall at sea."
+}

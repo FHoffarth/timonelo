@@ -1,0 +1,88 @@
+{
+  "slug": "scenic-eclipse",
+  "name": {
+    "value": "Scenic Eclipse",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9797371",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Scenic Luxury Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Scenic Eclipse Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "scenic-eclipse-class",
+  "builder": {
+    "value": "Uljanik Shipyard",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2019-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 168.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 21.5,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 17545,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 228,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 182,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 176,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 114,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Scenic Eclipse Main Dining Room",
+    "Scenic Eclipse Panorama Lounge & Bar",
+    "Scenic Eclipse Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "reykjavik",
+    "tromso",
+    "honDefault-nordkapp",
+    "ushuaia",
+    "bergen"
+  ]
+}

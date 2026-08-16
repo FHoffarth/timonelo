@@ -1,0 +1,42 @@
+{
+  "slug": "reykjavik",
+  "name": "Port of Reykjavik",
+  "un_locode": "ISREY",
+  "country": "Iceland",
+  "region": "Atlantic / Iceland",
+  "coordinates": {
+    "latitude": 64.15,
+    "longitude": -21.93
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Skarfabakki & Miðbakki Harbour",
+      "berths": [
+        "Reykjavik Berth 1",
+        "Reykjavik Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Reykjavik.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

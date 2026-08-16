@@ -1,0 +1,128 @@
+[
+  {
+    "cabin_number": "14122",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 14,
+    "deck_name": "Tiziano",
+    "category": {
+      "value": "Balcony Deluxe (BR2)",
+      "evidence_type": "OFFICIAL_DOCUMENT",
+      "source": "src:chantiers-atlantique-ga-plan",
+      "verified_on": "2026-08-16",
+      "confidence": 1.0,
+      "reviewer": "chief_knowledge_architect"
+    },
+    "hull_side": {
+      "value": "STARBOARD",
+      "evidence_type": "SHIPYARD_DRAWING",
+      "source": "src:chantiers-atlantique-frame-140",
+      "confidence": 1.0
+    },
+    "zone": {
+      "value": "AFT",
+      "evidence_type": "SHIPYARD_DRAWING",
+      "confidence": 1.0
+    },
+    "interior_square_meters": {
+      "value": 19.0,
+      "unit": "m2",
+      "evidence_type": "FIELD_MEASUREMENT",
+      "source": "field_photogrammetry_audit",
+      "confidence": 0.98,
+      "verified_on": "2026-08-16"
+    },
+    "balcony_square_meters": {
+      "value": 4.5,
+      "unit": "m2",
+      "evidence_type": "FIELD_MEASUREMENT",
+      "confidence": 0.98
+    },
+    "distance_to_nearest_lift": {
+      "value": 24.5,
+      "unit": "m",
+      "status": "VERIFIED",
+      "evidence_type": "FIELD_MEASUREMENT",
+      "source": "deck_14_cad_drawing_v4",
+      "confidence": 0.97,
+      "reviewer": "systems_engineer",
+      "observation_context": "Direct corridor walking path measured from cabin door center to Aft Elevator lobby threshold."
+    },
+    "distance_to_nearest_stairs": {
+      "value": 18.0,
+      "unit": "m",
+      "evidence_type": "FIELD_MEASUREMENT",
+      "confidence": 0.97
+    },
+    "noise_risk_fact": {
+      "value": "LOW_PANTRY_ADJACENT",
+      "evidence_type": "CREW_VERIFIED",
+      "source": "crew_steward_corroboration",
+      "confidence": 0.94,
+      "observation_context": "Service pantry located 3 doors forward; service cart movement occurs 07:30-09:00."
+    },
+    "view_obstruction_fact": {
+      "value": "UNOBSTRUCTED",
+      "evidence_type": "PHOTO_ANALYSIS",
+      "source": "balcony_ocean_view_audit",
+      "confidence": 1.0
+    },
+    "step_free_accessible": {
+      "value": false,
+      "evidence_type": "OFFICIAL_DOCUMENT",
+      "confidence": 1.0
+    },
+    "vertical_neighbors": {
+      "deck_above": {
+        "value": "Marketplace Buffet Seating Area (Carpeted)",
+        "evidence_type": "SHIPYARD_DRAWING",
+        "confidence": 1.0
+      },
+      "deck_below": {
+        "value": "Residential Staterooms (Deck 13)",
+        "evidence_type": "SHIPYARD_DRAWING",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "cabin_number": "11002",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 11,
+    "deck_name": "Caravaggio",
+    "category": {
+      "value": "Balcony Deluxe (BR1)",
+      "evidence_type": "OFFICIAL_DOCUMENT",
+      "confidence": 1.0
+    },
+    "hull_side": { "value": "PORT", "confidence": 1.0 },
+    "zone": { "value": "FORWARD", "confidence": 1.0 },
+    "distance_to_nearest_lift": {
+      "value": 15.0,
+      "unit": "m",
+      "status": "VERIFIED",
+      "evidence_type": "FIELD_MEASUREMENT",
+      "confidence": 0.99
+    },
+    "noise_risk_fact": {
+      "value": "CALM",
+      "evidence_type": "CREW_VERIFIED",
+      "confidence": 0.98,
+      "observation_context": "Surrounded entirely by residential passenger staterooms above and below."
+    }
+  },
+  {
+    "cabin_number": "8110",
+    "ship_slug": "msc-bellissima",
+    "deck_number": 8,
+    "deck_name": "Raffaello",
+    "category": { "value": "Balcony with Partial View (BP)", "confidence": 1.0 },
+    "distance_to_nearest_lift": { "value": 35.0, "unit": "m", "confidence": 0.95 },
+    "view_obstruction_fact": {
+      "value": "PARTIALLY_OBSTRUCTED_DAVIT",
+      "evidence_type": "PHOTO_ANALYSIS",
+      "source": "exterior_hull_photogrammetry",
+      "confidence": 0.99,
+      "observation_context": "Lifeboat #8 davit arm intersects lower 15% of vertical downward sightline."
+    }
+  }
+]

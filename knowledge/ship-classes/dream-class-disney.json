@@ -1,0 +1,14 @@
+{
+  "slug": "dream-class-disney",
+  "name": "Dream Class (Disney)",
+  "operator": "Disney Cruise Line",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Disney Dream",
+  "lead_ship_year": 2011,
+  "gross_tonnage_typical": 129690,
+  "length_m_typical": 339.8,
+  "beam_m_typical": 37.0,
+  "passenger_capacity_max": 4000,
+  "description": "Art Deco ocean styling with the original AquaDuck water coaster and virtual porthole inside staterooms."
+}

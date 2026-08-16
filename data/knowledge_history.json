@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "claims": [
+    {
+      "claim_id": "claim:cabin:msc-bellissima:14122:distance_to_nearest_lift",
+      "entity_id": "cabin:msc-bellissima:14122",
+      "field_path": "distance_to_nearest_lift",
+      "current_revision_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v3",
+      "created_at": "2026-08-16T12:59:47.263592+00:00",
+      "last_updated_at": "2026-08-16T12:59:47.267000+00:00",
+      "revisions": [
+        {
+          "revision_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v1",
+          "revision_number": 1,
+          "value": 24.5,
+          "unit": "m",
+          "evidence_type": "SHIPYARD_DRAWING",
+          "source_id": "src:chantiers-atlantique-ga-plan-v1",
+          "confidence": 0.9,
+          "valid_from": "2019-02-27",
+          "valid_until": "2022-05-10",
+          "created_at": "2026-08-16T12:59:47.263592+00:00",
+          "created_by": "knowledge_architect",
+          "status": "SUPERSEDED",
+          "superseded_by": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v2",
+          "reason_for_change": "Initial GA plan measurement from cabin threshold to nearest vertical core.",
+          "observation_context": null
+        },
+        {
+          "revision_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v2",
+          "revision_number": 2,
+          "value": 24.7,
+          "unit": "m",
+          "evidence_type": "FIELD_MEASUREMENT",
+          "source_id": "src:corridor-routing-cad-v2",
+          "confidence": 0.95,
+          "valid_from": "2022-05-10",
+          "valid_until": "2026-08-16",
+          "created_at": "2026-08-16T12:59:47.265416+00:00",
+          "created_by": "knowledge_architect",
+          "status": "SUPERSEDED",
+          "superseded_by": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v3",
+          "reason_for_change": "Updated to reflect exact corner radius around service fire door frame 138.",
+          "observation_context": null
+        },
+        {
+          "revision_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v3",
+          "revision_number": 3,
+          "value": 24.6,
+          "unit": "m",
+          "evidence_type": "FIELD_MEASUREMENT",
+          "source_id": "src:laser-distance-audit-2026",
+          "confidence": 0.99,
+          "valid_from": "2026-08-16",
+          "valid_until": null,
+          "created_at": "2026-08-16T12:59:47.267000+00:00",
+          "created_by": "knowledge_architect",
+          "status": "ACTIVE",
+          "superseded_by": null,
+          "reason_for_change": "Direct onboard laser distance audit confirming center-to-center walking trajectory.",
+          "observation_context": "Measured during October 2026 onboard validation run."
+        }
+      ]
+    }
+  ],
+  "lifecycle_events": [
+    {
+      "event_id": "life:bellissima:keel-laying",
+      "entity_id": "ship:msc-bellissima",
+      "event_type": "KEEL_LAID",
+      "date": "2016-11-15",
+      "title": "Keel Laying at Saint-Nazaire",
+      "description": "First 500-ton steel block placed in dry dock B at Chantiers de l'Atlantique (Hull H34).",
+      "location_or_yard": "Chantiers de l'Atlantique (Saint-Nazaire, France)",
+      "source_id": "src:chantiers-atlantique-h34"
+    },
+    {
+      "event_id": "life:bellissima:float-out",
+      "entity_id": "ship:msc-bellissima",
+      "event_type": "LAUNCHED",
+      "date": "2018-06-14",
+      "title": "Float Out & Basin Transfer",
+      "description": "Drydock flooded and vessel shifted to Penho\u00ebt outfitting basin for interior completion.",
+      "location_or_yard": "Saint-Nazaire, France",
+      "source_id": "src:chantiers-atlantique-h34"
+    },
+    {
+      "event_id": "life:bellissima:delivery",
+      "entity_id": "ship:msc-bellissima",
+      "event_type": "DELIVERED",
+      "date": "2019-02-27",
+      "title": "Official Delivery & Flag Commissioning",
+      "description": "Delivery ceremony with MSC Executive Chairman Pierfrancesco Vago; commissioned under Malta flag.",
+      "location_or_yard": "Saint-Nazaire, France",
+      "source_id": "src:imo-gisis"
+    },
+    {
+      "event_id": "life:bellissima:starlink-retrofit",
+      "entity_id": "ship:msc-bellissima",
+      "event_type": "REFIT",
+      "date": "2023-09-15",
+      "title": "Starlink High-Speed LEO Maritime Retrofit",
+      "description": "Installation of flat-panel Starlink LEO antennas on mast platform for fleet-wide gigabit backhaul.",
+      "location_or_yard": "Naples Drydock, Italy",
+      "source_id": "src:msc-technical-bulletin"
+    }
+  ],
+  "downstream_impacts": [
+    {
+      "change_event_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v2",
+      "entity_id": "cabin:msc-bellissima:14122",
+      "field_changed": "distance_to_nearest_lift",
+      "old_value": 24.5,
+      "new_value": 24.7,
+      "affected_domains": [
+        "WALKING_TIME",
+        "ACCESSIBILITY_RANKING"
+      ],
+      "impact_severity": "MEDIUM",
+      "rationale": "Lift distance updated from 24.5m to 24.7m; recalculating stateroom transit index."
+    },
+    {
+      "change_event_id": "rev:claim:cabin:msc-bellissima:14122:distance_to_nearest_lift:v3",
+      "entity_id": "cabin:msc-bellissima:14122",
+      "field_changed": "distance_to_nearest_lift",
+      "old_value": 24.7,
+      "new_value": 24.6,
+      "affected_domains": [
+        "WALKING_TIME",
+        "ACCESSIBILITY_RANKING"
+      ],
+      "impact_severity": "MEDIUM",
+      "rationale": "Lift distance updated from 24.7m to 24.6m; recalculating stateroom transit index."
+    }
+  ]
+}

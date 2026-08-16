@@ -1,0 +1,66 @@
+{
+  "slug": "msc-grandiosa",
+  "name": {
+    "value": "MSC Grandiosa",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9803613",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248803613",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA3613",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "meraviglia-plus-class",
+  "builder": "Chantiers de l'Atlantique",
+  "delivery_year": 2019,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 181541,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 331.4,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 43.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 6334,
+    "crew_capacity": 1704
+  },
+  "propulsion_and_fuel": "Marine Gas Oil (SCR catalytic)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Grandiosa Main Dining Room",
+    "MSC Grandiosa Panorama Lounge & Bar",
+    "MSC Grandiosa Solarium & Pool Deck"
+  ]
+}

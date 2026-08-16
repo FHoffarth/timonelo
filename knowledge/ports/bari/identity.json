@@ -1,0 +1,41 @@
+{
+  "slug": "bari",
+  "name": "Port of Bari",
+  "un_locode": "ITBRI",
+  "country": "Italy",
+  "region": "Adriatic Sea",
+  "coordinates": {
+    "latitude": 41.135,
+    "longitude": 16.865
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Banchina di Ponente & Molo San Vito",
+      "berths": [
+        "Bari Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "EUR",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Bari.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

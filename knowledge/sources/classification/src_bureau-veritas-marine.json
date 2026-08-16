@@ -1,0 +1,19 @@
+{
+  "category_folder": "classification",
+  "source_id": "src:bureau-veritas-marine",
+  "name": "Bureau Veritas Marine Register",
+  "owner": "Bureau Veritas Marine & Offshore",
+  "category": "CLASSIFICATION_SOCIETY",
+  "website": "https://marine-offshore.bureauveritas.com",
+  "country": "France",
+  "jurisdiction": "International Classification",
+  "licence": "Public Marine Directory",
+  "terms": "Classification society records for Chantiers de l'Atlantique builds (MSC Meraviglia / Bellissima).",
+  "access_method": "HTML",
+  "allowed_usage": "Statutory classification survey tracking.",
+  "update_frequency": "MONTHLY",
+  "last_retrieved": "2026-08-01",
+  "freshness_days": 15,
+  "priority": 2,
+  "trust_score": 0.99
+}

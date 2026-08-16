@@ -1,0 +1,24 @@
+{
+  "slug": "douro-river-valley",
+  "name": "Douro River Valley",
+  "ocean_basin": "Douro River (Inland Waterway)",
+  "countries": [
+    "Portugal",
+    "Spain"
+  ],
+  "key_ports": [
+    "porto-leixoes",
+    "regua",
+    "pinhao",
+    "vega-de-terron"
+  ],
+  "season_peak": "April to October",
+  "sea_state_typical": "Completely calm inland river locks",
+  "highlights": [
+    "UNESCO Terraced Port Wine Vineyards",
+    "Historic Quinta wine estates",
+    "Carrapatelo Lock (35m drop)"
+  ],
+  "navigation_notes": "Strict navigational limits: Max vessel length 80.0m, Max beam 11.4m due to lock chamber geometry.",
+  "source": "src:apdl-douro-waterway-authority"
+}

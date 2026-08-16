@@ -1,0 +1,19 @@
+{
+  "ship_slug": "msc-bellissima",
+  "embarkation": {
+    "recommended_arrival_window": "30 minutes prior to assigned check-in slot on Cruise Ticket",
+    "terminal_baggage_drop": "Porcelain luggage tags must be stapled before terminal porter hand-off",
+    "security_boarding_deck": 5,
+    "stateroom_readiness_hour": "14:00 (Staterooms accessible via Cruise Card in door slot)",
+    "mandatory_safety_drill": "Watch safety video in cabin TV -> Dial 881 on cabin phone -> Walk to assigned Muster Station for card scan"
+  },
+  "gangway_operations": {
+    "default_gangway_deck": 5,
+    "tender_ports_gangway_deck": 4,
+    "all_aboard_strict_buffer": "All guests must be scanned on board 30 minutes before published departure time."
+  },
+  "onboard_connectivity": {
+    "satellite_provider": "Starlink Low-Earth Orbit Constellation",
+    "msc_for_me_app": "Operates free of charge over ship Wi-Fi intranet without purchasing internet package"
+  }
+}

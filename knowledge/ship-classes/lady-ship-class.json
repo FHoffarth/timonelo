@@ -1,0 +1,14 @@
+{
+  "slug": "lady-ship-class",
+  "name": "Lady Ships Class",
+  "operator": "Virgin Voyages",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Fincantieri (Sestri Ponente, Genoa)",
+  "lead_ship_name": "Scarlet Lady",
+  "lead_ship_year": 2020,
+  "gross_tonnage_typical": 110000,
+  "length_m_typical": 277.2,
+  "beam_m_typical": 38.0,
+  "passenger_capacity_max": 2770,
+  "description": "Adults-only boutique superyacht design with The Manor nightclub, Squid Ink tattoo parlour, and The Dock."
+}

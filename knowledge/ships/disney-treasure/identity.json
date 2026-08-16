@@ -1,0 +1,89 @@
+{
+  "slug": "disney-treasure",
+  "name": {
+    "value": "Disney Treasure",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9935404",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Disney Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Wish Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "wish-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2024-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 341.1,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 39.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 144000,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4000,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3200,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1555,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1256,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Disney Treasure Main Dining Room",
+    "Disney Treasure Panorama Lounge & Bar",
+    "Disney Treasure Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "port-canaveral",
+    "st-thomas",
+    "san-juan",
+    "cozumel",
+    "costa-maya",
+    "grand-cayman"
+  ]
+}

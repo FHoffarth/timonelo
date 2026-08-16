@@ -1,9 +1,6 @@
 /**
- * Photography system (Plane 5 presentation): reserved image locations for every
- * spatial entity, with elegant placeholders when an image is missing. Availability
- * is driven by a manifest (public/media/manifest.json); when an asset is not
- * listed, a placeholder renders directly — no <img> request, so there are never
- * broken images or 404s. Entity-keyed, so any future ship works unchanged.
+ * Photography system (Plane 5 presentation): authentic maritime visual assets
+ * with automatic fallback resolution and graceful placeholders.
  */
 import { useEffect, useState, type CSSProperties } from 'react';
 import { Ship, Layers, DoorClosed, Waves, Map as MapIcon } from 'lucide-react';
@@ -13,6 +10,7 @@ type Manifest = Record<string, string>;
 
 let cache: Manifest | null = null;
 let inflight: Promise<Manifest> | null = null;
+
 function loadManifest(): Promise<Manifest> {
   if (cache) return Promise.resolve(cache);
   if (!inflight) {
@@ -33,7 +31,28 @@ export function useMedia() {
       alive = false;
     };
   }, []);
-  return (id: string): string | null => manifest[id] ?? null;
+
+  return (id: string, isRiver: boolean = false): string | null => {
+    if (manifest[id]) return manifest[id];
+
+    // Fallbacks
+    if (id.startsWith('view:')) {
+      return isRiver
+        ? manifest['default:river_view'] ?? '/media/douro-river-view.jpg'
+        : manifest['default:ocean_view'] ?? '/media/balcony-ocean-view.jpg';
+    }
+    if (id.startsWith('cabin:')) {
+      return manifest['default:stateroom'] ?? '/media/stateroom-interior.jpg';
+    }
+    if (id.startsWith('ship:')) {
+      const slug = id.replace('ship:', '').toLowerCase();
+      if (manifest[id]) return manifest[id];
+      if (manifest[`ship:${slug}`]) return manifest[`ship:${slug}`];
+      return isRiver ? '/media/ms-andorinha-hero.jpg' : '/media/msc-bellissima-hero.jpg';
+    }
+
+    return null;
+  };
 }
 
 const ICON: Record<MediaKind, typeof Ship> = {

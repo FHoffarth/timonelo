@@ -1,0 +1,19 @@
+{
+  "category_folder": "classification",
+  "source_id": "src:dnv-gl-vessel-register",
+  "name": "DNV Vessel Register (Veritas)",
+  "owner": "DNV Group (Det Norske Veritas)",
+  "category": "CLASSIFICATION_SOCIETY",
+  "website": "https://vesselregister.dnv.com",
+  "country": "Norway / Germany",
+  "jurisdiction": "International Marine Classification",
+  "licence": "Authorized Marine Classification Access",
+  "terms": "Hull dimensions, gross tonnage certifications, hull framing calculations.",
+  "access_method": "PDF",
+  "allowed_usage": "Naval architecture verification.",
+  "update_frequency": "MONTHLY",
+  "last_retrieved": "2026-08-10",
+  "freshness_days": 6,
+  "priority": 2,
+  "trust_score": 0.99
+}

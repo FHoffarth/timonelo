@@ -1,0 +1,86 @@
+{
+  "slug": "spectrum-of-the-seas",
+  "name": {
+    "value": "Spectrum of the Seas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9778856",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Royal Caribbean International",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Quantum Ultra Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "quantum-ultra-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2019-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 347.1,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 41.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 169379,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 5622,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 4497,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1551,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2137,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Spectrum of the Seas Main Dining Room",
+    "Spectrum of the Seas Panorama Lounge & Bar",
+    "Spectrum of the Seas Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "singapore",
+    "shanghai",
+    "hong-kong"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "new-orleans",
+  "name": "Port of New Orleans",
+  "un_locode": "USMSY",
+  "country": "United States",
+  "region": "Gulf Coast / Mississippi",
+  "coordinates": {
+    "latitude": 29.938,
+    "longitude": -90.06
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Erato Street & Julia Street Cruise Terminals",
+      "berths": [
+        "New-Orleans Berth 1",
+        "New-Orleans Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "USD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of New Orleans.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

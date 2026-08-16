@@ -1,0 +1,87 @@
+{
+  "slug": "oasis-of-the-seas",
+  "name": {
+    "value": "Oasis of the Seas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9383936",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Royal Caribbean International",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Oasis Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "oasis-class",
+  "builder": {
+    "value": "STX Europe",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2009-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 362.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 47.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 226838,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 6780,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 5424,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 2165,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2701,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Oasis of the Seas Main Dining Room",
+    "Oasis of the Seas Panorama Lounge & Bar",
+    "Oasis of the Seas Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "bayonne-cape-liberty",
+    "fort-lauderdale",
+    "barcelona",
+    "civitavecchia"
+  ]
+}

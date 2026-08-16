@@ -1,0 +1,14 @@
+{
+  "slug": "fantasia-class",
+  "name": "Fantasia Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "STX France (Saint-Nazaire)",
+  "lead_ship_name": "MSC Fantasia",
+  "lead_ship_year": 2008,
+  "gross_tonnage_typical": 137936,
+  "length_m_typical": 333.3,
+  "beam_m_typical": 37.9,
+  "passenger_capacity_max": 4363,
+  "description": "Pioneered the MSC Yacht Club VIP ship-within-a-ship concept with forward panoramic lounge."
+}

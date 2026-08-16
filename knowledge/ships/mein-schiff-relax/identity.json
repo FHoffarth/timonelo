@@ -1,0 +1,89 @@
+{
+  "slug": "mein-schiff-relax",
+  "name": {
+    "value": "Mein Schiff Relax",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9880051",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "TUI Cruises (Mein Schiff)",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Intuition Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "intuition-class",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2024-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 333.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 42.1,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 160000,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4100,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3280,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1530,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1945,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Mein Schiff Relax Main Dining Room",
+    "Mein Schiff Relax Panorama Lounge & Bar",
+    "Mein Schiff Relax Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "palma-de-mallorca",
+    "barcelona",
+    "marseille",
+    "civitavecchia",
+    "la-spezia",
+    "valencia"
+  ]
+}

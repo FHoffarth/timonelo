@@ -1,0 +1,19 @@
+{
+  "deployment_id": "dep:bellissima:summer-2026",
+  "ship_slug": "msc-bellissima",
+  "season": "SUMMER_2026",
+  "region_slug": "western-mediterranean",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille"
+  ],
+  "primary_routes": [
+    "western-mediterranean-7n"
+  ],
+  "start_date": "2026-04-15",
+  "end_date": "2026-10-31",
+  "notes": "7-night circular Western Mediterranean deployment with multi-port embarkation.",
+  "source_id": "src:official-msc-deployments-2026"
+}

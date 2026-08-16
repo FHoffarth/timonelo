@@ -1,0 +1,41 @@
+{
+  "slug": "port-everglades",
+  "name": "Port Everglades (Fort Lauderdale)",
+  "un_locode": "USPEF",
+  "country": "United States",
+  "region": "Florida / Caribbean",
+  "coordinates": {
+    "latitude": 26.0864,
+    "longitude": -80.1189
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Terminal 25 & 18",
+      "berths": [
+        "Port-Everglades Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "USD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port Everglades.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

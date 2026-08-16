@@ -166,7 +166,7 @@ export function CabinReport({ ship, cabin, lens }: { ship: ShipData; cabin: Cabi
             <DistRow label="Nearest Elevator" d={cabin.distances.elevator} />
           </tbody>
         </table>
-        <p className="mt-2 text-[9pt]" style={{ color: '#666' }}>Distances are deterministic routes through the ship’s circulation graph. Unknown destinations are not yet mapped for this cabin.</p>
+        <p className="mt-2 text-[9pt]" style={{ color: '#666' }}>Distances are measured walking routes through the ship’s corridors and elevators. Unmapped areas are marked clearly.</p>
       </Section>
 
       {/* Section 5 — Traveler Lens (selected only) */}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "neg:icon:aquadome-evening-reservations",
+    "title": "Mandatory Pre-Booking Required for AquaDome Shows",
+    "category": "ELEVATOR_CONGESTION",
+    "severity": "HIGH",
+    "impact": "Standby lines for Aqua Action water performances in the forward AquaDome stretch around Deck 15 with zero guaranteed admittance without an app reservation.",
+    "mitigation": "Book all AquaDome and Ice-skating show slots via the Royal Caribbean app at 00:01 on embarkation day.",
+    "verification_type": "OFFICIAL",
+    "evidence": "Royal Caribbean Guest Entertainment Policy aboard Icon Class."
+  }
+]

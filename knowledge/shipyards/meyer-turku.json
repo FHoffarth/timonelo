@@ -1,0 +1,24 @@
+{
+  "slug": "meyer-turku",
+  "name": "Meyer Turku",
+  "country": "Finland",
+  "city": "Turku",
+  "coordinates": {
+    "latitude": 60.45,
+    "longitude": 22.1333
+  },
+  "facilities": "Drydock 365m, Goliath gantry crane 1200 tons",
+  "notable_builds": [
+    "Icon of the Seas",
+    "Star of the Seas",
+    "Oasis of the Seas",
+    "Allure of the Seas",
+    "Mardi Gras",
+    "Costa Smeralda"
+  ],
+  "specialties": [
+    "World-record gross tonnage mega-resort ships",
+    "Complex superstructure glass geodesic domes"
+  ],
+  "source": "src:meyer-turku-corporate"
+}

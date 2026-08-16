@@ -1,0 +1,14 @@
+{
+  "slug": "intuition-class",
+  "name": "InTUItion Class",
+  "operator": "TUI Cruises (Mein Schiff)",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Fincantieri (Monfalcone, Italy)",
+  "lead_ship_name": "Mein Schiff Relax",
+  "lead_ship_year": 2024,
+  "gross_tonnage_typical": 160000,
+  "length_m_typical": 333.0,
+  "beam_m_typical": 42.1,
+  "passenger_capacity_max": 4100,
+  "description": "Dual-fuel LNG generation with expanded wellness park, panoramic barrel saunas, and 25m running track."
+}

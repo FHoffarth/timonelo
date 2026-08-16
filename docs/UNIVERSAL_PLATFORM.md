@@ -82,8 +82,8 @@ The platform supports uniform, permanent public URLs across all vessel classes:
 ├──────────────────────────────┼──────────────────┼──────────────────┼────────────────────────┤
 │ **MSC Bellissima**           │ IMO 9766205      │ MSC Cruises      │ Primary Ocean Baseline │
 │ **MS Andorinha**             │ ENI 02338573     │ Tauck / Scylla   │ Primary River Baseline │
-│ **MSC Grandiosa**            │ IMO 9803613      │ MSC Cruises      │ Stretched Plus Patch   │
-│ **MSC Meraviglia**           │ IMO 9647710      │ MSC Cruises      │ Sister Ship Patch      │
+│ **MSC Meraviglia**           │ IMO 9647710      │ MSC Cruises      │ Class Prototype Patch  │
+│ **MSC Grandiosa**            │ IMO 9803613      │ MSC Cruises      │ Meraviglia Plus Patch  │
 └──────────────────────────────┴──────────────────┴──────────────────┴────────────────────────┘
 ```
 

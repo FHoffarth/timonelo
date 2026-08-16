@@ -1,0 +1,41 @@
+{
+  "slug": "singapore",
+  "name": "Singapore Marina Bay Cruise Centre (MBCCS)",
+  "un_locode": "SGSIN",
+  "country": "Singapore",
+  "region": "Southeast Asia",
+  "coordinates": {
+    "latitude": 1.268,
+    "longitude": 103.861
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Marina Bay Cruise Centre Singapore",
+      "berths": [
+        "Singapore Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "SGD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "999"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Singapore Marina Bay Cruise Centre.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "msc-bellissima",
+  "name": {
+    "value": "MSC Bellissima",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9766205",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248766205",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA6205",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "meraviglia-class",
+  "builder": "Chantiers de l'Atlantique",
+  "delivery_year": 2019,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 171598,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 315.8,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 43.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 5655,
+    "crew_capacity": 1536
+  },
+  "propulsion_and_fuel": "Marine Gas Oil (SCR equipped)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "Galleria Bellissima (80m LED Dome Promenade)",
+    "London Theatre (975 seats)",
+    "Marketplace Buffet (Deck 15 Aft)",
+    "Carousel Lounge",
+    "Atmosphere Pool"
+  ],
+  "evidence_conflicts": [
+    {
+      "conflict_id": "conf:bellissima:cabin-8110-category",
+      "field": "cabins.8110.category",
+      "primary_source": "Official Deck Plan 2024 (Category BP)",
+      "primary_value": "Balcony with Partial View",
+      "competing_source": "Passenger Cruise Critic Audit 2025 (Category BA)",
+      "competing_value": "Standard Deluxe Balcony",
+      "confidence_primary": 0.95,
+      "confidence_competing": 0.7,
+      "notes": "Official shipyard GA drawing confirms Lifeboat 8 davit intrusion at rail level; retain BP classification."
+    }
+  ]
+}

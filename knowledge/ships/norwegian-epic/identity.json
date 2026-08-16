@@ -1,0 +1,89 @@
+{
+  "slug": "norwegian-epic",
+  "name": {
+    "value": "Norwegian Epic",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9410727",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Norwegian Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Breakaway Plus Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "breakaway-plus-class",
+  "builder": {
+    "value": "STX Europe",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2010-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 329.5,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 40.6,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 155873,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 5183,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 4146,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1724,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2114,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Norwegian Epic Main Dining Room",
+    "Norwegian Epic Panorama Lounge & Bar",
+    "Norwegian Epic Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "barcelona",
+    "marseille",
+    "civitavecchia",
+    "naples",
+    "palma-de-mallorca",
+    "san-juan"
+  ]
+}

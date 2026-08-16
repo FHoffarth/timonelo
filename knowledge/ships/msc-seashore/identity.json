@@ -1,0 +1,66 @@
+{
+  "slug": "msc-seashore",
+  "name": {
+    "value": "MSC Seashore",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9805336",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248805336",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA5336",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "seaside-evo-class",
+  "builder": "Fincantieri (Monfalcone)",
+  "delivery_year": 2021,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 170412,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 339.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 41.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 5877,
+    "crew_capacity": 1648
+  },
+  "propulsion_and_fuel": "Marine Gas Oil (SCR Catalytic Converter)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Seashore Main Dining Room",
+    "MSC Seashore Panorama Lounge & Bar",
+    "MSC Seashore Solarium & Pool Deck"
+  ]
+}

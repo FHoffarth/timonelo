@@ -1,0 +1,44 @@
+{
+  "slug": "danube-imperial-capitals-7n",
+  "title": "7-Night Imperial Danube (Three Capitals)",
+  "region": "Danube River",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "passau",
+      "port_name": "Passau",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "vienna",
+      "port_name": "Vienna",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "bratislava",
+      "port_name": "Bratislava",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "budapest",
+      "port_name": "Budapest (Parliament)",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "passau",
+      "port_name": "Passau",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Viking River",
+    "AmaWaterways",
+    "Tauck",
+    "Scenic"
+  ]
+}

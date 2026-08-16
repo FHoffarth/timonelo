@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "galleria-meraviglia",
+    "name": "Galleria Meraviglia",
+    "ship_slug": "msc-meraviglia",
+    "deck_number": 6,
+    "deck_name": "Leonardo da Vinci",
+    "venue_type": "PROMENADE",
+    "category": "PUBLIC_SANCTUARY",
+    "capacity": 800,
+    "opening_context": "24 Hours Open",
+    "noise_level": "VIBRANT",
+    "step_free_access": true,
+    "dress_code": "Casual",
+    "signature_features": [
+      "80-meter LED Sky Dome showing digital visual shows",
+      "Swarovski crystal staircase",
+      "Brass Anchor specialty boutiques"
+    ],
+    "nearest_lift": "Midship Panoramic Elevators",
+    "trust_level": "OFFICIAL"
+  },
+  {
+    "slug": "broadway-theatre-meraviglia",
+    "name": "Broadway Theatre",
+    "ship_slug": "msc-meraviglia",
+    "deck_number": 5,
+    "deck_name": "Corbett",
+    "venue_type": "THEATRE",
+    "category": "INCLUDED",
+    "capacity": 975,
+    "opening_context": "Showtimes 19:30, 21:00",
+    "noise_level": "VIBRANT",
+    "step_free_access": true,
+    "dress_code": "Smart Casual",
+    "signature_features": [
+      "Full theatrical stage and multi-level orchestra pit",
+      "Direct level access from Deck 5 Forward Lobby"
+    ],
+    "nearest_lift": "Forward Elevator Bank",
+    "trust_level": "OFFICIAL"
+  }
+]
