@@ -1,0 +1,19 @@
+{
+  "category_folder": "cruise-lines",
+  "source_id": "src:msc-cruises-official",
+  "name": "MSC Cruises Official Fleet & Deployment Releases",
+  "owner": "MSC Cruises S.A. (Geneva, Switzerland)",
+  "category": "CRUISE_LINE",
+  "website": "https://www.msccruises.com",
+  "country": "Switzerland",
+  "jurisdiction": "Commercial Maritime Operator",
+  "licence": "Public Customer Operations & Deck Plans",
+  "terms": "Official stateroom categorization, venue menus, and itinerary schedules.",
+  "access_method": "HTML",
+  "allowed_usage": "Passenger experience modeling and deck plan verification.",
+  "update_frequency": "WEEKLY",
+  "last_retrieved": "2026-08-16",
+  "freshness_days": 0,
+  "priority": 3,
+  "trust_score": 0.95
+}

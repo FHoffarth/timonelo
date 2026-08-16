@@ -1,0 +1,23 @@
+{
+  "slug": "scylla-vahali",
+  "name": "Scylla AG / Vahali Shipyards",
+  "country": "Switzerland / Netherlands",
+  "city": "Baar (HQ) / Gendt (Shipyard)",
+  "coordinates": {
+    "latitude": 51.8767,
+    "longitude": 5.9617
+  },
+  "facilities": "Rhine river slipways, custom interior outfitting quays",
+  "notable_builds": [
+    "MS Andorinha (Douro)",
+    "MS Inspire",
+    "MS Joy",
+    "MS Savor",
+    "MS Grace"
+  ],
+  "specialties": [
+    "Custom luxury boutique river yachts",
+    "Strict river lock dimensioning (Douro, Danube, Rhine)"
+  ],
+  "source": "src:scylla-ag-naval-specs"
+}

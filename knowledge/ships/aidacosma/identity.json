@@ -1,0 +1,88 @@
+{
+  "slug": "aidacosma",
+  "name": {
+    "value": "AIDAcosma",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9781877",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Italy",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "AIDA Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Helios Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "helios-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2021-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 337.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 42.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 183900,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 6600,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 5280,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1500,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2732,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "AIDAcosma Main Dining Room",
+    "AIDAcosma Panorama Lounge & Bar",
+    "AIDAcosma Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "palma-de-mallorca",
+    "barcelona",
+    "marseille",
+    "civitavecchia",
+    "la-spezia"
+  ]
+}

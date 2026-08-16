@@ -1,0 +1,87 @@
+{
+  "slug": "mariner-of-the-seas",
+  "name": {
+    "value": "Mariner of the Seas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9227510",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Royal Caribbean International",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Voyager Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "voyager-class",
+  "builder": {
+    "value": "Kværner Masa-Yards",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2003-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 311.1,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 38.6,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 139863,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4000,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3200,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1200,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1674,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Mariner of the Seas Main Dining Room",
+    "Mariner of the Seas Panorama Lounge & Bar",
+    "Mariner of the Seas Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "galveston",
+    "port-canaveral",
+    "cozumel",
+    "costa-maya"
+  ]
+}

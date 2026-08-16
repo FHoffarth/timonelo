@@ -1,0 +1,16 @@
+{
+  "name": "MSC Grandiosa",
+  "imo_number": "IMO9803613",
+  "ship_class": "Meraviglia-Plus Class",
+  "builder": "Chantiers de l'Atlantique (Saint-Nazaire, France)",
+  "hull_number": "C34",
+  "delivery_date": "2019-10-31",
+  "maiden_voyage": "2019-11-10",
+  "length_overall_meters": 331.43,
+  "beam_meters": 43.0,
+  "gross_tonnage": 181541,
+  "total_decks": 19,
+  "passenger_decks": 15,
+  "baseline_reference_vessel": "MSC Bellissima (IMO9766205)",
+  "inheritance_type": "SPEC-008_MERAVIGLIA_PLUS_STRETCH_PATCH"
+}

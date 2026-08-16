@@ -1,0 +1,41 @@
+{
+  "slug": "cabo-san-lucas",
+  "name": "Port of Cabo San Lucas (Baja California)",
+  "un_locode": "MXCSL",
+  "country": "Mexico",
+  "region": "Mexican Riviera",
+  "coordinates": {
+    "latitude": 22.88,
+    "longitude": -109.91
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Marina Cabo Tender Pier (Land's End Arch)",
+      "berths": [
+        "Cabo-San-Lucas Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "MXN",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Cabo San Lucas.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

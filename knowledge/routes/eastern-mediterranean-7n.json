@@ -1,0 +1,56 @@
+{
+  "slug": "eastern-mediterranean-7n",
+  "title": "7-Night Greek Isles & Aegean Odyssey",
+  "region": "Eastern Mediterranean",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "piraeus",
+      "port_name": "Piraeus (Athens)",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "santorini",
+      "port_name": "Santorini",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "kusadasi",
+      "port_name": "Kusadasi (Ephesus)",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "mykonos",
+      "port_name": "Mykonos",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "rhodes",
+      "port_name": "Rhodes",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "heraklion",
+      "port_name": "Heraklion (Crete)",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "piraeus",
+      "port_name": "Piraeus (Athens)",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Celebrity Cruises",
+    "Norwegian Cruise Line",
+    "Virgin Voyages",
+    "MSC Cruises"
+  ]
+}

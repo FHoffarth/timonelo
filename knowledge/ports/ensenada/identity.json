@@ -1,0 +1,41 @@
+{
+  "slug": "ensenada",
+  "name": "Port of Ensenada (Baja California)",
+  "un_locode": "MXESE",
+  "country": "Mexico",
+  "region": "Mexican Riviera",
+  "coordinates": {
+    "latitude": 31.855,
+    "longitude": -116.62
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Muelle de Cruceros Ensenada",
+      "berths": [
+        "Ensenada Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "MXN",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Ensenada.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

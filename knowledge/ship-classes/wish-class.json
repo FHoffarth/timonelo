@@ -1,0 +1,14 @@
+{
+  "slug": "wish-class",
+  "name": "Wish Class",
+  "operator": "Disney Cruise Line",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Disney Wish",
+  "lead_ship_year": 2022,
+  "gross_tonnage_typical": 144000,
+  "length_m_typical": 341.1,
+  "beam_m_typical": 39.0,
+  "passenger_capacity_max": 4000,
+  "description": "Enchanted castle atrium motif, AquaMouse water coaster, and theatrical dining venues (Arendelle & Marvel)."
+}

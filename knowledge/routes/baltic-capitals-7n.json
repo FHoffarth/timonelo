@@ -1,0 +1,56 @@
+{
+  "slug": "baltic-capitals-7n",
+  "title": "7-Night Baltic Capitals & Scandinavia",
+  "region": "Baltic Sea",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "copenhagen",
+      "port_name": "Copenhagen",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "warnemunde-rostock",
+      "port_name": "Warnemünde",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "tallinn",
+      "port_name": "Tallinn",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "helsinki",
+      "port_name": "Helsinki",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "stockholm",
+      "port_name": "Stockholm",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "riga",
+      "port_name": "Riga",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "copenhagen",
+      "port_name": "Copenhagen",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "TUI Cruises",
+    "AIDA Cruises",
+    "MSC Cruises",
+    "Viking Ocean"
+  ]
+}

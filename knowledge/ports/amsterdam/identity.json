@@ -1,0 +1,42 @@
+{
+  "slug": "amsterdam",
+  "name": "Passenger Terminal Amsterdam (PTA)",
+  "un_locode": "NLAMS",
+  "country": "Netherlands",
+  "region": "Northern Europe",
+  "coordinates": {
+    "latitude": 52.378,
+    "longitude": 4.915
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Passenger Terminal Amsterdam (Piet Heinkade)",
+      "berths": [
+        "Amsterdam Berth 1",
+        "Amsterdam Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "EUR",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Passenger Terminal Amsterdam.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

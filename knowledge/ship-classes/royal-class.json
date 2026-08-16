@@ -1,0 +1,14 @@
+{
+  "slug": "royal-class",
+  "name": "Royal Class",
+  "operator": "Princess Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Fincantieri (Monfalcone, Italy)",
+  "lead_ship_name": "Royal Princess",
+  "lead_ship_year": 2013,
+  "gross_tonnage_typical": 142714,
+  "length_m_typical": 330.0,
+  "beam_m_typical": 38.4,
+  "passenger_capacity_max": 4272,
+  "description": "Pioneered the cantilevered glass-bottom SeaWalk extending 28 feet beyond the starboard edge."
+}

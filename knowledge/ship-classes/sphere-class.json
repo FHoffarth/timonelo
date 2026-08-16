@@ -1,0 +1,14 @@
+{
+  "slug": "sphere-class",
+  "name": "Sphere Class",
+  "operator": "Princess Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Fincantieri (Monfalcone, Italy)",
+  "lead_ship_name": "Sun Princess",
+  "lead_ship_year": 2024,
+  "gross_tonnage_typical": 177882,
+  "length_m_typical": 345.3,
+  "beam_m_typical": 42.0,
+  "passenger_capacity_max": 4300,
+  "description": "Next-generation LNG platform with The Sphere glass atrium and The Dome glass-enclosed water sanctuary."
+}

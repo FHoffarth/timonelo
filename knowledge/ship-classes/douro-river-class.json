@@ -1,0 +1,14 @@
+{
+  "slug": "douro-river-class",
+  "name": "Douro Custom River Class",
+  "operator": "Tauck / Scylla AG",
+  "category": "RIVER_YACHT",
+  "builder_shipyard": "Vahali Shipyards / Scylla AG",
+  "lead_ship_name": "MS Andorinha",
+  "lead_ship_year": 2020,
+  "gross_tonnage_typical": 1800,
+  "length_m_typical": 80.0,
+  "beam_m_typical": 11.4,
+  "passenger_capacity_max": 84,
+  "description": "Engineered strictly for the 83m locks and shallow riverbed of Portugal's UNESCO Douro Valley."
+}

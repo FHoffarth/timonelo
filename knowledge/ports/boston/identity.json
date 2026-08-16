@@ -1,0 +1,42 @@
+{
+  "slug": "boston",
+  "name": "Port of Boston (Flynn Cruiseport)",
+  "un_locode": "USBOS",
+  "country": "United States",
+  "region": "New England",
+  "coordinates": {
+    "latitude": 42.342,
+    "longitude": -71.032
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Flynn Cruiseport Boston (Black Falcon Ave)",
+      "berths": [
+        "Boston Berth 1",
+        "Boston Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "USD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Boston.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

@@ -23,12 +23,16 @@ Recommended reading sequence:
 │                                                                             │
 │  1. [ MANIFESTO.md ] ────────── Why Timonelo exists & core philosophy       │
 │  2. [ CANON.md ] ────────────── Epistemic definitions & 20 spatial laws     │
-│  3. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
-│  4. [ ARCHITECTURE.md ] ─────── Technical boundaries & Five-Plane model     │
-│  5. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
-│  6. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
-│  7. [ ROADMAP.md ] ──────────── Milestone progression & future scaling      │
-│  8. [ CONTRIBUTING.md ] ─────── How to contribute code, data & cartography  │
+│  3. [ DECISION_FIRST.md ] ───── The Decision Pyramid & certainty philosophy │
+│  4. [ CRUISE_INTELLIGENCE.md ] ─ Complete journey lifecycle & pillars A & B │
+│  5. [ PRODUCT.md ] ──────────── Screen specs, cabin briefing & personas     │
+│  6. [ ARCHITECTURE.md ] ─────── Technical boundaries & Five-Plane model     │
+│  7. [ ENGINEERING_PRINCIPLES ]─ Code rules, determinism & performance       │
+│  8. [ TRUST_FRAMEWORK.md ] ──── Evidence hierarchy & institutional trust    │
+│  9. [ BRIDGE_OFFICER.md ] ───── Constitutional voice & conversational guide │
+│  10. [ SHIPBOOK.md ] ────────── How a vessel becomes Timonelo (Shipbook)    │
+│  11. [ ROADMAP.md ] ─────────── Milestone progression & future scaling      │
+│  12. [ CONTRIBUTING.md ] ────── How to contribute code, data & cartography  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -38,10 +42,14 @@ Recommended reading sequence:
 | :--- | :--- |
 | **[MANIFESTO.md](MANIFESTO.md)** | Purpose, negative boundaries, and experience hierarchy ($Experience \uparrow Orientation \uparrow Knowledge \uparrow Assets$). |
 | **[CANON.md](CANON.md)** | Immutable definitions (*Canonical, Verified, Unknown, Experience Ready*), strict terminology, and the 20 Spatial Laws. |
+| **[DECISION_FIRST.md](DECISION_FIRST.md)** | The Decision-First Constitution: Decision Pyramid, certainty optimization, and resolution over interaction. |
+| **[CRUISE_INTELLIGENCE.md](CRUISE_INTELLIGENCE.md)** | Constitutional expansion from Ship Intelligence to Cruise Intelligence and the Travel Operating System. |
 | **[PRODUCT.md](PRODUCT.md)** | Cabin Briefing standards, the 16 Human Experience Dimensions, and 8 User Personas. |
 | **[ARCHITECTURE.md](ARCHITECTURE.md)** | Technical module boundaries, Spatial Engine specification, and pipeline data flow. |
 | **[ENGINEERING_PRINCIPLES.md](ENGINEERING_PRINCIPLES.md)** | Code invariants: determinism, immutable contracts, zero layout shifts, and offline-first capability. |
 | **[TRUST_FRAMEWORK.md](TRUST_FRAMEWORK.md)** | Five-tier evidence hierarchy, two-source verification rule, and non-commercial independence. |
+| **[BRIDGE_OFFICER.md](BRIDGE_OFFICER.md)** | The permanent Bridge Officer Constitution, Conversational Canon, and Oath. |
+| **[SHIPBOOK.md](SHIPBOOK.md)** | The permanent operational handbook for vessel ingestion, compilation, and certification. |
 | **[ROADMAP.md](ROADMAP.md)** | Milestone execution plan spanning from M0 foundation through multi-ship scaling. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contribution standards for code, vector cartography, field photography, and knowledge records. |
 
@@ -57,6 +65,7 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ## 3. Technical & Factory Specifications
 
+- **[UNIVERSAL_PLATFORM.md](UNIVERSAL_PLATFORM.md)**: Universal Vessel Intelligence Platform architecture & cross-category validation.
 - **[Explorer Architecture](explorer-architecture.md)**: Web runtime specification for rendering canonical Knowledge Packs.
 - **[Domain Model Specification](architecture/DOMAIN_MODEL.md)**: Entity-relationship specifications for spatial domains.
 - **[Knowledge Factory Specifications](factory/README.md)**:
@@ -66,6 +75,10 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
   - [SPEC-005: Importer Architecture](factory/SPEC-005-importer-architecture.md)
   - [SPEC-006: Relationship Builder](factory/SPEC-006-relationship-builder.md)
   - [SPEC-007: Validation Framework](factory/SPEC-007-validation-framework.md)
+  - **[SPEC-008: Ship Patch Specification](SHIP_PATCH_SPECIFICATION.md)**: Non-destructive delta compilation schema for fleet inheritance.
+- **Fleet Scaling Blueprints**:
+  - **[MERAVIGLIA_BUILD_PLAN.md](MERAVIGLIA_BUILD_PLAN.md)**: Build plan & delta inheritance for Ship #2 (*MSC Meraviglia*).
+  - **[FLEET_ROADMAP.md](FLEET_ROADMAP.md)**: Global fleet roadmap spanning 500+ cruise vessels across major global operators.
 - **Knowledge Explorer Tooling**:
   - [Knowledge Explorer Guide](Knowledge%20Explorer.md)
   - [Knowledge Index Guide](Knowledge%20Index.md)
@@ -74,6 +87,27 @@ Foundational architectural choices are captured and maintained under [`docs/adr/
 
 ---
 
-## 4. Governance Policy
+## 4. Technical Audits & Operational Certifications
+
+- **[ANDORINHA_FACTORY_VALIDATION.md](ANDORINHA_FACTORY_VALIDATION.md)**: Universal River Vessel Validation Report on *MS Andorinha* (Tauck / Scylla Douro Class).
+- **[MSC_GRANDIOSA_FACTORY_VALIDATION.md](MSC_GRANDIOSA_FACTORY_VALIDATION.md)**: Factory Validation Report on first Meraviglia-Plus stretched hull compilation (*MSC Grandiosa*).
+- **[MERAVIGLIA_FACTORY_VALIDATION.md](MERAVIGLIA_FACTORY_VALIDATION.md)**: Official Factory Validation Report & Platform Proof through compilation of Ship #2 (*MSC Meraviglia*).
+- **[REALITY_CERTIFICATION.md](REALITY_CERTIFICATION.md)**: Naval Surveyor ground-truth comparison and reality classification ledger.
+- **[PRODUCTION_READINESS_REPORT.md](PRODUCTION_READINESS_REPORT.md)**: Final QA stress test, 100 simulated passenger journeys, and Production Launch Certification (GO).
+- **[SHIPYARD_READY.md](SHIPYARD_READY.md)**: Formal shipyard readiness certification and multi-vessel scaling blueprint.
+- **[MERAVIGLIA_INHERITANCE.md](MERAVIGLIA_INHERITANCE.md)**: Class-level inheritance and shipyard reuse analysis across the Meraviglia & Meraviglia-Plus fleet.
+- **[BELLISSIMA_COMPLETENESS_REPORT.md](BELLISSIMA_COMPLETENESS_REPORT.md)**: Formal certification and completeness matrix of MSC Bellissima as a 100% Operational Digital Twin.
+- **[AUDIT_BELLISSIMA_v1.md](AUDIT_BELLISSIMA_v1.md)**: Formal adversarial audit and epistemic verification of the MSC Bellissima reference implementation v1.0.
+- **[AUDIT_BELLISSIMA_v2.md](AUDIT_BELLISSIMA_v2.md)**: Scientific peer review and spatial systems audit of industrial-scale ontology, graph circulation, and Knowledge Factory maturity.
+
+---
+
+## 5. Historical Records & Milestones
+
+- **[FOUNDING.md](FOUNDING.md)**: The founding record of August 2026, marking the transition from concept to permanent spatial platform.
+
+---
+
+## 6. Governance Policy
 
 As of **Milestone v1.0**, the foundation documents in this repository are **FROZEN**. Modifications to core contracts, definitions, or boundaries require a formal Architecture Decision Record (ADR) and maintainer review.

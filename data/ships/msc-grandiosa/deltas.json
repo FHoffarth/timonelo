@@ -1,0 +1,57 @@
+{
+  "$schema": "https://timonelo.org/schemas/ship-patch-v1.json",
+  "patch_version": "1.0.0",
+  "target_imo": "IMO9803613",
+  "target_name": "MSC Grandiosa",
+  "ship_class": "Meraviglia-Plus Class",
+  "length_overall_meters": 331.43,
+  "beam_meters": 43.0,
+  "total_decks": 19,
+  "base_vessel_imo": "IMO9766205",
+  "base_vessel_name": "MSC Bellissima",
+  "operations": [
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_PROMENADE",
+      "new_name": "Galleria Grandiosa (93m LED Dome Promenade)"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_THEATER",
+      "new_name": "Théâtre La Comédie (Lower Level)"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 7,
+      "venue_id": "VENUE_THEATER_UPPER",
+      "new_name": "Théâtre La Comédie (Balcony Level)"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 6,
+      "venue_id": "VENUE_IL_CILIEGIO",
+      "new_name": "La Loggia & La Perla Grigia Restaurant"
+    },
+    {
+      "op": "RENAME_VENUE",
+      "deck": 7,
+      "venue_id": "VENUE_CAROUSEL_LOUNGE",
+      "new_name": "Carousel Lounge (Carousel Productions At Sea)"
+    },
+    {
+      "op": "ADD_VENUE",
+      "deck": 6,
+      "venue": {
+        "venue_id": "VENUE_LATELIER_BISTROT",
+        "name": "L'Atelier Bistrot & Art Gallery",
+        "category": "BAR_LOUNGE",
+        "boundary_polygon": [[0.48, -0.4], [0.55, -0.4], [0.55, -0.1], [0.48, -0.1]],
+        "entrance_node_ids": ["D06_PROMENADE"],
+        "is_noise_generator": false,
+        "is_open_deck": false
+      }
+    }
+  ]
+}

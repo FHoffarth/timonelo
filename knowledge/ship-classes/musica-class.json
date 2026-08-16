@@ -1,0 +1,14 @@
+{
+  "slug": "musica-class",
+  "name": "Musica Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_STANDARD",
+  "builder_shipyard": "Aker Yards (Saint-Nazaire)",
+  "lead_ship_name": "MSC Musica",
+  "lead_ship_year": 2006,
+  "gross_tonnage_typical": 92409,
+  "length_m_typical": 293.8,
+  "beam_m_typical": 32.2,
+  "passenger_capacity_max": 3223,
+  "description": "Classic mid-sized European cruise platform known for warm ambient lighting and central cascading waterfalls."
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "carnival-jubilee",
+  "name": {
+    "value": "Carnival Jubilee",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9851737",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Carnival Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Excel Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "excel-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2023-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 344.4,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 42.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 182800,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 6500,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 5200,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1735,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2687,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Carnival Jubilee Main Dining Room",
+    "Carnival Jubilee Panorama Lounge & Bar",
+    "Carnival Jubilee Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "galveston",
+    "cozumel",
+    "costa-maya",
+    "roatan"
+  ]
+}

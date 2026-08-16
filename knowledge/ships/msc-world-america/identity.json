@@ -1,0 +1,66 @@
+{
+  "slug": "msc-world-america",
+  "name": {
+    "value": "MSC World America",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9837432",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248837432",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA7432",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "world-class",
+  "builder": "Chantiers de l'Atlantique",
+  "delivery_year": 2025,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 215863,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 333.3,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 47.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 6762,
+    "crew_capacity": 2138
+  },
+  "propulsion_and_fuel": "Dual-Fuel LNG & Shore Power Connectivity",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC World America Main Dining Room",
+    "MSC World America Panorama Lounge & Bar",
+    "MSC World America Solarium & Pool Deck"
+  ]
+}

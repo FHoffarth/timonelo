@@ -1,0 +1,14 @@
+{
+  "slug": "excel-class",
+  "name": "Excel Class",
+  "operator": "Carnival Cruise Line",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Turku (Turku, Finland)",
+  "lead_ship_name": "Mardi Gras",
+  "lead_ship_year": 2021,
+  "gross_tonnage_typical": 181808,
+  "length_m_typical": 344.4,
+  "beam_m_typical": 42.0,
+  "passenger_capacity_max": 6500,
+  "description": "LNG mega-platform featuring BOLT, the first roller coaster at sea, and six themed experiential zones."
+}

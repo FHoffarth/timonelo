@@ -1,0 +1,21 @@
+{
+  "slug": "galleria-bellissima",
+  "name": "Galleria Bellissima",
+  "ship_slug": "msc-bellissima",
+  "venue_type": "PROMENADE_ATRIUM",
+  "deck_number": 6,
+  "deck_span": [6, 7],
+  "longitudinal_zone": "MIDSHIP",
+  "hull_side": "CENTERLINE",
+  "length_m": 80.0,
+  "features": [
+    "80m Curved LED Sky Screen Dome",
+    "Swarovski Crystal Staircase",
+    "Jean-Philippe Maury Chocolat & Café",
+    "Bellissima Bar & Lounge",
+    "Specialty Dining Boutiques"
+  ],
+  "nearest_elevators": "Midship Glass Lift Core (Direct access)",
+  "noise_profile": "VIBRANT_DAY_AND_NIGHT",
+  "sources": ["src:msc-bellissima-factsheet-2024"]
+}

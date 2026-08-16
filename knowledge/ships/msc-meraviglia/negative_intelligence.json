@@ -1,0 +1,22 @@
+[
+  {
+    "id": "neg:meraviglia:polar-aquapark-sound-deck-14",
+    "title": "Water Splash & Child Audio Resonance under Deck 15 Midship Pool",
+    "category": "ACOUSTIC",
+    "severity": "MEDIUM",
+    "impact": "Cabins directly below the midship Atmosphere Pool and Polar Aquapark on Deck 14 experience running steps and splash resonance between 10:00 and 18:00.",
+    "mitigation": "Choose staterooms forward of Frame 80 on Deck 12 or 13, completely insulated from active pool decks above.",
+    "verification_type": "CREW_VERIFIED",
+    "evidence": "Observed on MSC Meraviglia transatlantic and Caribbean deployment."
+  },
+  {
+    "id": "neg:meraviglia:manhattan-terminal-embarkation-queue",
+    "title": "Pier 88/90 Escalator Bottleneck during Manhattan Embarkation",
+    "category": "EMBARKATION",
+    "severity": "HIGH",
+    "impact": "Arriving outside scheduled boarding times creates 45+ minute queues along 12th Avenue curbside.",
+    "mitigation": "Strictly adhere to the mobile boarding pass slot and prepare passport/ESTA documentation before ascending the 2nd-floor terminal ramp.",
+    "verification_type": "FIELD_MEASURED",
+    "evidence": "Audited at Manhattan Cruise Terminal Pier 88 during Sunday turnaround."
+  }
+]

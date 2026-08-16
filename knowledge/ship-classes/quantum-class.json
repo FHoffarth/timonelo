@@ -1,0 +1,14 @@
+{
+  "slug": "quantum-class",
+  "name": "Quantum Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Quantum of the Seas",
+  "lead_ship_year": 2014,
+  "gross_tonnage_typical": 168666,
+  "length_m_typical": 347.0,
+  "beam_m_typical": 41.4,
+  "passenger_capacity_max": 4905,
+  "description": "Groundbreaking high-tech class introducing the North Star observation crane capsule, Two70 dynamic multimedia lounge, and RipCord by iFLY skydiving simulator."
+}

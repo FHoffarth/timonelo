@@ -1,0 +1,41 @@
+{
+  "slug": "mazatlan",
+  "name": "Port of Mazatlán (Sinaloa)",
+  "un_locode": "MZMZT",
+  "country": "Mexico",
+  "region": "Mexican Riviera",
+  "coordinates": {
+    "latitude": 23.2,
+    "longitude": -106.415
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Mazatlán Cruise Terminal (Blue Line Walk)",
+      "berths": [
+        "Mazatlan Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "MXN",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "911"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Mazatlán.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

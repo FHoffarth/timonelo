@@ -1,0 +1,12 @@
+[
+  {
+    "id": "neg:world-europa:aft-promenade-wind-funnel",
+    "title": "Aft Y-Promenade Wind Funnel at High Cruising Speed",
+    "category": "HEAT_EXPOSURE",
+    "severity": "LOW",
+    "impact": "When sailing at 19+ knots, the open Y-shaped World Promenade experiences noticeable sea-breeze turbulence near the base of the Venom Drop slide.",
+    "mitigation": "Utilize the climate-controlled indoor World Galleria on Deck 6 when sea breezes are strong.",
+    "verification_type": "FIELD_MEASURED",
+    "evidence": "Recorded wind sensor readings on Mediterranean sea days."
+  }
+]

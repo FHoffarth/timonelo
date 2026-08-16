@@ -1,0 +1,21 @@
+{
+  "ship_slug": "msc-bellissima",
+  "current_season": "SUMMER_2026",
+  "deployment_region": "western-mediterranean",
+  "current_voyage_id": "voyage:bellissima:2026-10-04",
+  "operational_state": "DOCKED",
+  "current_port_slug": "genoa",
+  "next_port_slug": "naples",
+  "eta_next_port": "2026-10-05T13:00:00+02:00",
+  "etd_current_port": "2026-10-04T18:00:00+02:00",
+  "speed_knots": 0.0,
+  "course_deg": 0.0,
+  "position_lat_lon": [
+    44.4142,
+    8.9211
+  ],
+  "local_time_zone": "Europe/Rome (CEST, UTC+2)",
+  "last_observed_at": "2026-08-16T12:00:00Z",
+  "source_feed": "src:official-cruise-line-schedule",
+  "freshness_seconds": 300
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "msc-magnifica",
+  "name": {
+    "value": "MSC Magnifica",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9387085",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248387085",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA7085",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Panama",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "musica-class",
+  "builder": "STX France (Saint-Nazaire)",
+  "delivery_year": 2010,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 95128,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 293.8,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 32.2,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 3223,
+    "crew_capacity": 1038
+  },
+  "propulsion_and_fuel": "Marine Diesel (Magrodome retractable glass roof)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Magnifica Main Dining Room",
+    "MSC Magnifica Panorama Lounge & Bar",
+    "MSC Magnifica Solarium & Pool Deck"
+  ]
+}

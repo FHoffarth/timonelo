@@ -1,0 +1,14 @@
+{
+  "slug": "seaside-class",
+  "name": "Seaside Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Fincantieri (Monfalcone, Italy)",
+  "lead_ship_name": "MSC Seaside",
+  "lead_ship_year": 2017,
+  "gross_tonnage_typical": 153516,
+  "length_m_typical": 323.0,
+  "beam_m_typical": 41.0,
+  "passenger_capacity_max": 5336,
+  "description": "Beach-condo architecture with wrap-around outdoor boardwalk and aft panoramic glass elevators."
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "wonder-of-the-seas",
+  "name": {
+    "value": "Wonder of the Seas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9838345",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Royal Caribbean International",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Oasis Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "oasis-class",
+  "builder": {
+    "value": "Chantiers de l'Atlantique",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2022-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 362.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 47.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 236857,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 6988,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 5590,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 2300,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2867,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Wonder of the Seas Main Dining Room",
+    "Wonder of the Seas Panorama Lounge & Bar",
+    "Wonder of the Seas Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "port-canaveral",
+    "miami",
+    "cozumel",
+    "roatan",
+    "costa-maya"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "ship:IMO9766205": "/media/msc-bellissima-hero.jpg",
+  "ship:ENI02338573": "/media/ms-andorinha-hero.jpg",
+  "ship:IMO9803613": "/media/msc-grandiosa-hero.jpg",
+  "ship:IMO9647710": "/media/msc-meraviglia-hero.jpg",
+  "ship:msc-bellissima": "/media/msc-bellissima-hero.jpg",
+  "ship:ms-andorinha": "/media/ms-andorinha-hero.jpg",
+  "ship:msc-grandiosa": "/media/msc-grandiosa-hero.jpg",
+  "ship:msc-meraviglia": "/media/msc-meraviglia-hero.jpg",
+  "view:14122": "/media/balcony-ocean-view.jpg",
+  "cabin:14122": "/media/stateroom-interior.jpg",
+  "view:301": "/media/douro-river-view.jpg",
+  "cabin:301": "/media/stateroom-interior.jpg",
+  "view:214": "/media/douro-river-view.jpg",
+  "cabin:214": "/media/stateroom-interior.jpg",
+  "default:ocean_view": "/media/balcony-ocean-view.jpg",
+  "default:river_view": "/media/douro-river-view.jpg",
+  "default:stateroom": "/media/stateroom-interior.jpg"
+}

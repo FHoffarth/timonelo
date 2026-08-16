@@ -1,0 +1,56 @@
+{
+  "slug": "western-caribbean-7n",
+  "title": "7-Night Maya Riviera & Western Caribbean",
+  "region": "Western Caribbean",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "port-canaveral",
+      "port_name": "Port Canaveral",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "cozumel",
+      "port_name": "Cozumel",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "costa-maya",
+      "port_name": "Costa Maya",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "roatan",
+      "port_name": "Roatan",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "grand-cayman",
+      "port_name": "Grand Cayman",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "tampa",
+      "port_name": "Tampa",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "port-canaveral",
+      "port_name": "Port Canaveral",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Carnival Cruise Line",
+    "Royal Caribbean",
+    "Norwegian Cruise Line",
+    "MSC Cruises"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "eastern-caribbean-7n",
+  "title": "7-Night Perfect Eastern Caribbean",
+  "region": "Eastern Caribbean",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "miami",
+      "port_name": "Miami",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "nassau",
+      "port_name": "Nassau",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "san-juan",
+      "port_name": "San Juan",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "st-thomas",
+      "port_name": "St. Thomas",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "st-maarten",
+      "port_name": "St. Maarten",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "fort-lauderdale",
+      "port_name": "Fort Lauderdale",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "miami",
+      "port_name": "Miami",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Royal Caribbean",
+    "Celebrity Cruises",
+    "Disney Cruise Line",
+    "MSC Cruises"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "costa-maya",
+  "name": "Port of Costa Maya (Mahahual)",
+  "un_locode": "MXCMY",
+  "country": "Mexico",
+  "region": "Western Caribbean",
+  "coordinates": {
+    "latitude": 18.725,
+    "longitude": -87.695
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Puerto Costa Maya Cruise Facility",
+      "berths": [
+        "Costa-Maya Berth 1",
+        "Costa-Maya Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Costa Maya.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "hamburg",
+  "name": "Port of Hamburg",
+  "un_locode": "DEHAM",
+  "country": "Germany",
+  "region": "Northern Europe",
+  "coordinates": {
+    "latitude": 53.535,
+    "longitude": 9.98
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Cruise Center Altona, HafenCity & Steinwerder",
+      "berths": [
+        "Hamburg Berth 1",
+        "Hamburg Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "EUR",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Hamburg.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

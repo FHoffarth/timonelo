@@ -1,0 +1,90 @@
+{
+  "slug": "aidanova",
+  "name": {
+    "value": "AIDAnova",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9781865",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Italy",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "AIDA Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Helios Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "helios-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2018-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 337.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 42.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 183858,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 6600,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 5280,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1500,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2626,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "AIDAnova Main Dining Room",
+    "AIDAnova Panorama Lounge & Bar",
+    "AIDAnova Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "kiel",
+    "hamburg",
+    "bergen",
+    "flam",
+    "geiranger",
+    "las-palmas",
+    "santa-cruz-de-tenerife"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "meraviglia-plus-class",
+  "name": "Meraviglia-Plus Class",
+  "operator": "MSC Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Chantiers de l'Atlantique (Saint-Nazaire)",
+  "lead_ship_name": "MSC Grandiosa",
+  "lead_ship_year": 2019,
+  "gross_tonnage_typical": 181541,
+  "length_m_typical": 331.4,
+  "beam_m_typical": 43.0,
+  "passenger_capacity_max": 6334,
+  "description": "16-meter extended Meraviglia evolution featuring a 93m promenade and LNG propulsion on Euribia."
+}

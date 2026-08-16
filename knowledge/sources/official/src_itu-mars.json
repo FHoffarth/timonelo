@@ -1,0 +1,19 @@
+{
+  "category_folder": "official",
+  "source_id": "src:itu-mars",
+  "name": "ITU Maritime Mobile Access and Retrieval System (MARS)",
+  "owner": "International Telecommunication Union",
+  "category": "GOVERNMENT_MARITIME",
+  "website": "https://www.itu.int/mmsapp/ShipStation/list",
+  "country": "International (UN)",
+  "jurisdiction": "Global Maritime Radiocommunications",
+  "licence": "Public Telecommunications Data",
+  "terms": "Official registry for Call Signs and Maritime Mobile Service Identities (MMSI).",
+  "access_method": "API",
+  "allowed_usage": "MMSI and call sign verification.",
+  "update_frequency": "WEEKLY",
+  "last_retrieved": "2026-08-15",
+  "freshness_days": 1,
+  "priority": 1,
+  "trust_score": 1.0
+}

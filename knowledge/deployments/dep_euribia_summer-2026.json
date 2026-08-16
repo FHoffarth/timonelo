@@ -1,0 +1,17 @@
+{
+  "deployment_id": "dep:euribia:summer-2026",
+  "ship_slug": "msc-euribia",
+  "season": "SUMMER_2026",
+  "region_slug": "norwegian-fjords",
+  "homeports": [
+    "kiel",
+    "copenhagen"
+  ],
+  "primary_routes": [
+    "norwegian-fjords-7n"
+  ],
+  "start_date": "2026-05-01",
+  "end_date": "2026-09-30",
+  "notes": "7-night roundtrip Norwegian Fjords calling at Hellesylt, Geiranger, Flaam.",
+  "source_id": "src:official-msc-deployments-2026"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "western-mediterranean-7n",
+  "title": "7-Night Classic Western Mediterranean",
+  "region": "Western Mediterranean",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "genoa",
+      "port_name": "Genoa",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "civitavecchia",
+      "port_name": "Civitavecchia (Rome)",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "palermo",
+      "port_name": "Palermo",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "ibiza",
+      "port_name": "Ibiza",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "valencia",
+      "port_name": "Valencia",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 6,
+      "port_slug": "marseille",
+      "port_name": "Marseille",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 7,
+      "port_slug": "genoa",
+      "port_name": "Genoa",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "MSC Cruises",
+    "Costa Cruises",
+    "AIDA Cruises",
+    "Royal Caribbean"
+  ]
+}

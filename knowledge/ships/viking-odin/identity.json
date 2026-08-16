@@ -1,0 +1,88 @@
+{
+  "slug": "viking-odin",
+  "name": {
+    "value": "Viking Odin",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "ENI 07001948",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Viking River Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Viking Longship Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "viking-longship-class",
+  "builder": {
+    "value": "Neptun Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2012-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 135.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 11.45,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 1.6,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 3100,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 190,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 152,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 50,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 95,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 1,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Viking Odin Main Dining Room",
+    "Viking Odin Panorama Lounge & Bar",
+    "Viking Odin Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "amsterdam",
+    "cologne",
+    "koblenz",
+    "strasbourg",
+    "basel"
+  ]
+}

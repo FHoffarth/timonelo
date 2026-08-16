@@ -1,0 +1,41 @@
+{
+  "slug": "sydney",
+  "name": "Port of Sydney (Overseas Passenger Terminal)",
+  "un_locode": "AUSYD",
+  "country": "Australia",
+  "region": "Australia & Pacific",
+  "coordinates": {
+    "latitude": -33.858,
+    "longitude": 151.21
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Circular Quay OPT (Direct Opera House View)",
+      "berths": [
+        "Sydney Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "AUD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "999"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Sydney.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

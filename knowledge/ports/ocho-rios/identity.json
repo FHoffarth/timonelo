@@ -1,0 +1,41 @@
+{
+  "slug": "ocho-rios",
+  "name": "Port of Ocho Rios (Jamaica)",
+  "un_locode": "JMOCH",
+  "country": "Jamaica",
+  "region": "Western Caribbean",
+  "coordinates": {
+    "latitude": 18.41,
+    "longitude": -77.108
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Turtle Beach & James Bond Pier",
+      "berths": [
+        "Ocho-Rios Pier 1"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 800,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "USD",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "999"
+  },
+  "negative_intelligence": [
+    "Verify pier location in Port of Ocho Rios.",
+    "Keep ship ID card securely zipped."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

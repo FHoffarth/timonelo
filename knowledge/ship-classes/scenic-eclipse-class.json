@@ -1,0 +1,14 @@
+{
+  "slug": "scenic-eclipse-class",
+  "name": "Scenic Eclipse Discovery Yacht Class",
+  "operator": "Scenic Luxury Cruises",
+  "category": "EXPEDITION_YACHT",
+  "builder_shipyard": "Uljanik / 3. Maj (Pula/Rijeka, Croatia)",
+  "lead_ship_name": "Scenic Eclipse",
+  "lead_ship_year": 2019,
+  "gross_tonnage_typical": 17545,
+  "length_m_typical": 168.0,
+  "beam_m_typical": 21.5,
+  "passenger_capacity_max": 228,
+  "description": "Polar Class 6 ice-strengthened ultra-luxury discovery yacht equipped with two Airbus helicopters and 7-person submarine."
+}

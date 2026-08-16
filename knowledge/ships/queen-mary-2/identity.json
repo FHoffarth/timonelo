@@ -1,0 +1,87 @@
+{
+  "slug": "queen-mary-2",
+  "name": {
+    "value": "Queen Mary 2",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9241061",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Cunard Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Royal Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "royal-class",
+  "builder": {
+    "value": "Chantiers de l'Atlantique",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2003-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 345.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 41.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 149215,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3090,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2472,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1253,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1353,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Queen Mary 2 Main Dining Room",
+    "Queen Mary 2 Panorama Lounge & Bar",
+    "Queen Mary 2 Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "southampton",
+    "new-york",
+    "le-havre",
+    "hamburg"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "split",
+  "name": "Port of Split",
+  "un_locode": "HRSPU",
+  "country": "Croatia",
+  "region": "Adriatic Sea",
+  "coordinates": {
+    "latitude": 43.505,
+    "longitude": 16.442
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Gat Sv. Duje & Gat Sv. Petra (Diocletian Palace Gate)",
+      "berths": [
+        "Split Berth 1",
+        "Split Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "Local",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Split.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

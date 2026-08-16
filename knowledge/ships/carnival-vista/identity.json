@@ -1,0 +1,87 @@
+{
+  "slug": "carnival-vista",
+  "name": {
+    "value": "Carnival Vista",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9692569",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Carnival Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Excel Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "excel-class",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2016-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 323.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 37.2,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 133500,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4977,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3981,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1450,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2004,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Carnival Vista Main Dining Room",
+    "Carnival Vista Panorama Lounge & Bar",
+    "Carnival Vista Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "port-canaveral",
+    "nassau",
+    "san-juan",
+    "st-thomas"
+  ]
+}

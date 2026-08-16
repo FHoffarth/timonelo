@@ -1,0 +1,25 @@
+{
+  "slug": "meyer-werft-papenburg",
+  "name": "Meyer Werft",
+  "country": "Germany",
+  "city": "Papenburg",
+  "coordinates": {
+    "latitude": 53.0789,
+    "longitude": 7.3556
+  },
+  "facilities": "Covered Building Dock II (504m), Covered Building Dock I (375m)",
+  "notable_builds": [
+    "Disney Wish",
+    "Disney Dream",
+    "AIDAnova",
+    "Norwegian Escape",
+    "Celebrity Solstice",
+    "Silver Nova"
+  ],
+  "specialties": [
+    "Indoor all-weather naval construction",
+    "LNG fuel systems",
+    "Ems River conveyance conveyance"
+  ],
+  "source": "src:meyer-werft-registry"
+}

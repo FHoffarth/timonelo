@@ -1,0 +1,14 @@
+{
+  "slug": "helios-class",
+  "name": "Helios Class",
+  "operator": "AIDA Cruises",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "AIDAnova",
+  "lead_ship_year": 2018,
+  "gross_tonnage_typical": 183858,
+  "length_m_typical": 337.0,
+  "beam_m_typical": 42.0,
+  "passenger_capacity_max": 6600,
+  "description": "World's first 100% LNG-powered cruise ship generation with 360-degree glass Theatrium and Beach Club."
+}

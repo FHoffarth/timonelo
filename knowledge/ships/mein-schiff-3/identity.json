@@ -1,0 +1,89 @@
+{
+  "slug": "mein-schiff-3",
+  "name": {
+    "value": "Mein Schiff 3",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9641730",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "TUI Cruises (Mein Schiff)",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Intuition Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "intuition-class",
+  "builder": {
+    "value": "STX Finland",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2014-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 293.2,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 35.8,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 99526,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 2700,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2160,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1000,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1253,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Mein Schiff 3 Main Dining Room",
+    "Mein Schiff 3 Panorama Lounge & Bar",
+    "Mein Schiff 3 Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "bremerhaven",
+    "honDefault-nordkapp",
+    "tromso",
+    "bergen",
+    "geiranger",
+    "reykjavik"
+  ]
+}

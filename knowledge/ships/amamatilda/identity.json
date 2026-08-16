@@ -1,0 +1,87 @@
+{
+  "slug": "amamatilda",
+  "name": {
+    "value": "AmaMagna",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "ENI 02338000",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "AmaWaterways",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Viking Longship Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "viking-longship-class",
+  "builder": {
+    "value": "Vahali Shipyards",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2019-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 135.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 22.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 6000,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 196,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 156,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 70,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 98,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "AmaMagna Main Dining Room",
+    "AmaMagna Panorama Lounge & Bar",
+    "AmaMagna Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "passau",
+    "vienna",
+    "bratislava",
+    "budapest"
+  ]
+}

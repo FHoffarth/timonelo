@@ -1,0 +1,27 @@
+{
+  "slug": "norwegian-fjords",
+  "name": "Norwegian Fjords & Arctic",
+  "ocean_basin": "North Sea / Norwegian Sea",
+  "countries": [
+    "Norway"
+  ],
+  "key_ports": [
+    "bergen",
+    "geiranger",
+    "flam",
+    "stavanger",
+    "alesund",
+    "tromso",
+    "honDefault"
+  ],
+  "season_peak": "May to September",
+  "sea_state_typical": "Protected calm inside fjords; Moderate in North Sea transit",
+  "highlights": [
+    "Geirangerfjord UNESCO UNESCO walls",
+    "Seven Sisters Waterfalls",
+    "Midnight Sun",
+    "Flåm Railway"
+  ],
+  "navigation_notes": "Zero-emission regulations in world heritage fjords; pilotage mandatory.",
+  "source": "src:norwegian-maritime-authority"
+}

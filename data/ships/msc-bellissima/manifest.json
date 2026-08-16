@@ -1,0 +1,17 @@
+{
+  "name": "MSC Bellissima",
+  "imo_number": "IMO9766205",
+  "ship_class": "Meraviglia Class",
+  "operator": "MSC Cruises",
+  "builder": "Chantiers de l'Atlantique (STX France, Saint-Nazaire)",
+  "hull_number": "E34",
+  "delivery_date": "2019-02-27",
+  "maiden_voyage": "2019-03-04",
+  "length_overall_meters": 315.83,
+  "beam_meters": 43.0,
+  "gross_tonnage": 171598,
+  "total_decks": 19,
+  "passenger_decks": 14,
+  "baseline_reference_vessel": null,
+  "inheritance_type": "PRIMARY_OCEAN_BASELINE"
+}

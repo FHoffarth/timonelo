@@ -1,0 +1,88 @@
+{
+  "slug": "celebrity-reflection",
+  "name": {
+    "value": "Celebrity Reflection",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9506215",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Celebrity Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Solstice Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "solstice-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2012-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 319.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 37.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 126000,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3480,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2784,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1271,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1523,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Celebrity Reflection Main Dining Room",
+    "Celebrity Reflection Panorama Lounge & Bar",
+    "Celebrity Reflection Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "fort-lauderdale",
+    "civitavecchia",
+    "santorini",
+    "mykonos",
+    "rhodes"
+  ]
+}

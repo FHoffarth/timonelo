@@ -1,0 +1,88 @@
+{
+  "slug": "aidaprima",
+  "name": {
+    "value": "AIDAprima",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9636955",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Italy",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "AIDA Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Helios Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "helios-class",
+  "builder": {
+    "value": "Mitsubishi Heavy Industries",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2016-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 300.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 37.6,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 125572,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3400,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2720,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 900,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1643,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "AIDAprima Main Dining Room",
+    "AIDAprima Panorama Lounge & Bar",
+    "AIDAprima Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "hamburg",
+    "southampton",
+    "le-havre",
+    "zeebrugge",
+    "rotterdam"
+  ]
+}

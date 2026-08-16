@@ -1,0 +1,14 @@
+{
+  "slug": "oasis-class",
+  "name": "Oasis Class",
+  "operator": "Royal Caribbean International",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "STX Europe / Chantiers de l'Atlantique",
+  "lead_ship_name": "Oasis of the Seas",
+  "lead_ship_year": 2009,
+  "gross_tonnage_typical": 226838,
+  "length_m_typical": 362.0,
+  "beam_m_typical": 47.0,
+  "passenger_capacity_max": 6988,
+  "description": "Split-superstructure design creating open-air Central Park with living trees and the outdoor Boardwalk."
+}

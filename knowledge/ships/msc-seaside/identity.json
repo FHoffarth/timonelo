@@ -1,0 +1,66 @@
+{
+  "slug": "msc-seaside",
+  "name": {
+    "value": "MSC Seaside",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "imo_number": {
+    "value": "9745366",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "mmsi": {
+    "value": "248745366",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "call_sign": {
+    "value": "9HA5366",
+    "source_id": "src:itu-maritime",
+    "trust_level": "OFFICIAL"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "source_id": "src:imo-gisis",
+    "trust_level": "OFFICIAL"
+  },
+  "operator": "MSC Cruises",
+  "ship_class": "seaside-class",
+  "builder": "Fincantieri (Monfalcone)",
+  "delivery_year": 2017,
+  "dimensions": {
+    "gross_tonnage": {
+      "value": 153516,
+      "source_id": "src:class-nk-dnv",
+      "trust_level": "OFFICIAL"
+    },
+    "length_overall_m": {
+      "value": 323.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 41.0,
+      "source_id": "src:chantiers-ga-drawing",
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_capacity_max": 5336,
+    "crew_capacity": 1413
+  },
+  "propulsion_and_fuel": "Marine Gas Oil (Hybrid Scrubber)",
+  "homeports": [
+    "genoa",
+    "barcelona",
+    "naples",
+    "marseille",
+    "civitavecchia"
+  ],
+  "signature_venues": [
+    "MSC Seaside Main Dining Room",
+    "MSC Seaside Panorama Lounge & Bar",
+    "MSC Seaside Solarium & Pool Deck"
+  ]
+}

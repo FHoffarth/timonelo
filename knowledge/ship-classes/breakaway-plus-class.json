@@ -1,0 +1,14 @@
+{
+  "slug": "breakaway-plus-class",
+  "name": "Breakaway Plus Class",
+  "operator": "Norwegian Cruise Line",
+  "category": "OCEAN_MEGA",
+  "builder_shipyard": "Meyer Werft (Papenburg, Germany)",
+  "lead_ship_name": "Norwegian Escape",
+  "lead_ship_year": 2015,
+  "gross_tonnage_typical": 165300,
+  "length_m_typical": 325.9,
+  "beam_m_typical": 41.4,
+  "passenger_capacity_max": 5200,
+  "description": "Freestyle mega-liner with The Waterfront oceanfront dining promenade and multi-level ropes courses."
+}

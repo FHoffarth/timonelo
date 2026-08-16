@@ -1,0 +1,31 @@
+{
+  "slug": "caribbean-bahamas",
+  "name": "Caribbean & Bahamas",
+  "ocean_basin": "Atlantic Ocean / Caribbean Sea",
+  "countries": [
+    "USA",
+    "Bahamas",
+    "Mexico",
+    "Jamaica",
+    "Sint Maarten",
+    "Puerto Rico"
+  ],
+  "key_ports": [
+    "portmiami",
+    "port-everglades",
+    "nassau",
+    "cozumel",
+    "st-thomas",
+    "san-juan"
+  ],
+  "season_peak": "November to April",
+  "sea_state_typical": "Gentle trade winds (1.0m - 2.0m)",
+  "highlights": [
+    "Private cruise islands (Ocean Cay, CocoCay)",
+    "Coral reef diving",
+    "Mayan ruins",
+    "Turquoise waters"
+  ],
+  "navigation_notes": "Hurricane season July-October; draft limits on coral cays require satellite dynamic positioning.",
+  "source": "src:noaa-caribbean-navigation"
+}

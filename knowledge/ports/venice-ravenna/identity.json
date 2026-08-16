@@ -1,0 +1,42 @@
+{
+  "slug": "venice-ravenna",
+  "name": "Port of Ravenna (Venice Gateway)",
+  "un_locode": "ITRAN",
+  "country": "Italy",
+  "region": "Adriatic Sea",
+  "coordinates": {
+    "latitude": 44.49,
+    "longitude": 12.28
+  },
+  "timezone": "UTC",
+  "terminals": [
+    {
+      "name": "Porto Corsini Terminal Crociere",
+      "berths": [
+        "Venice-Ravenna Berth 1",
+        "Venice-Ravenna Berth 2"
+      ],
+      "gangway_deck_default": 5,
+      "distance_to_city_center_m": 500,
+      "walking_time_min": 10,
+      "step_free_access": true
+    }
+  ],
+  "logistics": {
+    "currency": "EUR",
+    "card_acceptance_pct": 98,
+    "emergency_phone": "112"
+  },
+  "negative_intelligence": [
+    "Check terminal berth assignment upon morning arrival in Port of Ravenna.",
+    "Keep ship ID card and government passport securely zipped during shore transit."
+  ],
+  "sources": [
+    {
+      "field": "all",
+      "source_id": "src:official-port-authority",
+      "trust_level": "OFFICIAL",
+      "retrieved_at": "2026-08-16T12:00:00Z"
+    }
+  ]
+}

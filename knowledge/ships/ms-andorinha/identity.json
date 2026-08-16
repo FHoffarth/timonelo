@@ -1,0 +1,86 @@
+{
+  "slug": "ms-andorinha",
+  "name": {
+    "value": "MS Andorinha",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "ENI 02338573",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Portugal",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Tauck / Scylla AG",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Douro River Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "douro-river-class",
+  "builder": {
+    "value": "Vahali / Scylla AG",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2020-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 80.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 11.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 1800,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 84,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 67,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 36,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 42,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "MS Andorinha Main Dining Room",
+    "MS Andorinha Panorama Lounge & Bar",
+    "MS Andorinha Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "porto",
+    "regua",
+    "pinhao"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "voyage_id": "voyage:bellissima:2026-10-04",
+  "ship_slug": "msc-bellissima",
+  "cruise_number": "BL20261004GEN",
+  "route_slug": "western-mediterranean-7n",
+  "start_date": "2026-10-04",
+  "end_date": "2026-10-11",
+  "embarkation_port": "genoa",
+  "disembarkation_port": "genoa",
+  "sea_days_count": 1,
+  "nautical_miles": 1380.0,
+  "weather_zone": "Western Mediterranean Warm Temperate",
+  "status": "SCHEDULED",
+  "port_calls": [
+    {
+      "call_id": "call:bl:genoa:01",
+      "port_slug": "genoa",
+      "terminal_name": "Ponte dei Mille (Genoa Cruise Terminal)",
+      "arrival_iso": "2026-10-04T08:00:00+02:00",
+      "departure_iso": "2026-10-04T18:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": true,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:naples:02",
+      "port_slug": "naples",
+      "terminal_name": "Stazione Marittima di Napoli Pier 21",
+      "arrival_iso": "2026-10-05T13:00:00+02:00",
+      "departure_iso": "2026-10-05T20:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": true,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:messina:03",
+      "port_slug": "messina",
+      "terminal_name": "Banchina Colapesce",
+      "arrival_iso": "2026-10-06T09:00:00+02:00",
+      "departure_iso": "2026-10-06T19:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": false,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:valletta:04",
+      "port_slug": "valletta",
+      "terminal_name": "Valletta Waterfront Pinto Wharf",
+      "arrival_iso": "2026-10-07T08:00:00+02:00",
+      "departure_iso": "2026-10-07T17:00:00+02:00",
+      "gangway_deck": 4,
+      "is_turnaround": false,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:seaday:05",
+      "port_slug": "sea-day",
+      "terminal_name": "At Sea (Western Mediterranean Transit)",
+      "arrival_iso": "2026-10-08T00:00:00+02:00",
+      "departure_iso": "2026-10-08T23:59:00+02:00",
+      "gangway_deck": 0,
+      "is_turnaround": false,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:barcelona:06",
+      "port_slug": "barcelona",
+      "terminal_name": "Moll Adossat Terminal B",
+      "arrival_iso": "2026-10-09T09:00:00+02:00",
+      "departure_iso": "2026-10-09T18:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": true,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:marseille:07",
+      "port_slug": "marseille",
+      "terminal_name": "Marseille Provence Cruise Center (MPCC) Mole Leon Gourret",
+      "arrival_iso": "2026-10-10T09:00:00+02:00",
+      "departure_iso": "2026-10-10T18:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": true,
+      "is_tender": false
+    },
+    {
+      "call_id": "call:bl:genoa:08",
+      "port_slug": "genoa",
+      "terminal_name": "Ponte dei Mille",
+      "arrival_iso": "2026-10-11T08:00:00+02:00",
+      "departure_iso": "2026-10-11T18:00:00+02:00",
+      "gangway_deck": 5,
+      "is_turnaround": true,
+      "is_tender": false
+    }
+  ]
+}

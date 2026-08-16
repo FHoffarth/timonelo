@@ -1,0 +1,19 @@
+{
+  "category_folder": "ports",
+  "source_id": "src:port-authority-genoa",
+  "name": "Autorita di Sistema Portuale del Mar Ligure Occidentale",
+  "owner": "Ports of Genoa Authority",
+  "category": "PORT_AUTHORITY",
+  "website": "https://www.portsofgenoa.com",
+  "country": "Italy",
+  "jurisdiction": "Italian State Port Authority",
+  "licence": "Public Maritime Port Operations",
+  "terms": "Berth assignments at Ponte dei Mille, draft limitations, and cruise terminal procedures.",
+  "access_method": "CSV",
+  "allowed_usage": "Port logistics and turnaround mapping.",
+  "update_frequency": "DAILY",
+  "last_retrieved": "2026-08-16",
+  "freshness_days": 0,
+  "priority": 2,
+  "trust_score": 0.98
+}

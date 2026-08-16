@@ -1,0 +1,89 @@
+{
+  "slug": "royal-princess",
+  "name": {
+    "value": "Royal Princess",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9584712",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bermuda",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Princess Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Royal Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "royal-class",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2013-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 330.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 38.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 142714,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4272,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3417,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1346,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1780,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Royal Princess Main Dining Room",
+    "Royal Princess Panorama Lounge & Bar",
+    "Royal Princess Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "seattle",
+    "vancouver",
+    "juneau",
+    "skagway",
+    "ketchikan",
+    "sydney"
+  ]
+}

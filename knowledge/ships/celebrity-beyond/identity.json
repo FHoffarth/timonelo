@@ -1,0 +1,87 @@
+{
+  "slug": "celebrity-beyond",
+  "name": {
+    "value": "Celebrity Beyond",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9838395",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Celebrity Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Edge Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "edge-class",
+  "builder": {
+    "value": "Chantiers de l'Atlantique",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2022-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 327.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 39.0,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 140600,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3937,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3149,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1400,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1646,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Celebrity Beyond Main Dining Room",
+    "Celebrity Beyond Panorama Lounge & Bar",
+    "Celebrity Beyond Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "miami",
+    "fort-lauderdale",
+    "civitavecchia",
+    "barcelona"
+  ]
+}

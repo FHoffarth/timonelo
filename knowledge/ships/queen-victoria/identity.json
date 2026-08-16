@@ -1,0 +1,88 @@
+{
+  "slug": "queen-victoria",
+  "name": {
+    "value": "Queen Victoria",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9320556",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Cunard Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Royal Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "royal-class",
+  "builder": {
+    "value": "Fincantieri",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2007-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 294.0,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 32.3,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 90049,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 2489,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 1991,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 981,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1035,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Queen Victoria Main Dining Room",
+    "Queen Victoria Panorama Lounge & Bar",
+    "Queen Victoria Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "southampton",
+    "civitavecchia",
+    "piraeus",
+    "istanbul",
+    "dubrovnik"
+  ]
+}

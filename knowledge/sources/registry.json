@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.1.0",
+  "updated_at": "2026-08-16T12:00:00Z",
+  "sources": {
+    "src:imo-gisis": {
+      "id": "src:imo-gisis",
+      "title": "IMO Global Integrated Shipping Information System (GISIS)",
+      "publisher": "International Maritime Organization",
+      "category": "OFFICIAL_REGULATOR",
+      "trust_level": "OFFICIAL",
+      "url": "https://gisis.imo.org",
+      "license": "Public Maritime Safety Data"
+    },
+    "src:itu-maritime": {
+      "id": "src:itu-maritime",
+      "title": "ITU Maritime Mobile Access and Retrieval System (MARS)",
+      "publisher": "International Telecommunication Union",
+      "category": "OFFICIAL_REGULATOR",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.itu.int/mmsapp/ShipStation/list",
+      "license": "Public Telecommunications Data"
+    },
+    "src:chantiers-atlantique": {
+      "id": "src:chantiers-atlantique",
+      "title": "Chantiers de l'Atlantique Naval Architecture Releases",
+      "publisher": "Chantiers de l'Atlantique (Saint-Nazaire)",
+      "category": "OFFICIAL_SHIPYARD",
+      "trust_level": "OFFICIAL",
+      "url": "https://chantiers-atlantique.com",
+      "license": "Public Shipyard Technical Releases"
+    },
+    "src:msc-corporate": {
+      "id": "src:msc-corporate",
+      "title": "MSC Cruises Official Fleet & Technical Fact Sheets",
+      "publisher": "MSC Cruises S.A.",
+      "category": "OFFICIAL_CRUISE_LINE",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.msccruises.com",
+      "license": "Public Informational Material"
+    },
+    "src:scylla-tauck": {
+      "id": "src:scylla-tauck",
+      "title": "Scylla AG / Tauck River Fleet Technical Dossiers",
+      "publisher": "Scylla AG (Basel, Switzerland)",
+      "category": "OFFICIAL_CRUISE_LINE",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.scylla.ch",
+      "license": "Public Technical Data"
+    },
+    "src:port-authority-genoa": {
+      "id": "src:port-authority-genoa",
+      "title": "Autorità di Sistema Portuale del Mar Ligure Occidentale (Port of Genoa)",
+      "publisher": "Port of Genoa Authority",
+      "category": "OFFICIAL_PORT_AUTHORITY",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.portsofgenoa.com",
+      "license": "Public Port Navigation and Berth Operations"
+    },
+    "src:port-authority-douro": {
+      "id": "src:port-authority-douro",
+      "title": "APDL - Administração dos Portos do Douro, Leixões e Viana do Castelo",
+      "publisher": "APDL Portugal",
+      "category": "OFFICIAL_PORT_AUTHORITY",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.apdl.pt",
+      "license": "Public Riverway and Pier Regulations"
+    },
+    "src:port-authority-barcelona": {
+      "id": "src:port-authority-barcelona",
+      "title": "Autoritat Portuària de Barcelona (Port de Barcelona)",
+      "publisher": "Port of Barcelona Authority",
+      "category": "OFFICIAL_PORT_AUTHORITY",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.portdebarcelona.cat",
+      "license": "Public Passenger Terminal Operations Data"
+    },
+    "src:port-authority-marseille": {
+      "id": "src:port-authority-marseille",
+      "title": "Grand Port Maritime de Marseille (Marseille Fos)",
+      "publisher": "Marseille Port Authority",
+      "category": "OFFICIAL_PORT_AUTHORITY",
+      "trust_level": "OFFICIAL",
+      "url": "https://www.marseille-port.fr",
+      "license": "Public Cruise Berth & Shuttle Operations"
+    },
+    "src:port-authority-naples": {
+      "id": "src:port-authority-naples",
+      "title": "Autorità di Sistema Portuale del Mar Tirreno Centrale (Port of Naples)",
+      "publisher": "Naples Port Authority",
+      "category": "OFFICIAL_PORT_AUTHORITY",
+      "trust_level": "OFFICIAL",
+      "url": "https://porto.napoli.it",
+      "license": "Public Maritime Passenger Terminal Regulations"
+    }
+  }
+}

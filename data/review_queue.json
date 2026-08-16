@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "item_id": "rev:ship:norwegian-prima",
+      "entity_id": "ship:norwegian-prima",
+      "entity_type": "Ship",
+      "importer_source_id": "src:ncl-corporate",
+      "submitted_at": "2026-08-16T12:39:13.907995+00:00",
+      "validation_status": "PASSED",
+      "validation_errors": [],
+      "status": "APPROVED",
+      "reviewer_notes": "Approved for production",
+      "reviewed_at": "2026-08-16T12:39:18.565222+00:00",
+      "candidate_payload": {
+        "slug": "norwegian-prima",
+        "name": {
+          "value": "Norwegian Prima",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "imo": {
+          "value": "9823986",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "mmsi": {
+          "value": "311001149",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "call_sign": {
+          "value": "C6FM8",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "flag_state": {
+          "value": "Bahamas",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "operator": {
+          "value": "Norwegian Cruise Line",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "ship_class": {
+          "value": "Prima Class",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "class_id": "norwegian-prima",
+        "builder": {
+          "value": "Fincantieri (Marghera, Italy)",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "delivery_date": {
+          "value": "2022-01-01",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:ncl-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+        },
+        "dimensions": {
+          "length_m": {
+            "value": 293.4,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "beam_m": {
+            "value": 40.5,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "draft_m": {
+            "value": 8.5,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "gross_tonnage": {
+            "value": 143535,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          }
+        },
+        "capacities": {
+          "passenger_max": {
+            "value": 3100,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "passenger_double_occ": {
+            "value": 0,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "crew": {
+            "value": 1506,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "total_staterooms": {
+            "value": 1550,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          },
+          "accessible_staterooms": {
+            "value": 0,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:ncl-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.907779+00:00"
+          }
+        },
+        "signature_venues": [
+          "Ocean Boulevard",
+          "Prima Speedway",
+          "Indulge Food Hall"
+        ],
+        "homeports": [
+          "miami",
+          "barcelona",
+          "civitavecchia"
+        ]
+      },
+      "diff_summary": {
+        "diff_type": "ADDED",
+        "fields_changed": 0,
+        "review_required": true
+      }
+    },
+    {
+      "item_id": "rev:ship:sun-princess",
+      "entity_id": "ship:sun-princess",
+      "entity_type": "Ship",
+      "importer_source_id": "src:princess-corporate",
+      "submitted_at": "2026-08-16T12:39:13.911080+00:00",
+      "validation_status": "PASSED",
+      "validation_errors": [],
+      "status": "PENDING",
+      "reviewer_notes": null,
+      "reviewed_at": null,
+      "candidate_payload": {
+        "slug": "sun-princess",
+        "name": {
+          "value": "Sun Princess",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "imo": {
+          "value": "9863118",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "mmsi": {
+          "value": "310839000",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "call_sign": {
+          "value": "ZCEV2",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "flag_state": {
+          "value": "Bermuda",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "operator": {
+          "value": "Princess Cruises",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "ship_class": {
+          "value": "Sphere Class",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "class_id": "sun-princess",
+        "builder": {
+          "value": "Fincantieri (Monfalcone, Italy)",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "delivery_date": {
+          "value": "2024-01-01",
+          "trust_level": "OFFICIAL",
+          "source_id": "src:princess-corporate",
+          "confidence": 1.0,
+          "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+        },
+        "dimensions": {
+          "length_m": {
+            "value": 345.3,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "beam_m": {
+            "value": 42.0,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "draft_m": {
+            "value": 8.9,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "gross_tonnage": {
+            "value": 177882,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          }
+        },
+        "capacities": {
+          "passenger_max": {
+            "value": 4300,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "passenger_double_occ": {
+            "value": 0,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "crew": {
+            "value": 1600,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "total_staterooms": {
+            "value": 2157,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          },
+          "accessible_staterooms": {
+            "value": 0,
+            "trust_level": "OFFICIAL",
+            "source_id": "src:princess-corporate",
+            "confidence": 1.0,
+            "retrieved_at": "2026-08-16T12:39:13.910872+00:00"
+          }
+        },
+        "signature_venues": [
+          "The Dome (Geodesic Glass Structure)",
+          "The Sphere Atrium",
+          "Park19"
+        ],
+        "homeports": [
+          "fort-lauderdale",
+          "barcelona",
+          "civitavecchia"
+        ]
+      },
+      "diff_summary": {
+        "diff_type": "ADDED",
+        "fields_changed": 0,
+        "review_required": true
+      }
+    }
+  ]
+}

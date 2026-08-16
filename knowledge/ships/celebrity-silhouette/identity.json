@@ -1,0 +1,88 @@
+{
+  "slug": "celebrity-silhouette",
+  "name": {
+    "value": "Celebrity Silhouette",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9451094",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Malta",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Celebrity Cruises",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Solstice Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "solstice-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2011-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 317.2,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 36.8,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 122210,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 3320,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 2656,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1285,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 1449,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Celebrity Silhouette Main Dining Room",
+    "Celebrity Silhouette Panorama Lounge & Bar",
+    "Celebrity Silhouette Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "southampton",
+    "amsterdam",
+    "bergen",
+    "flam",
+    "geiranger"
+  ]
+}

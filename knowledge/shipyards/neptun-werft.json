@@ -1,0 +1,21 @@
+{
+  "slug": "neptun-werft",
+  "name": "Neptun Werft",
+  "country": "Germany",
+  "city": "Rostock-Warnemünde",
+  "coordinates": {
+    "latitude": 54.15,
+    "longitude": 12.0833
+  },
+  "facilities": "Floating dock, indoor river assembly halls, FERU (Floating Engine Room Unit) manufacturing",
+  "notable_builds": [
+    "Viking Longships Fleet (65+ river ships)",
+    "A-ROSA river fleet",
+    "Engine room units for Meyer Werft"
+  ],
+  "specialties": [
+    "Modular series river passenger vessels",
+    "LNG floating engine units"
+  ],
+  "source": "src:neptun-registry"
+}

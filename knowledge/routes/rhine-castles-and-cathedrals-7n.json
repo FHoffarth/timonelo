@@ -1,0 +1,44 @@
+{
+  "slug": "rhine-castles-and-cathedrals-7n",
+  "title": "7-Night Rhine Castles & Historic Cathedrals",
+  "region": "Rhine River",
+  "duration_days": 7,
+  "ports_sequence": [
+    {
+      "day": 1,
+      "port_slug": "amsterdam",
+      "port_name": "Amsterdam",
+      "type": "EMBARKATION"
+    },
+    {
+      "day": 2,
+      "port_slug": "cologne",
+      "port_name": "Cologne",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 3,
+      "port_slug": "koblenz",
+      "port_name": "Koblenz (Rhine Gorge)",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 4,
+      "port_slug": "strasbourg",
+      "port_name": "Strasbourg",
+      "type": "PORT_CALL"
+    },
+    {
+      "day": 5,
+      "port_slug": "basel",
+      "port_name": "Basel",
+      "type": "DISEMBARKATION"
+    }
+  ],
+  "common_operators": [
+    "Viking River",
+    "Tauck",
+    "AmaWaterways",
+    "Emerald Cruises"
+  ]
+}

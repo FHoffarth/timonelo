@@ -1,0 +1,18 @@
+{
+  "deployment_id": "dep:bellissima:winter-2026",
+  "ship_slug": "msc-bellissima",
+  "season": "WINTER_2026_27",
+  "region_slug": "east-asia-japan",
+  "homeports": [
+    "yokohama",
+    "tokyo",
+    "keelung"
+  ],
+  "primary_routes": [
+    "japan-taiwan-roundtrip-9n"
+  ],
+  "start_date": "2026-11-15",
+  "end_date": "2027-03-30",
+  "notes": "Japan & Taiwan winter season deployment.",
+  "source_id": "src:official-msc-deployments-2026"
+}

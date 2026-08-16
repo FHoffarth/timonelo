@@ -1,0 +1,90 @@
+{
+  "slug": "norwegian-encore",
+  "name": {
+    "value": "Norwegian Encore",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "imo": {
+    "value": "9751511",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "flag_state": {
+    "value": "Bahamas",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:imo-gisis"
+  },
+  "operator": {
+    "value": "Norwegian Cruise Line",
+    "trust_level": "OFFICIAL",
+    "source_id": "src:corporate-registry"
+  },
+  "ship_class": {
+    "value": "Breakaway Plus Class",
+    "trust_level": "OFFICIAL"
+  },
+  "class_id": "breakaway-plus-class",
+  "builder": {
+    "value": "Meyer Werft",
+    "trust_level": "OFFICIAL"
+  },
+  "delivery_date": {
+    "value": "2019-04-01",
+    "trust_level": "OFFICIAL"
+  },
+  "dimensions": {
+    "length_m": {
+      "value": 333.4,
+      "trust_level": "OFFICIAL"
+    },
+    "beam_m": {
+      "value": 41.4,
+      "trust_level": "OFFICIAL"
+    },
+    "draft_m": {
+      "value": 8.5,
+      "trust_level": "OFFICIAL"
+    },
+    "gross_tonnage": {
+      "value": 169116,
+      "trust_level": "OFFICIAL"
+    }
+  },
+  "capacities": {
+    "passenger_max": {
+      "value": 4903,
+      "trust_level": "OFFICIAL"
+    },
+    "passenger_double_occ": {
+      "value": 3922,
+      "trust_level": "OFFICIAL"
+    },
+    "crew": {
+      "value": 1735,
+      "trust_level": "OFFICIAL"
+    },
+    "total_staterooms": {
+      "value": 2043,
+      "trust_level": "OFFICIAL"
+    },
+    "accessible_staterooms": {
+      "value": 30,
+      "trust_level": "VERIFIED"
+    }
+  },
+  "signature_venues": [
+    "Norwegian Encore Main Dining Room",
+    "Norwegian Encore Panorama Lounge & Bar",
+    "Norwegian Encore Solarium & Pool Deck"
+  ],
+  "homeports": [
+    "seattle",
+    "juneau",
+    "skagway",
+    "ketchikan",
+    "miami",
+    "st-thomas",
+    "st-maarten"
+  ]
+}

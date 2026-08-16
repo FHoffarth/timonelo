@@ -1,0 +1,26 @@
+{
+  "slug": "fincantieri-monfalcone",
+  "name": "Fincantieri (Monfalcone)",
+  "country": "Italy",
+  "city": "Monfalcone (Gorizia)",
+  "coordinates": {
+    "latitude": 45.795,
+    "longitude": 13.535
+  },
+  "facilities": "Drydock 350m, 800-ton Goliath crane",
+  "notable_builds": [
+    "MSC Seaside",
+    "MSC Seaview",
+    "MSC Seashore",
+    "MSC Seascape",
+    "Sun Princess",
+    "Queen Anne",
+    "Scarlet Lady"
+  ],
+  "specialties": [
+    "Beach-condo architectural designs",
+    "Custom luxury ocean liners",
+    "Advanced SCR emission systems"
+  ],
+  "source": "src:fincantieri-statutory"
+}
