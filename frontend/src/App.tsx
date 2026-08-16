@@ -491,14 +491,14 @@ function Hero({
             <span className="text-amber-300 font-bold text-base mt-0.5">ℹ</span>
             <div className="text-xs space-y-1">
               <p className="font-semibold text-white">
-                {locale === 'de'
-                  ? `Hinweis: Kabine ${unmappedCabinNumber} ist noch nicht mit individuellem Bauplan erfasst.`
-                  : `Notice: Cabin ${unmappedCabinNumber} is not yet blueprint-verified.`}
+                {isGerman
+                  ? `Hinweis: Kabine ${unmappedCabinNumber} ist noch nicht einzeln erfasst.`
+                  : `Notice: Cabin ${unmappedCabinNumber} is not yet individually blueprint-mapped.`}
               </p>
               <p className="text-white/80">
-                {locale === 'de'
-                  ? `Sie sehen die verifizierte Referenzkabine ${cabin.cabin_number} (${cabin.category_name}) auf Deck ${cabin.deck_number}.`
-                  : `Displaying verified reference Cabin ${cabin.cabin_number} (${cabin.category_name}) on Deck ${cabin.deck_number}.`}
+                {isGerman
+                  ? `Angezeigt wird Referenzkabine ${cabin.cabin_number} (${cabin.category_name}) auf Deck ${cabin.deck_number} (Abgeleitet vom Referenzmodell).`
+                  : `Displaying reference Cabin ${cabin.cabin_number} (${cabin.category_name}) on Deck ${cabin.deck_number} (Inherited from reference model).`}
               </p>
             </div>
           </div>
@@ -935,7 +935,7 @@ function Discovery({ ship, current, onSelect }: { ship: ShipData; current: strin
   if (others.length === 0) return null;
   return (
     <section>
-      <SectionHead eyebrow="Explore Staterooms" title="Other Verified Cabins on this Vessel" />
+      <SectionHead eyebrow="Explore Staterooms" title="Other Mapped Cabins in this Class" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {others.slice(0, 9).map((c) => (
           <button

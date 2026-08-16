@@ -40,7 +40,7 @@ export const FLEET_REGISTRY: FleetVessel[] = RAW_FLEET_REGISTRY.map((v: any) => 
   ...v,
   shipClass: cleanStr(v.shipClass, 'Cruise Vessel Class'),
   builder: cleanStr(v.builder, 'European Shipyard'),
-  roleTitle: cleanStr(v.roleTitle, 'Verified Twin'),
+  roleTitle: cleanStr(v.roleTitle, 'Active Reference Model'),
   tagline: cleanStr(v.tagline, 'Evidence-Backed Maritime Intelligence'),
   subtitle: cleanStr(v.subtitle, ''),
   description: cleanStr(v.description, ''),

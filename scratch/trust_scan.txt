@@ -1,0 +1,45 @@
+frontend\src\App.tsx:163 [verified] -> document.title = 'Timonelo — Verified Crew Contributor Programme';
+frontend\src\App.tsx:496 [verified] -> : `Notice: Cabin ${unmappedCabinNumber} is not yet blueprint-verified.`}
+frontend\src\App.tsx:501 [verified] -> : `Displaying verified reference Cabin ${cabin.cabin_number} (${cabin.category_name}) on Deck ${cabin.deck_number}.`}
+frontend\src\App.tsx:565 [verified] -> <span className="text-white/50 text-[11px]">Verified cabins:</span>
+frontend\src\App.tsx:938 [verified] -> <SectionHead eyebrow="Explore Staterooms" title="Other Verified Cabins on this Vessel" />
+frontend\src\briefing.tsx:158 [verified] -> ✓ Verified return timing
+frontend\src\briefing.tsx:181 [verified] -> ✓ Verified evening dining route
+frontend\src\fleet.ts:43 [verified] -> roleTitle: cleanStr(v.roleTitle, 'Verified Twin'),
+frontend\src\report.tsx:192 [verified] -> <td>Verified photography</td>
+frontend\src\routing.ts:14 [verified] -> *   /crew                                  -> Verified Crew Contributor Programme
+frontend\src\components\CrewSection.tsx:106 [verified] -> Verified Officer Contributor #4192 · Active Session
+frontend\src\components\PortExplorer.tsx:121 [verified] -> {/* Verified Port Metrics Grid (Never render empty) */}
+frontend\src\components\PortExplorer.tsx:199 [verified] -> {isGerman ? 'Verifizierter Digital Twin' : 'Verified Digital Twin'}
+frontend\src\components\PortExplorer.tsx:199 [digital twin] -> {isGerman ? 'Verifizierter Digital Twin' : 'Verified Digital Twin'}
+frontend\src\components\PortExplorer.tsx:216 [verified] -> : 'Verified local port authority dispatch and emergency channels:'}
+frontend\src\components\ShipLandingPage.tsx:75 [verified] -> : `Bridge Officer Tim: "Verified blueprints for all ${vessel.totalDecks} decks and staterooms are active for ${vessel.name}."`}
+frontend\src\components\ShipLandingPage.tsx:87 [verified] -> : 'Explore verified walking distances, vertical noise surroundings, and sightlines.'}
+frontend\src\components\ShipLandingPage.tsx:189 [verified] -> 🔵 {locale === 'de' ? 'VERIFIZIERTER TWIN' : 'VERIFIED TWIN'}
+frontend\src\components\UniversalSearchModal.tsx:88 [verified] -> subtitle: 'Open verified stateroom geometry and orientation dossier',
+frontend\src\components\UniversalSearchModal.tsx:184 [verified] -> No verified records match "{query}". Try a cabin number or port name.
+frontend\src\i18n\locales\de.ts:97 [digital twin] -> bellissimaStatus: 'Aktiver Digital Twin',
+frontend\src\i18n\locales\de.ts:130 [digital twin] -> title: 'Der Digital Twin jeder Reise.',
+frontend\src\i18n\locales\en.ts:88 [verified] -> badge: 'Verified Reference Vessels',
+frontend\src\i18n\locales\en.ts:97 [digital twin] -> bellissimaStatus: 'Live Digital Twin',
+frontend\src\i18n\locales\en.ts:111 [verified] -> neverInventDesc: 'If a deck detail or transit route is not verified by ship blueprints or officer logbooks, we mark it clearly as UNKNOWN.',
+frontend\src\i18n\locales\en.ts:130 [digital twin] -> title: 'The Digital Twin of every voyage.',
+frontend\src\i18n\locales\en.ts:131 [verified] -> subtitle: 'Bridge Officer Tim continuously correlates data from verified naval sources.',
+frontend\src\i18n\locales\en.ts:137 [verified] -> system2Desc: 'Verified gangway decks, shuttle routes, and step-free pier access.',
+frontend\src\i18n\locales\en.ts:157 [verified] -> platformDescription: '4 Active Digital Twins · 108 Global Vessels in Verified Registry. Zero advertising. Zero affiliate tracking. Factual maritime evidence.',
+frontend\src\i18n\locales\en.ts:160 [verified] -> copyright: '© 2026 Timonelo. Verified Maritime Intelligence.',
+frontend\src\i18n\locales\en.ts:165 [verified] -> officerNote: "I couldn't find this vessel in our verified registry. Let's return to the bridge.",
+frontend\src\i18n\locales\en.ts:170 [verified] -> unmappedWarning: 'Notice: Cabin {cabin} is not yet blueprint-verified. Displaying verified reference Cabin {refCabin}.',
+frontend\src\i18n\locales\en.ts:171 [verified] -> verifiedReference: 'Verified Reference Cabin',
+frontend\src\i18n\locales\en.ts:176 [verified] -> subtitle: 'Verified berth locations, gangway access decks, and exact walking times without guessing.',
+frontend\src\i18n\locales\en.ts:177 [verified] -> officerObservation: 'Bridge Officer Tim: "Port logistics determine whether embarkation feels relaxing or exhausting. Here are the verified pier facts."',
+frontend\src\i18n\locales\en.ts:187 [verified] -> title: 'Verified Crew Contributor Programme',
+frontend\src\i18n\locales\en.ts:189 [verified] -> officerObservation: 'Bridge Officer Tim: "Every piece of information in Timonelo is verified against deck plans and officer logbooks with zero commercial influence."',
+frontend\src\i18n\locales\en.ts:191 [verified] -> pillar1Desc: 'All stateroom coordinates, gangway locations, and elevator proximities are verified against shipyard general arrangements.',
+frontend\src\i18n\locales\en.ts:195 [verified] -> pillar3Desc: 'Verified deck officers submit corrections directly to the shipyard engine before public publication.',
+README.md:8 [digital twin] -> [![Architecture: Digital Twin](https://img.shields.io/badge/architecture-living%20digital%20twin-purple.svg)](docs/ARCHITECTURE.md)
+README.md:10 [digital twin] -> > **Timonelo is the personal cruise operating system and living digital twin designed to minimize uncertainty and future regret before, during, and after every voyage.**
+README.md:65 [digital twin] -> subgraph LivePlane ["4. Living Digital Twin & Bridge"]
+README.md:66 [digital twin] -> SE & EE & ME --> DT[Living Ship Digital Twin\nOperational Telemetry & Impact]
+README.md:97 [digital twin] -> # Living Ship Digital Twin & Operational Translation
+README.md:167 [digital twin] -> │   ├── living_ship_engine.py    # Living digital twin & passenger translation layer

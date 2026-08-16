@@ -196,7 +196,7 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     <div>
                       <span className="text-xs font-medium text-ink block">{ship.name}</span>
                       <span className="text-[11px] font-mono text-muted">
-                        {isGerman ? 'Verifizierter Digital Twin' : 'Verified Digital Twin'}
+                        {isGerman ? 'Aktiver Digital Twin' : 'Active Digital Twin'}
                       </span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-muted group-hover:text-ink transition-transform group-hover:translate-x-0.5" />
@@ -212,8 +212,8 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               </div>
               <p className="text-xs text-white/70 leading-relaxed font-light">
                 {isGerman
-                  ? 'Verifizierte Notrufzentralen und Hafenbehörden vor Ort:'
-                  : 'Verified local port authority dispatch and emergency channels:'}
+                  ? 'Hinterlegte Notrufnummern der Hafenbehörden vor Ort:'
+                  : 'Local port authority dispatch and emergency channels:'}
               </p>
               <div className="p-3 bg-white/10 rounded-xs border border-white/15 text-xs font-mono text-white space-y-1">
                 <p>{isGerman ? 'Hafen / Polizei:' : 'Port / Police:'} {selectedPort.policePhone}</p>

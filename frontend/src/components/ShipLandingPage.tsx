@@ -71,8 +71,8 @@ export function ShipLandingPage({
 
               <div className="mt-5 p-3.5 bg-white/10 border border-white/15 rounded-xs text-xs text-amber-200 font-serif italic max-w-xl">
                 {locale === 'de'
-                  ? `Bridge Officer Tim: "Für ${vessel.name} stehen verifizierte Baupläne für alle ${vessel.totalDecks} Decks und Kabinen bereit."`
-                  : `Bridge Officer Tim: "Verified blueprints for all ${vessel.totalDecks} decks and staterooms are active for ${vessel.name}."`}
+                  ? `Bridge Officer Tim: "Die Deckgeometrie für ${vessel.name} basiert auf Werftplänen. Für nicht einzeln kartierte Kabinen greift das bewährte Klassen-Referenzmodell."`
+                  : `Bridge Officer Tim: "Deck geometry for ${vessel.name} is anchored in shipyard general arrangements. Staterooms without individual scans inherit proven class reference geometry."`}
               </div>
             </div>
 
@@ -83,8 +83,8 @@ export function ShipLandingPage({
               </span>
               <p className="text-xs text-white/80 leading-relaxed mb-4">
                 {locale === 'de'
-                  ? 'Erkunden Sie verifizierte Gehdistanzen, vertikale Lärmquellen und Sichtachsen.'
-                  : 'Explore verified walking distances, vertical noise surroundings, and sightlines.'}
+                  ? 'Erkunden Sie berechnete Gehdistanzen, vertikale Lärmquellen und Sichtachsen.'
+                  : 'Inspect estimated walking distances, vertical noise surroundings, and sightlines.'}
               </p>
               <button
                 onClick={() => onExploreCabins(vessel.defaultCabin)}
@@ -186,7 +186,7 @@ export function ShipLandingPage({
               🟢 {locale === 'de' ? 'OFFIZIELLES REGISTER' : 'OFFICIAL REGISTRY'}
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 bg-sky-100 text-sky-800 rounded-xs font-medium">
-              🔵 {locale === 'de' ? 'VERIFIZIERTER TWIN' : 'VERIFIED TWIN'}
+              🔵 {locale === 'de' ? 'KLASSEN-MODELL' : 'REFERENCE MODEL'}
             </span>
           </div>
         </section>
