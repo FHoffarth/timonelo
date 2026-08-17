@@ -15,7 +15,6 @@ import {
   Layers,
   History,
   AlertTriangle,
-  FileCheck2,
   Workflow,
 } from "lucide-react";
 
@@ -24,7 +23,7 @@ export default function SemanticLivingDeckApp() {
   const apiClient = useMemo(() => new TimoneloSpatialApiClient(selectedVesselId), [selectedVesselId]);
 
   const vesselGraph = apiClient.getVesselGraph();
-  const levels = vesselGraph.levels;
+  const levels = vesselGraph.levels || [];
 
   // Default active level: Level 14 on Bellissima or top level
   const [activeLevelIndex, setActiveLevelIndex] = useState<number>(
@@ -37,9 +36,9 @@ export default function SemanticLivingDeckApp() {
   // Standards Inspector Modal state
   const [inspectingStandardsEntity, setInspectingStandardsEntity] = useState<SemanticEntity | null>(null);
 
-  // Active top-level platform mode (Living Deck vs Future scientific views)
+  // Active top-level platform mode
   const [activePlatformView, setActivePlatformView] = useState<
-    "LIVING_DECK" | "EVIDENCE_EXPLORER" | "TOPOLOGY_INSPECTOR" | "PROVENANCE_VIEWER" | "CONFLICT_VIEWER"
+    "LIVING_DECK" | "TOPOLOGY_INSPECTOR" | "PROVENANCE_VIEWER"
   >("LIVING_DECK");
 
   // Focus Space 14122 by default when loaded on MSC Bellissima
@@ -106,11 +105,11 @@ export default function SemanticLivingDeckApp() {
 
         {/* Global Search across all spatial entities */}
         <SemanticSearchBar
-          onSearch={(q) => apiClient.searchEntities(q) as any}
-          onSelectObject={handleSelectEntity as any}
+          onSearch={(q) => apiClient.searchEntities(q)}
+          onSelectEntity={handleSelectEntity}
         />
 
-        {/* Top Platform View Switcher (Future Features space reserved) */}
+        {/* Top Platform View Switcher */}
         <div className="flex items-center gap-2">
           <div className="p-1 bg-slate-950/80 rounded-2xl border border-white/5 flex items-center gap-1 text-xs">
             <button
@@ -150,27 +149,27 @@ export default function SemanticLivingDeckApp() {
         </div>
       </header>
 
-      {/* Epistemic Legend Bar: Orthogonal Separation of Content vs Knowledge */}
+      {/* Epistemic Legend Bar */}
       <EpistemicLegendBar />
 
       {/* Main Scientific Spatial Workspace */}
       <div className="flex-1 flex overflow-hidden relative">
         {/* Left: Deck & Level Navigation Stack */}
         <DeckNavigationStack
-          currentVessel={vesselGraph as any}
+          currentVessel={vesselGraph}
           activeDeckLevel={activeLevelIndex}
           onSelectVessel={handleSelectVessel}
           onSelectDeck={handleSelectLevel}
         />
 
-        {/* Center: Main View (Living Deck or Future Inspection Panels) */}
+        {/* Center: Main View */}
         {activePlatformView === "LIVING_DECK" && activeLevel && (
           <SemanticDeckGrid
-            deck={activeLevel as any}
-            selectedObject={selectedEntity as any}
-            hoveredObject={hoveredEntity as any}
-            onSelectObject={handleSelectEntity as any}
-            onHoverObject={setHoveredEntity as any}
+            level={activeLevel}
+            selectedEntity={selectedEntity}
+            hoveredEntity={hoveredEntity}
+            onSelectEntity={handleSelectEntity}
+            onHoverEntity={setHoveredEntity}
           />
         )}
 
@@ -217,7 +216,7 @@ export default function SemanticLivingDeckApp() {
         />
       </div>
 
-      {/* International Standards Inspector Modal (W3C BOT, PROV-O, IndoorGML, JSON-LD) */}
+      {/* International Standards Inspector Modal */}
       {inspectingStandardsEntity && (
         <StandardsInspectorModal
           entity={inspectingStandardsEntity}

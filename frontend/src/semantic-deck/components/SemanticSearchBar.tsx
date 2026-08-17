@@ -1,19 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Search, MapPin, X, ArrowRight, Accessibility } from "lucide-react";
-import { SemanticObject } from "../types";
+import { Search, X, ArrowRight } from "lucide-react";
+import { SemanticEntity } from "../types";
 
 interface SemanticSearchBarProps {
-  onSearch: (query: string) => SemanticObject[];
-  onSelectObject: (obj: SemanticObject) => void;
+  onSearch: (query: string) => SemanticEntity[];
+  onSelectEntity: (entity: SemanticEntity) => void;
 }
 
 export default function SemanticSearchBar({
   onSearch,
-  onSelectObject,
+  onSelectEntity,
 }: SemanticSearchBarProps) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [results, setResults] = useState<SemanticObject[]>([]);
+  const [results, setResults] = useState<SemanticEntity[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function SemanticSearchBar({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query.trim().length > 0 && setIsOpen(true)}
-          placeholder="Search cabin 14122, Marketplace Buffet, Suites..."
+          placeholder="Search space 14122, Marketplace Buffet, Suites..."
           className="w-full pl-11 pr-10 py-2 bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 shadow-2xl transition-all font-sans"
         />
         {query && (
@@ -62,15 +62,15 @@ export default function SemanticSearchBar({
       {isOpen && results.length > 0 && (
         <div className="absolute left-0 right-0 top-full mt-2 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2 shadow-2xl max-h-96 overflow-y-auto no-scrollbar space-y-1">
           <div className="px-3 py-1.5 text-[10px] font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between border-b border-white/5">
-            <span>Semantic Results ({results.length})</span>
+            <span>Canonical Spaces ({results.length})</span>
             <span className="text-sky-400 font-mono">Select & Focus</span>
           </div>
 
-          {results.map((obj) => (
+          {results.map((space) => (
             <button
-              key={obj.id}
+              key={space.id}
               onClick={() => {
-                onSelectObject(obj);
+                onSelectEntity(space);
                 setIsOpen(false);
                 setQuery("");
               }}
@@ -78,17 +78,17 @@ export default function SemanticSearchBar({
             >
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 font-mono font-bold text-xs">
-                  {obj.deck}
+                  {space.level}
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-white group-hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                    {obj.label}
-                    {obj.accessible && (
+                    {space.label}
+                    {space.accessible && (
                       <span className="text-[10px] text-sky-400 font-bold">H</span>
                     )}
                   </div>
                   <div className="text-[10px] text-slate-400 font-mono">
-                    {obj.category_label} • {obj.zone.replace("_", " ")}
+                    {space.classification_label} • {space.zone.replace("_", " ")}
                   </div>
                 </div>
               </div>

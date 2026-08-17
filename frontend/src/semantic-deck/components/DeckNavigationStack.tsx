@@ -1,10 +1,9 @@
 import React from "react";
-import { SemanticDeck, VesselSemanticModel } from "../types";
-import { REGISTERED_VESSELS } from "../semanticEngine";
-import { Ship, Anchor, Compass, Layers, ShieldCheck, ChevronDown } from "lucide-react";
+import { VesselKnowledgeGraph } from "../types";
+import { Ship, ChevronDown } from "lucide-react";
 
 interface DeckNavigationStackProps {
-  currentVessel: VesselSemanticModel;
+  currentVessel: VesselKnowledgeGraph;
   activeDeckLevel: number;
   onSelectVessel: (vesselId: string) => void;
   onSelectDeck: (deckLevel: number) => void;
@@ -16,14 +15,19 @@ export default function DeckNavigationStack({
   onSelectVessel,
   onSelectDeck,
 }: DeckNavigationStackProps) {
+  const registeredVessels = [
+    { id: "msc-bellissima", name: "MSC Bellissima", class: "Meraviglia Class" },
+    { id: "ms-andorinha", name: "MS Andorinha", class: "Douro River Custom Class" },
+  ];
+
   return (
     <div className="w-64 h-full bg-slate-900/80 backdrop-blur-2xl border-r border-white/10 flex flex-col justify-between p-4 select-none z-30">
       <div className="space-y-4">
         {/* Vessel Selector Dropdown */}
         <div className="p-3 bg-slate-950/60 rounded-2xl border border-white/5 space-y-2">
           <div className="flex items-center justify-between text-[10px] font-semibold text-slate-500 uppercase tracking-wider">
-            <span>Semantic Vessel</span>
-            <span className="text-emerald-400 font-mono">Pluggable</span>
+            <span>Canonical Model</span>
+            <span className="text-emerald-400 font-mono">W3C Graph</span>
           </div>
 
           <div className="relative">
@@ -32,9 +36,9 @@ export default function DeckNavigationStack({
               onChange={(e) => onSelectVessel(e.target.value)}
               className="w-full appearance-none bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs font-semibold text-white focus:outline-none focus:border-sky-400 cursor-pointer pr-8"
             >
-              {Object.values(REGISTERED_VESSELS).map((v) => (
-                <option key={v.vessel_id} value={v.vessel_id}>
-                  {v.vessel_name} ({v.class_name})
+              {registeredVessels.map((v) => (
+                <option key={v.id} value={v.id}>
+                  {v.name} ({v.class})
                 </option>
               ))}
             </select>
@@ -42,25 +46,27 @@ export default function DeckNavigationStack({
           </div>
 
           <div className="text-[11px] text-slate-400 font-mono">
-            {currentVessel.operator} • {currentVessel.epistemic_summary.total_objects} Objects
+            {currentVessel.operator} • {currentVessel.epistemic_summary.total_entities} Spaces
           </div>
         </div>
 
-        {/* Vertical Elevator Deck Stack */}
+        {/* Vertical Elevator Level Stack */}
         <div className="space-y-1.5">
           <div className="px-2 py-1 flex items-center justify-between text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-            <span>Deck Levels</span>
-            <span className="text-sky-400 font-mono text-[10px]">{currentVessel.decks.length} Levels</span>
+            <span>Storey Levels (BOT)</span>
+            <span className="text-sky-400 font-mono text-[10px]">
+              {(currentVessel.levels || []).length} Levels
+            </span>
           </div>
 
-          <div className="space-y-1 max-h-[calc(100vh-320px)] overflow-y-auto no-scrollbar">
-            {currentVessel.decks.map((deck) => {
-              const isActive = deck.deck_level === activeDeckLevel;
+          <div className="space-y-1 max-h-[calc(100vh-340px)] overflow-y-auto no-scrollbar">
+            {(currentVessel.levels || []).map((level) => {
+              const isActive = level.level_index === activeDeckLevel;
 
               return (
                 <button
-                  key={deck.deck_level}
-                  onClick={() => onSelectDeck(deck.deck_level)}
+                  key={level.level_index}
+                  onClick={() => onSelectDeck(level.level_index)}
                   className={`w-full px-3 py-2.5 rounded-2xl text-left transition-all duration-200 flex items-center justify-between group ${
                     isActive
                       ? "bg-gradient-to-r from-sky-500/20 to-blue-600/30 border border-sky-400/40 text-white shadow-lg shadow-sky-500/20"
@@ -75,14 +81,14 @@ export default function DeckNavigationStack({
                           : "bg-slate-800 text-slate-300 group-hover:bg-slate-700"
                       }`}
                     >
-                      {deck.deck_level}
+                      {level.level_index}
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-semibold truncate leading-tight">
-                        {deck.deck_name}
+                        {level.level_name}
                       </span>
                       <span className="text-[10px] text-slate-400 font-mono">
-                        {deck.objects.length} Semantic Objects
+                        {level.spaces_count} Verified Spaces
                       </span>
                     </div>
                   </div>
@@ -102,25 +108,33 @@ export default function DeckNavigationStack({
         <div className="flex items-center justify-between text-slate-400 text-[10px] uppercase font-bold">
           <span>Truth Grounding</span>
           <span className="text-emerald-400 font-semibold">
-            {(currentVessel.epistemic_summary.confidence_avg * 100).toFixed(0)}% Verified
+            {(currentVessel.epistemic_summary.mean_confidence * 100).toFixed(0)}% Verified
           </span>
         </div>
         <div className="grid grid-cols-2 gap-1.5 text-[10px]">
           <div className="p-1.5 bg-slate-900 rounded-lg text-slate-300">
             <span className="text-slate-500 block">Direct</span>
-            <span className="font-bold text-emerald-400">{currentVessel.epistemic_summary.direct_count}</span>
+            <span className="font-bold text-emerald-400">
+              {currentVessel.epistemic_summary.direct_evidence_count}
+            </span>
           </div>
           <div className="p-1.5 bg-slate-900 rounded-lg text-slate-300">
             <span className="text-slate-500 block">Derived</span>
-            <span className="font-bold text-sky-400">{currentVessel.epistemic_summary.derived_count}</span>
+            <span className="font-bold text-sky-400">
+              {currentVessel.epistemic_summary.derived_count}
+            </span>
           </div>
           <div className="p-1.5 bg-slate-900 rounded-lg text-slate-300">
             <span className="text-slate-500 block">Unknown</span>
-            <span className="font-bold text-slate-400">{currentVessel.epistemic_summary.unknown_count}</span>
+            <span className="font-bold text-slate-400">
+              {currentVessel.epistemic_summary.unknown_count}
+            </span>
           </div>
           <div className="p-1.5 bg-slate-900 rounded-lg text-slate-300">
             <span className="text-slate-500 block">Conflicts</span>
-            <span className="font-bold text-amber-400">{currentVessel.epistemic_summary.conflict_count}</span>
+            <span className="font-bold text-amber-400">
+              {currentVessel.epistemic_summary.conflict_count}
+            </span>
           </div>
         </div>
       </div>
