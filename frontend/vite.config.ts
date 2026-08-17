@@ -5,6 +5,15 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: '/',
   plugins: [react(), tailwindcss()],
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    cors: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
   build: {
     target: 'esnext',
     cssCodeSplit: true,
