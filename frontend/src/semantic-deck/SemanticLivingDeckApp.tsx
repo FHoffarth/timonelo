@@ -3,7 +3,7 @@ import { TimoneloSpatialApiClient } from "./apiClient";
 import { SemanticLevel, SemanticEntity } from "./types";
 import { ThemeProvider, useTheme } from "./themeContext";
 import DeckNavigationTree from "./components/DeckNavigationTree";
-import SchematicVesselCanvas from "./components/SchematicVesselCanvas";
+import SpatialGrammarCanvas from "./components/SpatialGrammarCanvas";
 import SemanticObjectInspector from "./components/SemanticObjectInspector";
 import EpistemicLegendBar from "./components/EpistemicLegendBar";
 import SemanticSearchBar from "./components/SemanticSearchBar";
@@ -19,6 +19,7 @@ import {
   Workflow,
   Sun,
   Moon,
+  Footprints,
 } from "lucide-react";
 
 function LivingDeckInner() {
@@ -31,9 +32,9 @@ function LivingDeckInner() {
   const vesselGraph = apiClient.getVesselGraph();
   const levels = vesselGraph.levels || [];
 
-  // Default active level: Level 10 (Mirto / Seaside Evo) or Level 14
+  // Default active level: Level 14 (Girasole / World Class) or top level
   const [activeLevelIndex, setActiveLevelIndex] = useState<number>(
-    selectedVesselId === "msc-bellissima" ? 10 : levels[0]?.level_index ?? 1
+    selectedVesselId === "msc-bellissima" ? 14 : levels[0]?.level_index ?? 1
   );
 
   const [selectedEntity, setSelectedEntity] = useState<SemanticEntity | null>(null);
@@ -47,10 +48,10 @@ function LivingDeckInner() {
     "LIVING_DECK" | "TOPOLOGY_INSPECTOR" | "PROVENANCE_VIEWER"
   >("LIVING_DECK");
 
-  // Focus Space 10012 by default on Deck 10 (or 14122 on Deck 14)
+  // Focus Cabin 14122 by default on Deck 14
   useEffect(() => {
     if (selectedVesselId === "msc-bellissima") {
-      const defaultSpace = apiClient.getEntity("10012") || apiClient.getEntity("14122") || levels[0]?.spaces[0];
+      const defaultSpace = apiClient.getEntity("14122") || apiClient.getEntity("10012") || levels[0]?.spaces[0];
       if (defaultSpace) {
         setSelectedEntity(defaultSpace);
         setActiveLevelIndex(defaultSpace.level);
@@ -104,7 +105,7 @@ function LivingDeckInner() {
               </span>
             </div>
             <p className="text-[11px] text-slate-400 font-mono">
-              {vesselGraph.vessel_name} • Canonical Knowledge Graph Platform
+              {vesselGraph.vessel_name} • Spatial Grammar & Mental Model Navigation
             </p>
           </div>
         </div>
@@ -126,7 +127,7 @@ function LivingDeckInner() {
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              <Compass className="w-3.5 h-3.5" />
+              <Footprints className="w-3.5 h-3.5" />
               Living Deck
             </button>
             <button
@@ -171,7 +172,7 @@ function LivingDeckInner() {
       {/* Epistemic Subheader: Content Categories vs Knowledge Certainty */}
       <EpistemicLegendBar />
 
-      {/* Main Workspace Layout: Left Tree + Master Center Canvas + Right Inspector */}
+      {/* Main Workspace Layout: Left Tree + Spatial Grammar Canvas + Right Inspector */}
       <div className="flex-1 flex overflow-hidden relative">
         {/* Left: Navigation Tree */}
         <DeckNavigationTree
@@ -181,9 +182,9 @@ function LivingDeckInner() {
           onSelectDeck={handleSelectLevel}
         />
 
-        {/* Center: Living Deck Schematic Vessel Canvas */}
+        {/* Center: Living Deck Spatial Grammar Canvas */}
         {activePlatformView === "LIVING_DECK" && activeLevel && (
-          <SchematicVesselCanvas
+          <SpatialGrammarCanvas
             level={activeLevel}
             selectedEntity={selectedEntity}
             hoveredEntity={hoveredEntity}
