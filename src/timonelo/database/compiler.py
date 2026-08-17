@@ -106,11 +106,11 @@ class KnowledgeDBCompiler:
         os.makedirs(self.data_dir, exist_ok=True)
         out_path = os.path.join(self.data_dir, "cruise_intelligence_db.json")
         with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(compiled_db, f, indent=2, ensure_ascii=False)
+            json.dump(compiled_db, f, indent=2, sort_keys=True, ensure_ascii=False)
 
         graph_path = os.path.join(self.data_dir, "cruise_knowledge_graph.json")
         with open(graph_path, "w", encoding="utf-8") as f:
-            json.dump(graph_export, f, indent=2, ensure_ascii=False)
+            json.dump(graph_export, f, indent=2, sort_keys=True, ensure_ascii=False)
 
         return compiled_db
 

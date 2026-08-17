@@ -217,7 +217,7 @@ class KnowledgeFactoryCompiler:
         vessel_data_dir.mkdir(parents=True, exist_ok=True)
         canonical_file = vessel_data_dir / "knowledge-pack.json"
         with open(canonical_file, "w", encoding="utf-8") as f:
-            json.dump(ship_data, f, indent=2)
+            json.dump(ship_data, f, indent=2, sort_keys=True, ensure_ascii=False)
         print(f"  [EXPORT] Written Canonical Knowledge Pack: {canonical_file}")
 
         # 6. Write Frontend Runtime Asset
@@ -226,7 +226,7 @@ class KnowledgeFactoryCompiler:
             frontend_public_dir.mkdir(parents=True, exist_ok=True)
             frontend_file = frontend_public_dir / f"{ship_slug}.json"
             with open(frontend_file, "w", encoding="utf-8") as f:
-                json.dump(ship_data, f, indent=2)
+                json.dump(ship_data, f, indent=2, sort_keys=True, ensure_ascii=False)
             print(f"  [EXPORT] Written Cruise Explorer Pack:     {frontend_file}")
 
         print(f"\nCompilation SUCCESSFUL for {ontology.name}.\n")

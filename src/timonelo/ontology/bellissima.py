@@ -31,17 +31,17 @@ def create_bellissima_ontology() -> VesselSpatialOntology:
     # 1. Primary Sources & Evidence Records (Plane 1)
     ev_ga_full = EvidenceLink(
         source_id="EVID-GA-BELLISSIMA-REV4",
-        sha256="4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d",
+        sha256=None,
         locator="Chantiers_de_l_Atlantique_GA_Full_Decks_01_19",
     )
     ev_survey = EvidenceLink(
         source_id="EVID-SURVEY-2024-COMPREHENSIVE",
-        sha256="a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+        sha256=None,
         locator="Onboard_Survey_2024_All_Residential_Corridors",
     )
     ev_builder_spec = EvidenceLink(
         source_id="EVID-BUILDER-SPEC-MERAVIGLIA-CLASS",
-        sha256="7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d",
+        sha256=None,
         locator="Chantiers_Specifications_Doc_STX_France_B34",
     )
 

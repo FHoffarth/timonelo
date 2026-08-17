@@ -183,7 +183,7 @@ def populate_all():
     for sy in SHIPYARDS:
         path = os.path.join(shipyards_dir, f"{sy['slug']}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(sy, f, indent=2, ensure_ascii=False)
+            json.dump(sy, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(SHIPYARDS)} canonical Shipyards in knowledge/shipyards/")
 
     # 2. Populate Destination Regions
@@ -192,7 +192,7 @@ def populate_all():
     for rg in REGIONS:
         path = os.path.join(regions_dir, f"{rg['slug']}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(rg, f, indent=2, ensure_ascii=False)
+            json.dump(rg, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(REGIONS)} Destination Regions in knowledge/regions/")
 
     # 3. Populate 100% MSC Fleet
@@ -242,7 +242,7 @@ def populate_all():
             identity_payload["evidence_conflicts"] = existing_identity["evidence_conflicts"]
 
         with open(identity_path, "w", encoding="utf-8") as f:
-            json.dump(identity_payload, f, indent=2, ensure_ascii=False)
+            json.dump(identity_payload, f, indent=2, sort_keys=True, ensure_ascii=False)
 
     print(f" [OK] Populated 100% MSC Fleet ({len(MSC_FLEET)} active vessels) in knowledge/ships/")
 

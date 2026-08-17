@@ -161,7 +161,7 @@ def populate_knowledge_base():
     for line in CRUISE_LINES:
         path = os.path.join(lines_dir, f"{line['slug']}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(line, f, indent=2, ensure_ascii=False)
+            json.dump(line, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"[OK] Populated {len(CRUISE_LINES)} Cruise Lines.")
 
     # 2. Ports
@@ -203,7 +203,7 @@ def populate_knowledge_base():
             ],
         }
         with open(os.path.join(port_pack_dir, "identity.json"), "w", encoding="utf-8") as f:
-            json.dump(identity, f, indent=2, ensure_ascii=False)
+            json.dump(identity, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"[OK] Populated {len(PORTS_EXPANSION)} Strategic Cruise Ports.")
 
     print("=" * 60)

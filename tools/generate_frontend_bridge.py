@@ -30,7 +30,7 @@ def generate_bridge():
     # 1. Export JSON master database
     json_path = os.path.join(FRONTEND_GEN_DIR, "database.json")
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(db, f, indent=2, ensure_ascii=False)
+        json.dump(db, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Exported master database to frontend/src/generated/database.json")
 
     # 2. Generate TypeScript Fleet Registry
@@ -115,7 +115,7 @@ export interface FleetVessel {{
   highlights: string[];
 }}
 
-export const FLEET_REGISTRY: FleetVessel[] = {json.dumps(fleet_vessels, indent=2, ensure_ascii=False)};
+export const FLEET_REGISTRY: FleetVessel[] = {json.dumps(fleet_vessels, indent=2, sort_keys=True, ensure_ascii=False)};
 
 export function getVesselBySlug(slug: string): FleetVessel {{
   const found = FLEET_REGISTRY.find((v) => v.slug === slug);
@@ -199,7 +199,7 @@ export interface PortData {{
   callingShips: {{ slug: string; name: string }}[];
 }}
 
-export const PORTS_REGISTRY: PortData[] = {json.dumps(port_records, indent=2, ensure_ascii=False)};
+export const PORTS_REGISTRY: PortData[] = {json.dumps(port_records, indent=2, sort_keys=True, ensure_ascii=False)};
 
 export function getPortBySlug(slug: string): PortData {{
   const found = PORTS_REGISTRY.find((p) => p.slug === slug);

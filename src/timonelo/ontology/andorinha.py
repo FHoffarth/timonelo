@@ -29,7 +29,7 @@ def create_andorinha_ontology() -> VesselSpatialOntology:
 
     evidence_andorinha = EvidenceLink(
         source_id="EVID-ANDORINHA-GA-2020",
-        sha256="9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b",
+        sha256=None,
         locator="Tauck_MS_Andorinha_Douro_GA_Plan_Rev1",
     )
 

@@ -1,0 +1,155 @@
+{
+  "questions": {
+    "Q-0001": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Does this stateroom exist on the ship?"
+      },
+      "question_id": "Q-0001",
+      "statement_type": "cabin.exists",
+      "supportable_by": [],
+      "unknown_guidance": "Not shown on any deck plan held."
+    },
+    "Q-0002": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Which deck is the stateroom on?"
+      },
+      "question_id": "Q-0002",
+      "statement_type": "cabin.deck",
+      "supportable_by": [],
+      "unknown_guidance": "Check your booking confirmation."
+    },
+    "Q-0003": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "What is the deck called?"
+      },
+      "question_id": "Q-0003",
+      "statement_type": "cabin.deck_name",
+      "supportable_by": [],
+      "unknown_guidance": "Not sourced yet."
+    },
+    "Q-0004": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Which category code?"
+      },
+      "question_id": "Q-0004",
+      "statement_type": "cabin.category",
+      "supportable_by": [],
+      "unknown_guidance": "Check your booking confirmation."
+    },
+    "Q-0005": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Interior, ocean view or balcony?"
+      },
+      "question_id": "Q-0005",
+      "statement_type": "cabin.cabin_type",
+      "supportable_by": [],
+      "unknown_guidance": "Not sourced yet."
+    },
+    "Q-0006": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Does it have a connecting door?"
+      },
+      "question_id": "Q-0006",
+      "statement_type": "cabin.connecting_cabin",
+      "supportable_by": [],
+      "unknown_guidance": "No connecting door is marked; confirm with MSC when booking."
+    },
+    "Q-0007": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Are 3rd/4th beds available?"
+      },
+      "question_id": "Q-0007",
+      "statement_type": "cabin.additional_beds",
+      "supportable_by": [],
+      "unknown_guidance": "Not marked on the deck plan held."
+    },
+    "Q-0008": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Is it designated for guests with reduced mobility?"
+      },
+      "question_id": "Q-0008",
+      "statement_type": "cabin.mobility_designated",
+      "supportable_by": [],
+      "unknown_guidance": "Not sourced yet."
+    },
+    "Q-0009": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Port or starboard?"
+      },
+      "question_id": "Q-0009",
+      "statement_type": "cabin.hull_side",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo holds no document stating the drawing's orientation."
+    },
+    "Q-0010": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "What is the floor area?"
+      },
+      "question_id": "Q-0010",
+      "statement_type": "cabin.area_sqm",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo holds no dimensioned drawing for this vessel."
+    },
+    "Q-0011": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "What is the door clear width?"
+      },
+      "question_id": "Q-0011",
+      "statement_type": "cabin.door_clear_width_mm",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo holds no accessibility guide or survey for this vessel."
+    },
+    "Q-0012": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "What are the balcony dimensions?"
+      },
+      "question_id": "Q-0012",
+      "statement_type": "cabin.balcony_dimensions",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo holds no dimensioned drawing for this vessel."
+    },
+    "Q-0013": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Is there an HVAC riser adjacent?"
+      },
+      "question_id": "Q-0013",
+      "statement_type": "cabin.hvac_riser",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo holds no shipyard drawing for this vessel."
+    },
+    "Q-0014": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Is noise exposure known?"
+      },
+      "question_id": "Q-0014",
+      "statement_type": "cabin.noise_exposure",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo has not surveyed this stateroom."
+    },
+    "Q-0015": {
+      "entity_type": "cabin",
+      "labels": {
+        "en": "Is vibration known?"
+      },
+      "question_id": "Q-0015",
+      "statement_type": "cabin.vibration",
+      "supportable_by": [],
+      "unknown_guidance": "Timonelo has not surveyed this stateroom."
+    }
+  },
+  "version": "bellissima-2026-08-17"
+}

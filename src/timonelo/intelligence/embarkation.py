@@ -16,49 +16,64 @@ class EmbarkationIntelligenceEvaluator:
         ontology: VesselSpatialOntology,
         cabin: Cabin,
         terminal_override: Optional[Dict[str, Any]] = None,
-    ) -> EmbarkationIntelligence:
-        term_data = terminal_override or {}
-        terminal_name = term_data.get("terminal_name", "Cruise Terminal A (Palacrociere)")
-        pier_number = term_data.get("pier_number", "Berth 10")
-        luggage_window = term_data.get("luggage_drop_window", "11:00 – 15:30")
-        stateroom_ready = term_data.get("stateroom_ready_time", "14:00")
-        drill_deadline = term_data.get("mandatory_safety_drill_deadline", "16:30 (Prior to departure)")
+    ) -> Optional[EmbarkationIntelligence]:
+        """
+        Returns embarkation intelligence ONLY when sourced data is supplied.
 
-        # Determine muster station based on deck count & cabin location
-        is_starboard = (int(cabin.cabin_number[-1]) % 2 == 0)
-        station_x = cabin.boundary_polygon[0].x if cabin.boundary_polygon else 0.5
+        Everything this evaluator previously returned was fabricated:
 
-        if ontology.total_decks <= 5:
-            # River / Expedition / Small Vessel Muster Station
-            muster_deck = min(ontology.total_decks, 3)
-            assigned_muster = "Muster Station 1 (Panorama Lounge & Atrium)" if station_x > 0.45 else "Muster Station 2 (Main Restaurant / Reception)"
-        else:
-            # Ocean Mega-Vessel Muster Station
-            if station_x > 0.65:
-                assigned_muster = "Muster Station A (Forward)" if is_starboard else "Muster Station D (Forward Port)"
-                muster_deck = 6 if is_starboard else 7
-            elif station_x > 0.35:
-                assigned_muster = "Muster Station B (Promenade)" if is_starboard else "Muster Station E (Mid Port)"
-                muster_deck = 6 if is_starboard else 7
-            else:
-                assigned_muster = "Muster Station C (Aft)" if is_starboard else "Muster Station F (Aft Port)"
-                muster_deck = 6 if is_starboard else 7
+          * terminal name, berth, luggage window, stateroom-ready time and
+            drill deadline were hardcoded string literals, identical for every
+            cabin on every vessel, including vessels that have never called at
+            that terminal;
+          * the muster station was COMPUTED from `cabin.boundary_polygon[0].x`
+            and the parity of the last digit of the cabin number. Those
+            polygons are produced arithmetically by StateroomArchetypeGenerator
+            and correspond to no surveyed geometry;
+          * the result was then stamped with the cabin's evidence links, or
+            with a placeholder SOLAS EvidenceLink, presenting it as sourced.
 
-        route_guidance = f"Take nearest stairs/elevator to Deck {muster_deck:02d}, follow emergency signage to {assigned_muster}."
+        Muster assignment is SOLAS safety information. Rendering a guessed
+        muster station inside a calm, authoritative interface is worse than
+        rendering nothing, because it displaces the passenger's check of their
+        actual cabin card and stateroom door notice.
 
-        ev_links = list(cabin.evidence_links) if cabin.evidence_links else [
-            EvidenceLink(source_id="EVID-SOLAS-PLAN", sha256="4b9a8f2e1c3d5a7b6e8f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d", locator="SOLAS_Safety_Plan")
-        ]
+        No information is preferable to incorrect information. Until a sourced
+        terminal and muster record exists, this returns None and the briefing
+        renders the section as UNKNOWN.
+        """
+        if not terminal_override:
+            return None
+
+        required = (
+            "terminal_name",
+            "pier_number",
+            "luggage_drop_window",
+            "stateroom_ready_time",
+            "mandatory_safety_drill_deadline",
+            "assigned_muster_station",
+            "muster_station_deck",
+            "step_free_muster_route",
+            "boarding_pass_requirement",
+            "evidence_links",
+        )
+        missing = [k for k in required if not terminal_override.get(k)]
+        if missing:
+            raise ValueError(
+                "Refusing to render partial embarkation intelligence. "
+                f"Missing sourced fields: {', '.join(missing)}. "
+                "Supply every field with provenance, or supply none."
+            )
 
         return EmbarkationIntelligence(
-            terminal_name=terminal_name,
-            pier_number=pier_number,
-            luggage_drop_window=luggage_window,
-            stateroom_ready_time=stateroom_ready,
-            mandatory_safety_drill_deadline=drill_deadline,
-            assigned_muster_station=assigned_muster,
-            muster_station_deck=muster_deck,
-            step_free_muster_route=route_guidance,
-            boarding_pass_requirement="Keep digital or printed boarding pass and valid passport in hand (do NOT pack in checked luggage).",
-            evidence_links=ev_links,
+            terminal_name=terminal_override["terminal_name"],
+            pier_number=terminal_override["pier_number"],
+            luggage_drop_window=terminal_override["luggage_drop_window"],
+            stateroom_ready_time=terminal_override["stateroom_ready_time"],
+            mandatory_safety_drill_deadline=terminal_override["mandatory_safety_drill_deadline"],
+            assigned_muster_station=terminal_override["assigned_muster_station"],
+            muster_station_deck=terminal_override["muster_station_deck"],
+            step_free_muster_route=terminal_override["step_free_muster_route"],
+            boarding_pass_requirement=terminal_override["boarding_pass_requirement"],
+            evidence_links=terminal_override["evidence_links"],
         )

@@ -68,7 +68,7 @@ def populate_classes():
         slug = c["slug"]
         path = os.path.join(classes_dir, f"{slug}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(c, f, indent=2, ensure_ascii=False)
+            json.dump(c, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"✓ Populated {len(SHIP_CLASSES_DATA)} canonical Ship Classes.")
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ def populate_classes_and_extra_ports():
         slug = c["slug"]
         path = os.path.join(classes_dir, f"{slug}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(c, f, indent=2, ensure_ascii=False)
+            json.dump(c, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"[OK] Populated {len(SHIP_CLASSES_DATA)} Canonical Ship Classes.")
 
     # 2. Additional Strategic Ports
@@ -84,7 +84,7 @@ def populate_classes_and_extra_ports():
             ],
         }
         with open(os.path.join(port_pack_dir, "identity.json"), "w", encoding="utf-8") as f:
-            json.dump(identity, f, indent=2, ensure_ascii=False)
+            json.dump(identity, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"[OK] Populated {len(ADDITIONAL_PORTS)} Additional Global Strategic Ports.")
 
 

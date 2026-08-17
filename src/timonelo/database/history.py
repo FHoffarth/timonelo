@@ -342,7 +342,7 @@ class KnowledgeHistoryEngine:
             ],
         }
         with open(self.history_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
+            json.dump(data, f, indent=2, sort_keys=True, ensure_ascii=False)
 
     def _load(self):
         if os.path.exists(self.history_file):

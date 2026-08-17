@@ -9,32 +9,31 @@ from timonelo.intelligence.models import TravelIntelligence
 
 
 class TravelIntelligenceEvaluator:
-    """Evaluates local payment, currency, connectivity, and cultural etiquette."""
+    """Returns ground transport, connectivity and roaming ONLY when sourced data is supplied.
+
+    Governed by ADR-0002 §1, §8, §9.
+
+    Every value this evaluator previously returned was a hardcoded default,
+    identical for every vessel, every itinerary and every date. It was then
+    stamped with an EvidenceLink naming a service that is never called — the
+    same defect the audit found in the embarkation evaluator, and the same
+    shape as the 15,090 placeholder evidence links across the knowledge base.
+
+    Ground transport, connectivity and roaming is also a VOLATILE domain: unlike quasi-static ship
+    geometry it changes by the day, so it carries different validity semantics
+    and is out of scope for the current confidence model (ADR-0002 §13).
+
+    Until a sourced record exists this returns None, and the briefing renders
+    the section as an explicit UNKNOWN.
+    """
 
     @staticmethod
-    def evaluate(country_name: str, travel_data: Optional[Dict[str, Any]] = None) -> TravelIntelligence:
-        data = travel_data or {}
-        curr_code = data.get("currency_code", "EUR")
-        curr_name = data.get("currency_name", "Euro (€)")
-        card_status = data.get("card_acceptance", "Universal contactless card acceptance (Visa/Mastercard/Apple Pay) in 98% of shops & taxis.")
-        tipping = data.get("tipping_etiquette", "Service charge (Coperto) included in restaurant bills; 5–10% optional for exceptional table service.")
-        tz_diff = data.get("time_zone_difference", "Ship time matches local Italian time (UTC+2 / CEST). No clock adjustment needed.")
-        roaming = data.get("offline_roaming_advice", "EU Roam-Like-At-Home applies in port. When at sea, enable Airplane Mode to avoid satellite cellular charges.")
-
-        ev_links = [
-            EvidenceLink(
-                source_id="EVID-TRAVEL-DATA-EU",
-                sha256="7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d",
-                locator="European_Central_Bank_And_Consular_Services",
-            )
-        ]
-
-        return TravelIntelligence(
-            local_currency_code=curr_code,
-            local_currency_name=curr_name,
-            card_acceptance_status=card_status,
-            tipping_etiquette=tipping,
-            time_zone_difference_vs_ship=tz_diff,
-            offline_roaming_advice=roaming,
-            evidence_links=ev_links,
+    def evaluate(country_name: str, travel_data: Optional[Dict[str, Any]] = None) -> Optional[TravelIntelligence]:
+        if not travel_data:
+            return None
+        raise NotImplementedError(
+            "Sourced transport intelligence is not yet wired to the evidence "
+            "pipeline. Supply it via the Truth Engine (timonelo.evidence) "
+            "rather than as an override dict, so that every value carries "
+            "provenance through Artifact -> Event -> Statement -> Review."
         )

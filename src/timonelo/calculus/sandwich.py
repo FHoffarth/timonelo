@@ -53,11 +53,13 @@ class DeterministicSandwichResolver:
         underfoot_report = self._resolve_deck_layer(target_deck_num - 1, target_cabin)
 
         # 4. Acoustic insulation status (true if both overhead and underfoot are pure residential cabins)
+        # `is` True, not truthiness: is_residential_cabins_only may be None
+        # (UNKNOWN), and None must never satisfy an acoustic-comfort claim.
         is_insulated = (
-            overhead_report is not None 
-            and overhead_report.is_residential_cabins_only 
-            and underfoot_report is not None 
-            and underfoot_report.is_residential_cabins_only
+            overhead_report is not None
+            and overhead_report.is_residential_cabins_only is True
+            and underfoot_report is not None
+            and underfoot_report.is_residential_cabins_only is True
         )
 
         return CabinSandwichReport(
@@ -89,7 +91,15 @@ class DeterministicSandwichResolver:
                 if venue.is_noise_generator:
                     has_noise = True
 
-        is_residential = len(deck.cabins) > 0 and len(intersecting) == 0
+        # ADR-0002 I3: absence of modelled venues is NOT evidence of absence.
+        # A deck with no venue coverage is UNKNOWN, never "pure residential".
+        # Reporting an unmodelled deck as quiet is the single most dangerous
+        # inference in the engine: it converts missing data into reassurance.
+        deck_has_venue_coverage = len(deck.venues) > 0
+        if not deck_has_venue_coverage:
+            is_residential = None   # UNKNOWN
+        else:
+            is_residential = len(deck.cabins) > 0 and len(intersecting) == 0
 
         return VerticalLayerReport(
             deck_number=deck_number,

@@ -138,7 +138,7 @@ def populate_operations():
     for d in DEPLOYMENTS:
         path = os.path.join(dep_dir, f"{d['deployment_id'].replace(':', '_')}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(d, f, indent=2, ensure_ascii=False)
+            json.dump(d, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(DEPLOYMENTS)} Seasonal Deployments in knowledge/deployments/")
 
     # 2. Voyages
@@ -147,7 +147,7 @@ def populate_operations():
     for v in VOYAGES:
         path = os.path.join(voy_dir, f"{v['voyage_id'].replace(':', '_')}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(v, f, indent=2, ensure_ascii=False)
+            json.dump(v, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(VOYAGES)} Structured Voyages in knowledge/voyages/")
 
     # 3. Fleet Status
@@ -156,7 +156,7 @@ def populate_operations():
     for fs in FLEET_STATUS:
         path = os.path.join(status_dir, f"{fs['ship_slug']}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(fs, f, indent=2, ensure_ascii=False)
+            json.dump(fs, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(FLEET_STATUS)} Live Fleet Status entities in knowledge/fleet-status/")
 
 

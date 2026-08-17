@@ -1,0 +1,37 @@
+{
+  "conflicts": {
+    "CFL-0001": {
+      "challenger_statement_id": "STM-0009",
+      "challenger_value": "IR1",
+      "conflict_id": "CFL-0001",
+      "detected_on": "2026-08-18",
+      "entity_id": "cabin:MSC-BELLISSIMA:14122",
+      "incumbent_statement_id": "STM-0005",
+      "incumbent_value": "IR2",
+      "question_id": "Q-0004",
+      "resolution_note": "The page 2 legend prints one pink swatch for both IR1 and IR2, so colour alone cannot decide. The same legend prints deck ranges: IR1 = decks 5-10, IR2 = decks 10-14. Cabin 14122 is on deck 14, outside IR1's printed range. STM-0009 read the colour correctly but did not apply the printed deck range.",
+      "resolved_by": "reviewer.two",
+      "resolved_on": "2026-08-18",
+      "resolved_statement_id": "STM-0005",
+      "statement_type": "cabin.category",
+      "status": "RESOLVED"
+    }
+  },
+  "history": [
+    {
+      "challenger": "STM-0009",
+      "conflict_id": "CFL-0001",
+      "event": "DETECTED",
+      "incumbent": "STM-0005",
+      "on": "2026-08-18"
+    },
+    {
+      "actor": "reviewer.two",
+      "conflict_id": "CFL-0001",
+      "event": "RESOLVED",
+      "note": "The page 2 legend prints one pink swatch for both IR1 and IR2, so colour alone cannot decide. The same legend prints deck ranges: IR1 = decks 5-10, IR2 = decks 10-14. Cabin 14122 is on deck 14, outside IR1's printed range. STM-0009 read the colour correctly but did not apply the printed deck range.",
+      "on": "2026-08-18",
+      "winner": "STM-0005"
+    }
+  ]
+}

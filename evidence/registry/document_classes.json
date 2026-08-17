@@ -1,0 +1,66 @@
+{
+  "authority": {
+    "cabin.additional_beds": [
+      "cruise_line_deck_plan"
+    ],
+    "cabin.area_sqm": [
+      "shipyard_general_arrangement",
+      "builder_specification"
+    ],
+    "cabin.balcony_dimensions": [
+      "shipyard_general_arrangement",
+      "builder_specification"
+    ],
+    "cabin.cabin_type": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement"
+    ],
+    "cabin.category": [
+      "cruise_line_deck_plan",
+      "cruise_line_marketing",
+      "shipyard_general_arrangement"
+    ],
+    "cabin.connecting_cabin": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement"
+    ],
+    "cabin.deck": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement",
+      "onboard_survey"
+    ],
+    "cabin.deck_name": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement"
+    ],
+    "cabin.door_clear_width_mm": [
+      "accessibility_guide",
+      "shipyard_general_arrangement",
+      "onboard_survey"
+    ],
+    "cabin.exists": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement"
+    ],
+    "cabin.hull_side": [
+      "cruise_line_deck_plan",
+      "shipyard_general_arrangement",
+      "onboard_survey"
+    ],
+    "cabin.hvac_riser": [
+      "shipyard_general_arrangement",
+      "builder_specification"
+    ],
+    "cabin.mobility_designated": [
+      "cruise_line_deck_plan",
+      "accessibility_guide"
+    ],
+    "cabin.noise_exposure": [
+      "onboard_survey"
+    ],
+    "cabin.vibration": [
+      "onboard_survey"
+    ]
+  },
+  "document_classes": {}
+}

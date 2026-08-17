@@ -112,7 +112,7 @@ class ShipPatchEngine:
                 cat_enum = VenueCategory[cat_str] if hasattr(VenueCategory, cat_str) else VenueCategory.BAR_LOUNGE
                 poly_coords = [Coordinate2D(pt[0], pt[1]) for pt in venue_data.get("boundary_polygon", [])]
                 ev_links = [
-                    EvidenceLink(source_id=e.get("source_id", "EVID-GA-PLUS"), sha256=e.get("sha256", "0"*64), locator=e.get("locator", "GA_Plus"))
+                    EvidenceLink(source_id=e.get("source_id", "EVID-GA-PLUS"), sha256=e.get("sha256"), locator=e.get("locator", "GA_Plus"))
                     for e in venue_data.get("evidence_links", [])
                 ] or list(next(iter(target_deck.venues.values())).evidence_links if target_deck.venues else [])
 

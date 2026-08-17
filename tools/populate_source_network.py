@@ -179,7 +179,7 @@ def populate_sources():
         fname = f"{s['source_id'].replace(':', '_')}.json"
         path = os.path.join(folder, fname)
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(s, f, indent=2, ensure_ascii=False)
+            json.dump(s, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f" [OK] Populated {len(SOURCES)} structured source records across 6 source categories.")
 
 

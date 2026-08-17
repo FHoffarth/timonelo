@@ -59,11 +59,89 @@ class Coordinate3D:
     deck_number: int
 
 
+class Method(str, Enum):
+    """ADR-0002 §6.1 — how the statement was produced."""
+    DIRECT = "DIRECT"
+    CALCULATED = "CALCULATED"
+    INFERRED = "INFERRED"
+
+
+class Derivation(str, Enum):
+    """ADR-0002 §6.2 — where the inputs originated. Orthogonal to Method."""
+    LOCAL = "LOCAL"
+    SISTER_SHIP = "SISTER_SHIP"
+    REFERENCE_MODEL = "REFERENCE_MODEL"
+    GENERATED = "GENERATED"
+
+
+class ReviewState(str, Enum):
+    """Human review state. NOT a confidence level and NOT a truth claim."""
+    UNREVIEWED = "UNREVIEWED"
+    REVIEWED = "REVIEWED"
+    CONFLICTED = "CONFLICTED"
+
+
 @dataclass(frozen=True)
 class EvidenceLink:
+    """Reference to the observation event that produced a value.
+
+    Governed by ADR-0002. This is the trust boundary of the entire engine:
+    ~15,090 records depend on it. Every field must therefore be mechanically
+    verifiable — no manually invented values, no decorative defaults, no
+    placeholder identifiers.
+
+    `sha256` is deliberately Optional and defaults to None. It may ONLY be
+    populated with a digest actually computed from the referenced artifact's
+    bytes. Every sha256 currently in the knowledge base is a hand-typed hex
+    pattern (a1b2c3..., 9c8b7a... and rotations); two values account for
+    15,048 of 15,090 links. No source document has ever been hashed. A
+    placeholder in this field is worse than an empty one: it makes an
+    unverifiable claim look verified.
+
+    Fields merged here from the former database.evidence.EvidenceField, which
+    was never referenced anywhere in the codebase and has been deleted. A
+    dormant trust abstraction invites divergence from the real one.
+    """
     source_id: str
-    sha256: str
     locator: str  # e.g., "GA_Drawing_Rev4_Page14" or "Survey_Photo_IMG_8921"
+
+    # Only ever a digest of bytes actually held. None = no artifact possessed.
+    sha256: Optional[str] = None
+
+    # Origin axes (ADR-0002 §6). None until the statement is classified.
+    method: Optional[Method] = None
+    derivation: Optional[Derivation] = None
+
+    # Provenance detail.
+    evidence_type: Optional[str] = None
+    observed_on: Optional[str] = None
+    reviewer: Optional[str] = None
+    review_state: ReviewState = ReviewState.UNREVIEWED
+
+    # Temporal validity (ADR-0002 §7.2).
+    valid_from: Optional[str] = None
+    valid_until: Optional[str] = None
+    refit_version: Optional[str] = None
+
+    def __post_init__(self) -> None:
+        if self.sha256 is not None:
+            v = self.sha256
+            if len(v) != 64 or not all(c in "0123456789abcdef" for c in v.lower()):
+                raise ValueError(
+                    f"EvidenceLink.sha256 for {self.source_id!r} is not a valid "
+                    "SHA-256 digest. Supply a digest computed from the artifact's "
+                    "bytes, or leave it None."
+                )
+            if v == "0" * 64:
+                raise ValueError(
+                    f"EvidenceLink.sha256 for {self.source_id!r} is the all-zero "
+                    "placeholder. Leave it None instead."
+                )
+
+    @property
+    def is_content_addressed(self) -> bool:
+        """True only if a real digest of a possessed artifact is attached."""
+        return self.sha256 is not None
 
 
 @dataclass(frozen=True)

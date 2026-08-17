@@ -1,0 +1,2698 @@
+[
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0001",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0001",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0001",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0002",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0002",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0002",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0003",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0003",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0003",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0004",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0004",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0004",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0005",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0005",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0005",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0006",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0006",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0006",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0007",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0007",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0007",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0008",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0008",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0008",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "DRAFT",
+    "note": "superseded by STM-0005 (CFL-0001)",
+    "occurred_on": "2026-08-18",
+    "statement_id": "STM-0009",
+    "to_state": "SUPERSEDED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0010",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0010",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0010",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0011",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0011",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0011",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0012",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0012",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0012",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0013",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0013",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0013",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0014",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0014",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0014",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0015",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0015",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0015",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0016",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0016",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0016",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0017",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0017",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0017",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0018",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0018",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0018",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0019",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0019",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0019",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0020",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0020",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0020",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0021",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0021",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0021",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0022",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0022",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0022",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0023",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0023",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0023",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0024",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0024",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0024",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0025",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0025",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0025",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0026",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0026",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0026",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0027",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0027",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0027",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0028",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0028",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0028",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0029",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0029",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0029",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0030",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0030",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0030",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0031",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0031",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0031",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0032",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0032",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0032",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0033",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "locator re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0033",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0033",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0034",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0034",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0034",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0035",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0035",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0035",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0036",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0036",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0036",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0037",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0037",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0037",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0038",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0038",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0038",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0039",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0039",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0039",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0040",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0040",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0040",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0041",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0041",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0041",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0042",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0042",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0042",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0043",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0043",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0043",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0044",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0044",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0044",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0045",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0045",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0045",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0046",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0046",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0046",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0047",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0047",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0047",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0048",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0048",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0048",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0049",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0049",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0049",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0050",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0050",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0050",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0051",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0051",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0051",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0052",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0052",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0052",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0053",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0053",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0053",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0054",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0054",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0054",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0055",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0055",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0055",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0056",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0056",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0056",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0057",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0057",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0057",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0058",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0058",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0058",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0059",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0059",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0059",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0060",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0060",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0060",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0061",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0061",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0061",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0062",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0062",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0062",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0063",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0063",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0063",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0064",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0064",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0064",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0065",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0065",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0065",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0066",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0066",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0066",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0067",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0067",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0067",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0068",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0068",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0068",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0069",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0069",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0069",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0070",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0070",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0070",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0071",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0071",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0071",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0072",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0072",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0072",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0073",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0073",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0073",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0074",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0074",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0074",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0075",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0075",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0075",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0076",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0076",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0076",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0077",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0077",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0077",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0078",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0078",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0078",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0079",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0079",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0079",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0080",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0080",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0080",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0081",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0081",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0081",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0082",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0082",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0082",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0083",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0083",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0083",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0084",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0084",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0084",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0085",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0085",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0085",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0086",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0086",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0086",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0087",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0087",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0087",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0088",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0088",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0088",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0089",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0089",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0089",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0090",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0090",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0090",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0091",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0091",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0091",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0092",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0092",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0092",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0093",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0093",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0093",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0094",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0094",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0094",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0095",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0095",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0095",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0096",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0096",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0096",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0097",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0097",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0097",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0098",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0098",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0098",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0099",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0099",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0099",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0100",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0100",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0100",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0101",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0101",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0101",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0102",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0102",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0102",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0103",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0103",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0103",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0104",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0104",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0104",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0105",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0105",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0105",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0106",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0106",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0106",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0107",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0107",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0107",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0108",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0108",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0108",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0109",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0109",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0109",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0110",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0110",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0110",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0111",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0111",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0111",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0112",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0112",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0112",
+    "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "f.hoffarth",
+    "from_state": "DRAFT",
+    "note": "curated from ART-0001 page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0113",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "UNDER_REVIEW",
+    "note": "symbols and fill re-checked against page 5",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0113",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "reviewer.two",
+    "from_state": "APPROVED",
+    "note": "",
+    "occurred_on": "2026-08-17",
+    "statement_id": "STM-0113",
+    "to_state": "PUBLISHED"
+  }
+]

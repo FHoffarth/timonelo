@@ -71,29 +71,24 @@ class TestAndorinhaUniversalRiverVessel(unittest.TestCase):
         self.assertEqual(report.overhead_layer.deck_name, "Diamond Deck")
 
     def test_plane_6_cruise_briefing_andorinha(self):
+        """Ship-derived sections render; volatile sections read UNKNOWN.
+
+        This test previously supplied a port_override dict and asserted the
+        values came back. Override dicts bypassed the evidence chain entirely:
+        a value handed in at call time carried no artifact, no locator and no
+        review. Sourced port data must now enter through the Truth Engine.
+        """
         briefing = CruiseBriefingSynthesizer.generate_briefing(
             ontology=self.andorinha,
             cabin_number="301",
-            itinerary_override={
-                "port_name": "Porto (Ribeira)",
-                "country": "Portugal",
-                "day_number": 1,
-            },
-            port_override={
-                "port_name": "Porto (Cais de Gaia / Ribeira)",
-                "country": "Portugal",
-                "docking_type": "PIER_BERTH",
-                "gangway_deck": 3,
-                "town_distance_meters": 150,
-            },
         )
         self.assertIsNotNone(briefing)
         self.assertIsInstance(briefing, CruiseBriefing)
         self.assertEqual(briefing.ship_name, "MS Andorinha")
         self.assertEqual(briefing.cabin_intelligence.cabin_number, "301")
         self.assertEqual(briefing.cabin_intelligence.deck_name, "Diamond Deck")
-        self.assertEqual(briefing.port_intelligence.port_name, "Porto (Cais de Gaia / Ribeira)")
-        self.assertGreaterEqual(len(briefing.decision_summary.core_decisions), 3)
+        self.assertIsNone(briefing.port_intelligence)
+        self.assertIsNone(briefing.weather_intelligence)
 
 
 if __name__ == "__main__":

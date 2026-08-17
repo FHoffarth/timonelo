@@ -176,12 +176,12 @@ def generate_explorer_pack():
     out_path_frontend = Path("frontend/public/data/msc-bellissima.json")
     out_path_frontend.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path_frontend, "w", encoding="utf-8") as f:
-        json.dump(ship_data, f, indent=2)
+        json.dump(ship_data, f, indent=2, sort_keys=True, ensure_ascii=False)
 
     out_path_data = Path("data/ships/msc-bellissima/knowledge-pack.json")
     out_path_data.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path_data, "w", encoding="utf-8") as f:
-        json.dump(ship_data, f, indent=2)
+        json.dump(ship_data, f, indent=2, sort_keys=True, ensure_ascii=False)
 
     print(f"Generated explorer pack successfully at {out_path_frontend}")
 

@@ -182,7 +182,7 @@ def populate_routes():
         slug = r["slug"]
         path = os.path.join(ROUTES_DIR, f"{slug}.json")
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(r, f, indent=2, ensure_ascii=False)
+            json.dump(r, f, indent=2, sort_keys=True, ensure_ascii=False)
     print(f"[OK] Successfully Populated {len(ROUTES_DATA)} Canonical Itineraries.")
 
 

@@ -1,0 +1,7 @@
+# Source documents are content-addressed and may be licence-restricted.
+# Track the registry, never the blobs, until a use-permission decision is made
+# (ADR-0002 §13).
+artifacts/blobs/*
+!artifacts/blobs/.gitkeep
+documents/*
+!documents/.gitkeep
