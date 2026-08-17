@@ -1,0 +1,173 @@
+{
+  "vessel_id": "ms-andorinha",
+  "vessel_name": "MS Andorinha",
+  "operator": "Tauck River Cruises",
+  "class_name": "Douro River Custom Class",
+  "epistemic_summary": {
+    "total_objects": 4,
+    "direct_count": 4,
+    "derived_count": 0,
+    "unknown_count": 0,
+    "conflict_count": 0,
+    "confidence_avg": 1.0
+  },
+  "decks": [
+    {
+      "deck_level": 3,
+      "deck_name": "Lisbon Deck",
+      "corridors": [
+        {
+          "corridor_id": "D3-PORT",
+          "side": "PORT",
+          "label": "Port Balcony Suite Corridor"
+        },
+        {
+          "corridor_id": "D3-STARBOARD",
+          "side": "STARBOARD",
+          "label": "Starboard Balcony Suite Corridor"
+        }
+      ],
+      "objects": [
+        {
+          "id": "301",
+          "type": "STATEROOM",
+          "label": "Suite 301",
+          "category": "SUITE",
+          "category_label": "Douro River Suite (Balcony)",
+          "deck": 3,
+          "side": "PORT",
+          "zone": "FORWARD",
+          "sequence_index": 1,
+          "accessible": false,
+          "connecting": false,
+          "balcony": true,
+          "epistemic_state": "DIRECT",
+          "review_state": "PUBLISHED_VERIFIED",
+          "confidence": 1.0,
+          "statements": [
+            "STM-AND-301"
+          ],
+          "evidence_links": [
+            {
+              "artifact_id": "AND-DOC-001",
+              "locator": "Deck 3 Lisbon Deck Plan"
+            }
+          ],
+          "known_relations": {
+            "neighbor_aft": "303",
+            "across_corridor": "302",
+            "nearest_elevator": "ELEV-LIFT-MID"
+          },
+          "unknown_relations": []
+        },
+        {
+          "id": "302",
+          "type": "STATEROOM",
+          "label": "Suite 302",
+          "category": "SUITE",
+          "category_label": "Douro River Suite (Balcony)",
+          "deck": 3,
+          "side": "STARBOARD",
+          "zone": "FORWARD",
+          "sequence_index": 2,
+          "accessible": true,
+          "connecting": false,
+          "balcony": true,
+          "epistemic_state": "DIRECT",
+          "review_state": "PUBLISHED_VERIFIED",
+          "confidence": 1.0,
+          "statements": [
+            "STM-AND-302"
+          ],
+          "evidence_links": [
+            {
+              "artifact_id": "AND-DOC-001",
+              "locator": "Deck 3 Lisbon Deck Plan"
+            }
+          ],
+          "known_relations": {
+            "neighbor_aft": "304",
+            "across_corridor": "301",
+            "nearest_elevator": "ELEV-LIFT-MID"
+          },
+          "unknown_relations": []
+        },
+        {
+          "id": "303",
+          "type": "STATEROOM",
+          "label": "Suite 303",
+          "category": "SUITE",
+          "category_label": "Douro River Suite (Balcony)",
+          "deck": 3,
+          "side": "PORT",
+          "zone": "FORWARD",
+          "sequence_index": 3,
+          "accessible": false,
+          "connecting": false,
+          "balcony": true,
+          "epistemic_state": "DIRECT",
+          "review_state": "PUBLISHED_VERIFIED",
+          "confidence": 1.0,
+          "statements": [
+            "STM-AND-303"
+          ],
+          "evidence_links": [
+            {
+              "artifact_id": "AND-DOC-001",
+              "locator": "Deck 3 Lisbon Deck Plan"
+            }
+          ],
+          "known_relations": {
+            "neighbor_fore": "301",
+            "across_corridor": "304",
+            "nearest_elevator": "ELEV-LIFT-MID"
+          },
+          "unknown_relations": []
+        }
+      ]
+    },
+    {
+      "deck_level": 2,
+      "deck_name": "Porto Deck",
+      "corridors": [
+        {
+          "corridor_id": "D2-CENTER",
+          "side": "CENTER",
+          "label": "Main Dining Promenade"
+        }
+      ],
+      "objects": [
+        {
+          "id": "compass-rose-restaurant",
+          "type": "VENUE",
+          "label": "Compass Rose Restaurant",
+          "category": "VENUE",
+          "category_label": "Fine Dining & River View",
+          "deck": 2,
+          "side": "CENTER",
+          "zone": "AFT",
+          "sequence_index": 1,
+          "accessible": true,
+          "connecting": false,
+          "balcony": false,
+          "epistemic_state": "DIRECT",
+          "review_state": "PUBLISHED_VERIFIED",
+          "confidence": 1.0,
+          "statements": [
+            "STM-AND-VEN-01"
+          ],
+          "evidence_links": [
+            {
+              "artifact_id": "AND-DOC-001",
+              "locator": "Deck 2 Dining Room"
+            }
+          ],
+          "known_relations": {
+            "nearest_elevator": "ELEV-LIFT-MID"
+          },
+          "unknown_relations": []
+        }
+      ]
+    }
+  ]
+}

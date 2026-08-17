@@ -1,6 +1,6 @@
 import React from "react";
-import LivingDeckPlanApp from "./living-deck/LivingDeckPlanApp";
+import SemanticLivingDeckApp from "./semantic-deck/SemanticLivingDeckApp";
 
 export default function App() {
-  return <LivingDeckPlanApp />;
+  return <SemanticLivingDeckApp />;
 }
