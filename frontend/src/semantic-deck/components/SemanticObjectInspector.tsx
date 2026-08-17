@@ -1,6 +1,6 @@
 import React from "react";
-import { SemanticObject } from "../types";
-import { getCategoryStyle, getEpistemicStyle } from "../semanticEngine";
+import { SemanticEntity } from "../types";
+import { getClassificationColorToken, getEpistemicPatternToken } from "../apiClient";
 import {
   X,
   ShieldCheck,
@@ -17,23 +17,27 @@ import {
   Link,
   Layers,
   Sparkles,
+  Code2,
+  ExternalLink,
 } from "lucide-react";
 
 interface SemanticObjectInspectorProps {
-  object: SemanticObject | null;
+  entity: SemanticEntity | null;
   onClose: () => void;
-  onSelectObjectId: (id: string) => void;
+  onSelectEntityId: (id: string) => void;
+  onOpenStandardsInspector: (entity: SemanticEntity) => void;
 }
 
 export default function SemanticObjectInspector({
-  object,
+  entity,
   onClose,
-  onSelectObjectId,
+  onSelectEntityId,
+  onOpenStandardsInspector,
 }: SemanticObjectInspectorProps) {
-  if (!object) return null;
+  if (!entity) return null;
 
-  const catStyle = getCategoryStyle(object.category);
-  const epiStyle = getEpistemicStyle(object.epistemic_state);
+  const colorToken = getClassificationColorToken(entity.classification);
+  const patternToken = getEpistemicPatternToken(entity.epistemic_state);
 
   return (
     <div className="w-96 h-full bg-slate-900/90 backdrop-blur-2xl border-l border-white/10 flex flex-col justify-between p-6 select-none z-30 overflow-y-auto no-scrollbar text-slate-300">
@@ -42,23 +46,23 @@ export default function SemanticObjectInspector({
         <div className="flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase border ${epiStyle.badgeClass}`}>
-                {epiStyle.label}
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase border ${patternToken.badgeClass}`}>
+                {patternToken.label}
               </span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${catStyle.badgeBg}`}>
-                {object.category_label}
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${colorToken.badge}`}>
+                {entity.classification_label}
               </span>
-              {object.accessible && (
+              {entity.accessible && (
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 flex items-center gap-1">
                   <Accessibility className="w-3 h-3" /> PRM (H)
                 </span>
               )}
             </div>
             <h2 className="text-2xl font-bold text-white tracking-tight">
-              {object.label}
+              {entity.label}
             </h2>
             <p className="text-xs text-slate-400 font-mono">
-              Deck {object.deck} • {object.side} Side • {object.zone.replace("_", " ")}
+              Deck {entity.level} ({entity.level_name}) • {entity.side} Side • {entity.zone.replace("_", " ")}
             </p>
           </div>
 
@@ -70,38 +74,56 @@ export default function SemanticObjectInspector({
           </button>
         </div>
 
+        {/* Action: Inspect International Standards (W3C BOT, PROV-O, IndoorGML, JSON-LD) */}
+        <button
+          onClick={() => onOpenStandardsInspector(entity)}
+          className="w-full px-4 py-2.5 rounded-2xl bg-gradient-to-r from-sky-500/20 to-blue-600/20 hover:from-sky-500/30 hover:to-blue-600/30 border border-sky-400/40 text-sky-200 text-xs font-semibold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95"
+        >
+          <Code2 className="w-4 h-4 text-sky-400" />
+          Inspect W3C BOT / PROV-O / IndoorGML
+        </button>
+
         {/* Epistemic Provenance Card */}
         <div className="p-4 bg-slate-950/60 rounded-2xl border border-white/5 space-y-2.5">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
             <span>Epistemic Grounding</span>
             <span className="text-emerald-400 font-mono">
-              {(object.confidence * 100).toFixed(0)}% Confidence
+              {(entity.confidence * 100).toFixed(0)}% Confidence
             </span>
           </div>
 
           <div className="space-y-1.5 text-xs font-mono">
             <div className="flex items-center justify-between">
               <span className="text-slate-500">Statements:</span>
-              <span className="text-sky-300">{object.statements.join(", ")}</span>
+              <span className="text-sky-300 font-bold">{entity.statements.join(", ")}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-slate-500">Evidence Records:</span>
-              <span className="text-slate-200">{object.evidence_links.length} Artifacts</span>
+              <span className="text-slate-500">Statement Count:</span>
+              <span className="text-slate-200">{entity.statement_count} Verified</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-500">Artifact Count:</span>
+              <span className="text-slate-200">{entity.artifact_count} Held</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-slate-500">Review State:</span>
-              <span className="text-emerald-400">{object.review_state}</span>
+              <span className="text-emerald-400">{entity.review_state}</span>
             </div>
           </div>
 
-          {object.evidence_links.length > 0 && (
+          {entity.evidence_links.length > 0 && (
             <div className="pt-2 border-t border-white/5 space-y-1">
               <span className="text-[10px] text-slate-500 uppercase font-semibold block">
-                Primary Artifact Locator
+                Primary Ground Truth Artifact
               </span>
-              <div className="p-2 rounded-xl bg-slate-900/80 text-[11px] font-mono text-slate-300 flex items-center justify-between">
-                <span>{object.evidence_links[0].artifact_id}</span>
-                <span className="text-sky-400">P.{object.evidence_links[0].page ?? 1}</span>
+              <div className="p-2.5 rounded-xl bg-slate-900/80 text-[11px] font-mono text-slate-300 space-y-1 border border-white/5">
+                <div className="flex items-center justify-between font-bold text-white">
+                  <span>{entity.evidence_links[0].artifact_id}</span>
+                  <span className="text-sky-400">P.{entity.evidence_links[0].page ?? 1}</span>
+                </div>
+                <div className="text-[10px] text-slate-400 truncate">
+                  {entity.evidence_links[0].source_title}
+                </div>
               </div>
             </div>
           )}
@@ -110,93 +132,93 @@ export default function SemanticObjectInspector({
         {/* Known Topological Relations */}
         <div className="p-4 bg-slate-950/60 rounded-2xl border border-white/5 space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
-            <span>Known Semantic Relations</span>
-            <span className="text-sky-400 font-mono text-[10px]">Graph Edges</span>
+            <span>Known Topological Relations</span>
+            <span className="text-sky-400 font-mono text-[10px]">W3C BOT Edges</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {object.known_relations.neighbor_fore && (
+            {entity.relations.adjacent_fore && (
               <button
-                onClick={() => onSelectObjectId(object.known_relations.neighbor_fore!)}
+                onClick={() => onSelectEntityId(entity.relations.adjacent_fore!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors"
               >
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowLeft className="w-3 h-3" /> Fore (Forward)
                 </div>
                 <div className="font-mono font-bold text-sky-300 mt-0.5">
-                  Cabin {object.known_relations.neighbor_fore}
+                  Space {entity.relations.adjacent_fore}
                 </div>
               </button>
             )}
 
-            {object.known_relations.neighbor_aft && (
+            {entity.relations.adjacent_aft && (
               <button
-                onClick={() => onSelectObjectId(object.known_relations.neighbor_aft!)}
+                onClick={() => onSelectEntityId(entity.relations.adjacent_aft!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors"
               >
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowRight className="w-3 h-3" /> Aft (Behind)
                 </div>
                 <div className="font-mono font-bold text-sky-300 mt-0.5">
-                  Cabin {object.known_relations.neighbor_aft}
+                  Space {entity.relations.adjacent_aft}
                 </div>
               </button>
             )}
 
-            {object.known_relations.across_corridor && (
+            {entity.relations.adjacent_across && (
               <button
-                onClick={() => onSelectObjectId(object.known_relations.across_corridor!)}
+                onClick={() => onSelectEntityId(entity.relations.adjacent_across!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors col-span-2"
               >
                 <div className="text-slate-500 text-[10px]">Across Corridor</div>
                 <div className="font-mono font-bold text-sky-300 mt-0.5">
-                  Cabin {object.known_relations.across_corridor}
+                  Space {entity.relations.adjacent_across}
                 </div>
               </button>
             )}
 
-            {object.known_relations.overhead && (
+            {entity.relations.adjacent_overhead && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
-                  <ArrowUp className="w-3 h-3 text-emerald-400" /> Ceiling Overhead (Deck {object.deck + 1})
+                  <ArrowUp className="w-3 h-3 text-emerald-400" /> Ceiling Overhead (Level {entity.level + 1})
                 </div>
                 <div className="font-medium text-slate-200 mt-0.5">
-                  {object.known_relations.overhead}
+                  {entity.relations.adjacent_overhead}
                 </div>
               </div>
             )}
 
-            {object.known_relations.underfoot && (
+            {entity.relations.adjacent_underfoot && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
-                  <ArrowDown className="w-3 h-3 text-blue-400" /> Floor Underfoot (Deck {object.deck - 1})
+                  <ArrowDown className="w-3 h-3 text-blue-400" /> Floor Underfoot (Level {entity.level - 1})
                 </div>
                 <div className="font-medium text-slate-200 mt-0.5">
-                  {object.known_relations.underfoot}
+                  {entity.relations.adjacent_underfoot}
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Unknown Relations (First-Class Visual Citizen) */}
-        {object.unknown_relations.length > 0 && (
+        {/* Unknown Fields (First-Class Citizen) */}
+        {entity.unknown_fields.length > 0 && (
           <div className="p-4 bg-slate-950/60 rounded-2xl border border-slate-700/40 space-y-2.5">
             <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
               <span className="flex items-center gap-1.5 text-slate-400">
                 <HelpCircle className="w-3.5 h-3.5" />
-                Unknown Relations ({object.unknown_relations.length})
+                Unknown Fields ({entity.unknown_fields.length})
               </span>
               <span className="text-[10px] text-slate-500 font-mono">Explicit Uncertainty</span>
             </div>
 
-            {object.unknown_relations.map((unk, uIdx) => (
+            {entity.unknown_fields.map((unk, uIdx) => (
               <div key={uIdx} className="p-3 bg-slate-900/60 rounded-xl border border-dashed border-slate-700 space-y-1 text-xs">
-                <div className="font-mono text-slate-300 font-semibold">{unk.field}</div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">{unk.reason}</p>
+                <div className="font-mono text-slate-300 font-semibold">{unk.field_name}</div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">{unk.epistemic_reason}</p>
                 <div className="pt-1 text-[10px] font-mono text-sky-400 flex items-center gap-1">
-                  <span>Required Document:</span>
-                  <span className="underline">{unk.required_document}</span>
+                  <span>Required Artifact:</span>
+                  <span className="underline">{unk.required_artifact_class}</span>
                 </div>
               </div>
             ))}
@@ -207,9 +229,9 @@ export default function SemanticObjectInspector({
       {/* Footer Navigation Action */}
       <div className="pt-4 border-t border-white/5">
         <div className="p-3 bg-slate-950/80 rounded-2xl border border-white/5 flex items-center justify-between text-xs">
-          <span className="text-slate-500 font-mono">Nearest Elevator:</span>
+          <span className="text-slate-500 font-mono">Vertical Core Link:</span>
           <span className="font-semibold text-sky-300 font-mono">
-            {object.known_relations.nearest_elevator || "Midship Core"}
+            {entity.relations.connected_vertical_core || "Midship Core"}
           </span>
         </div>
       </div>
