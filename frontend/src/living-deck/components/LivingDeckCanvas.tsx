@@ -132,13 +132,27 @@ export default function LivingDeckCanvas({
                 const isSelected = selectedCabin?.cabin_number === c.cabin_number;
                 const isHovered = hoveredCabin?.cabin_number === c.cabin_number;
 
-                // Subtle category color border
-                let strokeColor = "rgba(56, 189, 248, 0.4)"; // Sky
-                if (c.category.includes("Balcony")) strokeColor = "rgba(16, 185, 129, 0.5)"; // Emerald
-                if (c.category.includes("Suite") || c.category.includes("Yacht")) strokeColor = "rgba(245, 158, 11, 0.6)"; // Gold
+                // Identify if this cabin is a neighbor of the selected cabin
+                const isNeighbor =
+                  selectedCabin &&
+                  selectedCabin.deck === c.deck &&
+                  (Math.abs(parseInt(selectedCabin.cabin_number) - parseInt(c.cabin_number)) === 2 ||
+                   Math.abs(parseInt(selectedCabin.cabin_number) - parseInt(c.cabin_number)) === 1);
 
-                if (isSelected) strokeColor = "#f43f5e"; // Pulsing Rose
-                else if (isHovered) strokeColor = "#ffffff";
+                // Elegant Apple Maps style stroke and glow
+                let strokeColor = "rgba(56, 189, 248, 0.25)";
+                let fillColor = "transparent";
+
+                if (isSelected) {
+                  strokeColor = "#38bdf8"; // Crisp Cyan Focus
+                  fillColor = "rgba(56, 189, 248, 0.28)";
+                } else if (isHovered) {
+                  strokeColor = "#ffffff";
+                  fillColor = "rgba(255, 255, 255, 0.2)";
+                } else if (isNeighbor) {
+                  strokeColor = "rgba(52, 211, 153, 0.6)"; // Soft Emerald Neighbor Illumination
+                  fillColor = "rgba(52, 211, 153, 0.12)";
+                }
 
                 return (
                   <g
@@ -152,30 +166,68 @@ export default function LivingDeckCanvas({
                     onMouseEnter={() => onHoverCabin(c)}
                     onMouseLeave={() => onHoverCabin(null)}
                   >
-                    {/* Clickable Hover / Focus Area */}
-                    <rect
-                      x={rx - 1}
-                      y={ry - 1}
-                      width={rw + 2}
-                      height={rh + 2}
-                      fill={isSelected ? "rgba(244, 63, 94, 0.25)" : (isHovered ? "rgba(56, 189, 248, 0.2)" : "transparent")}
-                      stroke={strokeColor}
-                      strokeWidth={isSelected ? 2.0 : (isHovered ? 1.5 : 0.8)}
-                      rx={1}
-                      className={`transition-all duration-150 ${isSelected ? "animate-pulse" : ""}`}
-                    />
-
-                    {/* PRM Accessible Marker */}
-                    {c.accessible && (
-                      <circle
-                        cx={rx + rw / 2}
-                        cy={ry - 2}
-                        r={2.5}
-                        fill="#38bdf8"
-                        stroke="#ffffff"
-                        strokeWidth={0.5}
+                    {/* Neighbor / Selection Soft Outer Glow Halo */}
+                    {(isSelected || isNeighbor) && (
+                      <rect
+                        x={rx - 3}
+                        y={ry - 3}
+                        width={rw + 6}
+                        height={rh + 6}
+                        fill="none"
+                        stroke={isSelected ? "rgba(56, 189, 248, 0.4)" : "rgba(52, 211, 153, 0.3)"}
+                        strokeWidth={1.5}
+                        rx={2}
+                        className={isSelected ? "animate-pulse" : ""}
                       />
                     )}
+
+                    {/* Stateroom Interactive Bounding Box */}
+                    <rect
+                      x={rx - 0.5}
+                      y={ry - 0.5}
+                      width={rw + 1}
+                      height={rh + 1}
+                      fill={fillColor}
+                      stroke={strokeColor}
+                      strokeWidth={isSelected ? 1.8 : (isHovered || isNeighbor ? 1.2 : 0.6)}
+                      rx={1}
+                      className="transition-all duration-200"
+                    />
+
+                    {/* PRM Accessible Marker Glyph Animation */}
+                    {c.accessible && (
+                      <g className={isSelected ? "animate-bounce" : ""}>
+                        <circle
+                          cx={rx + rw / 2}
+                          cy={ry - 2.5}
+                          r={isSelected ? 3.0 : 2.2}
+                          fill="#38bdf8"
+                          stroke="#0f172a"
+                          strokeWidth={0.6}
+                        />
+                      </g>
+                    )}
+                  </g>
+                );
+              })}
+
+              {/* Verified Public Area Labels */}
+              {currentDeckObj.public_areas.map((p, pIdx) => {
+                if (!p.bbox || p.bbox.length < 4) return null;
+                const px = p.bbox[0] - currentDeckObj.clip_rect[0];
+                const py = p.bbox[1] - currentDeckObj.clip_rect[1];
+                return (
+                  <g key={pIdx} className="pointer-events-none opacity-85">
+                    <rect
+                      x={px - 2}
+                      y={py - 1}
+                      width={p.bbox[2] - p.bbox[0] + 4}
+                      height={p.bbox[3] - p.bbox[1] + 2}
+                      fill="rgba(15, 23, 42, 0.6)"
+                      stroke="rgba(255, 255, 255, 0.2)"
+                      strokeWidth={0.5}
+                      rx={2}
+                    />
                   </g>
                 );
               })}
