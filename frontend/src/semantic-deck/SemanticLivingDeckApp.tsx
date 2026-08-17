@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { TimoneloSpatialApiClient } from "./apiClient";
 import { SemanticLevel, SemanticEntity } from "./types";
-import DeckNavigationStack from "./components/DeckNavigationStack";
-import SemanticDeckGrid from "./components/SemanticDeckGrid";
+import { ThemeProvider, useTheme } from "./themeContext";
+import DeckNavigationTree from "./components/DeckNavigationTree";
+import SchematicVesselCanvas from "./components/SchematicVesselCanvas";
 import SemanticObjectInspector from "./components/SemanticObjectInspector";
 import EpistemicLegendBar from "./components/EpistemicLegendBar";
 import SemanticSearchBar from "./components/SemanticSearchBar";
@@ -16,18 +17,23 @@ import {
   History,
   AlertTriangle,
   Workflow,
+  Sun,
+  Moon,
 } from "lucide-react";
 
-export default function SemanticLivingDeckApp() {
+function LivingDeckInner() {
+  const { theme, toggleTheme } = useTheme();
+  const isNight = theme === "night";
+
   const [selectedVesselId, setSelectedVesselId] = useState<string>("msc-bellissima");
   const apiClient = useMemo(() => new TimoneloSpatialApiClient(selectedVesselId), [selectedVesselId]);
 
   const vesselGraph = apiClient.getVesselGraph();
   const levels = vesselGraph.levels || [];
 
-  // Default active level: Level 14 on Bellissima or top level
+  // Default active level: Level 10 (Mirto / Seaside Evo) or Level 14
   const [activeLevelIndex, setActiveLevelIndex] = useState<number>(
-    selectedVesselId === "msc-bellissima" ? 14 : levels[0]?.level_index ?? 1
+    selectedVesselId === "msc-bellissima" ? 10 : levels[0]?.level_index ?? 1
   );
 
   const [selectedEntity, setSelectedEntity] = useState<SemanticEntity | null>(null);
@@ -41,13 +47,13 @@ export default function SemanticLivingDeckApp() {
     "LIVING_DECK" | "TOPOLOGY_INSPECTOR" | "PROVENANCE_VIEWER"
   >("LIVING_DECK");
 
-  // Focus Space 14122 by default when loaded on MSC Bellissima
+  // Focus Space 10012 by default on Deck 10 (or 14122 on Deck 14)
   useEffect(() => {
     if (selectedVesselId === "msc-bellissima") {
-      const c14122 = apiClient.getEntity("14122");
-      if (c14122) {
-        setSelectedEntity(c14122);
-        setActiveLevelIndex(c14122.level);
+      const defaultSpace = apiClient.getEntity("10012") || apiClient.getEntity("14122") || levels[0]?.spaces[0];
+      if (defaultSpace) {
+        setSelectedEntity(defaultSpace);
+        setActiveLevelIndex(defaultSpace.level);
       }
     } else {
       const firstEntity = levels[0]?.spaces[0];
@@ -81,20 +87,20 @@ export default function SemanticLivingDeckApp() {
   };
 
   return (
-    <div className="w-screen h-screen overflow-hidden bg-slate-950 text-white font-sans flex flex-col">
+    <div className={`w-screen h-screen overflow-hidden font-sans flex flex-col ${isNight ? "bg-slate-950 text-white" : "bg-slate-100 text-slate-900"}`}>
       {/* Top Navbar */}
-      <header className="h-16 px-6 bg-slate-900/90 backdrop-blur-2xl border-b border-white/10 flex items-center justify-between z-30 select-none">
+      <header className={`h-16 px-6 border-b flex items-center justify-between z-30 select-none backdrop-blur-2xl transition-colors duration-200 ${isNight ? "bg-slate-900/90 border-white/10" : "bg-white/95 border-slate-200"}`}>
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-sky-500/20 text-base">
             T
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-sm font-bold text-white tracking-tight">
+              <h1 className="text-sm font-bold tracking-tight">
                 Timonelo Living Deck
               </h1>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                W3C BOT & PROV-O Ready
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
+                W3C BOT & PROV-O READY
               </span>
             </div>
             <p className="text-[11px] text-slate-400 font-mono">
@@ -109,15 +115,15 @@ export default function SemanticLivingDeckApp() {
           onSelectEntity={handleSelectEntity}
         />
 
-        {/* Top Platform View Switcher */}
-        <div className="flex items-center gap-2">
-          <div className="p-1 bg-slate-950/80 rounded-2xl border border-white/5 flex items-center gap-1 text-xs">
+        {/* Top Platform View Switcher & Day/Night Mode */}
+        <div className="flex items-center gap-3">
+          <div className={`p-1 rounded-2xl border flex items-center gap-1 text-xs ${isNight ? "bg-slate-950/80 border-white/5" : "bg-slate-100 border-slate-200"}`}>
             <button
               onClick={() => setActivePlatformView("LIVING_DECK")}
               className={`px-3 py-1.5 rounded-xl font-semibold transition-colors flex items-center gap-1.5 ${
                 activePlatformView === "LIVING_DECK"
-                  ? "bg-sky-500/20 text-sky-300 border border-sky-400/30"
-                  : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                  ? "bg-sky-500/20 text-sky-400 border border-sky-400/30"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <Compass className="w-3.5 h-3.5" />
@@ -127,8 +133,8 @@ export default function SemanticLivingDeckApp() {
               onClick={() => setActivePlatformView("TOPOLOGY_INSPECTOR")}
               className={`px-3 py-1.5 rounded-xl font-semibold transition-colors flex items-center gap-1.5 ${
                 activePlatformView === "TOPOLOGY_INSPECTOR"
-                  ? "bg-sky-500/20 text-sky-300 border border-sky-400/30"
-                  : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                  ? "bg-sky-500/20 text-sky-400 border border-sky-400/30"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <Workflow className="w-3.5 h-3.5" />
@@ -138,43 +144,59 @@ export default function SemanticLivingDeckApp() {
               onClick={() => setActivePlatformView("PROVENANCE_VIEWER")}
               className={`px-3 py-1.5 rounded-xl font-semibold transition-colors flex items-center gap-1.5 ${
                 activePlatformView === "PROVENANCE_VIEWER"
-                  ? "bg-sky-500/20 text-sky-300 border border-sky-400/30"
-                  : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                  ? "bg-sky-500/20 text-sky-400 border border-sky-400/30"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <History className="w-3.5 h-3.5" />
               PROV-O Viewer
             </button>
           </div>
+
+          {/* Day Shift / Night Shift Toggle */}
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-xl border transition-colors flex items-center gap-1.5 text-xs font-semibold ${
+              isNight
+                ? "bg-slate-900 border-white/10 text-amber-300 hover:bg-slate-800"
+                : "bg-white border-slate-200 text-slate-700 hover:bg-slate-100 shadow-sm"
+            }`}
+            title={`Switch to ${isNight ? "Day Shift" : "Night Shift"}`}
+          >
+            {isNight ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
+          </button>
         </div>
       </header>
 
-      {/* Epistemic Legend Bar */}
+      {/* Epistemic Subheader: Content Categories vs Knowledge Certainty */}
       <EpistemicLegendBar />
 
-      {/* Main Scientific Spatial Workspace */}
+      {/* Main Workspace Layout: Left Tree + Master Center Canvas + Right Inspector */}
       <div className="flex-1 flex overflow-hidden relative">
-        {/* Left: Deck & Level Navigation Stack */}
-        <DeckNavigationStack
+        {/* Left: Navigation Tree */}
+        <DeckNavigationTree
           currentVessel={vesselGraph}
           activeDeckLevel={activeLevelIndex}
           onSelectVessel={handleSelectVessel}
           onSelectDeck={handleSelectLevel}
         />
 
-        {/* Center: Main View */}
+        {/* Center: Living Deck Schematic Vessel Canvas */}
         {activePlatformView === "LIVING_DECK" && activeLevel && (
-          <SemanticDeckGrid
+          <SchematicVesselCanvas
             level={activeLevel}
             selectedEntity={selectedEntity}
             hoveredEntity={hoveredEntity}
+            allLevels={levels}
+            onSelectLevel={handleSelectLevel}
             onSelectEntity={handleSelectEntity}
             onHoverEntity={setHoveredEntity}
           />
         )}
 
+        {/* Topology Inspector View */}
         {activePlatformView === "TOPOLOGY_INSPECTOR" && (
-          <div className="flex-1 p-8 bg-slate-950 overflow-y-auto no-scrollbar flex flex-col items-center justify-center space-y-4">
+          <div className="flex-1 p-8 overflow-y-auto no-scrollbar flex flex-col items-center justify-center space-y-4">
             <div className="w-16 h-16 rounded-3xl bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400">
               <Workflow className="w-8 h-8" />
             </div>
@@ -190,8 +212,9 @@ export default function SemanticLivingDeckApp() {
           </div>
         )}
 
+        {/* PROV-O Provenance Viewer */}
         {activePlatformView === "PROVENANCE_VIEWER" && (
-          <div className="flex-1 p-8 bg-slate-950 overflow-y-auto no-scrollbar flex flex-col items-center justify-center space-y-4">
+          <div className="flex-1 p-8 overflow-y-auto no-scrollbar flex flex-col items-center justify-center space-y-4">
             <div className="w-16 h-16 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
               <History className="w-8 h-8" />
             </div>
@@ -216,7 +239,7 @@ export default function SemanticLivingDeckApp() {
         />
       </div>
 
-      {/* International Standards Inspector Modal */}
+      {/* International Standards Inspector Modal (W3C BOT, PROV-O, IndoorGML, JSON-LD) */}
       {inspectingStandardsEntity && (
         <StandardsInspectorModal
           entity={inspectingStandardsEntity}
@@ -225,5 +248,13 @@ export default function SemanticLivingDeckApp() {
         />
       )}
     </div>
+  );
+}
+
+export default function SemanticLivingDeckApp() {
+  return (
+    <ThemeProvider>
+      <LivingDeckInner />
+    </ThemeProvider>
   );
 }
