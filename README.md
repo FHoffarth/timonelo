@@ -1,207 +1,137 @@
 # Timonelo
 
-[![CI Quality Gate](https://github.com/timonelo/timonelo/actions/workflows/ci.yml/badge.svg)](https://github.com/timonelo/timonelo/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python: 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![React: 18+](https://img.shields.io/badge/react-18+-61dafb.svg)](https://react.dev/)
-[![Tests: 136 Passing](https://img.shields.io/badge/tests-136%20passing-brightgreen.svg)](tests/)
-[![Architecture: Digital Twin](https://img.shields.io/badge/architecture-living%20digital%20twin-purple.svg)](docs/ARCHITECTURE.md)
-
-> **Timonelo is the personal cruise operating system and living digital twin designed to minimize uncertainty and future regret before, during, and after every voyage.**
+> **The scientific foundation of a Ground Truth Digital Twin.**
+> A cruise ship model that can always say *why* it knows something — and shows,
+> just as visibly, what it does not know.
 
 ---
 
-## Why Timonelo Exists
+## What this is
 
-Modern cruising is complex. A single voyage involves international flights, foreign transit systems, terminal logistics, muster drills, thousands of staterooms, dining reservations, daily dress codes, port clearance, and fluctuating sea conditions.
+Timonelo is not a cruise viewer, not a travel app, and not a knowledge
+platform. It is a digital twin of a ship in which **every visible statement is
+traceable to a document we physically hold**, and everything else is explicitly
+UNKNOWN.
 
-Most travel applications try to maximize screen time, upsell excursions, or show confusing spreadsheets. 
+The first ship is MSC Bellissima. The first cabin is 14122.
 
-**Timonelo takes the opposite approach:**
-
-1. **Negative Intelligence First**: We warn against common travel traps (e.g., luggage bottlenecks, airport transfer delays, crowded buffet rushes) before they happen.
-2. **Zero Hallucination**: If information is unknown or unverified, it remains explicitly `UNKNOWN`. We never guess taxi prices or boarding gates.
-3. **Calm Clarity**: We translate complex AIS telemetries, port regulations, and deck plans into simple, actionable passenger understanding: *"What does this mean for me right now?"*
-
----
-
-## Bridge Officer Tim (BOT)
-
-**Bridge Officer Tim** is not a chatbot or virtual assistant. He is a calm, experienced bridge officer whose only mission is to help travelers make better decisions before problems occur.
-
-* **He observes quietly**: Continuously monitoring flight connections, pre-cruise hotels, boarding windows, and weather changes.
-* **He anticipates**: Preparing solutions hours in advance (e.g., quiet breakfast times, lower theater entrances, wind-protected sunset decks).
-* **He respects every traveler**: Never categorizing or judging people, adapting strictly to the objective facts of the voyage.
-
-> *„Certainly. I've already prepared a recommendation for exactly that situation. I remain on the bridge.“*
+**Today, 0.6% of that ship is curated.** That number is honest, and it will not
+be improved by generating data.
 
 ---
 
-## Architectural Overview
+## The one sentence the system rests on
 
-Timonelo is built as an extensible, deterministic multi-plane architecture uniting deep maritime knowledge with real-time operational context:
+> **Evidence does not describe a value. It records how that value came into
+> existence.**
 
-```mermaid
-flowchart TD
-    subgraph KnowledgePlane ["1. Maritime & Spatial Knowledge"]
-        K1[Fleet & Deck Plans\n112 Ships] --> KG[(Multi-Plane Knowledge Graph\n432 Nodes · 912 Edges)]
-        K2[Port & City Logistics\n119 Ports] --> KG
-        K3[Stateroom Acoustics & Distances] --> KG
-    end
+---
 
-    subgraph IntelligencePlane ["2. Travel & Decision Intelligence"]
-        KG --> DE[Decision Engine\n5-Point Deterministic Evaluator]
-        KG --> FE[Flight & Hotel Intelligence\nMCT & Transfer Risk]
-        KG --> PE[Personal Intelligence\nVisa & Loyalty Tier Optimizer]
-    end
+## Scientific principles
 
-    subgraph JourneyPlane ["3. Lifecycle & Experience"]
-        DE & FE & PE --> JE[Journey & Context Engine\n13 Chronological Phases]
-        JE --> SE[Safety Intelligence\nMuster Station F Routing]
-        JE --> EE[Experience Intelligence\nCulture, Themes & Dress Codes]
-        JE --> ME[Shipmate Memory\nCaptain's Log & Factual Habits]
-    end
+| | |
+|---|---|
+| **Ground Truth always wins** | If the twin contradicts a held artifact, the twin is wrong. Generated content is never defended against evidence. |
+| **UNKNOWN is a first-class result** | Computed by comparing the question registry against the statement graph. Never authored, never silently interpolated, always rendered as an explicit gap. |
+| **Deterministic derivation is not direct evidence** | Reproducible is not certain. The distinction stays visible in every API and every render. |
+| **Geometry requires geometric evidence** | No coordinate, distance, route or walking time without a dimensioned artifact. |
+| **Render the semantic model, not publisher artwork** | The artifact is evidence, not a runtime dependency. |
+| **The renderer must never silently invent facts** | A renderer cannot abstain, so every visual variable carries a claim. Each must be declared or nullified. |
+| **Every visible statement must be traceable** | Artifact, page, locator, reader, date, review history. |
 
-    subgraph LivePlane ["4. Living Digital Twin & Bridge"]
-        SE & EE & ME --> DT[Living Ship Digital Twin\nOperational Telemetry & Impact]
-        DT --> BOT[Bridge Officer Tim\nPersonal Cruise Concierge]
-    end
+---
 
-    BOT --> UI[Luxury Cruise Bridge UI\nReact + TypeScript + Tailwind]
+## Architecture
+
+```
+Artifacts                held documents, content-addressed by SHA-256
+    ↓
+Truth Engine             statements, provenance, review, conflicts
+    ↓
+Topology Engine          adjacency, containment, deck hierarchy
+    ↓
+Geometry Engine          INTENTIONALLY EMPTY — no dimensioned artifact held
+    ↓
+Semantic Deck Model      our own representation; ordinal, never metric
+    ↓
+API
+    ↓
+Frontend                 UI, rendering, interaction
 ```
 
+Knowledge flows downward only.
+
 ---
 
-## Quick Start & Developer Experience
+## Current state
 
-### 1. Prerequisites
-* **Python 3.11+**
-* **Node.js 20+** and `npm`
+| | |
+|---|---|
+| Artifacts held | 1 — MSC Bellissima Deckpläne, 11.2025 DEU |
+| Statements published | 112 |
+| Cabins curated | 14 of 2,217 (0.6%) |
+| Coverage per curated cabin | 53.3% — 8 of 15 questions |
+| Topology facts | 153 (24 direct, 31 derived, 98 unknown) |
+| Geometry coverage | 0% |
 
-### 2. Backend & Test Suite Execution
-Clone the repository and run the comprehensive test suite (136 unit tests):
+Per-cabin coverage is identical across all curated cabins because it is set by
+the Statement Authority Matrix, not by effort. **It will not exceed 53.3% for
+any cabin until a second artifact class is acquired.**
+
+---
+
+## Read this before writing code
+
+| Document | Answers |
+|---|---|
+| [`docs/SESSION_2026-08-17_ARCHITECTURAL_BREAKTHROUGH.md`](docs/SESSION_2026-08-17_ARCHITECTURAL_BREAKTHROUGH.md) | What was discovered and decided, and why |
+| [`docs/adr/ADR-0002.md`](docs/adr/) | The truth model |
+| [`docs/adr/ADR-0003.md`](docs/adr/) | Runtime and determinism |
+
+### Two contradictions are live today
+
+1. `src/timonelo/ontology/bellissima.py` generates 2,508 cabins and answers
+   cabin 14122 as *BA, 19.0 m², not accessible*. The evidence says *IR2, area
+   UNKNOWN, accessible*. Until quarantined, the system can answer the same
+   question two ways.
+2. The evidence store lives in this repository, but per the agreed boundary
+   truth belongs in `timonelo-knowledge-factory`. Migration pending.
+
+---
+
+## Curating evidence
 
 ```bash
-# Clone the repository
-git clone https://github.com/timonelo/timonelo.git
-cd timonelo
+python -m timonelo.evidence.cli artifact-create path/to/deckplan.pdf \
+  --document-class cruise_line_deck_plan --acquired-on 2026-08-17 \
+  --acquisition-method "download from msccruises.com" \
+  --publisher "MSC Cruises" --published-on 2025-11 --version "Rev 4" --language de
 
-# Run all 136 unit tests
-python -m unittest discover -s tests
+python -m timonelo.evidence.cli statement-create \
+  --entity cabin:MSC-BELLISSIMA:14122 --question Q-0001 \
+  --statement-type cabin.deck --value 14 --artifact ART-0001 --page 5 \
+  --locator "Deck 14 plan, cabin table" --read-by your.name --read-on 2026-08-17
+
+python -m timonelo.evidence.cli submit  STM-0001 --actor your.name    --on 2026-08-17
+python -m timonelo.evidence.cli approve STM-0001 --actor second.person --on 2026-08-18
+python -m timonelo.evidence.cli publish STM-0001 --actor second.person --on 2026-08-18
+
+python -m timonelo.evidence.cli trace --entity cabin:MSC-BELLISSIMA:14122 --question Q-0001
 ```
 
-### 3. Canonical CLI Suite
-Explore the deterministic engine layers via specialized CLI tools:
+The reader of a document cannot publish their own statement. The Statement
+Authority Matrix rejects a document class that cannot support the statement
+type. Nothing bypasses the chain.
 
-```bash
-# Living Ship Digital Twin & Operational Translation
-python tools/living_ship_cli.py --state bellissima
-
-# Shipmate Memory & Captain's Logbook
-python tools/shipmate_memory_cli.py --traveller Florian
-
-# First Voyage Complete Simulation & Readiness (82%)
-python tools/first_voyage_cli.py
-
-# Cruise Concierge & Free Time Assistant (2 Hours Free)
-python tools/assistant_engine_cli.py --action time2h
-
-# Port & City Intelligence (Yokohama Shore Time Clock)
-python tools/port_city_intelligence_cli.py --port yokohama
-
-# Context Briefing Engine
-python tools/context_engine_cli.py --phase preparation
-```
-
-### 4. Frontend Development & Build
-Start the interactive luxury liner console locally:
-
-```bash
-# Navigate to frontend directory
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start local Vite development server
-npm run dev
-
-# Build production bundle
-npm run build
-```
+See [`evidence/CURATOR.md`](evidence/CURATOR.md).
 
 ---
 
-## Repository Structure
+## Current phase
 
-```
-timonelo/
-├── .github/                 # CI Quality Gate workflows
-│   └── workflows/ci.yml     # Automated Python tests and Vite production build
-├── assets/                  # Brand assets, ship photography & silhouettes
-├── data/                    # Master compiled knowledge graph database
-├── docs/                    # Technical architecture, audits, and specifications
-│   ├── ARCHITECTURE.md      # Comprehensive multi-plane engine architecture
-│   ├── REPOSITORY_AUDIT.md  # Production readiness and repository quality report
-│   └── ...                  # Specialized domain specifications
-├── factory/                 # Shipyard data factory for vessel deck plans
-├── frontend/                # Interactive React/TypeScript web application
-│   ├── src/
-│   │   ├── components/      # Luxury bridge dashboards and components
-│   │   └── generated/       # Type-safe bridge exports from Python engines
-│   └── package.json
-├── knowledge/               # Canonical deck plans, cabin facts, and port databases
-├── program/                 # Milestone manifests and release trackers
-├── src/timonelo/database/   # Core deterministic engines
-│   ├── assistant_engine.py      # Cruise concierge, daily missions & quick actions
-│   ├── bridge_officer.py        # Bridge Officer Tim daily briefings
-│   ├── context_engine.py        # 13-phase journey context & top 3 priorities
-│   ├── decision_engine.py       # 5-point deterministic cabin & vessel scorer
-│   ├── destination_engine.py    # Port logistics & airport transfer zones
-│   ├── experience_intelligence.py # Voyage culture, dress codes & quiet retreats
-│   ├── first_voyage_engine.py   # Complete voyage simulation & readiness score
-│   ├── flight_intelligence.py   # MCT connection risks & airport hubs
-│   ├── global_companion.py      # 8-phase journey & Regret Score engine
-│   ├── graph.py                 # Multi-plane Knowledge Graph engine
-│   ├── hotel_intelligence.py    # Pre-cruise hotel evaluations & transfer complexity
-│   ├── living_ship_engine.py    # Living digital twin & passenger translation layer
-│   ├── personal_intelligence.py # Nationality visa rules & status optimizer
-│   ├── port_city_intelligence.py# Canonical world port profiles & shore time buffer
-│   ├── safety_intelligence.py   # Muster station F routing & context safety
-│   ├── shipmate_memory.py       # Captain's logbook, habits & bridge journal
-│   └── status_programs.py       # Loyalty tier perks & late check-out guarantees
-├── tests/                   # 136 Unit tests with 100% test pass rate
-├── tools/                   # CLI companion tools and frontend bridge generator
-│   └── generate_frontend_bridge.py # Master export generator into TypeScript
-├── FOUNDATION.md            # The 11 Foundational Laws (Product Constitution)
-├── LICENSE                  # MIT License
-└── README.md                # Project overview and developer guide
-```
+**The bottleneck is no longer architecture. It is evidence.**
 
----
-
-## Core Foundational Principles
-
-Timonelo is governed by the **11 Foundational Laws** outlined in [`FOUNDATION.md`](FOUNDATION.md):
-
-1. **We never invent.** (Unknown remains `UNKNOWN`).
-2. **We always explain.** (Every decision is evidence-backed).
-3. **We reduce uncertainty.** (Clarity over clutter).
-4. **We respect every traveler.** (No assumptions or stereotypes).
-5. **We remember journeys, not private lives.** (Travel logistics only).
-6. **We translate complexity into calm.** (Passenger-centric meaning).
-7. **Software is for people.** (Hospitality before technology).
-8. **Every feature must help someone travel with greater confidence.**
-9. **Bridge Officer Tim accompanies; he never replaces traveler decisions.**
-10. **Hospitality comes before technology.**
-11. **We build calm.**
-
----
-
-## License & Governance
-
-Timonelo is open-source software licensed under the **[MIT License](LICENSE)**.
-
----
-
-> **„Welcome aboard. The bridge is yours whenever you need it.“** 🚢⚓
+1. Acquire and curate evidence.
+2. Expand the Truth Engine.
+3. Expand the Topology Engine.
+4. Extend the architecture only when evidence reveals a real deficiency.
