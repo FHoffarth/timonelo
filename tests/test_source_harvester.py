@@ -8,6 +8,7 @@ Unit tests for Official Source Harvester v0.1:
 - Document Classification (DECK_PLAN vs UNKNOWN)
 - Deterministic Vessel Resolution
 - Immutable Vault & Duplicate Detection
+- Strict Origin Provenance (FIXTURE_ONLY vs LIVE_VERIFIED)
 - Source Registry & Version Candidate Tracking
 """
 
@@ -18,7 +19,8 @@ import pytest
 
 from timonelo.harvester.config import classify_domain_tier
 from timonelo.harvester.models import (
-    SourceTrustTier, DocumentType, HarvestState, HarvestedArtifactRecord
+    SourceTrustTier, DocumentType, HarvestState, HarvestedArtifactRecord,
+    OriginVerificationStatus
 )
 from timonelo.harvester.vessel_resolver import resolve_vessel
 from timonelo.harvester.classifier import classify_document
@@ -166,11 +168,13 @@ def test_vault_and_registry_duplicate_detection():
             data,
             source_url="https://www.msccruises.de/deckplans/msc-meraviglia.pdf",
             final_url="https://www.msccruises.de/deckplans/msc-meraviglia.pdf",
+            discovery_method="KNOWN_PATTERN",
             dry_run=False
         )
         assert state1 == HarvestState.REGISTERED
         assert rec1 is not None
         assert meta1["is_duplicate"] is False
+        assert rec1.origin_verification_status == "LIVE_VERIFIED"
         assert os.path.isfile(os.path.join(tmpdir, rec1.vault_path))
 
         # Run 2: Duplicate Ingest (same bytes)
@@ -178,9 +182,57 @@ def test_vault_and_registry_duplicate_detection():
             data,
             source_url="https://www.msccruises.de/deckplans/msc-meraviglia.pdf",
             final_url="https://www.msccruises.de/deckplans/msc-meraviglia.pdf",
+            discovery_method="KNOWN_PATTERN",
             dry_run=False
         )
         assert state2 == HarvestState.DUPLICATE
         assert meta2["is_duplicate"] is True
         assert rec2.sha256 == rec1.sha256
         assert len(rec2.retrieval_history) == 2
+
+
+# =========================================================================
+# 7. STRICT ORIGIN PROVENANCE SEPARATION TESTS
+# =========================================================================
+
+def test_fixture_origin_status_cannot_be_live_verified():
+    with tempfile.TemporaryDirectory() as tmpdir:
+        vault_root = os.path.join(tmpdir, "vault")
+        registry_file = os.path.join(tmpdir, "registry.json")
+        engine = HarvestEngine(vault_root=vault_root, registry_file=registry_file)
+
+        with open(FIXTURE_PDF, "rb") as f:
+            data = f.read()
+
+        state, rec, _ = engine.process_raw_bytes(
+            data,
+            source_url=f"file:///{os.path.abspath(FIXTURE_PDF)}",
+            final_url=f"file:///{os.path.abspath(FIXTURE_PDF)}",
+            discovery_method="LOCAL_FIXTURE"
+        )
+        assert state == HarvestState.REGISTERED
+        assert rec.discovery_method == "LOCAL_FIXTURE"
+        assert rec.origin_verification_status == "FIXTURE_ONLY"
+        assert rec.origin_verified_at is None
+
+
+def test_tier_c_origin_status_is_candidate_only():
+    with tempfile.TemporaryDirectory() as tmpdir:
+        vault_root = os.path.join(tmpdir, "vault")
+        registry_file = os.path.join(tmpdir, "registry.json")
+        engine = HarvestEngine(vault_root=vault_root, registry_file=registry_file)
+
+        with open(FIXTURE_PDF, "rb") as f:
+            data = f.read()
+
+        state, rec, _ = engine.process_raw_bytes(
+            data,
+            source_url="https://www.cruisemapper.com/deckplans/msc-meraviglia.pdf",
+            final_url="https://www.cruisemapper.com/deckplans/msc-meraviglia.pdf",
+            discovery_method="SEARCH_HINT"
+        )
+        assert state == HarvestState.REGISTERED
+        assert rec.source_tier == SourceTrustTier.TIER_C
+        assert rec.verification_status == "UNVERIFIED_THIRD_PARTY"
+        assert rec.origin_verification_status == "CANDIDATE_ONLY"
+        assert rec.origin_verified_at is None

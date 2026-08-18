@@ -2,18 +2,24 @@
   "sources": [
     {
       "cruise_line_id": "msc",
+      "discovery_method": "LOCAL_FIXTURE",
       "document_type": "DECK_PLAN",
+      "download_url": null,
       "edition": null,
       "file_size_bytes": 1969779,
       "final_url": "file:///C:/Users/Flo/Desktop/energyradar/timonelo/tests/fixtures/MSC_MERAVIGLIA_DECKPLAN_GER.pdf",
       "language": "de",
       "mime_type": "application/pdf",
+      "origin_page_url": null,
+      "origin_verification_status": "FIXTURE_ONLY",
+      "origin_verified_at": null,
       "page_count": 6,
       "publisher": "MSC Cruises",
       "retrieval_history": [
         "2026-08-18T19:56:34.815135+00:00",
         "2026-08-18T19:56:38.234396+00:00",
-        "2026-08-18T19:57:34.758092+00:00"
+        "2026-08-18T19:57:34.758092+00:00",
+        "2026-08-18T20:03:16.902475+00:00"
       ],
       "retrieved_at": "2026-08-18T19:56:34.815135+00:00",
       "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",

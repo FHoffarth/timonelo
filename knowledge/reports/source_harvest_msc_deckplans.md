@@ -1,6 +1,6 @@
 # Source Harvest Run Report: MSC Deck Plans
 
-**Timestamp (UTC)**: `2026-08-18T19:57:34.611275+00:00`  
+**Timestamp (UTC)**: `2026-08-18T20:03:16.751555+00:00`  
 **Cruise Line**: `MSC`  
 **Target Vessel**: `msc-meraviglia`  
 **Mode**: `LIVE REGISTRATION`  

@@ -49,6 +49,11 @@ class SourceRegistry:
                     source_tier=SourceTrustTier(item["source_tier"]),
                     verification_status=item["verification_status"],
                     vault_path=item["vault_path"],
+                    discovery_method=item.get("discovery_method", "LOCAL_FIXTURE"),
+                    origin_verification_status=item.get("origin_verification_status", "FIXTURE_ONLY"),
+                    origin_verified_at=item.get("origin_verified_at"),
+                    origin_page_url=item.get("origin_page_url"),
+                    download_url=item.get("download_url"),
                     retrieval_history=item.get("retrieval_history", [])
                 )
                 self.records[rec.sha256] = rec
