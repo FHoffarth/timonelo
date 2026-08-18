@@ -133,3 +133,40 @@ def test_evidence_gatekeeper_blocks_synthetic_geometry_with_high_confidence():
     result = gatekeeper.evaluate_publish_gate()
     assert result.status.value == "PUBLISH_BLOCKED"
     assert any("GEOMETRY_PROVENANCE_VIOLATION" in r for r in result.reasons)
+
+
+def test_negative_knowledge_semantics_not_indicated_vs_known_absent():
+    """Verify NOT_INDICATED is not conflated with KNOWN_ABSENT.
+
+    Absence of a symbol/indicator on a single document (e.g. connecting door icon)
+    cannot be asserted as a positive proof of physical non-existence.
+    """
+    # A fact with no observed symbol is UNKNOWN or NOT_INDICATED, never DIRECT negative ground truth
+    from src.timonelo.evidence.gatekeeper import FactEvidenceRecord, EpistemicStatus
+
+    # Without an explicit document stating physical absence, negative claims cannot be DIRECT
+    fact = FactEvidenceRecord(
+        fact_id="FACT-NEG-001",
+        entity_id="CABIN-14122",
+        attribute="has_connecting_door",
+        value=False,  # asserting physical absence
+        epistemic_status=EpistemicStatus.DIRECT,
+        evidence=[],  # No evidence explicitly proving non-existence
+    )
+    valid, err = fact.validate_epistemic_consistency({})
+    assert valid is False
+    assert "declared DIRECT but contains no evidence locators" in err
+
+
+def test_quarantine_structural_isolation_no_indirect_leakage():
+    """Verify that Master Compiler (KnowledgeDBCompiler) does not import or execute hypothesis engines."""
+    import inspect
+    from src.timonelo.database.compiler import KnowledgeDBCompiler
+
+    compiler_source = inspect.getsource(KnowledgeDBCompiler)
+
+    # Must not reference or import StateroomArchetypeGenerator or ShipPatchEngine
+    assert "StateroomArchetypeGenerator" not in compiler_source
+    assert "ShipPatchEngine" not in compiler_source
+    assert "timonelo.factory.archetype_generator" not in compiler_source
+    assert "timonelo.factory.patch_engine" not in compiler_source

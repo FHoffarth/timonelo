@@ -18,7 +18,14 @@ from timonelo.evidence.gatekeeper import compute_file_sha256
 
 BASE_DIR = r"C:\Users\Flo\Desktop\energyradar\timonelo"
 KNOWLEDGE_DIR = os.path.join(BASE_DIR, "knowledge", "ships", "msc-meraviglia")
-ARTIFACT_PATH = os.path.join(KNOWLEDGE_DIR, "artifacts", "MSC_MERAVIGLIA_DECKPLAN_GER.pdf")
+ARTIFACT_PATH = os.path.join(
+    BASE_DIR,
+    "evidence",
+    "raw",
+    "sha256",
+    "77",
+    "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf",
+)
 
 
 def test_meraviglia_primary_source_artifact_integrity():

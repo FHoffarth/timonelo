@@ -30,7 +30,7 @@ from timonelo.harvester.registry import SourceRegistry
 from timonelo.harvester.engine import HarvestEngine
 
 
-FIXTURE_PDF = "tests/fixtures/MSC_MERAVIGLIA_DECKPLAN_GER.pdf"
+FIXTURE_PDF = "evidence/raw/sha256/77/77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf"
 
 
 # =========================================================================
