@@ -1,0 +1,130 @@
+{
+  "route_id": "ROUTE_MSC_BELLISSIMA_WMED_7N",
+  "title": "7-Night Western Mediterranean Interporting Circuit",
+  "vessel_name": "MSC Bellissima",
+  "itinerary_type": "Interporting Continuous Loop",
+  "duration_nights": 7,
+  "total_nautical_miles_approx": 1655,
+  "legs": [
+    {
+      "leg_sequence": 1,
+      "day": 1,
+      "origin_canonical_id": "ES-BCN",
+      "destination_canonical_id": "ES-BCN",
+      "arrival": null,
+      "departure": "18:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 0
+    },
+    {
+      "leg_sequence": 2,
+      "day": 2,
+      "origin_canonical_id": "ES-BCN",
+      "destination_canonical_id": "FR-MRS",
+      "arrival": "08:00",
+      "departure": "18:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 185
+    },
+    {
+      "leg_sequence": 3,
+      "day": 3,
+      "origin_canonical_id": "FR-MRS",
+      "destination_canonical_id": "IT-GOA",
+      "arrival": "08:00",
+      "departure": "18:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 205
+    },
+    {
+      "leg_sequence": 4,
+      "day": 4,
+      "origin_canonical_id": "IT-GOA",
+      "destination_canonical_id": "IT-NAP",
+      "arrival": "13:00",
+      "departure": "20:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 340
+    },
+    {
+      "leg_sequence": 5,
+      "day": 5,
+      "origin_canonical_id": "IT-NAP",
+      "destination_canonical_id": "IT-MSN",
+      "arrival": "09:00",
+      "departure": "18:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 175
+    },
+    {
+      "leg_sequence": 6,
+      "day": 6,
+      "origin_canonical_id": "IT-MSN",
+      "destination_canonical_id": "MT-MLA",
+      "arrival": "07:00",
+      "departure": "17:00",
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 150
+    },
+    {
+      "leg_sequence": 7,
+      "day": 7,
+      "origin_canonical_id": "MT-MLA",
+      "destination_canonical_id": "ES-BCN",
+      "arrival": null,
+      "departure": null,
+      "sea_day": true,
+      "homeport": false,
+      "distance_if_known_nm": 600
+    },
+    {
+      "leg_sequence": 8,
+      "day": 8,
+      "origin_canonical_id": "MT-MLA",
+      "destination_canonical_id": "ES-BCN",
+      "arrival": "09:00",
+      "departure": null,
+      "sea_day": false,
+      "homeport": true,
+      "distance_if_known_nm": 0
+    }
+  ],
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_ROUTE_INTELLIGENCE_WMED_7N_2026",
+    "confidence": 1.0,
+    "confidence_score": "5/5",
+    "validation_status": "VALIDATED"
+  },
+  "sources": [
+    {
+      "name": "MSC Cruises Official Mediterranean Published Itineraries",
+      "type": "Primary Carrier Itinerary Data"
+    },
+    {
+      "name": "UN/LOCODE Code List 2024-2",
+      "type": "Canonical Entity Specification"
+    },
+    {
+      "name": "Nautical Chart Distance Database (Med Circuit)",
+      "type": "Spatial Metric Verification"
+    }
+  ],
+  "tags": [
+    "western-mediterranean",
+    "msc-bellissima",
+    "7-nights",
+    "interporting",
+    "barcelona",
+    "marseille",
+    "genoa",
+    "naples",
+    "messina",
+    "valletta"
+  ]
+}

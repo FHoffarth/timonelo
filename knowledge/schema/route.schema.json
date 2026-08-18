@@ -1,40 +1,52 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://timonelo.com/schema/route.schema.json",
-  "title": "RouteAndItinerarySchema",
-  "description": "Canonical schema for cruise routes, waypoints, day-by-day itineraries, and weather summaries.",
+  "title": "RelationalRouteSchema",
+  "description": "Canonical relational schema for cruise routes, interporting legs, waypoint references, and nautical metrics.",
   "type": "object",
   "required": [
     "route_id",
-    "title",
     "vessel_name",
-    "seasonal_profile",
-    "waypoints",
-    "provenance"
+    "itinerary_type",
+    "legs",
+    "provenance",
+    "sources"
   ],
   "properties": {
     "route_id": {
-      "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "type": "string"
     },
     "title": { "type": "string" },
     "vessel_name": { "type": "string" },
-    "seasonal_profile": { "type": "string" },
+    "itinerary_type": { "type": "string" },
     "duration_nights": { "type": "integer", "minimum": 1 },
-    "weather_overview": { "type": "string" },
-    "waypoints": {
+    "total_nautical_miles_approx": { "type": "number" },
+    "legs": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["day", "port_name", "status", "epistemic"],
+        "required": [
+          "leg_sequence",
+          "day",
+          "origin_canonical_id",
+          "destination_canonical_id",
+          "sea_day",
+          "homeport"
+        ],
         "properties": {
+          "leg_sequence": { "type": "integer", "minimum": 1 },
           "day": { "type": "integer", "minimum": 1 },
-          "port_name": { "type": "string" },
-          "status": { "type": "string" },
-          "epistemic": {
-            "type": "string",
-            "enum": ["KNOWN", "DERIVED", "VERIFIED", "LIKELY", "UNKNOWN", "CONFLICT"]
-          }
+          "origin_canonical_id": { "type": "string" },
+          "destination_canonical_id": { "type": "string" },
+          "arrival": {
+            "type": ["string", "null"]
+          },
+          "departure": {
+            "type": ["string", "null"]
+          },
+          "sea_day": { "type": "boolean" },
+          "homeport": { "type": "boolean" },
+          "distance_if_known_nm": { "type": "number" }
         },
         "additionalProperties": false
       }
@@ -44,8 +56,26 @@
       "required": ["source_artifact", "confidence"],
       "properties": {
         "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "confidence_score": { "type": "string" },
+        "validation_status": { "type": "string" }
       }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
     }
   },
   "additionalProperties": false
