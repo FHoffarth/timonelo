@@ -1,0 +1,95 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "confidence": 1.0
+  },
+  "brand_partnerships": ["LEGO", "Duplo", "Chicco"],
+  "kids_areas": [
+    {
+      "id": "KID-CHICCO-BABY-CLUB",
+      "name": "Chicco Baby Club",
+      "deck": 18,
+      "category": "INFANT_NURSERY",
+      "age_group": "Ages 0–2",
+      "description": "Dedicated infant nursery run in collaboration with Chicco. Features developmental sensory toys, infant-safe activities, baby-care facilities, and certified staff care.",
+      "brand_partner": "Chicco",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-CHICCO",
+      "confidence": 1.0,
+      "tags": ["nursery", "baby-club", "chicco", "infants", "toddlers"]
+    },
+    {
+      "id": "KID-MINI-CLUB-LEGO",
+      "name": "Mini Club LEGO",
+      "deck": 18,
+      "category": "YOUTH_PLAYROOM",
+      "age_group": "Ages 3–6",
+      "description": "Playroom featuring a giant LEGO food theme kitchen, LEGO and Duplo building bricks, crayons, a mini-cinema, and supervised group activities.",
+      "brand_partner": "LEGO & Duplo",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-MINILEGO",
+      "confidence": 1.0,
+      "tags": ["lego", "duplo", "mini-club", "ages-3-6", "supervised-play"]
+    },
+    {
+      "id": "KID-JUNIORS-CLUB-LEGO",
+      "name": "Juniors Club LEGO",
+      "deck": 18,
+      "category": "YOUTH_ACTIVITY_CLUB",
+      "age_group": "Ages 7–11",
+      "description": "LEGO play pits, gaming consoles, supervised sports tournaments, arts-and-crafts, and daily group STEM exercises at the Doremi Lab.",
+      "brand_partner": "LEGO",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-JUNIORLEGO",
+      "confidence": 1.0,
+      "tags": ["lego", "juniors-club", "ages-7-11", "gaming", "stem"]
+    },
+    {
+      "id": "KID-YOUNG-CLUB",
+      "name": "Young Club",
+      "deck": 18,
+      "category": "TWEEN_LOUNGE",
+      "age_group": "Ages 12–14",
+      "description": "A dedicated lounge designed for tweens equipped with PlayStation 4s, VR setups, foosball tables, and an interactive multimedia table to post messages on the club walls.",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-YOUNGCLUB",
+      "confidence": 1.0,
+      "tags": ["tweens", "young-club", "ages-12-14", "vr", "playstation", "foosball"]
+    },
+    {
+      "id": "KID-TEEN-CLUB",
+      "name": "Teen Club",
+      "deck": 18,
+      "category": "TEEN_LOUNGE",
+      "age_group": "Ages 15–17",
+      "description": "A circular lounge for older teens featuring a private dance floor, DJ mixing decks, beanbags, big-screen TVs, and gaming consoles (Nintendo Switch, PS4, VR).",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-TEENCLUB",
+      "confidence": 1.0,
+      "tags": ["teens", "teen-club", "ages-15-17", "dj", "nintendo-switch", "dance-floor"]
+    },
+    {
+      "id": "KID-DOREMI-STUDIO",
+      "name": "Doremi Studio",
+      "deck": 18,
+      "category": "BROADCAST_FAMILY_STUDIO",
+      "description": "A professional family-focused TV/recording studio where kids and parents can script, record, and star in their own video productions, game shows, and musical performances.",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-DOREMISTUDIO",
+      "confidence": 1.0,
+      "tags": ["doremi", "tv-studio", "recording", "family-activities"]
+    },
+    {
+      "id": "KID-DOREMI-LAB",
+      "name": "Doremi Lab",
+      "deck": 18,
+      "category": "STEM_LABORATORY",
+      "description": "A designated high-tech laboratory classroom utilized for interactive youth programming, robotics, 3D design, and science/technology workshops.",
+      "source": "MSC Bellissima Youth Programming Guide",
+      "provenance": "MSC-BEL-KID-DOREMILAB",
+      "confidence": 1.0,
+      "tags": ["doremi", "stem-lab", "robotics", "workshops", "science"]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "confidence": 1.0
+  },
+  "restaurants": [
+    {
+      "id": "RES-POSIDONIA",
+      "name": "Posidonia Restaurant",
+      "deck": 5,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room serving breakfast, lunch, and dinner with a daily changing menu of international and Mediterranean specialties.",
+      "dining_model": "Complimentary / Traditional Assigned Seating & Open Breakfast/Lunch",
+      "source": "MSC Bellissima Dining Directory",
+      "provenance": "MSC-BEL-RES-POSIDONIA",
+      "confidence": 1.0,
+      "tags": ["complimentary", "mdr", "mediterranean", "international", "breakfast", "lunch", "dinner"]
+    },
+    {
+      "id": "RES-LE-CERISIER",
+      "name": "Le Cerisier Restaurant",
+      "deck": 6,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room operating on a traditional two-seating dinner schedule.",
+      "dining_model": "Complimentary / Traditional Two-Seating Dinner",
+      "source": "MSC Bellissima Dining Directory",
+      "provenance": "MSC-BEL-RES-LECERISIER",
+      "confidence": 1.0,
+      "tags": ["complimentary", "mdr", "dinner", "traditional-seating"]
+    },
+    {
+      "id": "RES-LIGHTHOUSE",
+      "name": "Lighthouse Restaurant",
+      "deck": 6,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room. Aurea Experience guests have access to 'My Choice' flexible dining hours here.",
+      "dining_model": "Complimentary / Flexible 'My Choice' for Aurea & Assigned Seating",
+      "source": "MSC Bellissima Dining Directory",
+      "provenance": "MSC-BEL-RES-LIGHTHOUSE",
+      "confidence": 1.0,
+      "tags": ["complimentary", "mdr", "my-choice", "aurea", "dinner"]
+    },
+    {
+      "id": "RES-IL-CILIEGIO",
+      "name": "Il Ciliegio Restaurant",
+      "deck": 6,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Elegant main dining room serving multi-course Mediterranean dinners.",
+      "dining_model": "Complimentary / Traditional Assigned Seating",
+      "source": "MSC Bellissima Dining Directory",
+      "provenance": "MSC-BEL-RES-ILCILIEGIO",
+      "confidence": 1.0,
+      "tags": ["complimentary", "mdr", "mediterranean", "dinner"]
+    },
+    {
+      "id": "RES-MARKETPLACE-BUFFET",
+      "name": "Marketplace Buffet",
+      "deck": 15,
+      "category": "CASUAL_BUFFET",
+      "description": "The ship's massive 20-hour buffet. Features open-front kitchens preparing pizza, bakery items, carved meats, ethnic food, kid-friendly options, and healthy alternatives.",
+      "dining_model": "Complimentary / 20 Hours Daily Open Service",
+      "source": "MSC Bellissima Dining Directory",
+      "provenance": "MSC-BEL-RES-BUFFET",
+      "confidence": 1.0,
+      "tags": ["complimentary", "buffet", "20-hour", "pizza", "casual", "breakfast", "lunch", "dinner", "late-night"]
+    },
+    {
+      "id": "RES-BUTCHERS-CUT",
+      "name": "Butcher’s Cut",
+      "deck": 7,
+      "category": "SPECIALTY_STEAKHOUSE",
+      "description": "A high-end American-style steakhouse serving Linz Heritage Angus beef, specialty cuts, craft beers, and bold American wines.",
+      "dining_model": "Specialty / A la Carte or Dining Package",
+      "source": "MSC Bellissima Specialty Dining Guide",
+      "provenance": "MSC-BEL-RES-BUTCHERS",
+      "confidence": 1.0,
+      "tags": ["specialty", "steakhouse", "angus-beef", "craft-beer", "dinner"]
+    },
+    {
+      "id": "RES-KAITO-TEPPANYAKI",
+      "name": "Kaito Teppanyaki",
+      "deck": 7,
+      "category": "SPECIALTY_ASIAN",
+      "description": "A specialty interactive hibachi restaurant featuring four teppanyaki grills where chefs perform culinary tricks while cooking.",
+      "dining_model": "Specialty / Fixed Menu or Dining Package",
+      "source": "MSC Bellissima Specialty Dining Guide",
+      "provenance": "MSC-BEL-RES-TEPPANYAKI",
+      "confidence": 1.0,
+      "tags": ["specialty", "teppanyaki", "hibachi", "interactive", "dinner"]
+    },
+    {
+      "id": "RES-KAITO-SUSHI-BAR",
+      "name": "Kaito Sushi Bar",
+      "deck": 7,
+      "category": "SPECIALTY_SUSHI",
+      "description": "Overlooking the promenade, master sushi chefs prepare fresh sushi, sashimi, and tempura.",
+      "dining_model": "Specialty / A la Carte",
+      "source": "MSC Bellissima Specialty Dining Guide",
+      "provenance": "MSC-BEL-RES-SUSHIBAR",
+      "confidence": 1.0,
+      "tags": ["specialty", "sushi", "sashimi", "tempura", "promenade-view"]
+    },
+    {
+      "id": "RES-HOLA-TACOS",
+      "name": "HOLA! Tacos & Cantina",
+      "deck": 6,
+      "category": "SPECIALTY_LATIN",
+      "description": "A fast-casual Latin American and Mexican-inspired street-food dining concept by Michelin-starred chef Ramón Freixa.",
+      "dining_model": "Specialty / A la Carte or Fixed Price",
+      "source": "MSC Bellissima Specialty Dining Guide",
+      "provenance": "MSC-BEL-RES-HOLATACOS",
+      "confidence": 1.0,
+      "tags": ["specialty", "mexican", "tacos", "cantina", "ramon-freixa", "casual"]
+    },
+    {
+      "id": "RES-LATELIER-BISTROT",
+      "name": "L’Atelier Bistrot",
+      "deck": 7,
+      "category": "SPECIALTY_FRENCH",
+      "description": "A classic Parisian-style French bistro serving French delicacies, cheese boards, and charcuterie.",
+      "dining_model": "Specialty / A la Carte",
+      "source": "MSC Bellissima Specialty Dining Guide",
+      "provenance": "MSC-BEL-RES-BISTROT",
+      "confidence": 1.0,
+      "tags": ["specialty", "french", "bistro", "cheese-boards", "charcuterie"]
+    },
+    {
+      "id": "RES-YACHT-CLUB-RESTAURANT",
+      "name": "MSC Yacht Club Restaurant",
+      "deck": 18,
+      "category": "EXCLUSIVE_GOURMET",
+      "description": "Private, complimentary gourmet restaurant reserved exclusively for guests staying in the MSC Yacht Club with panoramic ocean views.",
+      "dining_model": "Complimentary / Exclusive to MSC Yacht Club Guests",
+      "source": "MSC Yacht Club Directory",
+      "provenance": "MSC-BEL-RES-YCREST",
+      "confidence": 1.0,
+      "tags": ["yacht-club", "exclusive", "gourmet", "private", "complimentary-yc"]
+    },
+    {
+      "id": "RES-YACHT-CLUB-GRILL",
+      "name": "MSC Yacht Club Grill & Bar",
+      "deck": 19,
+      "category": "EXCLUSIVE_OUTDOOR_GRILL",
+      "description": "Open-air sundeck buffet and grill serving specialized light bites, breakfast, and grilled specialties exclusively for Yacht Club guests.",
+      "dining_model": "Complimentary / Exclusive to MSC Yacht Club Guests",
+      "source": "MSC Yacht Club Directory",
+      "provenance": "MSC-BEL-RES-YCGRILL",
+      "confidence": 1.0,
+      "tags": ["yacht-club", "grill", "sundeck", "exclusive", "outdoor"]
+    }
+  ]
+}

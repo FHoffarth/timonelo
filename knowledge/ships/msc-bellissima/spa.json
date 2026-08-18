@@ -1,0 +1,88 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "confidence": 1.0
+  },
+  "spa_and_wellness": {
+    "id": "SPA-AUREA-COMPLEX",
+    "name": "MSC Aurea Spa",
+    "deck": 7,
+    "category": "BALINESE_SPA_COMPLEX",
+    "description": "An authentic Balinese-themed luxury spa complex measuring 1,100 m² (11,840 sq ft) with 20 private therapy treatment rooms.",
+    "metrics": {
+      "area_sqm": 1100.0,
+      "area_sqft": 11840.0,
+      "private_therapy_rooms": 20
+    },
+    "source": "MSC Aurea Spa Service Catalog",
+    "provenance": "MSC-BEL-SPA-AUREA",
+    "confidence": 1.0,
+    "tags": ["spa", "wellness", "balinese", "massage", "thermal-suite"],
+    "sub_venues": [
+      {
+        "id": "SPA-THERMAL-SUITE",
+        "name": "The Thermal Suite",
+        "deck": 7,
+        "category": "THERMAL_EXPERIENCE",
+        "description": "Comprehensive hydrotherapy and thermal wellness circuit featuring a light steam room, dark steam room, Mediterranean sauna, Finnish sauna, thalassotherapy hot tubs, snow room (snow grotto), salt room, and two thalassotherapy pools.",
+        "facilities": [
+          "Light Steam Room",
+          "Dark Steam Room",
+          "Mediterranean Sauna",
+          "Finnish Sauna",
+          "Thalassotherapy Hot Tubs",
+          "Snow Room / Snow Grotto",
+          "Salt Room (Halotherapy)",
+          "2 × Thalassotherapy Pools"
+        ],
+        "source": "MSC Aurea Spa Technical Blueprint",
+        "provenance": "MSC-BEL-SPA-THERMAL",
+        "confidence": 1.0,
+        "tags": ["thermal-suite", "sauna", "steam-room", "snow-room", "salt-room", "thalassotherapy"]
+      },
+      {
+        "id": "SPA-TREATMENT-ROOMS",
+        "name": "Aurea Therapies & Treatment Suites",
+        "deck": 7,
+        "category": "MASSAGE_AND_HOLISTIC",
+        "description": "Therapies performed by certified Balinese practitioners, offering holistic massage packages (candle massage, sea shell massage, traditional Balinese, Thai massage), personalized facials, and targeted anti-cellulite routines.",
+        "therapies": [
+          "Traditional Balinese Massage",
+          "Thai Massage",
+          "Candle Massage",
+          "Sea Shell Massage",
+          "Customized Facials",
+          "Anti-Cellulite Treatments"
+        ],
+        "source": "MSC Aurea Treatment Menu",
+        "provenance": "MSC-BEL-SPA-THERAPIES",
+        "confidence": 1.0,
+        "tags": ["balinese-massage", "thai-massage", "facials", "body-treatments"]
+      },
+      {
+        "id": "SPA-SALON-JLD",
+        "name": "Jean Louis David Salon",
+        "deck": 7,
+        "category": "BEAUTY_SALON_AND_BARBERSHOP",
+        "description": "A professional branded salon offering comprehensive hair-care treatments, styling, coloring, professional nail therapy (manicures/pedicures), waxing, and dedicated men’s grooming/barber services.",
+        "brand_partner": "Jean Louis David",
+        "source": "MSC Aurea Salon Menu",
+        "provenance": "MSC-BEL-SPA-JLD",
+        "confidence": 1.0,
+        "tags": ["salon", "hairdresser", "barber", "nails", "manicure", "pedicure"]
+      },
+      {
+        "id": "SPA-AUREA-BAR",
+        "name": "Aurea Spa Bar",
+        "deck": 7,
+        "category": "WELLNESS_BEVERAGE_BAR",
+        "description": "A dedicated wellness juice and tea bar offering organic herbal teas, freshly squeezed fruit juices, and revitalizing health elixirs.",
+        "source": "MSC Aurea Spa Menu",
+        "provenance": "MSC-BEL-SPA-BAR",
+        "confidence": 1.0,
+        "tags": ["spa-bar", "herbal-tea", "smoothies", "fresh-juice", "wellness"]
+      }
+    ]
+  }
+}

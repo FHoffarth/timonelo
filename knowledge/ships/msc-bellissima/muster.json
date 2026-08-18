@@ -1,0 +1,73 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SAFETY_AND_MUSTER_PLAN_2026",
+    "confidence": 1.0
+  },
+  "emergency_and_muster_protocol": {
+    "drill_type": "E-Muster Safety Protocol (Digital First)",
+    "procedure": [
+      "Step 1: Watch mandatory safety video in stateroom via MSC for Me app or cabin interactive TV (Channel 1)",
+      "Step 2: Dial the safety confirmation code on stateroom telephone to register compliance",
+      "Step 3: Proceed directly to the designated physical assembly/muster station with keycards for physical verification by safety officers"
+    ],
+    "wayfinding_and_egress": "Physical escape paths, life jacket storage instructions, and evacuation routes are illuminated by low-location LED safety arrow paths along all passenger corridors and outlined on primary safety cards mounted behind each cabin door.",
+    "physical_muster_stations": [
+      {
+        "id": "MUSTER-STATION-A",
+        "name": "Muster Station A (The London Theatre Lower)",
+        "deck": 5,
+        "location": "Deck 5 Forward, London Theatre Lower Level",
+        "category": "PRIMARY_ASSEMBLY_STATION",
+        "source": "MSC Bellissima Emergency Egress Plan",
+        "provenance": "MSC-BEL-SAF-STATION-A",
+        "confidence": 1.0,
+        "tags": ["muster-station", "safety", "theatre", "evacuation", "deck-5"]
+      },
+      {
+        "id": "MUSTER-STATION-B",
+        "name": "Muster Station B (The London Theatre Upper)",
+        "deck": 6,
+        "location": "Deck 6 Forward, London Theatre Upper Level",
+        "category": "PRIMARY_ASSEMBLY_STATION",
+        "source": "MSC Bellissima Emergency Egress Plan",
+        "provenance": "MSC-BEL-SAF-STATION-B",
+        "confidence": 1.0,
+        "tags": ["muster-station", "safety", "theatre", "evacuation", "deck-6"]
+      },
+      {
+        "id": "MUSTER-STATION-C",
+        "name": "Muster Station C (Galleria Bellissima Midship)",
+        "deck": 6,
+        "location": "Deck 6 Midship Promenade, Galleria Bellissima",
+        "category": "PRIMARY_ASSEMBLY_STATION",
+        "source": "MSC Bellissima Emergency Egress Plan",
+        "provenance": "MSC-BEL-SAF-STATION-C",
+        "confidence": 1.0,
+        "tags": ["muster-station", "safety", "promenade", "evacuation", "deck-6"]
+      },
+      {
+        "id": "MUSTER-STATION-D",
+        "name": "Muster Station D (Imperial Casino)",
+        "deck": 7,
+        "location": "Deck 7 Midship, Casino Imperiale Floor",
+        "category": "PRIMARY_ASSEMBLY_STATION",
+        "source": "MSC Bellissima Emergency Egress Plan",
+        "provenance": "MSC-BEL-SAF-STATION-D",
+        "confidence": 1.0,
+        "tags": ["muster-station", "safety", "casino", "evacuation", "deck-7"]
+      },
+      {
+        "id": "MUSTER-STATION-E",
+        "name": "Muster Station E (Carousel Lounge Aft)",
+        "deck": 7,
+        "location": "Deck 7 Aft, Carousel Lounge",
+        "category": "PRIMARY_ASSEMBLY_STATION",
+        "source": "MSC Bellissima Emergency Egress Plan",
+        "provenance": "MSC-BEL-SAF-STATION-E",
+        "confidence": 1.0,
+        "tags": ["muster-station", "safety", "carousel-lounge", "evacuation", "deck-7-aft"]
+      }
+    ]
+  }
+}

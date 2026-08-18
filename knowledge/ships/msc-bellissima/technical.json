@@ -1,0 +1,80 @@
+{
+  "vessel_id": "msc-bellissima",
+  "vessel_name": "MSC Bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "verification_authority": "Chantiers de l'Atlantique & MSC Cruises Specifications",
+    "sha256": "8fa21e90d234a9b6c0e812d1b8273641b9d10e82c610927a4e610283c7491029",
+    "confidence": 1.0,
+    "last_audited": "2026-08-18"
+  },
+  "technical_specifications": {
+    "class": "Meraviglia-class (Vista Project)",
+    "sister_ships": ["MSC Meraviglia"],
+    "imo_number": 9760524,
+    "mmsi": 248992000,
+    "call_sign": "9HA4902",
+    "builder": "Chantiers de l'Atlantique (Saint-Nazaire, France)",
+    "cost_to_build": {
+      "usd": 950000000,
+      "eur": 700000000
+    },
+    "key_milestones": {
+      "steel_cutting": "2016-11-28",
+      "launch_date": "2018-06-14",
+      "maiden_voyage": "2019-03-04"
+    },
+    "port_of_registry": "Valletta, Malta",
+    "flag_state": "Malta",
+    "tonnage_gt": 171598,
+    "dimensions": {
+      "length_meters": 315.83,
+      "length_feet": 1036,
+      "beam_meters": 43.0,
+      "beam_feet": 141.0,
+      "draft_meters": 8.75,
+      "draft_feet_inches": "28 ft 8 in"
+    },
+    "propulsion_and_power": {
+      "propulsion_type": "2 × ABB Azipods",
+      "installed_power_kw": 38400,
+      "installed_power_hp": 51500,
+      "cruising_speed_knots": 21.8,
+      "max_speed_knots": 23.15
+    },
+    "capacities": {
+      "total_decks": 18,
+      "passenger_accessible_decks": 15,
+      "passenger_capacity_double_occupancy": 4488,
+      "passenger_capacity_max_occupancy": 5686,
+      "crew_capacity_min": 1536,
+      "crew_capacity_max": 1595,
+      "total_cabins_min": 2217,
+      "total_cabins_max": 2244,
+      "balcony_cabin_percentage": 75
+    },
+    "connectivity_and_smart_systems": {
+      "satellite_network": "Starlink High-Speed Internet",
+      "iot_wearables": "Near Field Communication (NFC) smart wristbands",
+      "digital_platform": "MSC for Me digital application"
+    }
+  },
+  "refurbishment_history": [
+    {
+      "id": "REFURB-2023-SHANGHAI",
+      "name": "Far East Deployment Refit & Dry Dock",
+      "date_start": "2023-11-27",
+      "date_end": "2023-12-13",
+      "location": "Huarun Dadong Dockyard Co. Ltd., Shanghai, China",
+      "significance": "First MSC Cruises vessel to undergo dry dock servicing in mainland China.",
+      "scope": [
+        "General technical maintenance and classification hull surveys",
+        "High-efficiency hull cleaning, specialized coating and painting",
+        "Deep interior refreshes across furnishings, carpets, and stateroom aesthetic upgrades for permanent Far East deployment"
+      ],
+      "provenance": "Huarun Dadong Dockyard Technical Bulletin 2023",
+      "confidence": 1.0,
+      "tags": ["drydock", "refurbishment", "shanghai", "hull-coating", "interior-refresh"]
+    }
+  ]
+}

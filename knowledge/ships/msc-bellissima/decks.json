@@ -1,0 +1,191 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_GA_PLANS_2026",
+    "sha256": "4b9218a09f7831d102e7741029c78201a1829e01928410a82740192837461928",
+    "confidence": 1.0
+  },
+  "notes": "MSC Bellissima features 18 physical decks, skipping deck number 17 due to Italian superstition. Passenger decks are named after legacy and modern ships in the MSC Cruises fleet.",
+  "decks": [
+    {
+      "id": "DECK-04",
+      "name": "Deck 4 (Lirica)",
+      "deck_number": 4,
+      "category": "OPERATIONAL_AND_MEDICAL",
+      "description": "Medical Center, Tendering and Gangway access, Crew Quarters.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK4",
+      "confidence": 1.0,
+      "tags": ["medical", "tendering", "gangway", "crew"]
+    },
+    {
+      "id": "DECK-05",
+      "name": "Deck 5 (Opera)",
+      "deck_number": 5,
+      "category": "PUBLIC_AND_ENTERTAINMENT",
+      "description": "Main Lobby, Reception/Guest Relations, Business Centre, Infinity Atrium (with Swarovski crystal staircases), Posidonia Restaurant, Lower London Theatre.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK5",
+      "confidence": 1.0,
+      "tags": ["reception", "atrium", "swarovski", "dining", "theatre"]
+    },
+    {
+      "id": "DECK-06",
+      "name": "Deck 6 (Musica)",
+      "deck_number": 6,
+      "category": "PROMENADE_AND_DINING",
+      "description": "Main Promenade (Galleria Bellissima), Main Dining Rooms (Le Cerisier, Lighthouse Restaurant, Il Ciliegio), Boutiques/Shops, Upper London Theatre.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK6",
+      "confidence": 1.0,
+      "tags": ["promenade", "galleria", "dining", "shops", "theatre"]
+    },
+    {
+      "id": "DECK-07",
+      "name": "Deck 7 (Fantasia)",
+      "deck_number": 7,
+      "category": "PROMENADE_AND_SPECIALTY",
+      "description": "Promenade Gallery (Upper Level), Specialty Restaurants (Butcher's Cut, Kaito, HOLA!), MSC Aurea Spa, Casino Imperiale, TV Studio & Bar, Carousel Lounge.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK7",
+      "confidence": 1.0,
+      "tags": ["specialty-dining", "spa", "casino", "lounge", "entertainment"]
+    },
+    {
+      "id": "DECK-08",
+      "name": "Deck 8 (Meraviglia)",
+      "deck_number": 8,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK8",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-09",
+      "name": "Deck 9 (Seaside)",
+      "deck_number": 9,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK9",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-10",
+      "name": "Deck 10 (Seaside Evo)",
+      "deck_number": 10,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK10",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-11",
+      "name": "Deck 11 (Bellissima)",
+      "deck_number": 11,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK11",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-12",
+      "name": "Deck 12 (Grandiosa)",
+      "deck_number": 12,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK12",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-13",
+      "name": "Deck 13 (Magnifica)",
+      "deck_number": 13,
+      "category": "STATEROOM_DECK",
+      "description": "Residential passenger cabin deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK13",
+      "confidence": 1.0,
+      "tags": ["cabins", "residential"]
+    },
+    {
+      "id": "DECK-14",
+      "name": "Deck 14 (World Class)",
+      "deck_number": 14,
+      "category": "STATEROOM_AND_BRIDGE",
+      "description": "Bridge (Wheelhouse / Navigation Center) forward and residential passenger cabins.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK14",
+      "confidence": 1.0,
+      "tags": ["bridge", "navigation", "cabins", "residential"]
+    },
+    {
+      "id": "DECK-15",
+      "name": "Deck 15 (Preziosa)",
+      "deck_number": 15,
+      "category": "LIDO_AND_BUFFET",
+      "description": "Atmosphere Pool (Main Lido), Bamboo Pool (Indoor Magrodome), Marketplace Buffet, MSC Yacht Club Deluxe Suites.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK15",
+      "confidence": 1.0,
+      "tags": ["pool", "buffet", "magrodome", "yacht-club", "lido"]
+    },
+    {
+      "id": "DECK-16",
+      "name": "Deck 16 (Seaview)",
+      "deck_number": 16,
+      "category": "FITNESS_AND_RECREATION",
+      "description": "MSC Gym by Technogym, Sportplex Arena, Power Walking Track, Virtual Games Arcade, Horizon Amphitheatre & Pool, MSC Yacht Club Top Sail Lounge.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK16",
+      "confidence": 1.0,
+      "tags": ["fitness", "sports", "arcade", "pool", "yacht-club"]
+    },
+    {
+      "id": "DECK-18",
+      "name": "Deck 18 (Divina)",
+      "deck_number": 18,
+      "category": "YOUTH_AND_ENTERTAINMENT",
+      "description": "Kids & Teens Clubs (Chicco, LEGO, Young, Teen), Doremi Studio & Lab, MSC Yacht Club Restaurant, Attic Club, Horizon Bar, Open Sun Deck.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK18",
+      "confidence": 1.0,
+      "tags": ["kids", "teens", "nightclub", "yacht-club-dining", "sundeck"]
+    },
+    {
+      "id": "DECK-19",
+      "name": "Deck 19 (Splendida)",
+      "deck_number": 19,
+      "category": "AQUAPARK_AND_SOLARIUM",
+      "description": "Polar/Arizona Aquapark, Himalayan Ropes Suspension Bridge, MSC Yacht Club Private Pool & Grill, Top 19 Exclusive Solarium.",
+      "passenger_accessible": true,
+      "source": "Official MSC Bellissima Deck Plan",
+      "provenance": "MSC-BEL-GA-DECK19",
+      "confidence": 1.0,
+      "tags": ["aquapark", "ropes-course", "solarium", "yacht-club-pool"]
+    }
+  ]
+}

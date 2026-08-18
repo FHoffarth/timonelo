@@ -1,0 +1,104 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "confidence": 1.0
+  },
+  "sports_and_recreation": [
+    {
+      "id": "SPT-SPORTPLEX",
+      "name": "Sportplex Arena",
+      "deck": 16,
+      "category": "INDOOR_MULTI_SPORT_ARENA",
+      "description": "A massive indoor multi-sport arena hosting basketball, tennis, football (soccer), and volleyball tournaments by day, which transforms into an active social, gaming, and dance venue by night.",
+      "activities": ["Basketball", "Tennis", "Football / Soccer", "Volleyball", "Night Social Dancing"],
+      "source": "MSC Bellissima Activities Guide",
+      "provenance": "MSC-BEL-SPT-SPORTPLEX",
+      "confidence": 1.0,
+      "tags": ["sportplex", "basketball", "tennis", "volleyball", "soccer", "indoor-arena"]
+    },
+    {
+      "id": "SPT-HIMALAYAN-BRIDGE",
+      "name": "Himalayan Suspension Bridge",
+      "deck": 19,
+      "category": "OUTDOOR_ROPES_COURSE",
+      "description": "An outdoor suspension ropes adventure course suspended 80 meters (262 ft) above sea level spanning across the aft deck near the aquapark.",
+      "metrics": {
+        "height_above_sea_level_meters": 80.0,
+        "position": "Aft"
+      },
+      "source": "MSC Bellissima Technical Blueprint",
+      "provenance": "MSC-BEL-SPT-HIMALAYAN",
+      "confidence": 1.0,
+      "tags": ["ropes-course", "himalayan-bridge", "thrill", "outdoor", "adventure"]
+    },
+    {
+      "id": "SPT-WALKING-TRACK",
+      "name": "Power Walking & Jogging Track",
+      "deck": 16,
+      "category": "OUTDOOR_TRACK",
+      "description": "An outdoor, multi-lane walking and jogging loop wrapping around the upper deck perimeter with unobstructed sea views.",
+      "source": "MSC Bellissima GA Deck 16",
+      "provenance": "MSC-BEL-SPT-TRACK",
+      "confidence": 1.0,
+      "tags": ["jogging", "walking-track", "running", "fitness", "outdoor"]
+    },
+    {
+      "id": "SPT-VIRTUAL-ARCADE",
+      "name": "Virtual Games Arcade & Simulators",
+      "deck": 16,
+      "category": "INTERACTIVE_GAMING_COMPLEX",
+      "description": "High-tech gaming complex featuring motion simulators, bowling, and interactive entertainment.",
+      "sub_attractions": [
+        {
+          "id": "SPT-F1-SIMULATORS",
+          "name": "Formula 1 Simulators",
+          "deck": 16,
+          "description": "Two full-scale, authentic Formula 1 virtual racing cars with realistic force-feedback hydraulic movement.",
+          "units_count": 2,
+          "source": "MSC Bellissima Attractions Guide",
+          "provenance": "MSC-BEL-SPT-F1",
+          "confidence": 1.0,
+          "tags": ["f1", "simulator", "racing", "virtual-reality"]
+        },
+        {
+          "id": "SPT-BOWLING-ALLEY",
+          "name": "Full-Size Bowling Alley",
+          "deck": 16,
+          "description": "A two-lane, full-scale mini-bowling alley.",
+          "lanes_count": 2,
+          "source": "MSC Bellissima Attractions Guide",
+          "provenance": "MSC-BEL-SPT-BOWLING",
+          "confidence": 1.0,
+          "tags": ["bowling", "family-activity", "arcade"]
+        },
+        {
+          "id": "SPT-XD-DARK-RIDE",
+          "name": "XD Dark Ride Cinema",
+          "deck": 16,
+          "description": "An interactive 3D shooter/ride game theater featuring synchronized motion seats and laser blasting challenges.",
+          "source": "MSC Bellissima Attractions Guide",
+          "provenance": "MSC-BEL-SPT-XDCINEMA",
+          "confidence": 1.0,
+          "tags": ["xd-cinema", "3d-ride", "motion-seats", "arcade"]
+        }
+      ],
+      "source": "MSC Bellissima Attractions Guide",
+      "provenance": "MSC-BEL-SPT-ARCADE",
+      "confidence": 1.0,
+      "tags": ["arcade", "virtual-games", "f1", "bowling", "xd-cinema"]
+    },
+    {
+      "id": "SPT-MSC-GYM",
+      "name": "MSC Gym by Technogym",
+      "deck": 16,
+      "category": "FITNESS_CENTER",
+      "description": "State-of-the-art fitness center outfitted with Technogym cardio machines, weight lifting benches, stretching areas, and certified fitness instructors offering spin and yoga classes.",
+      "brand_partner": "Technogym",
+      "source": "MSC Fitness Catalog",
+      "provenance": "MSC-BEL-SPT-GYM",
+      "confidence": 1.0,
+      "tags": ["gym", "technogym", "fitness", "weights", "cardio", "spin", "yoga"]
+    }
+  ]
+}

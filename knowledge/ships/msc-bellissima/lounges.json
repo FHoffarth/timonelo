@@ -1,0 +1,61 @@
+{
+  "vessel_id": "msc-bellissima",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
+    "confidence": 1.0
+  },
+  "lounges": [
+    {
+      "id": "LNG-BELLISSIMA-LOUNGE",
+      "name": "Bellissima Bar & Lounge",
+      "deck": 6,
+      "category": "MAIN_SOCIAL_LOUNGE",
+      "description": "Large, elegant multi-purpose lounge used for dance classes, daytime events, live musical ensembles, and evening social gatherings.",
+      "source": "MSC Bellissima Lounge Directory",
+      "provenance": "MSC-BEL-LNG-BELLISSIMA",
+      "confidence": 1.0,
+      "tags": ["social", "dance-floor", "live-music", "cocktails", "daytime-activities"]
+    },
+    {
+      "id": "LNG-CAROUSEL-LOUNGE",
+      "name": "Carousel Lounge",
+      "deck": 7,
+      "category": "THEATRE_LOUNGE",
+      "description": "A 1,000 m² high-tech custom theater-lounge seating 120 guests for dinner plus 290 for cocktails. Specifically designed to host exclusive production shows (Carousel Productions at Sea).",
+      "metrics": {
+        "area_sqm": 1000.0,
+        "dinner_capacity": 120,
+        "cocktail_capacity": 290,
+        "position": "Aft"
+      },
+      "source": "MSC Bellissima Technical Entertainment Guide",
+      "provenance": "MSC-BEL-LNG-CAROUSEL",
+      "confidence": 1.0,
+      "tags": ["carousel-productions", "theatre-lounge", "dinner-show", "acrobatics", "aft"]
+    },
+    {
+      "id": "LNG-SKY-LOUNGE",
+      "name": "Sky Lounge",
+      "deck": 18,
+      "category": "PANORAMIC_OBSERVATION_LOUNGE",
+      "description": "An adults-only panoramic observation lounge featuring live piano music, molecular mixology cocktails, and daily selections of complimentary gourmet hot and cold snacks.",
+      "restrictions": "Adults Only",
+      "source": "MSC Bellissima Lounge Directory",
+      "provenance": "MSC-BEL-LNG-SKYLOUNGE",
+      "confidence": 1.0,
+      "tags": ["adults-only", "panoramic", "piano-bar", "molecular-mixology", "gourmet-snacks"]
+    },
+    {
+      "id": "LNG-YACHT-CLUB-TOP-SAIL",
+      "name": "MSC Yacht Club Top Sail Lounge",
+      "deck": 16,
+      "category": "EXCLUSIVE_PANORAMIC_LOUNGE",
+      "description": "A private, prestige forward observation lounge serving complimentary premium liquors, vintage champagne, gourmet coffee, and daily finger foods to Yacht Club passengers.",
+      "access": "Exclusive to MSC Yacht Club Guests",
+      "source": "MSC Yacht Club Directory",
+      "provenance": "MSC-BEL-LNG-TOPSAIL",
+      "confidence": 1.0,
+      "tags": ["yacht-club", "exclusive", "panoramic", "complimentary-drinks", "forward-view"]
+    }
+  ]
+}
