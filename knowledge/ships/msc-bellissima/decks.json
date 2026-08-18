@@ -36,9 +36,9 @@
       "name": "Deck 6 (Musica)",
       "deck_number": 6,
       "category": "PROMENADE_AND_DINING",
-      "description": "Main Promenade (Galleria Bellissima), Main Dining Rooms (Le Cerisier, Lighthouse Restaurant, Il Ciliegio), Boutiques/Shops, Upper London Theatre.",
+      "description": "Main Promenade (Galleria Bellissima), Main Dining Rooms (Le Cerisier, Lighthouse Restaurant, Il Ciliegio), HOLA! Tapas Bar, Edge Cocktail Bar, Boutiques/Shops, Upper London Theatre.",
       "passenger_accessible": true,
-      "source": "Official MSC Bellissima Deck Plan",
+      "source": "Official MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-GA-DECK6",
       "confidence": 1.0,
       "tags": ["promenade", "galleria", "dining", "shops", "theatre"]
@@ -48,9 +48,9 @@
       "name": "Deck 7 (Fantasia)",
       "deck_number": 7,
       "category": "PROMENADE_AND_SPECIALTY",
-      "description": "Promenade Gallery (Upper Level), Specialty Restaurants (Butcher's Cut, Kaito, HOLA!), MSC Aurea Spa, Casino Imperiale, TV Studio & Bar, Carousel Lounge.",
+      "description": "Promenade Gallery (Upper Level), Specialty Restaurants (Butcher's Cut, Kaito Teppanyaki, Kaito Sushi Bar), Masters of the Sea, Champagne Bar, MSC Aurea Spa, Casino Imperiale, TV Studio & Bar, Carousel Lounge.",
       "passenger_accessible": true,
-      "source": "Official MSC Bellissima Deck Plan",
+      "source": "Official MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-GA-DECK7",
       "confidence": 1.0,
       "tags": ["specialty-dining", "spa", "casino", "lounge", "entertainment"]

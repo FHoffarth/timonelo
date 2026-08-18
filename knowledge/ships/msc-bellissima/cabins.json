@@ -5,8 +5,8 @@
     "confidence": 1.0
   },
   "summary": {
-    "total_staterooms": 2244,
-    "distinct_categories_count": 32,
+    "total_staterooms": 2217,
+    "distinct_categories_count": 20,
     "balcony_percentage": 75,
     "standard_amenities": [
       "Twin beds convertible to double (king size)",
@@ -21,9 +21,9 @@
   "cabin_categories": [
     {
       "id": "CAT-STUDIO-INSIDE",
-      "name": "Studio Inside",
+      "name": "Studio Inside (IS)",
       "category": "INSIDE_CABIN",
-      "deck": [8, 9, 10, 11, 12, 13, 14],
+      "deck": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
       "description": "Compact, efficient interior staterooms specifically tailored for solo travelers.",
       "metrics": {
         "sqm_approx_min": 12,
@@ -84,9 +84,9 @@
     },
     {
       "id": "CAT-AUREA-BALCONY",
-      "name": "Aurea Balcony",
+      "name": "Aurea Balcony (BA)",
       "category": "PREMIUM_BALCONY_CABIN",
-      "deck": [11, 12, 13, 14],
+      "deck": [11, 12, 13],
       "description": "Balcony cabins positioned on upper decks offering complimentary access to the Aurea Thermal Suite, flexible 'My Choice' dining in Lighthouse Restaurant, and priority embarkation benefits.",
       "metrics": {
         "sqm_interior_min": 19,
@@ -115,9 +115,9 @@
     },
     {
       "id": "CAT-DUPLEX-SUITE-AUREA",
-      "name": "Duplex Suite Aurea",
-      "category": "TWO_STORY_MAISONETTE_SUITE",
-      "deck": [9, 10, 12, 13],
+      "name": "MSC Yacht Club Maisonette Suite mit Whirlpool (YJD)",
+      "category": "YACHT_CLUB_MAISONETTE_SUITE",
+      "deck": [9, 10, 11, 12],
       "description": "Luxury two-story maisonettes. The lower level includes a dining/living room area, double sofa bed, bathroom with shower, and a large private balcony with its own private whirlpool. The upper mezzanine level hosts a master bedroom and a master bathroom with a bathtub.",
       "metrics": {
         "sqm_approx": 59,
@@ -133,7 +133,7 @@
       "source": "MSC Bellissima Suite Directory",
       "provenance": "MSC-BEL-CAB-DUPLEX",
       "confidence": 1.0,
-      "tags": ["duplex", "maisonette", "whirlpool", "two-story", "suite", "aurea", "luxury"]
+      "tags": ["yacht-club", "maisonette", "whirlpool", "two-story", "suite", "luxury"]
     },
     {
       "id": "CAT-YC-INTERIOR-SUITE",

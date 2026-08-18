@@ -70,10 +70,10 @@
     {
       "id": "BAR-EDGE",
       "name": "Edge Cocktail Bar",
-      "deck": 7,
+      "deck": 6,
       "category": "COCKTAIL_BAR",
-      "description": "Pre-dinner cocktail bar situated on the edge of the promenade gallery.",
-      "source": "MSC Bellissima Bar Directory",
+      "description": "Pre-dinner cocktail bar situated on the promenade gallery overlooking the central atrium.",
+      "source": "MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-BAR-EDGE",
       "confidence": 1.0,
       "tags": ["cocktails", "aperitif", "promenade-view", "pre-dinner"]

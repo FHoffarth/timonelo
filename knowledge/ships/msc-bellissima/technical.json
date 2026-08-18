@@ -46,11 +46,11 @@
       "total_decks": 18,
       "passenger_accessible_decks": 15,
       "passenger_capacity_double_occupancy": 4488,
-      "passenger_capacity_max_occupancy": 5686,
+      "passenger_capacity_max_occupancy": 5654,
       "crew_capacity_min": 1536,
       "crew_capacity_max": 1595,
       "total_cabins_min": 2217,
-      "total_cabins_max": 2244,
+      "total_cabins_max": 2217,
       "balcony_cabin_percentage": 75
     },
     "connectivity_and_smart_systems": {

@@ -103,15 +103,15 @@
     },
     {
       "id": "RES-HOLA-TACOS",
-      "name": "HOLA! Tacos & Cantina",
+      "name": "HOLA! Tapas Bar",
       "deck": 6,
       "category": "SPECIALTY_LATIN",
-      "description": "A fast-casual Latin American and Mexican-inspired street-food dining concept by Michelin-starred chef Ramón Freixa.",
+      "description": "A fast-casual Latin American and Spanish tapas dining concept by Michelin-starred chef Ramón Freixa located along the indoor promenade.",
       "dining_model": "Specialty / A la Carte or Fixed Price",
-      "source": "MSC Bellissima Specialty Dining Guide",
-      "provenance": "MSC-BEL-RES-HOLATACOS",
+      "source": "MSC Bellissima Deck Plan (11.2025)",
+      "provenance": "MSC-BEL-RES-HOLATAPAS",
       "confidence": 1.0,
-      "tags": ["specialty", "mexican", "tacos", "cantina", "ramon-freixa", "casual"]
+      "tags": ["specialty", "tapas", "latin", "ramon-freixa", "casual", "promenade"]
     },
     {
       "id": "RES-LATELIER-BISTROT",
