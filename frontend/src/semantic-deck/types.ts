@@ -117,3 +117,32 @@ export interface StandardsExportPayload {
   prov_o_turtle: string;
   indoor_gml_xml: string;
 }
+
+export type SemanticCategory = "INTERIOR" | "OCEAN_VIEW" | "BALCONY" | "SUITE" | "VENUE" | "FACILITY";
+
+export interface SemanticObject {
+  id: string;
+  label: string;
+  category: SemanticCategory;
+  category_label: string;
+  level: number;
+  zone: string;
+  epistemic_state: EpistemicState;
+  confidence: number;
+  evidence_links: EvidenceReference[];
+  [key: string]: any;
+}
+
+export interface SemanticDeck {
+  deck_level: number;
+  deck_name: string;
+  objects: SemanticObject[];
+  [key: string]: any;
+}
+
+export interface VesselSemanticModel {
+  vessel_id: string;
+  vessel_name: string;
+  decks: SemanticDeck[];
+  [key: string]: any;
+}

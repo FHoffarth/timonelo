@@ -83,6 +83,7 @@ export const CANONICAL_CABINS: Record<string, CabinAnalysis> = {
     sqmInterior: deluxeInside?.metrics?.sqm_approx || 16,
     sqmBalcony: 0,
     bedConfig: bellissimaCabins?.summary?.standard_amenities?.[0] || "Twin beds convertible to double (king size)",
+    connectingCabinId: null,
     accessible: true,
     heroImageUrl: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80",
     locationAnalysis:

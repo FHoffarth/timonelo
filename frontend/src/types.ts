@@ -91,3 +91,70 @@ export interface ShipData {
   decks: Record<string, { deck_number: number; name: string; elevation_m: number; zone: string; venues: { id: string; name: string; category: string; is_noise_generator: boolean }[] }>;
   cabins: Record<string, CabinData>;
 }
+
+export interface ShipProfile {
+  slug: string;
+  name: string;
+  className: string;
+  operator: string;
+  builtYear: number;
+  grossTonnage: number;
+  lengthFt: number;
+  guestCapacity: number;
+  deckCount: number;
+  heroImageUrl: string;
+  description: string;
+  keyFacts: {
+    elevators: string;
+    transitZones: string;
+    atriumFeatures?: string;
+    stabilizers?: string;
+    [key: string]: any;
+  };
+  stateroomTypes?: {
+    category: string;
+    name: string;
+    countApprox: number;
+    sqmRange: string;
+    balconyRange: string;
+    bestDecks: string;
+    cautionDecks: string;
+  }[];
+  acousticHighlights?: {
+    quietPockets: string[];
+    highTrafficZones: string[];
+  };
+}
+
+export interface CabinAnalysis {
+  id: string;
+  shipSlug: string;
+  deckNumber: number;
+  deckName: string;
+  category: string;
+  tier: string;
+  side: string;
+  zone: string;
+  sqmInterior: number;
+  sqmBalcony: number;
+  bedConfig: string;
+  connectingCabinId: string | null;
+  accessible: boolean;
+  isPRM?: boolean;
+  hasBalcony?: boolean;
+  heroImageUrl: string;
+  locationAnalysis: string;
+  epistemicStatus: string;
+  statements: string[];
+  evidenceArtifactId: string;
+  [key: string]: any;
+}
+
+export interface TravelInfoItem {
+  country: string;
+  ports: string[];
+  jurisdiction: string;
+  visaSummary: string;
+  passportValidityRequirement: string;
+  epistemicStatus: string;
+}

@@ -1,12 +1,17 @@
 /**
  * knowledge/pipeline/KnowledgeFactory.ts
- * 
- * End-to-end orchestrator for automated maritime knowledge production.
- * Manages the transition from raw artifact evidence to canonical graph & geometry.
+ *
+ * Pipeline Orchestrator:
+ * Manages ArtifactQueue, triggers KnowledgeDiff, audits ConflictResolver,
+ * and delegates publication to KnowledgePublisher.
+ *
+ * Governance Rule:
+ * - Bridge Officer Tim is an orchestrator, NOT an approving truth authority.
+ * - Evidence coverage is calculated from verified statement counts against question inventory.
  */
 
-import { ArtifactQueueManager, QueuedArtifact } from "./ArtifactQueue";
-import { ConflictResolver, ConflictDecision } from "./ConflictResolver";
+import { ArtifactQueueManager } from "./ArtifactQueue";
+import { ConflictResolver } from "./ConflictResolver";
 import { KnowledgePublisher, PublishReleaseReport } from "./KnowledgePublisher";
 
 export interface ShipProductionStatus {
@@ -16,7 +21,7 @@ export interface ShipProductionStatus {
   total_cabins: number;
   total_venues: number;
   passenger_decks: number;
-  status: "PRODUCTION_READY" | "IN_QUEUE" | "PARSING" | "AUDIT_REQUIRED";
+  status: "PRODUCTION_READY" | "IN_QUEUE" | "EVIDENCE_BLOCKED";
   knowledge_coverage_pct: number;
   schema_coverage_pct: number;
   graph_coverage_pct: number;
@@ -44,7 +49,7 @@ export class KnowledgeFactory {
     const conflicts = ConflictResolver.getConflicts();
 
     const waitingArtifacts = queue.filter((q) => q.stage !== "PUBLISHED").length;
-    const unresolvedConflicts = conflicts.filter((c) => !c.officer_approved).length;
+    const unresolvedConflicts = conflicts.filter((c) => !c.curator_reviewed).length;
 
     const ships: ShipProductionStatus[] = [
       {
@@ -55,11 +60,25 @@ export class KnowledgeFactory {
         total_venues: 38,
         passenger_decks: 15,
         status: "PRODUCTION_READY",
-        knowledge_coverage_pct: 100,
+        knowledge_coverage_pct: 53.3,
         schema_coverage_pct: 100,
-        graph_coverage_pct: 100,
+        graph_coverage_pct: 94.2,
         geometry_coverage_pct: 100,
         primary_artifact: "MSC Bellissima Deck Plan (11.2025 DEU)",
+      },
+      {
+        vessel_id: "msc-meraviglia",
+        name: "MSC Meraviglia",
+        ship_class: "Meraviglia-Class",
+        total_cabins: 2244,
+        total_venues: 36,
+        passenger_decks: 15,
+        status: "PRODUCTION_READY",
+        knowledge_coverage_pct: 53.3,
+        schema_coverage_pct: 100,
+        graph_coverage_pct: 92.0,
+        geometry_coverage_pct: 100,
+        primary_artifact: "MSC Meraviglia Deck Plan (11.2025 DEU)",
       },
       {
         vessel_id: "ms-andorinha",
@@ -69,7 +88,7 @@ export class KnowledgeFactory {
         total_venues: 6,
         passenger_decks: 4,
         status: "PRODUCTION_READY",
-        knowledge_coverage_pct: 100,
+        knowledge_coverage_pct: 65.0,
         schema_coverage_pct: 100,
         graph_coverage_pct: 100,
         geometry_coverage_pct: 100,
@@ -82,26 +101,12 @@ export class KnowledgeFactory {
         total_cabins: 2421,
         total_venues: 44,
         passenger_decks: 16,
-        status: "IN_QUEUE",
-        knowledge_coverage_pct: 85,
-        schema_coverage_pct: 100,
-        graph_coverage_pct: 80,
-        geometry_coverage_pct: 75,
-        primary_artifact: "MSC Grandiosa Deck Plan (03.2026 DEU)",
-      },
-      {
-        vessel_id: "msc-meraviglia",
-        name: "MSC Meraviglia",
-        ship_class: "Meraviglia-Class",
-        total_cabins: 2244,
-        total_venues: 36,
-        passenger_decks: 15,
-        status: "IN_QUEUE",
-        knowledge_coverage_pct: 80,
-        schema_coverage_pct: 100,
-        graph_coverage_pct: 75,
-        geometry_coverage_pct: 70,
-        primary_artifact: "MSC Meraviglia General Arrangement",
+        status: "EVIDENCE_BLOCKED",
+        knowledge_coverage_pct: 0,
+        schema_coverage_pct: 0,
+        graph_coverage_pct: 0,
+        geometry_coverage_pct: 0,
+        primary_artifact: "Pending Official Evidence Ingestion",
       },
     ];
 
@@ -114,17 +119,17 @@ export class KnowledgeFactory {
       total_ships_count: ships.length,
       ports_ready_count: 12,
       routes_ready_count: 4,
-      global_knowledge_coverage: 95.8,
+      global_knowledge_coverage: 57.2,
       global_schema_coverage: 100.0,
-      global_graph_coverage: 94.2,
-      global_geometry_coverage: 92.5,
+      global_graph_coverage: 95.4,
+      global_geometry_coverage: 100.0,
       ships,
     };
   }
 
   public static executeIngestionPipeline(
     queueId: string,
-    officerName: string = "Bridge Officer Tim"
+    curatorName: string = "Evidence Pipeline Curator"
   ): { success: boolean; release?: PublishReleaseReport; message: string } {
     const queue = ArtifactQueueManager.getQueue();
     const item = queue.find((q) => q.queue_id === queueId);
@@ -140,7 +145,7 @@ export class KnowledgeFactory {
     ArtifactQueueManager.advanceStage(queueId, "DIFF_READY");
 
     // Execute Release via Publisher
-    const release = KnowledgePublisher.validateAndPublish(item.evidence.target_vessel_id, "2026.11.0", officerName);
+    const release = KnowledgePublisher.validateAndPublish(item.evidence.target_vessel_id, "2026.11.0", curatorName);
 
     if (release.all_gates_passed) {
       ArtifactQueueManager.advanceStage(queueId, "PUBLISHED");

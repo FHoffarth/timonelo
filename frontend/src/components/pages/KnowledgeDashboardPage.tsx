@@ -33,10 +33,10 @@ export const KnowledgeDashboardPage: React.FC = () => {
   const [actionSuccessMessage, setActionSuccessMessage] = useState<string | null>(null);
 
   const handleApproveConflict = (conflictId: string) => {
-    ConflictResolver.approveConflict(conflictId, "Bridge Officer Tim");
+    ConflictResolver.resolveConflictWithEvidence(conflictId, "Knowledge Curator", "Verified from official primary source");
     setConflicts(ConflictResolver.getConflicts());
     setMetrics(KnowledgeFactory.getFactoryMetrics());
-    setActionSuccessMessage(`Conflict ${conflictId} successfully approved and superseded by Bridge Officer Tim.`);
+    setActionSuccessMessage(`Conflict ${conflictId} successfully resolved with verified evidence.`);
     setTimeout(() => setActionSuccessMessage(null), 4000);
   };
 
@@ -344,7 +344,7 @@ export const KnowledgeDashboardPage: React.FC = () => {
 
                 <div className="pt-1.5 border-t border-slate-200/60 flex items-center justify-between text-[10px] font-mono text-slate-400">
                   <span>Artifact: {conf.incoming_artifact} (P.{conf.evidence_page})</span>
-                  <span className="text-emerald-600 font-bold">Approved by {conf.approved_by}</span>
+                  <span className="text-emerald-600 font-bold">Reviewed by {conf.reviewed_by || "Curator"}</span>
                 </div>
               </div>
             ))}

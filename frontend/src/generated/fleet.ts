@@ -30,13 +30,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAcosma is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAcosma is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -50,13 +47,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidacosma",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -64,13 +58,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 32.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAmar is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAmar is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -84,13 +75,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidamar",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -98,13 +86,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAnova is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAnova is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -118,13 +103,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidanova",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -132,13 +114,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Mitsubishi Heavy Industries"
-    },
+    "builder": "Mitsubishi Heavy Industries",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAperla is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Mitsubishi Heavy Industries', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAperla is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Mitsubishi Heavy Industries.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -152,13 +131,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidaperla",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -166,13 +142,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Mitsubishi Heavy Industries"
-    },
+    "builder": "Mitsubishi Heavy Industries",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAprima is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Mitsubishi Heavy Industries', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAprima is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Mitsubishi Heavy Industries.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -186,13 +159,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidaprima",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -200,13 +170,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 32.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AIDAstella is a {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} vessel operated by AIDA Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "AIDAstella is a Helios Class vessel operated by AIDA Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -220,13 +187,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Helios Class"
-    },
+    "shipClass": "Helios Class",
     "slug": "aidastella",
     "statusLabel": "Active",
-    "subtitle": "AIDA Cruises · {'value': 'Helios Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AIDA Cruises · Helios Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -234,13 +198,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "STX Europe"
-    },
+    "builder": "STX Europe",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Allure of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'STX Europe', 'trust_level': 'OFFICIAL'}.",
+    "description": "Allure of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from STX Europe.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -254,13 +215,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "allure-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -268,13 +226,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 22.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Vahali Shipyards"
-    },
+    "builder": "Vahali Shipyards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "AmaMagna is a {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} vessel operated by AmaWaterways, delivered in 2019 from {'value': 'Vahali Shipyards', 'trust_level': 'OFFICIAL'}.",
+    "description": "AmaMagna is a Viking Longship Class vessel operated by AmaWaterways, delivered in 2019 from Vahali Shipyards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -288,13 +243,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Viking Longship Class"
-    },
+    "shipClass": "Viking Longship Class",
     "slug": "amamatilda",
     "statusLabel": "Active",
-    "subtitle": "AmaWaterways · {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "AmaWaterways · Viking Longship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -302,13 +254,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Anthem of the Seas is a {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Anthem of the Seas is a Quantum Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -322,13 +271,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Quantum Class"
-    },
+    "shipClass": "Quantum Class",
     "slug": "anthem-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Quantum Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -336,13 +282,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Brilliant Lady is a {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} vessel operated by Virgin Voyages, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Brilliant Lady is a Lady Ship Class vessel operated by Virgin Voyages, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -356,13 +299,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Lady Ship Class"
-    },
+    "shipClass": "Lady Ship Class",
     "slug": "brilliant-lady",
     "statusLabel": "Active",
-    "subtitle": "Virgin Voyages · {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Virgin Voyages · Lady Ship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -370,13 +310,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Carnival Celebration is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Carnival Celebration is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -390,13 +327,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "carnival-celebration",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -404,13 +338,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Carnival Horizon is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Carnival Horizon is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -424,13 +355,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "carnival-horizon",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -438,13 +366,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Carnival Jubilee is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Carnival Jubilee is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -458,13 +383,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "carnival-jubilee",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -472,13 +394,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Carnival Panorama is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Carnival Panorama is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -492,13 +411,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "carnival-panorama",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -506,13 +422,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Carnival Vista is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Carnival Vista is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -526,13 +439,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "carnival-vista",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -540,13 +450,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Apex is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Apex is a Edge Class vessel operated by Celebrity Cruises, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -560,13 +467,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "celebrity-apex",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -574,13 +478,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Ascent is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Ascent is a Edge Class vessel operated by Celebrity Cruises, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -594,13 +495,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "celebrity-ascent",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -608,13 +506,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Beyond is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Beyond is a Edge Class vessel operated by Celebrity Cruises, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -628,13 +523,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "celebrity-beyond",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -642,13 +534,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 36.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Eclipse is a {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Eclipse is a Solstice Class vessel operated by Celebrity Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -662,13 +551,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Solstice Class"
-    },
+    "shipClass": "Solstice Class",
     "slug": "celebrity-eclipse",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Solstice Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -676,13 +562,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Edge is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Edge is a Edge Class vessel operated by Celebrity Cruises, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -696,13 +579,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "celebrity-edge",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -710,13 +590,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 36.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Equinox is a {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Equinox is a Solstice Class vessel operated by Celebrity Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -730,13 +607,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Solstice Class"
-    },
+    "shipClass": "Solstice Class",
     "slug": "celebrity-equinox",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Solstice Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -744,13 +618,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Reflection is a {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Reflection is a Solstice Class vessel operated by Celebrity Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -764,13 +635,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Solstice Class"
-    },
+    "shipClass": "Solstice Class",
     "slug": "celebrity-reflection",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Solstice Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -778,13 +646,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 36.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Silhouette is a {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Silhouette is a Solstice Class vessel operated by Celebrity Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -798,13 +663,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Solstice Class"
-    },
+    "shipClass": "Solstice Class",
     "slug": "celebrity-silhouette",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Solstice Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -812,13 +674,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 36.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Solstice is a {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Solstice is a Solstice Class vessel operated by Celebrity Cruises, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -832,13 +691,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Solstice Class"
-    },
+    "shipClass": "Solstice Class",
     "slug": "celebrity-solstice",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Solstice Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Solstice Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -846,13 +702,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Celebrity Xcel is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Celebrity Cruises, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Celebrity Xcel is a Edge Class vessel operated by Celebrity Cruises, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -866,13 +719,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "celebrity-xcel",
     "statusLabel": "Active",
-    "subtitle": "Celebrity Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Celebrity Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -880,13 +730,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Discovery Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Discovery Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -900,13 +747,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "discovery-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -914,13 +758,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Destiny is a {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Destiny is a Wish Class vessel operated by Disney Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -934,13 +775,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Wish Class"
-    },
+    "shipClass": "Wish Class",
     "slug": "disney-destiny",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Wish Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -948,13 +786,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Dream is a {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Dream is a Dream Class Disney vessel operated by Disney Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -968,13 +803,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Dream Class Disney"
-    },
+    "shipClass": "Dream Class Disney",
     "slug": "disney-dream",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Dream Class Disney · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -982,13 +814,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 37.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Fantasy is a {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Fantasy is a Dream Class Disney vessel operated by Disney Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1002,13 +831,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Dream Class Disney"
-    },
+    "shipClass": "Dream Class Disney",
     "slug": "disney-fantasy",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Dream Class Disney · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1016,13 +842,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 32.2,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Magic is a {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Magic is a Dream Class Disney vessel operated by Disney Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1036,13 +859,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Dream Class Disney"
-    },
+    "shipClass": "Dream Class Disney",
     "slug": "disney-magic",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Dream Class Disney', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Dream Class Disney · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1050,13 +870,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Treasure is a {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Treasure is a Wish Class vessel operated by Disney Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1070,13 +887,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Wish Class"
-    },
+    "shipClass": "Wish Class",
     "slug": "disney-treasure",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Wish Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1084,13 +898,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Disney Wish is a {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} vessel operated by Disney Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Disney Wish is a Wish Class vessel operated by Disney Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1104,13 +915,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Wish Class"
-    },
+    "shipClass": "Wish Class",
     "slug": "disney-wish",
     "statusLabel": "Active",
-    "subtitle": "Disney Cruise Line · {'value': 'Wish Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Disney Cruise Line · Wish Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1118,13 +926,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Enchanted Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Enchanted Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1138,13 +943,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "enchanted-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1152,13 +954,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Aker Finnyards"
-    },
+    "builder": "Aker Finnyards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Freedom of the Seas is a {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Aker Finnyards', 'trust_level': 'OFFICIAL'}.",
+    "description": "Freedom of the Seas is a Freedom Class vessel operated by Royal Caribbean International, delivered in 2019 from Aker Finnyards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1172,13 +971,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Freedom Class"
-    },
+    "shipClass": "Freedom Class",
     "slug": "freedom-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Freedom Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1186,13 +982,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "STX France"
-    },
+    "builder": "STX France",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Harmony of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'STX France', 'trust_level': 'OFFICIAL'}.",
+    "description": "Harmony of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from STX France.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1206,13 +999,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "harmony-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1220,13 +1010,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 48.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Icon of the Seas is a {'value': 'Icon Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Icon of the Seas is a Icon Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1240,13 +1027,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Icon Class"
-    },
+    "shipClass": "Icon Class",
     "slug": "icon-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Icon Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Icon Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1254,13 +1038,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Aker Finnyards"
-    },
+    "builder": "Aker Finnyards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Independence of the Seas is a {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Aker Finnyards', 'trust_level': 'OFFICIAL'}.",
+    "description": "Independence of the Seas is a Freedom Class vessel operated by Royal Caribbean International, delivered in 2019 from Aker Finnyards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1274,13 +1055,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Freedom Class"
-    },
+    "shipClass": "Freedom Class",
     "slug": "independence-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Freedom Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1288,13 +1066,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Aker Finnyards"
-    },
+    "builder": "Aker Finnyards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Liberty of the Seas is a {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Aker Finnyards', 'trust_level': 'OFFICIAL'}.",
+    "description": "Liberty of the Seas is a Freedom Class vessel operated by Royal Caribbean International, delivered in 2019 from Aker Finnyards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1308,13 +1083,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Freedom Class"
-    },
+    "shipClass": "Freedom Class",
     "slug": "liberty-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Freedom Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Freedom Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1322,13 +1094,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Majestic Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Majestic Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1342,13 +1111,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "majestic-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1356,13 +1122,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mardi Gras is a {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} vessel operated by Carnival Cruise Line, delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mardi Gras is a Excel Class vessel operated by Carnival Cruise Line, delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1376,13 +1139,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Excel Class"
-    },
+    "shipClass": "Excel Class",
     "slug": "mardi-gras",
     "statusLabel": "Active",
-    "subtitle": "Carnival Cruise Line · {'value': 'Excel Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Carnival Cruise Line · Excel Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1390,13 +1150,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Kværner Masa-Yards"
-    },
+    "builder": "Kværner Masa-Yards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mariner of the Seas is a {'value': 'Voyager Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Kværner Masa-Yards', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mariner of the Seas is a Voyager Class vessel operated by Royal Caribbean International, delivered in 2019 from Kværner Masa-Yards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1410,13 +1167,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Voyager Class"
-    },
+    "shipClass": "Voyager Class",
     "slug": "mariner-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Voyager Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Voyager Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1424,13 +1178,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff 1 is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff 1 is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1444,13 +1195,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-1",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1458,13 +1206,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff 2 is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff 2 is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1478,13 +1223,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-2",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1492,13 +1234,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "STX Finland"
-    },
+    "builder": "STX Finland",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff 3 is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'STX Finland', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff 3 is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from STX Finland.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1512,13 +1251,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-3",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1526,13 +1262,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff 4 is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff 4 is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1546,13 +1279,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-4",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1560,13 +1290,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff 6 is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff 6 is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1580,13 +1307,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-6",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1594,13 +1318,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.1,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Mein Schiff Relax is a {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Mein Schiff Relax is a Intuition Class vessel operated by TUI Cruises (Mein Schiff), delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1614,13 +1335,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Intuition Class"
-    },
+    "shipClass": "Intuition Class",
     "slug": "mein-schiff-relax",
     "statusLabel": "Active",
-    "subtitle": "TUI Cruises (Mein Schiff) · {'value': 'Intuition Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "TUI Cruises (Mein Schiff) · Intuition Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -1628,13 +1346,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 11.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Vahali / Scylla AG"
-    },
+    "builder": "Vahali / Scylla AG",
     "cabinCount": 42,
     "defaultCabin": "218",
-    "description": "MS Andorinha is a {'value': 'Douro River Class', 'trust_level': 'OFFICIAL'} vessel operated by Tauck / Scylla AG, delivered in 2019 from {'value': 'Vahali / Scylla AG', 'trust_level': 'OFFICIAL'}.",
+    "description": "MS Andorinha is a Douro River Class vessel operated by Tauck / Scylla AG, delivered in 2019 from Vahali / Scylla AG.",
     "heroImageUrl": "/media/ms-andorinha-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1648,13 +1363,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Douro River / Portugal",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Douro River Class"
-    },
+    "shipClass": "Douro River Class",
     "slug": "ms-andorinha",
     "statusLabel": "Active",
-    "subtitle": "Tauck / Scylla AG · {'value': 'Douro River Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Tauck / Scylla AG · Douro River Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 4,
     "vesselType": "River Cruise"
@@ -1662,13 +1374,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 11.45,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Vahali / Scylla AG"
-    },
+    "builder": "Vahali / Scylla AG",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "MS Inspire is a {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} vessel operated by Tauck / Scylla AG, delivered in 2019 from {'value': 'Vahali / Scylla AG', 'trust_level': 'OFFICIAL'}.",
+    "description": "MS Inspire is a Viking Longship Class vessel operated by Tauck / Scylla AG, delivered in 2019 from Vahali / Scylla AG.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -1682,13 +1391,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Viking Longship Class"
-    },
+    "shipClass": "Viking Longship Class",
     "slug": "ms-inspire",
     "statusLabel": "Active",
-    "subtitle": "Tauck / Scylla AG · {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Tauck / Scylla AG · Viking Longship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2368,13 +2074,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Kværner Masa-Yards"
-    },
+    "builder": "Kværner Masa-Yards",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Navigator of the Seas is a {'value': 'Voyager Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Kværner Masa-Yards', 'trust_level': 'OFFICIAL'}.",
+    "description": "Navigator of the Seas is a Voyager Class vessel operated by Royal Caribbean International, delivered in 2019 from Kværner Masa-Yards.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2388,13 +2091,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Voyager Class"
-    },
+    "shipClass": "Voyager Class",
     "slug": "navigator-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Voyager Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Voyager Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2402,13 +2102,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 40.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Aqua is a {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Aqua is a Prima Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2422,13 +2119,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Prima Class"
-    },
+    "shipClass": "Prima Class",
     "slug": "norwegian-aqua",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Prima Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2436,13 +2130,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Bliss is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Bliss is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2456,13 +2147,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-bliss",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2470,13 +2158,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.7,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Breakaway is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Breakaway is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2490,13 +2175,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-breakaway",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2504,13 +2186,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Encore is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Encore is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2524,13 +2203,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-encore",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2538,13 +2214,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 40.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "STX Europe"
-    },
+    "builder": "STX Europe",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Epic is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'STX Europe', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Epic is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from STX Europe.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2558,13 +2231,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-epic",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2572,13 +2242,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Escape is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Escape is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2592,13 +2259,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-escape",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2606,13 +2270,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 39.7,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Getaway is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Getaway is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2626,13 +2287,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-getaway",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2640,13 +2298,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Joy is a {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Joy is a Breakaway Plus Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2660,13 +2315,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Breakaway Plus Class"
-    },
+    "shipClass": "Breakaway Plus Class",
     "slug": "norwegian-joy",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Breakaway Plus Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Breakaway Plus Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2674,13 +2326,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 40.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Prima is a {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Prima is a Prima Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2694,13 +2343,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Prima Class"
-    },
+    "shipClass": "Prima Class",
     "slug": "norwegian-prima",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Prima Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2708,13 +2354,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 40.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Norwegian Viva is a {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} vessel operated by Norwegian Cruise Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Norwegian Viva is a Prima Class vessel operated by Norwegian Cruise Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2728,13 +2371,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Prima Class"
-    },
+    "shipClass": "Prima Class",
     "slug": "norwegian-viva",
     "statusLabel": "Active",
-    "subtitle": "Norwegian Cruise Line · {'value': 'Prima Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Norwegian Cruise Line · Prima Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2742,13 +2382,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "STX Europe"
-    },
+    "builder": "STX Europe",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Oasis of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'STX Europe', 'trust_level': 'OFFICIAL'}.",
+    "description": "Oasis of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from STX Europe.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2762,13 +2399,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "oasis-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2776,13 +2410,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Odyssey of the Seas is a {'value': 'Quantum Ultra Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Odyssey of the Seas is a Quantum Ultra Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2796,13 +2427,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Quantum Ultra Class"
-    },
+    "shipClass": "Quantum Ultra Class",
     "slug": "odyssey-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Quantum Ultra Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Quantum Ultra Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2810,13 +2438,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Ovation of the Seas is a {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Ovation of the Seas is a Quantum Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2830,13 +2455,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Quantum Class"
-    },
+    "shipClass": "Quantum Class",
     "slug": "ovation-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Quantum Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2844,13 +2466,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Quantum of the Seas is a {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Quantum of the Seas is a Quantum Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2864,13 +2483,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Quantum Class"
-    },
+    "shipClass": "Quantum Class",
     "slug": "quantum-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Quantum Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Quantum Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2878,13 +2494,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 35.6,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Queen Anne is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Cunard Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Queen Anne is a Royal Class vessel operated by Cunard Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2898,13 +2511,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "queen-anne",
     "statusLabel": "Active",
-    "subtitle": "Cunard Line · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Cunard Line · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2912,13 +2522,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 32.3,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Queen Elizabeth is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Cunard Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Queen Elizabeth is a Royal Class vessel operated by Cunard Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2932,13 +2539,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "queen-elizabeth",
     "statusLabel": "Active",
-    "subtitle": "Cunard Line · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Cunard Line · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2946,13 +2550,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Queen Mary 2 is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Cunard Line, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Queen Mary 2 is a Royal Class vessel operated by Cunard Line, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -2966,13 +2567,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "queen-mary-2",
     "statusLabel": "Active",
-    "subtitle": "Cunard Line · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Cunard Line · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -2980,13 +2578,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 32.3,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Queen Victoria is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Cunard Line, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Queen Victoria is a Royal Class vessel operated by Cunard Line, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3000,13 +2595,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "queen-victoria",
     "statusLabel": "Active",
-    "subtitle": "Cunard Line · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Cunard Line · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3014,13 +2606,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Regal Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Regal Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3034,13 +2623,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "regal-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3048,13 +2634,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Resilient Lady is a {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} vessel operated by Virgin Voyages, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Resilient Lady is a Lady Ship Class vessel operated by Virgin Voyages, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3068,13 +2651,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Lady Ship Class"
-    },
+    "shipClass": "Lady Ship Class",
     "slug": "resilient-lady",
     "statusLabel": "Active",
-    "subtitle": "Virgin Voyages · {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Virgin Voyages · Lady Ship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3082,13 +2662,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Royal Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Royal Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3102,13 +2679,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "royal-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3116,13 +2690,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Scarlet Lady is a {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} vessel operated by Virgin Voyages, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Scarlet Lady is a Lady Ship Class vessel operated by Virgin Voyages, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3136,13 +2707,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Lady Ship Class"
-    },
+    "shipClass": "Lady Ship Class",
     "slug": "scarlet-lady",
     "statusLabel": "Active",
-    "subtitle": "Virgin Voyages · {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Virgin Voyages · Lady Ship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3150,13 +2718,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 21.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Uljanik Shipyard"
-    },
+    "builder": "Uljanik Shipyard",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Scenic Eclipse is a {'value': 'Scenic Eclipse Class', 'trust_level': 'OFFICIAL'} vessel operated by Scenic Luxury Cruises, delivered in 2019 from {'value': 'Uljanik Shipyard', 'trust_level': 'OFFICIAL'}.",
+    "description": "Scenic Eclipse is a Scenic Eclipse Class vessel operated by Scenic Luxury Cruises, delivered in 2019 from Uljanik Shipyard.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3170,13 +2735,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Scenic Eclipse Class"
-    },
+    "shipClass": "Scenic Eclipse Class",
     "slug": "scenic-eclipse",
     "statusLabel": "Active",
-    "subtitle": "Scenic Luxury Cruises · {'value': 'Scenic Eclipse Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Scenic Luxury Cruises · Scenic Eclipse Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3184,13 +2746,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Sky Princess is a {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Sky Princess is a Royal Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3204,13 +2763,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Royal Class"
-    },
+    "shipClass": "Royal Class",
     "slug": "sky-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Royal Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Royal Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3218,13 +2774,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 41.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Werft"
-    },
+    "builder": "Meyer Werft",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Spectrum of the Seas is a {'value': 'Quantum Ultra Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Spectrum of the Seas is a Quantum Ultra Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3238,13 +2791,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Quantum Ultra Class"
-    },
+    "shipClass": "Quantum Ultra Class",
     "slug": "spectrum-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Quantum Ultra Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Quantum Ultra Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3252,13 +2802,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 48.5,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Meyer Turku"
-    },
+    "builder": "Meyer Turku",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Star of the Seas is a {'value': 'Icon Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': 'Meyer Turku', 'trust_level': 'OFFICIAL'}.",
+    "description": "Star of the Seas is a Icon Class vessel operated by Royal Caribbean International, delivered in 2019 from Meyer Turku.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3272,13 +2819,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Icon Class"
-    },
+    "shipClass": "Icon Class",
     "slug": "star-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Icon Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Icon Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3286,13 +2830,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Star Princess is a {'value': 'Sphere Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Star Princess is a Sphere Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3306,13 +2847,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Sphere Class"
-    },
+    "shipClass": "Sphere Class",
     "slug": "star-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Sphere Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Sphere Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3320,13 +2858,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 42.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Sun Princess is a {'value': 'Sphere Class', 'trust_level': 'OFFICIAL'} vessel operated by Princess Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Sun Princess is a Sphere Class vessel operated by Princess Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3340,13 +2875,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Sphere Class"
-    },
+    "shipClass": "Sphere Class",
     "slug": "sun-princess",
     "statusLabel": "Active",
-    "subtitle": "Princess Cruises · {'value': 'Sphere Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Princess Cruises · Sphere Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3354,13 +2886,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Symphony of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Symphony of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3374,13 +2903,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "symphony-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3388,13 +2914,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Utopia of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Utopia of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3408,13 +2931,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "utopia-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3422,13 +2942,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 38.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Valiant Lady is a {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} vessel operated by Virgin Voyages, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Valiant Lady is a Lady Ship Class vessel operated by Virgin Voyages, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3442,13 +2959,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Lady Ship Class"
-    },
+    "shipClass": "Lady Ship Class",
     "slug": "valiant-lady",
     "statusLabel": "Active",
-    "subtitle": "Virgin Voyages · {'value': 'Lady Ship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Virgin Voyages · Lady Ship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3456,13 +2970,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 11.4,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Neptun Werft"
-    },
+    "builder": "Neptun Werft",
     "cabinCount": 42,
     "defaultCabin": "10001",
-    "description": "Viking Helgrim is a {'value': 'Douro River Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking River Cruises, delivered in 2019 from {'value': 'Neptun Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Helgrim is a Douro River Class vessel operated by Viking River Cruises, delivered in 2019 from Neptun Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3476,13 +2987,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Douro River / Portugal",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Douro River Class"
-    },
+    "shipClass": "Douro River Class",
     "slug": "viking-helgrim",
     "statusLabel": "Active",
-    "subtitle": "Viking River Cruises · {'value': 'Douro River Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking River Cruises · Douro River Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 4,
     "vesselType": "River Cruise"
@@ -3490,13 +2998,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 28.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Viking Jupiter is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking Ocean Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Jupiter is a Edge Class vessel operated by Viking Ocean Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3510,13 +3015,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "viking-jupiter",
     "statusLabel": "Active",
-    "subtitle": "Viking Ocean Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking Ocean Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3524,13 +3026,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 11.45,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Neptun Werft"
-    },
+    "builder": "Neptun Werft",
     "cabinCount": 42,
     "defaultCabin": "10001",
-    "description": "Viking Odin is a {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking River Cruises, delivered in 2019 from {'value': 'Neptun Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Odin is a Viking Longship Class vessel operated by Viking River Cruises, delivered in 2019 from Neptun Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3544,13 +3043,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Douro River / Portugal",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Viking Longship Class"
-    },
+    "shipClass": "Viking Longship Class",
     "slug": "viking-odin",
     "statusLabel": "Active",
-    "subtitle": "Viking River Cruises · {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking River Cruises · Viking Longship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 4,
     "vesselType": "River Cruise"
@@ -3558,13 +3054,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 28.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Viking Sky is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking Ocean Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Sky is a Edge Class vessel operated by Viking Ocean Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3578,13 +3071,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "viking-sky",
     "statusLabel": "Active",
-    "subtitle": "Viking Ocean Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking Ocean Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3592,13 +3082,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 28.8,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Fincantieri"
-    },
+    "builder": "Fincantieri",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Viking Star is a {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking Ocean Cruises, delivered in 2019 from {'value': 'Fincantieri', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Star is a Edge Class vessel operated by Viking Ocean Cruises, delivered in 2019 from Fincantieri.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3612,13 +3099,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Edge Class"
-    },
+    "shipClass": "Edge Class",
     "slug": "viking-star",
     "statusLabel": "Active",
-    "subtitle": "Viking Ocean Cruises · {'value': 'Edge Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking Ocean Cruises · Edge Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"
@@ -3626,13 +3110,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 11.45,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Neptun Werft"
-    },
+    "builder": "Neptun Werft",
     "cabinCount": 42,
     "defaultCabin": "10001",
-    "description": "Viking Tor is a {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} vessel operated by Viking River Cruises, delivered in 2019 from {'value': 'Neptun Werft', 'trust_level': 'OFFICIAL'}.",
+    "description": "Viking Tor is a Viking Longship Class vessel operated by Viking River Cruises, delivered in 2019 from Neptun Werft.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3646,13 +3127,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Douro River / Portugal",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Viking Longship Class"
-    },
+    "shipClass": "Viking Longship Class",
     "slug": "viking-tor",
     "statusLabel": "Active",
-    "subtitle": "Viking River Cruises · {'value': 'Viking Longship Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Viking River Cruises · Viking Longship Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 4,
     "vesselType": "River Cruise"
@@ -3660,13 +3138,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
   {
     "beamM": 47.0,
     "buildYear": 2019,
-    "builder": {
-      "trust_level": "OFFICIAL",
-      "value": "Chantiers de l'Atlantique"
-    },
+    "builder": "Chantiers de l'Atlantique",
     "cabinCount": 2217,
     "defaultCabin": "10001",
-    "description": "Wonder of the Seas is a {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} vessel operated by Royal Caribbean International, delivered in 2019 from {'value': \"Chantiers de l'Atlantique\", 'trust_level': 'OFFICIAL'}.",
+    "description": "Wonder of the Seas is a Oasis Class vessel operated by Royal Caribbean International, delivered in 2019 from Chantiers de l'Atlantique.",
     "heroImageUrl": "/media/msc-bellissima-hero.webp",
     "highlights": [
       "Full deck plan geometry and stateroom acoustic mapping",
@@ -3680,13 +3155,10 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     "passengerCapacity": 5655,
     "region": "Mediterranean / Global",
     "roleTitle": "Active Reference Model",
-    "shipClass": {
-      "trust_level": "OFFICIAL",
-      "value": "Oasis Class"
-    },
+    "shipClass": "Oasis Class",
     "slug": "wonder-of-the-seas",
     "statusLabel": "Active",
-    "subtitle": "Royal Caribbean International · {'value': 'Oasis Class', 'trust_level': 'OFFICIAL'} · Delivery 2019",
+    "subtitle": "Royal Caribbean International · Oasis Class · Delivery 2019",
     "tagline": "Evidence-Backed Maritime Intelligence",
     "totalDecks": 19,
     "vesselType": "Ocean Cruise"

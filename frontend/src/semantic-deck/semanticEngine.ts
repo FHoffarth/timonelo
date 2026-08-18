@@ -34,9 +34,9 @@ export class SemanticDeckEngine {
     this.objectMap.clear();
     this.deckMap.clear();
 
-    this.currentVessel.decks.forEach((deck) => {
+    this.currentVessel.decks.forEach((deck: SemanticDeck) => {
       this.deckMap.set(deck.deck_level, deck);
-      deck.objects.forEach((obj) => {
+      deck.objects.forEach((obj: SemanticObject) => {
         this.objectMap.set(obj.id.toLowerCase(), obj);
         this.objectMap.set(obj.id, obj);
       });

@@ -370,7 +370,7 @@ export default function ShipProfilePage({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cabinCategories.map((cat) => {
+              {cabinCategories.map((cat: any) => {
                 const isPRM = cat.tags.includes("accessible") || cat.tags.includes("prm") || cat.name.includes("14122");
                 const isSignature = cat.tags.includes("signature") || cat.tags.includes("swarovski");
                 return (

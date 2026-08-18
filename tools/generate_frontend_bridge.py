@@ -39,14 +39,16 @@ def generate_bridge():
         name = s.get("name", {}).get("value") if isinstance(s.get("name"), dict) else s.get("name", slug)
         imo = s.get("imo_number", {}).get("value") if isinstance(s.get("imo_number"), dict) else (s.get("imo", {}).get("value") if isinstance(s.get("imo"), dict) else "9766205")
         operator = s.get("operator", {}).get("value") if isinstance(s.get("operator"), dict) else s.get("operator", "MSC Cruises")
-        sclass = s.get("ship_class", s.get("class_id", "Meraviglia Class"))
+        raw_sclass = s.get("ship_class", s.get("class_id", "Meraviglia Class"))
+        sclass = raw_sclass.get("value") if isinstance(raw_sclass, dict) else raw_sclass
         dims = s.get("dimensions", {})
-        len_m = dims.get("length_overall_m", {}).get("value") if isinstance(dims.get("length_overall_m"), dict) else 315.8
-        beam_m = dims.get("beam_m", {}).get("value") if isinstance(dims.get("beam_m"), dict) else 43.0
+        len_m = dims.get("length_overall_m", {}).get("value") if isinstance(dims.get("length_overall_m"), dict) else (dims.get("length_overall_m") or 315.8)
+        beam_m = dims.get("beam_m", {}).get("value") if isinstance(dims.get("beam_m"), dict) else (dims.get("beam_m") or 43.0)
         caps = s.get("capacities", {})
         pax = caps.get("passenger_capacity_max", 5655)
         year = s.get("delivery_year", 2019)
-        yard = s.get("builder", "Chantiers de l'Atlantique")
+        raw_yard = s.get("builder", "Chantiers de l'Atlantique")
+        yard = raw_yard.get("value") if isinstance(raw_yard, dict) else raw_yard
 
         vessel_type = "River Cruise" if "andorinha" in slug or "viking" in slug and "river" in str(operator).lower() else "Ocean Cruise"
         

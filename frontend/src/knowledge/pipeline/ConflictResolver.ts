@@ -1,8 +1,13 @@
 /**
  * knowledge/pipeline/ConflictResolver.ts
- * 
+ *
  * Prevents silent overwrites of canonical knowledge.
  * Classifies contradictions as MATCH, CONFLICT, UNKNOWN, or SUPERSEDED.
+ *
+ * Epistemic Governance Rules (ADR-0002):
+ * - Conflicts CANNOT auto-resolve solely by confidence comparison.
+ * - Bridge Officer Tim is an orchestrator, NOT an approving truth authority.
+ * - Resolution requires verified physical evidence or explicit curator approval.
  */
 
 import { FieldDiff } from "./KnowledgeDiff";
@@ -23,8 +28,8 @@ export interface ConflictDecision {
   edition: string;
   statement_id: string;
   resolution_rationale: string;
-  officer_approved: boolean;
-  approved_by?: string;
+  curator_reviewed: boolean;
+  reviewed_by?: string;
   resolved_at?: string;
 }
 
@@ -44,8 +49,8 @@ export class ConflictResolver {
       edition: "11.2025",
       statement_id: "STM-BEL-TECH-001",
       resolution_rationale: "Official 11/2025 Deck Plan specifies exactly 5.654 passengers across 2.217 staterooms, superseding legacy shipyard theoretical max.",
-      officer_approved: true,
-      approved_by: "Bridge Officer Tim",
+      curator_reviewed: true,
+      reviewed_by: "Knowledge Curator (Evidence Audit)",
       resolved_at: "2026-08-17T20:45:00Z",
     },
     {
@@ -62,8 +67,8 @@ export class ConflictResolver {
       edition: "11.2025",
       statement_id: "STM-BEL-BAR-002",
       resolution_rationale: "Deck 6 Musica floor plan explicitly labels Edge Cocktail Bar at Midship Atrium level.",
-      officer_approved: true,
-      approved_by: "Bridge Officer Tim",
+      curator_reviewed: true,
+      reviewed_by: "Knowledge Curator (Evidence Audit)",
       resolved_at: "2026-08-17T20:50:00Z",
     },
     {
@@ -80,8 +85,8 @@ export class ConflictResolver {
       edition: "11.2025",
       statement_id: "STM-BEL-RES-003",
       resolution_rationale: "Official Deck 6 floor plan shows HOLA! Tapas Bar by Ramón Freixa on Bellissima.",
-      officer_approved: true,
-      approved_by: "Bridge Officer Tim",
+      curator_reviewed: true,
+      reviewed_by: "Knowledge Curator (Evidence Audit)",
       resolved_at: "2026-08-17T20:55:00Z",
     },
   ];
@@ -93,7 +98,8 @@ export class ConflictResolver {
   public static classifyDiff(
     diff: FieldDiff,
     publisher: string = "MSC Cruises S.A.",
-    edition: string = "11.2025"
+    edition: string = "11.2025",
+    asOf: string = "2026-08-18T00:00:00Z"
   ): ConflictDecision {
     let status: ResolutionStatus = "CONFLICT";
     let rationale = "";
@@ -104,12 +110,10 @@ export class ConflictResolver {
     } else if (diff.old_value === undefined || diff.old_value === null) {
       status = "SUPERSEDED";
       rationale = "New factual knowledge established from official primary evidence.";
-    } else if (diff.new_confidence > (diff.old_confidence || 0.8)) {
-      status = "SUPERSEDED";
-      rationale = `Higher provenance confidence (${diff.new_confidence} > ${diff.old_confidence}) from official primary edition ${edition}.`;
     } else {
+      // Direct conflict: must NOT be auto-superseded merely by confidence numbers
       status = "CONFLICT";
-      rationale = "Contradiction detected between active canonical dataset and incoming artifact. Requires manual review.";
+      rationale = `Contradiction detected between active canonical dataset (${diff.old_provenance || "Canonical Ground Truth"}) and incoming artifact (${diff.new_provenance}). Requires verified evidence audit.`;
     }
 
     const decision: ConflictDecision = {
@@ -126,22 +130,28 @@ export class ConflictResolver {
       edition: edition,
       statement_id: `STM-${diff.entity_id.toUpperCase()}`,
       resolution_rationale: rationale,
-      officer_approved: status === "MATCH" || status === "SUPERSEDED",
-      approved_by: status === "SUPERSEDED" ? "Bridge Officer Tim" : undefined,
-      resolved_at: new Date().toISOString(),
+      curator_reviewed: status === "MATCH",
+      reviewed_by: undefined,
+      resolved_at: status === "MATCH" ? asOf : undefined,
     };
 
     this.pendingConflicts.unshift(decision);
     return decision;
   }
 
-  public static approveConflict(conflictId: string, officerName: string = "Bridge Officer Tim"): boolean {
+  public static resolveConflictWithEvidence(
+    conflictId: string,
+    curatorName: string,
+    rationale: string,
+    resolvedAt: string = "2026-08-18T00:00:00Z"
+  ): boolean {
     const item = this.pendingConflicts.find((c) => c.conflict_id === conflictId);
     if (item) {
-      item.officer_approved = true;
-      item.approved_by = officerName;
+      item.curator_reviewed = true;
+      item.reviewed_by = curatorName;
       item.status = "SUPERSEDED";
-      item.resolved_at = new Date().toISOString();
+      item.resolution_rationale = rationale;
+      item.resolved_at = resolvedAt;
       return true;
     }
     return false;

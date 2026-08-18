@@ -41,12 +41,18 @@ class BridgeBriefing:
     daily_focus_points: List[str]
     maritime_insight: str
     sign_off: str = "Ich bleibe auf der Brücke. Melden Sie sich jederzeit."
-    confidence_score: float = 99.5
     is_deterministic: bool = True
+    is_orchestration_only: bool = True
 
 
 class BridgeOfficerEngine:
-    """Deterministic Daily Bridge Briefing generator by Bridge Officer Tim (BOT)."""
+    """Deterministic Daily Bridge Briefing orchestrator by Bridge Officer Tim (BOT).
+
+    Governance rule:
+    Bridge Officer Tim is an orchestrator and briefing companion.
+    It coordinates pipeline stages, exposes uncertainty, and summarizes evidence.
+    It NEVER declares facts true, manufactures provenance, or overrides Evidence Gates.
+    """
 
     @classmethod
     def generate_briefing(
@@ -223,3 +229,23 @@ class BridgeOfficerEngine:
                 ],
                 maritime_insight="Eine gute Reise endet nicht mit dem Verlassen des Schiffs. Sie endet erst, wenn Sie erholt und ohne Hektik wieder an Ihrer Haustür ankommen.",
             )
+
+
+class BridgeOfficer:
+    """Bridge Officer Tim pipeline orchestrator.
+
+    Governance Rule:
+    Bridge Officer Tim is an orchestrator and coordinator.
+    It has NO authority to author canonical facts, approve conflicts, or store confidence.
+    """
+    def __init__(self, officer_id: str = "bridge_officer_tim"):
+        self.officer_id = officer_id
+        self.is_orchestration_only = True
+
+    def get_pipeline_status(self) -> Dict[str, Any]:
+        return {
+            "officer_id": self.officer_id,
+            "role": "PIPELINE_ORCHESTRATOR",
+            "can_author_ground_truth": False,
+            "can_override_evidence_gatekeeper": False,
+        }

@@ -1,5 +1,5 @@
 import rawBundle from "../data/living_decks.json";
-import { LivingTwinBundle, LivingDeck, LivingCabin } from "./types";
+import { LivingTwinBundle, LivingDeck, LivingCabin, Waypoint } from "./types";
 
 export const LIVING_BUNDLE = rawBundle as unknown as LivingTwinBundle;
 
@@ -129,7 +129,7 @@ export function computeLivingRoute(
   const distance = isSameDeck ? 38.5 : 111.1;
   const walkSec = Math.round(distance / 1.2 + (isSameDeck ? 8 : 20));
 
-  const waypoints = [
+  const waypoints: Waypoint[] = [
     {
       deck: fromCabin.deck,
       description: `Exit Cabin ${fromCabin.cabin_number} into proven corridor`,

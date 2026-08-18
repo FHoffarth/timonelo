@@ -1,9 +1,16 @@
 /**
  * knowledge/pipeline/KnowledgePublisher.ts
- * 
+ *
  * Pipeline Stage: Canonical Knowledge Release Gatekeeper.
- * Enforces 4-stage validation (Schema, Graph, Geometry, Integrity) before publication.
+ * Enforces structured validation before publication.
+ *
+ * Governance Rule:
+ * - Publication requires physical evidence verification and gate audit.
+ * - Bridge Officer Tim is an orchestrator, NOT an approving truth authority.
+ * - Release IDs must be deterministic.
  */
+
+import { EvidenceGatekeeper } from "./EvidenceGatekeeper";
 
 export interface ValidationGateResult {
   gate_name: string;
@@ -29,51 +36,58 @@ export class KnowledgePublisher {
   public static validateAndPublish(
     vesselId: string,
     version: string = "2026.11.0",
-    officerName: string = "Bridge Officer Tim"
+    curatorName: string = "Evidence Gatekeeper Engine",
+    publishedAt: string = "2026-08-18T00:00:00Z"
   ): PublishReleaseReport {
+    // Run audit via EvidenceGatekeeper
+    const audit = EvidenceGatekeeper.auditShip(vesselId);
+
     const gates: ValidationGateResult[] = [
       {
-        gate_name: "JSON Schema Validation (Draft 2020-12)",
-        passed: true,
-        status: "PASSED",
-        details: "12/12 knowledge schemas + deck_geometry schema 100% compliant",
-        checked_items_count: 13,
+        gate_name: "JSON Schema Validation & Physical Source Integrity (SHA-256)",
+        passed: audit.passed,
+        status: audit.passed ? "PASSED" : "FAILED",
+        details: audit.passed
+          ? `Primary source artifact verified (${audit.held_artifacts_count} held, SHA-256 verified)`
+          : `Gate blocked: ${audit.block_reasons.join("; ")}`,
+        checked_items_count: audit.held_artifacts_count,
       },
       {
-        gate_name: "W3C Building Topology Ontology (BOT) Graph Validation",
-        passed: true,
-        status: "PASSED",
-        details: "All Storey levels, adjacent_overhead, underfoot, and vertical core relations validated",
-        checked_items_count: 2257,
+        gate_name: "W3C Building Topology Ontology (BOT) Graph Grounding",
+        passed: audit.direct_facts_count > 0,
+        status: audit.direct_facts_count > 0 ? "PASSED" : "WARNING",
+        details: `${audit.direct_facts_count} facts backed by DIRECT physical evidence; ${audit.synthetic_facts_count} synthetic facts rejected`,
+        checked_items_count: audit.total_facts_count,
       },
       {
-        gate_name: "Spatial Geometry & Bounding Box Validation",
-        passed: true,
-        status: "PASSED",
-        details: "15/15 deck geometry files verified with zero negative coordinate envelopes",
-        checked_items_count: 2113,
+        gate_name: "Spatial Geometry & Coordinate Provenance Validation",
+        passed: audit.synthetic_geometry_count === 0,
+        status: audit.synthetic_geometry_count === 0 ? "PASSED" : "FAILED",
+        details: `${audit.direct_geometry_count} deck geometries verified with direct/transformed provenance; 0 unverified synthetic geometries`,
+        checked_items_count: audit.direct_geometry_count + audit.synthetic_geometry_count,
       },
       {
-        gate_name: "Referential Integrity & Provenance Proof",
-        passed: true,
-        status: "PASSED",
-        details: "All stateroom categories match cabins.json definitions; all venues grounded in primary deck plan",
-        checked_items_count: 2217,
+        gate_name: "Referential Integrity & Fact Grounding Guard",
+        passed: audit.unresolved_conflicts_count === 0,
+        status: audit.unresolved_conflicts_count === 0 ? "PASSED" : "FAILED",
+        details: `${audit.unresolved_conflicts_count} unresolved conflicts detected`,
+        checked_items_count: audit.unresolved_conflicts_count,
       },
     ];
 
     const allPassed = gates.every((g) => g.passed);
+    const releaseSlug = version.replace(/[^a-zA-Z0-9]/g, "");
 
     return {
-      release_id: `REL-${vesselId.toUpperCase()}-${Date.now()}`,
+      release_id: `REL-${vesselId.toUpperCase()}-${releaseSlug}`,
       target_vessel_id: vesselId,
       version: version,
-      published_by: officerName,
-      published_at: new Date().toISOString(),
+      published_by: curatorName,
+      published_at: publishedAt,
       gates: gates,
       all_gates_passed: allPassed,
-      published_entities_count: 2257,
-      published_geometry_files_count: 15,
+      published_entities_count: audit.total_facts_count,
+      published_geometry_files_count: audit.direct_geometry_count,
     };
   }
 }
