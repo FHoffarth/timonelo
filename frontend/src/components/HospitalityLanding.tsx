@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Compass, Waves, MapPin, Volume2, DoorOpen, Footprints, ShieldCheck } from 'lucide-react';
 import { FLEET_REGISTRY } from '../fleet';
 import { useI18n } from '../i18n';
+import { knowledgeRepository } from '../knowledge';
 
 interface HospitalityLandingProps {
   onSelectVessel: (slug: string) => void;
@@ -15,12 +16,15 @@ interface HospitalityLandingProps {
  * trust and philosophy come only after the product is understood.
  */
 
+const bellissimaShip = knowledgeRepository.getShip('msc-bellissima');
+const bellissimaDeck14 = knowledgeRepository.getDeck('msc-bellissima', 14);
+
 /** Real, source-backed facts for the demonstration cabin (MSC Bellissima 14122). */
 const EXAMPLE = {
-  slug: 'msc-bellissima',
-  ship: 'MSC Bellissima',
+  slug: bellissimaShip.vessel_id,
+  ship: bellissimaShip.vessel_name,
   cabin: '14122',
-  deck: '14 · Girasole',
+  deck: `14 · ${bellissimaDeck14 ? bellissimaDeck14.name.replace('Deck 14 (', '').replace(')', '') : 'World Class'}`,
   side: { en: 'Starboard (right)', de: 'Steuerbord (rechts)' },
   liftSteps: 17,
   buffetSteps: 35,
@@ -32,7 +36,7 @@ const EXAMPLE = {
 
 export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({ onSelectVessel, onExploreCabin }) => {
   const { isGerman } = useI18n();
-  const [shipSlug, setShipSlug] = useState<string>('msc-bellissima');
+  const [shipSlug, setShipSlug] = useState<string>(bellissimaShip.vessel_id);
   const [cabin, setCabin] = useState<string>('');
 
   const submit = (e: React.FormEvent) => {

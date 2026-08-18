@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Search, X, Ship, MapPin, DoorClosed, Utensils, Layers, ArrowRight } from 'lucide-react';
 import { FLEET_REGISTRY } from '../fleet';
 import { PORTS_REGISTRY } from '../ports';
+import { knowledgeRepository } from '../knowledge';
 
 interface SearchResultItem {
   id: string;
@@ -107,15 +108,30 @@ export function UniversalSearchModal({
       }
     }
 
-    // 4. Venues
-    const allVenues = [
-      { name: 'Galleria Bellissima', ship: 'msc-bellissima', desc: '80m LED Dome Promenade' },
-      { name: 'London Theatre', ship: 'msc-bellissima', desc: 'Main Theatre Deck 6 Forward' },
-      { name: 'Marketplace Buffet', ship: 'msc-bellissima', desc: 'Casual Dining Deck 15 Aft' },
-      { name: 'Il Ciliegio Restaurant', ship: 'msc-bellissima', desc: 'Main Dining Room Deck 6 Aft' },
+    // 4. Venues - Dynamically sourced from Knowledge Layer
+    const bellissimaPublic = knowledgeRepository.getPublicAreas('msc-bellissima').map((v) => ({
+      name: v.name,
+      ship: 'msc-bellissima',
+      desc: v.description,
+    }));
+    const bellissimaDining = knowledgeRepository.getRestaurants('msc-bellissima').map((v) => ({
+      name: v.name,
+      ship: 'msc-bellissima',
+      desc: v.description,
+    }));
+    const bellissimaEnt = knowledgeRepository.getEntertainment('msc-bellissima').map((v) => ({
+      name: v.name,
+      ship: 'msc-bellissima',
+      desc: v.description,
+    }));
+
+    const otherVenues = [
       { name: 'The Compass Rose Restaurant', ship: 'ms-andorinha', desc: 'River Dining Room Emerald Deck' },
       { name: 'Panorama Lounge & Bar', ship: 'ms-andorinha', desc: 'Forward River Lounge Deck 3' },
     ];
+
+    const allVenues = [...bellissimaPublic, ...bellissimaDining, ...bellissimaEnt, ...otherVenues];
+
     allVenues.forEach((venue) => {
       if (venue.name.toLowerCase().includes(q) || venue.desc.toLowerCase().includes(q)) {
         results.push({

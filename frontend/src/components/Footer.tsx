@@ -1,5 +1,8 @@
 import { ExternalLink } from 'lucide-react';
 import { useI18n } from '../i18n';
+import { knowledgeRepository } from '../knowledge';
+
+const bellissima = knowledgeRepository.getShip('msc-bellissima');
 
 export function Footer({
   onNavigateHome,
@@ -74,7 +77,7 @@ export function Footer({
               {t.footer.shipsHeader}
             </span>
             <ul className="space-y-2 text-[13px] text-slate-600 font-light">
-              <li>MSC Bellissima (IMO 9766205)</li>
+              <li>{bellissima.vessel_name} (IMO {bellissima.technical_specifications.imo_number})</li>
               <li>MS Andorinha (ENI 02338573)</li>
               <li>MSC Grandiosa (IMO 9803613)</li>
               <li>MSC Meraviglia (IMO 9647710)</li>

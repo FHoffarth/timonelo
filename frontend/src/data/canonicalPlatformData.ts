@@ -1,4 +1,7 @@
-import { ShipProfile, CabinAnalysis, CruiseMathTripConfig, TravelInfoItem } from "../types";
+import { ShipProfile, CabinAnalysis, TravelInfoItem } from "../types";
+import { knowledgeRepository } from "../knowledge";
+
+const bellissimaSpecs = knowledgeRepository.getShip("msc-bellissima");
 
 export const CANONICAL_SHIPS: Record<string, ShipProfile> = {
   "msc-virtuosa": {
@@ -22,15 +25,15 @@ export const CANONICAL_SHIPS: Record<string, ShipProfile> = {
     },
   },
   "msc-bellissima": {
-    slug: "msc-bellissima",
-    name: "MSC Bellissima",
-    className: "Meraviglia Class",
+    slug: bellissimaSpecs.vessel_id,
+    name: bellissimaSpecs.vessel_name,
+    className: bellissimaSpecs.technical_specifications.class,
     operator: "MSC Cruises",
     builtYear: 2019,
-    grossTonnage: 171598,
-    lengthFt: 1034,
-    guestCapacity: 5654,
-    deckCount: 19,
+    grossTonnage: bellissimaSpecs.technical_specifications.tonnage_gt,
+    lengthFt: bellissimaSpecs.technical_specifications.dimensions.length_feet,
+    guestCapacity: bellissimaSpecs.technical_specifications.capacities.passenger_capacity_max_occupancy,
+    deckCount: bellissimaSpecs.technical_specifications.capacities.total_decks,
     heroImageUrl: "https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=1600&q=80",
     description:
       "MSC Bellissima offers a stunning array of features to rival its sister ship, starting with the iconic 96-meter central Mediterranean promenade with an 80-meter LED sky screen, 12 distinct dining venues, and 20 bars.",

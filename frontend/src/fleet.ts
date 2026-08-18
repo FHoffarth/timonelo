@@ -1,3 +1,5 @@
+import { knowledgeRepository } from './knowledge';
+
 export interface FleetVessel {
   slug: string;
   name: string;
@@ -23,25 +25,29 @@ export interface FleetVessel {
   highlights: string[];
 }
 
+// Load canonical Bellissima specs from KnowledgeRepository
+const bellissimaKnowledge = knowledgeRepository.getShip('msc-bellissima');
+const bellissimaCabins = knowledgeRepository.getCabins('msc-bellissima');
+
 export const FLEET_REGISTRY: FleetVessel[] = [
   {
-    slug: 'msc-bellissima',
-    name: 'MSC Bellissima',
-    imo: 'IMO 9766205',
+    slug: bellissimaKnowledge.vessel_id,
+    name: bellissimaKnowledge.vessel_name,
+    imo: `IMO ${bellissimaKnowledge.technical_specifications.imo_number}`,
     operator: 'MSC Cruises',
     vesselType: 'Ocean Cruise',
-    shipClass: 'Meraviglia Class',
+    shipClass: bellissimaKnowledge.technical_specifications.class,
     roleTitle: 'Active Reference Model',
     tagline: 'High-tech Mediterranean & East Asian ocean flagship with 96-meter LED promenade.',
-    subtitle: 'MSC Cruises · Meraviglia Class · Delivery 2019',
+    subtitle: `MSC Cruises · ${bellissimaKnowledge.technical_specifications.class} · Delivery 2019`,
     heroImageUrl: '/media/msc-bellissima-hero.webp',
-    lengthM: 315.8,
-    beamM: 43.0,
-    totalDecks: 19,
-    cabinCount: 2217,
-    passengerCapacity: 5686,
+    lengthM: bellissimaKnowledge.technical_specifications.dimensions.length_meters,
+    beamM: bellissimaKnowledge.technical_specifications.dimensions.beam_meters,
+    totalDecks: bellissimaKnowledge.technical_specifications.capacities.total_decks,
+    cabinCount: bellissimaCabins ? bellissimaCabins.summary.total_staterooms : bellissimaKnowledge.technical_specifications.capacities.total_cabins_max,
+    passengerCapacity: bellissimaKnowledge.technical_specifications.capacities.passenger_capacity_max_occupancy,
     buildYear: 2019,
-    builder: "Chantiers de l'Atlantique (Saint-Nazaire)",
+    builder: bellissimaKnowledge.technical_specifications.builder,
     region: 'Mediterranean & East Asia',
     defaultCabin: '14122',
     statusLabel: 'Active Reference Model',
@@ -50,7 +56,7 @@ export const FLEET_REGISTRY: FleetVessel[] = [
       'Deck 14 Stateroom 14122 direct elevator & gangway mapping',
       'Galleria Bellissima 96m LED dome promenade',
       'London Theatre Deck 6 forward with level access routes',
-      'Muster Station F direct evacuation path calculus'
+      'Muster Station direct evacuation path calculus'
     ]
   },
   {

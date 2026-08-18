@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SubTabBar, { TabOption } from "../ui/SubTabBar";
 import { ShipProfile } from "../../types";
 import { CANONICAL_SHIPS } from "../../data/canonicalPlatformData";
+import { knowledgeRepository } from "../../knowledge";
 import SpatialGrammarCanvas from "../../semantic-deck/components/SpatialGrammarCanvas";
 import DeckNavigationTree from "../../semantic-deck/components/DeckNavigationTree";
 import SemanticObjectInspector from "../../semantic-deck/components/SemanticObjectInspector";
@@ -20,6 +21,15 @@ export default function ShipProfilePage({
 }: ShipProfilePageProps) {
   const ship: ShipProfile = CANONICAL_SHIPS[shipSlug] || CANONICAL_SHIPS["msc-virtuosa"];
   const [activeTab, setActiveTab] = useState<string>("overview");
+
+  // Dynamic knowledge layer data for venues and amenities
+  const bellissimaRestaurants = knowledgeRepository.getRestaurants("msc-bellissima");
+  const bellissimaEntertainment = knowledgeRepository.getEntertainment("msc-bellissima");
+  const bellissimaLounges = knowledgeRepository.getLounges("msc-bellissima");
+
+  const buffet = bellissimaRestaurants.find((r) => r.id === "RES-MARKETPLACE-BUFFET") || bellissimaRestaurants[0];
+  const theatre = bellissimaEntertainment.find((e) => e.id === "ENT-LONDON-THEATRE") || bellissimaEntertainment[0];
+  const carousel = bellissimaLounges.find((l) => l.id === "LNG-CAROUSEL-LOUNGE") || bellissimaLounges[0];
 
   // Living deck sub-state
   const [apiClient] = useState(() => new TimoneloSpatialApiClient(shipSlug === "msc-bellissima" ? "msc-bellissima" : "msc-bellissima"));
@@ -206,19 +216,19 @@ export default function ShipProfilePage({
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
               <div className="p-6 bg-white rounded-2xl border border-[#0C1B2A]/10 space-y-2">
-                <span className="eyebrow-tag block">DECK 15 • BUFFET</span>
-                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">Marketplace Buffet</h4>
-                <p className="text-xs text-[#5B6570]">1,345 seats spanning midship to aft with dedicated kids counters.</p>
+                <span className="eyebrow-tag block">DECK {buffet.deck} • BUFFET</span>
+                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">{buffet.name}</h4>
+                <p className="text-xs text-[#5B6570]">{buffet.description}</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border border-[#0C1B2A]/10 space-y-2">
-                <span className="eyebrow-tag block">DECK 5/6 • THEATRE</span>
-                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">London Theatre</h4>
-                <p className="text-xs text-[#5B6570]">975-seat main stage featuring West End-style Broadway productions.</p>
+                <span className="eyebrow-tag block">DECK {Array.isArray(theatre.deck) ? theatre.deck.join("/") : theatre.deck} • THEATRE</span>
+                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">{theatre.name}</h4>
+                <p className="text-xs text-[#5B6570]">{theatre.description}</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border border-[#0C1B2A]/10 space-y-2">
-                <span className="eyebrow-tag block">DECK 7 • ENTERTAINMENT</span>
-                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">Carousel Lounge</h4>
-                <p className="text-xs text-[#5B6570]">Custom circular stage with 360-degree panoramic ocean views.</p>
+                <span className="eyebrow-tag block">DECK {carousel.deck} • ENTERTAINMENT</span>
+                <h4 className="font-display text-lg font-bold text-[#0C1B2A]">{carousel.name}</h4>
+                <p className="text-xs text-[#5B6570]">{carousel.description}</p>
               </div>
             </div>
           </div>
