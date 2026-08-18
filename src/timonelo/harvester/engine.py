@@ -3,17 +3,19 @@ src/timonelo/harvester/engine.py
 
 Official Source Harvester Orchestrator v0.1:
 Implements discovery -> fetch -> verification -> fingerprint -> classification -> vessel match -> vault -> registry.
+Enforces strict separation between FIXTURE_ONLY and LIVE_VERIFIED origin statuses.
 """
 
 import os
 import datetime
 import urllib.parse
 from dataclasses import dataclass, field
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 from timonelo.harvester.config import MSC_SOURCE_CONFIG, classify_domain_tier
 from timonelo.harvester.models import (
-    SourceTrustTier, DocumentType, HarvestState, HarvestedArtifactRecord
+    SourceTrustTier, DocumentType, HarvestState, HarvestedArtifactRecord,
+    OriginVerificationStatus, DiscoveryMethod
 )
 from timonelo.harvester.vessel_resolver import resolve_vessel
 from timonelo.harvester.classifier import classify_document
@@ -64,6 +66,9 @@ class HarvestEngine:
         data: bytes,
         source_url: str,
         final_url: str,
+        discovery_method: str = "LOCAL_FIXTURE",
+        origin_page_url: Optional[str] = None,
+        download_url: Optional[str] = None,
         dry_run: bool = False,
         hint_vessel_id: Optional[str] = None
     ) -> Tuple[HarvestState, Optional[HarvestedArtifactRecord], Dict[str, Any]]:
@@ -79,10 +84,22 @@ class HarvestEngine:
         # 2. Domain & Trust Tier Classification
         parsed_url = urllib.parse.urlparse(source_url)
         domain = parsed_url.netloc or "local"
-        tier_str = classify_domain_tier(domain) if domain != "local" else "TIER_A"
-        source_tier = SourceTrustTier(tier_str)
-        is_official = source_tier in [SourceTrustTier.TIER_A, SourceTrustTier.TIER_B]
-        verification_status = "VERIFIED_OFFICIAL_SOURCE" if is_official else "UNVERIFIED_THIRD_PARTY"
+        
+        is_fixture = discovery_method == "LOCAL_FIXTURE" or source_url.startswith("file://")
+        
+        if is_fixture:
+            tier_str = "TIER_A"  # Known official reference fixture
+            source_tier = SourceTrustTier.TIER_A
+            verification_status = "VERIFIED_OFFICIAL_SOURCE"
+            origin_verification_status = "FIXTURE_ONLY"
+            origin_verified_at = None
+        else:
+            tier_str = classify_domain_tier(domain)
+            source_tier = SourceTrustTier(tier_str)
+            is_official = source_tier in [SourceTrustTier.TIER_A, SourceTrustTier.TIER_B]
+            verification_status = "VERIFIED_OFFICIAL_SOURCE" if is_official else "UNVERIFIED_THIRD_PARTY"
+            origin_verification_status = "LIVE_VERIFIED" if is_official else "CANDIDATE_ONLY"
+            origin_verified_at = datetime.datetime.now(datetime.timezone.utc).isoformat() if is_official else None
 
         # 3. Document Classification
         doc_type, meta = classify_document(
@@ -121,7 +138,7 @@ class HarvestEngine:
             vessel_id=matched_vessel_id,
             document_type=doc_type,
             title=meta.get("title") or f"{matched_vessel_id} Deck Plan",
-            publisher=self.config["publisher_name"] if is_official else "Third Party / Unverified",
+            publisher=self.config["publisher_name"] if verification_status == "VERIFIED_OFFICIAL_SOURCE" else "Third Party / Unverified",
             language=meta.get("language", "unknown"),
             edition=meta.get("edition"),
             source_url=source_url,
@@ -133,7 +150,12 @@ class HarvestEngine:
             mime_type=vdata["mime_type"],
             source_tier=source_tier,
             verification_status=verification_status,
-            vault_path=vault_rel_path
+            vault_path=vault_rel_path,
+            discovery_method=discovery_method,
+            origin_verification_status=origin_verification_status,
+            origin_verified_at=origin_verified_at,
+            origin_page_url=origin_page_url,
+            download_url=download_url or source_url
         )
 
         if dry_run:
@@ -151,6 +173,7 @@ class HarvestEngine:
         """Harvests a single candidate URL or local fixture."""
         url = candidate["url"]
         target_vessel = candidate.get("target_vessel_id")
+        method = candidate.get("discovery_method", "KNOWN_PATTERN")
 
         if url.startswith("file://") or candidate.get("local_path"):
             local_path = candidate.get("local_path") or url.replace("file:///", "").replace("file://", "")
@@ -159,7 +182,12 @@ class HarvestEngine:
             with open(local_path, "rb") as f:
                 raw_bytes = f.read()
             return self.process_raw_bytes(
-                raw_bytes, source_url=url, final_url=url, dry_run=dry_run, hint_vessel_id=target_vessel
+                raw_bytes,
+                source_url=f"file:///{os.path.abspath(local_path).replace('\\', '/')}",
+                final_url=f"file:///{os.path.abspath(local_path).replace('\\', '/')}",
+                discovery_method="LOCAL_FIXTURE",
+                dry_run=dry_run,
+                hint_vessel_id=target_vessel
             )
 
         # HTTP Fetch
@@ -169,7 +197,13 @@ class HarvestEngine:
             return state, None, {"status_code": status, "error": err}
 
         return self.process_raw_bytes(
-            data, source_url=url, final_url=final_url, dry_run=dry_run, hint_vessel_id=target_vessel
+            data,
+            source_url=url,
+            final_url=final_url,
+            discovery_method=method,
+            download_url=final_url,
+            dry_run=dry_run,
+            hint_vessel_id=target_vessel
         )
 
     def run_harvest(

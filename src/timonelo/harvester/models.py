@@ -5,7 +5,7 @@ Data models for the Official Source Harvester v0.1:
 - SourceTrustTier (TIER_A, TIER_B, TIER_C)
 - DocumentType (DECK_PLAN, UNKNOWN)
 - HarvestState lifecycle
-- HarvestedArtifactRecord (Registry item)
+- HarvestedArtifactRecord (Registry item with explicit Origin Provenance)
 - VersionRecord (Version candidate tracking)
 """
 
@@ -50,6 +50,21 @@ class HarvestState(str, Enum):
     VERSION_CANDIDATE = "VERSION_CANDIDATE"
 
 
+class OriginVerificationStatus(str, Enum):
+    LIVE_VERIFIED = "LIVE_VERIFIED"
+    CANDIDATE_ONLY = "CANDIDATE_ONLY"
+    FIXTURE_ONLY = "FIXTURE_ONLY"
+    FAILED = "FAILED"
+
+
+class DiscoveryMethod(str, Enum):
+    SITEMAP = "SITEMAP"
+    INTERNAL_LINK = "INTERNAL_LINK"
+    KNOWN_PATTERN = "KNOWN_PATTERN"
+    SEARCH_HINT = "SEARCH_HINT"
+    LOCAL_FIXTURE = "LOCAL_FIXTURE"
+
+
 @dataclass
 class HarvestedArtifactRecord:
     source_id: str
@@ -70,6 +85,11 @@ class HarvestedArtifactRecord:
     source_tier: SourceTrustTier
     verification_status: str  # "VERIFIED_OFFICIAL_SOURCE" | "UNVERIFIED_THIRD_PARTY"
     vault_path: str
+    discovery_method: str = "LOCAL_FIXTURE"
+    origin_verification_status: str = "FIXTURE_ONLY"
+    origin_verified_at: Optional[str] = None
+    origin_page_url: Optional[str] = None
+    download_url: Optional[str] = None
     retrieval_history: List[str] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
