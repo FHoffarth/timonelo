@@ -1,7 +1,8 @@
 import React from "react";
 import EpistemicBadge from "../ui/EpistemicBadge";
 import { CANONICAL_CABINS } from "../../data/canonicalPlatformData";
-import { ArrowLeft, Layers, ShieldCheck, MapPin, Bed, Maximize, DoorOpen } from "lucide-react";
+import { knowledgeRepository } from "../../knowledge";
+import { ArrowLeft, MapPin } from "lucide-react";
 
 interface CabinDeepDivePageProps {
   cabinId?: string;
@@ -9,10 +10,20 @@ interface CabinDeepDivePageProps {
 }
 
 export default function CabinDeepDivePage({
-  cabinId = "12142",
+  cabinId = "14122",
   onBack,
 }: CabinDeepDivePageProps) {
-  const cabin = CANONICAL_CABINS[cabinId] || CANONICAL_CABINS["12142"];
+  const fallbackCabin = CANONICAL_CABINS[cabinId] || CANONICAL_CABINS["14122"];
+
+  // Query knowledge layer for Bellissima stateroom
+  const isBellissima = fallbackCabin.shipSlug === "msc-bellissima" || cabinId === "14122";
+  const bellissimaShip = isBellissima ? knowledgeRepository.getShip("msc-bellissima") : null;
+  const bellissimaDeck = isBellissima ? knowledgeRepository.getDeck("msc-bellissima", fallbackCabin.deckNumber) : null;
+  const bellissimaCabins = isBellissima ? knowledgeRepository.getCabins("msc-bellissima") : null;
+
+  const shipName = bellissimaShip ? bellissimaShip.vessel_name : "MSC Virtuosa";
+  const deckName = bellissimaDeck ? bellissimaDeck.name : fallbackCabin.deckName;
+  const standardAmenities = bellissimaCabins?.summary?.standard_amenities || [];
 
   return (
     <div className="flex-1 flex flex-col bg-[#FBF8F3] select-none pb-20">
@@ -23,15 +34,15 @@ export default function CabinDeepDivePage({
           className="inline-flex items-center gap-1.5 text-xs text-[#5B6570] hover:text-[#0C1B2A] transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
-          <span>{cabin.shipSlug === "msc-virtuosa" ? "MSC Virtuosa" : "MSC Bellissima"}</span>
+          <span>{shipName}</span>
           <span>&gt;</span>
-          <span>Deck {cabin.deckNumber}</span>
+          <span>Deck {fallbackCabin.deckNumber} ({deckName})</span>
           <span>&gt;</span>
-          <span className="font-semibold text-[#0C1B2A]">Cabin {cabin.id}</span>
+          <span className="font-semibold text-[#0C1B2A]">Cabin {fallbackCabin.id}</span>
         </button>
 
         <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#0C1B2A] tracking-tight">
-          Cabin {cabin.id} Analysis
+          Cabin {fallbackCabin.id} Analysis
         </h1>
       </div>
 
@@ -39,21 +50,21 @@ export default function CabinDeepDivePage({
       <div className="max-w-7xl mx-auto w-full px-6 pb-12">
         <div className="relative w-full h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-lg">
           <img
-            src={cabin.heroImageUrl}
-            alt={`Cabin ${cabin.id}`}
+            src={fallbackCabin.heroImageUrl}
+            alt={`Cabin ${fallbackCabin.id}`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0C1B2A]/40 to-transparent" />
 
           {/* Floating Pill Metadata */}
           <div className="absolute bottom-6 left-6 flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-white/40 text-xs sm:text-sm font-sans font-medium text-[#0C1B2A]">
-            <span className="font-bold">Cabin {cabin.id}</span>
+            <span className="font-bold">Cabin {fallbackCabin.id}</span>
             <span className="text-[#5B6570]">|</span>
-            <span>{cabin.category}</span>
+            <span>{fallbackCabin.category}</span>
             <span className="text-[#5B6570]">|</span>
-            <span>Deck {cabin.deckNumber} Midship</span>
+            <span>Deck {fallbackCabin.deckNumber} Midship</span>
             <span className="text-[#5B6570]">|</span>
-            <span className="text-[#C58A46] font-semibold">{cabin.side === "PORT" ? "Port Side" : "Starboard Side"}</span>
+            <span className="text-[#C58A46] font-semibold">{fallbackCabin.side === "PORT" ? "Port Side" : "Starboard Side"}</span>
           </div>
         </div>
       </div>
@@ -70,7 +81,7 @@ export default function CabinDeepDivePage({
           </div>
 
           <p className="text-base text-[#5B6570] leading-relaxed">
-            {cabin.locationAnalysis}
+            {fallbackCabin.locationAnalysis}
           </p>
 
           {/* Vessel Elevation & Cabin Coordinates Card */}
@@ -82,26 +93,43 @@ export default function CabinDeepDivePage({
 
             <div className="space-y-2 text-xs font-mono">
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <span className="text-slate-500">DECK {cabin.deckNumber + 2}</span>
+                <span className="text-slate-500">DECK {fallbackCabin.deckNumber + 2}</span>
                 <span className="text-slate-700">Passenger Staterooms (Serene Buffer)</span>
               </div>
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <span className="text-slate-500">DECK {cabin.deckNumber + 1}</span>
+                <span className="text-slate-500">DECK {fallbackCabin.deckNumber + 1}</span>
                 <span className="text-slate-700">Passenger Staterooms (Serene Buffer)</span>
               </div>
               <div className="flex items-center justify-between p-3 rounded-xl bg-sky-50 border border-sky-200 font-bold text-sky-900">
                 <span className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-sky-600" />
-                  DECK {cabin.deckNumber} ({cabin.deckName})
+                  DECK {fallbackCabin.deckNumber} ({deckName})
                 </span>
-                <span>Cabin {cabin.id} (Current Position)</span>
+                <span>Cabin {fallbackCabin.id} (Current Position)</span>
               </div>
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <span className="text-slate-500">DECK {cabin.deckNumber - 1}</span>
+                <span className="text-slate-500">DECK {fallbackCabin.deckNumber - 1}</span>
                 <span className="text-slate-700">Passenger Staterooms (Serene Buffer)</span>
               </div>
             </div>
           </div>
+
+          {/* Standard Amenities List from cabins.json */}
+          {standardAmenities.length > 0 && (
+            <div className="p-6 bg-white rounded-2xl border border-[#0C1B2A]/10 space-y-3">
+              <h3 className="font-display text-lg font-bold text-[#0C1B2A]">
+                Verified Stateroom Amenities
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#5B6570]">
+                {standardAmenities.map((amenity: string, i: number) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C58A46]" />
+                    <span>{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right Col: Quick Facts Card */}
@@ -118,7 +146,7 @@ export default function CabinDeepDivePage({
                 <EpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {cabin.category} ({cabin.tier})
+                {fallbackCabin.category} ({fallbackCabin.tier})
               </div>
             </div>
 
@@ -129,7 +157,7 @@ export default function CabinDeepDivePage({
                 <EpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                Approx. {cabin.sqmInterior}m² {cabin.sqmBalcony > 0 ? `+ ${cabin.sqmBalcony}m² balcony` : ""}
+                Approx. {fallbackCabin.sqmInterior}m² {fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}
               </div>
             </div>
 
@@ -140,19 +168,19 @@ export default function CabinDeepDivePage({
                 <EpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {cabin.bedConfig}
+                {fallbackCabin.bedConfig}
               </div>
             </div>
 
             {/* Connecting */}
-            {cabin.connectingCabinId && (
+            {fallbackCabin.connectingCabinId && (
               <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
                 <div className="flex items-center justify-between text-slate-500">
                   <span>Connecting Door</span>
                   <EpistemicBadge status="KNOWN" />
                 </div>
                 <div className="font-bold text-[#0C1B2A] text-sm">
-                  Cabin {cabin.connectingCabinId} (Available upon request)
+                  Cabin {fallbackCabin.connectingCabinId} (Available upon request)
                 </div>
               </div>
             )}
@@ -164,7 +192,7 @@ export default function CabinDeepDivePage({
                 <EpistemicBadge status="VERIFIED" />
               </div>
               <div className="font-mono font-bold text-[#C58A46] text-xs">
-                {cabin.evidenceArtifactId}
+                {fallbackCabin.evidenceArtifactId}
               </div>
             </div>
           </div>
