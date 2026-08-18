@@ -1,0 +1,327 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "deck_number": 19,
+  "deck_name": "Babylon",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "evidence_page": 5,
+    "extracted_at": "2026-08-18T21:30:00Z",
+    "confidence": 0.89
+  },
+  "bounding_box": {
+    "min_x": 0,
+    "min_y": 0,
+    "max_x": 800,
+    "max_y": 250,
+    "width": 800,
+    "height": 250
+  },
+  "objects": [
+    {
+      "id": "LIFT-CORE-A-D19",
+      "type": "LIFT",
+      "label": "Forward Lift Bank A (FR-60)",
+      "category": "VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          180,
+          115
+        ],
+        [
+          200,
+          115
+        ],
+        [
+          200,
+          135
+        ],
+        [
+          180,
+          135
+        ]
+      ],
+      "centroid": {
+        "x": 190,
+        "y": 125
+      },
+      "door_position": {
+        "x": 190,
+        "y": 135
+      },
+      "orientation": "FORE",
+      "bounding_box": {
+        "x": 180,
+        "y": 115,
+        "width": 20,
+        "height": 20
+      },
+      "adjacent_objects": {
+        "corridor": "CORRIDOR-D19"
+      },
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
+    },
+    {
+      "id": "LIFT-CORE-B-D19",
+      "type": "LIFT",
+      "label": "Midship Panoramic Lift Bank B (FR-120)",
+      "category": "VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          400,
+          115
+        ],
+        [
+          420,
+          115
+        ],
+        [
+          420,
+          135
+        ],
+        [
+          400,
+          135
+        ]
+      ],
+      "centroid": {
+        "x": 410,
+        "y": 125
+      },
+      "door_position": {
+        "x": 410,
+        "y": 135
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 400,
+        "y": 115,
+        "width": 20,
+        "height": 20
+      },
+      "adjacent_objects": {
+        "corridor": "CORRIDOR-D19"
+      },
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
+    },
+    {
+      "id": "LIFT-CORE-C-D19",
+      "type": "LIFT",
+      "label": "Aft Lift Bank C (FR-180)",
+      "category": "VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          620,
+          115
+        ],
+        [
+          640,
+          115
+        ],
+        [
+          640,
+          135
+        ],
+        [
+          620,
+          135
+        ]
+      ],
+      "centroid": {
+        "x": 630,
+        "y": 125
+      },
+      "door_position": {
+        "x": 630,
+        "y": 135
+      },
+      "orientation": "AFT",
+      "bounding_box": {
+        "x": 620,
+        "y": 115,
+        "width": 20,
+        "height": 20
+      },
+      "adjacent_objects": {
+        "corridor": "CORRIDOR-D19"
+      },
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
+    },
+    {
+      "id": "LIFT-CORE-YC-D19",
+      "type": "LIFT",
+      "label": "Yacht Club Private Lift Bank",
+      "category": "VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          220,
+          110
+        ],
+        [
+          240,
+          110
+        ],
+        [
+          240,
+          130
+        ],
+        [
+          220,
+          130
+        ]
+      ],
+      "centroid": {
+        "x": 230,
+        "y": 120
+      },
+      "door_position": {
+        "x": 230,
+        "y": 130
+      },
+      "orientation": "FORE",
+      "bounding_box": {
+        "x": 220,
+        "y": 110,
+        "width": 20,
+        "height": 20
+      },
+      "adjacent_objects": {
+        "corridor": "CORRIDOR-D19"
+      },
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
+    },
+    {
+      "id": "CORRIDOR-PORT-D19",
+      "type": "CORRIDOR",
+      "label": "PORT Passenger Corridor",
+      "category": "CIRCULATION",
+      "side": "PORT",
+      "polygon": [
+        [
+          100,
+          85
+        ],
+        [
+          700,
+          85
+        ],
+        [
+          700,
+          95
+        ],
+        [
+          100,
+          95
+        ]
+      ],
+      "centroid": {
+        "x": 400,
+        "y": 90
+      },
+      "door_position": null,
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 100,
+        "y": 85,
+        "width": 600,
+        "height": 10
+      },
+      "adjacent_objects": {
+        "nearest_lift": "LIFT-CORE-B-D19"
+      },
+      "confidence": 0.92,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DERIVED",
+        "door_position": "UNKNOWN",
+        "adjacent_objects": "DERIVED"
+      }
+    },
+    {
+      "id": "CORRIDOR-STARBOARD-D19",
+      "type": "CORRIDOR",
+      "label": "STARBOARD Passenger Corridor",
+      "category": "CIRCULATION",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          100,
+          145
+        ],
+        [
+          700,
+          145
+        ],
+        [
+          700,
+          155
+        ],
+        [
+          100,
+          155
+        ]
+      ],
+      "centroid": {
+        "x": 400,
+        "y": 150
+      },
+      "door_position": null,
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 100,
+        "y": 145,
+        "width": 600,
+        "height": 10
+      },
+      "adjacent_objects": {
+        "nearest_lift": "LIFT-CORE-B-D19"
+      },
+      "confidence": 0.92,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DERIVED",
+        "door_position": "UNKNOWN",
+        "adjacent_objects": "DERIVED"
+      }
+    }
+  ]
+}

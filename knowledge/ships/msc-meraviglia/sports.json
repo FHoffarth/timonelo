@@ -1,0 +1,73 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "sports_and_recreation": [
+    {
+      "id": "SPT-SPORTPLEX",
+      "name": "Sportplex Arena",
+      "deck": 16,
+      "category": "INDOOR_MULTI_SPORT_ARENA",
+      "description": "Massive indoor multi-sport arena hosting basketball, tennis, soccer, and volleyball.",
+      "source": "MSC Meraviglia Activities Guide",
+      "provenance": "MSC-MER-SPT-SPORTPLEX",
+      "confidence": 1.0,
+      "tags": [
+        "sportplex",
+        "basketball",
+        "tennis",
+        "volleyball",
+        "soccer"
+      ]
+    },
+    {
+      "id": "SPT-HIMALAYAN-BRIDGE",
+      "name": "Himalayan Suspension Bridge",
+      "deck": 19,
+      "category": "OUTDOOR_ROPES_COURSE",
+      "description": "Outdoor suspension ropes adventure course suspended 80 meters above sea level.",
+      "source": "MSC Meraviglia Technical Blueprint",
+      "provenance": "MSC-MER-SPT-HIMALAYAN",
+      "confidence": 1.0,
+      "tags": [
+        "ropes-course",
+        "himalayan-bridge",
+        "thrill",
+        "adventure"
+      ]
+    },
+    {
+      "id": "SPT-WALKING-TRACK",
+      "name": "Power Walking & Jogging Track",
+      "deck": 16,
+      "category": "OUTDOOR_TRACK",
+      "description": "Outdoor walking and jogging loop wrapping around the upper deck perimeter.",
+      "source": "MSC Meraviglia GA Deck 16",
+      "provenance": "MSC-MER-SPT-TRACK",
+      "confidence": 1.0,
+      "tags": [
+        "jogging",
+        "walking-track",
+        "fitness"
+      ]
+    },
+    {
+      "id": "SPT-GYM",
+      "name": "MSC Gym by Technogym",
+      "deck": 16,
+      "category": "FITNESS_CENTER",
+      "description": "Panoramic fitness center featuring Technogym cardiovascular and strength-training equipment.",
+      "source": "MSC Meraviglia Fitness Catalog",
+      "provenance": "MSC-MER-SPT-GYM",
+      "confidence": 1.0,
+      "tags": [
+        "gym",
+        "technogym",
+        "fitness",
+        "cardio"
+      ]
+    }
+  ]
+}

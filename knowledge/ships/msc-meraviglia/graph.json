@@ -1,0 +1,99 @@
+{
+  "@context": {
+    "bot": "https://w3id.org/bot#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "timonelo": "https://timonelo.com/ontology#"
+  },
+  "vessel_id": "msc-meraviglia",
+  "vessel_name": "MSC Meraviglia",
+  "total_spaces": 2342,
+  "storeys": [
+    {
+      "level": 4,
+      "name": "Corallo",
+      "has_space_count": 6
+    },
+    {
+      "level": 5,
+      "name": "Colosseo",
+      "has_space_count": 120
+    },
+    {
+      "level": 6,
+      "name": "Petra",
+      "has_space_count": 6
+    },
+    {
+      "level": 7,
+      "name": "Taj Mahal",
+      "has_space_count": 8
+    },
+    {
+      "level": 8,
+      "name": "Machu Picchu",
+      "has_space_count": 246
+    },
+    {
+      "level": 9,
+      "name": "Alhambra",
+      "has_space_count": 274
+    },
+    {
+      "level": 10,
+      "name": "Hagia Sophia",
+      "has_space_count": 306
+    },
+    {
+      "level": 11,
+      "name": "Acropolis",
+      "has_space_count": 302
+    },
+    {
+      "level": 12,
+      "name": "Grand Canyon",
+      "has_space_count": 290
+    },
+    {
+      "level": 13,
+      "name": "Kilimanjaro",
+      "has_space_count": 288
+    },
+    {
+      "level": 14,
+      "name": "Angkor Wat",
+      "has_space_count": 248
+    },
+    {
+      "level": 15,
+      "name": "Tour Eiffel",
+      "has_space_count": 28
+    },
+    {
+      "level": 16,
+      "name": "Iguazu",
+      "has_space_count": 26
+    },
+    {
+      "level": 18,
+      "name": "Pyramids",
+      "has_space_count": 26
+    },
+    {
+      "level": 19,
+      "name": "Babylon",
+      "has_space_count": 6
+    }
+  ],
+  "relations_summary": {
+    "adjacent_overhead_count": 2244,
+    "adjacent_underfoot_count": 2244,
+    "connected_vertical_cores": 60,
+    "pure_residential_buffer_decks": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  }
+}

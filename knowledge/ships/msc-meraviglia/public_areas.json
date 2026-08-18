@@ -1,0 +1,48 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "public_areas": [
+    {
+      "id": "PUB-GALLERIA",
+      "name": "Galleria Meraviglia",
+      "deck": [
+        6,
+        7
+      ],
+      "category": "CENTRAL_PROMENADE",
+      "description": "Central 96-meter Mediterranean-style indoor promenade crowned by an awe-inspiring 480m² curved LED digital sky.",
+      "source": "MSC Meraviglia Public Area Guide",
+      "provenance": "MSC-MER-PUB-GALLERIA",
+      "confidence": 1.0,
+      "tags": [
+        "promenade",
+        "led-dome",
+        "shops",
+        "dining"
+      ]
+    },
+    {
+      "id": "PUB-INFINITY-ATRIUM",
+      "name": "Infinity Atrium",
+      "deck": [
+        5,
+        6,
+        7
+      ],
+      "category": "GRAND_ATRIUM",
+      "description": "Triple-height glass architectural lobby featuring signature Swarovski crystal staircases and live string quartet music.",
+      "source": "MSC Meraviglia Public Area Guide",
+      "provenance": "MSC-MER-PUB-ATRIUM",
+      "confidence": 1.0,
+      "tags": [
+        "atrium",
+        "swarovski",
+        "reception",
+        "guest-services"
+      ]
+    }
+  ]
+}

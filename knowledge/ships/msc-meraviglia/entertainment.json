@@ -1,0 +1,82 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "entertainment_venues": [
+    {
+      "id": "ENT-BROADWAY",
+      "name": "Broadway Theatre",
+      "deck": [
+        5,
+        6
+      ],
+      "category": "MAIN_BROADWAY_THEATRE",
+      "description": "Two-level Broadway-calibre main stage hosting six distinct production shows per voyage.",
+      "metrics": {
+        "seat_capacity": 985
+      },
+      "source": "MSC Meraviglia Entertainment Catalog",
+      "provenance": "MSC-MER-ENT-BROADWAY",
+      "confidence": 1.0,
+      "tags": [
+        "theatre",
+        "broadway",
+        "shows",
+        "live-performances"
+      ]
+    },
+    {
+      "id": "ENT-CAROUSEL",
+      "name": "Carousel Lounge",
+      "deck": 7,
+      "category": "THEATRICAL_CIRCUS_SHOWS",
+      "description": "High-tech 360-degree entertainment space with interactive LED stages and aerial rigging.",
+      "metrics": {
+        "capacity": 413
+      },
+      "source": "MSC Meraviglia Entertainment Catalog",
+      "provenance": "MSC-MER-ENT-CAROUSEL",
+      "confidence": 1.0,
+      "tags": [
+        "cirque",
+        "acrobatics",
+        "aerial",
+        "dinner-show"
+      ]
+    },
+    {
+      "id": "ENT-CASINO",
+      "name": "Casino Imperiale",
+      "deck": 7,
+      "category": "CASINO_GAMING",
+      "description": "World-class casino with over 150 slot machines, blackjack, roulette, and poker tables.",
+      "source": "MSC Meraviglia Entertainment Catalog",
+      "provenance": "MSC-MER-ENT-CASINO",
+      "confidence": 1.0,
+      "tags": [
+        "casino",
+        "gaming",
+        "slots",
+        "blackjack"
+      ]
+    },
+    {
+      "id": "ENT-ATTIC-CLUB",
+      "name": "Attic Club",
+      "deck": 18,
+      "category": "NIGHTCLUB",
+      "description": "The ship's primary high-energy nightclub featuring a late-night bar and resident DJs.",
+      "source": "MSC Meraviglia Nightlife Guide",
+      "provenance": "MSC-MER-ENT-ATTIC",
+      "confidence": 1.0,
+      "tags": [
+        "nightclub",
+        "dance-floor",
+        "dj",
+        "nightlife"
+      ]
+    }
+  ]
+}

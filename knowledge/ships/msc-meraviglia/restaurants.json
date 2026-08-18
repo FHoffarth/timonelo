@@ -1,0 +1,178 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "restaurants": [
+    {
+      "id": "RES-WAVES",
+      "name": "Waves Restaurant",
+      "deck": 5,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room serving breakfast, lunch, and dinner with a daily changing menu of international and Mediterranean specialties.",
+      "dining_model": "Complimentary / Traditional Assigned Seating & Open Breakfast/Lunch",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-WAVES",
+      "confidence": 1.0,
+      "tags": [
+        "complimentary",
+        "mdr",
+        "mediterranean",
+        "international"
+      ]
+    },
+    {
+      "id": "RES-PANORAMA",
+      "name": "Panorama Restaurant",
+      "deck": 6,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room operating on a traditional two-seating dinner schedule with sweeping wake views.",
+      "dining_model": "Complimentary / Traditional Two-Seating Dinner",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-PANORAMA",
+      "confidence": 1.0,
+      "tags": [
+        "complimentary",
+        "mdr",
+        "dinner",
+        "traditional-seating"
+      ]
+    },
+    {
+      "id": "RES-OLIVO",
+      "name": "L'Olivo d'Oro & L'Olive Dorée",
+      "deck": 6,
+      "category": "MAIN_DINING_ROOM",
+      "description": "Main dining room. Aurea Experience guests have access to 'My Choice' flexible dining hours here.",
+      "dining_model": "Complimentary / Flexible 'My Choice' for Aurea & Assigned Seating",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-OLIVO",
+      "confidence": 1.0,
+      "tags": [
+        "complimentary",
+        "mdr",
+        "aurea-my-choice"
+      ]
+    },
+    {
+      "id": "RES-MARKETPLACE",
+      "name": "Marketplace Buffet",
+      "deck": 15,
+      "category": "CASUAL_BUFFET",
+      "description": "Expansive 3,650m² marketplace buffet operating up to 20 hours daily with open-front kitchens, mozzarella station, pizzeria, and grill.",
+      "dining_model": "Complimentary / Open Casual Seating",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-MARKETPLACE",
+      "confidence": 1.0,
+      "tags": [
+        "complimentary",
+        "buffet",
+        "casual",
+        "pizza",
+        "late-night"
+      ]
+    },
+    {
+      "id": "RES-BUTCHERS-CUT",
+      "name": "Butcher's Cut",
+      "deck": 7,
+      "category": "SPECIALTY_STEAKHOUSE",
+      "description": "American-style steakhouse serving prime dry-aged Linz Heritage Angus beef, seafood platters, and New World wines.",
+      "dining_model": "Specialty / A la Carte or Dining Package Credit",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-BUTCHERSCUT",
+      "confidence": 1.0,
+      "tags": [
+        "specialty",
+        "steakhouse",
+        "angus-beef",
+        "cover-charge"
+      ]
+    },
+    {
+      "id": "RES-KAITO-SUSHI",
+      "name": "Kaito Sushi Bar",
+      "deck": 7,
+      "category": "SPECIALTY_SUSHI",
+      "description": "Authentic Japanese sushi bar serving freshly prepared nigiri, sashimi, and specialty maki rolls.",
+      "dining_model": "Specialty / A la Carte",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-KAITOSUSHI",
+      "confidence": 1.0,
+      "tags": [
+        "specialty",
+        "japanese",
+        "sushi",
+        "sashimi"
+      ]
+    },
+    {
+      "id": "RES-KAITO-TEPPANYAKI",
+      "name": "Kaito Teppanyaki",
+      "deck": 7,
+      "category": "SPECIALTY_ASIAN",
+      "description": "Interactive teppanyaki dining with dual open cooking stations where master chefs perform show cooking.",
+      "dining_model": "Specialty / Fixed Set Menus & A la Carte",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-KAITOTEPPANYAKI",
+      "confidence": 1.0,
+      "tags": [
+        "specialty",
+        "teppanyaki",
+        "show-cooking",
+        "japanese"
+      ]
+    },
+    {
+      "id": "RES-HOLA-TAPAS",
+      "name": "HOLA! Tapas Bar",
+      "deck": 6,
+      "category": "SPECIALTY_LATIN",
+      "description": "Spanish tapas concept created in partnership with Michelin-starred chef Ramón Freixa.",
+      "dining_model": "Specialty / A la Carte Small Plates",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-HOLATAPAS",
+      "confidence": 1.0,
+      "tags": [
+        "specialty",
+        "tapas",
+        "spanish",
+        "freixa"
+      ]
+    },
+    {
+      "id": "RES-OCEAN-CAY",
+      "name": "Ocean Cay Restaurant",
+      "deck": 7,
+      "category": "OTHER_DINING",
+      "description": "Seafood restaurant serving fresh fish recipes and raw bar specialties paired with crisp white wines.",
+      "dining_model": "Specialty / A la Carte",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-OCEANCAY",
+      "confidence": 1.0,
+      "tags": [
+        "specialty",
+        "seafood",
+        "raw-bar"
+      ]
+    },
+    {
+      "id": "RES-YACHT-CLUB",
+      "name": "MSC Yacht Club Restaurant",
+      "deck": 18,
+      "category": "EXCLUSIVE_GOURMET",
+      "description": "Private, white-glove dining room reserved exclusively for MSC Yacht Club suite guests with panoramic ocean vistas.",
+      "dining_model": "Complimentary for Yacht Club / Open Seating Dining",
+      "source": "MSC Meraviglia Dining Directory",
+      "provenance": "MSC-MER-RES-YACHTCLUB",
+      "confidence": 1.0,
+      "tags": [
+        "exclusive",
+        "yacht-club",
+        "fine-dining",
+        "gourmet"
+      ]
+    }
+  ]
+}

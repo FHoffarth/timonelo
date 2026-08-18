@@ -1,0 +1,63 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "spa_and_wellness": {
+    "id": "SPA-AUREA-COMPLEX",
+    "name": "MSC Aurea Spa",
+    "deck": 7,
+    "category": "BALINESE_SPA_COMPLEX",
+    "description": "An authentic Balinese-themed luxury spa complex measuring 1,100 m² with 20 private therapy treatment rooms.",
+    "metrics": {
+      "area_sqm": 1100.0,
+      "private_therapy_rooms": 20
+    },
+    "source": "MSC Meraviglia Wellness Guide",
+    "provenance": "MSC-MER-SPA-AUREA",
+    "confidence": 1.0,
+    "tags": [
+      "spa",
+      "wellness",
+      "balinese",
+      "massage",
+      "thermal-suite"
+    ],
+    "sub_venues": [
+      {
+        "id": "SPA-THERMAL-SUITE",
+        "name": "The Thermal Suite",
+        "deck": 7,
+        "category": "THERMAL_EXPERIENCE",
+        "description": "Comprehensive hydrotherapy and thermal circuit with Finnish sauna, steam room, snow room, salt room, and thalassotherapy pools.",
+        "source": "MSC Meraviglia Spa Blueprint",
+        "provenance": "MSC-MER-SPA-THERMAL",
+        "confidence": 1.0,
+        "tags": [
+          "thermal-suite",
+          "sauna",
+          "steam-room",
+          "snow-room",
+          "salt-room"
+        ]
+      },
+      {
+        "id": "SPA-SALON",
+        "name": "Jean Louis David Salon & Barber",
+        "deck": 7,
+        "category": "BEAUTY_SALON",
+        "description": "Full-service salon providing haircuts, styling, barber services, manicures, and pedicures.",
+        "source": "MSC Meraviglia Spa Directory",
+        "provenance": "MSC-MER-SPA-SALON",
+        "confidence": 1.0,
+        "tags": [
+          "salon",
+          "haircut",
+          "barber",
+          "beauty"
+        ]
+      }
+    ]
+  }
+}

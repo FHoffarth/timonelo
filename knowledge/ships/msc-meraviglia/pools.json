@@ -1,0 +1,84 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "pools_and_water_areas": [
+    {
+      "id": "POOL-ATMOSPHERE",
+      "name": "Atmosphere Main Pool",
+      "deck": 15,
+      "category": "MAIN_RESORT_POOL",
+      "description": "Expansive main lido resort pool with shallow sun lounging ledges and poolside movie screen.",
+      "metrics": {
+        "area_sqm": 840
+      },
+      "source": "MSC Meraviglia Pool Directory",
+      "provenance": "MSC-MER-POOL-ATMOSPHERE",
+      "confidence": 1.0,
+      "tags": [
+        "pool",
+        "main-lido",
+        "outdoor",
+        "led-screen"
+      ]
+    },
+    {
+      "id": "POOL-BAMBOO",
+      "name": "Bamboo Solarium Pool",
+      "deck": 15,
+      "category": "ALL_WEATHER_SOLARIUM",
+      "description": "All-weather indoor relaxation pool sheltered beneath a motorized magrodome glass roof.",
+      "metrics": {
+        "area_sqm": 420
+      },
+      "source": "MSC Meraviglia Pool Directory",
+      "provenance": "MSC-MER-POOL-BAMBOO",
+      "confidence": 1.0,
+      "tags": [
+        "solarium",
+        "magrodome",
+        "indoor-pool",
+        "all-weather"
+      ]
+    },
+    {
+      "id": "POOL-HORIZON",
+      "name": "Horizon Amphitheatre Pool",
+      "deck": 16,
+      "category": "AFT_PANORAMIC_POOL",
+      "description": "Tiered stern pool offering direct panoramic wake views and sunset cocktail seating.",
+      "metrics": {
+        "area_sqm": 310
+      },
+      "source": "MSC Meraviglia Pool Directory",
+      "provenance": "MSC-MER-POOL-HORIZON",
+      "confidence": 1.0,
+      "tags": [
+        "aft-pool",
+        "sunset",
+        "wake-view"
+      ]
+    },
+    {
+      "id": "POOL-POLAR-AQUAPARK",
+      "name": "Polar Aquapark",
+      "deck": 19,
+      "category": "WATERPARK",
+      "description": "Multi-level waterpark with twisting high-speed tube waterslides and interactive splash zone.",
+      "metrics": {
+        "area_sqm": 950
+      },
+      "source": "MSC Meraviglia Pool Directory",
+      "provenance": "MSC-MER-POOL-POLAR",
+      "confidence": 1.0,
+      "tags": [
+        "aquapark",
+        "waterslides",
+        "splash-zone",
+        "family"
+      ]
+    }
+  ]
+}

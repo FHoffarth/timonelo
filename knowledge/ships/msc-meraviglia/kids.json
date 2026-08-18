@@ -1,0 +1,67 @@
+{
+  "vessel_id": "msc-meraviglia",
+  "provenance": {
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "confidence": 1.0
+  },
+  "doremiland": {
+    "name": "Doremiland Family Village",
+    "deck": 18,
+    "area_sqm": 700,
+    "clubs": [
+      {
+        "id": "KID-CHICCO",
+        "name": "Baby Club Chicco",
+        "deck": 18,
+        "age_range": "1 to 3 years",
+        "description": "Dedicated nursery with specialized toys and baby-care equipment created with Chicco."
+      },
+      {
+        "id": "KID-MINI-LEGO",
+        "name": "Mini Club LEGO",
+        "deck": 18,
+        "age_range": "3 to 6 years",
+        "description": "Creative building zones featuring LEGO DUPLO bricks and guided activities."
+      },
+      {
+        "id": "KID-JUNIORS-LEGO",
+        "name": "Juniors Club LEGO",
+        "deck": 18,
+        "age_range": "7 to 11 years",
+        "description": "LEGO Master Builder workshops, video gaming, and sports challenges."
+      },
+      {
+        "id": "KID-YOUNG",
+        "name": "Young Club",
+        "deck": 18,
+        "age_range": "12 to 14 years",
+        "description": "Hi-tech hangout zone with consoles, quizzes, and dance parties."
+      },
+      {
+        "id": "KID-TEENS",
+        "name": "Teen Club",
+        "deck": 18,
+        "age_range": "15 to 17 years",
+        "description": "Dedicated teen lounge with DJ booth, cinema nights, and social events."
+      },
+      {
+        "id": "KID-DOREMI-LAB",
+        "name": "Doremi Tech Lab",
+        "deck": 18,
+        "age_range": "All Ages",
+        "description": "3D printers, VR headsets, and coding workshops for family fun."
+      }
+    ],
+    "source": "MSC Meraviglia Family Guide",
+    "provenance": "MSC-MER-KID-DOREMILAND",
+    "confidence": 1.0,
+    "tags": [
+      "kids",
+      "lego",
+      "chicco",
+      "teens",
+      "family",
+      "nursery"
+    ]
+  }
+}
