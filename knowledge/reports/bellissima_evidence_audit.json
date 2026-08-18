@@ -1,0 +1,2421 @@
+{
+  "audit_meta": {
+    "title": "MSC Bellissima Evidence-First Knowledge Audit",
+    "evidence_artifact": "Official MSC Bellissima Deck Plan (11.2025 DEU)",
+    "total_audited_fields": 99,
+    "summary_totals": {
+      "MATCH": 79,
+      "CONTRADICTED": 9,
+      "UNSUPPORTED": 11,
+      "UNKNOWN": 0
+    }
+  },
+  "contradictions": [
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.passenger_capacity_max_occupancy",
+      "current_value": 5686,
+      "evidence_value": 5654,
+      "evidence_page": "Page 2 ('5.654 GÄSTE')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating max guest capacity to 5654 per Nov 2025 specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.total_cabins_max",
+      "current_value": 2244,
+      "evidence_value": 2217,
+      "evidence_page": "Page 2 ('2.217 KABINEN')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose aligning total passenger cabins to 2217 per Nov 2025 deck plan"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "summary",
+      "field": "total_staterooms",
+      "current_value": 2244,
+      "evidence_value": 2217,
+      "evidence_page": "Page 2 ('2.217 KABINEN')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose setting total_staterooms to 2217"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "summary",
+      "field": "distinct_categories_count",
+      "current_value": 32,
+      "evidence_value": 20,
+      "evidence_page": "Page 2 (20 distinct commercial category codes listed: YC3, YJD, YC1, YIN, SXJ, SLJ, SL1, BA, BR3, BR2, BR1, BP, BS, OL2, OR1, OM2, OO, IR2, IR1, IS)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose harmonizing categories count with the 20 official commercial codes"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-STUDIO-INSIDE",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('IS 5-14')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose expanding single interior (IS) deck allocation to Decks 5-14"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-AUREA-BALCONY",
+      "field": "deck",
+      "current_value": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        11,
+        12,
+        13
+      ],
+      "evidence_page": "Page 2 ('BA 11-13')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating BA deck range to Decks 11-13 (Deck 14 has no BA category)"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DUPLEX-SUITE-AUREA",
+      "field": "category",
+      "current_value": "TWO_STORY_MAISONETTE_SUITE",
+      "evidence_value": "MSC Yacht Club Maisonette Suite mit Whirlpool (YJD)",
+      "evidence_page": "Page 2 ('YJD 9-12')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Clarify that 2-story duplex maisonettes on Decks 9-12 are designated YJD under MSC Yacht Club in Nov 2025 plan"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-HOLA-TACOS",
+      "field": "name",
+      "current_value": "HOLA! Tacos & Cantina",
+      "evidence_value": "HOLA! Tapas Bar",
+      "evidence_page": "Page 3 (Deck 6 Promenade)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating display title to HOLA! Tapas Bar per Nov 2025 plan"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-EDGE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Edge Cocktail Bar' is labeled on Deck 6 promenade balcony)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating Edge Cocktail Bar deck to Deck 6 per Nov 2025 plan"
+    }
+  ],
+  "unsupported": [
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.class",
+      "current_value": "Meraviglia-class (Vista Project)",
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain shipyard specification from Chantiers de l'Atlantique"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.imo_number",
+      "current_value": 9760524,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain official IMO register value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.tonnage_gt",
+      "current_value": 171598,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain International Tonnage Certificate value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.length_meters",
+      "current_value": 315.83,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.beam_meters",
+      "current_value": 43.0,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.draft_meters",
+      "current_value": 8.75,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.balcony_cabin_percentage",
+      "current_value": 75,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain shipyard catalog ratio"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LATELIER-BISTROT",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": null,
+      "evidence_page": "Page 3 (Space labeled The Gallery / Butcher's Cut area)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain specialty dining record from launch spec"
+    },
+    {
+      "file": "spa.json",
+      "entity_id": "SPA-AUREA",
+      "field": "facilities.thermal_suite",
+      "current_value": "Thermal Suite with saunas and steam rooms",
+      "evidence_value": null,
+      "evidence_page": "None (Detail interior layout not labeled on deck plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain Aurea Spa operational profile"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-GALLERIA-LED-DOME",
+      "field": "metrics.length_meters",
+      "current_value": 80.0,
+      "evidence_value": null,
+      "evidence_page": "None (LED dome boundary drawn on Deck 6/7 but dimensions in meters unstated)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain Samsung LED engineering specs"
+    },
+    {
+      "file": "muster.json",
+      "entity_id": "muster_stations",
+      "field": "locations",
+      "current_value": [
+        "Deck 5 London Theatre",
+        "Deck 6 Promenade",
+        "Deck 7 Carousel Lounge"
+      ],
+      "evidence_value": null,
+      "evidence_page": "Page 3 (Primary gathering public venues coincide, but SOLAS muster lettering A-F unstated on public deck plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain SOLAS emergency station records"
+    }
+  ],
+  "matches": [
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "vessel_name",
+      "current_value": "MSC Bellissima",
+      "evidence_value": "MSC BELLISSIMA",
+      "evidence_page": "Page 1, 2, 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.total_decks",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 3, 4, 5 (Decks 4 to 19 excluding 17)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.passenger_accessible_decks",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 3, 4, 5 (Decks 4-16, 18, 19)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-04",
+      "field": "name",
+      "current_value": "Deck 4 (Lirica)",
+      "evidence_value": "DECK 4 LIRICA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-05",
+      "field": "name",
+      "current_value": "Deck 5 (Opera)",
+      "evidence_value": "DECK 5 OPERA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-06",
+      "field": "name",
+      "current_value": "Deck 6 (Musica)",
+      "evidence_value": "DECK 6 MUSICA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-07",
+      "field": "name",
+      "current_value": "Deck 7 (Fantasia)",
+      "evidence_value": "DECK 7 FANTASIA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-08",
+      "field": "name",
+      "current_value": "Deck 8 (Meraviglia)",
+      "evidence_value": "DECK 8 MERAVIGLIA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-09",
+      "field": "name",
+      "current_value": "Deck 9 (Seaside)",
+      "evidence_value": "DECK 9 SEASIDE",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-10",
+      "field": "name",
+      "current_value": "Deck 10 (Seaside Evo)",
+      "evidence_value": "DECK 10 SEASIDE EVO",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-11",
+      "field": "name",
+      "current_value": "Deck 11 (Bellissima)",
+      "evidence_value": "DECK 11 BELLISSIMA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-12",
+      "field": "name",
+      "current_value": "Deck 12 (Grandiosa)",
+      "evidence_value": "DECK 12 GRANDIOSA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-13",
+      "field": "name",
+      "current_value": "Deck 13 (Magnifica)",
+      "evidence_value": "DECK 13 MAGNIFICA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-14",
+      "field": "name",
+      "current_value": "Deck 14 (World Class)",
+      "evidence_value": "DECK 14 WORLD CLASS",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-15",
+      "field": "name",
+      "current_value": "Deck 15 (Preziosa)",
+      "evidence_value": "DECK 15 PREZIOSA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-16",
+      "field": "name",
+      "current_value": "Deck 16 (Seaview)",
+      "evidence_value": "DECK 16 SEAVIEW",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-18",
+      "field": "name",
+      "current_value": "Deck 18 (Divina)",
+      "evidence_value": "DECK 18 DIVINA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-19",
+      "field": "name",
+      "current_value": "Deck 19 (Splendida)",
+      "evidence_value": "DECK 19 SPLENDIDA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "msc-bellissima",
+      "field": "notes.skipped_deck_17",
+      "current_value": "Skipped deck 17 (Italian superstition)",
+      "evidence_value": "Deck 17 omitted from Deck Plans",
+      "evidence_page": "Page 5 (Direct progression from Deck 16 to Deck 18)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "msc-bellissima",
+      "field": "lift_cores",
+      "current_value": "Forward, Midship, Aft + Panoramic Glass Lifts",
+      "evidence_value": "Lift cores marked at Forward, Midship, Aft, and Panoramic Lifts midship",
+      "evidence_page": "Page 3, 4, 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DELUXE-INSIDE",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('IR1 5-10', 'IR2 10-14')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current range (covers IR1 and IR2)"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DELUXE-BALCONY",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('BR1 8-10', 'BR2 11-12', 'BR3 13-14', 'BP 8-14')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-ROYAL-SUITE",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 2 ('YC3 15')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-DELUXE-SUITE",
+      "field": "deck",
+      "current_value": [
+        14,
+        15,
+        16,
+        18
+      ],
+      "evidence_value": [
+        14,
+        15,
+        16,
+        18
+      ],
+      "evidence_page": "Page 2 ('YC1 14-18')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-INTERIOR-SUITE",
+      "field": "deck",
+      "current_value": [
+        14,
+        15,
+        16
+      ],
+      "evidence_value": [
+        14,
+        15,
+        16
+      ],
+      "evidence_page": "Page 2 ('YIN 14-16')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "SPEC-SWAROVSKI-CABIN-16018",
+      "field": "cabin_number",
+      "current_value": "16018",
+      "evidence_value": "16018 (Located on Deck 16 Forward Starboard)",
+      "evidence_page": "Page 5 (Deck 16 grid)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "accessibility",
+      "field": "prm_cabins",
+      "current_value": "Designated accessible staterooms marked with H symbol",
+      "evidence_value": "Designated accessible cabins marked with symbol 'H' (Kabine für Gäste mit eingeschränkter Mobilität)",
+      "evidence_page": "Page 2, 3, 4, 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-POSIDONIA",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LE-CERISIER",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Mid-Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LIGHTHOUSE",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-IL-CILIEGIO",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-MARKETPLACE-BUFFET",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-BUTCHERS-CUT",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-KAITO-TEPPANYAKI",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-KAITO-SUSHI-BAR",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-HOLA-TACOS",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Promenade)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-YACHT-CLUB-RESTAURANT",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-YACHT-CLUB-GRILL",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-INFINITY",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Midship Atrium)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-GALLERIA",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Bellissima Bar & Lounge' Deck 6 Promenade)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-MASTERS-OF-THE-SEA",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-TV-STUDIO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-CHAMPAGNE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-IMPERIAL-CASINO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-ATMOSPHERE-NORTH-SOUTH",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 ('Atmosphere Bar North' & 'Atmosphere Bar South' Deck 15)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-HORIZON",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-SPORTS",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Sports Bar' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-JEAN-PHILIPPE-CHOCOLAT",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Jean-Philippe Chocolat & Café' Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-JEAN-PHILIPPE-CREPES",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Jean-Philippe Crêpes & Gelato' Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-CAROUSEL-LOUNGE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-SKY-LOUNGE",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-TOP-SAIL",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-ATTIC-CLUB",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ATMOSPHERE",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-GRAND-CANYON",
+      "field": "name",
+      "current_value": "Grand Canyon Pool",
+      "evidence_value": "Grand Canyon Pool (with Sliding Roof)",
+      "evidence_page": "Page 5 (Deck 15 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-GRAND-CANYON",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-HORIZON",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ARIZONA-AQUAPARK",
+      "field": "name",
+      "current_value": "Arizona Aquapark",
+      "evidence_value": "Arizona Aquapark",
+      "evidence_page": "Page 5 (Deck 19 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ARIZONA-AQUAPARK",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-YACHT-CLUB",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "spa.json",
+      "entity_id": "SPA-AUREA",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-SPORTPLEX",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-F1-SIMULATOR",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('MSC Formula Racer' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-BOWLING",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Bowling' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-VR-MAZE",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('VR Maze' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-POWER-WALKING-TRACK",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Power Walking Track' Deck 16)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-HIMALAYAN-BRIDGE",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 ('Himalayan Bridge' Deck 19)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-GYM",
+      "field": "name",
+      "current_value": "MSC Gym powered by Technogym",
+      "evidence_value": "MSC Gym powered by Technogym",
+      "evidence_page": "Page 5 (Deck 16 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-LONDON-THEATRE",
+      "field": "deck",
+      "current_value": [
+        5,
+        6
+      ],
+      "evidence_value": [
+        5,
+        6
+      ],
+      "evidence_page": "Page 3 (Deck 5 & Deck 6 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-IMPERIAL-CASINO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-XD-CINEMA",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Interactive XD Cinema' Deck 16)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-DOREMILAND",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 ('Doremiland', 'Baby Club Chicco', 'Mini Club Lego', 'Junior Club Lego', 'Young Club', 'Teen Club' Deck 18)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-GALLERIA-BELLISSIMA",
+      "field": "deck",
+      "current_value": [
+        6,
+        7
+      ],
+      "evidence_value": [
+        6,
+        7
+      ],
+      "evidence_page": "Page 3 (Deck 6 & Deck 7 Central Spine)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-SWAROVSKI-STAIRCASE",
+      "field": "deck",
+      "current_value": [
+        5,
+        6,
+        7
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7
+      ],
+      "evidence_page": "Page 3 (Atrium stairwells connecting Decks 5, 6, 7)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-TOP19-SOLARIUM",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 ('Top 19 Exclusive Solarium' Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-INFINITY-ATRIUM",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Center)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-MEDICAL-CENTRE",
+      "field": "deck",
+      "current_value": 4,
+      "evidence_value": 4,
+      "evidence_page": "Page 3 ('Medical Centre' Deck 4 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-BUSINESS-CENTRE",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 ('Business Centre' Deck 5 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-EXCURSIONS-DESK",
+      "field": "deck",
+      "current_value": [
+        5,
+        6
+      ],
+      "evidence_value": [
+        5,
+        6
+      ],
+      "evidence_page": "Page 3 ('MSC Excursions' Deck 5 & Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    }
+  ],
+  "all_entries": [
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "vessel_name",
+      "current_value": "MSC Bellissima",
+      "evidence_value": "MSC BELLISSIMA",
+      "evidence_page": "Page 1, 2, 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.class",
+      "current_value": "Meraviglia-class (Vista Project)",
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain shipyard specification from Chantiers de l'Atlantique"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.imo_number",
+      "current_value": 9760524,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain official IMO register value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.tonnage_gt",
+      "current_value": 171598,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain International Tonnage Certificate value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.length_meters",
+      "current_value": 315.83,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.beam_meters",
+      "current_value": 43.0,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.dimensions.draft_meters",
+      "current_value": 8.75,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain naval architecture specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.total_decks",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 3, 4, 5 (Decks 4 to 19 excluding 17)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.passenger_accessible_decks",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 3, 4, 5 (Decks 4-16, 18, 19)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.passenger_capacity_max_occupancy",
+      "current_value": 5686,
+      "evidence_value": 5654,
+      "evidence_page": "Page 2 ('5.654 GÄSTE')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating max guest capacity to 5654 per Nov 2025 specification"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.total_cabins_max",
+      "current_value": 2244,
+      "evidence_value": 2217,
+      "evidence_page": "Page 2 ('2.217 KABINEN')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose aligning total passenger cabins to 2217 per Nov 2025 deck plan"
+    },
+    {
+      "file": "technical.json",
+      "entity_id": "msc-bellissima",
+      "field": "technical_specifications.capacities.balcony_cabin_percentage",
+      "current_value": 75,
+      "evidence_value": null,
+      "evidence_page": "None (Not stated in Deck Plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain shipyard catalog ratio"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-04",
+      "field": "name",
+      "current_value": "Deck 4 (Lirica)",
+      "evidence_value": "DECK 4 LIRICA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-05",
+      "field": "name",
+      "current_value": "Deck 5 (Opera)",
+      "evidence_value": "DECK 5 OPERA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-06",
+      "field": "name",
+      "current_value": "Deck 6 (Musica)",
+      "evidence_value": "DECK 6 MUSICA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-07",
+      "field": "name",
+      "current_value": "Deck 7 (Fantasia)",
+      "evidence_value": "DECK 7 FANTASIA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-08",
+      "field": "name",
+      "current_value": "Deck 8 (Meraviglia)",
+      "evidence_value": "DECK 8 MERAVIGLIA",
+      "evidence_page": "Page 3",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-09",
+      "field": "name",
+      "current_value": "Deck 9 (Seaside)",
+      "evidence_value": "DECK 9 SEASIDE",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-10",
+      "field": "name",
+      "current_value": "Deck 10 (Seaside Evo)",
+      "evidence_value": "DECK 10 SEASIDE EVO",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-11",
+      "field": "name",
+      "current_value": "Deck 11 (Bellissima)",
+      "evidence_value": "DECK 11 BELLISSIMA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-12",
+      "field": "name",
+      "current_value": "Deck 12 (Grandiosa)",
+      "evidence_value": "DECK 12 GRANDIOSA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-13",
+      "field": "name",
+      "current_value": "Deck 13 (Magnifica)",
+      "evidence_value": "DECK 13 MAGNIFICA",
+      "evidence_page": "Page 4",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-14",
+      "field": "name",
+      "current_value": "Deck 14 (World Class)",
+      "evidence_value": "DECK 14 WORLD CLASS",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-15",
+      "field": "name",
+      "current_value": "Deck 15 (Preziosa)",
+      "evidence_value": "DECK 15 PREZIOSA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-16",
+      "field": "name",
+      "current_value": "Deck 16 (Seaview)",
+      "evidence_value": "DECK 16 SEAVIEW",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-18",
+      "field": "name",
+      "current_value": "Deck 18 (Divina)",
+      "evidence_value": "DECK 18 DIVINA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "DECK-19",
+      "field": "name",
+      "current_value": "Deck 19 (Splendida)",
+      "evidence_value": "DECK 19 SPLENDIDA",
+      "evidence_page": "Page 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "msc-bellissima",
+      "field": "notes.skipped_deck_17",
+      "current_value": "Skipped deck 17 (Italian superstition)",
+      "evidence_value": "Deck 17 omitted from Deck Plans",
+      "evidence_page": "Page 5 (Direct progression from Deck 16 to Deck 18)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "decks.json",
+      "entity_id": "msc-bellissima",
+      "field": "lift_cores",
+      "current_value": "Forward, Midship, Aft + Panoramic Glass Lifts",
+      "evidence_value": "Lift cores marked at Forward, Midship, Aft, and Panoramic Lifts midship",
+      "evidence_page": "Page 3, 4, 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "summary",
+      "field": "total_staterooms",
+      "current_value": 2244,
+      "evidence_value": 2217,
+      "evidence_page": "Page 2 ('2.217 KABINEN')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose setting total_staterooms to 2217"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "summary",
+      "field": "distinct_categories_count",
+      "current_value": 32,
+      "evidence_value": 20,
+      "evidence_page": "Page 2 (20 distinct commercial category codes listed: YC3, YJD, YC1, YIN, SXJ, SLJ, SL1, BA, BR3, BR2, BR1, BP, BS, OL2, OR1, OM2, OO, IR2, IR1, IS)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose harmonizing categories count with the 20 official commercial codes"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-STUDIO-INSIDE",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('IS 5-14')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose expanding single interior (IS) deck allocation to Decks 5-14"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DELUXE-INSIDE",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('IR1 5-10', 'IR2 10-14')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current range (covers IR1 and IR2)"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DELUXE-BALCONY",
+      "field": "deck",
+      "current_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_page": "Page 2 ('BR1 8-10', 'BR2 11-12', 'BR3 13-14', 'BP 8-14')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-AUREA-BALCONY",
+      "field": "deck",
+      "current_value": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "evidence_value": [
+        11,
+        12,
+        13
+      ],
+      "evidence_page": "Page 2 ('BA 11-13')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating BA deck range to Decks 11-13 (Deck 14 has no BA category)"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-DUPLEX-SUITE-AUREA",
+      "field": "category",
+      "current_value": "TWO_STORY_MAISONETTE_SUITE",
+      "evidence_value": "MSC Yacht Club Maisonette Suite mit Whirlpool (YJD)",
+      "evidence_page": "Page 2 ('YJD 9-12')",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Clarify that 2-story duplex maisonettes on Decks 9-12 are designated YJD under MSC Yacht Club in Nov 2025 plan"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-ROYAL-SUITE",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 2 ('YC3 15')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-DELUXE-SUITE",
+      "field": "deck",
+      "current_value": [
+        14,
+        15,
+        16,
+        18
+      ],
+      "evidence_value": [
+        14,
+        15,
+        16,
+        18
+      ],
+      "evidence_page": "Page 2 ('YC1 14-18')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "CAT-YC-INTERIOR-SUITE",
+      "field": "deck",
+      "current_value": [
+        14,
+        15,
+        16
+      ],
+      "evidence_value": [
+        14,
+        15,
+        16
+      ],
+      "evidence_page": "Page 2 ('YIN 14-16')",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "SPEC-SWAROVSKI-CABIN-16018",
+      "field": "cabin_number",
+      "current_value": "16018",
+      "evidence_value": "16018 (Located on Deck 16 Forward Starboard)",
+      "evidence_page": "Page 5 (Deck 16 grid)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "cabins.json",
+      "entity_id": "accessibility",
+      "field": "prm_cabins",
+      "current_value": "Designated accessible staterooms marked with H symbol",
+      "evidence_value": "Designated accessible cabins marked with symbol 'H' (Kabine für Gäste mit eingeschränkter Mobilität)",
+      "evidence_page": "Page 2, 3, 4, 5",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-POSIDONIA",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LE-CERISIER",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Mid-Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LIGHTHOUSE",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-IL-CILIEGIO",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-MARKETPLACE-BUFFET",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-BUTCHERS-CUT",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-KAITO-TEPPANYAKI",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-KAITO-SUSHI-BAR",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-HOLA-TACOS",
+      "field": "name",
+      "current_value": "HOLA! Tacos & Cantina",
+      "evidence_value": "HOLA! Tapas Bar",
+      "evidence_page": "Page 3 (Deck 6 Promenade)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating display title to HOLA! Tapas Bar per Nov 2025 plan"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-HOLA-TACOS",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 (Deck 6 Promenade)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-LATELIER-BISTROT",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": null,
+      "evidence_page": "Page 3 (Space labeled The Gallery / Butcher's Cut area)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain specialty dining record from launch spec"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-YACHT-CLUB-RESTAURANT",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "restaurants.json",
+      "entity_id": "RES-YACHT-CLUB-GRILL",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-INFINITY",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Midship Atrium)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-GALLERIA",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Bellissima Bar & Lounge' Deck 6 Promenade)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-MASTERS-OF-THE-SEA",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-TV-STUDIO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-CHAMPAGNE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-EDGE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Edge Cocktail Bar' is labeled on Deck 6 promenade balcony)",
+      "status": "CONTRADICTED",
+      "confidence": 1.0,
+      "proposed_action": "Propose updating Edge Cocktail Bar deck to Deck 6 per Nov 2025 plan"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-IMPERIAL-CASINO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-ATMOSPHERE-NORTH-SOUTH",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 ('Atmosphere Bar North' & 'Atmosphere Bar South' Deck 15)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-HORIZON",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-SPORTS",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Sports Bar' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-JEAN-PHILIPPE-CHOCOLAT",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Jean-Philippe Chocolat & Café' Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "bars.json",
+      "entity_id": "BAR-JEAN-PHILIPPE-CREPES",
+      "field": "deck",
+      "current_value": 6,
+      "evidence_value": 6,
+      "evidence_page": "Page 3 ('Jean-Philippe Crêpes & Gelato' Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-CAROUSEL-LOUNGE",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-SKY-LOUNGE",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-TOP-SAIL",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "lounges.json",
+      "entity_id": "LNG-ATTIC-CLUB",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 (Deck 18 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ATMOSPHERE",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-GRAND-CANYON",
+      "field": "name",
+      "current_value": "Grand Canyon Pool",
+      "evidence_value": "Grand Canyon Pool (with Sliding Roof)",
+      "evidence_page": "Page 5 (Deck 15 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-GRAND-CANYON",
+      "field": "deck",
+      "current_value": 15,
+      "evidence_value": 15,
+      "evidence_page": "Page 5 (Deck 15 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-HORIZON",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ARIZONA-AQUAPARK",
+      "field": "name",
+      "current_value": "Arizona Aquapark",
+      "evidence_value": "Arizona Aquapark",
+      "evidence_page": "Page 5 (Deck 19 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-ARIZONA-AQUAPARK",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "pools.json",
+      "entity_id": "POOL-YACHT-CLUB",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 (Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "spa.json",
+      "entity_id": "SPA-AUREA",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "spa.json",
+      "entity_id": "SPA-AUREA",
+      "field": "facilities.thermal_suite",
+      "current_value": "Thermal Suite with saunas and steam rooms",
+      "evidence_value": null,
+      "evidence_page": "None (Detail interior layout not labeled on deck plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain Aurea Spa operational profile"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-SPORTPLEX",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 (Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-F1-SIMULATOR",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('MSC Formula Racer' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-BOWLING",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Bowling' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-VR-MAZE",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('VR Maze' Deck 16 Aft)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-POWER-WALKING-TRACK",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Power Walking Track' Deck 16)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-HIMALAYAN-BRIDGE",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 ('Himalayan Bridge' Deck 19)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "sports.json",
+      "entity_id": "SPT-GYM",
+      "field": "name",
+      "current_value": "MSC Gym powered by Technogym",
+      "evidence_value": "MSC Gym powered by Technogym",
+      "evidence_page": "Page 5 (Deck 16 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-LONDON-THEATRE",
+      "field": "deck",
+      "current_value": [
+        5,
+        6
+      ],
+      "evidence_value": [
+        5,
+        6
+      ],
+      "evidence_page": "Page 3 (Deck 5 & Deck 6 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-IMPERIAL-CASINO",
+      "field": "deck",
+      "current_value": 7,
+      "evidence_value": 7,
+      "evidence_page": "Page 3 (Deck 7 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-XD-CINEMA",
+      "field": "deck",
+      "current_value": 16,
+      "evidence_value": 16,
+      "evidence_page": "Page 5 ('Interactive XD Cinema' Deck 16)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "entertainment.json",
+      "entity_id": "ENT-DOREMILAND",
+      "field": "deck",
+      "current_value": 18,
+      "evidence_value": 18,
+      "evidence_page": "Page 5 ('Doremiland', 'Baby Club Chicco', 'Mini Club Lego', 'Junior Club Lego', 'Young Club', 'Teen Club' Deck 18)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-GALLERIA-BELLISSIMA",
+      "field": "deck",
+      "current_value": [
+        6,
+        7
+      ],
+      "evidence_value": [
+        6,
+        7
+      ],
+      "evidence_page": "Page 3 (Deck 6 & Deck 7 Central Spine)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-GALLERIA-LED-DOME",
+      "field": "metrics.length_meters",
+      "current_value": 80.0,
+      "evidence_value": null,
+      "evidence_page": "None (LED dome boundary drawn on Deck 6/7 but dimensions in meters unstated)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain Samsung LED engineering specs"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-SWAROVSKI-STAIRCASE",
+      "field": "deck",
+      "current_value": [
+        5,
+        6,
+        7
+      ],
+      "evidence_value": [
+        5,
+        6,
+        7
+      ],
+      "evidence_page": "Page 3 (Atrium stairwells connecting Decks 5, 6, 7)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-TOP19-SOLARIUM",
+      "field": "deck",
+      "current_value": 19,
+      "evidence_value": 19,
+      "evidence_page": "Page 5 ('Top 19 Exclusive Solarium' Deck 19 Forward)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-INFINITY-ATRIUM",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 (Deck 5 Center)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-MEDICAL-CENTRE",
+      "field": "deck",
+      "current_value": 4,
+      "evidence_value": 4,
+      "evidence_page": "Page 3 ('Medical Centre' Deck 4 Forward-Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-BUSINESS-CENTRE",
+      "field": "deck",
+      "current_value": 5,
+      "evidence_value": 5,
+      "evidence_page": "Page 3 ('Business Centre' Deck 5 Midship)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "public_areas.json",
+      "entity_id": "PUB-EXCURSIONS-DESK",
+      "field": "deck",
+      "current_value": [
+        5,
+        6
+      ],
+      "evidence_value": [
+        5,
+        6
+      ],
+      "evidence_page": "Page 3 ('MSC Excursions' Deck 5 & Deck 6)",
+      "status": "MATCH",
+      "confidence": 1.0,
+      "proposed_action": "Keep current value"
+    },
+    {
+      "file": "muster.json",
+      "entity_id": "muster_stations",
+      "field": "locations",
+      "current_value": [
+        "Deck 5 London Theatre",
+        "Deck 6 Promenade",
+        "Deck 7 Carousel Lounge"
+      ],
+      "evidence_value": null,
+      "evidence_page": "Page 3 (Primary gathering public venues coincide, but SOLAS muster lettering A-F unstated on public deck plan)",
+      "status": "UNSUPPORTED",
+      "confidence": 1.0,
+      "proposed_action": "Retain SOLAS emergency station records"
+    }
+  ]
+}
