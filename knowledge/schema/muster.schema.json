@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/muster.schema.json",
+  "title": "MusterAndSafetySchema",
+  "description": "Canonical schema for ship safety protocols, digital e-muster drills, and physical assembly stations.",
+  "type": "object",
+  "required": ["vessel_id", "provenance", "emergency_and_muster_protocol"],
+  "properties": {
+    "vessel_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "emergency_and_muster_protocol": {
+      "type": "object",
+      "required": [
+        "drill_type",
+        "procedure",
+        "wayfinding_and_egress",
+        "physical_muster_stations"
+      ],
+      "properties": {
+        "drill_type": { "type": "string" },
+        "procedure": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "wayfinding_and_egress": { "type": "string" },
+        "physical_muster_stations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "deck",
+              "location",
+              "category",
+              "source",
+              "provenance",
+              "confidence",
+              "tags"
+            ],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "deck": { "type": "integer" },
+              "location": { "type": "string" },
+              "category": { "type": "string" },
+              "source": { "type": "string" },
+              "provenance": { "type": "string" },
+              "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+              "tags": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

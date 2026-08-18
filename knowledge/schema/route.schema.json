@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/route.schema.json",
+  "title": "RouteAndItinerarySchema",
+  "description": "Canonical schema for cruise routes, waypoints, day-by-day itineraries, and weather summaries.",
+  "type": "object",
+  "required": [
+    "route_id",
+    "title",
+    "vessel_name",
+    "seasonal_profile",
+    "waypoints",
+    "provenance"
+  ],
+  "properties": {
+    "route_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": { "type": "string" },
+    "vessel_name": { "type": "string" },
+    "seasonal_profile": { "type": "string" },
+    "duration_nights": { "type": "integer", "minimum": 1 },
+    "weather_overview": { "type": "string" },
+    "waypoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["day", "port_name", "status", "epistemic"],
+        "properties": {
+          "day": { "type": "integer", "minimum": 1 },
+          "port_name": { "type": "string" },
+          "status": { "type": "string" },
+          "epistemic": {
+            "type": "string",
+            "enum": ["KNOWN", "DERIVED", "VERIFIED", "LIKELY", "UNKNOWN", "CONFLICT"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    }
+  },
+  "additionalProperties": false
+}

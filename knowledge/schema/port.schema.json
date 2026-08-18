@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/port.schema.json",
+  "title": "PortGuideSchema",
+  "description": "Canonical schema for cruise ports, tender mechanics, transport logistics, and all-aboard rules.",
+  "type": "object",
+  "required": [
+    "port_id",
+    "name",
+    "country",
+    "tender_port",
+    "body_of_water",
+    "provenance"
+  ],
+  "properties": {
+    "port_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": { "type": "string" },
+    "country": { "type": "string" },
+    "tender_port": { "type": "boolean" },
+    "body_of_water": { "type": "string" },
+    "population": { "type": "string" },
+    "currency": { "type": "string" },
+    "language": { "type": "string" },
+    "overview_text": { "type": "string" },
+    "getting_around": { "type": "string" },
+    "all_aboard_warning": { "type": "string" },
+    "hero_image_url": { "type": "string" },
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

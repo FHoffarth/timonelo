@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/lounge.schema.json",
+  "title": "LoungesSchema",
+  "description": "Canonical schema for ship lounges, observation decks, and multi-purpose social salons.",
+  "type": "object",
+  "required": ["vessel_id", "provenance", "lounges"],
+  "properties": {
+    "vessel_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "lounges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "deck",
+          "category",
+          "description",
+          "source",
+          "provenance",
+          "confidence",
+          "tags"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "deck": {
+            "oneOf": [
+              { "type": "integer" },
+              { "type": "array", "items": { "type": "integer" } }
+            ]
+          },
+          "category": { "type": "string" },
+          "description": { "type": "string" },
+          "restrictions": { "type": "string" },
+          "access": { "type": "string" },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "source": { "type": "string" },
+          "provenance": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

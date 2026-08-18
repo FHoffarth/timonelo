@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/spa.schema.json",
+  "title": "SpaAndWellnessSchema",
+  "description": "Canonical schema for ship spa complexes, thermal suites, therapy treatment rooms, and salons.",
+  "type": "object",
+  "required": ["vessel_id", "provenance", "spa_and_wellness"],
+  "properties": {
+    "vessel_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "spa_and_wellness": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "deck",
+        "category",
+        "description",
+        "source",
+        "provenance",
+        "confidence",
+        "tags"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "deck": { "type": "integer" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "source": { "type": "string" },
+        "provenance": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "sub_venues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "deck", "category", "description", "source", "provenance", "confidence", "tags"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "deck": { "type": "integer" },
+              "category": { "type": "string" },
+              "description": { "type": "string" },
+              "facilities": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "therapies": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "brand_partner": { "type": "string" },
+              "source": { "type": "string" },
+              "provenance": { "type": "string" },
+              "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+              "tags": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
