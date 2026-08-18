@@ -1,30 +1,327 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "confidence": 1.0,
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
   "summary": {
-    "total_staterooms": 2244,
-    "distinct_categories_count": 20,
-    "balcony_percentage": 75.0,
-    "standard_amenities": [
-      "Twin beds convertible to double (king size)",
-      "Flat-screen interactive TV with MSC for Me infotainment",
-      "Zoe in-cabin digital assistant",
-      "Dedicated vanity and desk workspace",
-      "Electronic in-room digital safe",
-      "Minibar and refrigerator",
-      "Hairdryer and individually controlled air conditioning",
-      "Private bathroom with shower or whirlpool bathtub"
+    "total_staterooms": 2214,
+    "max_guests": 5714,
+    "distinct_categories_count": 22,
+    "standard_rules": [
+      "Alle Kabinen verfügen über ein Doppelbett, das bei Bedarf zu zwei Einzelbetten umgestellt werden kann (ausgenommen IS und YC3).",
+      "3. und 4. Bett verfügbar in allen Kategorien außer in IS, OO, OM2, BS und YIN.",
+      "Reduzierte Bettgröße (140x200cm) in OM2 und OO.",
+      "Das Schiff verfügt über Kabinen, die aus zwei oder drei miteinander verbundenen Kabinen bestehen.",
+      "Kabinen 13245, 13342, 14213, 14256 verfügen ausschließlich über ein Etagenbett."
+    ],
+    "legend_symbols": [
+      "Schlafsofa",
+      "Schlafsofa für zwei Personen",
+      "3. Bett zum Herunterklappen",
+      "3. und 4. Bett zum Herunterklappen",
+      "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann (3. und 4. Bett); nicht für Kinder unter 6 Jahren",
+      "Schlafsofa für eine Person",
+      "Kabine mit Verbindungstür",
+      "Kabine für Gäste mit eingeschränkter Mobilität",
+      "Kabine mit Badewanne",
+      "Kabine mit Badewanne und Dusche",
+      "Kabine mit teilweiser Sichteinschränkung",
+      "Kabine für Gäste mit eingeschränkter Mobilität ohne Rollstuhl",
+      "Kabine mit hermetisch geschlossenem Panoramafenster",
+      "Französischer Balkon (nicht begehbar)",
+      "Terrasse mit Whirlpool",
+      "Balkon mit einer Metallbalustrade",
+      "Balkon mit einer halben Glas- und einer halben Metallbalustrade"
     ]
   },
   "cabin_categories": [
     {
-      "id": "CAT-STUDIO-INSIDE",
-      "name": "Studio Inside (IS)",
-      "category": "INSIDE_CABIN",
-      "deck": [
+      "code": "YC3",
+      "name": "MSC Yacht Club Royal Suite mit Whirlpool",
+      "category_family": "YACHT_CLUB",
+      "deck_range": [
+        15
+      ],
+      "whirlpool": true,
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "YJD",
+      "name": "MSC Yacht Club Maisonette Suite mit Whirlpool",
+      "category_family": "YACHT_CLUB",
+      "deck_range": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "whirlpool": true,
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "YC1",
+      "name": "MSC Yacht Club Deluxe Suite",
+      "category_family": "YACHT_CLUB",
+      "deck_range": [
+        14,
+        15,
+        16,
+        18
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "YIN",
+      "name": "MSC Yacht Club Innenkabine",
+      "category_family": "YACHT_CLUB",
+      "deck_range": [
+        14,
+        15,
+        16
+      ],
+      "interior": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "SXJ",
+      "name": "Grand Suite Aurea mit Terrasse und Whirlpool",
+      "category_family": "AUREA_SUITE",
+      "deck_range": [
+        12
+      ],
+      "whirlpool": true,
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "SLJ",
+      "name": "Premium Suite Aurea mit Terrasse und Whirlpool",
+      "category_family": "AUREA_SUITE",
+      "deck_range": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "whirlpool": true,
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BA",
+      "name": "Deluxe Balkonkabine Aurea",
+      "category_family": "AUREA_BALCONY",
+      "deck_range": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BL3",
+      "name": "Premium Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        13,
+        14
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BL2",
+      "name": "Premium Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        11,
+        12
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BL1",
+      "name": "Premium Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        10
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BR3",
+      "name": "Deluxe Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        13,
+        14
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BR2",
+      "name": "Deluxe Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        11,
+        12
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BR1",
+      "name": "Deluxe Balkonkabine",
+      "category_family": "BALCONY",
+      "deck_range": [
+        8,
+        9,
+        10
+      ],
+      "balcony": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BP",
+      "name": "Deluxe Balkonkabine mit teilweiser Sichteinschränkung",
+      "category_family": "BALCONY",
+      "deck_range": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "balcony": true,
+      "obstructed": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "BS",
+      "name": "Single Balkonkabine",
+      "category_family": "SINGLE_BALCONY",
+      "deck_range": [
+        13,
+        14
+      ],
+      "balcony": true,
+      "single": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "OL2",
+      "name": "Premium Kabine mit Meerblick",
+      "category_family": "OCEAN_VIEW",
+      "deck_range": [
+        9,
+        10,
+        11
+      ],
+      "oceanview": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "OR1",
+      "name": "Deluxe Kabine mit Meerblick",
+      "category_family": "OCEAN_VIEW",
+      "deck_range": [
+        5
+      ],
+      "oceanview": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "OM2",
+      "name": "Junior Kabine mit Meerblick",
+      "category_family": "OCEAN_VIEW",
+      "deck_range": [
+        8
+      ],
+      "oceanview": true,
+      "reduced_bed": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "OO",
+      "name": "Junior Kabine mit Meerblick und teilweiser Sichteinschränkung",
+      "category_family": "OCEAN_VIEW",
+      "deck_range": [
+        8
+      ],
+      "oceanview": true,
+      "obstructed": true,
+      "reduced_bed": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "IR2",
+      "name": "Deluxe Innenkabine",
+      "category_family": "INTERIOR",
+      "deck_range": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "interior": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "IR1",
+      "name": "Deluxe Innenkabine",
+      "category_family": "INTERIOR",
+      "deck_range": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "interior": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
+    },
+    {
+      "code": "IS",
+      "name": "Single Innenkabine",
+      "category_family": "SINGLE_INTERIOR",
+      "deck_range": [
         5,
         6,
         7,
@@ -36,212 +333,10 @@
         13,
         14
       ],
-      "description": "Compact, efficient interior staterooms tailored for solo travelers.",
-      "metrics": {
-        "sqm_approx_min": 12,
-        "sqm_approx_max": 15,
-        "occupancy_type": "Solo / Single Occupancy"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-STUDIOIN",
-      "confidence": 1.0,
-      "tags": [
-        "inside",
-        "solo",
-        "studio"
-      ]
-    },
-    {
-      "id": "CAT-DELUXE-INSIDE",
-      "name": "Deluxe Inside (IR1 / IR2)",
-      "category": "INSIDE_CABIN",
-      "deck": [
-        5,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Comfortable interior staterooms with wardrobe, desk, and bathroom with shower.",
-      "metrics": {
-        "sqm_approx_min": 16,
-        "sqm_approx_max": 17,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-DELUXEIN",
-      "confidence": 1.0,
-      "tags": [
-        "inside",
-        "deluxe",
-        "family"
-      ]
-    },
-    {
-      "id": "CAT-OCEAN-VIEW",
-      "name": "Premium Ocean View (OL1 / OL2)",
-      "category": "OCEAN_VIEW",
-      "deck": [
-        5,
-        8
-      ],
-      "description": "Staterooms with large picture window offering panoramic ocean views.",
-      "metrics": {
-        "sqm_approx_min": 17,
-        "sqm_approx_max": 19,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-OCEANVIEW",
-      "confidence": 1.0,
-      "tags": [
-        "ocean-view",
-        "picture-window"
-      ]
-    },
-    {
-      "id": "CAT-BALCONY-DELUXE",
-      "name": "Deluxe Balcony (BR1 / BR2 / BR3)",
-      "category": "BALCONY_CABIN",
-      "deck": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Signature staterooms with private glass-railing step-out veranda overlooking the sea.",
-      "metrics": {
-        "sqm_approx_min": 19,
-        "sqm_approx_max": 22,
-        "balcony_sqm_min": 4,
-        "balcony_sqm_max": 6,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-BALCONY",
-      "confidence": 1.0,
-      "tags": [
-        "balcony",
-        "veranda",
-        "ocean-view"
-      ]
-    },
-    {
-      "id": "CAT-AUREA-SUITE",
-      "name": "Premium Suite Aurea (SL1)",
-      "category": "SUITE_AUREA",
-      "deck": [
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Spacious suite with large wardrobe, seating area, private balcony, and inclusive Aurea thermal spa privileges.",
-      "metrics": {
-        "sqm_approx_min": 27,
-        "sqm_approx_max": 30,
-        "balcony_sqm_min": 5,
-        "balcony_sqm_max": 8,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-AUREASUITE",
-      "confidence": 1.0,
-      "tags": [
-        "suite",
-        "aurea",
-        "balcony",
-        "spa-included"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-DELUXE",
-      "name": "MSC Yacht Club Deluxe Suite (YC1)",
-      "category": "YACHT_CLUB",
-      "deck": [
-        14,
-        15,
-        16,
-        18
-      ],
-      "description": "Luxury suite in the private MSC Yacht Club enclave with 24-hour butler service and private balcony.",
-      "metrics": {
-        "sqm_approx_min": 28,
-        "sqm_approx_max": 30,
-        "balcony_sqm_min": 5,
-        "balcony_sqm_max": 7,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCDELUXE",
-      "confidence": 1.0,
-      "tags": [
-        "yacht-club",
-        "luxury",
-        "butler",
-        "vip"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-DUPLEX",
-      "name": "MSC Yacht Club Duplex Suite with Whirlpool (YJD)",
-      "deck": [
-        9,
-        10,
-        11,
-        12
-      ],
-      "category": "YACHT_CLUB_DUPLEX",
-      "description": "Two-deck maisonette suite with master bedroom upstairs, living/dining downstairs, and private veranda whirlpool.",
-      "metrics": {
-        "sqm_approx_min": 59,
-        "sqm_approx_max": 62,
-        "balcony_sqm_min": 22,
-        "balcony_sqm_max": 24,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCDUPLEX",
-      "confidence": 1.0,
-      "tags": [
-        "yacht-club",
-        "duplex",
-        "whirlpool",
-        "two-storey"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-ROYAL",
-      "name": "MSC Yacht Club Royal Suite with Whirlpool (YC3)",
-      "deck": [
-        15
-      ],
-      "category": "YACHT_CLUB_ROYAL",
-      "description": "The pinnacle of shipboard luxury: expansive separate living room, dining table, master bedroom, and private whirlpool terrace.",
-      "metrics": {
-        "sqm_approx_min": 56,
-        "sqm_approx_max": 58,
-        "balcony_sqm_min": 12,
-        "balcony_sqm_max": 14,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCROYAL",
-      "confidence": 1.0,
-      "tags": [
-        "yacht-club",
-        "royal-suite",
-        "whirlpool",
-        "vip"
-      ]
+      "interior": true,
+      "single": true,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.2/Table"
     }
   ]
 }
