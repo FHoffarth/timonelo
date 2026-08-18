@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://timonelo.com/schema/port.schema.json",
   "title": "PortGuideSchema",
-  "description": "Canonical schema for cruise ports, tender mechanics, transport logistics, and all-aboard rules.",
+  "description": "Canonical schema for cruise ports, terminals, berths, tender mechanics, transport logistics, and all-aboard rules.",
   "type": "object",
   "required": [
     "port_id",
@@ -28,11 +28,63 @@
     "getting_around": { "type": "string" },
     "all_aboard_warning": { "type": "string" },
     "hero_image_url": { "type": "string" },
+    "terminals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "source", "provenance", "confidence", "tags"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "location": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string" },
+          "source": { "type": "string" },
+          "provenance": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "berths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "max_vessel_length_meters", "max_draft_meters", "source", "provenance", "confidence", "tags"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "wharf": { "type": "string" },
+          "berth_count": { "type": "integer" },
+          "max_vessel_length_meters": { "type": "number" },
+          "max_draft_meters": { "type": "number" },
+          "notes": { "type": "string" },
+          "source": { "type": "string" },
+          "provenance": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "arrival_procedures": { "type": "string" },
+    "departure_procedures": { "type": "string" },
+    "walking_feasibility": {
+      "type": "object",
+      "required": ["rating", "description"],
+      "properties": {
+        "rating": { "type": "string" },
+        "distance_to_center_km": { "type": "number" },
+        "description": { "type": "string" }
+      }
+    },
     "provenance": {
       "type": "object",
       "required": ["source_artifact", "confidence"],
       "properties": {
         "source_artifact": { "type": "string" },
+        "verification_authority": { "type": "string" },
         "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
       }
     },

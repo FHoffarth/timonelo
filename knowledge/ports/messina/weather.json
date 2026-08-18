@@ -1,0 +1,28 @@
+{
+  "port_id": "messina",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "climate_profile": {
+    "climate_type": "Mediterranean",
+    "seasonal_patterns": {
+      "summer": {
+        "months": "June – August",
+        "description": "Hot and dry with intense Mediterranean sunshine.",
+        "avg_high_celsius": "30 – 32",
+        "avg_high_fahrenheit": "86 – 90"
+      },
+      "winter": {
+        "months": "December – February",
+        "description": "Mild and occasionally breezy with brisk coastal air.",
+        "avg_high_celsius": "13 – 15",
+        "avg_high_fahrenheit": "55 – 59"
+      },
+      "nautical_phenomenon": {
+        "name": "Strait of Messina Tidal Currents & Winds",
+        "description": "The narrow Strait creates strong tidal counter-currents and localized wind funneling that can occasionally impact maneuvering and berthing."
+      }
+    }
+  }
+}

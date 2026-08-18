@@ -1,0 +1,100 @@
+{
+  "port_id": "valletta",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shuttle_services": [
+    {
+      "id": "TRANS-MLA-BUS-130",
+      "name": "Public Bus Route 130 (Waterfront Shuttle)",
+      "operator": "Malta Public Transport (publictransport.com.mt)",
+      "route": "Departs directly from 'Waterfront' stop outside terminal gates to the central Valletta Bus Terminus at City Gate.",
+      "pricing": {
+        "single_fare_eur": "2.00 - 2.50"
+      },
+      "source": "Malta Public Transport Schedule",
+      "provenance": "MLA-MPT-BUS-130",
+      "confidence": 1.0,
+      "tags": ["bus", "route-130", "waterfront", "city-gate"]
+    }
+  ],
+  "public_transport": {
+    "elevators_and_lifts": [
+      {
+        "id": "LIFT-MLA-BARRAKKA",
+        "name": "Barrakka Lift (Elevator)",
+        "distance_meters": 600,
+        "walking_minutes": 7,
+        "location": "Lascaris Wharf to Upper Barrakka Gardens",
+        "elevation_gain_meters": 58,
+        "pricing": {
+          "ascent_eur": 1.0,
+          "descent_eur": 0.0
+        },
+        "description": "High-speed outdoor panoramic elevator connecting the quayside directly to the heart of Valletta.",
+        "source": "Transport Malta",
+        "provenance": "MLA-TM-BARRAKKA-LIFT",
+        "confidence": 1.0,
+        "tags": ["elevator", "barrakka-lift", "panoramic", "upper-barrakka"]
+      }
+    ],
+    "bus_terminus": {
+      "name": "Valletta Central Bus Terminus (City Gate)",
+      "popular_routes": [
+        {
+          "destination": "Mdina / Rabat (Silent City)",
+          "routes": ["Bus 51", "Bus 52"],
+          "duration_minutes": "30 - 40",
+          "cost_eur": "2.00 - 2.50"
+        },
+        {
+          "destination": "Marsaxlokk Fishing Village",
+          "routes": ["Bus 81"],
+          "duration_minutes": "35 - 45",
+          "cost_eur": "2.00 - 2.50"
+        }
+      ]
+    },
+    "ferries_and_water_taxis": [
+      {
+        "name": "Valletta Ferry Services",
+        "routes": ["Valletta to Sliema", "Valletta to The Three Cities (Birgu/Senglea/Cospicua)"]
+      },
+      {
+        "name": "Traditional Maltese Dgħajsa Water Taxis",
+        "description": "Traditional wooden gondola-style motorboats operating scenic crossings across Grand Harbour."
+      }
+    ]
+  },
+  "taxi_services": {
+    "regulatory_status": "White taxis queue immediately outside terminal gates with fixed government tariffs.",
+    "preset_fixed_tariffs": {
+      "valletta_center_eur": 10.0,
+      "mdina_eur": 20.0,
+      "airport_eur": 15.0
+    },
+    "rideshares": {
+      "available_apps": ["Bolt", "eCabs"],
+      "notes": "Highly active across Malta, easily booked via mobile app, and generally cost less than standard street taxis."
+    }
+  },
+  "airport_connections": {
+    "airport_name": "Malta International Airport (MLA)",
+    "location": "Luqa",
+    "distance_km": 8.0,
+    "transit_options": [
+      {
+        "mode": "Taxi / Bolt / eCabs",
+        "duration_minutes": "15 - 20",
+        "cost_eur": "15.00 - 20.00 (Flat Rate)"
+      },
+      {
+        "mode": "Public Bus Route X4",
+        "route": "Operates directly between Airport and Valletta Bus Terminus (City Gate)",
+        "duration_minutes": "25 - 35",
+        "cost_eur": "2.00 - 2.50"
+      }
+    ]
+  }
+}

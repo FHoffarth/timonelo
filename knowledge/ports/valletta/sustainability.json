@@ -1,0 +1,29 @@
+{
+  "port_id": "valletta",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shore_power_ops": {
+    "status": "Fully Operational (Mediterranean Pioneer Leader)",
+    "program_name": "Grand Harbour Clean Air Project",
+    "total_investment_eur": 49900000,
+    "operational_launch": "Late 2023",
+    "infrastructure_specs": {
+      "electrified_berths_count": 5,
+      "berths": ["Pinto Wharf (Quays 1, 2, 4 & 5)", "Boiler Wharf"],
+      "simultaneous_power_capacity_mw": 64,
+      "simultaneous_cruise_ships_capacity": 5,
+      "environmental_impact": "Allows up to five mega-cruise vessels to shut off auxiliary diesel generators concurrently while in port."
+    },
+    "commercial_tariff_framework": {
+      "historic_ppa": "In March 2025, Malta signed the Mediterranean's first cruise Power Purchase Agreement (PPA) with Carnival Corporation.",
+      "connection_fee_eur_per_vessel": 3865.0,
+      "electricity_rate": "Quarterly published Enemalta commercial kWh rate."
+    },
+    "source": "Transport Malta, Infrastructure Malta & Valletta Cruise Port PLC 2026",
+    "provenance": "MLA-TM-OPS-CLEANAIR",
+    "confidence": 1.0,
+    "tags": ["shore-power", "ops", "clean-air-project", "64mw", "carnival-ppa", "enemalta", "mediterranean-pioneer"]
+  }
+}

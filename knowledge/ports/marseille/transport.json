@@ -1,0 +1,90 @@
+{
+  "port_id": "marseille",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shuttle_services": [
+    {
+      "id": "TRANS-MRS-FREE-SHUTTLE",
+      "name": "Free Port Shuttle (Navette Portuaire Gratuite)",
+      "operator": "Grand Port Maritime de Marseille",
+      "route": "Operates from ship berths at Léon Gourret (follow the green painted line on the ground) to Place de la Joliette / Les Terrasses du Port shopping center (9 Quai du Lazaret, near Five Guys).",
+      "pricing": {
+        "cost_eur": 0.0,
+        "notes": "Completely free of charge on active cruise call days."
+      },
+      "frequency": "Every 20 – 35 minutes between 09:00 and 17:00",
+      "walking_to_stop_minutes": "5 – 14 minutes along marked green line depending on berth",
+      "source": "Grand Port Maritime de Marseille Public Notice",
+      "provenance": "MRS-TRANS-FREE-SHUTTLE",
+      "confidence": 1.0,
+      "tags": ["free-shuttle", "green-line", "joliette", "terrasses-du-port"]
+    },
+    {
+      "id": "TRANS-MRS-CRUISE-LINE-SHUTTLE",
+      "name": "Cruise Line Motorcoach Shuttle",
+      "operator": "Individual Cruise Lines (MSC, Costa, Royal Caribbean, etc.)",
+      "route": "Direct non-stop transfer from ship gangway to the Vieux-Port (Old Port).",
+      "pricing": {
+        "round_trip_eur": "15.00 - 20.00"
+      },
+      "source": "Cruise Line Shore Excursions Information",
+      "provenance": "MRS-TRANS-CRUISE-SHUTTLE",
+      "confidence": 1.0,
+      "tags": ["cruise-line-shuttle", "vieux-port", "direct"]
+    }
+  ],
+  "public_transport": {
+    "metro_stations": [
+      {
+        "id": "METRO-MRS-JOLIETTE",
+        "name": "Joliette Metro Station",
+        "lines": ["Line 2 (Red Line)"],
+        "location": "Short walk from port shuttle drop-off at Place de la Joliette",
+        "connectivity": "Direct two-stop connection to Marseille Saint-Charles central railway station.",
+        "source": "RTM (Régie des Transports Métropolitains)",
+        "provenance": "MRS-RTM-JOLIETTE",
+        "confidence": 1.0,
+        "tags": ["metro", "line-2", "joliette", "saint-charles"]
+      }
+    ],
+    "tramways": [
+      {
+        "lines": ["T2", "T3"],
+        "station": "Joliette",
+        "description": "Step-free, accessible light rail connection operating through central Marseille."
+      }
+    ],
+    "city_buses": [
+      {
+        "line": "Bus 35",
+        "route": "Connects Joliette to Port Gate 4 (Porte 4)"
+      }
+    ]
+  },
+  "taxi_services": {
+    "regulatory_status": "Queuing ranks stationed directly outside MPCT terminals.",
+    "pricing_guidelines": {
+      "fare_to_vieux_port_eur": "20.00 - 25.00",
+      "duration_to_vieux_port_minutes": "15",
+      "fare_to_airport_eur": "50.00 - 60.00"
+    }
+  },
+  "airport_connections": {
+    "airport_name": "Marseille Provence Airport (MRS)",
+    "distance_km": 25.0,
+    "transit_options": [
+      {
+        "mode": "Taxi",
+        "duration_minutes": "25 - 35",
+        "cost_eur": "50.00 - 60.00"
+      },
+      {
+        "mode": "Airport Bus Shuttle (Navette) + Metro",
+        "route": "Airport Shuttle to Marseille Saint-Charles station (every 15-20 min) -> Metro Line 2 to Joliette",
+        "duration_minutes": "50 - 60"
+      }
+    ]
+  }
+}

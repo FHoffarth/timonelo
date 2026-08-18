@@ -1,0 +1,33 @@
+{
+  "port_id": "naples",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-NAP-LORETO-MARE",
+      "name": "Ospedale Loreto Mare",
+      "address": "Via Amerigo Vespucci 24, 80142 Napoli",
+      "phone": "+39 081 254 2111",
+      "emergency_department": "24/7 Pronto Soccorso (Emergency Room)",
+      "type": "Public Hospital (Closest emergency facility to the port)",
+      "source": "ASL Napoli 1 Centro",
+      "provenance": "IT-MED-HOSP-LORETO",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "pronto-soccorso", "loreto-mare"]
+    },
+    {
+      "id": "MED-NAP-CARDARELLI",
+      "name": "Azienda Ospedaliera di Rilievo Nazionale Antonio Cardarelli",
+      "address": "Via Antonio Cardarelli 9, 80131 Napoli",
+      "phone": "+39 081 747 1111",
+      "emergency_department": "24/7 Level 1 Major Trauma Center",
+      "type": "Largest Hospital and Trauma Center in Southern Italy",
+      "source": "AORN Cardarelli",
+      "provenance": "IT-MED-HOSP-CARDARELLI",
+      "confidence": 1.0,
+      "tags": ["hospital", "trauma-center", "cardarelli"]
+    }
+  ]
+}

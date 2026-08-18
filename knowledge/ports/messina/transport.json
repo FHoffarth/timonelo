@@ -1,0 +1,59 @@
+{
+  "port_id": "messina",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shuttle_services": [],
+  "shuttle_notes": "No port shuttles are provided or necessary as the cruise terminal exits directly into central Messina.",
+  "public_transport": {
+    "rail_stations": [
+      {
+        "id": "RAIL-MSN-CENTRALE",
+        "name": "Messina Centrale Railway Station",
+        "distance_minutes": 10,
+        "description": "Located a flat 10-minute walk south of the port along the waterfront.",
+        "popular_routes": [
+          {
+            "destination": "Taormina-Giardini",
+            "duration_minutes": "45 - 60",
+            "cost_eur": "4.50 - 5.00",
+            "transfer_notes": "From Taormina-Giardini station, passengers take a local connecting shuttle bus or taxi (~10 min) up the steep hill to Taormina town."
+          }
+        ],
+        "source": "Trenitalia",
+        "provenance": "MSN-TRAIN-CENTRALE",
+        "confidence": 1.0,
+        "tags": ["train", "trenitalia", "taormina", "messina-centrale"]
+      }
+    ],
+    "city_tram": {
+      "name": "Tranvia di Messina (Messina City Tram)",
+      "description": "Runs directly along Via Vittorio Emanuele II outside the port gates, connecting the terminal to Messina Centrale station and northern suburbs."
+    }
+  },
+  "taxi_services": {
+    "regulatory_status": "Taxis queue outside the port gates.",
+    "pricing_guidelines": {
+      "taormina_round_trip_eur": "120.00 - 150.00 (Total for up to 4 passengers, 4-5 hours total with 2-3 hours wait time)",
+      "negotiation_rule": "Always negotiate and confirm the total price and waiting time before entering the vehicle."
+    }
+  },
+  "airport_connections": {
+    "airport_name": "Catania-Fontanarossa International Airport (CTA)",
+    "distance_km": 100.0,
+    "transit_options": [
+      {
+        "mode": "Taxi / Private Transfer",
+        "duration_minutes": "75",
+        "cost_eur": "120.00 - 150.00"
+      },
+      {
+        "mode": "Regional Express Bus (SAIS Autolinee)",
+        "route": "Direct buses run between Catania Airport and Messina Central Station",
+        "duration_minutes": "110",
+        "cost_eur": "9.30"
+      }
+    ]
+  }
+}

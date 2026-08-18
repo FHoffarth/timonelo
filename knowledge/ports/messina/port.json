@@ -1,0 +1,54 @@
+{
+  "port_id": "messina",
+  "name": "Port of Messina (Terminal Crociere Messina)",
+  "country": "Italy",
+  "tender_port": false,
+  "body_of_water": "Strait of Messina / Ionian & Tyrrhenian Seas",
+  "population": "220,000",
+  "currency": "EUR (€)",
+  "language": "Italian",
+  "overview_text": "Messina is Sicily's key northeastern cruise gateway, located directly along the scenic Strait of Messina. The terminal exits straight onto the city waterfront road.",
+  "getting_around": "The city center and Piazza del Duomo are a flat 5-10 minute walk (500m) from the port exit. Messina Centrale railway station is a 10-minute walk south with frequent trains to Taormina.",
+  "all_aboard_warning": "If taking trains or private tours to Taormina (~50 km south), account for the uphill shuttle connection from Taormina-Giardini train station and allow at least 60-75 minutes of travel buffer.",
+  "terminals": [
+    {
+      "id": "TERM-MSN-CROCIERE",
+      "name": "Terminal Crociere Messina",
+      "location": "Via Vittorio Emanuele II / Banchina Colapesce",
+      "description": "Compact, modern passenger terminal providing streamlined customs and security screenings directly at the waterfront.",
+      "status": "Operational",
+      "source": "Port Authority of the Strait of Messina (adspstretto.it)",
+      "provenance": "MSN-PA-TERM-COLAPESCE",
+      "confidence": 1.0,
+      "tags": ["terminal-crociere", "banchina-colapesce", "strait-of-messina"]
+    }
+  ],
+  "berths": [
+    {
+      "id": "BERTH-MSN-COLAPESCE",
+      "name": "Banchina Colapesce (Berths I & II)",
+      "wharf": "Banchina Colapesce",
+      "berth_count": 2,
+      "max_vessel_length_meters": 350.0,
+      "max_draft_meters": 12.0,
+      "notes": "350-meter-long continuous concrete quay with deep 10-12 meter drafts accommodating the largest cruise ships alongside.",
+      "source": "Port Authority of the Strait of Messina Berth Specification",
+      "provenance": "MSN-PA-BERTH-COLAPESCE",
+      "confidence": 1.0,
+      "tags": ["deep-water", "mega-ships", "banchina-colapesce"]
+    }
+  ],
+  "arrival_procedures": "Direct alongside docking. Passengers exit the gangway straight into the terminal building for a brief security/customs scan, and exit immediately onto the waterfront road (Via Vittorio Emanuele II).",
+  "departure_procedures": "Extremely fast processing. Due to the simple port footprint, check-in and security clearances are completed in minutes. Taxis and tour operators stage directly at the port exit.",
+  "walking_feasibility": {
+    "rating": "Highly Walkable",
+    "distance_to_center_km": 0.5,
+    "description": "One of the most central cruise docks in the Mediterranean. Piazza del Duomo and the astronomical clock tower are a flat 5-10 minute walk (approx. 500 meters) straight from the terminal exit."
+  },
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "verification_authority": "Port Authority of the Strait of Messina & Comune di Messina 2026",
+    "confidence": 1.0
+  },
+  "tags": ["messina", "sicily", "italy", "strait-of-messina", "taormina-gateway"]
+}

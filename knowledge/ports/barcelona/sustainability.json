@@ -1,0 +1,41 @@
+{
+  "port_id": "barcelona",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shore_power_ops": {
+    "status": "Operational & Expanding (Nexigen Plan)",
+    "current_installations": [
+      {
+        "terminal": "Hutchison Ports BEST Container Terminal",
+        "commissioning_date": "2024-07",
+        "type": "Container OPS"
+      },
+      {
+        "terminal": "Grimaldi Ferry Terminal",
+        "commissioning_date": "2025-04",
+        "type": "Ro-Pax Ferry OPS"
+      }
+    ],
+    "cruise_infrastructure_pipeline": [
+      {
+        "terminal": "MSC Cruises Terminal H (Moll Adossat)",
+        "project_value_eur": 12200000,
+        "contractor": "PowerCon",
+        "scheduled_commissioning": "Early 2027",
+        "notes": "First cruise ship dedicated Onshore Power Supply connection in Barcelona."
+      },
+      {
+        "terminal": "Royal Caribbean Terminal G (Moll Adossat)",
+        "scheduled_commissioning": "Spring 2027",
+        "notes": "Pre-installed OPS capacity."
+      }
+    ],
+    "grid_integration_target": "The port wide medium-voltage network is projected to fully support multiple simultaneous cruise ships by 2027/2028 under the Nexigen Master Plan.",
+    "source": "Barcelona Port Authority Nexigen Plan 2025-2026",
+    "provenance": "BCN-PA-NEXIGEN",
+    "confidence": 1.0,
+    "tags": ["shore-power", "ops", "nexigen", "sustainability", "powercon", "green-port"]
+  }
+}

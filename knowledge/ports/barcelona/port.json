@@ -1,0 +1,144 @@
+{
+  "port_id": "barcelona",
+  "name": "Barcelona Cruise Port",
+  "country": "Spain",
+  "tender_port": false,
+  "body_of_water": "Balearic Sea / Western Mediterranean",
+  "population": "1,620,000",
+  "currency": "EUR (€)",
+  "language": "Spanish, Catalan",
+  "overview_text": "Barcelona is Europe's leading cruise turnaround hub, operating seven international passenger terminals primarily concentrated along Moll Adossat.",
+  "getting_around": "The official T3 Cruise Bus connects Moll Adossat terminals to the Columbus Monument at the foot of La Rambla. From there, Metro Line L3 (Drassanes) connects to all central attractions.",
+  "all_aboard_warning": "Terminals on Moll Adossat are 2 to 4.5 km from the city center across the high Porta d'Europa bridge. Allow at least 45-60 minutes to return from the city center to your terminal.",
+  "terminals": [
+    {
+      "id": "TERM-BCN-ADOSAT-A",
+      "name": "Moll Adossat - Terminal A",
+      "location": "Moll Adossat",
+      "description": "International mega-cruise terminal handling turnaround and transit operations.",
+      "status": "Operational",
+      "source": "Barcelona Port Authority (portdebarcelona.cat)",
+      "provenance": "BCN-PA-TERM-A",
+      "confidence": 1.0,
+      "tags": ["terminal-a", "moll-adossat", "turnaround", "mega-ship"]
+    },
+    {
+      "id": "TERM-BCN-ADOSAT-B",
+      "name": "Moll Adossat - Terminal B",
+      "location": "Moll Adossat",
+      "description": "International mega-cruise terminal handling turnaround and transit operations.",
+      "status": "Operational",
+      "source": "Barcelona Port Authority (portdebarcelona.cat)",
+      "provenance": "BCN-PA-TERM-B",
+      "confidence": 1.0,
+      "tags": ["terminal-b", "moll-adossat", "turnaround", "mega-ship"]
+    },
+    {
+      "id": "TERM-BCN-ADOSAT-C",
+      "name": "Moll Adossat - Terminal C",
+      "location": "Moll Adossat",
+      "description": "International passenger terminal on Moll Adossat.",
+      "status": "Operational",
+      "source": "Barcelona Port Authority (portdebarcelona.cat)",
+      "provenance": "BCN-PA-TERM-C",
+      "confidence": 1.0,
+      "tags": ["terminal-c", "moll-adossat", "turnaround"]
+    },
+    {
+      "id": "TERM-BCN-ADOSAT-D",
+      "name": "Moll Adossat - Terminal D (Palacruceros)",
+      "location": "Moll Adossat",
+      "description": "Dedicated Carnival Corporation and Costa Cruises terminal facility.",
+      "status": "Operational",
+      "source": "Barcelona Port Authority (portdebarcelona.cat)",
+      "provenance": "BCN-PA-TERM-D",
+      "confidence": 1.0,
+      "tags": ["terminal-d", "palacruceros", "carnival-corp", "costa"]
+    },
+    {
+      "id": "TERM-BCN-ADOSAT-E",
+      "name": "Moll Adossat - Terminal E (Helix Cruise Center)",
+      "location": "Moll Adossat",
+      "description": "Modern high-capacity Carnival Corporation terminal facility.",
+      "status": "Operational",
+      "source": "Barcelona Port Authority (portdebarcelona.cat)",
+      "provenance": "BCN-PA-TERM-E",
+      "confidence": 1.0,
+      "tags": ["terminal-e", "helix", "carnival-corp", "mega-ship"]
+    },
+    {
+      "id": "TERM-BCN-ADOSAT-H",
+      "name": "Moll Adossat - Terminal H (MSC)",
+      "location": "Moll Adossat",
+      "description": "New state-of-the-art flagship terminal for MSC Cruises featuring pre-installed shore power OPS connections.",
+      "status": "Operational / Commissioning 2026",
+      "source": "Barcelona Port Authority & MSC Cruises",
+      "provenance": "BCN-PA-TERM-H-MSC",
+      "confidence": 1.0,
+      "tags": ["terminal-h", "msc-cruises", "ops-shore-power", "new-terminal"]
+    },
+    {
+      "id": "TERM-BCN-WTC-S",
+      "name": "World Trade Center - Terminal South (S)",
+      "location": "Moll de Barcelona (WTCB)",
+      "description": "Dedicated boutique and small luxury cruise terminal. Scheduled to close at the end of 2026 to consolidate all cruise operations at Moll Adossat.",
+      "status": "Closing End of 2026",
+      "source": "Barcelona Port Authority Nexigen Plan",
+      "provenance": "BCN-PA-TERM-WTC-S",
+      "confidence": 1.0,
+      "tags": ["wtcb", "terminal-s", "boutique", "luxury", "closing-2026"]
+    },
+    {
+      "id": "TERM-BCN-WTC-N",
+      "name": "World Trade Center - Terminal North (N)",
+      "location": "Moll de Barcelona (WTCB)",
+      "description": "Boutique terminal closed at the end of 2023 under the city consolidation agreement.",
+      "status": "Closed (End of 2023)",
+      "source": "Barcelona Port Authority",
+      "provenance": "BCN-PA-TERM-WTC-N",
+      "confidence": 1.0,
+      "tags": ["wtcb", "terminal-n", "closed"]
+    }
+  ],
+  "berths": [
+    {
+      "id": "BERTH-BCN-ADOSAT",
+      "name": "Moll Adossat Berths A-H",
+      "wharf": "Moll Adossat",
+      "berth_count": 7,
+      "max_vessel_length_meters": 365.0,
+      "max_draft_meters": 12.0,
+      "notes": "Accommodates up to 7 mega-cruise vessels simultaneously with direct alongside docking.",
+      "source": "Barcelona Port Authority Berth Directory",
+      "provenance": "BCN-PA-BERTH-ADOSAT",
+      "confidence": 1.0,
+      "tags": ["deep-water", "mega-ships", "moll-adossat"]
+    },
+    {
+      "id": "BERTH-BCN-WTCB",
+      "name": "WTC Barcelona Berths",
+      "wharf": "Moll de Barcelona",
+      "berth_count": 2,
+      "max_vessel_length_meters": 200.0,
+      "max_draft_meters": 8.5,
+      "notes": "Dedicated to boutique vessels under 200m in length.",
+      "source": "Barcelona Port Authority",
+      "provenance": "BCN-PA-BERTH-WTCB",
+      "confidence": 1.0,
+      "tags": ["boutique", "small-vessels", "wtcb"]
+    }
+  ],
+  "arrival_procedures": "Direct-dock port. Customs, immigration, and security checkpoints are located inside each individual terminal building. Ground floors handle baggage claim, check-in, and security scanners.",
+  "departure_procedures": "Highly efficient processing. Outside the terminal doors, dedicated transport zones organize taxi ranks, cruise line motorcoaches, and public shuttle staging.",
+  "walking_feasibility": {
+    "rating": "Not Recommended from Moll Adossat; Highly Walkable from WTCB",
+    "distance_to_center_km": 3.5,
+    "description": "Moll Adossat is 2 to 4.5 km from the city center across the high Porta d'Europa industrial bridge with heavy traffic. WTCB allows walking directly into La Rambla in 10-15 minutes."
+  },
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "verification_authority": "Barcelona Port Authority (portdebarcelona.cat) Nexigen Plan 2026",
+    "confidence": 1.0
+  },
+  "tags": ["barcelona", "spain", "western-mediterranean", "turnaround-hub", "moll-adossat"]
+}

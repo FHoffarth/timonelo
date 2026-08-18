@@ -1,0 +1,60 @@
+{
+  "port_id": "naples",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "emergency_numbers": [
+    {
+      "id": "EMERG-NAP-112",
+      "name": "Universal European Emergency Number",
+      "number": "112",
+      "description": "General emergency dispatch in Italian, English, and other major languages.",
+      "source": "Numero Unico Europeo 112",
+      "provenance": "IT-EMERG-112",
+      "confidence": 1.0,
+      "tags": ["emergency", "universal", "112"]
+    },
+    {
+      "id": "EMERG-NAP-POLIZIA",
+      "name": "State Police (Questura di Napoli)",
+      "number": "113",
+      "description": "National emergency police line.",
+      "source": "Polizia di Stato",
+      "provenance": "IT-POL-113",
+      "confidence": 1.0,
+      "tags": ["police", "questura"]
+    },
+    {
+      "id": "EMERG-NAP-AMBULANZA",
+      "name": "Ambulance / Medical Emergency",
+      "number": "118",
+      "description": "Direct medical emergency dispatch line.",
+      "source": "Servizio Sanitario Nazionale (SSN)",
+      "provenance": "IT-SSN-118",
+      "confidence": 1.0,
+      "tags": ["ambulance", "118"]
+    },
+    {
+      "id": "EMERG-NAP-VIGILI-FUOCO",
+      "name": "Fire & Rescue (Vigili del Fuoco)",
+      "number": "115",
+      "description": "Fire department and maritime safety rescue.",
+      "source": "Corpo Nazionale dei Vigili del Fuoco",
+      "provenance": "IT-VVF-115",
+      "confidence": 1.0,
+      "tags": ["fire", "rescue"]
+    },
+    {
+      "id": "EMERG-NAP-US-CONSULATE",
+      "name": "Consulate General of the United States",
+      "address": "Piazza della Repubblica, 80122 Napoli",
+      "phone": "+39 081 583 8111",
+      "description": "Consular services and emergency citizen assistance.",
+      "source": "U.S. Department of State",
+      "provenance": "US-DOS-NAP",
+      "confidence": 1.0,
+      "tags": ["consulate", "diplomatic", "embassy"]
+    }
+  ]
+}

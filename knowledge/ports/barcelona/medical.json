@@ -1,0 +1,33 @@
+{
+  "port_id": "barcelona",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-BCN-CLINIC",
+      "name": "Hospital Clínic de Barcelona",
+      "address": "Carrer de Villarroel, 170, 08036 Barcelona",
+      "phone": "+34 932 27 54 00",
+      "emergency_department": "24/7 Full Emergency Services",
+      "type": "University Public Hospital / Level 1 Trauma",
+      "source": "CatSalut / Generalitat de Catalunya",
+      "provenance": "CAT-MED-HOSP-CLINIC",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "medical", "clinic"]
+    },
+    {
+      "id": "MED-BCN-SANT-PAU",
+      "name": "Hospital de la Santa Creu i Sant Pau",
+      "address": "Carrer de Sant Quintí, 89, 08041 Barcelona",
+      "phone": "+34 932 91 90 00",
+      "emergency_department": "24/7 Full Emergency Services",
+      "type": "Major Public Teaching Hospital",
+      "source": "CatSalut / Generalitat de Catalunya",
+      "provenance": "CAT-MED-HOSP-SANTPAU",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "medical", "sant-pau"]
+    }
+  ]
+}

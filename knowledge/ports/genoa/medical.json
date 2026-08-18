@@ -1,0 +1,33 @@
+{
+  "port_id": "genoa",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-GOA-GALLIERA",
+      "name": "Ospedale Galliera",
+      "address": "Mura delle Cappuccine 14, 16128 Genova",
+      "phone": "+39 010 56321",
+      "emergency_department": "24/7 Pronto Soccorso (Emergency Room)",
+      "type": "General Public Hospital (Approx. 10 minutes by taxi from port)",
+      "source": "Ente Ospedaliero Ospedali Galliera",
+      "provenance": "IT-MED-HOSP-GALLIERA",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "pronto-soccorso", "galliera"]
+    },
+    {
+      "id": "MED-GOA-SAN-MARTINO",
+      "name": "Ospedale Policlinico San Martino (IRCCS)",
+      "address": "Largo Rosanna Benzi 10, 16132 Genova",
+      "phone": "+39 010 5551",
+      "emergency_department": "24/7 Level 1 Trauma Center & Comprehensive Specialized Care",
+      "type": "University Polyclinic & Research Hospital",
+      "source": "IRCCS Ospedale Policlinico San Martino",
+      "provenance": "IT-MED-HOSP-SANMARTINO",
+      "confidence": 1.0,
+      "tags": ["hospital", "trauma-center", "university-hospital", "san-martino"]
+    }
+  ]
+}

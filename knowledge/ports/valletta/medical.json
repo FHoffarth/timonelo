@@ -1,0 +1,33 @@
+{
+  "port_id": "valletta",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-MLA-MATER-DEI",
+      "name": "Mater Dei Hospital",
+      "address": "Triq id-Domus, Msida, MSD 2090, Malta",
+      "phone": "+356 2545 0000",
+      "emergency_department": "24/7 Full Emergency Department & Major Trauma",
+      "type": "Primary Public University Teaching Hospital (10-15 min drive from port)",
+      "source": "Ministry for Health (Malta)",
+      "provenance": "MT-MED-HOSP-MATERDEI",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "mater-dei", "public-hospital"]
+    },
+    {
+      "id": "MED-MLA-ST-JAMES",
+      "name": "Saint James Hospital",
+      "address": "Triq San Gorg, Sliema, Malta",
+      "phone": "+356 2329 1000",
+      "emergency_department": "Urgent Care & Private Medical Services",
+      "type": "Private Medical Facility & Specialist Hospital",
+      "source": "Saint James Hospital Group",
+      "provenance": "MT-MED-HOSP-STJAMES",
+      "confidence": 1.0,
+      "tags": ["hospital", "private-clinic", "sliema"]
+    }
+  ]
+}

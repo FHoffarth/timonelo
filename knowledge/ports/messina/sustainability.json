@@ -1,0 +1,21 @@
+{
+  "port_id": "messina",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shore_power_ops": {
+    "status": "Under Construction (Late 2026)",
+    "quay_electrification_project": {
+      "managing_authority": "Port Authority of the Strait of Messina",
+      "target_terminal": "Banchina Colapesce",
+      "funding_framework": "Italy's National Recovery and Resilience Plan (PNRR - Piano Nazionale di Ripresa e Resilienza)",
+      "technical_scope": "Quay electrification, substation integration, and high-voltage grid connections allowing moored cruise vessels to turn off diesel generators.",
+      "scheduled_commissioning": "Late 2026"
+    },
+    "source": "Port Authority of the Strait of Messina PNRR Infrastructure Updates 2026",
+    "provenance": "MSN-PA-PNRR-2026",
+    "confidence": 1.0,
+    "tags": ["shore-power", "ops", "pnrr", "banchina-colapesce", "sustainability", "green-port"]
+  }
+}

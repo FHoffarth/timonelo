@@ -1,0 +1,28 @@
+{
+  "port_id": "naples",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "climate_profile": {
+    "climate_type": "Mediterranean",
+    "seasonal_patterns": {
+      "summer": {
+        "months": "June – August",
+        "description": "Hot, dry, and sunny with high heat index.",
+        "avg_high_celsius": "29 – 31",
+        "avg_high_fahrenheit": "84 – 88"
+      },
+      "winter": {
+        "months": "December – February",
+        "description": "Cool and wetter with frequent rain showers.",
+        "avg_high_celsius": "12 – 14",
+        "avg_high_fahrenheit": "53 – 57"
+      },
+      "spring_autumn": {
+        "months": "March – May, September – November",
+        "description": "Warm, sunny days with comfortable sea breezes; optimal for visiting Pompeii and the Amalfi Coast."
+      }
+    }
+  }
+}

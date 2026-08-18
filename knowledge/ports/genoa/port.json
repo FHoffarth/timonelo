@@ -1,0 +1,89 @@
+{
+  "port_id": "genoa",
+  "name": "Port of Genoa (Stazione Marittima di Genova)",
+  "country": "Italy",
+  "tender_port": false,
+  "body_of_water": "Ligurian Sea / Mediterranean",
+  "population": "560,000",
+  "currency": "EUR (€)",
+  "language": "Italian",
+  "overview_text": "Genoa is one of the most historically significant cruise ports in the Mediterranean and a key global homeport for MSC Cruises. Its primary passenger terminals sit directly alongside the historic center.",
+  "getting_around": "The cruise terminal is only 500 meters from Genova Piazza Principe railway station and Principe Metro station, making public transit and walking straightforward.",
+  "all_aboard_warning": "While the port is central and highly walkable, allow adequate time when navigating the narrow medieval caruggi alleys during evening departures.",
+  "terminals": [
+    {
+      "id": "TERM-GOA-PONTE-DEI-MILLE",
+      "name": "Stazione Marittima - Ponte dei Mille",
+      "location": "Piazzale Traghetti Iqbal Masih",
+      "description": "Historic, grand passenger terminal hub handling mega-cruise turnarounds with direct elevated gangway access.",
+      "status": "Operational",
+      "source": "Ports of Genoa (portsofgenoa.com)",
+      "provenance": "GOA-PA-TERM-MILLE",
+      "confidence": 1.0,
+      "tags": ["stazione-marittima", "ponte-dei-mille", "msc-homeport", "turnaround"]
+    },
+    {
+      "id": "TERM-GOA-ANDREA-DORIA",
+      "name": "Stazione Marittima - Ponte Andrea Doria",
+      "location": "Piazzale Traghetti",
+      "description": "Secondary high-capacity passenger cruise terminal adjoining Ponte dei Mille.",
+      "status": "Operational",
+      "source": "Ports of Genoa",
+      "provenance": "GOA-PA-TERM-DORIA",
+      "confidence": 1.0,
+      "tags": ["andrea-doria", "turnaround", "cruise-terminal"]
+    },
+    {
+      "id": "TERM-GOA-MOLO-VECCHIO",
+      "name": "Molo Vecchio Crociere",
+      "location": "Porto Antico basin",
+      "description": "Boutique terminal in the Old Port basin handling superyachts and small luxury cruise liners up to 150m.",
+      "status": "Operational",
+      "source": "Ports of Genoa",
+      "provenance": "GOA-PA-TERM-MOLO-VECCHIO",
+      "confidence": 1.0,
+      "tags": ["porto-antico", "molo-vecchio", "boutique", "superyachts"]
+    }
+  ],
+  "berths": [
+    {
+      "id": "BERTH-GOA-MILLE-DORIA",
+      "name": "Ponte dei Mille & Ponte Andrea Doria Quays",
+      "wharf": "Stazione Marittima",
+      "berth_count": 4,
+      "max_vessel_length_meters": 340.0,
+      "max_draft_meters": 11.0,
+      "notes": "Multiple deep-water berths accommodating modern mega-cruise liners up to 340m length.",
+      "source": "Western Ligurian Sea Port Authority Berth Specifications",
+      "provenance": "GOA-PA-BERTH-STAZ",
+      "confidence": 1.0,
+      "tags": ["deep-water", "mega-ships", "mille", "doria"]
+    },
+    {
+      "id": "BERTH-GOA-MOLO-VECCHIO",
+      "name": "Molo Vecchio Berths",
+      "wharf": "Porto Antico",
+      "berth_count": 2,
+      "max_vessel_length_meters": 150.0,
+      "max_draft_meters": 10.0,
+      "notes": "Dedicated to luxury boutique ships and superyachts.",
+      "source": "Western Ligurian Sea Port Authority",
+      "provenance": "GOA-PA-BERTH-MV",
+      "confidence": 1.0,
+      "tags": ["molo-vecchio", "boutique", "yachts"]
+    }
+  ],
+  "arrival_procedures": "Direct alongside docking. Passenger processing is handled inside historic terminal structures that feature check-in desks, security, tourist information, and direct overhead gangway access. Genoa is a primary homeport for MSC Cruises.",
+  "departure_procedures": "Efficient baggage drop-off and customs processing. The main terminal complex exits directly into a secure passenger plaza connecting to taxis and public roads.",
+  "walking_feasibility": {
+    "rating": "Highly Walkable",
+    "distance_to_center_km": 0.5,
+    "description": "Genova Piazza Principe Train Station is only 500 meters (5-10 minute flat walk) from the terminal. Reaching the Porto Antico aquarium and medieval caruggi takes 15-20 minutes on flat sidewalks."
+  },
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "verification_authority": "Western Ligurian Sea Port Authority (portsofgenoa.com) 2026",
+    "confidence": 1.0
+  },
+  "tags": ["genoa", "italy", "liguria", "western-mediterranean", "msc-homeport", "porto-antico"]
+}

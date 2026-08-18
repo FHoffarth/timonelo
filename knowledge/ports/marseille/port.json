@@ -1,0 +1,78 @@
+{
+  "port_id": "marseille",
+  "name": "Marseille Cruise Port (Grand Port Maritime de Marseille)",
+  "country": "France",
+  "tender_port": false,
+  "body_of_water": "Gulf of Lion / Western Mediterranean",
+  "population": "870,000",
+  "currency": "EUR (€)",
+  "language": "French",
+  "overview_text": "Marseille is France's premier cruise port, handling mega-cruise operations at Môle Léon Gourret (MPCT) and luxury boutique ships at the central Joliette (J4) quay.",
+  "getting_around": "The Grand Port Maritime provides a free port shuttle connecting Léon Gourret to Place de la Joliette. Metro Line 2 and Tram T2/T3 depart from Joliette toward the Old Port and Saint-Charles railway station.",
+  "all_aboard_warning": "MPCT at Môle Léon Gourret is 6 km from the city center in an industrial port zone. Walking outside the port gate is restricted and unsafe. Always take the free shuttle or taxi, allowing at least 45 minutes return travel time.",
+  "terminals": [
+    {
+      "id": "TERM-MRS-MPCT",
+      "name": "Marseille Provence Cruise Terminal (MPCT - Terminals A-F)",
+      "location": "Môle Léon Gourret (Gate 4 / Porte 4)",
+      "description": "Multi-terminal international complex handling all large and mega-cruise vessels.",
+      "status": "Operational",
+      "source": "Grand Port Maritime de Marseille (marseille-port.fr)",
+      "provenance": "MRS-PA-TERM-MPCT",
+      "confidence": 1.0,
+      "tags": ["mpct", "leon-gourret", "terminals-a-f", "mega-ships"]
+    },
+    {
+      "id": "TERM-MRS-J4-JOLIETTE",
+      "name": "Joliette (J4) Terminal",
+      "location": "Quai de la Joliette / MuCEM Waterfront",
+      "description": "Prestigious central terminal in the historic heart of Marseille reserved exclusively for small luxury and boutique vessels.",
+      "status": "Operational",
+      "source": "Grand Port Maritime de Marseille",
+      "provenance": "MRS-PA-TERM-J4",
+      "confidence": 1.0,
+      "tags": ["j4", "joliette", "mucem", "luxury", "boutique", "historic-center"]
+    }
+  ],
+  "berths": [
+    {
+      "id": "BERTH-MRS-LEON-GOURRET",
+      "name": "Môle Léon Gourret Quays (Berths 152, 163, 181, 183)",
+      "wharf": "Môle Léon Gourret",
+      "berth_count": 4,
+      "max_vessel_length_meters": 360.0,
+      "max_draft_meters": 11.5,
+      "notes": "Deep-water quays equipped with shore power connection capacity for 3 simultaneous vessels.",
+      "source": "Grand Port Maritime de Marseille Berth Directory",
+      "provenance": "MRS-PA-BERTH-MPCT",
+      "confidence": 1.0,
+      "tags": ["deep-water", "shore-power", "mega-ships", "berth-163", "berth-181", "berth-183"]
+    },
+    {
+      "id": "BERTH-MRS-J4",
+      "name": "J4 Joliette Berth",
+      "wharf": "Quai de la Joliette",
+      "berth_count": 1,
+      "max_vessel_length_meters": 180.0,
+      "max_draft_meters": 8.5,
+      "notes": "Central berth alongside the MuCEM museum for luxury vessels.",
+      "source": "Grand Port Maritime de Marseille",
+      "provenance": "MRS-PA-BERTH-J4",
+      "confidence": 1.0,
+      "tags": ["j4", "mucem", "boutique", "luxury"]
+    }
+  ],
+  "arrival_procedures": "Direct alongside docking. Modern multi-level terminal buildings at MPCT manage baggage claim, customs, and security checkpoints. Staging areas for buses and taxis are located directly outside the baggage-claim exit.",
+  "departure_procedures": "Standard security checkpoints and check-in counters located on the ground floor of each terminal hall. Staging is well-marked for shore excursion coaches and taxis.",
+  "walking_feasibility": {
+    "rating": "Highly Discouraged from MPCT; Highly Walkable from J4 Joliette",
+    "distance_to_center_km": 6.0,
+    "description": "MPCT is 6 km away in an industrial port; walking through the commercial gates is unshaded and restricted. J4 Joliette is a scenic 10-15 minute flat walk to the Old Port (Vieux-Port)."
+  },
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "verification_authority": "Grand Port Maritime de Marseille & MedCruise Association 2026",
+    "confidence": 1.0
+  },
+  "tags": ["marseille", "france", "western-mediterranean", "provence", "mpct", "vieux-port"]
+}

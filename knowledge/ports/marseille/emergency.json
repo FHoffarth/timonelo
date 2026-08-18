@@ -1,0 +1,59 @@
+{
+  "port_id": "marseille",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "emergency_numbers": [
+    {
+      "id": "EMERG-MRS-112",
+      "name": "Universal European Emergency Number",
+      "number": "112",
+      "description": "General emergency dispatch in English, French, and multiple European languages.",
+      "source": "European Commission Emergency Directory",
+      "provenance": "EU-EMERG-112",
+      "confidence": 1.0,
+      "tags": ["emergency", "universal", "112"]
+    },
+    {
+      "id": "EMERG-MRS-POLICE",
+      "name": "National Police (Police Nationale)",
+      "number": "17",
+      "description": "Emergency police and law enforcement line in France.",
+      "source": "Ministère de l'Intérieur",
+      "provenance": "FR-POL-17",
+      "confidence": 1.0,
+      "tags": ["police", "law-enforcement"]
+    },
+    {
+      "id": "EMERG-MRS-SAMU",
+      "name": "Ambulance / Emergency Medical (SAMU)",
+      "number": "15",
+      "description": "Direct emergency medical response and mobile intensive care dispatch.",
+      "source": "Ministère de la Santé",
+      "provenance": "FR-SAMU-15",
+      "confidence": 1.0,
+      "tags": ["ambulance", "samu", "medical-emergency"]
+    },
+    {
+      "id": "EMERG-MRS-FIRE",
+      "name": "Fire & Rescue (Pompiers)",
+      "number": "18",
+      "description": "Fire services and maritime rescue response.",
+      "source": "Bataillon de Marins-Pompiers de Marseille",
+      "provenance": "FR-POMP-18",
+      "confidence": 1.0,
+      "tags": ["fire", "rescue", "marins-pompiers"]
+    },
+    {
+      "id": "EMERG-MRS-PORT-AUTH",
+      "name": "Port Authority Emergency Line",
+      "number": "+33 4 91 39 40 00",
+      "description": "Grand Port Maritime de Marseille 24/7 security and operational command.",
+      "source": "Grand Port Maritime de Marseille Security Office",
+      "provenance": "MRS-PA-SEC",
+      "confidence": 1.0,
+      "tags": ["port-authority", "harbour-master", "security"]
+    }
+  ]
+}

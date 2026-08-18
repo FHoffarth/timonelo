@@ -1,0 +1,33 @@
+{
+  "port_id": "marseille",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-MRS-EUROPEEN",
+      "name": "Hôpital Européen Marseille",
+      "address": "6 Rue Désirée Clary, 13003 Marseille",
+      "phone": "+33 4 13 42 70 00",
+      "emergency_department": "24/7 Full Emergency Services (Urgences)",
+      "type": "Modern Private-Public General Hospital (Nearest to Joliette/Port)",
+      "source": "ARS Provence-Alpes-Côte d'Azur",
+      "provenance": "FR-MED-HOSP-EUROPEEN",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "joliette", "medical"]
+    },
+    {
+      "id": "MED-MRS-TIMONE",
+      "name": "Hôpital de la Timone (AP-HM / CHUR)",
+      "address": "264 Rue Saint-Pierre, 13385 Marseille",
+      "phone": "+33 4 91 38 00 00",
+      "emergency_department": "24/7 Level 1 Trauma & Comprehensive Specialized Care",
+      "type": "Regional University Hospital Complex",
+      "source": "Assistance Publique - Hôpitaux de Marseille (AP-HM)",
+      "provenance": "FR-MED-HOSP-TIMONE",
+      "confidence": 1.0,
+      "tags": ["hospital", "trauma-center", "university-hospital", "timone"]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "port_id": "naples",
+  "name": "Port of Naples (Stazione Marittima di Napoli)",
+  "country": "Italy",
+  "tender_port": false,
+  "body_of_water": "Gulf of Naples / Tyrrhenian Sea",
+  "population": "915,000",
+  "currency": "EUR (€)",
+  "language": "Italian",
+  "overview_text": "Naples is one of the Mediterranean's most prominent marquee ports, located at Molo Angioino directly adjacent to Castel Nuovo and Piazza Municipio.",
+  "getting_around": "Municipio Metro Station (Line 1) is located directly across the street from the terminal exit. High-speed hydrofoils to Capri, Ischia, and Sorrento depart from adjacent Molo Beverello.",
+  "all_aboard_warning": "Traffic in metropolitan Naples can be heavy. If traveling back from Pompeii, Sorrento, or Capri, allow at least 60-90 minutes of buffer before all-aboard time.",
+  "terminals": [
+    {
+      "id": "TERM-NAP-STAZIONE-MARITTIMA",
+      "name": "Stazione Marittima di Napoli (Molo Angioino)",
+      "location": "Molo Angioino / Piazza Municipio",
+      "description": "Monumental passenger terminal housing security checkpoints, check-in desks, tourist information, and the Galleria del Mare shopping mall.",
+      "status": "Operational",
+      "source": "Port Authority of the Central Tyrrhenian Sea",
+      "provenance": "NAP-PA-TERM-ANGIOINO",
+      "confidence": 1.0,
+      "tags": ["stazione-marittima", "molo-angioino", "galleria-del-mare", "piazza-municipio"]
+    },
+    {
+      "id": "TERM-NAP-MOLO-BEVERELLO",
+      "name": "Molo Beverello Hydrofoil Pier",
+      "location": "Adjacent to Stazione Marittima",
+      "description": "Fast ferry and hydrofoil terminal with direct departures to Capri, Ischia, and Sorrento.",
+      "status": "Operational",
+      "source": "Port Authority of the Central Tyrrhenian Sea",
+      "provenance": "NAP-PA-TERM-BEVERELLO",
+      "confidence": 1.0,
+      "tags": ["molo-beverello", "hydrofoils", "ferries", "capri", "ischia", "sorrento"]
+    },
+    {
+      "id": "TERM-NAP-PORTA-DI-MASSA",
+      "name": "Calata Porta di Massa",
+      "location": "10 minutes east of Molo Angioino",
+      "description": "Vehicle and passenger ferry terminal connecting Naples to the Gulf islands and Sicily.",
+      "status": "Operational",
+      "source": "Port Authority of the Central Tyrrhenian Sea",
+      "provenance": "NAP-PA-TERM-PORTADIMASSA",
+      "confidence": 1.0,
+      "tags": ["porta-di-massa", "car-ferries", "sicily", "gulf-islands"]
+    }
+  ],
+  "berths": [
+    {
+      "id": "BERTH-NAP-ANGIOINO",
+      "name": "Molo Angioino Cruise Berths (7 Active Berths)",
+      "wharf": "Molo Angioino",
+      "berth_count": 7,
+      "max_vessel_length_meters": 360.0,
+      "max_draft_meters": 11.0,
+      "notes": "Features 1,100 meters of total quay length capable of handling multiple large modern cruise ships concurrently.",
+      "source": "Port Authority of the Central Tyrrhenian Sea Berth Directory",
+      "provenance": "NAP-PA-BERTH-ANGIOINO",
+      "confidence": 1.0,
+      "tags": ["deep-water", "mega-ships", "molo-angioino", "7-berths"]
+    }
+  ],
+  "arrival_procedures": "Direct alongside docking. Upon exit, passengers traverse the modern, air-conditioned Galleria del Mare mall before passing through security gates into Piazza Municipio.",
+  "departure_procedures": "Direct walk-on embarkation. Baggage drop is situated at the ground floor of Molo Angioino. Lines are well-managed but can experience high congestion on multi-ship call days.",
+  "walking_feasibility": {
+    "rating": "Highly Walkable",
+    "distance_to_center_km": 0.2,
+    "description": "One of Europe's most walkable ports. Piazza Municipio and Castel Nuovo are 2-3 minutes across the street. Centro Storico and Piazza del Plebiscito are an easy 10-minute flat walk."
+  },
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "verification_authority": "Port Authority of the Central Tyrrhenian Sea & Comune di Napoli 2026",
+    "confidence": 1.0
+  },
+  "tags": ["naples", "italy", "campania", "western-mediterranean", "castel-nuovo", "pompeii-gateway"]
+}

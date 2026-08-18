@@ -1,0 +1,33 @@
+{
+  "port_id": "messina",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "medical_facilities": [
+    {
+      "id": "MED-MSN-PIEMONTE",
+      "name": "Ospedale Piemonte",
+      "address": "Viale Europa 45, 98124 Messina",
+      "phone": "+39 090 2221",
+      "emergency_department": "24/7 Pronto Soccorso (Emergency Room)",
+      "type": "Public Hospital (Closest emergency room, 10 minutes drive from port)",
+      "source": "IRCCS Centro Neurolesi Bonino Pulejo / Ospedale Piemonte",
+      "provenance": "IT-MED-HOSP-PIEMONTE",
+      "confidence": 1.0,
+      "tags": ["hospital", "emergency", "piemonte", "pronto-soccorso"]
+    },
+    {
+      "id": "MED-MSN-POLICLINICO",
+      "name": "Policlinico Universitario Gaetano Martino",
+      "address": "Via Consolare Valeria 1, 98125 Messina",
+      "phone": "+39 090 2211",
+      "emergency_department": "24/7 Level 1 Trauma & University Medical Center",
+      "type": "Main University Teaching Hospital",
+      "source": "A.O.U. Policlinico G. Martino",
+      "provenance": "IT-MED-HOSP-POLICLINICO",
+      "confidence": 1.0,
+      "tags": ["hospital", "university-hospital", "trauma-center"]
+    }
+  ]
+}

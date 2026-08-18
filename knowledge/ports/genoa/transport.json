@@ -1,0 +1,68 @@
+{
+  "port_id": "genoa",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shuttle_services": [],
+  "shuttle_notes": "No port shuttles are provided or necessary as the cruise terminal sits directly at the edge of the historic city center.",
+  "public_transport": {
+    "metro_stations": [
+      {
+        "id": "METRO-GOA-PRINCIPE",
+        "name": "Principe Metro Station",
+        "distance_minutes": 6,
+        "description": "Short 6-minute walk from cruise terminal exit; connects to De Ferrari and Brignole.",
+        "source": "AMT Genova",
+        "provenance": "GOA-AMT-PRINCIPE",
+        "confidence": 1.0,
+        "tags": ["metro", "principe", "amt"]
+      }
+    ],
+    "rail_stations": [
+      {
+        "id": "RAIL-GOA-PIAZZA-PRINCIPE",
+        "name": "Genova Piazza Principe Railway Station",
+        "distance_meters": 500,
+        "distance_minutes": "5 - 10",
+        "description": "Major rail junction with direct high-speed Frecciarossa and Intercity connections to Milan, Turin, Rome, and the Cinque Terre.",
+        "source": "Rete Ferroviaria Italiana (RFI)",
+        "provenance": "RFI-GOA-PRINCIPE",
+        "confidence": 1.0,
+        "tags": ["railway", "train-station", "principe", "frecciarossa"]
+      }
+    ],
+    "city_buses": ["Line 1", "Line 7", "Line 20", "Line N1", "Line N2"],
+    "funiculars_and_elevators": [
+      {
+        "name": "Ascensore Castelletto Levante",
+        "description": "Historic public elevator in the city center providing panoramic hilltop viewpoints overlooking the harbor."
+      }
+    ]
+  },
+  "taxi_services": {
+    "booking_phone": "+39 010 5966 (Radio Taxi Genova)",
+    "pricing_guidelines": {
+      "fare_to_piazza_de_ferrari_eur": "12.00 - 15.00",
+      "duration_to_center_minutes": "10",
+      "fare_to_airport_eur": "20.00 - 25.00"
+    }
+  },
+  "airport_connections": {
+    "airport_name": "Genoa Cristoforo Colombo Airport (GOA)",
+    "distance_km": 7.0,
+    "transit_options": [
+      {
+        "mode": "Taxi",
+        "duration_minutes": "15",
+        "cost_eur": "20.00 - 25.00"
+      },
+      {
+        "mode": "Volabus Shuttle Bus",
+        "route": "Operates regularly between Airport and Genova Piazza Principe station",
+        "duration_minutes": "15",
+        "cost_eur": "6.00"
+      }
+    ]
+  }
+}

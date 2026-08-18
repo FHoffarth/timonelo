@@ -1,0 +1,79 @@
+{
+  "port_id": "barcelona",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shuttle_services": [
+    {
+      "id": "TRANS-BCN-T3-BUS",
+      "name": "T3 Cruise Bus (Blue Port Bus)",
+      "operator": "Port de Barcelona",
+      "route": "Connects all Moll Adossat terminals to the Columbus Monument (Plaça de les Drassanes) near the foot of La Rambla.",
+      "pricing": {
+        "single_ticket_eur": 3.0,
+        "round_trip_ticket_eur": 4.5
+      },
+      "payment_methods": ["Cash onboard", "Online via cruisebus.barcelona"],
+      "restrictions": "Standard T-Casual / Barcelona city transit passes are NOT valid.",
+      "source": "Port de Barcelona Official Shuttle Schedule",
+      "provenance": "BCN-TRANS-T3",
+      "confidence": 1.0,
+      "tags": ["shuttle", "t3-bus", "blue-bus", "moll-adossat", "columbus-monument"]
+    }
+  ],
+  "public_transport": {
+    "metro_stations": [
+      {
+        "id": "METRO-BCN-DRASSANES",
+        "name": "Drassanes Metro Station",
+        "lines": ["L3 (Green Line)"],
+        "location": "Directly at the Columbus Monument (Plaça del Portal de la Pau)",
+        "connectivity": "Direct access to Plaça Catalunya, Passeig de Gràcia, and connection to Sants railway station.",
+        "source": "TMB (Transports Metropolitans de Barcelona)",
+        "provenance": "BCN-TMB-DRASSANES",
+        "confidence": 1.0,
+        "tags": ["metro", "l3", "drassanes", "la-rambla"]
+      }
+    ],
+    "city_buses": ["D20", "H14", "59", "21", "88"],
+    "rail_stations": [
+      {
+        "name": "Barcelona Sants",
+        "access": "Accessible via Metro L3 from Drassanes (12 min)"
+      },
+      {
+        "name": "Estació de França",
+        "access": "Accessible via bus or walking from Barceloneta"
+      }
+    ]
+  },
+  "taxi_services": {
+    "regulatory_status": "Highly regulated with organized queuing ranks outside every terminal.",
+    "pricing_guidelines": {
+      "fare_to_la_rambla_eur": "15 - 20",
+      "fare_to_sagrada_familia_eur": "20 - 25",
+      "mandatory_port_supplement_eur": "2.10 - 3.10"
+    }
+  },
+  "airport_connections": {
+    "airport_name": "Josep Tarradellas Barcelona-El Prat Airport (BCN)",
+    "distance_km": 14.0,
+    "transit_options": [
+      {
+        "mode": "Taxi",
+        "duration_minutes": "20 - 30",
+        "cost_eur": "35 - 40"
+      },
+      {
+        "mode": "Aerobus + Metro",
+        "route": "Aerobus (A1/A2) to Plaça Catalunya -> Metro L3 to Drassanes",
+        "duration_minutes": "45 - 55"
+      },
+      {
+        "mode": "Metro L9 Sud",
+        "route": "Connects airport terminals to South Metro network"
+      }
+    ]
+  }
+}

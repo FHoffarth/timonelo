@@ -1,0 +1,26 @@
+{
+  "port_id": "genoa",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shore_power_ops": {
+    "status": "Partially Operational / Under Construction (Late 2025/2026)",
+    "current_operational": {
+      "terminal": "Molo Vecchio Crociere",
+      "capacity": "Supplying up to 600 amps for superyachts and boutique cruise liners."
+    },
+    "cruise_infrastructure_pipeline": {
+      "terminals": ["Ponte dei Mille", "Ponte Andrea Doria"],
+      "project_investment_eur": 18000000,
+      "contractor": "Nidec ASI",
+      "managing_authority": "Western Ligurian Sea Port Authority",
+      "technical_details": "Turnkey electrification with dual-frequency (50Hz/60Hz) substation and high-voltage berth connections.",
+      "scheduled_commissioning": "Late 2025 / 2026"
+    },
+    "source": "Western Ligurian Sea Port Authority Infrastructure Bulletin 2026",
+    "provenance": "GOA-PA-OPS-NIDEC",
+    "confidence": 1.0,
+    "tags": ["shore-power", "ops", "nidec-asi", "ponte-dei-mille", "andrea-doria", "sustainability"]
+  }
+}

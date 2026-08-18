@@ -1,0 +1,28 @@
+{
+  "port_id": "marseille",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "climate_profile": {
+    "climate_type": "Mediterranean",
+    "seasonal_patterns": {
+      "summer": {
+        "months": "June – August",
+        "description": "Hot and dry with abundant sunshine.",
+        "avg_high_celsius": "29",
+        "avg_high_fahrenheit": "84"
+      },
+      "winter": {
+        "months": "December – February",
+        "description": "Cool and mild with crisp coastal air.",
+        "avg_high_celsius": "11 – 12",
+        "avg_high_fahrenheit": "52 – 54"
+      },
+      "wind_phenomenon": {
+        "name": "The Mistral (Le Mistral)",
+        "description": "A powerful, cold, dry wind from the north/northwest funneling down the Rhône Valley that can blow with gale force in any season, causing choppy harbor waters and rapid temperature drops."
+      }
+    }
+  }
+}

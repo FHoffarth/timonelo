@@ -1,0 +1,49 @@
+{
+  "port_id": "genoa",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "emergency_numbers": [
+    {
+      "id": "EMERG-GOA-112",
+      "name": "Universal European Emergency Number",
+      "number": "112",
+      "description": "General emergency dispatch in Italian, English, and other EU languages.",
+      "source": "Numero Unico Europeo 112",
+      "provenance": "IT-EMERG-112",
+      "confidence": 1.0,
+      "tags": ["emergency", "universal", "112"]
+    },
+    {
+      "id": "EMERG-GOA-POLIZIA",
+      "name": "State Police (Polizia di Stato)",
+      "number": "113",
+      "description": "National emergency police line in Italy.",
+      "source": "Polizia di Stato",
+      "provenance": "IT-POL-113",
+      "confidence": 1.0,
+      "tags": ["police", "polizia-di-stato"]
+    },
+    {
+      "id": "EMERG-GOA-AMBULANZA",
+      "name": "Ambulance / Emergency Medical (Emergenza Sanitaria)",
+      "number": "118",
+      "description": "Direct medical emergency dispatch.",
+      "source": "Servizio Sanitario Nazionale (SSN)",
+      "provenance": "IT-SSN-118",
+      "confidence": 1.0,
+      "tags": ["ambulance", "medical-emergency", "118"]
+    },
+    {
+      "id": "EMERG-GOA-VIGILI-FUOCO",
+      "name": "Fire & Rescue (Vigili del Fuoco)",
+      "number": "115",
+      "description": "National fire department and rescue operations.",
+      "source": "Corpo Nazionale dei Vigili del Fuoco",
+      "provenance": "IT-VVF-115",
+      "confidence": 1.0,
+      "tags": ["fire", "rescue", "115"]
+    }
+  ]
+}

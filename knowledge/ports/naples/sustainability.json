@@ -1,0 +1,20 @@
+{
+  "port_id": "naples",
+  "provenance": {
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
+    "confidence": 1.0
+  },
+  "shore_power_ops": {
+    "status": "Under Construction / Commissioning (Late 2026)",
+    "quay_electrification_project": {
+      "managing_authority": "Port Authority of the Central Tyrrhenian Sea",
+      "target_terminal": "Stazione Marittima di Napoli (Molo Angioino)",
+      "technical_scope": "Comprehensive civil engineering works, high-voltage substation integration, and quayside electrical umbilical connections.",
+      "scheduled_commissioning": "Late 2026"
+    },
+    "source": "Port Authority of the Central Tyrrhenian Sea Green Port Strategy 2026",
+    "provenance": "NAP-PA-OPS-2026",
+    "confidence": 1.0,
+    "tags": ["shore-power", "ops", "molo-angioino", "electrification", "sustainability"]
+  }
+}
