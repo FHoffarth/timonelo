@@ -1,7 +1,11 @@
 """
-Knowledge Factory Stage 03/04: Complete Industrial Stateroom Archetype Generator.
-Generates the entire ~2,217 stateroom fleet ontology across all passenger decks (Decks 05, 08-16, 18-19)
-for MSC Bellissima (IMO 9766205) and Meraviglia-class vessels.
+Knowledge Factory Stage 03/04: Industrial Stateroom Archetype Generator.
+[QUARANTINED LEGACY HYPOTHESIS TOOL]
+
+Governed by ADR-0002.
+This generator synthesizes geometric cabin layouts arithmetically.
+Output belongs strictly to the Hypothesis Store (`data/hypotheses/`) and cannot
+be promoted to canonical Ground Truth without explicit, verified physical evidence.
 """
 
 from typing import Dict, List, Tuple, Optional
@@ -15,20 +19,38 @@ from timonelo.ontology.models import (
     BalconyType,
     PowerSocketMatrix,
     EvidenceLink,
+    Method,
+    Derivation,
 )
 
 
 class StateroomArchetypeGenerator:
-    """Industrial generator for ship-scale stateroom ontologies."""
+    """[QUARANTINED] Industrial generator for synthetic/hypothetical stateroom ontologies."""
+
+    @staticmethod
+    def is_quarantined_hypothesis_only() -> bool:
+        """Indicates this generator produces non-canonical hypothesis models only."""
+        return True
 
     @staticmethod
     def generate_full_deck_staterooms(
         deck_number: int,
-        evidence_links: List[EvidenceLink],
+        evidence_links: Optional[List[EvidenceLink]] = None,
     ) -> Tuple[Dict[str, Cabin], Dict[str, CorridorNode], List[CorridorEdge]]:
         """
-        Generates staterooms and circulation graph for any residential or suite deck tier.
+        Generates synthetic staterooms and circulation graph for hypothesis exploration.
+        All produced items carry Derivation.GENERATED.
         """
+        # Ensure generated items are explicitly marked with Derivation.GENERATED
+        synthetic_evidence = [
+            EvidenceLink(
+                source_id="SYNTHETIC-ARCHETYPE-GENERATOR",
+                locator=f"Deck_{deck_number:02d}_Arithmetic_Generator",
+                method=Method.CALCULATED,
+                derivation=Derivation.GENERATED,
+            )
+        ] if not evidence_links else evidence_links
+
         cabins: Dict[str, Cabin] = {}
         nodes: Dict[str, CorridorNode] = {}
         edges: List[CorridorEdge] = []
@@ -186,7 +208,7 @@ class StateroomArchetypeGenerator:
                     connecting_cabin_number=conn_map.get(c_num_stbd),
                     bed_near_balcony=(idx % 4 == 2),
                     is_accessible_stateroom=is_acc_stbd,
-                    evidence_links=evidence_links,
+                    evidence_links=synthetic_evidence,
                 )
 
                 # --- PORT (ODD) ---
@@ -227,7 +249,7 @@ class StateroomArchetypeGenerator:
                     connecting_cabin_number=conn_map.get(c_num_port),
                     bed_near_balcony=(port_idx % 4 == 1),
                     is_accessible_stateroom=is_acc_port,
-                    evidence_links=evidence_links,
+                    evidence_links=synthetic_evidence,
                 )
 
         return cabins, nodes, edges

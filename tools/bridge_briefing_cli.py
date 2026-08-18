@@ -14,7 +14,7 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO_ROOT)
 
 from src.timonelo.database.bridge_officer import (
-    BridgeOfficerEngine,
+    LegacyBridgeBriefingDemo,
     BriefingPhase,
 )
 
@@ -41,7 +41,7 @@ def main():
         "disembark": BriefingPhase.DISEMBARKATION,
     }
 
-    briefing = BridgeOfficerEngine.generate_briefing(
+    briefing = LegacyBridgeBriefingDemo.generate_briefing(
         phase=phase_map[args.phase],
         traveler_name=args.name,
         ship_name="MSC Bellissima",

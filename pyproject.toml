@@ -5,28 +5,39 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "timonelo"
 version = "1.0.0"
-description = "Personal cruise operating system and living digital twin built from objective spatial evidence."
+description = "Cruise Intelligence Platform providing explainable, evidence-based answers about ships, cabins, routes and ports."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
-    { name = "Timonelo Architecture Team" }
+    { name = "Timonelo Engineering Team" }
 ]
 keywords = [
     "cruise",
     "maritime",
+    "intelligence",
+    "evidence-based",
     "digital-twin",
-    "operating-system",
-    "travel-intelligence",
-    "decision-engine",
-    "bridge-officer-tim"
+    "spatial-reasoning"
 ]
-dependencies = []
+dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0"
+]
+harvester = [
+    "crawl4ai>=0.9.2",
+    "playwright>=1.40.0"
+]
 
 [project.urls]
-Homepage = "https://github.com/timonelo/timonelo"
-Documentation = "https://github.com/timonelo/timonelo/tree/main/docs"
-Repository = "https://github.com/timonelo/timonelo.git"
+Homepage = "https://github.com/FHoffarth/timonelo"
+Documentation = "https://github.com/FHoffarth/timonelo/tree/main/docs"
+Repository = "https://github.com/FHoffarth/timonelo.git"
 
 [tool.setuptools.packages.find]
 where = ["src"]

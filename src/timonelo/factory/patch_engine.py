@@ -1,11 +1,13 @@
 """
-Knowledge Factory SPEC-008: Non-Destructive Ship Patch & Delta Compilation Engine.
-Inherits 100% of immutable reference vessel geometry and applies surgical delta overlays.
+Knowledge Factory SPEC-008: Ship Patch & Delta Compilation Engine.
+[QUARANTINED LEGACY HYPOTHESIS TOOL]
+
+Governed by ADR-0002.
+This engine operates strictly on the Hypothesis Store and test fixtures.
+Outputs are synthetic/derivative hypotheses and CANNOT write to canonical Ground Truth.
 """
 
-import json
 from typing import Dict, Any, List, Optional
-from dataclasses import replace
 from timonelo.ontology.models import (
     VesselSpatialOntology,
     Deck,
@@ -21,11 +23,18 @@ from timonelo.ontology.models import (
     BalconyType,
     PowerSocketMatrix,
     EvidenceLink,
+    Derivation,
+    Method,
 )
 
 
 class ShipPatchEngine:
-    """Applies non-destructive SPEC-008 delta operations onto a base vessel ontology."""
+    """[QUARANTINED] Applies SPEC-008 delta operations onto a base vessel ontology for hypothesis modeling."""
+
+    @staticmethod
+    def is_quarantined_hypothesis_only() -> bool:
+        """Indicates this engine produces non-canonical hypothesis models only."""
+        return True
 
     @staticmethod
     def apply_patch(base_ontology: VesselSpatialOntology, patch_data: Dict[str, Any]) -> VesselSpatialOntology:
@@ -63,7 +72,7 @@ class ShipPatchEngine:
             deck_num = op.get("deck")
 
             if deck_num not in new_decks:
-                continue
+                raise KeyError(f"ShipPatchEngine: Cannot patch unknown deck {deck_num}")
             target_deck = new_decks[deck_num]
 
             if op_type == "RENAME_VENUE":
@@ -80,7 +89,7 @@ class ShipPatchEngine:
                         entrance_node_ids=old_v.entrance_node_ids,
                         is_noise_generator=old_v.is_noise_generator,
                         is_open_deck=old_v.is_open_deck,
-                        evidence_links=old_v.evidence_links,
+                        evidence_links=[],
                     )
 
             elif op_type == "REPLACE_VENUE":
@@ -102,7 +111,7 @@ class ShipPatchEngine:
                         entrance_node_ids=old_v.entrance_node_ids,
                         is_noise_generator=rep.get("is_noise_generator", old_v.is_noise_generator),
                         is_open_deck=rep.get("is_open_deck", old_v.is_open_deck),
-                        evidence_links=old_v.evidence_links,
+                        evidence_links=[],
                     )
 
             elif op_type == "ADD_VENUE":
@@ -112,9 +121,15 @@ class ShipPatchEngine:
                 cat_enum = VenueCategory[cat_str] if hasattr(VenueCategory, cat_str) else VenueCategory.BAR_LOUNGE
                 poly_coords = [Coordinate2D(pt[0], pt[1]) for pt in venue_data.get("boundary_polygon", [])]
                 ev_links = [
-                    EvidenceLink(source_id=e.get("source_id", "EVID-GA-PLUS"), sha256=e.get("sha256"), locator=e.get("locator", "GA_Plus"))
+                    EvidenceLink(
+                        source_id=e.get("source_id", "EVID-GA-PLUS"),
+                        sha256=e.get("sha256"),
+                        locator=e.get("locator", "GA_Plus"),
+                        method=Method.INFERRED,
+                        derivation=Derivation.GENERATED,
+                    )
                     for e in venue_data.get("evidence_links", [])
-                ] or list(next(iter(target_deck.venues.values())).evidence_links if target_deck.venues else [])
+                ]
 
                 target_deck.venues[v_id] = Venue(
                     venue_id=v_id,

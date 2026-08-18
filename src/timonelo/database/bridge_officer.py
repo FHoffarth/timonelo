@@ -1,16 +1,51 @@
 """
-Bridge Officer Tim (BOT) v1.0 Engine for Timonelo.
-Personal Bridge Officer & Proactive Travel Intelligence Companion.
-"Ich bleibe auf der Brücke. Melden Sie sich jederzeit."
+src/timonelo/database/bridge_officer.py
+
+Bridge Officer Governance & Pipeline Orchestrator.
+Governed by ADR-0002.
+
+Governance Rules:
+1. Canonical BridgeOfficer is an orchestrator and briefing coordinator ONLY.
+2. It has NO authority to declare facts true, approve conflicts, or store confidence.
+3. Legacy briefing generation is quarantined as DEMO_ONLY / HYPOTHESIS functionality.
 """
 
 from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Dict, Any, List, Optional
-import hashlib
-import datetime
 
+
+# =============================================================================
+# 1. CANONICAL BRIDGE OFFICER (ORCHESTRATION ONLY)
+# =============================================================================
+
+class BridgeOfficer:
+    """Canonical Bridge Officer Tim pipeline orchestrator.
+
+    Governance Rule:
+    Bridge Officer Tim is an orchestrator and coordinator.
+    It has NO authority to author canonical facts, approve conflicts,
+    generate factual briefing claims, or store confidence scores.
+    """
+    def __init__(self, officer_id: str = "bridge_officer_tim"):
+        self.officer_id = officer_id
+        self.is_orchestration_only = True
+
+    def get_pipeline_status(self) -> Dict[str, Any]:
+        """Returns deterministic operational state of the pipeline."""
+        return {
+            "officer_id": self.officer_id,
+            "role": "PIPELINE_ORCHESTRATOR",
+            "can_author_ground_truth": False,
+            "can_override_evidence_gatekeeper": False,
+            "can_generate_factual_claims": False,
+        }
+
+
+# =============================================================================
+# 2. QUARANTINED LEGACY BRIEFING DEMO (NON-CANONICAL / HYPOTHESIS ONLY)
+# =============================================================================
 
 class BriefingPhase(str, Enum):
     PRE_CRUISE_12D = "PRE_CRUISE_12D (T-12 Tage vor Abfahrt)"
@@ -41,12 +76,24 @@ class BridgeBriefing:
     daily_focus_points: List[str]
     maritime_insight: str
     sign_off: str = "Ich bleibe auf der Brücke. Melden Sie sich jederzeit."
-    confidence_score: float = 99.5
     is_deterministic: bool = True
+    is_orchestration_only: bool = True
+    is_canonical: bool = False
+    is_quarantined_demo: bool = True
 
 
-class BridgeOfficerEngine:
-    """Deterministic Daily Bridge Briefing generator by Bridge Officer Tim (BOT)."""
+class LegacyBridgeBriefingDemo:
+    """[QUARANTINED LEGACY DEMO / HYPOTHESIS TOOL]
+
+    Deterministic Daily Bridge Briefing demo generator.
+    Emits sample passenger-facing scenario texts for UI prototyping and test fixtures.
+    NON-CANONICAL: Not part of canonical truth path or release pipeline.
+    """
+
+    @classmethod
+    def is_quarantined_demo_only(cls) -> bool:
+        """Explicit flag proving this generator is non-canonical demo/hypothesis only."""
+        return True
 
     @classmethod
     def generate_briefing(
@@ -223,3 +270,7 @@ class BridgeOfficerEngine:
                 ],
                 maritime_insight="Eine gute Reise endet nicht mit dem Verlassen des Schiffs. Sie endet erst, wenn Sie erholt und ohne Hektik wieder an Ihrer Haustür ankommen.",
             )
+
+
+# Historical alias points to canonical orchestration-only BridgeOfficer (NO briefing generation)
+BridgeOfficerEngine = BridgeOfficer
