@@ -14,9 +14,11 @@ import json
 import glob
 import pytest
 
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def test_rule_registry_provenance():
     """Verify that all rules registered in the platform have full evidence provenance."""
-    rule_registry_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\explainability\RuleRegistry.ts"
+    rule_registry_file = os.path.join(REPO_ROOT, "frontend", "src", "explainability", "RuleRegistry.ts")
     assert os.path.exists(rule_registry_file), f"RuleRegistry file missing at {rule_registry_file}"
     
     with open(rule_registry_file, "r", encoding="utf-8") as f:
@@ -31,9 +33,9 @@ def test_rule_registry_provenance():
 
 def test_explainability_engine_structure():
     """Verify that ExplainabilityEngine, ReasonTree, and EvidenceResolver are implemented."""
-    engine_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\explainability\ExplainabilityEngine.ts"
-    resolver_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\explainability\EvidenceResolver.ts"
-    reason_tree_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\explainability\ReasonTree.ts"
+    engine_file = os.path.join(REPO_ROOT, "frontend", "src", "explainability", "ExplainabilityEngine.ts")
+    resolver_file = os.path.join(REPO_ROOT, "frontend", "src", "explainability", "EvidenceResolver.ts")
+    reason_tree_file = os.path.join(REPO_ROOT, "frontend", "src", "explainability", "ReasonTree.ts")
     
     assert os.path.exists(engine_file)
     assert os.path.exists(resolver_file)
@@ -48,7 +50,7 @@ def test_explainability_engine_structure():
 
 def test_geometry_files_present_and_referenced():
     """Verify that all geometry files referenced by rules exist in geometry/."""
-    geom_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\geometry"
+    geom_dir = os.path.join(REPO_ROOT, "geometry")
     geom_files = glob.glob(os.path.join(geom_dir, "deck*.geometry.json"))
     assert len(geom_files) == 15, f"Expected 15 geometry files, found {len(geom_files)}"
     
@@ -62,7 +64,7 @@ def test_geometry_files_present_and_referenced():
 
 def test_no_hardcoded_or_orphan_scores():
     """Verify that ExplainabilityCard imports and uses deterministic ReasonTree."""
-    card_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\explainability\ExplainabilityCard.tsx"
+    card_file = os.path.join(REPO_ROOT, "frontend", "src", "explainability", "ExplainabilityCard.tsx")
     with open(card_file, "r", encoding="utf-8") as f:
         card_src = f.read()
         

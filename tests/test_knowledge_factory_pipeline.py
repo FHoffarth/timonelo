@@ -14,9 +14,11 @@ import glob
 import json
 import pytest
 
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def test_pipeline_files_exist():
     """Verify all pipeline TypeScript modules exist."""
-    pipeline_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\knowledge\pipeline"
+    pipeline_dir = os.path.join(REPO_ROOT, "frontend", "src", "knowledge", "pipeline")
     assert os.path.exists(os.path.join(pipeline_dir, "ArtifactQueue.ts"))
     assert os.path.exists(os.path.join(pipeline_dir, "KnowledgeDiff.ts"))
     assert os.path.exists(os.path.join(pipeline_dir, "ConflictResolver.ts"))
@@ -26,7 +28,7 @@ def test_pipeline_files_exist():
 
 def test_conflict_resolver_specifications():
     """Verify ConflictResolver enforces required citation fields."""
-    conflict_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\knowledge\pipeline\ConflictResolver.ts"
+    conflict_file = os.path.join(REPO_ROOT, "frontend", "src", "knowledge", "pipeline", "ConflictResolver.ts")
     with open(conflict_file, "r", encoding="utf-8") as f:
         content = f.read()
         
@@ -41,7 +43,7 @@ def test_conflict_resolver_specifications():
 
 def test_knowledge_publisher_four_gates():
     """Verify KnowledgePublisher validates Schema, Graph, Geometry, and Integrity."""
-    publisher_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\knowledge\pipeline\KnowledgePublisher.ts"
+    publisher_file = os.path.join(REPO_ROOT, "frontend", "src", "knowledge", "pipeline", "KnowledgePublisher.ts")
     with open(publisher_file, "r", encoding="utf-8") as f:
         content = f.read()
         
@@ -52,7 +54,7 @@ def test_knowledge_publisher_four_gates():
 
 def test_knowledge_dashboard_mounted():
     """Verify KnowledgeDashboardPage is accessible in App.tsx."""
-    app_file = r"C:\Users\Flo\Desktop\energyradar\timonelo\frontend\src\App.tsx"
+    app_file = os.path.join(REPO_ROOT, "frontend", "src", "App.tsx")
     with open(app_file, "r", encoding="utf-8") as f:
         content = f.read()
         
