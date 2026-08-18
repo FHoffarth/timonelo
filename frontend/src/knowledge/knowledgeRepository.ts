@@ -14,6 +14,7 @@ import bellissimaSports from '../../../knowledge/ships/msc-bellissima/sports.jso
 import bellissimaEntertainment from '../../../knowledge/ships/msc-bellissima/entertainment.json';
 import bellissimaMuster from '../../../knowledge/ships/msc-bellissima/muster.json';
 import bellissimaCabins from '../../../knowledge/ships/msc-bellissima/cabins.json';
+import bellissimaNegativeIntelligence from '../../../knowledge/ships/msc-bellissima/negative_intelligence.json';
 
 import bcnPort from '../../../knowledge/ports/barcelona/port.json';
 import bcnTransport from '../../../knowledge/ports/barcelona/transport.json';
@@ -125,6 +126,7 @@ export class FrontendKnowledgeRepository {
       entertainment: bellissimaEntertainment,
       muster: bellissimaMuster,
       cabins: bellissimaCabins,
+      negative_intelligence: bellissimaNegativeIntelligence,
     }
   };
 
@@ -220,6 +222,11 @@ export class FrontendKnowledgeRepository {
   public getKids(shipId: string): any[] {
     const vessel = this.ships[shipId];
     return vessel ? vessel.kids.kids_areas : [];
+  }
+
+  public getNegativeIntelligence(shipId: string): any[] {
+    const vessel = this.ships[shipId];
+    return vessel ? vessel.negative_intelligence : [];
   }
 
   public getPort(portId: string): any {
