@@ -1,6 +1,6 @@
-import React from "react";
-import { CabinData, VenueData } from "../types";
-import { Compass, Gauge, ShieldCheck, Sparkles, Layers, Activity } from "lucide-react";
+import { knowledgeRepository } from "../../knowledge";
+
+const bellissima = knowledgeRepository.getShip("msc-bellissima");
 
 interface BottomStatusBarProps {
   activeDeck: number;
@@ -17,8 +17,8 @@ export default function BottomStatusBar({
   selectedVenue,
   onOpenEpistemology,
 }: BottomStatusBarProps) {
-  const xMetric = selectedCabin ? (selectedCabin.x * 315.83).toFixed(1) : "157.9";
-  const yMetric = selectedCabin ? (selectedCabin.y * 43.0).toFixed(1) : "0.0";
+  const xMetric = selectedCabin ? (selectedCabin.x * bellissima.technical_specifications.dimensions.length_meters).toFixed(1) : "157.9";
+  const yMetric = selectedCabin ? (selectedCabin.y * bellissima.technical_specifications.dimensions.beam_meters).toFixed(1) : "0.0";
   const zMetric = selectedCabin ? selectedCabin.elevation_m.toFixed(1) : "25.0";
 
   return (
@@ -28,9 +28,9 @@ export default function BottomStatusBar({
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="font-bold text-white tracking-wide uppercase text-[11px]">
-            MSC BELLISSIMA
+            {bellissima.vessel_name}
           </span>
-          <span className="text-slate-500 font-mono">IMO 9760524</span>
+          <span className="text-slate-500 font-mono">IMO {bellissima.technical_specifications.imo_number}</span>
         </div>
 
         <div className="h-4 w-px bg-white/10" />

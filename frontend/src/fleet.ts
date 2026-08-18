@@ -28,6 +28,11 @@ export interface FleetVessel {
 // Load canonical Bellissima specs from KnowledgeRepository
 const bellissimaKnowledge = knowledgeRepository.getShip('msc-bellissima');
 const bellissimaCabins = knowledgeRepository.getCabins('msc-bellissima');
+const bellissimaPublic = knowledgeRepository.getPublicAreas('msc-bellissima');
+const bellissimaEnt = knowledgeRepository.getEntertainment('msc-bellissima');
+
+const galleriaArea = bellissimaPublic.find((p) => p.id === 'PUB-GALLERIA-BELLISSIMA');
+const mainTheatre = bellissimaEnt.find((e) => e.id === 'ENT-LONDON-THEATRE');
 
 export const FLEET_REGISTRY: FleetVessel[] = [
   {
@@ -38,24 +43,24 @@ export const FLEET_REGISTRY: FleetVessel[] = [
     vesselType: 'Ocean Cruise',
     shipClass: bellissimaKnowledge.technical_specifications.class,
     roleTitle: 'Active Reference Model',
-    tagline: 'High-tech Mediterranean & East Asian ocean flagship with 96-meter LED promenade.',
-    subtitle: `MSC Cruises · ${bellissimaKnowledge.technical_specifications.class} · Delivery 2019`,
+    tagline: galleriaArea ? `${galleriaArea.name} with ${galleriaArea.description}` : 'High-tech flagship with LED promenade.',
+    subtitle: `MSC Cruises · ${bellissimaKnowledge.technical_specifications.class} · Delivery ${bellissimaKnowledge.technical_specifications.key_milestones.maiden_voyage ? parseInt(bellissimaKnowledge.technical_specifications.key_milestones.maiden_voyage) : 2019}`,
     heroImageUrl: '/media/msc-bellissima-hero.webp',
     lengthM: bellissimaKnowledge.technical_specifications.dimensions.length_meters,
     beamM: bellissimaKnowledge.technical_specifications.dimensions.beam_meters,
     totalDecks: bellissimaKnowledge.technical_specifications.capacities.total_decks,
     cabinCount: bellissimaCabins ? bellissimaCabins.summary.total_staterooms : bellissimaKnowledge.technical_specifications.capacities.total_cabins_max,
     passengerCapacity: bellissimaKnowledge.technical_specifications.capacities.passenger_capacity_max_occupancy,
-    buildYear: 2019,
+    buildYear: bellissimaKnowledge.technical_specifications.key_milestones.maiden_voyage ? parseInt(bellissimaKnowledge.technical_specifications.key_milestones.maiden_voyage) : 2019,
     builder: bellissimaKnowledge.technical_specifications.builder,
     region: 'Mediterranean & East Asia',
     defaultCabin: '14122',
     statusLabel: 'Active Reference Model',
-    description: 'MSC Bellissima is a Meraviglia-class flagship engineered for seamless flow, with dedicated acoustic zoning between quiet stateroom decks and vibrant entertainment galleries.',
+    description: `${bellissimaKnowledge.vessel_name} is a ${bellissimaKnowledge.technical_specifications.class} flagship built by ${bellissimaKnowledge.technical_specifications.builder}.`,
     highlights: [
       'Deck 14 Stateroom 14122 direct elevator & gangway mapping',
-      'Galleria Bellissima 96m LED dome promenade',
-      'London Theatre Deck 6 forward with level access routes',
+      galleriaArea ? `${galleriaArea.name} 96m LED dome promenade` : 'Galleria 96m LED dome promenade',
+      mainTheatre ? `${mainTheatre.name} main stage with level access routes` : 'London Theatre Deck 6 forward',
       'Muster Station direct evacuation path calculus'
     ]
   },

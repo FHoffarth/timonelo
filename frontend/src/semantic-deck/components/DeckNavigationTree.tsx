@@ -19,6 +19,8 @@ interface DeckNavigationTreeProps {
   onOpenEvidenceExplorer?: () => void;
 }
 
+import { knowledgeRepository } from "../../knowledge";
+
 export default function DeckNavigationTree({
   currentVessel,
   activeDeckLevel,
@@ -29,8 +31,9 @@ export default function DeckNavigationTree({
   const { theme } = useTheme();
   const isNight = theme === "night";
 
+  const bellissima = knowledgeRepository.getShip("msc-bellissima");
   const registeredVessels = [
-    { id: "msc-bellissima", name: "MSC Bellissima", class: "Meraviglia Class", operator: "MSC Cruises" },
+    { id: bellissima.vessel_id, name: bellissima.vessel_name, class: bellissima.technical_specifications.class, operator: "MSC Cruises" },
     { id: "ms-andorinha", name: "MS Andorinha", class: "Douro River Class", operator: "Tauck River" },
   ];
 

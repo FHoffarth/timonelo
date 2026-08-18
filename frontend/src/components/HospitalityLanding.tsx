@@ -180,8 +180,8 @@ export const HospitalityLanding: React.FC<HospitalityLandingProps> = ({ onSelect
           </h2>
           <p className="mt-2 text-muted text-[15px] max-w-2xl">
             {isGerman
-              ? 'Eine echte Kabinen-Übersicht — Beispiel: Kabine 14122 auf der MSC Bellissima.'
-              : 'A real cabin briefing — example: Cabin 14122 on MSC Bellissima.'}
+              ? `Eine echte Kabinen-Übersicht — Beispiel: Kabine 14122 auf der ${bellissimaShip.vessel_name}.`
+              : `A real cabin briefing — example: Cabin 14122 on ${bellissimaShip.vessel_name}.`}
           </p>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/8 border border-ink/8 rounded-xs overflow-hidden">
             {[

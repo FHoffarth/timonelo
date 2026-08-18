@@ -2,6 +2,8 @@ import React from "react";
 import { VesselKnowledgeGraph } from "../types";
 import { Ship, ChevronDown } from "lucide-react";
 
+import { knowledgeRepository } from "../../knowledge";
+
 interface DeckNavigationStackProps {
   currentVessel: VesselKnowledgeGraph;
   activeDeckLevel: number;
@@ -15,8 +17,9 @@ export default function DeckNavigationStack({
   onSelectVessel,
   onSelectDeck,
 }: DeckNavigationStackProps) {
+  const bellissima = knowledgeRepository.getShip("msc-bellissima");
   const registeredVessels = [
-    { id: "msc-bellissima", name: "MSC Bellissima", class: "Meraviglia Class" },
+    { id: bellissima.vessel_id, name: bellissima.vessel_name, class: bellissima.technical_specifications.class },
     { id: "ms-andorinha", name: "MS Andorinha", class: "Douro River Custom Class" },
   ];
 

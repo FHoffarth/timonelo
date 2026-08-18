@@ -81,11 +81,12 @@ export function UniversalSearchModal({
     });
 
     // 3. Cabins (e.g. numeric search)
+    const bellissimaShipName = knowledgeRepository.getShip('msc-bellissima').vessel_name;
     if (/^[0-9]+$/.test(q)) {
       results.push({
         id: `cabin:bellissima:${q}`,
         type: 'cabin',
-        title: `Cabin ${q} (MSC Bellissima)`,
+        title: `Cabin ${q} (${bellissimaShipName})`,
         subtitle: 'Open the stateroom geometry and orientation dossier',
         badge: 'Stateroom',
         action: () => {

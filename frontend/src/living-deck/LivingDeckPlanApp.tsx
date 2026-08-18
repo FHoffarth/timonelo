@@ -5,6 +5,7 @@ import LivingRightInspector from "./components/LivingRightInspector";
 import LivingSearchBar from "./components/LivingSearchBar";
 import LivingEvidenceModal from "./components/LivingEvidenceModal";
 import LivingBottomBar from "./components/LivingBottomBar";
+import { knowledgeRepository } from "../knowledge";
 import { LivingCabin, LivingViewMode } from "./types";
 import {
   getLivingCabin,
@@ -74,7 +75,7 @@ export default function LivingDeckPlanApp() {
                 Official PDF Alive
               </span>
             </h1>
-            <p className="text-xs text-slate-400">MSC Bellissima • Verified Topology</p>
+            <p className="text-xs text-slate-400">{knowledgeRepository.getShip("msc-bellissima").vessel_name} • Verified Topology</p>
           </div>
         </div>
 

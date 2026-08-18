@@ -1,4 +1,7 @@
 import type { Translations } from '../types';
+import { knowledgeRepository } from '../../knowledge';
+
+const bellissima = knowledgeRepository.getShip('msc-bellissima');
 
 export const en: Translations = {
   common: {
@@ -88,11 +91,11 @@ export const en: Translations = {
     badge: 'Reference Vessels',
     title: 'Two different worlds on the water.',
     subtitle: 'From a 5,600-guest Mediterranean flagship to an intimate 84-guest luxury river vessel on the Douro.',
-    tabOcean: 'Ocean Flagship · MSC Bellissima',
+    tabOcean: `Ocean Flagship · ${bellissima.vessel_name}`,
     tabRiver: 'Luxury Riverboat · MS Andorinha',
-    bellissimaTitle: 'MSC Bellissima · Grand Voyage East Asia',
-    bellissimaSubtitle: 'Meraviglia-Class · 5,686 Passengers · IMO 9766205',
-    bellissimaDesc: 'Explore Deck 14 Balcony Stateroom 14122. Real walking distances to central elevators, acoustics under residential decks, and step-free gangway paths.',
+    bellissimaTitle: `${bellissima.vessel_name} · Reference Model`,
+    bellissimaSubtitle: `${bellissima.technical_specifications.class} · ${bellissima.technical_specifications.capacities.passenger_capacity_max_occupancy} Passengers · IMO ${bellissima.technical_specifications.imo_number}`,
+    bellissimaDesc: `Explore verified stateroom geometry, acoustic buffer zones, and step-free gangway paths on ${bellissima.vessel_name}.`,
     bellissimaMuster: 'Station F (London Theatre)',
     bellissimaStatus: 'Active Reference Model',
     andorinhaTitle: 'MS Andorinha · Douro River Harmony',

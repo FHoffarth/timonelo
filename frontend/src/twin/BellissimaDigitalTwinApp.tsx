@@ -11,6 +11,10 @@ import BottomStatusBar from "./components/BottomStatusBar";
 import { CabinData, VenueData, ViewMode, ActiveLayers, RouteResult } from "./types";
 import { getCabin, DECKS_MAP, calculateRoute, SearchResultItem } from "./twinEngine";
 
+import { knowledgeRepository } from "../knowledge";
+
+const bellissima = knowledgeRepository.getShip("msc-bellissima");
+
 export default function BellissimaDigitalTwinApp() {
   const [viewMode, setViewMode] = useState<ViewMode>("deck_topdown");
   const [activeDeck, setActiveDeck] = useState<number>(14); // Default to Deck 14 (World Class)
@@ -109,7 +113,7 @@ export default function BellissimaDigitalTwinApp() {
           </div>
           <div>
             <h1 className="text-base font-bold text-white tracking-tight leading-tight flex items-center gap-2">
-              MSC Bellissima
+              {bellissima.vessel_name}
               <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase bg-sky-500/20 text-sky-300 border border-sky-400/30">
                 Digital Twin
               </span>

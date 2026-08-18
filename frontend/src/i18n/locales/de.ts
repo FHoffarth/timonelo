@@ -1,4 +1,7 @@
 import type { Translations } from '../types';
+import { knowledgeRepository } from '../../knowledge';
+
+const bellissima = knowledgeRepository.getShip('msc-bellissima');
 
 export const de: Translations = {
   common: {
@@ -88,11 +91,11 @@ export const de: Translations = {
     badge: 'Referenzschiffe',
     title: 'Zwei Welten auf dem Wasser.',
     subtitle: 'Vom 5.600-Gäste-Flaggschiff des Mittelmeers bis zum intimen 84-Gäste-Luxus-Flussschiff auf dem Douro.',
-    tabOcean: 'Hochsee-Flaggschiff · MSC Bellissima',
+    tabOcean: `Hochsee-Flaggschiff · ${bellissima.vessel_name}`,
     tabRiver: 'Boutique-Flussschiff · MS Andorinha',
-    bellissimaTitle: 'MSC Bellissima · Große Ostasienreise',
-    bellissimaSubtitle: 'Meraviglia-Klasse · 5.686 Passagiere · IMO 9766205',
-    bellissimaDesc: 'Erkunden Sie Balkonkabine 14122 auf Deck 14. Echte Gehdistanzen zu den Aufzügen, Akustik unter reinen Wohnkabinen und stufenlose Gangway-Wege.',
+    bellissimaTitle: `${bellissima.vessel_name} · Referenzmodell`,
+    bellissimaSubtitle: `${bellissima.technical_specifications.class} · ${bellissima.technical_specifications.capacities.passenger_capacity_max_occupancy} Passagiere · IMO ${bellissima.technical_specifications.imo_number}`,
+    bellissimaDesc: `Erkunden Sie stufenlose Gangway-Wege und verifizierte Kabinengeometrie auf der ${bellissima.vessel_name}.`,
     bellissimaMuster: 'Station F (London Theatre)',
     bellissimaStatus: 'Aktives Referenzmodell',
     andorinhaTitle: 'MS Andorinha · Douro-Flussreise',

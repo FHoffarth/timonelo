@@ -1,6 +1,6 @@
-import React from "react";
-import { LivingCabin } from "../types";
-import { ShieldCheck, Activity, Compass } from "lucide-react";
+import { knowledgeRepository } from "../../knowledge";
+
+const bellissimaName = knowledgeRepository.getShip("msc-bellissima").vessel_name;
 
 interface LivingBottomBarProps {
   activeDeck: number;
@@ -23,7 +23,7 @@ export default function LivingBottomBar({
           <span className="font-bold text-white tracking-wide uppercase text-[11px]">
             LIVING DECK PLAN
           </span>
-          <span className="text-slate-500 font-mono">MSC Bellissima</span>
+          <span className="text-slate-500 font-mono">{bellissimaName}</span>
         </div>
 
         <div className="h-4 w-px bg-white/10" />

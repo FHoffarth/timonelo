@@ -1,4 +1,7 @@
 import { PORTS_REGISTRY as RAW_PORTS } from './generated/ports';
+import { knowledgeRepository } from './knowledge';
+
+const bellissima = knowledgeRepository.getShip('msc-bellissima');
 
 export interface CuratedPort {
   slug: string;
@@ -225,22 +228,22 @@ export const PORTS_REGISTRY: CuratedPort[] = [
   const customCallingShips: Record<string, { slug: string; name: string }[]> = {
     porto: [{ slug: 'ms-andorinha', name: 'MS Andorinha' }],
     genoa: [
-      { slug: 'msc-bellissima', name: 'MSC Bellissima' },
+      { slug: bellissima.vessel_id, name: bellissima.vessel_name },
       { slug: 'msc-grandiosa', name: 'MSC Grandiosa' },
     ],
-    yokohama: [{ slug: 'msc-bellissima', name: 'MSC Bellissima' }],
-    shanghai: [{ slug: 'msc-bellissima', name: 'MSC Bellissima' }],
+    yokohama: [{ slug: bellissima.vessel_id, name: bellissima.vessel_name }],
+    shanghai: [{ slug: bellissima.vessel_id, name: bellissima.vessel_name }],
     barcelona: [
-      { slug: 'msc-bellissima', name: 'MSC Bellissima' },
+      { slug: bellissima.vessel_id, name: bellissima.vessel_name },
       { slug: 'msc-grandiosa', name: 'MSC Grandiosa' },
     ],
     naples: [
-      { slug: 'msc-bellissima', name: 'MSC Bellissima' },
+      { slug: bellissima.vessel_id, name: bellissima.vessel_name },
       { slug: 'msc-meraviglia', name: 'MSC Meraviglia' },
     ],
   };
   const callingShips = customCallingShips[slug] || [
-    { slug: 'msc-bellissima', name: 'MSC Bellissima' }
+    { slug: bellissima.vessel_id, name: bellissima.vessel_name }
   ];
   const raw = RAW_PORTS.find((p) => p.slug === slug);
 
