@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "cruise_line_id": "msc",
+      "document_type": "DECK_PLAN",
+      "edition": null,
+      "file_size_bytes": 1969779,
+      "final_url": "file:///C:/Users/Flo/Desktop/energyradar/timonelo/tests/fixtures/MSC_MERAVIGLIA_DECKPLAN_GER.pdf",
+      "language": "de",
+      "mime_type": "application/pdf",
+      "page_count": 6,
+      "publisher": "MSC Cruises",
+      "retrieval_history": [
+        "2026-08-18T19:56:34.815135+00:00",
+        "2026-08-18T19:56:38.234396+00:00",
+        "2026-08-18T19:57:34.758092+00:00"
+      ],
+      "retrieved_at": "2026-08-18T19:56:34.815135+00:00",
+      "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "source_id": "SRC-MSC-MERAVIGLIA-77F5A51B",
+      "source_tier": "TIER_A",
+      "source_url": "file:///C:/Users/Flo/Desktop/energyradar/timonelo/tests/fixtures/MSC_MERAVIGLIA_DECKPLAN_GER.pdf",
+      "title": "MSC Meraviglia Deckpläne",
+      "vault_path": "evidence/raw/sha256/77/77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf",
+      "verification_status": "VERIFIED_OFFICIAL_SOURCE",
+      "vessel_id": "msc-meraviglia"
+    }
+  ],
+  "version": "1.0.0",
+  "versions": [
+    {
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "document_family": "msc-meraviglia-deck-plan",
+      "edition": null,
+      "retrieved_at": "2026-08-18T19:56:34.815135+00:00",
+      "status": "CURRENT_CANDIDATE",
+      "vessel_id": "msc-meraviglia"
+    }
+  ]
+}
