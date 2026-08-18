@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SemanticEntity } from "../types";
 import { getClassificationColorToken, getEpistemicPatternToken } from "../apiClient";
 import { CabinIntelligenceEngine } from "../../intelligence/CabinIntelligenceEngine";
+import ExplainabilityCard from "../../explainability/ExplainabilityCard";
 import {
   X,
   ShieldCheck,
@@ -24,6 +25,7 @@ import {
   Info,
   ChevronDown,
   ChevronUp,
+  Workflow,
 } from "lucide-react";
 
 interface SemanticObjectInspectorProps {
@@ -40,6 +42,7 @@ export default function SemanticObjectInspector({
   onOpenStandardsInspector,
 }: SemanticObjectInspectorProps) {
   const [expandedScoreKey, setExpandedScoreKey] = useState<string | null>("quiet");
+  const [showFullExplainability, setShowFullExplainability] = useState<boolean>(false);
 
   if (!entity) return null;
 
@@ -101,7 +104,13 @@ export default function SemanticObjectInspector({
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
                 Cabin Intelligence v1
               </span>
-              <span className="text-[10px] text-emerald-400 font-mono">Deterministic</span>
+              <button
+                onClick={() => setShowFullExplainability(!showFullExplainability)}
+                className="px-2 py-0.5 rounded-md bg-gold/20 hover:bg-gold/30 text-gold border border-gold/40 text-[10px] font-mono font-bold flex items-center gap-1 transition-all cursor-pointer"
+              >
+                <Workflow className="w-3 h-3" />
+                <span>{showFullExplainability ? "Hide Why? ▲" : "Why? (Evidence Trace) ▼"}</span>
+              </button>
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-xs">
@@ -147,6 +156,18 @@ export default function SemanticObjectInspector({
                 {cabinIntel.all_reasoning.map((r, i) => (
                   <p key={i} className="leading-snug text-[10px]">• {r}</p>
                 ))}
+              </div>
+            )}
+
+            {/* In-place Explainability Card on "Why?" click */}
+            {showFullExplainability && (
+              <div className="pt-2">
+                <ExplainabilityCard
+                  entity={entity}
+                  vesselId="msc-bellissima"
+                  defaultCategory={expandedScoreKey || "quiet"}
+                  className="!p-4 !rounded-2xl border-gold/40"
+                />
               </div>
             )}
           </div>

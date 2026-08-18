@@ -5,6 +5,7 @@ import { knowledgeRepository } from "../../knowledge";
 import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
 import { SemanticEntity } from "../../semantic-deck/types";
 import CabinIntelligenceCard from "../../intelligence/CabinIntelligenceCard";
+import ExplainabilityCard from "../../explainability/ExplainabilityCard";
 import { ArrowLeft, MapPin } from "lucide-react";
 
 interface CabinDeepDivePageProps {
@@ -118,12 +119,17 @@ export default function CabinDeepDivePage({
         </div>
       </div>
 
-      {/* 3. Cabin Intelligence Engine v1 Section */}
-      <div className="max-w-7xl mx-auto w-full px-6 pb-12">
+      {/* 3. Cabin Intelligence Summary Card */}
+      <div className="max-w-7xl mx-auto w-full px-6 pb-8">
         <CabinIntelligenceCard entity={stateroomEntity} vesselId="msc-bellissima" />
       </div>
 
-      {/* 4. Spatial Geometry & Quick Facts Layout */}
+      {/* 4. Explainability Engine Trace Card (Evidence -> Rule -> Score) */}
+      <div className="max-w-7xl mx-auto w-full px-6 pb-12">
+        <ExplainabilityCard entity={stateroomEntity} vesselId="msc-bellissima" />
+      </div>
+
+      {/* 5. Spatial Geometry & Quick Facts Layout */}
       <div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left 2 Cols: Stateroom Amenities & Stack Elevation */}
         <div className="lg:col-span-2 space-y-8">
