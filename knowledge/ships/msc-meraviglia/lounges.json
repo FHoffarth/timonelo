@@ -1,66 +1,52 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "confidence": 1.0,
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
   "lounges": [
+    {
+      "id": "LNG-INFINITY-ATRIUM",
+      "name": "Infinity Atrium",
+      "deck": 5,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck5",
+      "confidence": 1.0
+    },
     {
       "id": "LNG-CAROUSEL",
       "name": "Carousel Lounge",
       "deck": 7,
-      "category": "ENTERTAINMENT_LOUNGE",
-      "description": "Custom-designed 360-degree aft performance lounge offering panoramic 20m high glass walls and acrobatic theatre.",
-      "metrics": {
-        "capacity": 413
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-CAROUSEL",
-      "confidence": 1.0,
-      "tags": [
-        "theatre",
-        "cirque",
-        "cocktails",
-        "panoramic"
-      ]
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck7",
+      "confidence": 1.0
     },
     {
       "id": "LNG-TOP-SAIL",
       "name": "Top Sail Lounge",
-      "deck": 15,
-      "category": "YACHT_CLUB_EXCLUSIVE",
-      "description": "Prestigious forward-facing panoramic lounge offering complimentary gourmet canapés and premium drinks for Yacht Club guests.",
-      "metrics": {
-        "capacity": 160
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-TOPSAIL",
-      "confidence": 1.0,
-      "tags": [
-        "exclusive",
-        "yacht-club",
-        "panoramic",
-        "bow-view"
-      ]
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
     },
     {
-      "id": "LNG-INFINITY-ATRIUM",
-      "name": "Infinity Atrium Lounge",
-      "deck": 5,
-      "category": "ATRIUM_LOUNGE",
-      "description": "Central three-storey atrium lounge surrounded by sparkling Swarovski crystal staircases.",
-      "metrics": {
-        "capacity": 120
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-ATRIUM",
-      "confidence": 1.0,
-      "tags": [
-        "atrium",
-        "swarovski",
-        "piano-bar",
-        "coffee"
-      ]
+      "id": "LNG-SKY",
+      "name": "Sky Lounge",
+      "deck": 18,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck18",
+      "confidence": 1.0
+    },
+    {
+      "id": "LNG-ATTIC-CLUB",
+      "name": "Attic Club",
+      "deck": 18,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck18",
+      "confidence": 1.0
     }
   ]
 }

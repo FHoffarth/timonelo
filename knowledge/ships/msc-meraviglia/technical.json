@@ -2,63 +2,28 @@
   "vessel_id": "msc-meraviglia",
   "vessel_name": "MSC Meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "verification_authority": "Chantiers de l'Atlantique & MSC Cruises S.A.",
-    "sha256": "9a71b283c4e512d109f8721a34bc0981e271409283741029c782109283741029",
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0,
-    "last_audited": "2026-08-18"
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
   "technical_specifications": {
-    "class": "Meraviglia-class (Vista Project Lead Ship)",
-    "sister_ships": [
-      "MSC Bellissima"
-    ],
+    "class": "Meraviglia-class",
     "imo_number": 9760512,
-    "mmsi": 249774000,
-    "call_sign": "9HA4431",
-    "builder": "Chantiers de l'Atlantique (STX France, Saint-Nazaire)",
-    "cost_to_build": {
-      "usd": 950000000,
-      "eur": 700000000
-    },
-    "key_milestones": {
-      "steel_cutting": "2014-03-20",
-      "launch_date": "2016-09-02",
-      "maiden_voyage": "2017-06-04"
-    },
-    "port_of_registry": "Valletta, Malta",
-    "flag_state": "Malta",
+    "builder": "Chantiers de l'Atlantique (STX France)",
     "tonnage_gt": 171598,
     "dimensions": {
       "length_meters": 315.83,
-      "length_feet": 1036,
-      "beam_meters": 43.0,
-      "beam_feet": 141.0,
-      "draft_meters": 8.75,
-      "draft_feet_inches": "28 ft 8 in"
-    },
-    "propulsion_and_power": {
-      "propulsion_type": "2 × ABB Azipod propulsion units",
-      "installed_power_kw": 38400,
-      "installed_power_hp": 51500,
-      "cruising_speed_knots": 21.8,
-      "max_speed_knots": 22.7
+      "beam_meters": 43.0
     },
     "capacities": {
       "total_decks": 18,
       "passenger_accessible_decks": 15,
-      "passenger_capacity_double_occupancy": 4488,
       "passenger_capacity_max_occupancy": 5714,
-      "crew_capacity_min": 1536,
-      "crew_capacity_max": 1595,
-      "total_cabins_min": 2244,
-      "total_cabins_max": 2244,
-      "balcony_cabin_percentage": 75
-    },
-    "connectivity_and_smart_systems": {
-      "satellite_network": "Starlink High-Speed Maritime Internet",
-      "iot_wearables": "Near Field Communication (NFC) smart wristbands",
-      "digital_platform": "MSC for Me digital platform with Zoe virtual assistant"
+      "total_cabins_max": 2214
     }
-  }
+  },
+  "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION",
+  "valid_as_of": "2025-11"
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { TimoneloSpatialApiClient } from "./apiClient";
-import { SemanticLevel, SemanticEntity } from "./types";
+import { SemanticEntity } from "./types";
 import { ThemeProvider, useTheme } from "./themeContext";
 import DeckNavigationTree from "./components/DeckNavigationTree";
 import SpatialGrammarCanvas from "./components/SpatialGrammarCanvas";
@@ -9,13 +9,7 @@ import EpistemicLegendBar from "./components/EpistemicLegendBar";
 import SemanticSearchBar from "./components/SemanticSearchBar";
 import StandardsInspectorModal from "./components/StandardsInspectorModal";
 import {
-  Compass,
-  Sparkles,
-  ShieldCheck,
-  Code2,
-  Layers,
   History,
-  AlertTriangle,
   Workflow,
   Sun,
   Moon,
@@ -75,9 +69,11 @@ function LivingDeckInner() {
     setActiveLevelIndex(levelIndex);
   };
 
-  const handleSelectEntity = (entity: SemanticEntity) => {
+  const handleSelectEntity = (entity: SemanticEntity | null) => {
     setSelectedEntity(entity);
-    setActiveLevelIndex(entity.level);
+    if (entity) {
+      setActiveLevelIndex(entity.level);
+    }
   };
 
   const handleSelectEntityId = (id: string) => {

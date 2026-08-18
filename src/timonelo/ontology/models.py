@@ -81,6 +81,15 @@ class ReviewState(str, Enum):
     CONFLICTED = "CONFLICTED"
 
 
+class GeometryProvenance(str, Enum):
+    """Canonical spatial geometry provenance."""
+    DIRECT_SOURCE_GEOMETRY = "DIRECT_SOURCE_GEOMETRY"
+    TRANSFORMED_SOURCE_GEOMETRY = "TRANSFORMED_SOURCE_GEOMETRY"
+    DERIVED_GEOMETRY = "DERIVED_GEOMETRY"
+    SYNTHETIC_GEOMETRY = "SYNTHETIC_GEOMETRY"
+    UNKNOWN_PROVENANCE = "UNKNOWN_PROVENANCE"
+
+
 @dataclass(frozen=True)
 class EvidenceLink:
     """Reference to the observation event that produced a value.

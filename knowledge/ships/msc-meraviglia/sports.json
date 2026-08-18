@@ -1,73 +1,85 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "confidence": 1.0,
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
-  "sports_and_recreation": [
-    {
-      "id": "SPT-SPORTPLEX",
-      "name": "Sportplex Arena",
-      "deck": 16,
-      "category": "INDOOR_MULTI_SPORT_ARENA",
-      "description": "Massive indoor multi-sport arena hosting basketball, tennis, soccer, and volleyball.",
-      "source": "MSC Meraviglia Activities Guide",
-      "provenance": "MSC-MER-SPT-SPORTPLEX",
-      "confidence": 1.0,
-      "tags": [
-        "sportplex",
-        "basketball",
-        "tennis",
-        "volleyball",
-        "soccer"
-      ]
+  "sports": {
+    "sportplex": {
+      "name": "Sportplex",
+      "deck": [
+        16,
+        18
+      ],
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16-18",
+      "confidence": 1.0
     },
-    {
-      "id": "SPT-HIMALAYAN-BRIDGE",
-      "name": "Himalayan Suspension Bridge",
-      "deck": 19,
-      "category": "OUTDOOR_ROPES_COURSE",
-      "description": "Outdoor suspension ropes adventure course suspended 80 meters above sea level.",
-      "source": "MSC Meraviglia Technical Blueprint",
-      "provenance": "MSC-MER-SPT-HIMALAYAN",
-      "confidence": 1.0,
-      "tags": [
-        "ropes-course",
-        "himalayan-bridge",
-        "thrill",
-        "adventure"
-      ]
-    },
-    {
-      "id": "SPT-WALKING-TRACK",
-      "name": "Power Walking & Jogging Track",
-      "deck": 16,
-      "category": "OUTDOOR_TRACK",
-      "description": "Outdoor walking and jogging loop wrapping around the upper deck perimeter.",
-      "source": "MSC Meraviglia GA Deck 16",
-      "provenance": "MSC-MER-SPT-TRACK",
-      "confidence": 1.0,
-      "tags": [
-        "jogging",
-        "walking-track",
-        "fitness"
-      ]
-    },
-    {
-      "id": "SPT-GYM",
+    "gym": {
       "name": "MSC Gym by Technogym",
       "deck": 16,
-      "category": "FITNESS_CENTER",
-      "description": "Panoramic fitness center featuring Technogym cardiovascular and strength-training equipment.",
-      "source": "MSC Meraviglia Fitness Catalog",
-      "provenance": "MSC-MER-SPT-GYM",
-      "confidence": 1.0,
-      "tags": [
-        "gym",
-        "technogym",
-        "fitness",
-        "cardio"
-      ]
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "track": {
+      "name": "Power Walking Track",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "bowling": {
+      "name": "Bowling",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "flight_sim": {
+      "name": "Flight Simulator",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "formula_racer": {
+      "name": "MSC Formula Racer",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "interactive_xd_cinema": {
+      "name": "Interactive XD Cinema",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "tv_games": {
+      "name": "TV Games",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "virtual_arcade": {
+      "name": "Virtual Games Arcade",
+      "deck": 16,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck16",
+      "confidence": 1.0
+    },
+    "himalayan_bridge": {
+      "name": "Himalayan Bridge",
+      "deck": 19,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck19",
+      "confidence": 1.0
     }
-  ]
+  }
 }

@@ -111,6 +111,7 @@ export class FrontendKnowledgeRepository {
     entertainment: any;
     muster: any;
     cabins: any;
+    negative_intelligence?: any;
   }> = {
     'msc-bellissima': {
       technical: bellissimaTechnical as unknown as ShipTechnicalData,

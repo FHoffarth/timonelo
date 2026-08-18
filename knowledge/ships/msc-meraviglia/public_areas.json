@@ -1,8 +1,11 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "confidence": 1.0,
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
   "public_areas": [
     {
@@ -12,17 +15,9 @@
         6,
         7
       ],
-      "category": "CENTRAL_PROMENADE",
-      "description": "Central 96-meter Mediterranean-style indoor promenade crowned by an awe-inspiring 480m² curved LED digital sky.",
-      "source": "MSC Meraviglia Public Area Guide",
-      "provenance": "MSC-MER-PUB-GALLERIA",
-      "confidence": 1.0,
-      "tags": [
-        "promenade",
-        "led-dome",
-        "shops",
-        "dining"
-      ]
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6-7",
+      "confidence": 1.0
     },
     {
       "id": "PUB-INFINITY-ATRIUM",
@@ -32,17 +27,38 @@
         6,
         7
       ],
-      "category": "GRAND_ATRIUM",
-      "description": "Triple-height glass architectural lobby featuring signature Swarovski crystal staircases and live string quartet music.",
-      "source": "MSC Meraviglia Public Area Guide",
-      "provenance": "MSC-MER-PUB-ATRIUM",
-      "confidence": 1.0,
-      "tags": [
-        "atrium",
-        "swarovski",
-        "reception",
-        "guest-services"
-      ]
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck5-7",
+      "confidence": 1.0
+    },
+    {
+      "id": "PUB-PLAZA-MERAVIGLIA",
+      "name": "Plaza Meraviglia",
+      "deck": 6,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6",
+      "confidence": 1.0
+    },
+    {
+      "id": "PUB-SOLARIUM",
+      "name": "Solarium & Sun Deck",
+      "deck": [
+        15,
+        16,
+        18,
+        19
+      ],
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck15-19",
+      "confidence": 1.0
+    },
+    {
+      "id": "PUB-TOP19-SOLARIUM",
+      "name": "Top 19 Exclusive Solarium",
+      "deck": 19,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck19",
+      "confidence": 1.0
     }
   ]
 }

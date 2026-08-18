@@ -63,4 +63,12 @@ export interface LivingTwinBundle {
   decks: LivingDeck[];
 }
 
+export interface Waypoint {
+  deck: number;
+  description: string;
+  isProven: boolean;
+  relPos: [number, number];
+  isElevatorTransit?: boolean;
+}
+
 export type LivingViewMode = "single_deck" | "exploded_stack" | "evidence_split";

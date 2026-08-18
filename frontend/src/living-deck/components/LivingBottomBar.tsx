@@ -1,4 +1,6 @@
 import { knowledgeRepository } from "../../knowledge";
+import { LivingCabin } from "../types";
+import { ShieldCheck, Activity } from "lucide-react";
 
 const bellissimaName = knowledgeRepository.getShip("msc-bellissima").vessel_name;
 
@@ -51,13 +53,13 @@ export default function LivingBottomBar({
             className="px-3 py-1 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/30 font-semibold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-sky-400" />
-            Ground Truth (0.99)
+            Ground Truth Evidence
           </button>
         )}
 
         <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-[11px]">
           <Activity className="w-3.5 h-3.5 animate-pulse" />
-          <span>60 FPS</span>
+          <span>Active</span>
         </div>
       </div>
     </div>

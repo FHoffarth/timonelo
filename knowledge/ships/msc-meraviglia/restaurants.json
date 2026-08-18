@@ -1,178 +1,111 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC-MER-DECKPLAN-2025-11-DEU",
+    "edition": "11.2025 DEU",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "confidence": 1.0,
+    "disclaimer": "Alle Angaben können je nach Saison und Destination variieren und müssen bei Buchung rückbestätigt werden."
   },
   "restaurants": [
     {
       "id": "RES-WAVES",
       "name": "Waves Restaurant",
       "deck": 5,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main dining room serving breakfast, lunch, and dinner with a daily changing menu of international and Mediterranean specialties.",
-      "dining_model": "Complimentary / Traditional Assigned Seating & Open Breakfast/Lunch",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-WAVES",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck5",
       "confidence": 1.0,
-      "tags": [
-        "complimentary",
-        "mdr",
-        "mediterranean",
-        "international"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-PANORAMA",
       "name": "Panorama Restaurant",
       "deck": 6,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main dining room operating on a traditional two-seating dinner schedule with sweeping wake views.",
-      "dining_model": "Complimentary / Traditional Two-Seating Dinner",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-PANORAMA",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6",
       "confidence": 1.0,
-      "tags": [
-        "complimentary",
-        "mdr",
-        "dinner",
-        "traditional-seating"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-OLIVO",
-      "name": "L'Olivo d'Oro & L'Olive Dorée",
+      "name": "L'Olivo d'oro / L'Olive dorée",
       "deck": 6,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main dining room. Aurea Experience guests have access to 'My Choice' flexible dining hours here.",
-      "dining_model": "Complimentary / Flexible 'My Choice' for Aurea & Assigned Seating",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-OLIVO",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6",
       "confidence": 1.0,
-      "tags": [
-        "complimentary",
-        "mdr",
-        "aurea-my-choice"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
-      "id": "RES-MARKETPLACE",
-      "name": "Marketplace Buffet",
-      "deck": 15,
-      "category": "CASUAL_BUFFET",
-      "description": "Expansive 3,650m² marketplace buffet operating up to 20 hours daily with open-front kitchens, mozzarella station, pizzeria, and grill.",
-      "dining_model": "Complimentary / Open Casual Seating",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-MARKETPLACE",
+      "id": "RES-HOLA-TACOS",
+      "name": "Hola! Tacos & Cantina",
+      "deck": 6,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6",
       "confidence": 1.0,
-      "tags": [
-        "complimentary",
-        "buffet",
-        "casual",
-        "pizza",
-        "late-night"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
+    },
+    {
+      "id": "RES-OCEAN-CAY",
+      "name": "Ocean Cay",
+      "deck": 6,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck6",
+      "confidence": 1.0,
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-BUTCHERS-CUT",
       "name": "Butcher's Cut",
       "deck": 7,
-      "category": "SPECIALTY_STEAKHOUSE",
-      "description": "American-style steakhouse serving prime dry-aged Linz Heritage Angus beef, seafood platters, and New World wines.",
-      "dining_model": "Specialty / A la Carte or Dining Package Credit",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-BUTCHERSCUT",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck7",
       "confidence": 1.0,
-      "tags": [
-        "specialty",
-        "steakhouse",
-        "angus-beef",
-        "cover-charge"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-KAITO-SUSHI",
       "name": "Kaito Sushi Bar",
       "deck": 7,
-      "category": "SPECIALTY_SUSHI",
-      "description": "Authentic Japanese sushi bar serving freshly prepared nigiri, sashimi, and specialty maki rolls.",
-      "dining_model": "Specialty / A la Carte",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-KAITOSUSHI",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck7",
       "confidence": 1.0,
-      "tags": [
-        "specialty",
-        "japanese",
-        "sushi",
-        "sashimi"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-KAITO-TEPPANYAKI",
       "name": "Kaito Teppanyaki",
       "deck": 7,
-      "category": "SPECIALTY_ASIAN",
-      "description": "Interactive teppanyaki dining with dual open cooking stations where master chefs perform show cooking.",
-      "dining_model": "Specialty / Fixed Set Menus & A la Carte",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-KAITOTEPPANYAKI",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.3/Deck7",
       "confidence": 1.0,
-      "tags": [
-        "specialty",
-        "teppanyaki",
-        "show-cooking",
-        "japanese"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
-      "id": "RES-HOLA-TAPAS",
-      "name": "HOLA! Tapas Bar",
-      "deck": 6,
-      "category": "SPECIALTY_LATIN",
-      "description": "Spanish tapas concept created in partnership with Michelin-starred chef Ramón Freixa.",
-      "dining_model": "Specialty / A la Carte Small Plates",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-HOLATAPAS",
+      "id": "RES-MARKETPLACE",
+      "name": "Marketplace Buffet",
+      "deck": 15,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck15",
       "confidence": 1.0,
-      "tags": [
-        "specialty",
-        "tapas",
-        "spanish",
-        "freixa"
-      ]
-    },
-    {
-      "id": "RES-OCEAN-CAY",
-      "name": "Ocean Cay Restaurant",
-      "deck": 7,
-      "category": "OTHER_DINING",
-      "description": "Seafood restaurant serving fresh fish recipes and raw bar specialties paired with crisp white wines.",
-      "dining_model": "Specialty / A la Carte",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-OCEANCAY",
-      "confidence": 1.0,
-      "tags": [
-        "specialty",
-        "seafood",
-        "raw-bar"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     },
     {
       "id": "RES-YACHT-CLUB",
       "name": "MSC Yacht Club Restaurant",
       "deck": 18,
-      "category": "EXCLUSIVE_GOURMET",
-      "description": "Private, white-glove dining room reserved exclusively for MSC Yacht Club suite guests with panoramic ocean vistas.",
-      "dining_model": "Complimentary for Yacht Club / Open Seating Dining",
-      "source": "MSC Meraviglia Dining Directory",
-      "provenance": "MSC-MER-RES-YACHTCLUB",
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck18",
       "confidence": 1.0,
-      "tags": [
-        "exclusive",
-        "yacht-club",
-        "fine-dining",
-        "gourmet"
-      ]
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
+    },
+    {
+      "id": "RES-YACHT-GRILL",
+      "name": "MSC Yacht Club Grill",
+      "deck": 19,
+      "source": "MSC-MER-DECKPLAN-2025-11-DEU",
+      "provenance": "P.5/Deck19",
+      "confidence": 1.0,
+      "temporal_status": "CURRENT_AS_OF_SOURCE_EDITION"
     }
   ]
 }
