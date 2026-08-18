@@ -6,7 +6,7 @@
     "source_artifact": "MSC_BELLISSIMA_DECK_PLANS_11.2025_DEU",
     "evidence_page": 3,
     "extracted_at": "2026-08-18",
-    "confidence": 1.0
+    "confidence": 0.947
   },
   "bounding_box": {
     "min_x": 40.0,
@@ -63,7 +63,15 @@
         "corridor": "CENTRAL_CIRCULATION",
         "nearest_lift": null
       },
-      "confidence": 1.0
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
     },
     {
       "id": "LIFT-CORE-B-D04",
@@ -111,7 +119,15 @@
         "corridor": "CENTRAL_CIRCULATION",
         "nearest_lift": null
       },
-      "confidence": 1.0
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
     },
     {
       "id": "LIFT-CORE-C-D04",
@@ -159,7 +175,15 @@
         "corridor": "CENTRAL_CIRCULATION",
         "nearest_lift": null
       },
-      "confidence": 1.0
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
     },
     {
       "id": "LIFT-PANORAMIC-D04",
@@ -207,7 +231,15 @@
         "corridor": "CENTRAL_CIRCULATION",
         "nearest_lift": null
       },
-      "confidence": 1.0
+      "confidence": 0.96,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DIRECT",
+        "door_position": "DIRECT",
+        "adjacent_objects": "DERIVED"
+      }
     },
     {
       "id": "CORRIDOR-PORT-D04",
@@ -237,10 +269,7 @@
         "x": 500.0,
         "y": 117.5
       },
-      "door_position": {
-        "x": 500.0,
-        "y": 117.5
-      },
+      "door_position": null,
       "orientation": "PORT",
       "bounding_box": {
         "x": 100.0,
@@ -255,7 +284,15 @@
         "corridor": null,
         "nearest_lift": "LIFT-CORE-B-D04"
       },
-      "confidence": 1.0
+      "confidence": 0.92,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DERIVED",
+        "door_position": "UNKNOWN",
+        "adjacent_objects": "DERIVED"
+      }
     },
     {
       "id": "CORRIDOR-STARBOARD-D04",
@@ -285,10 +322,7 @@
         "x": 500.0,
         "y": 182.5
       },
-      "door_position": {
-        "x": 500.0,
-        "y": 182.5
-      },
+      "door_position": null,
       "orientation": "STARBOARD",
       "bounding_box": {
         "x": 100.0,
@@ -303,7 +337,15 @@
         "corridor": null,
         "nearest_lift": "LIFT-CORE-B-D04"
       },
-      "confidence": 1.0
+      "confidence": 0.92,
+      "provenance_breakdown": {
+        "polygon": "DIRECT",
+        "centroid": "DERIVED",
+        "bounding_box": "DERIVED",
+        "orientation": "DERIVED",
+        "door_position": "UNKNOWN",
+        "adjacent_objects": "DERIVED"
+      }
     }
   ]
 }

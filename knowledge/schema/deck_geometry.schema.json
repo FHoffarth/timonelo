@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://timonelo.com/schema/deck_geometry.schema.json",
   "title": "DeckGeometrySchema",
-  "description": "Canonical schema for ship spatial geometry extracted from official deck plans.",
+  "description": "Canonical schema for ship spatial geometry extracted from official deck plans with strict provenance and epistemic confidence scoring.",
   "type": "object",
   "required": [
     "vessel_id",
@@ -51,7 +51,8 @@
           "orientation",
           "bounding_box",
           "adjacent_objects",
-          "confidence"
+          "confidence",
+          "provenance_breakdown"
         ],
         "properties": {
           "id": { "type": "string" },
@@ -84,8 +85,7 @@
             }
           },
           "door_position": {
-            "type": "object",
-            "required": ["x", "y"],
+            "type": ["object", "null"],
             "properties": {
               "x": { "type": "number" },
               "y": { "type": "number" }
@@ -119,6 +119,18 @@
             "type": "number",
             "minimum": 0.0,
             "maximum": 1.0
+          },
+          "provenance_breakdown": {
+            "type": "object",
+            "required": ["polygon", "centroid", "bounding_box", "orientation", "door_position", "adjacent_objects"],
+            "properties": {
+              "polygon": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
+              "centroid": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
+              "bounding_box": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
+              "orientation": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
+              "door_position": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
+              "adjacent_objects": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] }
+            }
           }
         },
         "additionalProperties": true
