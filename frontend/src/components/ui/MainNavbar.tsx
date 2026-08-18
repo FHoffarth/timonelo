@@ -1,7 +1,7 @@
 import React from "react";
-import { Search } from "lucide-react";
+import { Search, Workflow } from "lucide-react";
 
-export type NavRoute = "home" | "ships" | "ports" | "routes" | "cruise-math" | "travel-info" | "my-cruise";
+export type NavRoute = "home" | "ships" | "ports" | "routes" | "cruise-math" | "travel-info" | "my-cruise" | "knowledge-factory";
 
 interface MainNavbarProps {
   currentRoute: NavRoute;
@@ -20,6 +20,7 @@ export default function MainNavbar({
     { id: "routes", label: "Routes" },
     { id: "cruise-math", label: "Cruise Math" },
     { id: "travel-info", label: "Travel Info" },
+    { id: "knowledge-factory", label: "Knowledge Factory" },
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function MainNavbar({
         </button>
 
         {/* Center Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 text-sm">
+        <nav className="hidden md:flex items-center gap-6 text-sm">
           {navItems.map((item) => {
             const isActive = currentRoute === item.id;
             return (
@@ -52,28 +53,28 @@ export default function MainNavbar({
                     : "text-[#5B6570] hover:text-[#0C1B2A]"
                 }`}
               >
-                <span>{item.label}</span>
+                {item.label}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#C58A46] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C58A46] rounded-full" />
                 )}
               </button>
             );
           })}
         </nav>
 
-        {/* Right Search & CTA */}
+        {/* Right Search & Profile Action */}
         <div className="flex items-center gap-3">
-          <div
+          <button
             onClick={onOpenSearch}
-            className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#0C1B2A]/10 text-xs text-[#5B6570] hover:border-[#C58A46] cursor-pointer shadow-sm transition-all"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0C1B2A]/5 hover:bg-[#0C1B2A]/10 text-xs text-[#5B6570] transition-colors border border-[#0C1B2A]/5 cursor-pointer"
           >
-            <Search className="w-3.5 h-3.5 text-[#C58A46]" />
-            <span>Search intelligence...</span>
-          </div>
+            <Search className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Search intelligence...</span>
+          </button>
 
           <button
             onClick={() => onNavigate("my-cruise")}
-            className="px-4 py-2 rounded-full bg-[#0C1B2A] hover:bg-[#132238] text-white text-xs font-semibold tracking-wide transition-all active:scale-95 cursor-pointer shadow-sm"
+            className="px-4 py-1.5 rounded-full bg-[#0C1B2A] text-white text-xs font-semibold hover:bg-[#C58A46] transition-colors shadow-sm cursor-pointer"
           >
             My Cruise
           </button>

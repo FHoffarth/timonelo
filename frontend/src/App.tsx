@@ -8,6 +8,7 @@ import PortGuidePage from "./components/pages/PortGuidePage";
 import RouteIntelligencePage from "./components/pages/RouteIntelligencePage";
 import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
+import KnowledgeDashboardPage from "./components/pages/KnowledgeDashboardPage";
 import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
 import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
@@ -15,8 +16,8 @@ import { X } from "lucide-react";
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState<NavRoute | "cabin">("home");
-  const [selectedShipSlug, setSelectedShipSlug] = useState<string>("msc-virtuosa");
-  const [selectedCabinId, setSelectedCabinId] = useState<string>("12142");
+  const [selectedShipSlug, setSelectedShipSlug] = useState<string>("msc-bellissima");
+  const [selectedCabinId, setSelectedCabinId] = useState<string>("14122");
   const [selectedPortSlug, setSelectedPortSlug] = useState<string>("santorini");
   const [selectedRouteSlug, setSelectedRouteSlug] = useState<string>("7-night-adriatic-aegean");
 
@@ -44,7 +45,7 @@ export default function App() {
     const q = query.toLowerCase();
     if (q.includes("cabin") || /^\d{4,5}$/.test(q)) {
       const match = q.match(/\d{4,5}/);
-      const cabinId = match ? match[0] : "12142";
+      const cabinId = match ? match[0] : "14122";
       handleNavigate("cabin", cabinId);
     } else if (q.includes("port") || q.includes("santorini") || q.includes("genoa")) {
       handleNavigate("ports", q.includes("genoa") ? "genoa" : "santorini");
@@ -54,8 +55,10 @@ export default function App() {
       handleNavigate("cruise-math");
     } else if (q.includes("visa") || q.includes("travel") || q.includes("passport")) {
       handleNavigate("travel-info");
+    } else if (q.includes("factory") || q.includes("pipeline") || q.includes("conflict")) {
+      handleNavigate("knowledge-factory");
     } else {
-      handleNavigate("ships", "msc-virtuosa");
+      handleNavigate("ships", "msc-bellissima");
     }
   };
 
@@ -113,6 +116,10 @@ export default function App() {
           <TravelInfoPage />
         )}
 
+        {currentRoute === "knowledge-factory" && (
+          <KnowledgeDashboardPage />
+        )}
+
         {currentRoute === "my-cruise" && (
           <CabinDeepDivePage
             cabinId="14122"
@@ -142,7 +149,7 @@ export default function App() {
               onSelectEntity={handleGlobalSearchSelect}
             />
             <div className="pt-2 text-[11px] text-[#5B6570] flex items-center justify-between">
-              <span>Try searching "14122", "Santorini", "Balcony", "Virtuosa", or "Drink Packages"</span>
+              <span>Try searching "14122", "Santorini", "Balcony", "Bellissima", or "Drink Packages"</span>
               <span className="font-mono text-[#C58A46]">ESC to close</span>
             </div>
           </div>
