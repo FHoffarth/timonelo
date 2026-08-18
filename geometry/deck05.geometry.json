@@ -1,0 +1,5637 @@
+{
+  "vessel_id": "msc-bellissima",
+  "deck_number": 5,
+  "deck_name": "Opera",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_DECK_PLANS_11.2025_DEU",
+    "evidence_page": 3,
+    "extracted_at": "2026-08-18",
+    "confidence": 1.0
+  },
+  "bounding_box": {
+    "min_x": 40.0,
+    "min_y": 40.0,
+    "max_x": 980.0,
+    "max_y": 260.0,
+    "width": 940.0,
+    "height": 220.0
+  },
+  "objects": [
+    {
+      "id": "LIFT-CORE-A-D05",
+      "type": "LIFT",
+      "label": "Forward Lift Core A",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          740.0,
+          130.0
+        ],
+        [
+          768.0,
+          130.0
+        ],
+        [
+          768.0,
+          168.0
+        ],
+        [
+          740.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 754.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 754.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 740.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-CORE-B-D05",
+      "type": "LIFT",
+      "label": "Midship Lift Core B",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          490.0,
+          130.0
+        ],
+        [
+          518.0,
+          130.0
+        ],
+        [
+          518.0,
+          168.0
+        ],
+        [
+          490.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 504.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 504.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 490.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-CORE-C-D05",
+      "type": "LIFT",
+      "label": "Aft Lift Core C",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          230.0,
+          130.0
+        ],
+        [
+          258.0,
+          130.0
+        ],
+        [
+          258.0,
+          168.0
+        ],
+        [
+          230.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 244.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 244.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 230.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-PANORAMIC-D05",
+      "type": "LIFT",
+      "label": "Atrium Panoramic Lifts",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "PORT",
+      "polygon": [
+        [
+          440.0,
+          52.0
+        ],
+        [
+          464.0,
+          52.0
+        ],
+        [
+          464.0,
+          78.0
+        ],
+        [
+          440.0,
+          78.0
+        ]
+      ],
+      "centroid": {
+        "x": 452.0,
+        "y": 65.0
+      },
+      "door_position": {
+        "x": 452.0,
+        "y": 78.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 440.0,
+        "y": 52.0,
+        "width": 24.0,
+        "height": 26.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "CORRIDOR-PORT-D05",
+      "type": "CORRIDOR",
+      "label": "Port Corridor Deck 5",
+      "category": "CIRCULATION_CORRIDOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          100.0,
+          110.0
+        ],
+        [
+          900.0,
+          110.0
+        ],
+        [
+          900.0,
+          125.0
+        ],
+        [
+          100.0,
+          125.0
+        ]
+      ],
+      "centroid": {
+        "x": 500.0,
+        "y": 117.5
+      },
+      "door_position": {
+        "x": 500.0,
+        "y": 117.5
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 100.0,
+        "y": 110.0,
+        "width": 800.0,
+        "height": 15.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": "CORRIDOR-STARBOARD-D05",
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "CORRIDOR-STARBOARD-D05",
+      "type": "CORRIDOR",
+      "label": "Starboard Corridor Deck 5",
+      "category": "CIRCULATION_CORRIDOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          100.0,
+          175.0
+        ],
+        [
+          900.0,
+          175.0
+        ],
+        [
+          900.0,
+          190.0
+        ],
+        [
+          100.0,
+          190.0
+        ]
+      ],
+      "centroid": {
+        "x": 500.0,
+        "y": 182.5
+      },
+      "door_position": {
+        "x": 500.0,
+        "y": 182.5
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 100.0,
+        "y": 175.0,
+        "width": 800.0,
+        "height": 15.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": "CORRIDOR-PORT-D05",
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "VENUE-POSIDONIA-D05",
+      "type": "VENUE",
+      "label": "Posidonia Restaurant",
+      "category": "PUBLIC_DINING",
+      "side": "CENTER",
+      "polygon": [
+        [
+          80.0,
+          80.0
+        ],
+        [
+          280.0,
+          80.0
+        ],
+        [
+          280.0,
+          220.0
+        ],
+        [
+          80.0,
+          220.0
+        ]
+      ],
+      "centroid": {
+        "x": 180.0,
+        "y": 150.0
+      },
+      "door_position": {
+        "x": 280.0,
+        "y": 150.0
+      },
+      "orientation": "FORE",
+      "bounding_box": {
+        "x": 80.0,
+        "y": 80.0,
+        "width": 200.0,
+        "height": 140.0
+      },
+      "adjacent_objects": {
+        "fore": "LIFT-CORE-C-D05",
+        "aft": null,
+        "across": null,
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5001",
+      "type": "CABIN",
+      "label": "Cabin 5001",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          140.0,
+          68.0
+        ],
+        [
+          151.09,
+          68.0
+        ],
+        [
+          151.09,
+          104.0
+        ],
+        [
+          140.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 145.55,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 145.55,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 140.0,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5003",
+        "aft": null,
+        "across": "5002",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5002",
+      "type": "CABIN",
+      "label": "Cabin 5002",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          140.0,
+          196.0
+        ],
+        [
+          151.09,
+          196.0
+        ],
+        [
+          151.09,
+          232.0
+        ],
+        [
+          140.0,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 145.55,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 145.55,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 140.0,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5004",
+        "aft": null,
+        "across": "5003",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5003",
+      "type": "CABIN",
+      "label": "Cabin 5003",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          153.09,
+          68.0
+        ],
+        [
+          164.18,
+          68.0
+        ],
+        [
+          164.18,
+          104.0
+        ],
+        [
+          153.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 158.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 158.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 153.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5005",
+        "aft": "5001",
+        "across": "5004",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5004",
+      "type": "CABIN",
+      "label": "Cabin 5004",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          153.09,
+          196.0
+        ],
+        [
+          164.18,
+          196.0
+        ],
+        [
+          164.18,
+          232.0
+        ],
+        [
+          153.09,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 158.64,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 158.64,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 153.09,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5006",
+        "aft": "5002",
+        "across": "5005",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5005",
+      "type": "CABIN",
+      "label": "Cabin 5005",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          166.18,
+          68.0
+        ],
+        [
+          177.27,
+          68.0
+        ],
+        [
+          177.27,
+          104.0
+        ],
+        [
+          166.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 171.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 171.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 166.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5007",
+        "aft": "5003",
+        "across": "5006",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5006",
+      "type": "CABIN",
+      "label": "Cabin 5006",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          166.18,
+          196.0
+        ],
+        [
+          177.27,
+          196.0
+        ],
+        [
+          177.27,
+          232.0
+        ],
+        [
+          166.18,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 171.73,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 171.73,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 166.18,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5008",
+        "aft": "5004",
+        "across": "5007",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5007",
+      "type": "CABIN",
+      "label": "Cabin 5007",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          179.27,
+          68.0
+        ],
+        [
+          190.36,
+          68.0
+        ],
+        [
+          190.36,
+          104.0
+        ],
+        [
+          179.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 184.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 184.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 179.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5009",
+        "aft": "5005",
+        "across": "5008",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5008",
+      "type": "CABIN",
+      "label": "Cabin 5008",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          179.27,
+          196.0
+        ],
+        [
+          190.36,
+          196.0
+        ],
+        [
+          190.36,
+          232.0
+        ],
+        [
+          179.27,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 184.82,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 184.82,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 179.27,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5010",
+        "aft": "5006",
+        "across": "5009",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5009",
+      "type": "CABIN",
+      "label": "Cabin 5009",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          192.36,
+          68.0
+        ],
+        [
+          203.45,
+          68.0
+        ],
+        [
+          203.45,
+          104.0
+        ],
+        [
+          192.36,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 197.91,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 197.91,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 192.36,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5011",
+        "aft": "5007",
+        "across": "5010",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5010",
+      "type": "CABIN",
+      "label": "Cabin 5010",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          192.36,
+          196.0
+        ],
+        [
+          203.45,
+          196.0
+        ],
+        [
+          203.45,
+          232.0
+        ],
+        [
+          192.36,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 197.91,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 197.91,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 192.36,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5012",
+        "aft": "5008",
+        "across": "5011",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5011",
+      "type": "CABIN",
+      "label": "Cabin 5011",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          205.45,
+          68.0
+        ],
+        [
+          216.55,
+          68.0
+        ],
+        [
+          216.55,
+          104.0
+        ],
+        [
+          205.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 211.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 211.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 205.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5014",
+        "aft": "5009",
+        "across": "5012",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5012",
+      "type": "CABIN",
+      "label": "Cabin 5012",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          205.45,
+          196.0
+        ],
+        [
+          216.55,
+          196.0
+        ],
+        [
+          216.55,
+          232.0
+        ],
+        [
+          205.45,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 211.0,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 211.0,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 205.45,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5013",
+        "aft": "5010",
+        "across": "5014",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5014",
+      "type": "CABIN",
+      "label": "Cabin 5014",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          218.55,
+          196.0
+        ],
+        [
+          229.64,
+          196.0
+        ],
+        [
+          229.64,
+          232.0
+        ],
+        [
+          218.55,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 224.09,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 224.09,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 218.55,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5016",
+        "aft": "5011",
+        "across": "5013",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5013",
+      "type": "CABIN",
+      "label": "Cabin 5013",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          218.55,
+          68.0
+        ],
+        [
+          229.64,
+          68.0
+        ],
+        [
+          229.64,
+          104.0
+        ],
+        [
+          218.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 224.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 224.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 218.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5605",
+        "aft": "5012",
+        "across": "5016",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5016",
+      "type": "CABIN",
+      "label": "Cabin 5016",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          231.64,
+          196.0
+        ],
+        [
+          242.73,
+          196.0
+        ],
+        [
+          242.73,
+          232.0
+        ],
+        [
+          231.64,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 237.18,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 237.18,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 231.64,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5015",
+        "aft": "5014",
+        "across": "5605",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5605",
+      "type": "CABIN",
+      "label": "Cabin 5605",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          231.64,
+          68.0
+        ],
+        [
+          242.73,
+          68.0
+        ],
+        [
+          242.73,
+          104.0
+        ],
+        [
+          231.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 237.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 237.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 231.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5018",
+        "aft": "5013",
+        "across": "5015",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5015",
+      "type": "CABIN",
+      "label": "Cabin 5015",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          244.73,
+          68.0
+        ],
+        [
+          255.82,
+          68.0
+        ],
+        [
+          255.82,
+          104.0
+        ],
+        [
+          244.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 250.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 250.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 244.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5019",
+        "aft": "5016",
+        "across": "5018",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5018",
+      "type": "CABIN",
+      "label": "Cabin 5018",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          244.73,
+          196.0
+        ],
+        [
+          255.82,
+          196.0
+        ],
+        [
+          255.82,
+          232.0
+        ],
+        [
+          244.73,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 250.27,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 250.27,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 244.73,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5020",
+        "aft": "5605",
+        "across": "5019",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5019",
+      "type": "CABIN",
+      "label": "Cabin 5019",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          257.82,
+          68.0
+        ],
+        [
+          268.91,
+          68.0
+        ],
+        [
+          268.91,
+          104.0
+        ],
+        [
+          257.82,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 263.36,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 263.36,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 257.82,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5024",
+        "aft": "5015",
+        "across": "5020",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5020",
+      "type": "CABIN",
+      "label": "Cabin 5020",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          257.82,
+          196.0
+        ],
+        [
+          268.91,
+          196.0
+        ],
+        [
+          268.91,
+          232.0
+        ],
+        [
+          257.82,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 263.36,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 263.36,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 257.82,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5021",
+        "aft": "5018",
+        "across": "5024",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5024",
+      "type": "CABIN",
+      "label": "Cabin 5024",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          270.91,
+          196.0
+        ],
+        [
+          282.0,
+          196.0
+        ],
+        [
+          282.0,
+          232.0
+        ],
+        [
+          270.91,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 276.45,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 276.45,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 270.91,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5022",
+        "aft": "5019",
+        "across": "5021",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5021",
+      "type": "CABIN",
+      "label": "Cabin 5021",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          270.91,
+          68.0
+        ],
+        [
+          282.0,
+          68.0
+        ],
+        [
+          282.0,
+          104.0
+        ],
+        [
+          270.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 276.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 276.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 270.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5023",
+        "aft": "5020",
+        "across": "5022",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5022",
+      "type": "CABIN",
+      "label": "Cabin 5022",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          284.0,
+          196.0
+        ],
+        [
+          295.09,
+          196.0
+        ],
+        [
+          295.09,
+          232.0
+        ],
+        [
+          284.0,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 289.55,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 289.55,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 284.0,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5028",
+        "aft": "5024",
+        "across": "5023",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5023",
+      "type": "CABIN",
+      "label": "Cabin 5023",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          284.0,
+          68.0
+        ],
+        [
+          295.09,
+          68.0
+        ],
+        [
+          295.09,
+          104.0
+        ],
+        [
+          284.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 289.55,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 289.55,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 284.0,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5025",
+        "aft": "5021",
+        "across": "5028",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5028",
+      "type": "CABIN",
+      "label": "Cabin 5028",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          297.09,
+          196.0
+        ],
+        [
+          308.18,
+          196.0
+        ],
+        [
+          308.18,
+          232.0
+        ],
+        [
+          297.09,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 302.64,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 302.64,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 297.09,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5026",
+        "aft": "5022",
+        "across": "5025",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5025",
+      "type": "CABIN",
+      "label": "Cabin 5025",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          297.09,
+          68.0
+        ],
+        [
+          308.18,
+          68.0
+        ],
+        [
+          308.18,
+          104.0
+        ],
+        [
+          297.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 302.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 302.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 297.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5027",
+        "aft": "5023",
+        "across": "5026",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5026",
+      "type": "CABIN",
+      "label": "Cabin 5026",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          310.18,
+          196.0
+        ],
+        [
+          321.27,
+          196.0
+        ],
+        [
+          321.27,
+          232.0
+        ],
+        [
+          310.18,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 315.73,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 315.73,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 310.18,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5029",
+        "aft": "5028",
+        "across": "5027",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5027",
+      "type": "CABIN",
+      "label": "Cabin 5027",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          310.18,
+          68.0
+        ],
+        [
+          321.27,
+          68.0
+        ],
+        [
+          321.27,
+          104.0
+        ],
+        [
+          310.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 315.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 315.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 310.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5030",
+        "aft": "5025",
+        "across": "5029",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5029",
+      "type": "CABIN",
+      "label": "Cabin 5029",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          323.27,
+          68.0
+        ],
+        [
+          334.36,
+          68.0
+        ],
+        [
+          334.36,
+          104.0
+        ],
+        [
+          323.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 328.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 328.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 323.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5031",
+        "aft": "5026",
+        "across": "5030",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5030",
+      "type": "CABIN",
+      "label": "Cabin 5030",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          323.27,
+          196.0
+        ],
+        [
+          334.36,
+          196.0
+        ],
+        [
+          334.36,
+          232.0
+        ],
+        [
+          323.27,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 328.82,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 328.82,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 323.27,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5032",
+        "aft": "5027",
+        "across": "5031",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5031",
+      "type": "CABIN",
+      "label": "Cabin 5031",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          336.36,
+          68.0
+        ],
+        [
+          347.45,
+          68.0
+        ],
+        [
+          347.45,
+          104.0
+        ],
+        [
+          336.36,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 341.91,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 341.91,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 336.36,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5036",
+        "aft": "5029",
+        "across": "5032",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5032",
+      "type": "CABIN",
+      "label": "Cabin 5032",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          336.36,
+          196.0
+        ],
+        [
+          347.45,
+          196.0
+        ],
+        [
+          347.45,
+          232.0
+        ],
+        [
+          336.36,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 341.91,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 341.91,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 336.36,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5033",
+        "aft": "5030",
+        "across": "5036",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5036",
+      "type": "CABIN",
+      "label": "Cabin 5036",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          349.45,
+          196.0
+        ],
+        [
+          360.55,
+          196.0
+        ],
+        [
+          360.55,
+          232.0
+        ],
+        [
+          349.45,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 355.0,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 355.0,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 349.45,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5034",
+        "aft": "5031",
+        "across": "5033",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5033",
+      "type": "CABIN",
+      "label": "Cabin 5033",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          349.45,
+          68.0
+        ],
+        [
+          360.55,
+          68.0
+        ],
+        [
+          360.55,
+          104.0
+        ],
+        [
+          349.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 355.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 355.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 349.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5035",
+        "aft": "5032",
+        "across": "5034",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-C-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5034",
+      "type": "CABIN",
+      "label": "Cabin 5034",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          362.55,
+          196.0
+        ],
+        [
+          373.64,
+          196.0
+        ],
+        [
+          373.64,
+          232.0
+        ],
+        [
+          362.55,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 368.09,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 368.09,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 362.55,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5040",
+        "aft": "5036",
+        "across": "5035",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5035",
+      "type": "CABIN",
+      "label": "Cabin 5035",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          362.55,
+          68.0
+        ],
+        [
+          373.64,
+          68.0
+        ],
+        [
+          373.64,
+          104.0
+        ],
+        [
+          362.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 368.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 368.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 362.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5037",
+        "aft": "5033",
+        "across": "5040",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5040",
+      "type": "CABIN",
+      "label": "Cabin 5040",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          375.64,
+          196.0
+        ],
+        [
+          386.73,
+          196.0
+        ],
+        [
+          386.73,
+          232.0
+        ],
+        [
+          375.64,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 381.18,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 381.18,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 375.64,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5038",
+        "aft": "5034",
+        "across": "5037",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5037",
+      "type": "CABIN",
+      "label": "Cabin 5037",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          375.64,
+          68.0
+        ],
+        [
+          386.73,
+          68.0
+        ],
+        [
+          386.73,
+          104.0
+        ],
+        [
+          375.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 381.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 381.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 375.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5039",
+        "aft": "5035",
+        "across": "5038",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5038",
+      "type": "CABIN",
+      "label": "Cabin 5038",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          388.73,
+          196.0
+        ],
+        [
+          399.82,
+          196.0
+        ],
+        [
+          399.82,
+          232.0
+        ],
+        [
+          388.73,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 394.27,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 394.27,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 388.73,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5044",
+        "aft": "5040",
+        "across": "5039",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5039",
+      "type": "CABIN",
+      "label": "Cabin 5039",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          388.73,
+          68.0
+        ],
+        [
+          399.82,
+          68.0
+        ],
+        [
+          399.82,
+          104.0
+        ],
+        [
+          388.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 394.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 394.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 388.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5041",
+        "aft": "5037",
+        "across": "5044",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5044",
+      "type": "CABIN",
+      "label": "Cabin 5044",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          401.82,
+          196.0
+        ],
+        [
+          412.91,
+          196.0
+        ],
+        [
+          412.91,
+          232.0
+        ],
+        [
+          401.82,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 407.36,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 407.36,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 401.82,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5042",
+        "aft": "5038",
+        "across": "5041",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5041",
+      "type": "CABIN",
+      "label": "Cabin 5041",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          401.82,
+          68.0
+        ],
+        [
+          412.91,
+          68.0
+        ],
+        [
+          412.91,
+          104.0
+        ],
+        [
+          401.82,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 407.36,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 407.36,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 401.82,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5043",
+        "aft": "5039",
+        "across": "5042",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5042",
+      "type": "CABIN",
+      "label": "Cabin 5042",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          414.91,
+          196.0
+        ],
+        [
+          426.0,
+          196.0
+        ],
+        [
+          426.0,
+          232.0
+        ],
+        [
+          414.91,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 420.45,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 420.45,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 414.91,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5045",
+        "aft": "5044",
+        "across": "5043",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5043",
+      "type": "CABIN",
+      "label": "Cabin 5043",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          414.91,
+          68.0
+        ],
+        [
+          426.0,
+          68.0
+        ],
+        [
+          426.0,
+          104.0
+        ],
+        [
+          414.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 420.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 420.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 414.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5046",
+        "aft": "5041",
+        "across": "5045",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5045",
+      "type": "CABIN",
+      "label": "Cabin 5045",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          428.0,
+          68.0
+        ],
+        [
+          439.09,
+          68.0
+        ],
+        [
+          439.09,
+          104.0
+        ],
+        [
+          428.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 433.55,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 433.55,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 428.0,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5047",
+        "aft": "5042",
+        "across": "5046",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5046",
+      "type": "CABIN",
+      "label": "Cabin 5046",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          428.0,
+          196.0
+        ],
+        [
+          439.09,
+          196.0
+        ],
+        [
+          439.09,
+          232.0
+        ],
+        [
+          428.0,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 433.55,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 433.55,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 428.0,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5048",
+        "aft": "5043",
+        "across": "5047",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5047",
+      "type": "CABIN",
+      "label": "Cabin 5047",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          441.09,
+          68.0
+        ],
+        [
+          452.18,
+          68.0
+        ],
+        [
+          452.18,
+          104.0
+        ],
+        [
+          441.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 446.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 446.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 441.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5052",
+        "aft": "5045",
+        "across": "5048",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5048",
+      "type": "CABIN",
+      "label": "Cabin 5048",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          441.09,
+          196.0
+        ],
+        [
+          452.18,
+          196.0
+        ],
+        [
+          452.18,
+          232.0
+        ],
+        [
+          441.09,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 446.64,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 446.64,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 441.09,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5049",
+        "aft": "5046",
+        "across": "5052",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5052",
+      "type": "CABIN",
+      "label": "Cabin 5052",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          454.18,
+          196.0
+        ],
+        [
+          465.27,
+          196.0
+        ],
+        [
+          465.27,
+          232.0
+        ],
+        [
+          454.18,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 459.73,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 459.73,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 454.18,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5050",
+        "aft": "5047",
+        "across": "5049",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5049",
+      "type": "CABIN",
+      "label": "Cabin 5049",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          454.18,
+          68.0
+        ],
+        [
+          465.27,
+          68.0
+        ],
+        [
+          465.27,
+          104.0
+        ],
+        [
+          454.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 459.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 459.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 454.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5051",
+        "aft": "5048",
+        "across": "5050",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5050",
+      "type": "CABIN",
+      "label": "Cabin 5050",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          467.27,
+          196.0
+        ],
+        [
+          478.36,
+          196.0
+        ],
+        [
+          478.36,
+          232.0
+        ],
+        [
+          467.27,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 472.82,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 472.82,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 467.27,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5053",
+        "aft": "5052",
+        "across": "5051",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5051",
+      "type": "CABIN",
+      "label": "Cabin 5051",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          467.27,
+          68.0
+        ],
+        [
+          478.36,
+          68.0
+        ],
+        [
+          478.36,
+          104.0
+        ],
+        [
+          467.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 472.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 472.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 467.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5054",
+        "aft": "5049",
+        "across": "5053",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5053",
+      "type": "CABIN",
+      "label": "Cabin 5053",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          480.36,
+          68.0
+        ],
+        [
+          491.45,
+          68.0
+        ],
+        [
+          491.45,
+          104.0
+        ],
+        [
+          480.36,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 485.91,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 485.91,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 480.36,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5055",
+        "aft": "5050",
+        "across": "5054",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5054",
+      "type": "CABIN",
+      "label": "Cabin 5054",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          480.36,
+          196.0
+        ],
+        [
+          491.45,
+          196.0
+        ],
+        [
+          491.45,
+          232.0
+        ],
+        [
+          480.36,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 485.91,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 485.91,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 480.36,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5056",
+        "aft": "5051",
+        "across": "5055",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5055",
+      "type": "CABIN",
+      "label": "Cabin 5055",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          493.45,
+          68.0
+        ],
+        [
+          504.55,
+          68.0
+        ],
+        [
+          504.55,
+          104.0
+        ],
+        [
+          493.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 499.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 499.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 493.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5059",
+        "aft": "5053",
+        "across": "5056",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5056",
+      "type": "CABIN",
+      "label": "Cabin 5056",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          493.45,
+          196.0
+        ],
+        [
+          504.55,
+          196.0
+        ],
+        [
+          504.55,
+          232.0
+        ],
+        [
+          493.45,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 499.0,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 499.0,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 493.45,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5060",
+        "aft": "5054",
+        "across": "5059",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5059",
+      "type": "CABIN",
+      "label": "Cabin 5059",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          506.55,
+          68.0
+        ],
+        [
+          517.64,
+          68.0
+        ],
+        [
+          517.64,
+          104.0
+        ],
+        [
+          506.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 512.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 512.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 506.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5057",
+        "aft": "5055",
+        "across": "5060",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5060",
+      "type": "CABIN",
+      "label": "Cabin 5060",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          506.55,
+          196.0
+        ],
+        [
+          517.64,
+          196.0
+        ],
+        [
+          517.64,
+          232.0
+        ],
+        [
+          506.55,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 512.09,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 512.09,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 506.55,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5058",
+        "aft": "5056",
+        "across": "5057",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5057",
+      "type": "CABIN",
+      "label": "Cabin 5057",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          519.64,
+          68.0
+        ],
+        [
+          530.73,
+          68.0
+        ],
+        [
+          530.73,
+          104.0
+        ],
+        [
+          519.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 525.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 525.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 519.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5061",
+        "aft": "5059",
+        "across": "5058",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5058",
+      "type": "CABIN",
+      "label": "Cabin 5058",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          519.64,
+          196.0
+        ],
+        [
+          530.73,
+          196.0
+        ],
+        [
+          530.73,
+          232.0
+        ],
+        [
+          519.64,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 525.18,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 525.18,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 519.64,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5062",
+        "aft": "5060",
+        "across": "5061",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5061",
+      "type": "CABIN",
+      "label": "Cabin 5061",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          532.73,
+          68.0
+        ],
+        [
+          543.82,
+          68.0
+        ],
+        [
+          543.82,
+          104.0
+        ],
+        [
+          532.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 538.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 538.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 532.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5064",
+        "aft": "5057",
+        "across": "5062",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5062",
+      "type": "CABIN",
+      "label": "Cabin 5062",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          532.73,
+          196.0
+        ],
+        [
+          543.82,
+          196.0
+        ],
+        [
+          543.82,
+          232.0
+        ],
+        [
+          532.73,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 538.27,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 538.27,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 532.73,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5063",
+        "aft": "5058",
+        "across": "5064",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5064",
+      "type": "CABIN",
+      "label": "Cabin 5064",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          545.82,
+          196.0
+        ],
+        [
+          556.91,
+          196.0
+        ],
+        [
+          556.91,
+          232.0
+        ],
+        [
+          545.82,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 551.36,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 551.36,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 545.82,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5066",
+        "aft": "5061",
+        "across": "5063",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5063",
+      "type": "CABIN",
+      "label": "Cabin 5063",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          545.82,
+          68.0
+        ],
+        [
+          556.91,
+          68.0
+        ],
+        [
+          556.91,
+          104.0
+        ],
+        [
+          545.82,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 551.36,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 551.36,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 545.82,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5075",
+        "aft": "5062",
+        "across": "5066",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5066",
+      "type": "CABIN",
+      "label": "Cabin 5066",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          558.91,
+          196.0
+        ],
+        [
+          570.0,
+          196.0
+        ],
+        [
+          570.0,
+          232.0
+        ],
+        [
+          558.91,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 564.45,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 564.45,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 558.91,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5068",
+        "aft": "5064",
+        "across": "5075",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5075",
+      "type": "CABIN",
+      "label": "Cabin 5075",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          558.91,
+          68.0
+        ],
+        [
+          570.0,
+          68.0
+        ],
+        [
+          570.0,
+          104.0
+        ],
+        [
+          558.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 564.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 564.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 558.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5137",
+        "aft": "5063",
+        "across": "5068",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5068",
+      "type": "CABIN",
+      "label": "Cabin 5068",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          572.0,
+          196.0
+        ],
+        [
+          583.09,
+          196.0
+        ],
+        [
+          583.09,
+          232.0
+        ],
+        [
+          572.0,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 577.55,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 577.55,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 572.0,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5077",
+        "aft": "5066",
+        "across": "5137",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5137",
+      "type": "CABIN",
+      "label": "Cabin 5137",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          572.0,
+          68.0
+        ],
+        [
+          583.09,
+          68.0
+        ],
+        [
+          583.09,
+          104.0
+        ],
+        [
+          572.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 577.55,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 577.55,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 572.0,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5070",
+        "aft": "5075",
+        "across": "5077",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5077",
+      "type": "CABIN",
+      "label": "Cabin 5077",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          585.09,
+          68.0
+        ],
+        [
+          596.18,
+          68.0
+        ],
+        [
+          596.18,
+          104.0
+        ],
+        [
+          585.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 590.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 590.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 585.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5135",
+        "aft": "5068",
+        "across": "5070",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5070",
+      "type": "CABIN",
+      "label": "Cabin 5070",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          585.09,
+          196.0
+        ],
+        [
+          596.18,
+          196.0
+        ],
+        [
+          596.18,
+          232.0
+        ],
+        [
+          585.09,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 590.64,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 590.64,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 585.09,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5079",
+        "aft": "5137",
+        "across": "5135",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5135",
+      "type": "CABIN",
+      "label": "Cabin 5135",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          598.18,
+          68.0
+        ],
+        [
+          609.27,
+          68.0
+        ],
+        [
+          609.27,
+          104.0
+        ],
+        [
+          598.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 603.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 603.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 598.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5072",
+        "aft": "5077",
+        "across": "5079",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5079",
+      "type": "CABIN",
+      "label": "Cabin 5079",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          598.18,
+          68.0
+        ],
+        [
+          609.27,
+          68.0
+        ],
+        [
+          609.27,
+          104.0
+        ],
+        [
+          598.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 603.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 603.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 598.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5133",
+        "aft": "5070",
+        "across": "5072",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5072",
+      "type": "CABIN",
+      "label": "Cabin 5072",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          611.27,
+          196.0
+        ],
+        [
+          622.36,
+          196.0
+        ],
+        [
+          622.36,
+          232.0
+        ],
+        [
+          611.27,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 616.82,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 616.82,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 611.27,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5081",
+        "aft": "5135",
+        "across": "5133",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5133",
+      "type": "CABIN",
+      "label": "Cabin 5133",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          611.27,
+          68.0
+        ],
+        [
+          622.36,
+          68.0
+        ],
+        [
+          622.36,
+          104.0
+        ],
+        [
+          611.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 616.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 616.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 611.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5074",
+        "aft": "5079",
+        "across": "5081",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5081",
+      "type": "CABIN",
+      "label": "Cabin 5081",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          624.36,
+          68.0
+        ],
+        [
+          635.45,
+          68.0
+        ],
+        [
+          635.45,
+          104.0
+        ],
+        [
+          624.36,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 629.91,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 629.91,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 624.36,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5076",
+        "aft": "5072",
+        "across": "5074",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5074",
+      "type": "CABIN",
+      "label": "Cabin 5074",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          624.36,
+          196.0
+        ],
+        [
+          635.45,
+          196.0
+        ],
+        [
+          635.45,
+          232.0
+        ],
+        [
+          624.36,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 629.91,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 629.91,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 624.36,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5083",
+        "aft": "5133",
+        "across": "5076",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5076",
+      "type": "CABIN",
+      "label": "Cabin 5076",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          637.45,
+          196.0
+        ],
+        [
+          648.55,
+          196.0
+        ],
+        [
+          648.55,
+          232.0
+        ],
+        [
+          637.45,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 643.0,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 643.0,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 637.45,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5085",
+        "aft": "5081",
+        "across": "5083",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5083",
+      "type": "CABIN",
+      "label": "Cabin 5083",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          637.45,
+          68.0
+        ],
+        [
+          648.55,
+          68.0
+        ],
+        [
+          648.55,
+          104.0
+        ],
+        [
+          637.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 643.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 643.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 637.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5131",
+        "aft": "5074",
+        "across": "5085",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-B-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5085",
+      "type": "CABIN",
+      "label": "Cabin 5085",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          650.55,
+          68.0
+        ],
+        [
+          661.64,
+          68.0
+        ],
+        [
+          661.64,
+          104.0
+        ],
+        [
+          650.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 656.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 656.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 650.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5078",
+        "aft": "5076",
+        "across": "5131",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5131",
+      "type": "CABIN",
+      "label": "Cabin 5131",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          650.55,
+          68.0
+        ],
+        [
+          661.64,
+          68.0
+        ],
+        [
+          661.64,
+          104.0
+        ],
+        [
+          650.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 656.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 656.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 650.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5087",
+        "aft": "5083",
+        "across": "5078",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5078",
+      "type": "CABIN",
+      "label": "Cabin 5078",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          663.64,
+          196.0
+        ],
+        [
+          674.73,
+          196.0
+        ],
+        [
+          674.73,
+          232.0
+        ],
+        [
+          663.64,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 669.18,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 669.18,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 663.64,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5089",
+        "aft": "5085",
+        "across": "5087",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5087",
+      "type": "CABIN",
+      "label": "Cabin 5087",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          663.64,
+          68.0
+        ],
+        [
+          674.73,
+          68.0
+        ],
+        [
+          674.73,
+          104.0
+        ],
+        [
+          663.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 669.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 669.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 663.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5129",
+        "aft": "5131",
+        "across": "5089",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5089",
+      "type": "CABIN",
+      "label": "Cabin 5089",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          676.73,
+          68.0
+        ],
+        [
+          687.82,
+          68.0
+        ],
+        [
+          687.82,
+          104.0
+        ],
+        [
+          676.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 682.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 682.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 676.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5080",
+        "aft": "5078",
+        "across": "5129",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5129",
+      "type": "CABIN",
+      "label": "Cabin 5129",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          676.73,
+          68.0
+        ],
+        [
+          687.82,
+          68.0
+        ],
+        [
+          687.82,
+          104.0
+        ],
+        [
+          676.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 682.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 682.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 676.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5091",
+        "aft": "5087",
+        "across": "5080",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5080",
+      "type": "CABIN",
+      "label": "Cabin 5080",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          689.82,
+          196.0
+        ],
+        [
+          700.91,
+          196.0
+        ],
+        [
+          700.91,
+          232.0
+        ],
+        [
+          689.82,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 695.36,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 695.36,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 689.82,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5093",
+        "aft": "5089",
+        "across": "5091",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5091",
+      "type": "CABIN",
+      "label": "Cabin 5091",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          689.82,
+          68.0
+        ],
+        [
+          700.91,
+          68.0
+        ],
+        [
+          700.91,
+          104.0
+        ],
+        [
+          689.82,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 695.36,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 695.36,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 689.82,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5127",
+        "aft": "5129",
+        "across": "5093",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5093",
+      "type": "CABIN",
+      "label": "Cabin 5093",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          702.91,
+          68.0
+        ],
+        [
+          714.0,
+          68.0
+        ],
+        [
+          714.0,
+          104.0
+        ],
+        [
+          702.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 708.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 708.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 702.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5082",
+        "aft": "5080",
+        "across": "5127",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5127",
+      "type": "CABIN",
+      "label": "Cabin 5127",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          702.91,
+          68.0
+        ],
+        [
+          714.0,
+          68.0
+        ],
+        [
+          714.0,
+          104.0
+        ],
+        [
+          702.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 708.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 708.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 702.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5095",
+        "aft": "5091",
+        "across": "5082",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5082",
+      "type": "CABIN",
+      "label": "Cabin 5082",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          716.0,
+          196.0
+        ],
+        [
+          727.09,
+          196.0
+        ],
+        [
+          727.09,
+          232.0
+        ],
+        [
+          716.0,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 721.55,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 721.55,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 716.0,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5097",
+        "aft": "5093",
+        "across": "5095",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5095",
+      "type": "CABIN",
+      "label": "Cabin 5095",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          716.0,
+          68.0
+        ],
+        [
+          727.09,
+          68.0
+        ],
+        [
+          727.09,
+          104.0
+        ],
+        [
+          716.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 721.55,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 721.55,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 716.0,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5125",
+        "aft": "5127",
+        "across": "5097",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5097",
+      "type": "CABIN",
+      "label": "Cabin 5097",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          729.09,
+          68.0
+        ],
+        [
+          740.18,
+          68.0
+        ],
+        [
+          740.18,
+          104.0
+        ],
+        [
+          729.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 734.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 734.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 729.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5084",
+        "aft": "5082",
+        "across": "5125",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5125",
+      "type": "CABIN",
+      "label": "Cabin 5125",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          729.09,
+          68.0
+        ],
+        [
+          740.18,
+          68.0
+        ],
+        [
+          740.18,
+          104.0
+        ],
+        [
+          729.09,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 734.64,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 734.64,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 729.09,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5099",
+        "aft": "5095",
+        "across": "5084",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5084",
+      "type": "CABIN",
+      "label": "Cabin 5084",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          742.18,
+          196.0
+        ],
+        [
+          753.27,
+          196.0
+        ],
+        [
+          753.27,
+          232.0
+        ],
+        [
+          742.18,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 747.73,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 747.73,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 742.18,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5101",
+        "aft": "5097",
+        "across": "5099",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5099",
+      "type": "CABIN",
+      "label": "Cabin 5099",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          742.18,
+          68.0
+        ],
+        [
+          753.27,
+          68.0
+        ],
+        [
+          753.27,
+          104.0
+        ],
+        [
+          742.18,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 747.73,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 747.73,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 742.18,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5123",
+        "aft": "5125",
+        "across": "5101",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5101",
+      "type": "CABIN",
+      "label": "Cabin 5101",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          755.27,
+          68.0
+        ],
+        [
+          766.36,
+          68.0
+        ],
+        [
+          766.36,
+          104.0
+        ],
+        [
+          755.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 760.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 760.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 755.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5086",
+        "aft": "5084",
+        "across": "5123",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5123",
+      "type": "CABIN",
+      "label": "Cabin 5123",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          755.27,
+          68.0
+        ],
+        [
+          766.36,
+          68.0
+        ],
+        [
+          766.36,
+          104.0
+        ],
+        [
+          755.27,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 760.82,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 760.82,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 755.27,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5103",
+        "aft": "5099",
+        "across": "5086",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5086",
+      "type": "CABIN",
+      "label": "Cabin 5086",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          768.36,
+          196.0
+        ],
+        [
+          779.45,
+          196.0
+        ],
+        [
+          779.45,
+          232.0
+        ],
+        [
+          768.36,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 773.91,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 773.91,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 768.36,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5105",
+        "aft": "5101",
+        "across": "5103",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5103",
+      "type": "CABIN",
+      "label": "Cabin 5103",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          768.36,
+          68.0
+        ],
+        [
+          779.45,
+          68.0
+        ],
+        [
+          779.45,
+          104.0
+        ],
+        [
+          768.36,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 773.91,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 773.91,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 768.36,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5121",
+        "aft": "5123",
+        "across": "5105",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5105",
+      "type": "CABIN",
+      "label": "Cabin 5105",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          781.45,
+          68.0
+        ],
+        [
+          792.55,
+          68.0
+        ],
+        [
+          792.55,
+          104.0
+        ],
+        [
+          781.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 787.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 787.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 781.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5088",
+        "aft": "5086",
+        "across": "5121",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5121",
+      "type": "CABIN",
+      "label": "Cabin 5121",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          781.45,
+          68.0
+        ],
+        [
+          792.55,
+          68.0
+        ],
+        [
+          792.55,
+          104.0
+        ],
+        [
+          781.45,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 787.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 787.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 781.45,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5107",
+        "aft": "5103",
+        "across": "5088",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5088",
+      "type": "CABIN",
+      "label": "Cabin 5088",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          794.55,
+          196.0
+        ],
+        [
+          805.64,
+          196.0
+        ],
+        [
+          805.64,
+          232.0
+        ],
+        [
+          794.55,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 800.09,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 800.09,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 794.55,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5109",
+        "aft": "5105",
+        "across": "5107",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5107",
+      "type": "CABIN",
+      "label": "Cabin 5107",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          794.55,
+          68.0
+        ],
+        [
+          805.64,
+          68.0
+        ],
+        [
+          805.64,
+          104.0
+        ],
+        [
+          794.55,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 800.09,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 800.09,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 794.55,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5119",
+        "aft": "5121",
+        "across": "5109",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5109",
+      "type": "CABIN",
+      "label": "Cabin 5109",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          807.64,
+          68.0
+        ],
+        [
+          818.73,
+          68.0
+        ],
+        [
+          818.73,
+          104.0
+        ],
+        [
+          807.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 813.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 813.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 807.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5090",
+        "aft": "5088",
+        "across": "5119",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5119",
+      "type": "CABIN",
+      "label": "Cabin 5119",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          807.64,
+          68.0
+        ],
+        [
+          818.73,
+          68.0
+        ],
+        [
+          818.73,
+          104.0
+        ],
+        [
+          807.64,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 813.18,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 813.18,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 807.64,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5111",
+        "aft": "5107",
+        "across": "5090",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5090",
+      "type": "CABIN",
+      "label": "Cabin 5090",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          820.73,
+          196.0
+        ],
+        [
+          831.82,
+          196.0
+        ],
+        [
+          831.82,
+          232.0
+        ],
+        [
+          820.73,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 826.27,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 826.27,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 820.73,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5092",
+        "aft": "5109",
+        "across": "5111",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5111",
+      "type": "CABIN",
+      "label": "Cabin 5111",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          820.73,
+          68.0
+        ],
+        [
+          831.82,
+          68.0
+        ],
+        [
+          831.82,
+          104.0
+        ],
+        [
+          820.73,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 826.27,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 826.27,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 820.73,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5113",
+        "aft": "5119",
+        "across": "5092",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5092",
+      "type": "CABIN",
+      "label": "Cabin 5092",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          833.82,
+          196.0
+        ],
+        [
+          844.91,
+          196.0
+        ],
+        [
+          844.91,
+          232.0
+        ],
+        [
+          833.82,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 839.36,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 839.36,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 833.82,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5094",
+        "aft": "5090",
+        "across": "5113",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5113",
+      "type": "CABIN",
+      "label": "Cabin 5113",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          833.82,
+          68.0
+        ],
+        [
+          844.91,
+          68.0
+        ],
+        [
+          844.91,
+          104.0
+        ],
+        [
+          833.82,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 839.36,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 839.36,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 833.82,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": "5115",
+        "aft": "5111",
+        "across": "5094",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5094",
+      "type": "CABIN",
+      "label": "Cabin 5094",
+      "category": "STATEROOM_INTERIOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          846.91,
+          196.0
+        ],
+        [
+          858.0,
+          196.0
+        ],
+        [
+          858.0,
+          232.0
+        ],
+        [
+          846.91,
+          232.0
+        ]
+      ],
+      "centroid": {
+        "x": 852.45,
+        "y": 214.0
+      },
+      "door_position": {
+        "x": 852.45,
+        "y": 196.0
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 846.91,
+        "y": 196.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": "5092",
+        "across": "5115",
+        "corridor": "CORRIDOR-STARBOARD-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "5115",
+      "type": "CABIN",
+      "label": "Cabin 5115",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          846.91,
+          68.0
+        ],
+        [
+          858.0,
+          68.0
+        ],
+        [
+          858.0,
+          104.0
+        ],
+        [
+          846.91,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 852.45,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 852.45,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 846.91,
+        "y": 68.0,
+        "width": 11.09,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": "5113",
+        "across": "5094",
+        "corridor": "CORRIDOR-PORT-D05",
+        "nearest_lift": "LIFT-CORE-A-D05"
+      },
+      "confidence": 1.0
+    }
+  ]
+}

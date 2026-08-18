@@ -1,0 +1,405 @@
+{
+  "vessel_id": "msc-bellissima",
+  "deck_number": 7,
+  "deck_name": "Fantasia",
+  "provenance": {
+    "source_artifact": "MSC_BELLISSIMA_DECK_PLANS_11.2025_DEU",
+    "evidence_page": 3,
+    "extracted_at": "2026-08-18",
+    "confidence": 1.0
+  },
+  "bounding_box": {
+    "min_x": 40.0,
+    "min_y": 40.0,
+    "max_x": 980.0,
+    "max_y": 260.0,
+    "width": 940.0,
+    "height": 220.0
+  },
+  "objects": [
+    {
+      "id": "LIFT-CORE-A-D07",
+      "type": "LIFT",
+      "label": "Forward Lift Core A",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          740.0,
+          130.0
+        ],
+        [
+          768.0,
+          130.0
+        ],
+        [
+          768.0,
+          168.0
+        ],
+        [
+          740.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 754.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 754.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 740.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-CORE-B-D07",
+      "type": "LIFT",
+      "label": "Midship Lift Core B",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          490.0,
+          130.0
+        ],
+        [
+          518.0,
+          130.0
+        ],
+        [
+          518.0,
+          168.0
+        ],
+        [
+          490.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 504.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 504.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 490.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-CORE-C-D07",
+      "type": "LIFT",
+      "label": "Aft Lift Core C",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "CENTER",
+      "polygon": [
+        [
+          230.0,
+          130.0
+        ],
+        [
+          258.0,
+          130.0
+        ],
+        [
+          258.0,
+          168.0
+        ],
+        [
+          230.0,
+          168.0
+        ]
+      ],
+      "centroid": {
+        "x": 244.0,
+        "y": 149.0
+      },
+      "door_position": {
+        "x": 244.0,
+        "y": 168.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 230.0,
+        "y": 130.0,
+        "width": 28.0,
+        "height": 38.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "LIFT-PANORAMIC-D07",
+      "type": "LIFT",
+      "label": "Atrium Panoramic Lifts",
+      "category": "CIRCULATION_VERTICAL_CORE",
+      "side": "PORT",
+      "polygon": [
+        [
+          440.0,
+          52.0
+        ],
+        [
+          464.0,
+          52.0
+        ],
+        [
+          464.0,
+          78.0
+        ],
+        [
+          440.0,
+          78.0
+        ]
+      ],
+      "centroid": {
+        "x": 452.0,
+        "y": 65.0
+      },
+      "door_position": {
+        "x": 452.0,
+        "y": 78.0
+      },
+      "orientation": "CENTER",
+      "bounding_box": {
+        "x": 440.0,
+        "y": 52.0,
+        "width": 24.0,
+        "height": 26.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CENTRAL_CIRCULATION",
+        "nearest_lift": null
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "CORRIDOR-PORT-D07",
+      "type": "CORRIDOR",
+      "label": "Port Corridor Deck 7",
+      "category": "CIRCULATION_CORRIDOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          100.0,
+          110.0
+        ],
+        [
+          900.0,
+          110.0
+        ],
+        [
+          900.0,
+          125.0
+        ],
+        [
+          100.0,
+          125.0
+        ]
+      ],
+      "centroid": {
+        "x": 500.0,
+        "y": 117.5
+      },
+      "door_position": {
+        "x": 500.0,
+        "y": 117.5
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 100.0,
+        "y": 110.0,
+        "width": 800.0,
+        "height": 15.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": "CORRIDOR-STARBOARD-D07",
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-B-D07"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "CORRIDOR-STARBOARD-D07",
+      "type": "CORRIDOR",
+      "label": "Starboard Corridor Deck 7",
+      "category": "CIRCULATION_CORRIDOR",
+      "side": "STARBOARD",
+      "polygon": [
+        [
+          100.0,
+          175.0
+        ],
+        [
+          900.0,
+          175.0
+        ],
+        [
+          900.0,
+          190.0
+        ],
+        [
+          100.0,
+          190.0
+        ]
+      ],
+      "centroid": {
+        "x": 500.0,
+        "y": 182.5
+      },
+      "door_position": {
+        "x": 500.0,
+        "y": 182.5
+      },
+      "orientation": "STARBOARD",
+      "bounding_box": {
+        "x": 100.0,
+        "y": 175.0,
+        "width": 800.0,
+        "height": 15.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": "CORRIDOR-PORT-D07",
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-B-D07"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "VENUE-AUREA-SPA-D07",
+      "type": "VENUE",
+      "label": "MSC Aurea Spa",
+      "category": "PUBLIC_WELLNESS",
+      "side": "CENTER",
+      "polygon": [
+        [
+          730.0,
+          60.0
+        ],
+        [
+          920.0,
+          60.0
+        ],
+        [
+          920.0,
+          240.0
+        ],
+        [
+          730.0,
+          240.0
+        ]
+      ],
+      "centroid": {
+        "x": 825.0,
+        "y": 150.0
+      },
+      "door_position": {
+        "x": 730.0,
+        "y": 150.0
+      },
+      "orientation": "AFT",
+      "bounding_box": {
+        "x": 730.0,
+        "y": 60.0,
+        "width": 190.0,
+        "height": 180.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": "LIFT-CORE-A-D07",
+        "across": null,
+        "corridor": null,
+        "nearest_lift": "LIFT-CORE-A-D07"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "7605",
+      "type": "CABIN",
+      "label": "Cabin 7605",
+      "category": "STATEROOM_INTERIOR",
+      "side": "PORT",
+      "polygon": [
+        [
+          140.0,
+          68.0
+        ],
+        [
+          166.0,
+          68.0
+        ],
+        [
+          166.0,
+          104.0
+        ],
+        [
+          140.0,
+          104.0
+        ]
+      ],
+      "centroid": {
+        "x": 153.0,
+        "y": 86.0
+      },
+      "door_position": {
+        "x": 153.0,
+        "y": 104.0
+      },
+      "orientation": "PORT",
+      "bounding_box": {
+        "x": 140.0,
+        "y": 68.0,
+        "width": 26.0,
+        "height": 36.0
+      },
+      "adjacent_objects": {
+        "fore": null,
+        "aft": null,
+        "across": null,
+        "corridor": "CORRIDOR-PORT-D07",
+        "nearest_lift": "LIFT-CORE-C-D07"
+      },
+      "confidence": 1.0
+    }
+  ]
+}
