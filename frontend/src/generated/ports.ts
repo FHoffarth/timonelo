@@ -30,5359 +30,5359 @@ export interface PortData {
 
 export const PORTS_REGISTRY: PortData[] = [
   {
-    "slug": "ajaccio",
-    "name": "Port of Ajaccio (Corsica)",
-    "unLocode": "FRAJA",
-    "country": "France",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Ajaccio (Corsica)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ajaccio (Corsica) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "ajaccio",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRAJA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "akureyri",
-    "name": "Port of Akureyri",
-    "unLocode": "ISAKU",
-    "country": "Iceland",
-    "region": "Atlantic / Iceland",
-    "headline": "Strategic maritime cruise port gateway for Atlantic / Iceland.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Iceland",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Atlantic / Iceland.",
+    "name": "Port of Akureyri",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Akureyri Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Atlantic / Iceland",
+    "slug": "akureyri",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ISAKU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "alesund",
-    "name": "Port of Ålesund",
-    "unLocode": "NOAES",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Ålesund",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ålesund Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "alesund",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOAES",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "amsterdam",
-    "name": "Passenger Terminal Amsterdam (PTA)",
-    "unLocode": "NLAMS",
-    "country": "Netherlands",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Netherlands",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Passenger Terminal Amsterdam (PTA)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Passenger Terminal Amsterdam (PTA) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "amsterdam",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NLAMS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "arrecife",
-    "name": "Port of Arrecife (Lanzarote)",
-    "unLocode": "ESACE",
-    "country": "Spain",
-    "region": "Canary Islands",
-    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
+    "name": "Port of Arrecife (Lanzarote)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Arrecife (Lanzarote) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Canary Islands",
+    "slug": "arrecife",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESACE",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "barcelona",
-    "name": "Port of Barcelona",
-    "unLocode": "ESBCN",
-    "country": "Spain",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Barcelona",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Barcelona Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "barcelona",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESBCN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bari",
-    "name": "Port of Bari",
-    "unLocode": "ITBRI",
-    "country": "Italy",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Bari",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Bari Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "bari",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITBRI",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "basel",
-    "name": "Port of Basel (Rhine Hub)",
-    "unLocode": "CHBSL",
-    "country": "Switzerland",
-    "region": "Rhine River",
-    "headline": "Strategic maritime cruise port gateway for Rhine River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Switzerland",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Rhine River.",
+    "name": "Port of Basel (Rhine Hub)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Basel (Rhine Hub) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Rhine River",
+    "slug": "basel",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CHBSL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bayonne-cape-liberty",
-    "name": "Cape Liberty Cruise Port (Bayonne)",
-    "unLocode": "USBYN",
-    "country": "United States",
-    "region": "East Coast / New York Harbour",
-    "headline": "Strategic maritime cruise port gateway for East Coast / New York Harbour.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for East Coast / New York Harbour.",
+    "name": "Cape Liberty Cruise Port (Bayonne)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Cape Liberty Cruise Port (Bayonne) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "East Coast / New York Harbour",
+    "slug": "bayonne-cape-liberty",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USBYN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bergen",
-    "name": "Port of Bergen",
-    "unLocode": "NOBGO",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Bergen",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Bergen Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "bergen",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOBGO",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "boston",
-    "name": "Port of Boston (Flynn Cruiseport)",
-    "unLocode": "USBOS",
-    "country": "United States",
-    "region": "New England",
-    "headline": "Strategic maritime cruise port gateway for New England.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for New England.",
+    "name": "Port of Boston (Flynn Cruiseport)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Boston (Flynn Cruiseport) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "New England",
+    "slug": "boston",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USBOS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bratislava",
-    "name": "Port of Bratislava (Danube)",
-    "unLocode": "SKBTS",
-    "country": "Slovakia",
-    "region": "Danube River",
-    "headline": "Strategic maritime cruise port gateway for Danube River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Slovakia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Danube River.",
+    "name": "Port of Bratislava (Danube)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Bratislava (Danube) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Danube River",
+    "slug": "bratislava",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "SKBTS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bremerhaven",
-    "name": "Columbus Cruise Center Bremerhaven (CCCB)",
-    "unLocode": "DEBRV",
-    "country": "Germany",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Columbus Cruise Center Bremerhaven (CCCB)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Columbus Cruise Center Bremerhaven (CCCB) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "bremerhaven",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEBRV",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "bridgetown",
-    "name": "Port of Bridgetown (Barbados)",
-    "unLocode": "BBBGI",
-    "country": "Barbados",
-    "region": "Southern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Barbados",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
+    "name": "Port of Bridgetown (Barbados)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Bridgetown (Barbados) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Southern Caribbean",
+    "slug": "bridgetown",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "BBBGI",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "budapest",
-    "name": "Port of Budapest (Danube River)",
-    "unLocode": "HUBUD",
-    "country": "Hungary",
-    "region": "Danube River",
-    "headline": "Strategic maritime cruise port gateway for Danube River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Hungary",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Danube River.",
+    "name": "Port of Budapest (Danube River)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Budapest (Danube River) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Danube River",
+    "slug": "budapest",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "HUBUD",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "buenos-aires",
-    "name": "Port of Buenos Aires (Benito Quinquela Martín)",
-    "unLocode": "ARBUE",
-    "country": "Argentina",
-    "region": "South America",
-    "headline": "Strategic maritime cruise port gateway for South America.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Argentina",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for South America.",
+    "name": "Port of Buenos Aires (Benito Quinquela Martín)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Buenos Aires (Benito Quinquela Martín) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "South America",
+    "slug": "buenos-aires",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ARBUE",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cabo-san-lucas",
-    "name": "Port of Cabo San Lucas (Baja California)",
-    "unLocode": "MXCSL",
-    "country": "Mexico",
-    "region": "Mexican Riviera",
-    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
+    "name": "Port of Cabo San Lucas (Baja California)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cabo San Lucas (Baja California) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Mexican Riviera",
+    "slug": "cabo-san-lucas",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MXCSL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cadiz",
-    "name": "Port of Cadiz",
-    "unLocode": "ESCAD",
-    "country": "Spain",
-    "region": "Atlantic / Andalusia",
-    "headline": "Strategic maritime cruise port gateway for Atlantic / Andalusia.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Atlantic / Andalusia.",
+    "name": "Port of Cadiz",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cadiz Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Atlantic / Andalusia",
+    "slug": "cadiz",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESCAD",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cagliari",
-    "name": "Port of Cagliari (Sardinia)",
-    "unLocode": "ITCAG",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Cagliari (Sardinia)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cagliari (Sardinia) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "cagliari",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITCAG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cannes",
-    "name": "Port of Cannes",
-    "unLocode": "FRCEQ",
-    "country": "France",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Cannes",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cannes Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "cannes",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRCEQ",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "castries",
-    "name": "Port of Castries (St. Lucia)",
-    "unLocode": "LCCAS",
-    "country": "St. Lucia",
-    "region": "Southern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "St. Lucia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
+    "name": "Port of Castries (St. Lucia)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Castries (St. Lucia) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Southern Caribbean",
+    "slug": "castries",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "LCCAS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "civitavecchia",
-    "name": "Port of Civitavecchia (Rome)",
-    "unLocode": "ITCVV",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Civitavecchia (Rome)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Civitavecchia (Rome) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "civitavecchia",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITCVV",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cologne",
-    "name": "Port of Cologne (Köln / Rhine)",
-    "unLocode": "DECGN",
-    "country": "Germany",
-    "region": "Rhine River",
-    "headline": "Strategic maritime cruise port gateway for Rhine River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Rhine River.",
+    "name": "Port of Cologne (Köln / Rhine)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cologne (Köln / Rhine) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Rhine River",
+    "slug": "cologne",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DECGN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "copenhagen",
-    "name": "Port of Copenhagen",
-    "unLocode": "DKCPH",
-    "country": "Denmark",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Denmark",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Copenhagen",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Copenhagen Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "copenhagen",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DKCPH",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "corfu",
-    "name": "Port of Corfu (Kerkyra)",
-    "unLocode": "GRCFU",
-    "country": "Greece",
-    "region": "Ionian Sea",
-    "headline": "Strategic maritime cruise port gateway for Ionian Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Ionian Sea.",
+    "name": "Port of Corfu (Kerkyra)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Corfu (Kerkyra) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Ionian Sea",
+    "slug": "corfu",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRCFU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "costa-maya",
-    "name": "Port of Costa Maya (Mahahual)",
-    "unLocode": "MXCMY",
-    "country": "Mexico",
-    "region": "Western Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
+    "name": "Port of Costa Maya (Mahahual)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Costa Maya (Mahahual) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Caribbean",
+    "slug": "costa-maya",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MXCMY",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "cozumel",
-    "name": "Port of Cozumel",
-    "unLocode": "MXCZM",
-    "country": "Mexico",
-    "region": "Western Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
+    "name": "Port of Cozumel",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Cozumel Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Caribbean",
+    "slug": "cozumel",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MXCZM",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "dover",
-    "name": "Port of Dover",
-    "unLocode": "GBDOV",
-    "country": "United Kingdom",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United Kingdom",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Port of Dover",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Dover Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "dover",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GBDOV",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "dubrovnik",
-    "name": "Port of Dubrovnik (Gruž)",
-    "unLocode": "HRDBV",
-    "country": "Croatia",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Croatia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Dubrovnik (Gruž)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Dubrovnik (Gruž) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "dubrovnik",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "HRDBV",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "ensenada",
-    "name": "Port of Ensenada (Baja California)",
-    "unLocode": "MXESE",
-    "country": "Mexico",
-    "region": "Mexican Riviera",
-    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
+    "name": "Port of Ensenada (Baja California)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ensenada (Baja California) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Mexican Riviera",
+    "slug": "ensenada",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MXESE",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "flam",
-    "name": "Port of Flåm (Aurlandsfjord)",
-    "unLocode": "NOFLA",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Flåm (Aurlandsfjord)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Flåm (Aurlandsfjord) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "flam",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOFLA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "fort-lauderdale",
-    "name": "Port Everglades",
-    "unLocode": "USPEF",
-    "country": "United States",
-    "region": "Florida / Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
+    "name": "Port Everglades",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port Everglades Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Florida / Caribbean",
+    "slug": "fort-lauderdale",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USPEF",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "funchal",
-    "name": "Port of Funchal (Madeira)",
-    "unLocode": "PTFNC",
-    "country": "Portugal",
-    "region": "Atlantic / Madeira",
-    "headline": "Strategic maritime cruise port gateway for Atlantic / Madeira.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Portugal",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Atlantic / Madeira.",
+    "name": "Port of Funchal (Madeira)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Funchal (Madeira) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Atlantic / Madeira",
+    "slug": "funchal",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PTFNC",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "galveston",
-    "name": "Port of Galveston",
-    "unLocode": "USGLS",
-    "country": "United States",
-    "region": "Texas / Gulf Coast",
-    "headline": "Strategic maritime cruise port gateway for Texas / Gulf Coast.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Texas / Gulf Coast.",
+    "name": "Port of Galveston",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Galveston Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Texas / Gulf Coast",
+    "slug": "galveston",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USGLS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "geiranger",
-    "name": "Port of Geiranger (Geirangerfjord)",
-    "unLocode": "NOGEI",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Geiranger (Geirangerfjord)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Geiranger (Geirangerfjord) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "geiranger",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOGEI",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "genoa",
-    "name": "Port of Genoa (Genova)",
-    "unLocode": "ITGOA",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Genoa (Genova)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Genoa (Genova) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "genoa",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITGOA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "grand-cayman",
-    "name": "Port of Grand Cayman (George Town)",
-    "unLocode": "KYGEC",
-    "country": "Cayman Islands",
-    "region": "Western Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Cayman Islands",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
+    "name": "Port of Grand Cayman (George Town)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Grand Cayman (George Town) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Caribbean",
+    "slug": "grand-cayman",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "KYGEC",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "haifa",
-    "name": "Port of Haifa",
-    "unLocode": "ILHFA",
-    "country": "Israel",
-    "region": "Eastern Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Israel",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
+    "name": "Port of Haifa",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Haifa Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Mediterranean",
+    "slug": "haifa",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ILHFA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "hamburg",
-    "name": "Port of Hamburg",
-    "unLocode": "DEHAM",
-    "country": "Germany",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Port of Hamburg",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Hamburg Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "hamburg",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEHAM",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "helsinki",
-    "name": "Port of Helsinki",
-    "unLocode": "FIHEL",
-    "country": "Finland",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Finland",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Helsinki",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Helsinki Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "helsinki",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FIHEL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "heraklion",
-    "name": "Port of Heraklion (Crete)",
-    "unLocode": "GRHER",
-    "country": "Greece",
-    "region": "Eastern Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
+    "name": "Port of Heraklion (Crete)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Heraklion (Crete) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Mediterranean",
+    "slug": "heraklion",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRHER",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "honDefault-nordkapp",
-    "name": "Port of Honningsvåg (North Cape)",
-    "unLocode": "NOHVG",
-    "country": "Norway",
-    "region": "Arctic Norway",
-    "headline": "Strategic maritime cruise port gateway for Arctic Norway.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Arctic Norway.",
+    "name": "Port of Honningsvåg (North Cape)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Honningsvåg (North Cape) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Arctic Norway",
+    "slug": "honDefault-nordkapp",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOHVG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "hong-kong",
-    "name": "Kai Tak Cruise Terminal (Hong Kong)",
-    "unLocode": "HKHKG",
-    "country": "Hong Kong",
-    "region": "East Asia",
-    "headline": "Strategic maritime cruise port gateway for East Asia.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Hong Kong",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for East Asia.",
+    "name": "Kai Tak Cruise Terminal (Hong Kong)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Kai Tak Cruise Terminal (Hong Kong) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "East Asia",
+    "slug": "hong-kong",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "HKHKG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "ibiza",
-    "name": "Port of Ibiza",
-    "unLocode": "ESIBZ",
-    "country": "Spain",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Ibiza",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ibiza Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "ibiza",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESIBZ",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "istanbul",
-    "name": "Galataport Istanbul",
-    "unLocode": "TRIST",
-    "country": "Turkey",
-    "region": "Bosphorus / Black Sea",
-    "headline": "Strategic maritime cruise port gateway for Bosphorus / Black Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Turkey",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Bosphorus / Black Sea.",
+    "name": "Galataport Istanbul",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Galataport Istanbul Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Bosphorus / Black Sea",
+    "slug": "istanbul",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "TRIST",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "juneau",
-    "name": "Port of Juneau (Alaska)",
-    "unLocode": "USJNU",
-    "country": "United States",
-    "region": "Alaska Inside Passage",
-    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
+    "name": "Port of Juneau (Alaska)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Juneau (Alaska) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Alaska Inside Passage",
+    "slug": "juneau",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USJNU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "ketchikan",
-    "name": "Port of Ketchikan (Alaska)",
-    "unLocode": "USKTN",
-    "country": "United States",
-    "region": "Alaska Inside Passage",
-    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
+    "name": "Port of Ketchikan (Alaska)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ketchikan (Alaska) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Alaska Inside Passage",
+    "slug": "ketchikan",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USKTN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "kiel",
-    "name": "Port of Kiel",
-    "unLocode": "DEKEL",
-    "country": "Germany",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Kiel",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Kiel Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "kiel",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEKEL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "koblenz",
-    "name": "Koblenz (Deutsches Eck / Rhine & Moselle)",
-    "unLocode": "DEKOB",
-    "country": "Germany",
-    "region": "Rhine River",
-    "headline": "Strategic maritime cruise port gateway for Rhine River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Rhine River.",
+    "name": "Koblenz (Deutsches Eck / Rhine & Moselle)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Koblenz (Deutsches Eck / Rhine & Moselle) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Rhine River",
+    "slug": "koblenz",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEKOB",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "kotor",
-    "name": "Port of Kotor",
-    "unLocode": "MEKOT",
-    "country": "Montenegro",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Montenegro",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Kotor",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Kotor Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "kotor",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MEKOT",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "kusadasi",
-    "name": "Port of Kusadasi (Ephesus Gateway)",
-    "unLocode": "TRKUS",
-    "country": "Turkey",
-    "region": "Aegean / Turkey",
-    "headline": "Strategic maritime cruise port gateway for Aegean / Turkey.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Turkey",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Aegean / Turkey.",
+    "name": "Port of Kusadasi (Ephesus Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Kusadasi (Ephesus Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Aegean / Turkey",
+    "slug": "kusadasi",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "TRKUS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "la-spezia",
-    "name": "Port of La Spezia (Cinque Terre Gateway)",
-    "unLocode": "ITSPE",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of La Spezia (Cinque Terre Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of La Spezia (Cinque Terre Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "la-spezia",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITSPE",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "las-palmas",
-    "name": "Port of Las Palmas (Gran Canaria)",
-    "unLocode": "ESLPA",
-    "country": "Spain",
-    "region": "Canary Islands",
-    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
+    "name": "Port of Las Palmas (Gran Canaria)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Las Palmas (Gran Canaria) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Canary Islands",
+    "slug": "las-palmas",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESLPA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "le-havre",
-    "name": "Port of Le Havre (Paris Gateway)",
-    "unLocode": "FRLEH",
-    "country": "France",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Port of Le Havre (Paris Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Le Havre (Paris Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "le-havre",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRLEH",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "limassol",
-    "name": "Port of Limassol",
-    "unLocode": "CYLMS",
-    "country": "Cyprus",
-    "region": "Eastern Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Cyprus",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Mediterranean.",
+    "name": "Port of Limassol",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Limassol Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Mediterranean",
+    "slug": "limassol",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CYLMS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "lisbon",
-    "name": "Port of Lisbon (Porto de Lisboa)",
-    "unLocode": "PTLIS",
-    "country": "Portugal",
-    "region": "Atlantic / Western Europe",
-    "headline": "Strategic maritime cruise port gateway for Atlantic / Western Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Portugal",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Atlantic / Western Europe.",
+    "name": "Port of Lisbon (Porto de Lisboa)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Lisbon (Porto de Lisboa) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Atlantic / Western Europe",
+    "slug": "lisbon",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PTLIS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "livorno",
-    "name": "Port of Livorno (Florence/Pisa Gateway)",
-    "unLocode": "ITLIV",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Livorno (Florence/Pisa Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Livorno (Florence/Pisa Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "livorno",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITLIV",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "london",
-    "name": "London Tilbury / Greenwich Cruise Terminal",
-    "unLocode": "GBLON",
-    "country": "United Kingdom",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United Kingdom",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "London Tilbury / Greenwich Cruise Terminal",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "London Tilbury / Greenwich Cruise Terminal Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "london",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GBLON",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "los-angeles",
-    "name": "Port of Los Angeles (World Cruise Center)",
-    "unLocode": "USLAX",
-    "country": "United States",
-    "region": "US West Coast",
-    "headline": "Strategic maritime cruise port gateway for US West Coast.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for US West Coast.",
+    "name": "Port of Los Angeles (World Cruise Center)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Los Angeles (World Cruise Center) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "US West Coast",
+    "slug": "los-angeles",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USLAX",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "malaga",
-    "name": "Port of Malaga",
-    "unLocode": "ESAGP",
-    "country": "Spain",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Malaga",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Malaga Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "malaga",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESAGP",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "marseille",
-    "name": "Port of Marseille Fos",
-    "unLocode": "FRMRS",
-    "country": "France",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Marseille Fos",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Marseille Fos Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "marseille",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRMRS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "mazatlan",
-    "name": "Port of Mazatlán (Sinaloa)",
-    "unLocode": "MZMZT",
-    "country": "Mexico",
-    "region": "Mexican Riviera",
-    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
+    "name": "Port of Mazatlán (Sinaloa)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Mazatlán (Sinaloa) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Mexican Riviera",
+    "slug": "mazatlan",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MZMZT",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "messina",
-    "name": "Port of Messina (Sicily)",
-    "unLocode": "ITMSN",
-    "country": "Italy",
-    "region": "Central Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Central Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Central Mediterranean.",
+    "name": "Port of Messina (Sicily)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Messina (Sicily) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Central Mediterranean",
+    "slug": "messina",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITMSN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "miami",
-    "name": "PortMiami (Cruise Capital)",
-    "unLocode": "USMIA",
-    "country": "United States",
-    "region": "Florida / Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
+    "name": "PortMiami (Cruise Capital)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "PortMiami (Cruise Capital) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Florida / Caribbean",
+    "slug": "miami",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USMIA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "monaco",
-    "name": "Port Hercules (Monaco)",
-    "unLocode": "MCMON",
-    "country": "Monaco",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Monaco",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port Hercules (Monaco)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port Hercules (Monaco) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "monaco",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MCMON",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "mykonos",
-    "name": "Port of Mykonos (Tourlos)",
-    "unLocode": "GRJMK",
-    "country": "Greece",
-    "region": "Aegean Sea",
-    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
+    "name": "Port of Mykonos (Tourlos)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Mykonos (Tourlos) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Aegean Sea",
+    "slug": "mykonos",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRJMK",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "naples",
-    "name": "Port of Naples (Napoli)",
-    "unLocode": "ITNAP",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Naples (Napoli)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Naples (Napoli) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "naples",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITNAP",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "nassau",
-    "name": "Nassau Cruise Port (Bahamas)",
-    "unLocode": "BSNAS",
-    "country": "Bahamas",
-    "region": "Bahamas / Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Bahamas / Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Bahamas",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Bahamas / Caribbean.",
+    "name": "Nassau Cruise Port (Bahamas)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Nassau Cruise Port (Bahamas) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Bahamas / Caribbean",
+    "slug": "nassau",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "BSNAS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "new-orleans",
-    "name": "Port of New Orleans",
-    "unLocode": "USMSY",
-    "country": "United States",
-    "region": "Gulf Coast / Mississippi",
-    "headline": "Strategic maritime cruise port gateway for Gulf Coast / Mississippi.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Gulf Coast / Mississippi.",
+    "name": "Port of New Orleans",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of New Orleans Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Gulf Coast / Mississippi",
+    "slug": "new-orleans",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USMSY",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "new-york",
-    "name": "Port of New York (Manhattan/Brooklyn)",
-    "unLocode": "USNYC",
-    "country": "United States",
-    "region": "East Coast / Atlantic",
-    "headline": "Strategic maritime cruise port gateway for East Coast / Atlantic.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for East Coast / Atlantic.",
+    "name": "Port of New York (Manhattan/Brooklyn)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of New York (Manhattan/Brooklyn) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "East Coast / Atlantic",
+    "slug": "new-york",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USNYC",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "nice-villefranche",
-    "name": "Port of Villefranche-sur-Mer / Nice",
-    "unLocode": "FRVFR",
-    "country": "France",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Villefranche-sur-Mer / Nice",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Villefranche-sur-Mer / Nice Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "nice-villefranche",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRVFR",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "ocho-rios",
-    "name": "Port of Ocho Rios (Jamaica)",
-    "unLocode": "JMOCH",
-    "country": "Jamaica",
-    "region": "Western Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Jamaica",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
+    "name": "Port of Ocho Rios (Jamaica)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ocho Rios (Jamaica) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Caribbean",
+    "slug": "ocho-rios",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "JMOCH",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "oranjestad",
-    "name": "Port of Oranjestad (Aruba)",
-    "unLocode": "AWORJ",
-    "country": "Aruba",
-    "region": "Southern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Aruba",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
+    "name": "Port of Oranjestad (Aruba)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Oranjestad (Aruba) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Southern Caribbean",
+    "slug": "oranjestad",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "AWORJ",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "oslo",
-    "name": "Port of Oslo",
-    "unLocode": "NOOSL",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Oslo",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Oslo Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "oslo",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOOSL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "palermo",
-    "name": "Port of Palermo",
-    "unLocode": "ITPMO",
-    "country": "Italy",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Palermo",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Palermo Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "palermo",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITPMO",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "palma-de-mallorca",
-    "name": "Port of Palma de Mallorca",
-    "unLocode": "ESPMI",
-    "country": "Spain",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Palma de Mallorca",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Palma de Mallorca Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "palma-de-mallorca",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESPMI",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "passau",
-    "name": "Port of Passau (Three Rivers City / Danube)",
-    "unLocode": "DEPAS",
-    "country": "Germany",
-    "region": "Danube River",
-    "headline": "Strategic maritime cruise port gateway for Danube River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Danube River.",
+    "name": "Port of Passau (Three Rivers City / Danube)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Passau (Three Rivers City / Danube) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Danube River",
+    "slug": "passau",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEPAS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "pinhao",
-    "name": "Pinhão River Pier (Douro Valley)",
-    "unLocode": "PTPNH",
-    "country": "Portugal",
-    "region": "Douro River",
-    "headline": "Strategic maritime cruise port gateway for Douro River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Portugal",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Douro River.",
+    "name": "Pinhão River Pier (Douro Valley)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Pinhão River Pier (Douro Valley) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Douro River",
+    "slug": "pinhao",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PTPNH",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "piraeus",
-    "name": "Port of Piraeus (Athens)",
-    "unLocode": "GRPIR",
-    "country": "Greece",
-    "region": "Aegean / Eastern Med",
-    "headline": "Strategic maritime cruise port gateway for Aegean / Eastern Med.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Aegean / Eastern Med.",
+    "name": "Port of Piraeus (Athens)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Piraeus (Athens) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Aegean / Eastern Med",
+    "slug": "piraeus",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRPIR",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "port-canaveral",
-    "name": "Port Canaveral (Orlando Gateway)",
-    "unLocode": "USPCN",
-    "country": "United States",
-    "region": "Florida / Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
+    "name": "Port Canaveral (Orlando Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port Canaveral (Orlando Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Florida / Caribbean",
+    "slug": "port-canaveral",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USPCN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "port-everglades",
-    "name": "Port Everglades (Fort Lauderdale)",
-    "unLocode": "USPEF",
-    "country": "United States",
-    "region": "Florida / Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Florida / Caribbean.",
+    "name": "Port Everglades (Fort Lauderdale)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port Everglades (Fort Lauderdale) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Florida / Caribbean",
+    "slug": "port-everglades",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USPEF",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "porto",
-    "name": "Port of Porto / Douro River",
-    "unLocode": "PTOPO",
-    "country": "Portugal",
-    "region": "Douro River",
-    "headline": "Strategic maritime cruise port gateway for Douro River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Portugal",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Douro River.",
+    "name": "Port of Porto / Douro River",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Porto / Douro River Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Douro River",
+    "slug": "porto",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PTOPO",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "puerto-vallarta",
-    "name": "Port of Puerto Vallarta (Jalisco)",
-    "unLocode": "MXPVR",
-    "country": "Mexico",
-    "region": "Mexican Riviera",
-    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Mexico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Mexican Riviera.",
+    "name": "Port of Puerto Vallarta (Jalisco)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Puerto Vallarta (Jalisco) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Mexican Riviera",
+    "slug": "puerto-vallarta",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MXPVR",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "regua",
-    "name": "Peso da Régua (Douro Valley)",
-    "unLocode": "PTREG",
-    "country": "Portugal",
-    "region": "Douro River",
-    "headline": "Strategic maritime cruise port gateway for Douro River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Portugal",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Douro River.",
+    "name": "Peso da Régua (Douro Valley)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Peso da Régua (Douro Valley) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Douro River",
+    "slug": "regua",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PTREG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "reykjavik",
-    "name": "Port of Reykjavik",
-    "unLocode": "ISREY",
-    "country": "Iceland",
-    "region": "Atlantic / Iceland",
-    "headline": "Strategic maritime cruise port gateway for Atlantic / Iceland.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Iceland",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Atlantic / Iceland.",
+    "name": "Port of Reykjavik",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Reykjavik Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Atlantic / Iceland",
+    "slug": "reykjavik",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ISREY",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "rhodes",
-    "name": "Port of Rhodes",
-    "unLocode": "GRRHO",
-    "country": "Greece",
-    "region": "Aegean Sea",
-    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
+    "name": "Port of Rhodes",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Rhodes Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Aegean Sea",
+    "slug": "rhodes",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRRHO",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "riga",
-    "name": "Port of Riga",
-    "unLocode": "LVRIX",
-    "country": "Latvia",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Latvia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Riga",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Riga Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "riga",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "LVRIX",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "roatan",
-    "name": "Port of Roatan (Coxen Hole & Mahogany Bay)",
-    "unLocode": "HNRTB",
-    "country": "Honduras",
-    "region": "Western Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Honduras",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Caribbean.",
+    "name": "Port of Roatan (Coxen Hole & Mahogany Bay)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Roatan (Coxen Hole & Mahogany Bay) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Caribbean",
+    "slug": "roatan",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "HNRTB",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "rotterdam",
-    "name": "Cruise Port Rotterdam",
-    "unLocode": "NLRTM",
-    "country": "Netherlands",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Netherlands",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Cruise Port Rotterdam",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Cruise Port Rotterdam Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "rotterdam",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NLRTM",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "san-juan",
-    "name": "Port of San Juan (Puerto Rico)",
-    "unLocode": "PRSJU",
-    "country": "Puerto Rico",
-    "region": "Eastern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Puerto Rico",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
+    "name": "Port of San Juan (Puerto Rico)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of San Juan (Puerto Rico) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Caribbean",
+    "slug": "san-juan",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "PRSJU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "santa-cruz-de-tenerife",
-    "name": "Port of Santa Cruz de Tenerife",
-    "unLocode": "ESTCI",
-    "country": "Spain",
-    "region": "Canary Islands",
-    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Canary Islands.",
+    "name": "Port of Santa Cruz de Tenerife",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Santa Cruz de Tenerife Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Canary Islands",
+    "slug": "santa-cruz-de-tenerife",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESTCI",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "santorini",
-    "name": "Port of Santorini (Thira)",
-    "unLocode": "GRJTR",
-    "country": "Greece",
-    "region": "Aegean Sea",
-    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Greece",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Aegean Sea.",
+    "name": "Port of Santorini (Thira)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Santorini (Thira) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Aegean Sea",
+    "slug": "santorini",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GRJTR",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "seattle",
-    "name": "Port of Seattle (Alaska Gateway)",
-    "unLocode": "USSEA",
-    "country": "United States",
-    "region": "Pacific Northwest / Alaska",
-    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
+    "name": "Port of Seattle (Alaska Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Seattle (Alaska Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Pacific Northwest / Alaska",
+    "slug": "seattle",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USSEA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "shanghai",
-    "name": "Shanghai Wusongkou International Cruise Terminal",
-    "unLocode": "CNSHG",
-    "country": "China",
-    "region": "East Asia",
-    "headline": "Strategic maritime cruise port gateway for East Asia.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "China",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for East Asia.",
+    "name": "Shanghai Wusongkou International Cruise Terminal",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Shanghai Wusongkou International Cruise Terminal Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "East Asia",
+    "slug": "shanghai",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CNSHG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "singapore",
-    "name": "Singapore Marina Bay Cruise Centre (MBCCS)",
-    "unLocode": "SGSIN",
-    "country": "Singapore",
-    "region": "Southeast Asia",
-    "headline": "Strategic maritime cruise port gateway for Southeast Asia.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Singapore",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Southeast Asia.",
+    "name": "Singapore Marina Bay Cruise Centre (MBCCS)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Singapore Marina Bay Cruise Centre (MBCCS) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Southeast Asia",
+    "slug": "singapore",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "SGSIN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "skagway",
-    "name": "Port of Skagway (Alaska)",
-    "unLocode": "USSGY",
-    "country": "United States",
-    "region": "Alaska Inside Passage",
-    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Alaska Inside Passage.",
+    "name": "Port of Skagway (Alaska)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Skagway (Alaska) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Alaska Inside Passage",
+    "slug": "skagway",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USSGY",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "southampton",
-    "name": "Port of Southampton",
-    "unLocode": "GBSOU",
-    "country": "United Kingdom",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United Kingdom",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Port of Southampton",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Southampton Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "southampton",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "GBSOU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "split",
-    "name": "Port of Split",
-    "unLocode": "HRSPU",
-    "country": "Croatia",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Croatia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Split",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Split Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "split",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "HRSPU",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "st-maarten",
-    "name": "Port of St. Maarten (Philipsburg)",
-    "unLocode": "SXMMA",
-    "country": "Sint Maarten",
-    "region": "Eastern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Sint Maarten",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
+    "name": "Port of St. Maarten (Philipsburg)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of St. Maarten (Philipsburg) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Caribbean",
+    "slug": "st-maarten",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "SXMMA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "st-thomas",
-    "name": "Port of St. Thomas (Charlotte Amalie)",
-    "unLocode": "VISTT",
-    "country": "US Virgin Islands",
-    "region": "Eastern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "US Virgin Islands",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Eastern Caribbean.",
+    "name": "Port of St. Thomas (Charlotte Amalie)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of St. Thomas (Charlotte Amalie) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Eastern Caribbean",
+    "slug": "st-thomas",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "VISTT",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "stavanger",
-    "name": "Port of Stavanger",
-    "unLocode": "NOSVG",
-    "country": "Norway",
-    "region": "Norwegian Fjords",
-    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Norwegian Fjords.",
+    "name": "Port of Stavanger",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Stavanger Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Norwegian Fjords",
+    "slug": "stavanger",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOSVG",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "stockholm",
-    "name": "Port of Stockholm",
-    "unLocode": "SESTO",
-    "country": "Sweden",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Sweden",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Stockholm",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Stockholm Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "stockholm",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "SESTO",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "strasbourg",
-    "name": "Port of Strasbourg (Rhine)",
-    "unLocode": "FRSXB",
-    "country": "France",
-    "region": "Rhine River",
-    "headline": "Strategic maritime cruise port gateway for Rhine River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "France",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Rhine River.",
+    "name": "Port of Strasbourg (Rhine)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Strasbourg (Rhine) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Rhine River",
+    "slug": "strasbourg",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "FRSXB",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "sydney",
-    "name": "Port of Sydney (Overseas Passenger Terminal)",
-    "unLocode": "AUSYD",
-    "country": "Australia",
-    "region": "Australia & Pacific",
-    "headline": "Strategic maritime cruise port gateway for Australia & Pacific.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Australia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Australia & Pacific.",
+    "name": "Port of Sydney (Overseas Passenger Terminal)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Sydney (Overseas Passenger Terminal) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Australia & Pacific",
+    "slug": "sydney",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "AUSYD",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "tallinn",
-    "name": "Port of Tallinn",
-    "unLocode": "EETLL",
-    "country": "Estonia",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Estonia",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Tallinn",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Tallinn Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "tallinn",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "EETLL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "tampa",
-    "name": "Port Tampa Bay",
-    "unLocode": "USTPA",
-    "country": "United States",
-    "region": "Florida / Gulf Coast",
-    "headline": "Strategic maritime cruise port gateway for Florida / Gulf Coast.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "United States",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Florida / Gulf Coast.",
+    "name": "Port Tampa Bay",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port Tampa Bay Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Florida / Gulf Coast",
+    "slug": "tampa",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "USTPA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "trieste",
-    "name": "Port of Trieste (Molo Bersaglieri)",
-    "unLocode": "ITTRS",
-    "country": "Italy",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Trieste (Molo Bersaglieri)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Trieste (Molo Bersaglieri) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "trieste",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITTRS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "tromso",
-    "name": "Port of Tromsø (Arctic Gateway)",
-    "unLocode": "NOTOS",
-    "country": "Norway",
-    "region": "Arctic Norway",
-    "headline": "Strategic maritime cruise port gateway for Arctic Norway.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Norway",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Arctic Norway.",
+    "name": "Port of Tromsø (Arctic Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Tromsø (Arctic Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Arctic Norway",
+    "slug": "tromso",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "NOTOS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "ushuaia",
-    "name": "Port of Ushuaia (Antarctica Gateway)",
-    "unLocode": "ARUSH",
-    "country": "Argentina",
-    "region": "South America / Patagonia",
-    "headline": "Strategic maritime cruise port gateway for South America / Patagonia.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Argentina",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for South America / Patagonia.",
+    "name": "Port of Ushuaia (Antarctica Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ushuaia (Antarctica Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "South America / Patagonia",
+    "slug": "ushuaia",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ARUSH",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "valencia",
-    "name": "Port of Valencia",
-    "unLocode": "ESVLC",
-    "country": "Spain",
-    "region": "Western Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Spain",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Western Mediterranean.",
+    "name": "Port of Valencia",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Valencia Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Western Mediterranean",
+    "slug": "valencia",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ESVLC",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "valletta",
-    "name": "Grand Harbour (Valletta, Malta)",
-    "unLocode": "MTMLA",
-    "country": "Malta",
-    "region": "Central Mediterranean",
-    "headline": "Strategic maritime cruise port gateway for Central Mediterranean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Malta",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Central Mediterranean.",
+    "name": "Grand Harbour (Valletta, Malta)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Grand Harbour (Valletta, Malta) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Central Mediterranean",
+    "slug": "valletta",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "MTMLA",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "vancouver",
-    "name": "Port of Vancouver (Canada Place)",
-    "unLocode": "CAVAN",
-    "country": "Canada",
-    "region": "Pacific Northwest / Alaska",
-    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Canada",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
+    "name": "Port of Vancouver (Canada Place)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Vancouver (Canada Place) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Pacific Northwest / Alaska",
+    "slug": "vancouver",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CAVAN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "venice-ravenna",
-    "name": "Port of Ravenna (Venice Gateway)",
-    "unLocode": "ITRAN",
-    "country": "Italy",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Ravenna (Venice Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Ravenna (Venice Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "venice-ravenna",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITRAN",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "venice-trieste",
-    "name": "Port of Trieste (Venice Gateway)",
-    "unLocode": "ITTRS",
-    "country": "Italy",
-    "region": "Adriatic Sea",
-    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Italy",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Adriatic Sea.",
+    "name": "Port of Trieste (Venice Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Trieste (Venice Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Adriatic Sea",
+    "slug": "venice-trieste",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ITTRS",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "victoria",
-    "name": "Port of Victoria (Ogden Point)",
-    "unLocode": "CAVIC",
-    "country": "Canada",
-    "region": "Pacific Northwest / Alaska",
-    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Canada",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Pacific Northwest / Alaska.",
+    "name": "Port of Victoria (Ogden Point)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Victoria (Ogden Point) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Pacific Northwest / Alaska",
+    "slug": "victoria",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CAVIC",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "vienna",
-    "name": "Port of Vienna (Wien / Danube)",
-    "unLocode": "ATVIE",
-    "country": "Austria",
-    "region": "Danube River",
-    "headline": "Strategic maritime cruise port gateway for Danube River.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Austria",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Danube River.",
+    "name": "Port of Vienna (Wien / Danube)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Vienna (Wien / Danube) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Danube River",
+    "slug": "vienna",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "ATVIE",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "warnemunde-rostock",
-    "name": "Port of Warnemünde (Berlin Gateway)",
-    "unLocode": "DEWAR",
-    "country": "Germany",
-    "region": "Baltic Sea",
-    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "Euro (€ / EUR)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Germany",
+    "currency": "Euro (€ / EUR)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "112",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Baltic Sea.",
+    "name": "Port of Warnemünde (Berlin Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Warnemünde (Berlin Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Baltic Sea",
+    "slug": "warnemunde-rostock",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "DEWAR",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "willemstad",
-    "name": "Port of Willemstad (Curaçao)",
-    "unLocode": "CWWIL",
-    "country": "Curaçao",
-    "region": "Southern Caribbean",
-    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Curaçao",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Southern Caribbean.",
+    "name": "Port of Willemstad (Curaçao)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Willemstad (Curaçao) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Southern Caribbean",
+    "slug": "willemstad",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "CWWIL",
+    "walkingTimeMin": 10
   },
   {
-    "slug": "zeebrugge",
-    "name": "Port of Zeebrugge (Bruges Gateway)",
-    "unLocode": "BEZEE",
-    "country": "Belgium",
-    "region": "Northern Europe",
-    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
-    "terminalName": "Cruise Terminal",
+    "airportTransit": "Regional airport connection available via express bus or taxi.",
     "berths": [
       "Berth 1",
       "Berth 2"
     ],
-    "gangwayDeckDefault": 5,
-    "distanceToCenterM": 500,
-    "walkingTimeMin": 10,
-    "stepFreeAccess": true,
-    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-    "airportTransit": "Regional airport connection available via express bus or taxi.",
-    "currency": "USD ($)",
+    "callingShips": [
+      {
+        "name": "MSC Bellissima",
+        "slug": "msc-bellissima"
+      },
+      {
+        "name": "MSC World Europa",
+        "slug": "msc-world-europa"
+      },
+      {
+        "name": "MSC Meraviglia",
+        "slug": "msc-meraviglia"
+      }
+    ],
     "cardAcceptancePct": 98,
+    "country": "Belgium",
+    "currency": "USD ($)",
+    "distanceToCenterM": 500,
     "emergencyPhone": "911",
+    "gangwayDeckDefault": 5,
+    "headline": "Strategic maritime cruise port gateway for Northern Europe.",
+    "name": "Port of Zeebrugge (Bruges Gateway)",
     "negativeIntelligence": [
       "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
       "Always use official port taxi stands with metered or fixed city fares."
     ],
     "officialSource": {
       "authority": "Port of Zeebrugge (Bruges Gateway) Port Authority",
-      "url": "https://www.timonelo.com",
-      "trustLevel": "OFFICIAL"
+      "trustLevel": "OFFICIAL",
+      "url": "https://www.timonelo.com"
     },
-    "callingShips": [
-      {
-        "slug": "msc-bellissima",
-        "name": "MSC Bellissima"
-      },
-      {
-        "slug": "msc-world-europa",
-        "name": "MSC World Europa"
-      },
-      {
-        "slug": "msc-meraviglia",
-        "name": "MSC Meraviglia"
-      }
-    ]
+    "region": "Northern Europe",
+    "slug": "zeebrugge",
+    "stepFreeAccess": true,
+    "terminalName": "Cruise Terminal",
+    "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
+    "unLocode": "BEZEE",
+    "walkingTimeMin": 10
   }
 ];
 
