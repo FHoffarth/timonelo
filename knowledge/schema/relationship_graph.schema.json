@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timonelo.com/schema/relationship_graph.schema.json",
+  "title": "KnowledgeRelationshipGraphSchema",
+  "description": "Canonical schema for relational cross-references between ships, routes, ports, and terminals.",
+  "type": "object",
+  "required": [
+    "provenance",
+    "ships_to_routes",
+    "routes_to_ports",
+    "ports_to_terminals",
+    "port_slug_to_unlocode"
+  ],
+  "properties": {
+    "provenance": {
+      "type": "object",
+      "required": ["source_artifact", "confidence"],
+      "properties": {
+        "source_artifact": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+    "ships_to_routes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "routes_to_ports": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "ports_to_terminals": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "port_slug_to_unlocode": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

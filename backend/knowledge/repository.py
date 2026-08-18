@@ -219,3 +219,54 @@ class KnowledgeRepository:
         return data.get("kids_areas", [])
 
     get_kids = getKids
+
+    # -------------------------------------------------------------------------
+    # Cross-Reference & Relationship Graph Methods
+    # -------------------------------------------------------------------------
+
+    def getRelationships(self) -> dict[str, Any]:
+        """Retrieve the canonical relationship index."""
+        rel_path = os.path.join(self.knowledge_root, "indexes", "relationships.json")
+        if not os.path.exists(rel_path):
+            raise KnowledgeRepositoryError(f"Relationship index not found at {rel_path}")
+        with open(rel_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    get_relationships = getRelationships
+
+    def getShipRoutes(self, shipId: str) -> list[str]:
+        """Retrieve all canonical route IDs deployed for a vessel."""
+        rel = self.getRelationships()
+        return rel.get("ships_to_routes", {}).get(shipId, [])
+
+    get_ship_routes = getShipRoutes
+
+    def getRoute(self, routeId: str) -> dict[str, Any]:
+        """Retrieve canonical route document by route ID."""
+        # Find route folder in knowledge/routes
+        routes_dir = os.path.join(self.knowledge_root, "routes")
+        for folder in os.listdir(routes_dir):
+            r_path = os.path.join(routes_dir, folder, "route.json")
+            if os.path.exists(r_path):
+                with open(r_path, "r", encoding="utf-8") as f:
+                    r_data = json.load(f)
+                    if r_data.get("route_id") == routeId or folder == routeId:
+                        return r_data
+        raise KnowledgeRepositoryError(f"Route '{routeId}' not found in knowledge repository.")
+
+    get_route = getRoute
+
+    def getRoutePorts(self, routeId: str) -> list[str]:
+        """Retrieve UN/LOCODE canonical port IDs referenced in a route."""
+        rel = self.getRelationships()
+        return rel.get("routes_to_ports", {}).get(routeId, [])
+
+    get_route_ports = getRoutePorts
+
+    def getPortTerminals(self, portIdOrUnlocode: str) -> list[str]:
+        """Retrieve canonical terminal IDs for a port by slug or UN/LOCODE."""
+        rel = self.getRelationships()
+        unlocode = rel.get("port_slug_to_unlocode", {}).get(portIdOrUnlocode, portIdOrUnlocode)
+        return rel.get("ports_to_terminals", {}).get(unlocode, [])
+
+    get_port_terminals = getPortTerminals

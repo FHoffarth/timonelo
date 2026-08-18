@@ -1,0 +1,14 @@
+{
+  "port_id": "barcelona",
+  "unlocode": "ES-BCN",
+  "terminal_ids": [
+    "TERM-BCN-ADOSAT-A",
+    "TERM-BCN-ADOSAT-B",
+    "TERM-BCN-ADOSAT-C",
+    "TERM-BCN-ADOSAT-D",
+    "TERM-BCN-ADOSAT-E",
+    "TERM-BCN-ADOSAT-H",
+    "TERM-BCN-WTC-S",
+    "TERM-BCN-WTC-N"
+  ]
+}

@@ -57,6 +57,9 @@ import mlaMedical from '../../../knowledge/ports/valletta/medical.json';
 import mlaWeather from '../../../knowledge/ports/valletta/weather.json';
 import mlaSustainability from '../../../knowledge/ports/valletta/sustainability.json';
 
+import relationshipsIndex from '../../../knowledge/indexes/relationships.json';
+import wmedRoute from '../../../knowledge/routes/western-mediterranean-7n/route.json';
+
 export interface ShipTechnicalData {
   vessel_id: string;
   vessel_name: string;
@@ -231,6 +234,30 @@ export class FrontendKnowledgeRepository {
 
   public getAllPorts(): any[] {
     return Object.values(this.ports).map((p) => p.port);
+  }
+
+  public getRelationships(): any {
+    return relationshipsIndex;
+  }
+
+  public getShipRoutes(shipId: string): string[] {
+    return relationshipsIndex.ships_to_routes[shipId as keyof typeof relationshipsIndex.ships_to_routes] || [];
+  }
+
+  public getRoute(routeId: string): any {
+    if (routeId === 'ROUTE_MSC_BELLISSIMA_WMED_7N' || routeId === 'western-mediterranean-7n') {
+      return wmedRoute;
+    }
+    return null;
+  }
+
+  public getRoutePorts(routeId: string): string[] {
+    return relationshipsIndex.routes_to_ports[routeId as keyof typeof relationshipsIndex.routes_to_ports] || [];
+  }
+
+  public getPortTerminals(portIdOrUnlocode: string): string[] {
+    const unlocode = (relationshipsIndex.port_slug_to_unlocode as Record<string, string>)[portIdOrUnlocode] || portIdOrUnlocode;
+    return (relationshipsIndex.ports_to_terminals as Record<string, string[]>)[unlocode] || [];
   }
 }
 

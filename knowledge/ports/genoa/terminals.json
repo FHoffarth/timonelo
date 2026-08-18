@@ -1,0 +1,9 @@
+{
+  "port_id": "genoa",
+  "unlocode": "IT-GOA",
+  "terminal_ids": [
+    "TERM-GOA-PONTE-DEI-MILLE",
+    "TERM-GOA-ANDREA-DORIA",
+    "TERM-GOA-MOLO-VECCHIO"
+  ]
+}

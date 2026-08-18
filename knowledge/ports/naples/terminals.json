@@ -1,0 +1,9 @@
+{
+  "port_id": "naples",
+  "unlocode": "IT-NAP",
+  "terminal_ids": [
+    "TERM-NAP-STAZIONE-MARITTIMA",
+    "TERM-NAP-MOLO-BEVERELLO",
+    "TERM-NAP-PORTA-DI-MASSA"
+  ]
+}

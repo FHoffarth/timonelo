@@ -1,0 +1,8 @@
+{
+  "port_id": "marseille",
+  "unlocode": "FR-MRS",
+  "terminal_ids": [
+    "TERM-MRS-MPCT",
+    "TERM-MRS-J4-JOLIETTE"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "source_artifact": "TIMONELO_RELATIONAL_KNOWLEDGE_GRAPH_INDEX_2026",
+    "confidence": 1.0
+  },
+  "ships_to_routes": {
+    "msc-bellissima": [
+      "ROUTE_MSC_BELLISSIMA_WMED_7N"
+    ]
+  },
+  "routes_to_ports": {
+    "ROUTE_MSC_BELLISSIMA_WMED_7N": [
+      "ES-BCN",
+      "FR-MRS",
+      "IT-GOA",
+      "IT-NAP",
+      "IT-MSN",
+      "MT-MLA"
+    ]
+  },
+  "ports_to_terminals": {
+    "ES-BCN": [
+      "TERM-BCN-ADOSAT-A",
+      "TERM-BCN-ADOSAT-B",
+      "TERM-BCN-ADOSAT-C",
+      "TERM-BCN-ADOSAT-D",
+      "TERM-BCN-ADOSAT-E",
+      "TERM-BCN-ADOSAT-H",
+      "TERM-BCN-WTC-S",
+      "TERM-BCN-WTC-N"
+    ],
+    "FR-MRS": [
+      "TERM-MRS-MPCT",
+      "TERM-MRS-J4-JOLIETTE"
+    ],
+    "IT-GOA": [
+      "TERM-GOA-PONTE-DEI-MILLE",
+      "TERM-GOA-ANDREA-DORIA",
+      "TERM-GOA-MOLO-VECCHIO"
+    ],
+    "IT-NAP": [
+      "TERM-NAP-STAZIONE-MARITTIMA",
+      "TERM-NAP-MOLO-BEVERELLO",
+      "TERM-NAP-PORTA-DI-MASSA"
+    ],
+    "IT-MSN": [
+      "TERM-MSN-CROCIERE"
+    ],
+    "MT-MLA": [
+      "TERM-MLA-VALLETTA-WATERFRONT",
+      "TERM-MLA-BOILER-WHARF"
+    ]
+  },
+  "port_slug_to_unlocode": {
+    "barcelona": "ES-BCN",
+    "marseille": "FR-MRS",
+    "genoa": "IT-GOA",
+    "naples": "IT-NAP",
+    "messina": "IT-MSN",
+    "valletta": "MT-MLA"
+  }
+}
