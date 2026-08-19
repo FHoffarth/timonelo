@@ -23,7 +23,7 @@ from timonelo.evidence import authority
 from timonelo.evidence.editor import Statement, StatementEditor
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry
-from timonelo.evidence.review import ANSWERABLE, ReviewState
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 
 
 @dataclass(frozen=True)
@@ -112,7 +112,8 @@ class TruthEngine:
             s for s in self.editor.all()
             if s.entity_id == entity_id
             and s.question_id == question_id
-            and s.state in ANSWERABLE
+            and s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+            and s.state is HumanReviewState.APPROVED
             and self._valid_at(s, as_of)
         ]
         open_conflicts = ()

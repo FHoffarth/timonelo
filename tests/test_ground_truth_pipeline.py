@@ -19,8 +19,9 @@ from timonelo.evidence.editor import EditorError, StatementEditor
 from timonelo.evidence.importer import ImportError_, import_pdf
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry, RegistryError
-from timonelo.evidence.review import ReviewError, ReviewLog, ReviewState
+from timonelo.evidence.review import ReviewError, ReviewLog
 from timonelo.evidence.truth import TruthEngine
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 
 FIXTURE_CLASS = "pipeline_fixture"
 FIXTURE_TYPE = "fixture.deck"
@@ -101,12 +102,11 @@ class PipelineCase(unittest.TestCase):
             read_by="reader.one", read_on="2026-08-17")
 
     def _publish(self, s):
-        s = self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "reader.one", "2026-08-17")
-        s = self.editor.transition(s.statement_id, ReviewState.APPROVED,
+        s = self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
                                    "reviewer.two", "2026-08-17")
-        return self.editor.transition(s.statement_id, ReviewState.PUBLISHED,
-                                      "reviewer.two", "2026-08-17")
+        return self.editor.publish(s.statement_id, "reviewer.two", "2026-08-17")
 
 
 class TestEmptyStore(PipelineCase):
@@ -214,54 +214,52 @@ class TestStatementEditor(PipelineCase):
 
     def test_statement_starts_in_draft(self):
         s = self._draft(self._import())
-        self.assertEqual(s.state, ReviewState.DRAFT)
+        self.assertEqual(s.state, HumanReviewState.DRAFT)
 
 
 class TestReviewWorkflow(PipelineCase):
 
-    def test_draft_cannot_jump_to_published(self):
+    def test_draft_cannot_be_published_directly(self):
         s = self._draft(self._import())
-        with self.assertRaises(ReviewError):
-            self.editor.transition(s.statement_id, ReviewState.PUBLISHED,
-                                   "reviewer.two", "2026-08-17")
+        with self.assertRaises(EditorError):
+            self.editor.publish(s.statement_id, "reviewer.two", "2026-08-17")
 
     def test_draft_cannot_jump_to_approved(self):
         s = self._draft(self._import())
         with self.assertRaises(ReviewError):
-            self.editor.transition(s.statement_id, ReviewState.APPROVED,
+            self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
                                    "reviewer.two", "2026-08-17")
 
     def test_reader_cannot_publish_own_statement(self):
         s = self._draft(self._import())
-        s = self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "reader.one", "2026-08-17")
-        s = self.editor.transition(s.statement_id, ReviewState.APPROVED,
+        s = self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
                                    "reviewer.two", "2026-08-17")
         with self.assertRaises(EditorError):
-            self.editor.transition(s.statement_id, ReviewState.PUBLISHED,
-                                   "reader.one", "2026-08-17")
+            self.editor.publish(s.statement_id, "reader.one", "2026-08-17")
 
     def test_transition_requires_named_actor(self):
         s = self._draft(self._import())
         with self.assertRaises(ReviewError):
-            self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+            self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "", "2026-08-17")
 
     def test_rejected_is_terminal(self):
         s = self._draft(self._import())
-        s = self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "reader.one", "2026-08-17")
-        s = self.editor.transition(s.statement_id, ReviewState.REJECTED,
+        s = self.editor.transition(s.statement_id, HumanReviewState.REJECTED,
                                    "reviewer.two", "2026-08-17")
         with self.assertRaises(ReviewError):
-            self.editor.transition(s.statement_id, ReviewState.APPROVED,
+            self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
                                    "reviewer.two", "2026-08-17")
 
     def test_history_records_actor_and_date(self):
         s = self._publish(self._draft(self._import()))
         hist = self.reviews.history(s.statement_id)
-        self.assertEqual(len(hist), 3)
-        self.assertEqual(hist[-1].to_state, "PUBLISHED")
+        self.assertEqual(len(hist), 2)
+        self.assertEqual(hist[-1].to_state, "APPROVED")
         self.assertEqual(hist[-1].actor, "reviewer.two")
 
 
@@ -273,21 +271,31 @@ class TestTruthEngineVisibility(PipelineCase):
 
     def test_under_review_never_reaches_a_passenger(self):
         s = self._draft(self._import())
-        self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+        self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                "reader.one", "2026-08-17")
         self.assertFalse(self.engine.answer("fixture:1", "Q-0001").known)
 
-    def test_approved_is_answerable(self):
+    def test_approved_without_publish_is_not_answerable(self):
         s = self._draft(self._import())
-        s = self.editor.transition(s.statement_id, ReviewState.UNDER_REVIEW,
+        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "reader.one", "2026-08-17")
-        self.editor.transition(s.statement_id, ReviewState.APPROVED,
+        self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
                                "reviewer.two", "2026-08-17")
+        # In blocked publication status, answer is not known to passengers
+        self.assertFalse(self.engine.answer("fixture:1", "Q-0001").known)
+
+    def test_published_is_answerable(self):
+        s = self._draft(self._import())
+        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
+                                   "reader.one", "2026-08-17")
+        self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
+                               "reviewer.two", "2026-08-17")
+        self.editor.publish(s.statement_id, "reviewer.two", "2026-08-17")
         self.assertTrue(self.engine.answer("fixture:1", "Q-0001").known)
 
     def test_rejected_is_not_answerable(self):
         s = self._publish(self._draft(self._import()))
-        self.editor.transition(s.statement_id, ReviewState.REJECTED,
+        self.editor.transition(s.statement_id, HumanReviewState.REJECTED,
                                "reviewer.two", "2026-08-18")
         self.assertFalse(self.engine.answer("fixture:1", "Q-0001").known)
 

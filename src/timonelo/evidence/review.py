@@ -3,55 +3,41 @@ Review workflow.
 
 Governed by ADR-0002 §5, ADR-0003 §7.
 
-    DRAFT -> UNDER_REVIEW -> APPROVED -> PUBLISHED
+    DRAFT -> UNDER_REVIEW -> APPROVED
                           \\-> REJECTED
+                          \\-> SUPERSEDED
 
 Every transition is recorded with actor and date in an append-only history, so
-"who approved this and when" is answerable for any statement a passenger saw.
+"who approved this and when" is answerable for any statement.
 
 Nothing bypasses the workflow: a statement is created in DRAFT and can only
-advance one step at a time.
+advance one step at a time through human curation.
+Publication decisions are separate and governed by PublishStatus.
 """
 
 from __future__ import annotations
 
 import os
 from dataclasses import dataclass
-from enum import Enum
 from typing import Dict, List, Optional
 
 from timonelo.canonical import canonical_dump
+from timonelo.ontology.models import HumanReviewState
 
 
-class ReviewState(str, Enum):
-    DRAFT = "DRAFT"
-    UNDER_REVIEW = "UNDER_REVIEW"
-    APPROVED = "APPROVED"
-    PUBLISHED = "PUBLISHED"
-    REJECTED = "REJECTED"
-    # Was a correct reading of its source, and has been replaced by a better
-    # one through conflict resolution. Distinct from REJECTED, which means the
-    # reading was wrong. Collapsing the two would destroy the record of why a
-    # published value changed.
-    SUPERSEDED = "SUPERSEDED"
-
-
-# Exactly which transitions exist. Anything absent is forbidden.
-ALLOWED: Dict[ReviewState, frozenset] = {
-    ReviewState.DRAFT:        frozenset({ReviewState.UNDER_REVIEW,
-                                         ReviewState.REJECTED,
-                                         ReviewState.SUPERSEDED}),
-    ReviewState.UNDER_REVIEW: frozenset({ReviewState.APPROVED, ReviewState.REJECTED,
-                                         ReviewState.SUPERSEDED}),
-    ReviewState.APPROVED:     frozenset({ReviewState.PUBLISHED, ReviewState.REJECTED,
-                                         ReviewState.SUPERSEDED}),
-    ReviewState.PUBLISHED:    frozenset({ReviewState.REJECTED, ReviewState.SUPERSEDED}),
-    ReviewState.REJECTED:     frozenset(),
-    ReviewState.SUPERSEDED:   frozenset(),
+# Exactly which transitions exist in human review. Anything absent is forbidden.
+ALLOWED: Dict[HumanReviewState, frozenset] = {
+    HumanReviewState.DRAFT:        frozenset({HumanReviewState.UNDER_REVIEW,
+                                              HumanReviewState.REJECTED,
+                                              HumanReviewState.SUPERSEDED}),
+    HumanReviewState.UNDER_REVIEW: frozenset({HumanReviewState.APPROVED,
+                                              HumanReviewState.REJECTED,
+                                              HumanReviewState.SUPERSEDED}),
+    HumanReviewState.APPROVED:     frozenset({HumanReviewState.REJECTED,
+                                              HumanReviewState.SUPERSEDED}),
+    HumanReviewState.REJECTED:     frozenset(),
+    HumanReviewState.SUPERSEDED:   frozenset(),
 }
-
-# States whose statements may reach a passenger.
-ANSWERABLE = frozenset({ReviewState.APPROVED, ReviewState.PUBLISHED})
 
 
 class ReviewError(ValueError):
@@ -92,8 +78,8 @@ class ReviewLog:
     def transition(
         self,
         statement_id: str,
-        from_state: ReviewState,
-        to_state: ReviewState,
+        from_state: HumanReviewState,
+        to_state: HumanReviewState,
         actor: str,
         occurred_on: str,
         note: str = "",

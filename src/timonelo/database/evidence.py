@@ -14,45 +14,16 @@ computed by traversing the derivation graph at query time and is never stored.
 
 from __future__ import annotations
 from dataclasses import dataclass
-from enum import Enum
 from typing import Dict, Any, List, Optional, Tuple
 
-
-class EvidenceType(str, Enum):
-    OFFICIAL_DOCUMENT = "OFFICIAL_DOCUMENT"
-    SHIPYARD_DRAWING = "SHIPYARD_DRAWING"
-    CRUISE_LINE = "CRUISE_LINE"
-    IMO = "IMO"
-    PORT_AUTHORITY = "PORT_AUTHORITY"
-    FIELD_MEASUREMENT = "FIELD_MEASUREMENT"
-    CREW_VERIFIED = "CREW_VERIFIED"
-    PASSENGER_VERIFIED = "PASSENGER_VERIFIED"
-    PHOTO_ANALYSIS = "PHOTO_ANALYSIS"
-    VIDEO_ANALYSIS = "VIDEO_ANALYSIS"
-    COMMUNITY_CONFIRMED = "COMMUNITY_CONFIRMED"
-    UNKNOWN = "UNKNOWN"
-
-
-class ReviewState(str, Enum):
-    """Human review state. NOT a confidence level and NOT a truth claim."""
-    UNREVIEWED = "UNREVIEWED"
-    REVIEWED = "REVIEWED"
-    CONFLICTED = "CONFLICTED"
-
-
-class Method(str, Enum):
-    """ADR-0002 6.1 - how the statement was produced."""
-    DIRECT = "DIRECT"
-    CALCULATED = "CALCULATED"
-    INFERRED = "INFERRED"
-
-
-class Derivation(str, Enum):
-    """ADR-0002 6.2 - where the inputs originated. Orthogonal to Method."""
-    LOCAL = "LOCAL"
-    SISTER_SHIP = "SISTER_SHIP"
-    REFERENCE_MODEL = "REFERENCE_MODEL"
-    GENERATED = "GENERATED"
+from timonelo.ontology.models import (
+    Method,
+    Derivation,
+    EvidenceCondition,
+    HumanReviewState,
+    PublishStatus,
+    GeometryProvenance,
+)
 
 
 # EvidenceField deleted (ADR-0002 §11.2).

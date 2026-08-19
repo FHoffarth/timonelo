@@ -15,8 +15,9 @@ import unittest
 
 from timonelo.evidence import (
     ArtifactStore, EvidenceEvent, EvidenceEventLog, Method, Derivation,
-    Question, QuestionRegistry, ReviewState, Statement, TruthEngine, language,
+    Question, QuestionRegistry, Statement, TruthEngine, language,
 )
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 
 FIXTURE_CLASS = "test_fixture"
 
@@ -172,12 +173,12 @@ class TestTruthEngine(PipelineTestCase):
     def test_cannot_publish_without_review(self):
         self.seed_direct()
         with self.assertRaises(ValueError):
-            self.engine.set_review_state("S1", ReviewState.PUBLISHED)
+            self.engine.publish("S1")
 
     def test_published_statement_is_answerable(self):
         self.seed_direct()
-        self.engine.set_review_state("S1", ReviewState.REVIEWED)
-        self.engine.set_review_state("S1", ReviewState.PUBLISHED)
+        self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
+        self.engine.publish("S1")
         ans = self.engine.answer("cabin:X:1", "Q-0001")
         self.assertTrue(ans.known)
         self.assertEqual(ans.value, 14)
@@ -260,8 +261,8 @@ class TestLanguageLayer(PipelineTestCase):
             value=14, method=Method.DIRECT, derivation=Derivation.LOCAL,
             evidence_event_ids=("E1",),
         ))
-        self.engine.set_review_state("S1", ReviewState.REVIEWED)
-        self.engine.set_review_state("S1", ReviewState.PUBLISHED)
+        self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
+        self.engine.publish("S1")
         ans = self.engine.answer("cabin:X:1", "Q-0001")
         out = language.render(ans, "Deck")
         self.assertNotIn(str(ans.confidence), out)
@@ -286,8 +287,8 @@ class TestLanguageLayer(PipelineTestCase):
             rule_hash="rule:noise:v1",
         ))
         for sid in ("S2",):
-            self.engine.set_review_state(sid, ReviewState.REVIEWED)
-            self.engine.set_review_state(sid, ReviewState.PUBLISHED)
+            self.engine.set_human_review_state(sid, HumanReviewState.APPROVED)
+            self.engine.publish(sid)
         ans = self.engine.answer("cabin:X:1", "Q-0003")
         out = language.render(ans, "Morning noise")
         self.assertIn("—", out)  # hedged, not a bare declarative

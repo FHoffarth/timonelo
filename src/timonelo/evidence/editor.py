@@ -4,8 +4,8 @@ Statement Editor — the sole creator of Statements.
 Governed by ADR-0002 §1, §6.
 
 Statements are authored here and nowhere else. Every statement is created in
-DRAFT and must be carried through the review workflow by a named actor before
-it can answer a passenger's question.
+DRAFT and must be carried through the human review workflow by a named actor before
+it can be considered for publication.
 
 A statement created here always cites:
   * the Artifact ID it came from (never a digest typed by hand),
@@ -13,9 +13,7 @@ A statement created here always cites:
   * the human who read it,
   * the date they read it.
 
-If any of those is missing the statement cannot be created. That is the whole
-point: a claim whose reader, page and date are unrecorded is indistinguishable
-from a claim someone invented.
+If any of those is missing the statement cannot be created.
 """
 
 from __future__ import annotations
@@ -28,7 +26,12 @@ from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.conflicts import ConflictLog, values_disagree
-from timonelo.evidence.review import ANSWERABLE, ReviewError, ReviewLog, ReviewState
+from timonelo.evidence.review import ReviewError, ReviewLog
+from timonelo.ontology.models import (
+    EvidenceCondition,
+    HumanReviewState,
+    PublishStatus,
+)
 
 
 class EditorError(ValueError):
@@ -52,13 +55,11 @@ class Statement:
     locator: str
     read_by: str
     read_on: str
-    # ADR-0002 6.1. Manual curation is almost always DIRECT: a human read the
-    # value off the page. CALCULATED covers deductions from two or more printed
-    # facts (e.g. a legend colour shared by two category codes, disambiguated by
-    # the printed deck range). derivation_note must state the reasoning.
     method: str = "DIRECT"
     derivation_note: str = ""
-    review_state: str = ReviewState.DRAFT.value
+    evidence_condition: str = EvidenceCondition.SUPPORTED.value
+    human_review_state: str = HumanReviewState.DRAFT.value
+    publish_status: str = PublishStatus.PUBLISH_BLOCKED.value
     valid_from: Optional[str] = None
     valid_until: Optional[str] = None
     note: str = ""
@@ -77,19 +78,33 @@ class Statement:
             "read_on": self.read_on,
             "method": self.method,
             "derivation_note": self.derivation_note,
-            "review_state": self.review_state,
+            "evidence_condition": self.evidence_condition,
+            "human_review_state": self.human_review_state,
+            "publish_status": self.publish_status,
             "valid_from": self.valid_from,
             "valid_until": self.valid_until,
             "note": self.note,
         }
 
     @property
-    def state(self) -> ReviewState:
-        return ReviewState(self.review_state)
+    def state(self) -> HumanReviewState:
+        return HumanReviewState(self.human_review_state)
+
+    @property
+    def review_state(self) -> str:
+        return self.human_review_state
+
+    @property
+    def condition(self) -> EvidenceCondition:
+        return EvidenceCondition(self.evidence_condition)
+
+    @property
+    def publishing(self) -> PublishStatus:
+        return PublishStatus(self.publish_status)
 
 
 class StatementEditor:
-    """Authors statements and moves them through review."""
+    """Authors statements and moves them through review and publication."""
 
     ID_PREFIX = "STM-"
 
@@ -104,6 +119,22 @@ class StatementEditor:
             import json
             with open(path, encoding="utf-8") as f:
                 for sid, raw in json.load(f).items():
+                    # Handle backward compatible dict format if older keys present
+                    if "review_state" in raw and "human_review_state" not in raw:
+                        old_s = raw.pop("review_state")
+                        if old_s == "PUBLISHED":
+                            raw["human_review_state"] = HumanReviewState.APPROVED.value
+                            raw["publish_status"] = PublishStatus.PUBLISH_ALLOWED.value
+                        elif old_s in HumanReviewState._value2member_map_:
+                            raw["human_review_state"] = old_s
+                            raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
+                        else:
+                            raw["human_review_state"] = HumanReviewState.DRAFT.value
+                            raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
+                    if "evidence_condition" not in raw:
+                        raw["evidence_condition"] = EvidenceCondition.SUPPORTED.value
+                    if "publish_status" not in raw:
+                        raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                     self._by_id[sid] = Statement(**raw)
 
     def _next_id(self) -> str:
@@ -165,7 +196,9 @@ class StatementEditor:
             read_on=read_on,
             method=method,
             derivation_note=derivation_note,
-            review_state=ReviewState.DRAFT.value,
+            evidence_condition=EvidenceCondition.SUPPORTED.value,
+            human_review_state=HumanReviewState.DRAFT.value,
+            publish_status=PublishStatus.PUBLISH_BLOCKED.value,
             valid_from=valid_from,
             valid_until=valid_until,
             note=note,
@@ -182,7 +215,7 @@ class StatementEditor:
                     continue
                 if existing.entity_id != entity_id or existing.question_id != question_id:
                     continue
-                if existing.state not in ANSWERABLE:
+                if existing.publishing is not PublishStatus.PUBLISH_ALLOWED:
                     continue
                 if values_disagree(existing.value, value):
                     self.conflict_log.record(
@@ -200,33 +233,58 @@ class StatementEditor:
     def transition(
         self,
         statement_id: str,
-        to_state: ReviewState,
+        to_state: HumanReviewState,
         actor: str,
         occurred_on: str,
         note: str = "",
     ) -> Statement:
-        """Advance a statement. The ReviewLog validates the transition."""
+        """Advance a statement through human review workflow."""
         current = self._by_id[statement_id]
-
-        if to_state is ReviewState.PUBLISHED:
-            artifact = self.registry.get(current.artifact_id)
-            ok, reason = authority.is_publishable(
-                current.statement_type, artifact.document_class
-            )
-            if not ok:
-                raise EditorError(
-                    f"{statement_id} may not be published: {reason}"
-                )
-            if actor == current.read_by:
-                raise EditorError(
-                    f"{actor} read this statement and cannot also publish it. "
-                    "Review is only meaningful with a second pair of eyes."
-                )
 
         self.review_log.transition(
             statement_id, current.state, to_state, actor, occurred_on, note
         )
-        updated = replace(current, review_state=to_state.value)
+        # If rejected or superseded, ensure publish status is BLOCKED
+        pub_status = current.publish_status
+        if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED):
+            pub_status = PublishStatus.PUBLISH_BLOCKED.value
+
+        updated = replace(current, human_review_state=to_state.value, publish_status=pub_status)
+        self._by_id[statement_id] = updated
+        self._flush()
+        return updated
+
+    def publish(
+        self,
+        statement_id: str,
+        actor: str,
+        occurred_on: str,
+        note: str = "",
+    ) -> Statement:
+        """Publish an approved statement so it can answer passenger queries."""
+        current = self._by_id[statement_id]
+
+        if current.state is not HumanReviewState.APPROVED:
+            raise EditorError(
+                f"{statement_id} is in state {current.state.value} and cannot be "
+                "published. Human review state must be APPROVED first."
+            )
+        if actor == current.read_by:
+            raise EditorError(
+                f"{actor} read this statement and cannot also publish it. "
+                "Review is only meaningful with a second pair of eyes."
+            )
+
+        artifact = self.registry.get(current.artifact_id)
+        ok, reason = authority.is_publishable(
+            current.statement_type, artifact.document_class
+        )
+        if not ok:
+            raise EditorError(
+                f"{statement_id} may not be published: {reason}"
+            )
+
+        updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED.value)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -253,10 +311,9 @@ class StatementEditor:
     ):
         """Resolve a conflict and move both statements to their end states.
 
-        The winner is carried to PUBLISHED; the loser becomes SUPERSEDED, not
-        REJECTED and never deleted. If neither reading survives, both are
-        REJECTED and the question returns to UNKNOWN — which is the correct
-        outcome when two sources disagree and neither can be trusted.
+        The winner is carried to APPROVED and PUBLISH_ALLOWED; the loser becomes
+        SUPERSEDED and PUBLISH_BLOCKED. If neither reading survives, both are
+        REJECTED and BLOCKED.
         """
         if self.conflict_log is None:
             raise EditorError("No conflict log is attached to this editor.")
@@ -264,34 +321,32 @@ class StatementEditor:
 
         if winning_statement_id is None:
             for sid in conflict.statement_ids():
-                self._force_state(sid, ReviewState.REJECTED, actor, occurred_on,
+                self._force_state(sid, HumanReviewState.REJECTED, actor, occurred_on,
                                   f"both readings rejected ({conflict_id})")
         else:
             loser = next(s for s in conflict.statement_ids() if s != winning_statement_id)
             winner = self.get(winning_statement_id)
-            if winner.state is ReviewState.DRAFT:
-                self.transition(winning_statement_id, ReviewState.UNDER_REVIEW,
+            if winner.state is HumanReviewState.DRAFT:
+                self.transition(winning_statement_id, HumanReviewState.UNDER_REVIEW,
                                 actor, occurred_on, f"conflict {conflict_id}")
-            if self.get(winning_statement_id).state is ReviewState.UNDER_REVIEW:
-                self.transition(winning_statement_id, ReviewState.APPROVED,
+            if self.get(winning_statement_id).state is HumanReviewState.UNDER_REVIEW:
+                self.transition(winning_statement_id, HumanReviewState.APPROVED,
                                 actor, occurred_on, f"conflict {conflict_id}")
-            if self.get(winning_statement_id).state is ReviewState.APPROVED:
-                self.transition(winning_statement_id, ReviewState.PUBLISHED,
-                                actor, occurred_on, f"resolves {conflict_id}")
+            if self.get(winning_statement_id).state is HumanReviewState.APPROVED:
+                self.publish(winning_statement_id, actor, occurred_on, f"resolves {conflict_id}")
             # The loser always reaches a terminal state, whatever it was in.
-            # Leaving a losing DRAFT alive lets it be published later and
-            # recreate the same conflict.
-            if self.get(loser).state not in (ReviewState.SUPERSEDED,
-                                             ReviewState.REJECTED):
-                self._force_state(loser, ReviewState.SUPERSEDED, actor, occurred_on,
+            if self.get(loser).state not in (HumanReviewState.SUPERSEDED,
+                                             HumanReviewState.REJECTED):
+                self._force_state(loser, HumanReviewState.SUPERSEDED, actor, occurred_on,
                                   f"superseded by {winning_statement_id} ({conflict_id})")
         return self.conflict_log.resolve(
             conflict_id, winning_statement_id, actor, occurred_on, note)
 
-    def _force_state(self, statement_id: str, to_state: ReviewState,
+    def _force_state(self, statement_id: str, to_state: HumanReviewState,
                      actor: str, occurred_on: str, note: str) -> None:
         current = self._by_id[statement_id]
         self.review_log.transition(statement_id, current.state, to_state,
                                    actor, occurred_on, note)
-        self._by_id[statement_id] = replace(current, review_state=to_state.value)
+        pub_status = PublishStatus.PUBLISH_BLOCKED.value if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED) else current.publish_status
+        self._by_id[statement_id] = replace(current, human_review_state=to_state.value, publish_status=pub_status)
         self._flush()

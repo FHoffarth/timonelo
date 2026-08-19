@@ -14,11 +14,12 @@ class DataNormalizer:
     def normalize_ship(raw_ship: Dict[str, Any], source_id: str, confidence: float = 1.0) -> Dict[str, Any]:
         slug = str(raw_ship.get("slug", "")).strip().lower()
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        trust_level = raw_ship.get("trust_level", "OFFICIAL")
 
         def prov(val: Any) -> Dict[str, Any]:
             return {
                 "value": val,
-                "trust_level": "OFFICIAL" if confidence >= 0.9 else "VERIFIED",
+                "trust_level": trust_level,
                 "source_id": source_id,
                 "confidence": confidence,
                 "retrieved_at": now,
@@ -57,6 +58,7 @@ class DataNormalizer:
     def normalize_port(raw_port: Dict[str, Any], source_id: str, confidence: float = 1.0) -> Dict[str, Any]:
         slug = str(raw_port.get("slug", "")).strip().lower()
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        trust_level = raw_port.get("trust_level", "OFFICIAL")
 
         return {
             "slug": slug,
@@ -76,7 +78,7 @@ class DataNormalizer:
                 {
                     "field": "all",
                     "source_id": source_id,
-                    "trust_level": "OFFICIAL" if confidence >= 0.9 else "VERIFIED",
+                    "trust_level": trust_level,
                     "retrieved_at": now,
                 }
             ],

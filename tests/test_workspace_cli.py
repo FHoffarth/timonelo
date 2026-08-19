@@ -288,7 +288,7 @@ class TestInspectionAPIs(WorkspaceCase):
         self._statement()
         self._publish()
         counts = Workspace(self.root).statements_api.counts_by_state()
-        self.assertEqual(counts["PUBLISHED"], 1)
+        self.assertEqual(counts["APPROVED"], 1)
         self.assertEqual(counts["DRAFT"], 0)
 
     def test_statement_api_cannot_mutate(self):

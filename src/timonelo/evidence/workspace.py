@@ -21,8 +21,9 @@ from timonelo.evidence.importer import import_pdf
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.evidence.registry import Artifact, ArtifactRegistry
 from timonelo.evidence.conflicts import ConflictLog
-from timonelo.evidence.review import ReviewLog, ReviewState
+from timonelo.evidence.review import ReviewLog
 from timonelo.evidence.truth import Answer, TruthEngine
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 
 DEFAULT_ROOT = "evidence"
 
@@ -90,7 +91,8 @@ class Workspace:
         mine = self.statements_for_artifact(artifact_id)
         answered_ids = {
             s.question_id for s in mine
-            if s.state in (ReviewState.APPROVED, ReviewState.PUBLISHED)
+            if s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+            and s.state is HumanReviewState.APPROVED
         }
         answered = [q for q in supported if q.question_id in answered_ids]
         unknown = [q for q in supported if q.question_id not in answered_ids]
@@ -109,9 +111,13 @@ class Workspace:
     def create_statement(self, **kwargs) -> Statement:
         return self.editor.create(**kwargs)
 
-    def transition(self, statement_id: str, to_state: ReviewState,
+    def transition(self, statement_id: str, to_state: HumanReviewState,
                    actor: str, occurred_on: str, note: str = "") -> Statement:
         return self.editor.transition(statement_id, to_state, actor, occurred_on, note)
+
+    def publish_statement(self, statement_id: str, actor: str,
+                          occurred_on: str, note: str = "") -> Statement:
+        return self.editor.publish(statement_id, actor, occurred_on, note)
 
     def list_statements(self) -> List[Statement]:
         return self.editor.all()
@@ -173,7 +179,7 @@ class Workspace:
         a = self.registry.get(s.artifact_id)
         q = self.questions.get(s.question_id)
         cls = authority.DOCUMENT_CLASSES.get(a.document_class)
-        answerable = s.state in (ReviewState.APPROVED, ReviewState.PUBLISHED)
+        answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
 
         lines = [
             f"STATEMENT {s.statement_id}",

@@ -13,9 +13,10 @@ import unittest
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.conflicts import ConflictError, ConflictStatus, values_disagree
-from timonelo.evidence.review import ReviewError, ReviewState
+from timonelo.evidence.review import ReviewError
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 from tests.test_ground_truth_pipeline import _write_pdf
 
 CLASS = "conflict_fixture"
@@ -70,9 +71,9 @@ class ConflictCase(unittest.TestCase):
             read_by=reader, read_on=on)
 
     def _publish(self, s, actor="reviewer.two"):
-        self.ws.transition(s.statement_id, ReviewState.UNDER_REVIEW, s.read_by, "2026-08-17")
-        self.ws.transition(s.statement_id, ReviewState.APPROVED, actor, "2026-08-17")
-        return self.ws.transition(s.statement_id, ReviewState.PUBLISHED, actor, "2026-08-17")
+        self.ws.transition(s.statement_id, HumanReviewState.UNDER_REVIEW, s.read_by, "2026-08-17")
+        self.ws.transition(s.statement_id, HumanReviewState.APPROVED, actor, "2026-08-17")
+        return self.ws.publish_statement(s.statement_id, actor, "2026-08-17")
 
 
 class TestDetection(ConflictCase):
@@ -108,7 +109,8 @@ class TestDetection(ConflictCase):
         s2 = self._stmt(15, self.b, reader="reader.two")
         self.assertEqual(self.ws.editor.get(s1.statement_id).value, 14)
         self.assertEqual(self.ws.editor.get(s2.statement_id).value, 15)
-        self.assertEqual(self.ws.editor.get(s1.statement_id).state, ReviewState.PUBLISHED)
+        self.assertEqual(self.ws.editor.get(s1.statement_id).state, HumanReviewState.APPROVED)
+        self.assertEqual(self.ws.editor.get(s1.statement_id).publishing, PublishStatus.PUBLISH_ALLOWED)
 
 
 class TestPassengerView(ConflictCase):
@@ -165,9 +167,13 @@ class TestResolution(ConflictCase):
             self.conflict.conflict_id, self.s2.statement_id,
             "reviewer.two", "2026-08-18", "source B is the later edition")
         self.assertEqual(self.ws.editor.get(self.s2.statement_id).state,
-                         ReviewState.PUBLISHED)
+                         HumanReviewState.APPROVED)
+        self.assertEqual(self.ws.editor.get(self.s2.statement_id).publishing,
+                         PublishStatus.PUBLISH_ALLOWED)
         self.assertEqual(self.ws.editor.get(self.s1.statement_id).state,
-                         ReviewState.SUPERSEDED)
+                         HumanReviewState.SUPERSEDED)
+        self.assertEqual(self.ws.editor.get(self.s1.statement_id).publishing,
+                         PublishStatus.PUBLISH_BLOCKED)
         self.assertEqual(self.ws.engine.answer("cabin:1", "Q-0001").value, 15)
 
     def test_loser_always_reaches_a_terminal_state(self):
@@ -177,14 +183,14 @@ class TestResolution(ConflictCase):
             self.conflict.conflict_id, self.s1.statement_id,
             "reviewer.two", "2026-08-18", "incumbent reading confirmed")
         self.assertEqual(self.ws.editor.get(self.s2.statement_id).state,
-                         ReviewState.SUPERSEDED)
+                         HumanReviewState.SUPERSEDED)
 
     def test_superseded_is_terminal(self):
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, self.s1.statement_id,
             "reviewer.two", "2026-08-18", "confirmed")
         with self.assertRaises(ReviewError):
-            self.ws.transition(self.s2.statement_id, ReviewState.PUBLISHED,
+            self.ws.transition(self.s2.statement_id, HumanReviewState.APPROVED,
                                "reviewer.two", "2026-08-19")
 
     def test_both_rejected_returns_the_question_to_unknown(self):

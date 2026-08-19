@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional
 
 from timonelo.evidence import authority
 from timonelo.evidence.editor import Statement
-from timonelo.evidence.review import ANSWERABLE, ReviewState
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 
 
 @dataclass(frozen=True)
@@ -66,6 +66,7 @@ class ArtifactInspection:
 
 
 def _summarise(s: Statement) -> StatementSummary:
+    answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
     return StatementSummary(
         statement_id=s.statement_id,
         entity_id=s.entity_id,
@@ -73,7 +74,7 @@ def _summarise(s: Statement) -> StatementSummary:
         statement_type=s.statement_type,
         value=s.value,
         review_state=s.review_state,
-        answerable=s.state in ANSWERABLE,
+        answerable=answerable,
         page=s.page,
         locator=s.locator,
         read_by=s.read_by,
@@ -166,7 +167,8 @@ class StatementRegistryAPI:
                 continue
             if review_state and s.review_state != review_state:
                 continue
-            if answerable_only and s.state not in ANSWERABLE:
+            is_answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
+            if answerable_only and not is_answerable:
                 continue
             out.append(_summarise(s))
         return out
@@ -175,7 +177,7 @@ class StatementRegistryAPI:
         return [e.to_dict() for e in self.ws.reviews.history(statement_id)]
 
     def counts_by_state(self) -> Dict[str, int]:
-        counts = {s.value: 0 for s in ReviewState}
+        counts = {s.value: 0 for s in HumanReviewState}
         for s in self.ws.editor.all():
             counts[s.review_state] = counts.get(s.review_state, 0) + 1
         return counts
@@ -184,5 +186,5 @@ class StatementRegistryAPI:
         """Statements waiting on a human. The curator's work queue."""
         return [
             _summarise(s) for s in self.ws.editor.all()
-            if s.state in (ReviewState.DRAFT, ReviewState.UNDER_REVIEW)
+            if s.state in (HumanReviewState.DRAFT, HumanReviewState.UNDER_REVIEW)
         ]

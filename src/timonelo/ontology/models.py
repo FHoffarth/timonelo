@@ -74,11 +74,28 @@ class Derivation(str, Enum):
     GENERATED = "GENERATED"
 
 
-class ReviewState(str, Enum):
-    """Human review state. NOT a confidence level and NOT a truth claim."""
-    UNREVIEWED = "UNREVIEWED"
-    REVIEWED = "REVIEWED"
+class EvidenceCondition(str, Enum):
+    """Machine evidence state. Grounded in observations, independent of human review or publication gate."""
+    SUPPORTED = "SUPPORTED"
+    UNSUPPORTED = "UNSUPPORTED"
     CONFLICTED = "CONFLICTED"
+    UNKNOWN = "UNKNOWN"
+
+
+class HumanReviewState(str, Enum):
+    """Human review workflow state. Tracks curation lifecycle independently from evidence or publication."""
+    DRAFT = "DRAFT"
+    UNDER_REVIEW = "UNDER_REVIEW"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+    SUPERSEDED = "SUPERSEDED"
+
+
+class PublishStatus(str, Enum):
+    """Publication gate status. Controls whether an item may be exposed to passengers or downstream systems."""
+    PUBLISH_ALLOWED = "PUBLISH_ALLOWED"
+    PUBLISH_ALLOWED_WITH_WARNINGS = "PUBLISH_ALLOWED_WITH_WARNINGS"
+    PUBLISH_BLOCKED = "PUBLISH_BLOCKED"
 
 
 class GeometryProvenance(str, Enum):
@@ -121,11 +138,14 @@ class EvidenceLink:
     method: Optional[Method] = None
     derivation: Optional[Derivation] = None
 
+    # Canonical evidence condition and review workflow
+    evidence_condition: EvidenceCondition = EvidenceCondition.UNKNOWN
+    human_review_state: HumanReviewState = HumanReviewState.DRAFT
+
     # Provenance detail.
     evidence_type: Optional[str] = None
     observed_on: Optional[str] = None
     reviewer: Optional[str] = None
-    review_state: ReviewState = ReviewState.UNREVIEWED
 
     # Temporal validity (ADR-0002 §7.2).
     valid_from: Optional[str] = None

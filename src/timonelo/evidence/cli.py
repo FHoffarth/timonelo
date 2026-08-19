@@ -18,7 +18,7 @@ import sys
 from typing import List, Optional
 
 from timonelo.evidence import authority
-from timonelo.evidence.review import ReviewState
+from timonelo.ontology.models import HumanReviewState, PublishStatus
 from timonelo.evidence.workspace import DEFAULT_ROOT, Workspace
 
 
@@ -115,7 +115,7 @@ def cmd_statement_inspect(args) -> int:
     return 0
 
 
-def _transition(args, to_state: ReviewState) -> int:
+def _transition(args, to_state: HumanReviewState) -> int:
     ws = _ws(args)
     s = ws.transition(args.statement_id, to_state, args.actor, args.on,
                       args.note or "")
@@ -124,19 +124,22 @@ def _transition(args, to_state: ReviewState) -> int:
 
 
 def cmd_submit(args) -> int:
-    return _transition(args, ReviewState.UNDER_REVIEW)
+    return _transition(args, HumanReviewState.UNDER_REVIEW)
 
 
 def cmd_approve(args) -> int:
-    return _transition(args, ReviewState.APPROVED)
+    return _transition(args, HumanReviewState.APPROVED)
 
 
 def cmd_publish(args) -> int:
-    return _transition(args, ReviewState.PUBLISHED)
+    ws = _ws(args)
+    s = ws.publish_statement(args.statement_id, args.actor, args.on, args.note or "")
+    print(f"{s.statement_id} -> PUBLISH_ALLOWED by {args.actor} on {args.on}")
+    return 0
 
 
 def cmd_reject(args) -> int:
-    return _transition(args, ReviewState.REJECTED)
+    return _transition(args, HumanReviewState.REJECTED)
 
 
 # -- reading -----------------------------------------------------------------

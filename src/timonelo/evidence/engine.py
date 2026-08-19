@@ -8,38 +8,24 @@ which statements currently satisfy it? If none do, the answer is UNKNOWN by
 construction — no special case, no literal.
 
 Confidence is NEVER stored. It is computed on traversal, every time.
+Human review state, evidence condition, and publication status are distinct axes.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
 from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog
 from timonelo.evidence.questions import QuestionRegistry
-
-
-class Method(str, Enum):
-    DIRECT = "DIRECT"
-    CALCULATED = "CALCULATED"
-    INFERRED = "INFERRED"
-
-
-class Derivation(str, Enum):
-    LOCAL = "LOCAL"
-    SISTER_SHIP = "SISTER_SHIP"
-    REFERENCE_MODEL = "REFERENCE_MODEL"
-    GENERATED = "GENERATED"
-
-
-class ReviewState(str, Enum):
-    """Publication gate. Only PUBLISHED statements reach a passenger."""
-    DRAFT = "DRAFT"
-    REVIEWED = "REVIEWED"
-    PUBLISHED = "PUBLISHED"
-    REJECTED = "REJECTED"
+from timonelo.ontology.models import (
+    Method,
+    Derivation,
+    EvidenceCondition,
+    HumanReviewState,
+    PublishStatus,
+)
 
 
 # Source reliability for DIRECT statements (ADR-0002 §7).
@@ -71,7 +57,9 @@ class Statement:
     evidence_event_ids: Tuple[str, ...] = ()
     input_statement_ids: Tuple[str, ...] = ()
     rule_hash: Optional[str] = None
-    review_state: ReviewState = ReviewState.DRAFT
+    evidence_condition: EvidenceCondition = EvidenceCondition.SUPPORTED
+    human_review_state: HumanReviewState = HumanReviewState.DRAFT
+    publish_status: PublishStatus = PublishStatus.PUBLISH_BLOCKED
     valid_from: Optional[str] = None
     valid_until: Optional[str] = None
 
@@ -155,22 +143,34 @@ class TruthEngine:
         self._statements[statement.statement_id] = statement
         return statement
 
-    def set_review_state(self, statement_id: str, state: ReviewState) -> Statement:
+    def set_human_review_state(self, statement_id: str, state: HumanReviewState) -> Statement:
+        """Transitions the human review workflow state."""
         s = self._statements[statement_id]
-        if state is ReviewState.PUBLISHED and s.review_state is ReviewState.DRAFT:
-            raise ValueError(
-                f"Statement {statement_id!r} cannot go DRAFT -> PUBLISHED. "
-                "It must be REVIEWED first."
-            )
-        if state is ReviewState.PUBLISHED:
+        updated = Statement(**{**s.__dict__, "human_review_state": state})
+        self._statements[statement_id] = updated
+        return updated
+
+    def set_publish_status(self, statement_id: str, status: PublishStatus) -> Statement:
+        """Sets the publication gate status. Only APPROVED items may become PUBLISH_ALLOWED."""
+        s = self._statements[statement_id]
+        if status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
+            if s.human_review_state != HumanReviewState.APPROVED and s.human_review_state != HumanReviewState.APPROVED.value:
+                raise ValueError(
+                    f"Statement {statement_id!r} cannot be publish-allowed while in "
+                    f"human review state {s.human_review_state}. It must be APPROVED first."
+                )
             blocked = self._publication_block(s)
             if blocked:
                 raise ValueError(
                     f"Statement {statement_id!r} may not be published: {blocked}"
                 )
-        updated = Statement(**{**s.__dict__, "review_state": state})
+        updated = Statement(**{**s.__dict__, "publish_status": status})
         self._statements[statement_id] = updated
         return updated
+
+    def publish(self, statement_id: str) -> Statement:
+        """Convenience method to advance an approved statement to PUBLISH_ALLOWED."""
+        return self.set_publish_status(statement_id, PublishStatus.PUBLISH_ALLOWED)
 
     def _publication_block(self, s: Statement) -> Optional[str]:
         """Authority governs whether a statement may EXIST; permission governs
@@ -265,7 +265,8 @@ class TruthEngine:
             s for s in self._statements.values()
             if s.entity_id == entity_id
             and s.question_id == question_id
-            and s.review_state is ReviewState.PUBLISHED
+            and s.publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS, PublishStatus.PUBLISH_ALLOWED.value, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS.value)
+            and s.human_review_state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
             and s.is_valid_at(as_of)
         ]
         if not candidates:
