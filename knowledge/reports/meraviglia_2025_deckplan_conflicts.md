@@ -26,5 +26,5 @@
 
 - **Conflicts Resolved**: 6
 - **Unresolved Conflicts**: 0
-- **Directly Verified Statements**: 100
+- **SUPPORTED Statements with Evidence Closure**: 101
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`

@@ -8,17 +8,7 @@
   },
   "summary": {
     "total_staterooms": 2214,
-    "distinct_categories_count": 22,
-    "balcony_percentage": 75.0,
-    "standard_amenities": [
-      "Twin beds convertible to double (king size)",
-      "Interactive TV",
-      "Dedicated vanity desk area",
-      "Digital safe",
-      "Minibar",
-      "Air conditioning",
-      "En-suite bathroom with shower"
-    ]
+    "distinct_categories_count": 22
   },
   "cabin_categories": [
     {

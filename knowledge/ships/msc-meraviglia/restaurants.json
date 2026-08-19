@@ -36,8 +36,8 @@
       ]
     },
     {
-      "id": "REST-LOLIVO",
-      "name": "L'Olivo d'Oro",
+      "id": "REST-LOLIVO-DORO",
+      "name": "L'Olivo d'oro",
       "deck": 6,
       "category": "MAIN_DINING_ROOM",
       "description": "Main dining room located on Deck 6.",
@@ -50,8 +50,8 @@
       ]
     },
     {
-      "id": "REST-LE-CERISIER",
-      "name": "L'Olive Doree",
+      "id": "REST-LOLIVE-DOREE",
+      "name": "L'Olive dorée",
       "deck": 6,
       "category": "MAIN_DINING_ROOM",
       "description": "Main dining venue located on Deck 6.",
@@ -79,7 +79,7 @@
     },
     {
       "id": "REST-OCEAN-CAY",
-      "name": "Ocean Cay Restaurant",
+      "name": "Ocean Cay",
       "deck": 6,
       "category": "EXCLUSIVE_GOURMET",
       "description": "Seafood restaurant located on Deck 6.",

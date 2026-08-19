@@ -1,6 +1,10 @@
 """
 Re-ingestion pipeline for MSC Meraviglia official deck plans.
-Governed by ADR-0002, P0-B Salvage Step 2, and Step 2B.1A Evidence Hygiene & Lifecycle.
+Governed by ADR-0002, ADR-0003, and P0-B Step 2B.1B.
+
+Canonical Pipeline:
+  Official Source -> ArtifactRegistry -> StatementEditor.create() -> central authority.check()
+  -> StatementEditor.set_evidence_condition() -> ReviewLog -> canonical knowledge output -> EvidenceGatekeeper
 
 Primary Source Artifact:
   Document: Official MSC Cruises Meraviglia Deckplans
@@ -18,16 +22,18 @@ import shutil
 import tempfile
 from typing import Any, Dict, List
 
-from timonelo.evidence.artifacts import ArtifactStore, sha256_of_file
-from timonelo.evidence.engine import Statement, TruthEngine
-from timonelo.evidence.events import EvidenceEvent, EvidenceEventLog
+from timonelo.evidence.artifacts import sha256_of_file
+from timonelo.evidence.conflicts import ConflictLog
+from timonelo.evidence.editor import Statement, StatementEditor
+from timonelo.evidence.engine import Statement as EngineStatement
+from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.gatekeeper import (
     ConflictGateResult,
     EvidenceGatekeeper,
     GeometryProvenanceRecord,
     SourceArtifactRecord,
 )
-from timonelo.evidence.questions import Question, QuestionRegistry
+from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.review import ReviewLog
 from timonelo.ontology.models import (
     Derivation,
@@ -53,7 +59,7 @@ def run_ingestion() -> Dict[str, Any]:
     os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
     os.makedirs(REPORTS_DIR, exist_ok=True)
 
-    # 1. Verify physical artifact cryptographic integrity
+    # 1. Verify physical artifact cryptographic integrity (TASK B)
     if not os.path.exists(ARTIFACT_FULL_PATH):
         raise FileNotFoundError(f"Artifact missing: {ARTIFACT_FULL_PATH}")
     actual_sha = sha256_of_file(ARTIFACT_FULL_PATH)
@@ -71,27 +77,25 @@ def run_ingestion() -> Dict[str, Any]:
     )
 
     temp_engine_dir = tempfile.mkdtemp(prefix="timonelo_meraviglia_engine_")
-    # Instantiate canonical registry, store, log, review log, and TruthEngine
-    q_reg = QuestionRegistry()
-    art_store = ArtifactStore(temp_engine_dir)
-    art_store.add(
+
+    # 2. Canonical ArtifactRegistry, ReviewLog, ConflictLog, and StatementEditor (TASK A, B)
+    registry = ArtifactRegistry(os.path.join(temp_engine_dir, "registry"))
+    registered_artifact = registry.register(
         path=ARTIFACT_FULL_PATH,
         document_class="cruise_line_deck_plan",
-        obtained_on="2026-08-19",
-        obtained_from="MSC Cruises",
+        acquired_on="2026-08-19",
+        acquisition_method="download",
+        publisher="MSC Cruises",
+        version="11.2025 DEU",
     )
-    event_log = EvidenceEventLog(
-        path=os.path.join(temp_engine_dir, "events.json"),
-        store=art_store,
-        registry=q_reg,
-    )
-    truth_engine = TruthEngine(
-        registry=q_reg,
-        log=event_log,
-        store=art_store,
-    )
-    review_log = ReviewLog(
-        path=os.path.join(temp_engine_dir, "reviews.json")
+
+    review_log = ReviewLog(os.path.join(temp_engine_dir, "reviews.json"))
+    conflict_log = ConflictLog(os.path.join(temp_engine_dir, "conflicts.json"))
+    editor = StatementEditor(
+        path=os.path.join(temp_engine_dir, "statements.json"),
+        registry=registry,
+        review_log=review_log,
+        conflict_log=conflict_log,
     )
 
     events: List[EvidenceEvent] = []
@@ -107,22 +111,33 @@ def run_ingestion() -> Dict[str, Any]:
     ) -> None:
         locator = f"page:{page}"
 
-        # 1. Register question
-        entity_type = entity_id.split(":")[1] if ":" in entity_id else "vessel"
-        if question_id not in q_reg._by_id:
-            q_reg.register(
-                Question(
-                    question_id=question_id,
-                    entity_type=entity_type,
-                    statement_type=statement_type,
-                    supportable_by=("cruise_line_deck_plan", "shipyard_general_arrangement"),
-                )
-            )
+        # 1. Author statement via StatementEditor (sole creator, checked against central authority) (TASK A, D)
+        stmt = editor.create(
+            entity_id=entity_id,
+            question_id=question_id,
+            statement_type=statement_type,
+            value=value,
+            artifact_id=registered_artifact.artifact_id,
+            locator=locator,
+            read_by="deckplan_extraction_pipeline",
+            read_on="2026-08-19",
+            page=page,
+            method="DIRECT",
+        )
 
-        # 2. EvidenceEvent captures the observation
+        # 2. Canonical promotion via StatementEditor.set_evidence_condition (TASK C)
+        promoted = editor.set_evidence_condition(
+            statement_id=stmt.statement_id,
+            condition=EvidenceCondition.SUPPORTED,
+            actor="deckplan_evidence_verifier",
+            occurred_on="2026-08-19",
+            note=f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
+        )
+
+        # 3. EvidenceEvent captures the observation
         event = EvidenceEvent(
             event_id=event_id,
-            artifact_sha256=EXPECTED_SHA256,
+            artifact_sha256=registered_artifact.sha256,
             locator=locator,
             entity_id=entity_id,
             question_id=question_id,
@@ -131,41 +146,7 @@ def run_ingestion() -> Dict[str, Any]:
             observed_on="2026-08-19",
         )
         events.append(event)
-        event_log.append(event)
-
-        stmt_id = f"STMT-{event_id}"
-
-        # 3. Construct Statement in fail-closed initial state (TASK A.1)
-        stmt_initial = Statement(
-            statement_id=stmt_id,
-            entity_id=entity_id,
-            question_id=question_id,
-            value=value,
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_event_ids=(event_id,),
-            evidence_condition=EvidenceCondition.UNKNOWN,
-            human_review_state=HumanReviewState.DRAFT,
-            publish_status=PublishStatus.PUBLISH_BLOCKED,
-        )
-        truth_engine.add_statement(stmt_initial)
-
-        # 4. Invoke actual canonical transition mechanism (TASK A.3)
-        transitioned_stmt = truth_engine.set_evidence_condition(
-            stmt_id, EvidenceCondition.SUPPORTED
-        )
-
-        # 5. Persist audit record produced by canonical review mechanism (TASK A.4, A.5)
-        review_log.record_condition_transition(
-            statement_id=stmt_id,
-            from_condition=EvidenceCondition.UNKNOWN,
-            to_condition=EvidenceCondition.SUPPORTED,
-            actor="deckplan_evidence_verifier",
-            occurred_on="2026-08-19",
-            note=f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
-        )
-
-        statements.append(transitioned_stmt)
+        statements.append(promoted)
 
     # --- Decks (Pages 3, 4, 5) ---
     deck_definitions = [
@@ -208,12 +189,12 @@ def run_ingestion() -> Dict[str, Any]:
             "tags": [d_name.lower().replace(" ", "-"), d_cat.lower().replace("_", "-")]
         })
 
-    # Summary Capacities on Page 2 and Represented Passenger Decks (Pages 3-5) (TASK D)
+    # Summary Capacities on Page 2 and Represented Passenger Decks (Pages 3-5) (TASK E, F)
     record_fact(
         event_id="EVT-MER-TOTAL-CABINS",
         entity_id="msc-meraviglia",
         question_id="Q-SHIP-CABIN-COUNT",
-        statement_type="deck.venue_present",
+        statement_type="vessel.total_cabins",
         value=2214,
         page=2,
     )
@@ -221,17 +202,27 @@ def run_ingestion() -> Dict[str, Any]:
         event_id="EVT-MER-TOTAL-GUESTS",
         entity_id="msc-meraviglia",
         question_id="Q-SHIP-PAX-MAX",
-        statement_type="deck.venue_present",
+        statement_type="vessel.passenger_capacity_max",
         value=5714,
         page=2,
     )
     record_fact(
         event_id="EVT-MER-PAX-DECKS",
-        entity_id="msc-meraviglia",
+        entity_id="msc-meraviglia:decks:represented",
         question_id="Q-SHIP-PAX-DECKS",
         statement_type="deck.venue_present",
         value=15,
         page=5,
+    )
+
+    # Cabin bed configuration explicitly stated on Page 2 (TASK H)
+    record_fact(
+        event_id="EVT-MER-CABIN-BED-CONFIG",
+        entity_id="msc-meraviglia:cabin:bed_configuration",
+        question_id="Q-CABIN-BED-CONFIG",
+        statement_type="cabin.bed_configuration",
+        value="Doppelbett umstellbar zu zwei Einzelbetten (ausgenommen IS, YC3)",
+        page=2,
     )
 
     # --- Write decks.json ---
@@ -243,13 +234,13 @@ def run_ingestion() -> Dict[str, Any]:
             "verification_authority": "MSC Cruises Official Documentation",
             "last_audited": "2026-08-19"
         },
-        "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
+        "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not represented in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
         "decks": decks_json_list
     }
     with open(os.path.join(KNOWLEDGE_DIR, "decks.json"), "w", encoding="utf-8") as f:
         json.dump(decks_doc, f, indent=2, ensure_ascii=False)
 
-    # --- Cabins Catalog (Page 2) — Exactly 22 categories (TASK C) ---
+    # --- Cabins Catalog (Page 2) — Exactly 22 categories (TASK G) ---
     cabin_categories_data = [
         {"id": "CAT-YC3", "code": "YC3", "name": "MSC Yacht Club Royal Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [15], "desc": "MSC Yacht Club Royal Suite on Deck 15 with whirlpool.", "page": 2, "tags": ["yacht-club", "suite", "whirlpool"]},
         {"id": "CAT-YJD", "code": "YJD", "name": "MSC Yacht Club Maisonette Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [9, 10, 11, 12], "desc": "MSC Yacht Club Maisonette Suite on Decks 9-12 with whirlpool.", "page": 2, "tags": ["yacht-club", "maisonette", "suite", "whirlpool"]},
@@ -285,6 +276,7 @@ def run_ingestion() -> Dict[str, Any]:
             page=cat["page"],
         )
 
+    # Cabins summary: unsupported balcony_percentage and generic standard_amenities removed (TASK H, I)
     cabins_doc = {
         "vessel_id": "msc-meraviglia",
         "provenance": {
@@ -295,17 +287,7 @@ def run_ingestion() -> Dict[str, Any]:
         },
         "summary": {
             "total_staterooms": 2214,
-            "distinct_categories_count": len(cabin_categories_data),
-            "balcony_percentage": 75.0,
-            "standard_amenities": [
-                "Twin beds convertible to double (king size)",
-                "Interactive TV",
-                "Dedicated vanity desk area",
-                "Digital safe",
-                "Minibar",
-                "Air conditioning",
-                "En-suite bathroom with shower"
-            ]
+            "distinct_categories_count": len(cabin_categories_data)
         },
         "cabin_categories": [
             {
@@ -324,14 +306,14 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "cabins.json"), "w", encoding="utf-8") as f:
         json.dump(cabins_doc, f, indent=2, ensure_ascii=False)
 
-    # --- Restaurants (Pages 3, 5) ---
+    # --- Restaurants (Pages 3, 5) — Cleaned of legacy REST-LE-CERISIER (TASK J, K) ---
     restaurants_data = [
         {"id": "REST-WAVES", "name": "Waves Restaurant", "deck": 5, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main restaurant located on Deck 5.", "page": 3, "tags": ["main-dining", "restaurant"]},
         {"id": "REST-PANORAMA", "name": "Panorama Restaurant", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main restaurant located aft on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-LOLIVO", "name": "L'Olivo d'Oro", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining room located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-LE-CERISIER", "name": "L'Olive Doree", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining venue located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
+        {"id": "REST-LOLIVO-DORO", "name": "L'Olivo d'oro", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining room located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
+        {"id": "REST-LOLIVE-DOREE", "name": "L'Olive dorée", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining venue located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
         {"id": "REST-HOLA-TACOS", "name": "Hola! Tacos & Cantina", "deck": 6, "cat": "SPECIALTY_LATIN", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Latin dining concept located on Deck 6.", "page": 3, "tags": ["specialty", "restaurant"]},
-        {"id": "REST-OCEAN-CAY", "name": "Ocean Cay Restaurant", "deck": 6, "cat": "EXCLUSIVE_GOURMET", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Seafood restaurant located on Deck 6.", "page": 3, "tags": ["specialty", "restaurant"]},
+        {"id": "REST-OCEAN-CAY", "name": "Ocean Cay", "deck": 6, "cat": "EXCLUSIVE_GOURMET", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Seafood restaurant located on Deck 6.", "page": 3, "tags": ["specialty", "restaurant"]},
         {"id": "REST-BUTCHERS-CUT", "name": "Butcher's Cut", "deck": 7, "cat": "SPECIALTY_STEAKHOUSE", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Steakhouse restaurant located on Deck 7.", "page": 3, "tags": ["specialty", "steakhouse", "restaurant"]},
         {"id": "REST-KAITO-TEPPANYAKI", "name": "Kaito Teppanyaki", "deck": 7, "cat": "SPECIALTY_ASIAN", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Teppanyaki restaurant located on Deck 7.", "page": 3, "tags": ["specialty", "asian", "restaurant"]},
         {"id": "REST-KAITO-SUSHI", "name": "Kaito Sushi Bar", "deck": 7, "cat": "SPECIALTY_SUSHI", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Sushi bar located on Deck 7.", "page": 3, "tags": ["specialty", "sushi", "restaurant"]},
@@ -376,12 +358,12 @@ def run_ingestion() -> Dict[str, Any]:
     # --- Bars (Pages 3, 5) ---
     bars_data = [
         {"id": "BAR-EDGE", "name": "Edge Cocktail Bar", "deck": 6, "cat": "COCKTAIL_BAR", "desc": "Cocktail bar located on Deck 6.", "page": 3, "tags": ["cocktails", "bar"]},
-        {"id": "BAR-JEAN-PHILIPPE-CHOCO", "name": "Jean-Philippe Chocolat & Café", "deck": 6, "cat": "CHOCOLATE_CAFE", "desc": "Chocolate boutique and café located on Deck 6.", "page": 3, "tags": ["cafe", "pastry"]},
-        {"id": "BAR-JEAN-PHILIPPE-CREPES", "name": "Jean-Philippe Crêpes & Gelato", "deck": 6, "cat": "GELATO_BAR", "desc": "Crêpes and gelato bar located on Deck 6.", "page": 3, "tags": ["gelato", "bar"]},
+        {"id": "BAR-JEAN-PHILIPPE-CHOCO", "name": "Jean-Philippe Chocolate & Coffee", "deck": 6, "cat": "CHOCOLATE_CAFE", "desc": "Chocolate boutique and café located on Deck 6.", "page": 3, "tags": ["cafe", "pastry"]},
+        {"id": "BAR-JEAN-PHILIPPE-CREPES", "name": "Jean-Philippe Crepes & Ice Cream", "deck": 6, "cat": "GELATO_BAR", "desc": "Crêpes and ice cream bar located on Deck 6.", "page": 3, "tags": ["gelato", "bar"]},
         {"id": "BAR-MERAVIGLIA-BAR", "name": "Meraviglia Bar & Lounge", "deck": 6, "cat": "LOUNGE_BAR", "desc": "Bar and lounge located on Deck 6.", "page": 3, "tags": ["bar", "lounge"]},
         {"id": "BAR-BRASS-ANCHOR", "name": "Brass Anchor Pub", "deck": 7, "cat": "TRADITIONAL_PUB", "desc": "Pub located on Deck 7.", "page": 3, "tags": ["pub", "bar"]},
         {"id": "BAR-CHAMPAGNE", "name": "Champagne Bar", "deck": 7, "cat": "CHAMPAGNE_BAR", "desc": "Champagne bar located on Deck 7.", "page": 3, "tags": ["champagne", "bar"]},
-        {"id": "BAR-CASINO", "name": "Casino Bar", "deck": 7, "cat": "CASINO_BAR", "desc": "Bar located within Casino Imperiale on Deck 7.", "page": 3, "tags": ["casino", "bar"]},
+        {"id": "BAR-CASINO", "name": "Casino Imperiale", "deck": 7, "cat": "CASINO_BAR", "desc": "Bar located within Casino Imperiale on Deck 7.", "page": 3, "tags": ["casino", "bar"]},
         {"id": "BAR-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "cat": "ENTERTAINMENT_BAR", "desc": "TV studio and bar located on Deck 7.", "page": 3, "tags": ["tv-studio", "bar"]},
         {"id": "BAR-CAROUSEL", "name": "Carousel Lounge Bar", "deck": 7, "cat": "SHOW_LOUNGE_BAR", "desc": "Aft venue bar in Carousel Lounge on Deck 7.", "page": 3, "tags": ["show", "bar"]},
         {"id": "BAR-BAMBOO", "name": "Bamboo Bar", "deck": 15, "cat": "POOL_BAR", "desc": "Pool bar located by Bamboo Pool on Deck 15.", "page": 5, "tags": ["pool-bar", "bar"]},
@@ -469,7 +451,7 @@ def run_ingestion() -> Dict[str, Any]:
         {"id": "POOL-BAMBOO", "name": "Bamboo Pool", "deck": 15, "cat": "SOLARIUM_POOL", "desc": "Pool with retractable glass roof located on Deck 15.", "page": 5, "tags": ["indoor-pool", "pool"]},
         {"id": "POOL-HORIZON", "name": "Horizon Pool", "deck": 16, "cat": "AFT_PANORAMIC_POOL", "desc": "Aft amphitheatre pool located on Deck 16.", "page": 5, "tags": ["aft-pool", "pool"]},
         {"id": "POOL-AQUAPARK", "name": "Polar Aquapark", "deck": 19, "cat": "WATERPARK", "desc": "Water park with slides located on Deck 19.", "page": 5, "tags": ["aquapark", "pool"]},
-        {"id": "POOL-YC", "name": "MSC Yacht Club Pool & Whirlpool", "deck": 19, "cat": "EXCLUSIVE_POOL", "desc": "Private pool and whirlpool on the MSC Yacht Club sundeck on Deck 19.", "page": 5, "tags": ["yacht-club", "pool"]},
+        {"id": "POOL-YC", "name": "MSC Yacht Club Pool", "deck": 19, "cat": "EXCLUSIVE_POOL", "desc": "Private pool on the MSC Yacht Club sundeck on Deck 19.", "page": 5, "tags": ["yacht-club", "pool"]},
     ]
     for p in pools_data:
         record_fact(
@@ -536,7 +518,7 @@ def run_ingestion() -> Dict[str, Any]:
         json.dump(spa_doc, f, indent=2, ensure_ascii=False)
 
     sports_data = [
-        {"id": "SPORT-SPORTPLEX", "name": "Sportplex Arena", "deck": 16, "cat": "MULTI_SPORT_ARENA", "desc": "Indoor sports arena located on Deck 16.", "page": 5, "tags": ["sports", "arena"]},
+        {"id": "SPORT-SPORTPLEX", "name": "Sportplex", "deck": 16, "cat": "MULTI_SPORT_ARENA", "desc": "Indoor sports arena located on Deck 16.", "page": 5, "tags": ["sports", "arena"]},
         {"id": "SPORT-GYM", "name": "MSC Gym by Technogym", "deck": 16, "cat": "FITNESS_CENTER", "desc": "Fitness center located on Deck 16.", "page": 5, "tags": ["gym", "fitness"]},
         {"id": "SPORT-TRACK", "name": "Power Walking Track", "deck": 16, "cat": "OUTDOOR_TRACK", "desc": "Outdoor walking track located on Deck 16.", "page": 5, "tags": ["walking-track", "outdoor"]},
         {"id": "SPORT-BRIDGE", "name": "Himalayan Bridge", "deck": 19, "cat": "ROPE_COURSE", "desc": "Suspension bridge attraction located on Deck 19.", "page": 5, "tags": ["bridge", "outdoor"]},
@@ -580,8 +562,8 @@ def run_ingestion() -> Dict[str, Any]:
         {"id": "ENT-CASINO", "name": "Casino Imperiale", "deck": 7, "cat": "CASINO", "desc": "Casino gaming venue located on Deck 7.", "page": 3, "tags": ["casino", "gaming"]},
         {"id": "ENT-XD-CINEMA", "name": "Interactive XD Cinema", "deck": 16, "cat": "DIGITAL_CINEMA", "desc": "Interactive cinema located on Deck 16.", "page": 5, "tags": ["cinema", "entertainment"]},
         {"id": "ENT-F1-RACER", "name": "MSC Formula Racer", "deck": 16, "cat": "SIMULATOR", "desc": "Racing simulator located on Deck 16.", "page": 5, "tags": ["simulator", "entertainment"]},
-        {"id": "ENT-BOWLING", "name": "Full-Sized Bowling", "deck": 16, "cat": "BOWLING", "desc": "Bowling lanes located on Deck 16.", "page": 5, "tags": ["bowling", "entertainment"]},
-        {"id": "ENT-TV-STUDIO", "name": "TV Studio & Games", "deck": 7, "cat": "TV_STUDIO", "desc": "TV studio and games venue located on Deck 7.", "page": 3, "tags": ["tv-studio", "entertainment"]},
+        {"id": "ENT-BOWLING", "name": "Bowling", "deck": 16, "cat": "BOWLING", "desc": "Bowling lanes located on Deck 16.", "page": 5, "tags": ["bowling", "entertainment"]},
+        {"id": "ENT-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "cat": "TV_STUDIO", "desc": "TV studio and games venue located on Deck 7.", "page": 3, "tags": ["tv-studio", "entertainment"]},
         {"id": "ENT-DOREMI-LAB", "name": "Doremi Lab", "deck": 18, "cat": "YOUTH_TECH", "desc": "Youth activity lab located on Deck 18.", "page": 5, "tags": ["youth", "kids"]},
         {"id": "ENT-BABY-CLUB", "name": "Baby Club Chicco", "deck": 18, "cat": "BABY_CLUB", "desc": "Play center for infants located on Deck 18.", "page": 5, "tags": ["kids", "baby"]},
         {"id": "ENT-MINI-CLUB", "name": "Mini Club Lego", "deck": 18, "cat": "KIDS_CLUB", "desc": "Activity club for children ages 3-6 located on Deck 18.", "page": 5, "tags": ["kids", "club"]},
@@ -662,7 +644,7 @@ def run_ingestion() -> Dict[str, Any]:
             ]
         }, f, indent=2, ensure_ascii=False)
 
-    # --- Technical Specifications (TASK D, E: strict evidence hygiene, zero unsupported facts) ---
+    # --- Technical Specifications (TASK E, F: strict evidence hygiene, zero unsupported facts) ---
     # Only capacities evidenced in deckplan are retained. Total physical decks and class are omitted.
     technical_doc = {
         "vessel_id": "msc-meraviglia",
@@ -675,7 +657,6 @@ def run_ingestion() -> Dict[str, Any]:
         },
         "technical_specifications": {
             "capacities": {
-                "passenger_accessible_decks": 15,
                 "passenger_capacity_max_occupancy": 5714,
                 "total_cabins_min": 2214,
                 "total_cabins_max": 2214
@@ -703,18 +684,13 @@ def run_ingestion() -> Dict[str, Any]:
         ]
     )
 
-    # Clean up temporary logs from memory run
-    for tmp_file in ("events_temp.json", "review_log_temp.json"):
-        p = os.path.join(KNOWLEDGE_DIR, tmp_file)
-        if os.path.exists(p):
-            os.remove(p)
-
-    # --- Extraction Manifest (TASK I: separate orthogonal axes without collapsing) ---
+    # --- Extraction Manifest (TASK O: separate orthogonal axes without collapsing) ---
     manifest_data = {
         "artifact": {
+            "artifact_id": registered_artifact.artifact_id,
             "source_id": source_record.source_id,
             "title": source_record.title,
-            "sha256": source_record.expected_sha256,
+            "sha256": registered_artifact.sha256,
             "edition": source_record.edition,
             "pages": 6,
             "document_class": source_record.document_class
@@ -722,54 +698,52 @@ def run_ingestion() -> Dict[str, Any]:
         "events_count": len(events),
         "statements_count": len(statements),
         "statement_axis": {
-            "unknown": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.UNKNOWN),
-            "supported": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.SUPPORTED),
-            "conflicted": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.CONFLICTED),
+            "unknown": sum(1 for s in statements if s.evidence_condition == "UNKNOWN"),
+            "supported": sum(1 for s in statements if s.evidence_condition == "SUPPORTED"),
+            "conflicted": sum(1 for s in statements if s.evidence_condition == "CONFLICTED"),
         },
         "review_axis": {
-            "draft": sum(1 for s in statements if s.human_review_state == HumanReviewState.DRAFT),
-            "under_review": sum(1 for s in statements if s.human_review_state == HumanReviewState.UNDER_REVIEW),
-            "approved": sum(1 for s in statements if s.human_review_state == HumanReviewState.APPROVED),
-            "rejected": sum(1 for s in statements if s.human_review_state == HumanReviewState.REJECTED),
-            "superseded": sum(1 for s in statements if s.human_review_state == HumanReviewState.SUPERSEDED),
+            "draft": sum(1 for s in statements if s.human_review_state == "DRAFT"),
+            "under_review": sum(1 for s in statements if s.human_review_state == "UNDER_REVIEW"),
+            "approved": sum(1 for s in statements if s.human_review_state == "APPROVED"),
+            "rejected": sum(1 for s in statements if s.human_review_state == "REJECTED"),
+            "superseded": sum(1 for s in statements if s.human_review_state == "SUPERSEDED"),
         },
         "publish_axis": {
-            "publish_blocked": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_BLOCKED),
-            "publish_allowed_with_warnings": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS),
-            "publish_allowed": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED),
+            "publish_blocked": sum(1 for s in statements if s.publish_status == "PUBLISH_BLOCKED"),
+            "publish_allowed_with_warnings": sum(1 for s in statements if s.publish_status == "PUBLISH_ALLOWED_WITH_WARNINGS"),
+            "publish_allowed": sum(1 for s in statements if s.publish_status == "PUBLISH_ALLOWED"),
         },
         "audit_log": [e.to_dict() for e in review_log.all()],
         "events": [e.to_dict() for e in events],
-        "statements": [
-            {
-                "statement_id": s.statement_id,
-                "entity_id": s.entity_id,
-                "question_id": s.question_id,
-                "value": s.value,
-                "method": s.method.value,
-                "derivation": s.derivation.value,
-                "evidence_event_ids": list(s.evidence_event_ids),
-                "evidence_condition": s.evidence_condition.value,
-                "human_review_state": s.human_review_state.value,
-                "publish_status": s.publish_status.value
-            }
-            for s in statements
-        ]
+        "statements": [s.to_dict() for s in statements]
     }
     manifest_path = os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, indent=2, ensure_ascii=False)
 
-    # --- Execute EvidenceGatekeeper (TASK L: fail-closed evaluation) ---
-    gk = EvidenceGatekeeper(question_registry=q_reg)
+    # --- Execute EvidenceGatekeeper (TASK R: fail-closed evaluation) ---
+    gk = EvidenceGatekeeper()
     gk.register_source(source_record)
     for evt in events:
         gk.register_event(evt)
-    for stmt in statements:
-        gk.add_statement(stmt)
+    for s, evt in zip(statements, events):
+        engine_stmt = EngineStatement(
+            statement_id=s.statement_id,
+            entity_id=s.entity_id,
+            question_id=s.question_id,
+            value=s.value,
+            method=Method.DIRECT,
+            derivation=Derivation.LOCAL,
+            evidence_event_ids=(evt.event_id,),
+            evidence_condition=EvidenceCondition.SUPPORTED if s.evidence_condition == "SUPPORTED" else EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.DRAFT if s.human_review_state == "DRAFT" else HumanReviewState.APPROVED,
+            publish_status=PublishStatus.PUBLISH_BLOCKED if s.publish_status == "PUBLISH_BLOCKED" else PublishStatus.PUBLISH_ALLOWED,
+        )
+        gk.add_statement(engine_stmt)
     gk.set_conflict_result(conflict_gate)
 
-    # Living Deck geometry remains synthetic (TASK K)
+    # Living Deck geometry remains synthetic (TASK Q)
     for d_num in range(4, 20):
         if d_num == 17:
             continue
@@ -783,7 +757,7 @@ def run_ingestion() -> Dict[str, Any]:
 
     gate_result = gk.evaluate_publish_gate()
 
-    # --- Generate Reports (TASK F) ---
+    # --- Generate Reports ---
     report_md = f"""# MSC Meraviglia Official Deckplan Ingestion Report
 
 **Document**: `Official MSC Cruises Meraviglia Deckplans`
@@ -816,8 +790,9 @@ def run_ingestion() -> Dict[str, Any]:
    - Deck 19: **Babylon** (Page 5)
 3. **Deck 17 Structure**: Verified absent from passenger deck plan (Page 5).
 4. **22 Cabin Booking Categories**: Cataloged from Page 2 with exact code and deck ranges (including YC1 and YIN).
-5. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
-6. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
+5. **Cabin Bed Arrangement**: Evidenced on Page 2 ("Doppelbett umstellbar zu zwei Einzelbetten, ausgenommen IS und YC3").
+6. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
+7. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
 
 ---
 
@@ -857,7 +832,7 @@ def run_ingestion() -> Dict[str, Any]:
 
 - **Conflicts Resolved**: 6
 - **Unresolved Conflicts**: 0
-- **Directly Verified Statements**: {len(statements)}
+- **SUPPORTED Statements with Evidence Closure**: {len(statements)}
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
 """
     with open(os.path.join(REPORTS_DIR, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8") as f:
@@ -867,12 +842,12 @@ def run_ingestion() -> Dict[str, Any]:
     return {
         "events_count": len(events),
         "statements_count": len(statements),
-        "supported_count": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.SUPPORTED),
-        "unknown_count": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.UNKNOWN),
-        "draft_count": sum(1 for s in statements if s.human_review_state == HumanReviewState.DRAFT),
-        "approved_count": sum(1 for s in statements if s.human_review_state == HumanReviewState.APPROVED),
-        "blocked_count": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_BLOCKED),
-        "publishable_count": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED),
+        "supported_count": sum(1 for s in statements if s.evidence_condition == "SUPPORTED"),
+        "unknown_count": sum(1 for s in statements if s.evidence_condition == "UNKNOWN"),
+        "draft_count": sum(1 for s in statements if s.human_review_state == "DRAFT"),
+        "approved_count": sum(1 for s in statements if s.human_review_state == "APPROVED"),
+        "blocked_count": sum(1 for s in statements if s.publish_status == "PUBLISH_BLOCKED"),
+        "publishable_count": sum(1 for s in statements if s.publish_status == "PUBLISH_ALLOWED"),
         "gate_status": gate_result.status.value,
         "gate_reasons": gate_result.reasons,
     }

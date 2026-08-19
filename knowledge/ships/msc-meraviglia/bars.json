@@ -22,7 +22,7 @@
     },
     {
       "id": "BAR-JEAN-PHILIPPE-CHOCO",
-      "name": "Jean-Philippe Chocolat & Café",
+      "name": "Jean-Philippe Chocolate & Coffee",
       "deck": 6,
       "category": "CHOCOLATE_CAFE",
       "description": "Chocolate boutique and café located on Deck 6.",
@@ -35,10 +35,10 @@
     },
     {
       "id": "BAR-JEAN-PHILIPPE-CREPES",
-      "name": "Jean-Philippe Crêpes & Gelato",
+      "name": "Jean-Philippe Crepes & Ice Cream",
       "deck": 6,
       "category": "GELATO_BAR",
-      "description": "Crêpes and gelato bar located on Deck 6.",
+      "description": "Crêpes and ice cream bar located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
@@ -87,7 +87,7 @@
     },
     {
       "id": "BAR-CASINO",
-      "name": "Casino Bar",
+      "name": "Casino Imperiale",
       "deck": 7,
       "category": "CASINO_BAR",
       "description": "Bar located within Casino Imperiale on Deck 7.",

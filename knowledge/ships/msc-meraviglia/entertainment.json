@@ -74,7 +74,7 @@
     },
     {
       "id": "ENT-BOWLING",
-      "name": "Full-Sized Bowling",
+      "name": "Bowling",
       "deck": 16,
       "category": "BOWLING",
       "description": "Bowling lanes located on Deck 16.",
@@ -87,7 +87,7 @@
     },
     {
       "id": "ENT-TV-STUDIO",
-      "name": "TV Studio & Games",
+      "name": "TV Studio & Bar",
       "deck": 7,
       "category": "TV_STUDIO",
       "description": "TV studio and games venue located on Deck 7.",

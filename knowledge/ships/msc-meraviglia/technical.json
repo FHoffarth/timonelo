@@ -9,7 +9,6 @@
   },
   "technical_specifications": {
     "capacities": {
-      "passenger_accessible_decks": 15,
       "passenger_capacity_max_occupancy": 5714,
       "total_cabins_min": 2214,
       "total_cabins_max": 2214

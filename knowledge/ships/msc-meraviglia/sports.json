@@ -9,7 +9,7 @@
   "sports_and_recreation": [
     {
       "id": "SPORT-SPORTPLEX",
-      "name": "Sportplex Arena",
+      "name": "Sportplex",
       "deck": 16,
       "category": "MULTI_SPORT_ARENA",
       "description": "Indoor sports arena located on Deck 16.",

@@ -30,8 +30,9 @@
    - Deck 19: **Babylon** (Page 5)
 3. **Deck 17 Structure**: Verified absent from passenger deck plan (Page 5).
 4. **22 Cabin Booking Categories**: Cataloged from Page 2 with exact code and deck ranges (including YC1 and YIN).
-5. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
-6. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
+5. **Cabin Bed Arrangement**: Evidenced on Page 2 ("Doppelbett umstellbar zu zwei Einzelbetten, ausgenommen IS und YC3").
+6. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
+7. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
 
 ---
 

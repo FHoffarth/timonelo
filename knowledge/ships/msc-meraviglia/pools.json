@@ -61,10 +61,10 @@
     },
     {
       "id": "POOL-YC",
-      "name": "MSC Yacht Club Pool & Whirlpool",
+      "name": "MSC Yacht Club Pool",
       "deck": 19,
       "category": "EXCLUSIVE_POOL",
-      "description": "Private pool and whirlpool on the MSC Yacht Club sundeck on Deck 19.",
+      "description": "Private pool on the MSC Yacht Club sundeck on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [

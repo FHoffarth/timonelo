@@ -6,7 +6,7 @@
     "verification_authority": "MSC Cruises Official Documentation",
     "last_audited": "2026-08-19"
   },
-  "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
+  "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not represented in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
   "decks": [
     {
       "id": "DECK-04",
