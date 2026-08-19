@@ -12,6 +12,12 @@ The Gatekeeper is a PURE EVALUATOR:
 - It validates geometry provenance and conflict status.
 - It NEVER mutates or promotes any statement, review state, or publish status.
 - It rejects fail-open defaults and collapses zero orthogonal axes.
+
+SCOPE & GUARANTEE BOUNDARY:
+- The Gatekeeper guarantees traceability, cryptographic integrity, locator presence,
+  authority eligibility, and publication firewall conjunctions.
+- It does NOT independently verify that the artifact text semantically equals the statement
+  value; semantic extraction correctness is the upstream responsibility of curators and ingestion pipelines.
 """
 
 from __future__ import annotations

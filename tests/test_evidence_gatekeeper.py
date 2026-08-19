@@ -459,7 +459,11 @@ def test_gatekeeper_closure_10_zero_state_mutation(valid_meraviglia_source):
 # =============================================================================
 
 def test_real_meraviglia_artifact_closure_smoke():
-    """Real MSC Meraviglia Deckplans (11.2025 DEU) end-to-end evidence closure smoke test."""
+    """
+    Real MSC Meraviglia Deckplans (11.2025 DEU) end-to-end evidence closure smoke test.
+    Verifies that the traceability gate passes for a demonstrably authentic fact:
+    MSC Meraviglia Deck 5 is named 'Colosseo' on Page 3 of the official deckplans PDF.
+    """
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     pdf_path = os.path.join(
         repo_root,
@@ -494,14 +498,14 @@ def test_real_meraviglia_artifact_closure_smoke():
     gk = EvidenceGatekeeper(question_registry=reg)
     gk.register_source(real_source)
 
-    # Deck 5 - Corallo is on Page 2 of the official MSC deckplans PDF
+    # Deck 5 - Colosseo is located on Page 3 of the official MSC deckplans PDF (verified via PDF text extraction)
     event = EvidenceEvent(
         event_id="EVT-MER-DECK-5",
         artifact_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-        locator="page:2",
+        locator="page:3",
         entity_id="msc-meraviglia:deck:5",
         question_id="Q-0005",
-        observed_value="Deck 5 - Corallo",
+        observed_value="Colosseo",
         observed_by="human_curator",
         observed_on="2026-08-19",
     )
@@ -511,7 +515,7 @@ def test_real_meraviglia_artifact_closure_smoke():
         statement_id="STMT-MER-DECK-5",
         entity_id="msc-meraviglia:deck:5",
         question_id="Q-0005",
-        value="Deck 5 - Corallo",
+        value="Colosseo",
         method=Method.DIRECT,
         derivation=Derivation.LOCAL,
         evidence_event_ids=("EVT-MER-DECK-5",),
@@ -524,12 +528,69 @@ def test_real_meraviglia_artifact_closure_smoke():
 
     result = gk.evaluate_publish_gate()
 
+    # Traceability gate passes cleanly
     assert result.status == PublishStatus.PUBLISH_ALLOWED
     assert result.is_publishable is True
     assert result.artifact_statuses["MSC-MER-DECKPLAN-11-2025-DEU"] == ArtifactVerificationStatus.PRESENT
     assert result.supported_statement_count == 1
     assert result.approved_statement_count == 1
     assert result.reasons == []
+
+
+def test_gatekeeper_semantic_extraction_is_upstream_responsibility(valid_meraviglia_source):
+    """
+    Explicit boundary test:
+    The Gatekeeper verifies structural closure, hash integrity, locator presence,
+    document class authority, and lifecycle conjunctions. It does NOT independently
+    read/OCR the PDF content to confirm semantic equality.
+    Semantic extraction correctness is the upstream responsibility of curators and ingestion pipelines.
+    """
+    reg = QuestionRegistry()
+    reg.register(
+        Question(
+            question_id="Q-0099",
+            entity_type="deck",
+            statement_type="deck.venue_present",
+            supportable_by=("cruise_line_deck_plan",),
+        )
+    )
+
+    gk = EvidenceGatekeeper(question_registry=reg)
+    gk.register_source(valid_meraviglia_source)
+
+    # Synthetic fixture event citing valid locator
+    event = EvidenceEvent(
+        event_id="EVT-SYNTH-01",
+        artifact_sha256=valid_meraviglia_source.expected_sha256,
+        locator="page:2",
+        entity_id="ship:test:deck:1",
+        question_id="Q-0099",
+        observed_value="Test Venue Name",
+        observed_by="curator_alice",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="STMT-SYNTH-01",
+        entity_id="ship:test:deck:1",
+        question_id="Q-0099",
+        value="Test Venue Name",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-SYNTH-01",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+
+    # Passes traceability gate
+    assert result.status == PublishStatus.PUBLISH_ALLOWED
+    assert result.is_publishable is True
 
 
 def test_sanitize_report_content_replaces_fraudulent_claims_when_blocked():
