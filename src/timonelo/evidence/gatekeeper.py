@@ -1,10 +1,13 @@
 """
 Evidence Gatekeeper — Canonical release verification and truth gating.
 
-Governed by ADR-0002 §4, §6, §7, §8, §9 and P0-A.5 Truth Model.
+Governed by ADR-0002 §4, §6, §7, §8, §9 and P0-A.5 / P0-B Truth Model.
 
 The Gatekeeper is a PURE EVALUATOR:
 - It verifies artifact existence and cryptographic SHA-256 integrity on disk.
+- It validates the statement-specific evidence closure:
+    Statement -> evidence_event_ids -> EvidenceEvent -> Artifact -> Disk Bytes & Hash.
+- It verifies document class eligibility against the question/claim.
 - It evaluates Statement evidence conditions, human review states, and publish status.
 - It validates geometry provenance and conflict status.
 - It NEVER mutates or promotes any statement, review state, or publish status.
@@ -17,10 +20,12 @@ import os
 import re
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
-from timonelo.evidence.artifacts import sha256_of_file
+from timonelo.evidence.artifacts import Artifact, sha256_of_file
 from timonelo.evidence.engine import Statement
+from timonelo.evidence.events import EvidenceEvent
+from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.ontology.models import (
     EvidenceCondition,
     GeometryProvenance,
@@ -30,10 +35,28 @@ from timonelo.ontology.models import (
 
 
 class ArtifactVerificationStatus(str, Enum):
-    """Integrity status of a physical source artifact on disk."""
+    """
+    Gate evaluation status of a physical source artifact on disk.
+    NOTE (ADR-0002): This is strictly a gate evaluation/result type and
+    is NOT a canonical ontology model enum.
+    """
     PRESENT = "PRESENT"
     MISSING = "MISSING"
     HASH_MISMATCH = "HASH_MISMATCH"
+
+
+PLACEHOLDER_LOCATORS = frozenset({
+    "",
+    "unknown",
+    "n/a",
+    "na",
+    "source",
+    "document",
+    "none",
+    "null",
+    "undefined",
+    "unspecified",
+})
 
 
 @dataclass(frozen=True)
@@ -147,18 +170,25 @@ class GateResult:
 
 class EvidenceGatekeeper:
     """
-    Pure evaluator checking physical artifact integrity, statement validity,
-    geometry provenance, and conflict safety against canonical rules.
+    Pure evaluator checking physical artifact integrity, statement evidence closure,
+    document class authority, geometry provenance, and conflict safety against canonical rules.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, question_registry: Optional[QuestionRegistry] = None) -> None:
         self._sources: Dict[str, SourceArtifactRecord] = {}
+        self._sources_by_sha: Dict[str, SourceArtifactRecord] = {}
+        self._events: Dict[str, EvidenceEvent] = {}
         self._statements: List[Statement] = []
         self._geometries: List[GeometryProvenanceRecord] = []
         self._conflict_result: ConflictGateResult = ConflictGateResult(executed=False)
+        self._question_registry: Optional[QuestionRegistry] = question_registry
 
     def register_source(self, source: SourceArtifactRecord) -> None:
         self._sources[source.source_id] = source
+        self._sources_by_sha[source.expected_sha256.lower()] = source
+
+    def register_event(self, event: EvidenceEvent) -> None:
+        self._events[event.event_id] = event
 
     def add_statement(self, statement: Statement) -> None:
         self._statements.append(statement)
@@ -186,13 +216,76 @@ class EvidenceGatekeeper:
                 elif status == ArtifactVerificationStatus.HASH_MISMATCH:
                     reasons.append(f"SOURCE_HASH_MISMATCH: {source_id}")
 
-        # 2. Evaluate Statements against 4-Part Canonical Publication Firewall
+        # 2. Evaluate Statements against 4-Part Canonical Publication Firewall & Evidence Closure
         supported_count = 0
         approved_count = 0
 
         for stmt in self._statements:
             if stmt.evidence_condition == EvidenceCondition.SUPPORTED:
                 supported_count += 1
+
+                # Statement-Specific Evidence Closure Verification
+                if not stmt.evidence_event_ids:
+                    reasons.append(
+                        f"STATEMENT_ZERO_EVIDENCE_EVENTS: {stmt.statement_id} is marked SUPPORTED but has no evidence_event_ids"
+                    )
+                else:
+                    for event_id in stmt.evidence_event_ids:
+                        if event_id not in self._events:
+                            reasons.append(
+                                f"UNKNOWN_EVIDENCE_EVENT: Statement {stmt.statement_id} references unrecorded event {event_id}"
+                            )
+                            continue
+
+                        event = self._events[event_id]
+
+                        # Check locator
+                        locator = event.locator.strip() if event.locator else ""
+                        if not locator or locator.lower() in PLACEHOLDER_LOCATORS:
+                            reasons.append(
+                                f"INVALID_EVENT_LOCATOR: Event {event_id} for statement {stmt.statement_id} has placeholder locator '{event.locator}'"
+                            )
+
+                        # Check artifact referenced by event
+                        artifact_sha = event.artifact_sha256.lower()
+                        if artifact_sha not in self._sources_by_sha:
+                            reasons.append(
+                                f"EVENT_ARTIFACT_NOT_REGISTERED: Event {event_id} references artifact SHA {event.artifact_sha256[:12]} not in registered sources"
+                            )
+                            continue
+
+                        source = self._sources_by_sha[artifact_sha]
+                        source_status = artifact_statuses.get(source.source_id, ArtifactVerificationStatus.MISSING)
+                        if source_status == ArtifactVerificationStatus.MISSING:
+                            reasons.append(
+                                f"EVENT_ARTIFACT_MISSING: Event {event_id} cites missing artifact {source.source_id}"
+                            )
+                        elif source_status == ArtifactVerificationStatus.HASH_MISMATCH:
+                            reasons.append(
+                                f"EVENT_ARTIFACT_HASH_MISMATCH: Event {event_id} cites hash-mismatched artifact {source.source_id}"
+                            )
+
+                        # Document Class Eligibility Check
+                        if self._question_registry is not None:
+                            try:
+                                question = self._question_registry.get(stmt.question_id)
+                                if not question.can_be_supported_by(source.document_class):
+                                    reasons.append(
+                                        f"INELIGIBLE_DOCUMENT_CLASS: Artifact class '{source.document_class}' cannot support question '{stmt.question_id}'"
+                                    )
+                            except KeyError:
+                                reasons.append(
+                                    f"UNREGISTERED_QUESTION: Statement {stmt.statement_id} references unregistered question {stmt.question_id}"
+                                )
+                        else:
+                            # Fallback check against authority matrix if question registry is absent
+                            if source.document_class == "cruise_line_deck_plan":
+                                technical_prefixes = ("ship.imo", "ship.gross_tonnage", "ship.length", "ship.engine", "ship.propulsion", "ship.crew")
+                                if any(stmt.question_id.startswith(p) for p in technical_prefixes):
+                                    reasons.append(
+                                        f"INELIGIBLE_DOCUMENT_CLASS: cruise_line_deck_plan cannot support technical spec question '{stmt.question_id}'"
+                                    )
+
             else:
                 reasons.append(
                     f"STATEMENT_NOT_SUPPORTED: {stmt.statement_id} has evidence_condition={stmt.evidence_condition.value}"

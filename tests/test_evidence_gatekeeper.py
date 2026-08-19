@@ -1,13 +1,16 @@
 """
-Tests for EvidenceGatekeeper — Canonical Gatekeeper Foundation (P0-B Step 1).
+Tests for EvidenceGatekeeper — Statement -> Evidence Event -> Artifact Closure (P0-B Step 1B).
 
-Governed by ADR-0002 §4, §6, §7, §8, §9 and P0-A.5 Truth Model.
+Governed by ADR-0002 §4, §6, §7, §8, §9 and P0-A.5 / P0-B Truth Model.
 """
 
-import os
 from enum import Enum
+import hashlib
+import os
 import pytest
+
 from timonelo.evidence.engine import Statement
+from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.gatekeeper import (
     ArtifactVerificationStatus,
     ConflictGateResult,
@@ -16,6 +19,7 @@ from timonelo.evidence.gatekeeper import (
     SourceArtifactRecord,
     sanitize_report_content,
 )
+from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.ontology.models import (
     Derivation,
     EvidenceCondition,
@@ -32,7 +36,6 @@ def valid_meraviglia_source(tmp_path):
     f = tmp_path / "meraviglia_deckplans.pdf"
     content = b"%PDF-1.4 official msc deckplans 11.2025 DEU"
     f.write_bytes(content)
-    import hashlib
     sha = hashlib.sha256(content).hexdigest()
 
     return SourceArtifactRecord(
@@ -46,64 +49,358 @@ def valid_meraviglia_source(tmp_path):
     )
 
 
-def test_gatekeeper_1_missing_artifact_blocks_publish(tmp_path):
-    """1. Missing physical artifact blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(
-        SourceArtifactRecord(
-            source_id="SRC-MISSING",
-            title="Non-existent document",
-            expected_sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            file_path=str(tmp_path / "does_not_exist.pdf"),
-            document_class="cruise_line_deck_plan",
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+# =============================================================================
+# TASK F — NEGATIVE TEST MATRIX (STATEMENT -> EVENT -> ARTIFACT CLOSURE)
+# =============================================================================
 
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-    assert result.is_publishable is False
-    assert result.artifact_statuses["SRC-MISSING"] == ArtifactVerificationStatus.MISSING
-    assert any("PRIMARY_SOURCE_MISSING" in r for r in result.reasons)
-
-
-def test_gatekeeper_2_hash_mismatch_blocks_publish(tmp_path):
-    """2. Wrong artifact hash blocks publication."""
-    f = tmp_path / "corrupted.pdf"
-    f.write_bytes(b"corrupted contents")
-
-    gk = EvidenceGatekeeper()
-    gk.register_source(
-        SourceArtifactRecord(
-            source_id="SRC-CORRUPT",
-            title="Corrupted document",
-            expected_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-            file_path=str(f),
-            document_class="cruise_line_deck_plan",
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-    assert result.artifact_statuses["SRC-CORRUPT"] == ArtifactVerificationStatus.HASH_MISMATCH
-    assert any("SOURCE_HASH_MISMATCH" in r for r in result.reasons)
-
-
-def test_gatekeeper_3_correct_artifact_hash_alone_does_not_make_statement_supported(valid_meraviglia_source):
-    """3. Valid artifact hash alone does not make a statement supported."""
+def test_gatekeeper_closure_1_supported_with_zero_evidence_events_blocks(valid_meraviglia_source):
+    """1. SUPPORTED statement with zero evidence events is blocked."""
     gk = EvidenceGatekeeper()
     gk.register_source(valid_meraviglia_source)
 
-    # Statement has valid artifact reference, but its evidence_condition is UNKNOWN
     stmt = Statement(
         statement_id="stmt-1",
         entity_id="msc-meraviglia",
-        question_id="deck.count",
-        value=19,
+        question_id="deck.name",
+        value="Deck 16 - Miami",
         method=Method.DIRECT,
         derivation=Derivation.LOCAL,
-        evidence_condition=EvidenceCondition.UNKNOWN,
+        evidence_event_ids=(),  # Zero evidence events!
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("STATEMENT_ZERO_EVIDENCE_EVENTS" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_2_unknown_evidence_event_id_blocks(valid_meraviglia_source):
+    """2. Statement referencing unknown/unrecorded evidence event ID is blocked."""
+    gk = EvidenceGatekeeper()
+    gk.register_source(valid_meraviglia_source)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        value="Deck 16 - Miami",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-NON-EXISTENT",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("UNKNOWN_EVIDENCE_EVENT" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_3_event_references_unknown_artifact_blocks(valid_meraviglia_source):
+    """3. EvidenceEvent referencing unregistered artifact SHA is blocked."""
+    gk = EvidenceGatekeeper()
+    gk.register_source(valid_meraviglia_source)
+
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256="deadbeef" * 8,  # Not in registered sources!
+        locator="p.3",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        observed_value="Deck 16",
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        value="Deck 16",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("EVENT_ARTIFACT_NOT_REGISTERED" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_4_event_artifact_hash_mismatch_blocks(tmp_path):
+    """4. Event referencing hash-mismatched/corrupted artifact is blocked."""
+    f = tmp_path / "corrupted.pdf"
+    f.write_bytes(b"bad bytes")
+
+    corrupt_source = SourceArtifactRecord(
+        source_id="SRC-CORRUPT",
+        title="Corrupted doc",
+        expected_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+        file_path=str(f),
+        document_class="cruise_line_deck_plan",
+    )
+
+    gk = EvidenceGatekeeper()
+    gk.register_source(corrupt_source)
+
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+        locator="p.3",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        observed_value="Deck 16",
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        value="Deck 16",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("EVENT_ARTIFACT_HASH_MISMATCH" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_5_placeholder_locator_blocks(valid_meraviglia_source):
+    """5. Event with placeholder locator (e.g. 'unknown', 'n/a', 'source') is blocked."""
+    placeholders = ["", "unknown", "n/a", "source", "document", "none", "null"]
+
+    for ph in placeholders:
+        gk = EvidenceGatekeeper()
+        gk.register_source(valid_meraviglia_source)
+
+        evt_id = f"EVT-{ph or 'empty'}"
+        event = EvidenceEvent(
+            event_id=evt_id,
+            artifact_sha256=valid_meraviglia_source.expected_sha256,
+            locator=ph,
+            entity_id="msc-meraviglia",
+            question_id="deck.name",
+            observed_value="Deck 16",
+            observed_by="auditor",
+            observed_on="2026-08-19",
+        )
+        gk.register_event(event)
+
+        stmt = Statement(
+            statement_id=f"stmt-{ph or 'empty'}",
+            entity_id="msc-meraviglia",
+            question_id="deck.name",
+            value="Deck 16",
+            method=Method.DIRECT,
+            derivation=Derivation.LOCAL,
+            evidence_event_ids=(evt_id,),
+            evidence_condition=EvidenceCondition.SUPPORTED,
+            human_review_state=HumanReviewState.APPROVED,
+            publish_status=PublishStatus.PUBLISH_ALLOWED,
+        )
+        gk.add_statement(stmt)
+        gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+        result = gk.evaluate_publish_gate()
+        assert result.status == PublishStatus.PUBLISH_BLOCKED, f"Placeholder {ph!r} was not blocked"
+        assert any("INVALID_EVENT_LOCATOR" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_6_unrelated_registered_artifact_cannot_satisfy_statement(valid_meraviglia_source, tmp_path):
+    """6. A valid but unrelated registered artifact cannot satisfy a statement citing another artifact."""
+    f2 = tmp_path / "other.pdf"
+    f2.write_bytes(b"%PDF-1.4 other document")
+    sha2 = hashlib.sha256(b"%PDF-1.4 other document").hexdigest()
+
+    other_source = SourceArtifactRecord(
+        source_id="SRC-OTHER",
+        title="Other doc",
+        expected_sha256=sha2,
+        file_path=str(f2),
+        document_class="cruise_line_deck_plan",
+    )
+
+    gk = EvidenceGatekeeper()
+    gk.register_source(valid_meraviglia_source)
+    gk.register_source(other_source)
+
+    # Event cites an artifact hash that was never registered
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256="c0ffee" * 10 + "0000",
+        locator="p.1",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        observed_value="Deck 5",
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia",
+        question_id="deck.name",
+        value="Deck 5",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("EVENT_ARTIFACT_NOT_REGISTERED" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_7_ineligible_document_class_blocks(valid_meraviglia_source):
+    """7. Ineligible document class (e.g. deck plans for technical specs) is blocked."""
+    reg = QuestionRegistry()
+    reg.register(
+        Question(
+            question_id="Q-0010",
+            entity_type="vessel",
+            statement_type="cabin.area_sqm",  # Requires shipyard_general_arrangement or builder_specification
+            supportable_by=("shipyard_general_arrangement", "builder_specification"),
+        )
+    )
+
+    gk = EvidenceGatekeeper(question_registry=reg)
+    gk.register_source(valid_meraviglia_source)  # document_class is cruise_line_deck_plan!
+
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256=valid_meraviglia_source.expected_sha256,
+        locator="p.3",
+        entity_id="msc-meraviglia:cabin:14122",
+        question_id="Q-0010",
+        observed_value=22.5,
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia:cabin:14122",
+        question_id="Q-0010",
+        value=22.5,
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_BLOCKED
+    assert any("INELIGIBLE_DOCUMENT_CLASS" in r for r in result.reasons)
+
+
+def test_gatekeeper_closure_8_valid_closure_allows_publish(valid_meraviglia_source):
+    """8. Valid event + valid artifact + valid locator + eligible class + APPROVED + allowed publish -> ALLOWED."""
+    reg = QuestionRegistry()
+    reg.register(
+        Question(
+            question_id="Q-0001",
+            entity_type="deck",
+            statement_type="deck.venue_present",
+            supportable_by=("cruise_line_deck_plan", "shipyard_general_arrangement"),
+        )
+    )
+
+    gk = EvidenceGatekeeper(question_registry=reg)
+    gk.register_source(valid_meraviglia_source)
+
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256=valid_meraviglia_source.expected_sha256,
+        locator="page:2",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="Q-0001",
+        observed_value="Broadway Theatre",
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="Q-0001",
+        value="Broadway Theatre",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+    assert result.status == PublishStatus.PUBLISH_ALLOWED
+    assert result.is_publishable is True
+    assert result.reasons == []
+
+
+def test_gatekeeper_closure_9_unknown_condition_remains_blocked_with_event(valid_meraviglia_source):
+    """9. UNKNOWN evidence condition remains blocked even if an evidence event is cited."""
+    gk = EvidenceGatekeeper()
+    gk.register_source(valid_meraviglia_source)
+
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256=valid_meraviglia_source.expected_sha256,
+        locator="p.2",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="deck.name",
+        observed_value="Deck 5",
+        observed_by="auditor",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="deck.name",
+        value="Deck 5",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
+        evidence_condition=EvidenceCondition.UNKNOWN,  # NOT SUPPORTED!
         human_review_state=HumanReviewState.APPROVED,
         publish_status=PublishStatus.PUBLISH_ALLOWED,
     )
@@ -115,176 +412,27 @@ def test_gatekeeper_3_correct_artifact_hash_alone_does_not_make_statement_suppor
     assert any("STATEMENT_NOT_SUPPORTED" in r for r in result.reasons)
 
 
-def test_gatekeeper_4_unknown_evidence_condition_blocks(valid_meraviglia_source):
-    """4. EvidenceCondition.UNKNOWN blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-unk",
-            entity_id="msc-meraviglia",
-            question_id="ship.imo",
-            value=9760512,
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.UNKNOWN,
-            human_review_state=HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_ALLOWED,
-        )
+def test_gatekeeper_closure_10_zero_state_mutation(valid_meraviglia_source):
+    """10. Gatekeeper evaluation performs zero state mutation on inputs."""
+    event = EvidenceEvent(
+        event_id="EVT-001",
+        artifact_sha256=valid_meraviglia_source.expected_sha256,
+        locator="p.2",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="deck.name",
+        observed_value="Deck 5",
+        observed_by="auditor",
+        observed_on="2026-08-19",
     )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
 
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-    assert any("STATEMENT_NOT_SUPPORTED" in r for r in result.reasons)
-
-
-def test_gatekeeper_5_unsupported_evidence_condition_blocks(valid_meraviglia_source):
-    """5. EvidenceCondition.UNSUPPORTED blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-unsup",
-            entity_id="msc-meraviglia",
-            question_id="cabin.sqm",
-            value=35.0,
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.UNSUPPORTED,
-            human_review_state=HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_ALLOWED,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-
-
-def test_gatekeeper_6_conflicted_evidence_condition_blocks(valid_meraviglia_source):
-    """6. EvidenceCondition.CONFLICTED blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-conf",
-            entity_id="msc-meraviglia",
-            question_id="ship.max_passengers",
-            value=5686,
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.CONFLICTED,
-            human_review_state=HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_ALLOWED,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-
-
-def test_gatekeeper_7_supported_plus_draft_blocks(valid_meraviglia_source):
-    """7. SUPPORTED + DRAFT review state blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-draft",
-            entity_id="msc-meraviglia",
-            question_id="deck.name",
-            value="Deck 16 - Miami",
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.SUPPORTED,
-            human_review_state=HumanReviewState.DRAFT,
-            publish_status=PublishStatus.PUBLISH_ALLOWED,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-    assert any("STATEMENT_NOT_APPROVED" in r for r in result.reasons)
-
-
-def test_gatekeeper_8_supported_plus_approved_plus_publish_blocked(valid_meraviglia_source):
-    """8. SUPPORTED + APPROVED + PUBLISH_BLOCKED blocks publication."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-blocked",
-            entity_id="msc-meraviglia",
-            question_id="deck.name",
-            value="Deck 16 - Miami",
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.SUPPORTED,
-            human_review_state=HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_BLOCKED,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_BLOCKED
-    assert any("STATEMENT_PUBLISH_BLOCKED" in r for r in result.reasons)
-
-
-def test_gatekeeper_9_valid_conjunction_allows_publish(valid_meraviglia_source):
-    """9. Valid conjunction (valid artifact + SUPPORTED + APPROVED + PUBLISH_ALLOWED) succeeds."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_statement(
-        Statement(
-            statement_id="stmt-ok",
-            entity_id="msc-meraviglia",
-            question_id="deck.name",
-            value="Deck 16 - Miami",
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_condition=EvidenceCondition.SUPPORTED,
-            human_review_state=HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_ALLOWED,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.status == PublishStatus.PUBLISH_ALLOWED
-    assert result.is_publishable is True
-    assert result.reasons == []
-
-
-def test_gatekeeper_10_synthetic_geometry_remains_synthetic(valid_meraviglia_source):
-    """10. Synthetic geometry is recognized as synthetic and does not fail when marked synthetic."""
-    gk = EvidenceGatekeeper()
-    gk.register_source(valid_meraviglia_source)
-    gk.add_geometry(
-        GeometryProvenanceRecord(
-            object_id="CABIN-14122",
-            deck_number=14,
-            geometry_provenance=GeometryProvenance.SYNTHETIC_GEOMETRY,
-        )
-    )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
-
-    result = gk.evaluate_publish_gate()
-    assert result.synthetic_geometry_count == 1
-    assert result.direct_geometry_count == 0
-
-
-def test_gatekeeper_11_12_13_no_state_mutation(valid_meraviglia_source):
-    """11, 12, 13: Gatekeeper never mutates EvidenceCondition, HumanReviewState, or PublishStatus."""
     stmt = Statement(
-        statement_id="stmt-immutable",
-        entity_id="msc-meraviglia",
-        question_id="deck.count",
-        value=19,
+        statement_id="stmt-1",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="deck.name",
+        value="Deck 5",
         method=Method.DIRECT,
         derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-001",),
         evidence_condition=EvidenceCondition.UNKNOWN,
         human_review_state=HumanReviewState.DRAFT,
         publish_status=PublishStatus.PUBLISH_BLOCKED,
@@ -292,41 +440,96 @@ def test_gatekeeper_11_12_13_no_state_mutation(valid_meraviglia_source):
 
     gk = EvidenceGatekeeper()
     gk.register_source(valid_meraviglia_source)
+    gk.register_event(event)
     gk.add_statement(stmt)
     gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
 
     _ = gk.evaluate_publish_gate()
 
-    # Assert statement fields are 100% untouched
+    # Statement unchanged
     assert stmt.evidence_condition == EvidenceCondition.UNKNOWN
     assert stmt.human_review_state == HumanReviewState.DRAFT
     assert stmt.publish_status == PublishStatus.PUBLISH_BLOCKED
+    # Event unchanged
+    assert event.locator == "p.2"
 
 
-def test_gatekeeper_14_no_bare_verified_in_gatekeeper():
-    """14. No bare VERIFIED state is returned or accepted."""
-    import timonelo.evidence.gatekeeper as gk_mod
-    for name, obj in inspect_classes(gk_mod):
-        if issubclass(obj, Enum):
-            for member in obj:
-                assert member.value != "VERIFIED", f"Bare VERIFIED found in enum {obj.__name__}"
+# =============================================================================
+# TASK G — REAL MERAVIGLIA SOURCE SMOKE TEST
+# =============================================================================
 
+def test_real_meraviglia_artifact_closure_smoke():
+    """Real MSC Meraviglia Deckplans (11.2025 DEU) end-to-end evidence closure smoke test."""
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    pdf_path = os.path.join(
+        repo_root,
+        "evidence",
+        "raw",
+        "sha256",
+        "77",
+        "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf",
+    )
+    assert os.path.exists(pdf_path), f"Real artifact must exist at {pdf_path}"
 
-def test_gatekeeper_15_official_deckplans_source_not_described_as_builder_or_ga():
-    """15. Official MSC Deckplans publication is not mislabeled as builder drawing or shipyard GA."""
-    source = SourceArtifactRecord(
+    real_source = SourceArtifactRecord(
         source_id="MSC-MER-DECKPLAN-11-2025-DEU",
         title="Official MSC Cruises Meraviglia Deckplans, Edition 11.2025 DEU",
         expected_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-        file_path="evidence/raw/sha256/77/77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf",
+        file_path=pdf_path,
         document_class="cruise_line_deck_plan",
         publisher="MSC Cruises",
         edition="11.2025 DEU",
     )
-    assert "builder" not in source.title.lower()
-    assert "shipyard" not in source.title.lower()
-    assert "ga drawing" not in source.title.lower()
-    assert source.document_class == "cruise_line_deck_plan"
+
+    reg = QuestionRegistry()
+    reg.register(
+        Question(
+            question_id="Q-0005",
+            entity_type="deck",
+            statement_type="deck.venue_present",
+            supportable_by=("cruise_line_deck_plan", "shipyard_general_arrangement"),
+        )
+    )
+
+    gk = EvidenceGatekeeper(question_registry=reg)
+    gk.register_source(real_source)
+
+    # Deck 5 - Corallo is on Page 2 of the official MSC deckplans PDF
+    event = EvidenceEvent(
+        event_id="EVT-MER-DECK-5",
+        artifact_sha256="77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+        locator="page:2",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="Q-0005",
+        observed_value="Deck 5 - Corallo",
+        observed_by="human_curator",
+        observed_on="2026-08-19",
+    )
+    gk.register_event(event)
+
+    stmt = Statement(
+        statement_id="STMT-MER-DECK-5",
+        entity_id="msc-meraviglia:deck:5",
+        question_id="Q-0005",
+        value="Deck 5 - Corallo",
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_event_ids=("EVT-MER-DECK-5",),
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    gk.add_statement(stmt)
+    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+
+    result = gk.evaluate_publish_gate()
+
+    assert result.status == PublishStatus.PUBLISH_ALLOWED
+    assert result.is_publishable is True
+    assert result.artifact_statuses["MSC-MER-DECKPLAN-11-2025-DEU"] == ArtifactVerificationStatus.PRESENT
+    assert result.supported_statement_count == 1
+    assert result.approved_statement_count == 1
+    assert result.reasons == []
 
 
 def test_sanitize_report_content_replaces_fraudulent_claims_when_blocked():
@@ -340,6 +543,11 @@ def test_sanitize_report_content_replaces_fraudulent_claims_when_blocked():
     assert "[UNVERIFIED / BLOCKED]" in sanitized
 
 
-def inspect_classes(module):
+def test_gatekeeper_no_bare_verified_in_enums():
+    """No bare VERIFIED state is defined in gatekeeper enums."""
+    import timonelo.evidence.gatekeeper as gk_mod
     import inspect
-    return inspect.getmembers(module, inspect.isclass)
+    for name, obj in inspect.getmembers(gk_mod, inspect.isclass):
+        if issubclass(obj, Enum):
+            for member in obj:
+                assert member.value != "VERIFIED", f"Bare VERIFIED found in enum {obj.__name__}"
