@@ -47,7 +47,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "bounding_box": {

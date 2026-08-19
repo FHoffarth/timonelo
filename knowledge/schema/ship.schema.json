@@ -35,7 +35,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "technical_specifications": {
@@ -72,7 +74,9 @@
             },
             "eur": {
               "type": "number"
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "key_milestones": {
@@ -86,7 +90,9 @@
             },
             "maiden_voyage": {
               "type": "string"
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "port_of_registry": {
@@ -119,7 +125,9 @@
             },
             "draft_feet_inches": {
               "type": "string"
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "propulsion_and_power": {
@@ -139,7 +147,9 @@
             },
             "max_speed_knots": {
               "type": "number"
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "capacities": {
@@ -175,7 +185,9 @@
               "type": "number",
               "minimum": 0,
               "maximum": 100
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "connectivity_and_smart_systems": {
@@ -189,9 +201,13 @@
             },
             "digital_platform": {
               "type": "string"
-            }
+            },
+            "confidence": false,
+            "confidence_score": false
           }
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "refurbishment_history": {
@@ -237,7 +253,9 @@
             "items": {
               "type": "string"
             }
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }

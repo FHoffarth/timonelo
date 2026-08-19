@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "spa_and_wellness": {
@@ -133,10 +135,14 @@
                 "items": {
                   "type": "string"
                 }
-              }
+              },
+              "confidence": false,
+              "confidence_score": false
             }
           }
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     }
   }

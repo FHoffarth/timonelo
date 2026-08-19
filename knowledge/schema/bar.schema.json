@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "bars": {
@@ -88,7 +90,9 @@
             "items": {
               "type": "string"
             }
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }

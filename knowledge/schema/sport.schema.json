@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "sports_and_recreation": {
@@ -119,7 +121,9 @@
                   "items": {
                     "type": "string"
                   }
-                }
+                },
+                "confidence": false,
+                "confidence_score": false
               }
             }
           },
@@ -134,7 +138,9 @@
             "items": {
               "type": "string"
             }
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }

@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "lounges": {
@@ -94,7 +96,9 @@
             "items": {
               "type": "string"
             }
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }

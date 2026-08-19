@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "emergency_and_muster_protocol": {
@@ -96,7 +98,9 @@
                 "items": {
                   "type": "string"
                 }
-              }
+              },
+              "confidence": false,
+              "confidence_score": false
             }
           }
         }

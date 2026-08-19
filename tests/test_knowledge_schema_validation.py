@@ -188,37 +188,47 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
         self.assertTrue(len(errors) > 0, "Invalid enum value must fail validation")
 
     def test_negative_confidence_field_forbidden_by_schema(self):
-        """Task D.1-2: canonical knowledge schemas do not require or define confidence properties."""
-        # 1. Audit all 16 canonical schemas to ensure confidence is neither required nor defined
+        """Task D: canonical knowledge schemas explicitly prohibit confidence and confidence_score.
+
+        This test uses the actual committed schema files without any mutation or injection.
+        The schemas use JSON Schema Draft 2020-12 property-specific prohibition:
+          "confidence": false, "confidence_score": false
+        inside the properties dict of each canonical factual object scope.
+        """
+        # Part 1: audit all 16 schemas — confidence must not appear in any required array
         for fname in os.listdir(SCHEMA_DIR):
             if not fname.endswith(".json"):
                 continue
             schema = self.load_json(os.path.join(SCHEMA_DIR, fname))
-            # Verify confidence is never in required
-            def check_no_conf_required(obj):
+
+            def check_no_conf_required(obj, _fname=fname):
                 if isinstance(obj, dict):
                     if "required" in obj:
-                        self.assertNotIn("confidence", obj["required"], f"confidence in required of {fname}")
-                        self.assertNotIn("confidence_score", obj["required"], f"confidence_score in required of {fname}")
+                        self.assertNotIn(
+                            "confidence", obj["required"],
+                            f"confidence in required of {_fname}"
+                        )
+                        self.assertNotIn(
+                            "confidence_score", obj["required"],
+                            f"confidence_score in required of {_fname}"
+                        )
                     for v in obj.values():
                         check_no_conf_required(v)
                 elif isinstance(obj, list):
                     for item in obj:
                         check_no_conf_required(item)
+
             check_no_conf_required(schema)
 
-        # 2. Strict canonical schema evaluation rejects stored confidence
+        # Part 2: prove the ACTUAL committed deck.schema.json rejects confidence fields.
+        # NO schema mutation. NO additionalProperties injection. Real schema only.
         schema_path = os.path.join(SCHEMA_DIR, "deck.schema.json")
         schema = self.load_json(schema_path)
-        strict_schema = json.loads(json.dumps(schema))
-        strict_schema["properties"]["provenance"]["additionalProperties"] = False
-        strict_schema["properties"]["decks"]["items"]["additionalProperties"] = False
+        validator_cls = jsonschema.validators.validator_for(schema)
+        real_validator = validator_cls(schema)
 
-        validator_cls = jsonschema.validators.validator_for(strict_schema)
-        strict_validator = validator_cls(strict_schema)
-
-        # Valid clean doc passes
-        valid_doc = {
+        # 2a. Clean doc with no confidence fields — must pass.
+        clean_doc = {
             "vessel_id": "test-vessel",
             "provenance": {"source_artifact": "test-source"},
             "decks": [{
@@ -233,10 +243,14 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
                 "tags": ["test"]
             }]
         }
-        self.assertEqual(list(strict_validator.iter_errors(valid_doc)), [])
+        clean_errors = list(real_validator.iter_errors(clean_doc))
+        self.assertEqual(
+            clean_errors, [],
+            f"Clean document must pass the actual schema but got: {clean_errors}"
+        )
 
-        # Invalid doc with confidence fails strict canonical validation
-        doc_with_conf = {
+        # 2b. provenance.confidence — must be REJECTED by the actual schema.
+        doc_prov_conf = {
             "vessel_id": "test-vessel",
             "provenance": {"source_artifact": "test-source", "confidence": 1.0},
             "decks": [{
@@ -251,7 +265,83 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
                 "tags": ["test"]
             }]
         }
-        self.assertTrue(len(list(strict_validator.iter_errors(doc_with_conf))) > 0)
+        prov_conf_errors = list(real_validator.iter_errors(doc_prov_conf))
+        self.assertTrue(
+            len(prov_conf_errors) > 0,
+            "Actual deck.schema.json must reject provenance.confidence — "
+            "schema property prohibition ('confidence': false) is not working"
+        )
+
+        # 2c. item-level confidence — must be REJECTED by the actual schema.
+        doc_item_conf = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source"},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"],
+                "confidence": 1.0
+            }]
+        }
+        item_conf_errors = list(real_validator.iter_errors(doc_item_conf))
+        self.assertTrue(
+            len(item_conf_errors) > 0,
+            "Actual deck.schema.json must reject deck item confidence — "
+            "schema property prohibition ('confidence': false) is not working"
+        )
+
+        # 2d. item-level confidence_score — must be REJECTED by the actual schema.
+        doc_item_cs = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source"},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"],
+                "confidence_score": 0.9
+            }]
+        }
+        item_cs_errors = list(real_validator.iter_errors(doc_item_cs))
+        self.assertTrue(
+            len(item_cs_errors) > 0,
+            "Actual deck.schema.json must reject deck item confidence_score — "
+            "schema property prohibition ('confidence_score': false) is not working"
+        )
+
+        # 2e. provenance.confidence_score — must also be REJECTED.
+        doc_prov_cs = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source", "confidence_score": 0.9},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
+            }]
+        }
+        prov_cs_errors = list(real_validator.iter_errors(doc_prov_cs))
+        self.assertTrue(
+            len(prov_cs_errors) > 0,
+            "Actual deck.schema.json must reject provenance.confidence_score — "
+            "schema property prohibition ('confidence_score': false) is not working"
+        )
 
     def test_negative_ship_schema_optional_technical_fields(self):
         """Task D.3-7: ship knowledge may omit technical_specifications, IMO, GT, builder, dimensions, capacities."""

@@ -79,7 +79,9 @@
           },
           "distance_if_known_nm": {
             "type": "number"
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     },
@@ -94,7 +96,9 @@
         },
         "validation_status": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "sources": {

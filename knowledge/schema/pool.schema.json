@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://timonelo.com/schema/pool.schema.json",
   "title": "PoolsAndWaterAreasSchema",
-  "description": "Canonical schema for ship pools, magrodome indoor pools, whirlpool networks, and aqua facilities.",
+  "description": "Canonical schema for ship pools, water parks, aqua play areas, and hydrotherapy installations.",
   "type": "object",
   "required": [
     "vessel_id",
@@ -31,7 +31,9 @@
         },
         "last_audited": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "pools_and_water_areas": {
@@ -97,7 +99,9 @@
             "items": {
               "type": "string"
             }
-          }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }

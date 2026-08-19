@@ -20,7 +20,9 @@
       "properties": {
         "source_artifact": {
           "type": "string"
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "ships_to_routes": {
