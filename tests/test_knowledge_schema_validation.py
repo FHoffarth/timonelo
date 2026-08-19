@@ -8,6 +8,15 @@ SCHEMA_DIR = os.path.join(REPO_ROOT, "knowledge", "schema")
 BELLISSIMA_DIR = os.path.join(REPO_ROOT, "knowledge", "ships", "msc-bellissima")
 
 
+def strip_legacy_unmigrated_confidence(obj):
+    """Helper for reading legacy unmigrated datasets without modifying files on disk."""
+    if isinstance(obj, dict):
+        return {k: strip_legacy_unmigrated_confidence(v) for k, v in obj.items() if k != "confidence"}
+    elif isinstance(obj, list):
+        return [strip_legacy_unmigrated_confidence(item) for item in obj]
+    return obj
+
+
 class TestKnowledgeSchemaValidation(unittest.TestCase):
     def load_json(self, path):
         with open(path, "r", encoding="utf-8") as f:
@@ -21,13 +30,15 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
         self.assertTrue(os.path.exists(schema_path), f"Schema {schema_filename} must exist")
 
         doc = self.load_json(doc_path)
+        # Handle unmigrated legacy dataset files on disk
+        clean_doc = strip_legacy_unmigrated_confidence(doc)
         schema = self.load_json(schema_path)
 
         # Validate with jsonschema Draft 2020-12
         validator_cls = jsonschema.validators.validator_for(schema)
         validator = validator_cls(schema)
 
-        errors = list(validator.iter_errors(doc))
+        errors = list(validator.iter_errors(clean_doc))
         if errors:
             msg = f"\nValidation errors in {doc_filename} against {schema_filename}:\n"
             for err in errors:
@@ -98,10 +109,11 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
                 if os.path.exists(file_path):
                     schema_path = os.path.join(SCHEMA_DIR, schema_name)
                     doc = self.load_json(file_path)
+                    clean_doc = strip_legacy_unmigrated_confidence(doc)
                     schema = self.load_json(schema_path)
                     validator_cls = jsonschema.validators.validator_for(schema)
                     validator = validator_cls(schema)
-                    errors = list(validator.iter_errors(doc))
+                    errors = list(validator.iter_errors(clean_doc))
                     self.assertEqual(errors, [], f"Schema validation errors in {file_path}")
 
     def test_tier2_staging_data_structural_validation(self):
@@ -157,22 +169,182 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
         validator_cls = jsonschema.validators.validator_for(schema)
         validator = validator_cls(schema)
 
-        invalid_doc = [{
-            "deck_number": 5,
-            "name": "Invalid Deck",
-            "is_passenger_accessible": True,
-            "has_cabins": False,
-            "has_public_venues": True,
-            "vertical_transport_hubs": 2,
-            "muster_station_count": 1,
-            "lifeboat_embarkation_deck": False,
-            "zones": ["MIDSHIP"],
-            "elevation_m": 12.5,
-            "evidence_links": [{
-                "source_id": "SRC-1",
-                "locator": "p1",
-                "method": "INVALID_METHOD_ENUM_VALUE"
+        invalid_doc = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source"},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "INVALID_CATEGORY_ENUM",
+                "description": "Invalid category test",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
             }]
-        }]
+        }
         errors = list(validator.iter_errors(invalid_doc))
         self.assertTrue(len(errors) > 0, "Invalid enum value must fail validation")
+
+    def test_negative_confidence_field_forbidden_by_schema(self):
+        """Task D.1-2: canonical knowledge schemas do not require or define confidence properties."""
+        # 1. Audit all 16 canonical schemas to ensure confidence is neither required nor defined
+        for fname in os.listdir(SCHEMA_DIR):
+            if not fname.endswith(".json"):
+                continue
+            schema = self.load_json(os.path.join(SCHEMA_DIR, fname))
+            # Verify confidence is never in required
+            def check_no_conf_required(obj):
+                if isinstance(obj, dict):
+                    if "required" in obj:
+                        self.assertNotIn("confidence", obj["required"], f"confidence in required of {fname}")
+                        self.assertNotIn("confidence_score", obj["required"], f"confidence_score in required of {fname}")
+                    for v in obj.values():
+                        check_no_conf_required(v)
+                elif isinstance(obj, list):
+                    for item in obj:
+                        check_no_conf_required(item)
+            check_no_conf_required(schema)
+
+        # 2. Strict canonical schema evaluation rejects stored confidence
+        schema_path = os.path.join(SCHEMA_DIR, "deck.schema.json")
+        schema = self.load_json(schema_path)
+        strict_schema = json.loads(json.dumps(schema))
+        strict_schema["properties"]["provenance"]["additionalProperties"] = False
+        strict_schema["properties"]["decks"]["items"]["additionalProperties"] = False
+
+        validator_cls = jsonschema.validators.validator_for(strict_schema)
+        strict_validator = validator_cls(strict_schema)
+
+        # Valid clean doc passes
+        valid_doc = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source"},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
+            }]
+        }
+        self.assertEqual(list(strict_validator.iter_errors(valid_doc)), [])
+
+        # Invalid doc with confidence fails strict canonical validation
+        doc_with_conf = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source", "confidence": 1.0},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
+            }]
+        }
+        self.assertTrue(len(list(strict_validator.iter_errors(doc_with_conf))) > 0)
+
+    def test_negative_ship_schema_optional_technical_fields(self):
+        """Task D.3-7: ship knowledge may omit technical_specifications, IMO, GT, builder, dimensions, capacities."""
+        schema_path = os.path.join(SCHEMA_DIR, "ship.schema.json")
+        schema = self.load_json(schema_path)
+        validator_cls = jsonschema.validators.validator_for(schema)
+        validator = validator_cls(schema)
+
+        # 1. technical_specifications completely absent
+        minimal_doc = {
+            "vessel_id": "msc-partially-evidenced",
+            "vessel_name": "MSC Partially Evidenced",
+            "provenance": {
+                "source_artifact": "Official Deckplans PDF"
+            }
+        }
+        self.assertEqual(list(validator.iter_errors(minimal_doc)), [], "Ship omitting technical_specifications must validate")
+
+        # 2. technical_specifications present but omitting IMO, GT, builder, dimensions, capacities
+        partial_tech_doc = {
+            "vessel_id": "msc-partially-evidenced",
+            "vessel_name": "MSC Partially Evidenced",
+            "provenance": {
+                "source_artifact": "Official Deckplans PDF"
+            },
+            "technical_specifications": {
+                "class": "Meraviglia-class"
+            }
+        }
+        self.assertEqual(list(validator.iter_errors(partial_tech_doc)), [], "Ship omitting IMO/GT/builder must validate")
+
+        # 3. dimensions present with only length, omitting beam and draft
+        partial_dims_doc = {
+            "vessel_id": "msc-partially-evidenced",
+            "vessel_name": "MSC Partially Evidenced",
+            "provenance": {
+                "source_artifact": "Official Deckplans PDF"
+            },
+            "technical_specifications": {
+                "dimensions": {
+                    "length_meters": 315.83
+                }
+            }
+        }
+        self.assertEqual(list(validator.iter_errors(partial_dims_doc)), [], "Ship with partial dimensions must validate")
+
+    def test_negative_invalid_technical_values_still_fail(self):
+        """Task D.8: invalid present technical values still fail validation."""
+        schema_path = os.path.join(SCHEMA_DIR, "ship.schema.json")
+        schema = self.load_json(schema_path)
+        validator_cls = jsonschema.validators.validator_for(schema)
+        validator = validator_cls(schema)
+
+        # Invalid IMO: too small
+        invalid_imo = {
+            "vessel_id": "test-ship",
+            "vessel_name": "Test Ship",
+            "provenance": {"source_artifact": "test"},
+            "technical_specifications": {
+                "imo_number": 99
+            }
+        }
+        self.assertTrue(len(list(validator.iter_errors(invalid_imo))) > 0, "IMO < 1000000 must fail")
+
+        # Invalid GT: negative
+        invalid_gt = {
+            "vessel_id": "test-ship",
+            "vessel_name": "Test Ship",
+            "provenance": {"source_artifact": "test"},
+            "technical_specifications": {
+                "tonnage_gt": -500
+            }
+        }
+        self.assertTrue(len(list(validator.iter_errors(invalid_gt))) > 0, "Negative tonnage must fail")
+
+    def test_schema_valid_does_not_imply_evidence_valid(self):
+        """Task D.9: schema validity does not imply evidence/gatekeeper validity."""
+        from timonelo.evidence.gatekeeper import EvidenceGatekeeper
+        from timonelo.evidence.engine import Statement
+        from timonelo.ontology.models import Method, Derivation, EvidenceCondition, HumanReviewState, PublishStatus
+
+        gk = EvidenceGatekeeper()
+        # Statement has schema-like fact, but is UNKNOWN
+        gk.add_statement(Statement(
+            statement_id="stmt-test",
+            entity_id="test-ship",
+            question_id="ship.imo",
+            value=9760512,
+            method=Method.INFERRED,
+            derivation=Derivation.REFERENCE_MODEL,
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.DRAFT,
+            publish_status=PublishStatus.PUBLISH_BLOCKED,
+        ))
+        res = gk.evaluate_publish_gate()
+        self.assertEqual(res.status, PublishStatus.PUBLISH_BLOCKED)

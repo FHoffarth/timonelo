@@ -4,7 +4,11 @@
   "title": "EntertainmentVenuesSchema",
   "description": "Canonical schema for ship theaters, casinos, aquaparks, and nightlife entertainment venues.",
   "type": "object",
-  "required": ["vessel_id", "provenance", "entertainment_venues"],
+  "required": [
+    "vessel_id",
+    "provenance",
+    "entertainment_venues"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
@@ -12,10 +16,22 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "last_audited": {
+          "type": "string"
+        }
       }
     },
     "entertainment_venues": {
@@ -30,40 +46,60 @@
           "description",
           "source",
           "provenance",
-          "confidence",
           "tags"
         ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
           "deck": {
             "oneOf": [
-              { "type": "integer" },
-              { "type": "array", "items": { "type": "integer" } }
+              {
+                "type": "integer"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
             ]
           },
-          "category": { "type": "string" },
-          "position": { "type": "string" },
-          "description": { "type": "string" },
+          "category": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "metrics": {
-            "type": "object",
-            "additionalProperties": true
+            "type": "object"
           },
           "features": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

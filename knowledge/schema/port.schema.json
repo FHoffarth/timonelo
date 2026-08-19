@@ -17,81 +17,175 @@
       "type": "string",
       "pattern": "^[a-z0-9-]+$"
     },
-    "name": { "type": "string" },
-    "country": { "type": "string" },
-    "tender_port": { "type": "boolean" },
-    "body_of_water": { "type": "string" },
-    "population": { "type": "string" },
-    "currency": { "type": "string" },
-    "language": { "type": "string" },
-    "overview_text": { "type": "string" },
-    "getting_around": { "type": "string" },
-    "all_aboard_warning": { "type": "string" },
-    "hero_image_url": { "type": "string" },
+    "name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "tender_port": {
+      "type": "boolean"
+    },
+    "body_of_water": {
+      "type": "string"
+    },
+    "population": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "overview_text": {
+      "type": "string"
+    },
+    "getting_around": {
+      "type": "string"
+    },
+    "all_aboard_warning": {
+      "type": "string"
+    },
+    "hero_image_url": {
+      "type": "string"
+    },
     "terminals": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "description", "source", "provenance", "confidence", "tags"],
+        "required": [
+          "id",
+          "name",
+          "description",
+          "source",
+          "provenance",
+          "tags"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "location": { "type": "string" },
-          "description": { "type": "string" },
-          "status": { "type": "string" },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
-          "tags": { "type": "array", "items": { "type": "string" } }
-        },
-        "additionalProperties": false
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       }
     },
     "berths": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "max_vessel_length_meters", "max_draft_meters", "source", "provenance", "confidence", "tags"],
+        "required": [
+          "id",
+          "name",
+          "max_vessel_length_meters",
+          "max_draft_meters",
+          "source",
+          "provenance",
+          "tags"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "wharf": { "type": "string" },
-          "berth_count": { "type": "integer" },
-          "max_vessel_length_meters": { "type": "number" },
-          "max_draft_meters": { "type": "number" },
-          "notes": { "type": "string" },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
-          "tags": { "type": "array", "items": { "type": "string" } }
-        },
-        "additionalProperties": false
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "wharf": {
+            "type": "string"
+          },
+          "berth_count": {
+            "type": "integer"
+          },
+          "max_vessel_length_meters": {
+            "type": "number"
+          },
+          "max_draft_meters": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       }
     },
-    "arrival_procedures": { "type": "string" },
-    "departure_procedures": { "type": "string" },
+    "arrival_procedures": {
+      "type": "string"
+    },
+    "departure_procedures": {
+      "type": "string"
+    },
     "walking_feasibility": {
       "type": "object",
-      "required": ["rating", "description"],
+      "required": [
+        "rating",
+        "description"
+      ],
       "properties": {
-        "rating": { "type": "string" },
-        "distance_to_center_km": { "type": "number" },
-        "description": { "type": "string" }
+        "rating": {
+          "type": "string"
+        },
+        "distance_to_center_km": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        }
       }
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "verification_authority": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        }
       }
     },
     "tags": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
-  },
-  "additionalProperties": false
+  }
 }

@@ -4,7 +4,11 @@
   "title": "RestaurantsSchema",
   "description": "Canonical schema for ship restaurants, dining rooms, buffets, and specialty culinary venues.",
   "type": "object",
-  "required": ["vessel_id", "provenance", "restaurants"],
+  "required": [
+    "vessel_id",
+    "provenance",
+    "restaurants"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
@@ -12,10 +16,22 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "last_audited": {
+          "type": "string"
+        }
       }
     },
     "restaurants": {
@@ -31,16 +47,26 @@
           "dining_model",
           "source",
           "provenance",
-          "confidence",
           "tags"
         ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
           "deck": {
             "oneOf": [
-              { "type": "integer" },
-              { "type": "array", "items": { "type": "integer" } }
+              {
+                "type": "integer"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
             ]
           },
           "category": {
@@ -59,21 +85,32 @@
               "OTHER_DINING"
             ]
           },
-          "description": { "type": "string" },
-          "dining_model": { "type": "string" },
-          "cuisine_type": { "type": "string" },
-          "seating_capacity": { "type": "integer" },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "description": {
+            "type": "string"
+          },
+          "dining_model": {
+            "type": "string"
+          },
+          "cuisine_type": {
+            "type": "string"
+          },
+          "seating_capacity": {
+            "type": "integer"
+          },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

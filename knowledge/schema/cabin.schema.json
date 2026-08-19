@@ -4,7 +4,12 @@
   "title": "CabinCategoriesSchema",
   "description": "Canonical schema for ship staterooms, suites, and bespoke signature suites.",
   "type": "object",
-  "required": ["vessel_id", "provenance", "summary", "cabin_categories"],
+  "required": [
+    "vessel_id",
+    "provenance",
+    "summary",
+    "cabin_categories"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
@@ -12,22 +17,47 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "last_audited": {
+          "type": "string"
+        }
       }
     },
     "summary": {
       "type": "object",
-      "required": ["total_staterooms", "distinct_categories_count", "balcony_percentage", "standard_amenities"],
+      "required": [
+        "total_staterooms",
+        "distinct_categories_count",
+        "balcony_percentage",
+        "standard_amenities"
+      ],
       "properties": {
-        "total_staterooms": { "type": "integer" },
-        "distinct_categories_count": { "type": "integer" },
-        "balcony_percentage": { "type": "number" },
+        "total_staterooms": {
+          "type": "integer"
+        },
+        "distinct_categories_count": {
+          "type": "integer"
+        },
+        "balcony_percentage": {
+          "type": "number"
+        },
         "standard_amenities": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -43,49 +73,75 @@
           "description",
           "source",
           "provenance",
-          "confidence",
           "tags"
         ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "category": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
           "deck": {
             "oneOf": [
-              { "type": "integer" },
-              { "type": "array", "items": { "type": "integer" } }
+              {
+                "type": "integer"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
             ]
           },
-          "cabin_number": { "type": "string" },
-          "position": { "type": "string" },
-          "description": { "type": "string" },
+          "cabin_number": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "metrics": {
-            "type": "object",
-            "additionalProperties": true
+            "type": "object"
           },
           "perks": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "features": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "design_partners": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }
