@@ -25,6 +25,7 @@ from timonelo.ontology.models import (
     HumanReviewState,
     PublishStatus,
     GeometryProvenance,
+    EvidenceLink,
 )
 from timonelo.database.bridge_officer import (
     BridgeOfficer,
@@ -641,3 +642,115 @@ def test_task_h_ast_canon_guard_no_unsanctioned_supported_defaults():
                             violations.append(f"{rel_path}:{node.lineno} function {node.name} defaults to SUPPORTED")
 
     assert violations == [], f"Found unsanctioned default assignments to SUPPORTED: {violations}"
+
+
+# ===========================================================================
+# TASK J — VALIDATION TESTS
+# ===========================================================================
+
+def test_task_j_missing_state_never_defaults_direct():
+    """J.1: Missing method/derivation on EvidenceLink never defaults to DIRECT/LOCAL."""
+    link = EvidenceLink(source_id="SRC-1", locator="p1")
+    assert link.method is None
+    assert link.derivation is None
+    assert link.evidence_condition is EvidenceCondition.UNKNOWN
+    assert link.human_review_state is HumanReviewState.DRAFT
+
+
+def test_task_j_unknown_badge_fails_closed():
+    """J.2: EpistemicBadge in frontend defaults to fail-closed neutral slate styling for unclassified states."""
+    badge_path = os.path.join(
+        os.path.dirname(__file__), "..", "frontend", "src", "components", "ui", "EpistemicBadge.tsx"
+    )
+    with open(badge_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # Must default to slate styling (fail-closed)
+    assert 'let style = "bg-slate-200/80 text-slate-700 border-slate-300";' in content
+    # Must not default to amber reassurance
+    assert 'let style = "bg-amber-100/80 text-amber-900 border-amber-300/60";' not in content
+
+
+def test_task_j_generated_ts_types_match_python_canon():
+    """J.3: Generated TypeScript canon types match Python canonical enums in ontology.models."""
+    import re
+    from tools.generate_epistemic_contract import generate_ts_canon
+    canon_ts_path = os.path.join(
+        os.path.dirname(__file__), "..", "frontend", "src", "generated", "canon.ts"
+    )
+    assert os.path.exists(canon_ts_path)
+    with open(canon_ts_path, "r", encoding="utf-8") as f:
+        ts_content = f.read()
+
+    expected_content = generate_ts_canon()
+    assert ts_content.strip() == expected_content.strip()
+
+    # Mechanically extract union types from TS content and compare exact sets
+    def extract_ts_union(type_name: str) -> set:
+        m = re.search(rf"export type {type_name} = ([^;]+);", ts_content)
+        assert m, f"Missing TypeScript type definition for {type_name}"
+        return {item.strip().strip("'").strip('"') for item in m.group(1).split("|")}
+
+    assert extract_ts_union("Method") == {e.value for e in Method}
+    assert extract_ts_union("Derivation") == {e.value for e in Derivation}
+    assert extract_ts_union("EvidenceCondition") == {e.value for e in EvidenceCondition}
+    assert extract_ts_union("HumanReviewState") == {e.value for e in HumanReviewState}
+    assert extract_ts_union("PublishStatus") == {e.value for e in PublishStatus}
+    assert extract_ts_union("GeometryProvenance") == {e.value for e in GeometryProvenance}
+
+    # Strict negative regression assertions against historic drift:
+    method_ts = extract_ts_union("Method")
+    assert "CALCULATED" in method_ts
+    assert "DERIVED" not in method_ts  # CALCULATED must not drift into DERIVED
+
+    derivation_ts = extract_ts_union("Derivation")
+    assert "SISTER_SHIP" in derivation_ts
+    assert "REFERENCE_MODEL" in derivation_ts
+    assert "CROSS_DOCUMENT" not in derivation_ts  # Must not drift into CROSS_DOCUMENT
+
+
+def test_task_j_unknown_json_enum_values_fail():
+    """J.4: Unknown JSON enum values fail closed by raising ValueError upon parsing."""
+    with pytest.raises(ValueError):
+        Method("NON_EXISTENT_METHOD")
+
+    with pytest.raises(ValueError):
+        EvidenceCondition("NON_EXISTENT_CONDITION")
+
+    with pytest.raises(ValueError):
+        HumanReviewState("NON_EXISTENT_REVIEW_STATE")
+
+    with pytest.raises(ValueError):
+        PublishStatus("NON_EXISTENT_PUBLISH_STATUS")
+
+
+def test_task_j_legacy_compound_states_not_silently_mapped():
+    """J.5: Legacy compound or non-canonical strings are not silently mapped into canonical enums."""
+    invalid_legacy_strings = [
+        "VERIFIED_DIRECT",
+        "AUDITED_CANONICAL",
+        "VERIFIED_DERIVED",
+        "CONFIRMED_SUPPORTED",
+    ]
+    for s in invalid_legacy_strings:
+        with pytest.raises(ValueError):
+            Method(s)
+        with pytest.raises(ValueError):
+            EvidenceCondition(s)
+        with pytest.raises(ValueError):
+            HumanReviewState(s)
+
+
+def test_task_j_no_bare_verified_canonical_state_remains():
+    """J.6: Bare VERIFIED is not a member of any of the six canonical enums."""
+    canonical_enums = [
+        Method,
+        Derivation,
+        EvidenceCondition,
+        HumanReviewState,
+        PublishStatus,
+        GeometryProvenance,
+    ]
+    for enum_cls in canonical_enums:
+        values = [e.value for e in enum_cls]
+        assert "VERIFIED" not in values, f"Bare VERIFIED found in {enum_cls.__name__}: {values}"

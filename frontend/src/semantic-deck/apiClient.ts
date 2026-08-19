@@ -18,7 +18,7 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
     let conflict = 0;
 
     const spaces: SemanticEntity[] = (d.objects || []).map((o: any) => {
-      const epistemic = (o.epistemic_state as EpistemicState) || "DIRECT";
+      const epistemic = (o.epistemic_state as EpistemicState) || "UNKNOWN";
       if (epistemic === "DIRECT") direct++;
       else if (epistemic === "DERIVED") derived++;
       else if (epistemic === "UNKNOWN") unknown++;
