@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional
 
 from timonelo.evidence import authority
 from timonelo.evidence.editor import Statement
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 
 
 @dataclass(frozen=True)
@@ -66,7 +66,11 @@ class ArtifactInspection:
 
 
 def _summarise(s: Statement) -> StatementSummary:
-    answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
+    answerable = (
+        s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+        and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
+        and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
+    )
     return StatementSummary(
         statement_id=s.statement_id,
         entity_id=s.entity_id,
@@ -167,7 +171,11 @@ class StatementRegistryAPI:
                 continue
             if review_state and s.review_state != review_state:
                 continue
-            is_answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
+            is_answerable = (
+                s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+                and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
+                and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
+            )
             if answerable_only and not is_answerable:
                 continue
             out.append(_summarise(s))

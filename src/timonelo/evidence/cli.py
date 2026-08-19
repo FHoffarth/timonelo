@@ -18,7 +18,7 @@ import sys
 from typing import List, Optional
 
 from timonelo.evidence import authority
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 from timonelo.evidence.workspace import DEFAULT_ROOT, Workspace
 
 
@@ -135,6 +135,14 @@ def cmd_publish(args) -> int:
     ws = _ws(args)
     s = ws.publish_statement(args.statement_id, args.actor, args.on, args.note or "")
     print(f"{s.statement_id} -> PUBLISH_ALLOWED by {args.actor} on {args.on}")
+    return 0
+
+
+def cmd_verify_evidence(args) -> int:
+    ws = _ws(args)
+    condition = EvidenceCondition(args.condition)
+    s = ws.set_evidence_condition(args.statement_id, condition, args.actor, args.on, args.note or "")
+    print(f"{s.statement_id} condition -> {s.evidence_condition} by {args.actor} on {args.on}")
     return 0
 
 
@@ -298,6 +306,14 @@ def build_parser() -> argparse.ArgumentParser:
         t.add_argument("--on", required=True, help="ISO date")
         t.add_argument("--note")
         t.set_defaults(func=fn)
+
+    ve = sub.add_parser("verify-evidence", help="set statement evidence condition")
+    ve.add_argument("statement_id")
+    ve.add_argument("--condition", default="SUPPORTED", choices=["SUPPORTED", "UNSUPPORTED", "CONFLICTED", "UNKNOWN"])
+    ve.add_argument("--actor", required=True)
+    ve.add_argument("--on", required=True, help="ISO date")
+    ve.add_argument("--note")
+    ve.set_defaults(func=cmd_verify_evidence)
 
     an = sub.add_parser("answer", help="ask one question")
     an.add_argument("--entity", required=True)

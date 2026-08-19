@@ -89,6 +89,7 @@ class WorkspaceCase(unittest.TestCase):
             "--read-by", "curator.one", "--read-on", "2026-08-17")
 
     def _publish(self):
+        self.run_cli("verify-evidence", "STM-0001", "--condition", "SUPPORTED", "--actor", "reviewer.two", "--on", "2026-08-17")
         self.run_cli("submit", "STM-0001", "--actor", "curator.one", "--on", "2026-08-17")
         self.run_cli("approve", "STM-0001", "--actor", "reviewer.two", "--on", "2026-08-18")
         self.run_cli("publish", "STM-0001", "--actor", "reviewer.two", "--on", "2026-08-18")

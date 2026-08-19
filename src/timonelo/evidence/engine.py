@@ -57,7 +57,7 @@ class Statement:
     evidence_event_ids: Tuple[str, ...] = ()
     input_statement_ids: Tuple[str, ...] = ()
     rule_hash: Optional[str] = None
-    evidence_condition: EvidenceCondition = EvidenceCondition.SUPPORTED
+    evidence_condition: EvidenceCondition = EvidenceCondition.UNKNOWN
     human_review_state: HumanReviewState = HumanReviewState.DRAFT
     publish_status: PublishStatus = PublishStatus.PUBLISH_BLOCKED
     valid_from: Optional[str] = None
@@ -150,14 +150,29 @@ class TruthEngine:
         self._statements[statement_id] = updated
         return updated
 
-    def set_publish_status(self, statement_id: str, status: PublishStatus) -> Statement:
-        """Sets the publication gate status. Only APPROVED items may become PUBLISH_ALLOWED."""
+    def set_evidence_condition(self, statement_id: str, condition: EvidenceCondition) -> Statement:
+        """Sets the evidence condition of a statement."""
         s = self._statements[statement_id]
-        if status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
+        pub_status = s.publish_status
+        if condition != EvidenceCondition.SUPPORTED and condition != EvidenceCondition.SUPPORTED.value:
+            pub_status = PublishStatus.PUBLISH_BLOCKED
+        updated = Statement(**{**s.__dict__, "evidence_condition": condition, "publish_status": pub_status})
+        self._statements[statement_id] = updated
+        return updated
+
+    def set_publish_status(self, statement_id: str, status: PublishStatus) -> Statement:
+        """Sets the publication gate status. Only APPROVED and SUPPORTED items may become PUBLISH_ALLOWED."""
+        s = self._statements[statement_id]
+        if status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS, PublishStatus.PUBLISH_ALLOWED.value, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS.value):
             if s.human_review_state != HumanReviewState.APPROVED and s.human_review_state != HumanReviewState.APPROVED.value:
                 raise ValueError(
                     f"Statement {statement_id!r} cannot be publish-allowed while in "
                     f"human review state {s.human_review_state}. It must be APPROVED first."
+                )
+            if s.evidence_condition != EvidenceCondition.SUPPORTED and s.evidence_condition != EvidenceCondition.SUPPORTED.value:
+                raise ValueError(
+                    f"Statement {statement_id!r} cannot be publish-allowed with evidence condition "
+                    f"{s.evidence_condition}. It must be SUPPORTED first."
                 )
             blocked = self._publication_block(s)
             if blocked:
@@ -267,6 +282,7 @@ class TruthEngine:
             and s.question_id == question_id
             and s.publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS, PublishStatus.PUBLISH_ALLOWED.value, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS.value)
             and s.human_review_state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
+            and s.evidence_condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
             and s.is_valid_at(as_of)
         ]
         if not candidates:

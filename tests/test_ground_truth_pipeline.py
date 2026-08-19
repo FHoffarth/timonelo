@@ -21,7 +21,7 @@ from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry, RegistryError
 from timonelo.evidence.review import ReviewError, ReviewLog
 from timonelo.evidence.truth import TruthEngine
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 
 FIXTURE_CLASS = "pipeline_fixture"
 FIXTURE_TYPE = "fixture.deck"
@@ -102,6 +102,8 @@ class PipelineCase(unittest.TestCase):
             read_by="reader.one", read_on="2026-08-17")
 
     def _publish(self, s):
+        self.editor.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED,
+                                           "reviewer.two", "2026-08-17")
         s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
                                    "reader.one", "2026-08-17")
         s = self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
@@ -258,7 +260,7 @@ class TestReviewWorkflow(PipelineCase):
     def test_history_records_actor_and_date(self):
         s = self._publish(self._draft(self._import()))
         hist = self.reviews.history(s.statement_id)
-        self.assertEqual(len(hist), 2)
+        self.assertEqual(len(hist), 3)
         self.assertEqual(hist[-1].to_state, "APPROVED")
         self.assertEqual(hist[-1].actor, "reviewer.two")
 
@@ -285,12 +287,7 @@ class TestTruthEngineVisibility(PipelineCase):
         self.assertFalse(self.engine.answer("fixture:1", "Q-0001").known)
 
     def test_published_is_answerable(self):
-        s = self._draft(self._import())
-        s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,
-                                   "reader.one", "2026-08-17")
-        self.editor.transition(s.statement_id, HumanReviewState.APPROVED,
-                               "reviewer.two", "2026-08-17")
-        self.editor.publish(s.statement_id, "reviewer.two", "2026-08-17")
+        s = self._publish(self._draft(self._import()))
         self.assertTrue(self.engine.answer("fixture:1", "Q-0001").known)
 
     def test_rejected_is_not_answerable(self):

@@ -23,7 +23,7 @@ from timonelo.evidence.registry import Artifact, ArtifactRegistry
 from timonelo.evidence.conflicts import ConflictLog
 from timonelo.evidence.review import ReviewLog
 from timonelo.evidence.truth import Answer, TruthEngine
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 
 DEFAULT_ROOT = "evidence"
 
@@ -92,7 +92,8 @@ class Workspace:
         answered_ids = {
             s.question_id for s in mine
             if s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-            and s.state is HumanReviewState.APPROVED
+            and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
+            and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
         }
         answered = [q for q in supported if q.question_id in answered_ids]
         unknown = [q for q in supported if q.question_id not in answered_ids]
@@ -110,6 +111,10 @@ class Workspace:
 
     def create_statement(self, **kwargs) -> Statement:
         return self.editor.create(**kwargs)
+
+    def set_evidence_condition(self, statement_id: str, condition: EvidenceCondition,
+                               actor: str, occurred_on: str, note: str = "") -> Statement:
+        return self.editor.set_evidence_condition(statement_id, condition, actor, occurred_on, note)
 
     def transition(self, statement_id: str, to_state: HumanReviewState,
                    actor: str, occurred_on: str, note: str = "") -> Statement:
@@ -179,7 +184,11 @@ class Workspace:
         a = self.registry.get(s.artifact_id)
         q = self.questions.get(s.question_id)
         cls = authority.DOCUMENT_CLASSES.get(a.document_class)
-        answerable = s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS) and s.state is HumanReviewState.APPROVED
+        answerable = (
+            s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+            and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
+            and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
+        )
 
         lines = [
             f"STATEMENT {s.statement_id}",

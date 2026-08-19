@@ -4,8 +4,8 @@ Statement Editor — the sole creator of Statements.
 Governed by ADR-0002 §1, §6.
 
 Statements are authored here and nowhere else. Every statement is created in
-DRAFT and must be carried through the human review workflow by a named actor before
-it can be considered for publication.
+DRAFT with UNKNOWN evidence condition, and must be carried through the human review
+workflow and evidence support verification before it can be considered for publication.
 
 A statement created here always cites:
   * the Artifact ID it came from (never a digest typed by hand),
@@ -25,7 +25,7 @@ from typing import Any, Dict, List, Optional
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.registry import ArtifactRegistry
-from timonelo.evidence.conflicts import ConflictLog, values_disagree
+from timonelo.evidence.conflicts import ConflictError, ConflictLog, values_disagree
 from timonelo.evidence.review import ReviewError, ReviewLog
 from timonelo.ontology.models import (
     EvidenceCondition,
@@ -57,7 +57,7 @@ class Statement:
     read_on: str
     method: str = "DIRECT"
     derivation_note: str = ""
-    evidence_condition: str = EvidenceCondition.SUPPORTED.value
+    evidence_condition: str = EvidenceCondition.UNKNOWN.value
     human_review_state: str = HumanReviewState.DRAFT.value
     publish_status: str = PublishStatus.PUBLISH_BLOCKED.value
     valid_from: Optional[str] = None
@@ -104,7 +104,7 @@ class Statement:
 
 
 class StatementEditor:
-    """Authors statements and moves them through review and publication."""
+    """Authors statements and moves them through review, verification, and publication."""
 
     ID_PREFIX = "STM-"
 
@@ -132,7 +132,7 @@ class StatementEditor:
                             raw["human_review_state"] = HumanReviewState.DRAFT.value
                             raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                     if "evidence_condition" not in raw:
-                        raw["evidence_condition"] = EvidenceCondition.SUPPORTED.value
+                        raw["evidence_condition"] = EvidenceCondition.UNKNOWN.value
                     if "publish_status" not in raw:
                         raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                     self._by_id[sid] = Statement(**raw)
@@ -160,7 +160,7 @@ class StatementEditor:
         valid_until: Optional[str] = None,
         note: str = "",
     ) -> Statement:
-        """Author one statement in DRAFT."""
+        """Author one statement in DRAFT with UNKNOWN evidence condition."""
         artifact = self.registry.get(artifact_id)  # raises if not held
 
         if not locator:
@@ -196,7 +196,7 @@ class StatementEditor:
             read_on=read_on,
             method=method,
             derivation_note=derivation_note,
-            evidence_condition=EvidenceCondition.SUPPORTED.value,
+            evidence_condition=EvidenceCondition.UNKNOWN.value,
             human_review_state=HumanReviewState.DRAFT.value,
             publish_status=PublishStatus.PUBLISH_BLOCKED.value,
             valid_from=valid_from,
@@ -230,6 +230,37 @@ class StatementEditor:
                     )
         return statement
 
+    def set_evidence_condition(
+        self,
+        statement_id: str,
+        condition: EvidenceCondition,
+        actor: str,
+        occurred_on: str,
+        note: str = "",
+    ) -> Statement:
+        """Explicitly set or update the evidence condition of a statement with full audit trail."""
+        if not actor:
+            raise EditorError("Setting evidence condition requires a named actor.")
+        if not occurred_on:
+            raise EditorError("Setting evidence condition requires an occurred_on timestamp.")
+        current = self._by_id[statement_id]
+        from_cond = current.condition
+        to_cond = condition if isinstance(condition, EvidenceCondition) else EvidenceCondition(condition)
+
+        # Record in review log for audit trail
+        if self.review_log is not None:
+            self.review_log.record_condition_transition(
+                statement_id, from_cond, to_cond, actor, occurred_on, note
+            )
+
+        pub_status = current.publish_status
+        if to_cond is not EvidenceCondition.SUPPORTED:
+            pub_status = PublishStatus.PUBLISH_BLOCKED.value
+        updated = replace(current, evidence_condition=to_cond.value, publish_status=pub_status)
+        self._by_id[statement_id] = updated
+        self._flush()
+        return updated
+
     def transition(
         self,
         statement_id: str,
@@ -261,13 +292,18 @@ class StatementEditor:
         occurred_on: str,
         note: str = "",
     ) -> Statement:
-        """Publish an approved statement so it can answer passenger queries."""
+        """Publish an approved and supported statement so it can answer passenger queries."""
         current = self._by_id[statement_id]
 
-        if current.state is not HumanReviewState.APPROVED:
+        if current.state != HumanReviewState.APPROVED and current.state != HumanReviewState.APPROVED.value:
             raise EditorError(
-                f"{statement_id} is in state {current.state.value} and cannot be "
+                f"{statement_id} is in state {current.human_review_state} and cannot be "
                 "published. Human review state must be APPROVED first."
+            )
+        if current.condition != EvidenceCondition.SUPPORTED and current.condition != EvidenceCondition.SUPPORTED.value:
+            raise EditorError(
+                f"{statement_id} has evidence condition {current.evidence_condition} and cannot be "
+                "published. Evidence condition must be SUPPORTED first."
             )
         if actor == current.read_by:
             raise EditorError(
@@ -311,8 +347,8 @@ class StatementEditor:
     ):
         """Resolve a conflict and move both statements to their end states.
 
-        The winner is carried to APPROVED and PUBLISH_ALLOWED; the loser becomes
-        SUPERSEDED and PUBLISH_BLOCKED. If neither reading survives, both are
+        The winner is carried to APPROVED, SUPPORTED, and PUBLISH_ALLOWED; the loser becomes
+        SUPERSEDED, CONFLICTED, and PUBLISH_BLOCKED. If neither reading survives, both are
         REJECTED and BLOCKED.
         """
         if self.conflict_log is None:
@@ -323,7 +359,11 @@ class StatementEditor:
             for sid in conflict.statement_ids():
                 self._force_state(sid, HumanReviewState.REJECTED, actor, occurred_on,
                                   f"both readings rejected ({conflict_id})")
+                self.set_evidence_condition(sid, EvidenceCondition.CONFLICTED, actor, occurred_on,
+                                            f"both rejected in {conflict_id}")
         else:
+            if winning_statement_id not in conflict.statement_ids():
+                raise ConflictError(f"{winning_statement_id} is not part of conflict {conflict_id}")
             loser = next(s for s in conflict.statement_ids() if s != winning_statement_id)
             winner = self.get(winning_statement_id)
             if winner.state is HumanReviewState.DRAFT:
@@ -332,13 +372,19 @@ class StatementEditor:
             if self.get(winning_statement_id).state is HumanReviewState.UNDER_REVIEW:
                 self.transition(winning_statement_id, HumanReviewState.APPROVED,
                                 actor, occurred_on, f"conflict {conflict_id}")
-            if self.get(winning_statement_id).state is HumanReviewState.APPROVED:
+
+            # Only attempt publish if evidence condition is already SUPPORTED (does not auto-grant SUPPORTED)
+            winner_curr = self.get(winning_statement_id)
+            if winner_curr.condition is EvidenceCondition.SUPPORTED and winner_curr.state is HumanReviewState.APPROVED:
                 self.publish(winning_statement_id, actor, occurred_on, f"resolves {conflict_id}")
+
             # The loser always reaches a terminal state, whatever it was in.
             if self.get(loser).state not in (HumanReviewState.SUPERSEDED,
                                              HumanReviewState.REJECTED):
                 self._force_state(loser, HumanReviewState.SUPERSEDED, actor, occurred_on,
                                   f"superseded by {winning_statement_id} ({conflict_id})")
+                self.set_evidence_condition(loser, EvidenceCondition.CONFLICTED, actor, occurred_on,
+                                            f"superseded in {conflict_id}")
         return self.conflict_log.resolve(
             conflict_id, winning_statement_id, actor, occurred_on, note)
 

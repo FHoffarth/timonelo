@@ -6,6 +6,8 @@ from __future__ import annotations
 from typing import Dict, Any, List, Optional
 import datetime
 
+from timonelo.database.schema import TrustLevel
+
 
 class DataNormalizer:
     """Normalizes heterogeneous imported dictionaries into canonical Timonelo entity structures."""
@@ -14,7 +16,7 @@ class DataNormalizer:
     def normalize_ship(raw_ship: Dict[str, Any], source_id: str, confidence: float = 1.0) -> Dict[str, Any]:
         slug = str(raw_ship.get("slug", "")).strip().lower()
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        trust_level = raw_ship.get("trust_level", "OFFICIAL")
+        trust_level = raw_ship.get("trust_level", TrustLevel.UNKNOWN.value)
 
         def prov(val: Any) -> Dict[str, Any]:
             return {
@@ -58,7 +60,7 @@ class DataNormalizer:
     def normalize_port(raw_port: Dict[str, Any], source_id: str, confidence: float = 1.0) -> Dict[str, Any]:
         slug = str(raw_port.get("slug", "")).strip().lower()
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        trust_level = raw_port.get("trust_level", "OFFICIAL")
+        trust_level = raw_port.get("trust_level", TrustLevel.UNKNOWN.value)
 
         return {
             "slug": slug,

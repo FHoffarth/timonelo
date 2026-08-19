@@ -16,7 +16,7 @@ from timonelo.evidence.conflicts import ConflictError, ConflictStatus, values_di
 from timonelo.evidence.review import ReviewError
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 from tests.test_ground_truth_pipeline import _write_pdf
 
 CLASS = "conflict_fixture"
@@ -71,6 +71,7 @@ class ConflictCase(unittest.TestCase):
             read_by=reader, read_on=on)
 
     def _publish(self, s, actor="reviewer.two"):
+        self.ws.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED, actor, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.UNDER_REVIEW, s.read_by, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.APPROVED, actor, "2026-08-17")
         return self.ws.publish_statement(s.statement_id, actor, "2026-08-17")
@@ -163,6 +164,8 @@ class TestResolution(ConflictCase):
                 "reviewer.two", "2026-08-18", "because")
 
     def test_challenger_wins_and_incumbent_is_superseded(self):
+        self.ws.set_evidence_condition(self.s2.statement_id, EvidenceCondition.SUPPORTED,
+                                       "reviewer.two", "2026-08-18")
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, self.s2.statement_id,
             "reviewer.two", "2026-08-18", "source B is the later edition")
@@ -220,6 +223,8 @@ class TestHistoryIsPreserved(ConflictCase):
     def test_no_statement_disappears(self):
         s1 = self._publish(self._stmt(14, self.a))
         s2 = self._stmt(15, self.b, reader="reader.two")
+        self.ws.set_evidence_condition(s2.statement_id, EvidenceCondition.SUPPORTED,
+                                       "reviewer.two", "2026-08-18")
         c = self.ws.conflicts.all()[0]
         self.ws.editor.resolve_conflict(c.conflict_id, s2.statement_id,
                                         "reviewer.two", "2026-08-18", "later edition")
@@ -230,6 +235,8 @@ class TestHistoryIsPreserved(ConflictCase):
     def test_superseded_value_is_still_readable(self):
         s1 = self._publish(self._stmt(14, self.a))
         s2 = self._stmt(15, self.b, reader="reader.two")
+        self.ws.set_evidence_condition(s2.statement_id, EvidenceCondition.SUPPORTED,
+                                       "reviewer.two", "2026-08-18")
         c = self.ws.conflicts.all()[0]
         self.ws.editor.resolve_conflict(c.conflict_id, s2.statement_id,
                                         "reviewer.two", "2026-08-18", "later edition")
@@ -251,8 +258,10 @@ class TestHistoryIsPreserved(ConflictCase):
         self.ws.editor.resolve_conflict(c.conflict_id, s1.statement_id,
                                         "reviewer.two", "2026-08-18", "confirmed")
         hist = self.ws.reviews.history(s2.statement_id)
-        self.assertEqual(hist[-1].to_state, "SUPERSEDED")
-        self.assertIn("CFL-", hist[-1].note)
+        states = [h.to_state for h in hist]
+        self.assertIn("SUPERSEDED", states)
+        superseded_entry = next(h for h in hist if h.to_state == "SUPERSEDED")
+        self.assertIn("CFL-", superseded_entry.note)
 
     def test_resolution_reason_is_retained(self):
         self._publish(self._stmt(14, self.a))

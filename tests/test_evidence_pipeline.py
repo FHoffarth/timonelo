@@ -17,7 +17,7 @@ from timonelo.evidence import (
     ArtifactStore, EvidenceEvent, EvidenceEventLog, Method, Derivation,
     Question, QuestionRegistry, Statement, TruthEngine, language,
 )
-from timonelo.ontology.models import HumanReviewState, PublishStatus
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 
 FIXTURE_CLASS = "test_fixture"
 
@@ -177,6 +177,7 @@ class TestTruthEngine(PipelineTestCase):
 
     def test_published_statement_is_answerable(self):
         self.seed_direct()
+        self.engine.set_evidence_condition("S1", EvidenceCondition.SUPPORTED)
         self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
         self.engine.publish("S1")
         ans = self.engine.answer("cabin:X:1", "Q-0001")
@@ -261,6 +262,7 @@ class TestLanguageLayer(PipelineTestCase):
             value=14, method=Method.DIRECT, derivation=Derivation.LOCAL,
             evidence_event_ids=("E1",),
         ))
+        self.engine.set_evidence_condition("S1", EvidenceCondition.SUPPORTED)
         self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
         self.engine.publish("S1")
         ans = self.engine.answer("cabin:X:1", "Q-0001")
@@ -286,7 +288,8 @@ class TestLanguageLayer(PipelineTestCase):
             derivation=Derivation.LOCAL, input_statement_ids=("S1",),
             rule_hash="rule:noise:v1",
         ))
-        for sid in ("S2",):
+        for sid in ("S1", "S2"):
+            self.engine.set_evidence_condition(sid, EvidenceCondition.SUPPORTED)
             self.engine.set_human_review_state(sid, HumanReviewState.APPROVED)
             self.engine.publish(sid)
         ans = self.engine.answer("cabin:X:1", "Q-0003")

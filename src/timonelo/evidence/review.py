@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional
 
 from timonelo.canonical import canonical_dump
-from timonelo.ontology.models import HumanReviewState
+from timonelo.ontology.models import EvidenceCondition, HumanReviewState
 
 
 # Exactly which transitions exist in human review. Anything absent is forbidden.
@@ -96,6 +96,29 @@ class ReviewLog:
             statement_id=statement_id,
             from_state=from_state.value,
             to_state=to_state.value,
+            actor=actor,
+            occurred_on=occurred_on,
+            note=note,
+        )
+        self._entries.append(entry)
+        self._flush()
+        return entry
+
+    def record_condition_transition(
+        self,
+        statement_id: str,
+        from_condition: EvidenceCondition,
+        to_condition: EvidenceCondition,
+        actor: str,
+        occurred_on: str,
+        note: str = "",
+    ) -> ReviewEntry:
+        if not actor:
+            raise ReviewError("An evidence verification transition requires a named actor.")
+        entry = ReviewEntry(
+            statement_id=statement_id,
+            from_state=f"CONDITION:{from_condition.value if hasattr(from_condition, 'value') else from_condition}",
+            to_state=f"CONDITION:{to_condition.value if hasattr(to_condition, 'value') else to_condition}",
             actor=actor,
             occurred_on=occurred_on,
             note=note,
