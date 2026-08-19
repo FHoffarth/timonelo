@@ -233,7 +233,7 @@ export default function CabinDeepDivePage({
             {/* Evidence Artifact */}
             <div className="space-y-1 pt-1">
               <div className="flex items-center justify-between text-slate-500">
-                <span>Lifeboat Sightline</span>
+                <span>Originating Artifact</span>
                 <LegacyEpistemicBadge status="VERIFIED" />
               </div>
               <div className="font-mono font-bold text-[#C58A46] text-xs">
