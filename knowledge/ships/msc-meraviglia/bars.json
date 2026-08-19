@@ -2,7 +2,9 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "bars": [
     {
@@ -10,12 +12,11 @@
       "name": "Edge Cocktail Bar",
       "deck": 6,
       "category": "COCKTAIL_BAR",
-      "description": "Promenade-side cocktail lounge.",
+      "description": "Cocktail bar located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "cocktails",
-        "promenade",
         "bar"
       ]
     },
@@ -24,11 +25,10 @@
       "name": "Jean-Philippe Chocolat & Café",
       "deck": 6,
       "category": "CHOCOLATE_CAFE",
-      "description": "Artisan chocolate boutique and specialty cafe.",
+      "description": "Chocolate boutique and café located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
-        "chocolate",
         "cafe",
         "pastry"
       ]
@@ -38,13 +38,12 @@
       "name": "Jean-Philippe Crêpes & Gelato",
       "deck": 6,
       "category": "GELATO_BAR",
-      "description": "Gourmet crepes and Italian gelato bar.",
+      "description": "Crêpes and gelato bar located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "gelato",
-        "crepes",
-        "sweets"
+        "bar"
       ]
     },
     {
@@ -52,13 +51,12 @@
       "name": "Meraviglia Bar & Lounge",
       "deck": 6,
       "category": "LOUNGE_BAR",
-      "description": "Central gathering bar along the promenade.",
+      "description": "Bar and lounge located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "bar",
-        "lounge",
-        "promenade"
+        "lounge"
       ]
     },
     {
@@ -66,13 +64,12 @@
       "name": "Brass Anchor Pub",
       "deck": 7,
       "category": "TRADITIONAL_PUB",
-      "description": "British-style pub with draft beers and live music.",
+      "description": "Pub located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "pub",
-        "beer",
-        "live-music"
+        "bar"
       ]
     },
     {
@@ -80,13 +77,12 @@
       "name": "Champagne Bar",
       "deck": 7,
       "category": "CHAMPAGNE_BAR",
-      "description": "Upscale bar serving premium champagnes and oysters.",
+      "description": "Champagne bar located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "champagne",
-        "caviar",
-        "luxury"
+        "bar"
       ]
     },
     {
@@ -94,12 +90,12 @@
       "name": "Casino Bar",
       "deck": 7,
       "category": "CASINO_BAR",
-      "description": "Bar located within Casino Imperiale.",
+      "description": "Bar located within Casino Imperiale on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "casino",
-        "cocktails"
+        "bar"
       ]
     },
     {
@@ -107,13 +103,12 @@
       "name": "TV Studio & Bar",
       "deck": 7,
       "category": "ENTERTAINMENT_BAR",
-      "description": "Broadcasting studio and interactive entertainment bar.",
+      "description": "TV studio and bar located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "tv-studio",
-        "games",
-        "karaoke"
+        "bar"
       ]
     },
     {
@@ -121,13 +116,12 @@
       "name": "Carousel Lounge Bar",
       "deck": 7,
       "category": "SHOW_LOUNGE_BAR",
-      "description": "Aft venue bar hosting spectacular acrobatic shows.",
+      "description": "Aft venue bar in Carousel Lounge on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "show",
-        "cocktails",
-        "entertainment"
+        "bar"
       ]
     },
     {
@@ -135,13 +129,12 @@
       "name": "Bamboo Bar",
       "deck": 15,
       "category": "POOL_BAR",
-      "description": "Indoor pool bar with tropical solarium atmosphere.",
+      "description": "Pool bar located by Bamboo Pool on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "pool-bar",
-        "solarium",
-        "drinks"
+        "bar"
       ]
     },
     {
@@ -149,13 +142,12 @@
       "name": "Atmosphere Bar North",
       "deck": 15,
       "category": "POOL_BAR",
-      "description": "Open-air poolside bar by the main Atmosphere Pool.",
+      "description": "Poolside bar north located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "pool-bar",
-        "outdoor",
-        "cocktails"
+        "bar"
       ]
     },
     {
@@ -163,13 +155,12 @@
       "name": "Atmosphere Bar South",
       "deck": 15,
       "category": "POOL_BAR",
-      "description": "Poolside refreshments on the south side of Deck 15.",
+      "description": "Poolside bar south located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "pool-bar",
-        "outdoor",
-        "drinks"
+        "bar"
       ]
     },
     {
@@ -177,12 +168,12 @@
       "name": "Atmosphere Ice Cream Bar",
       "deck": 15,
       "category": "ICE_CREAM_BAR",
-      "description": "Soft-serve and scoop ice cream bar on the pool deck.",
+      "description": "Ice cream bar located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "ice-cream",
-        "poolside"
+        "bar"
       ]
     },
     {
@@ -190,13 +181,12 @@
       "name": "Sports Bar",
       "deck": 16,
       "category": "SPORTS_BAR",
-      "description": "Sports lounge with multiple broadcast screens and bar snacks.",
+      "description": "Sports bar located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "sports",
-        "beer",
-        "screens"
+        "bar"
       ]
     },
     {
@@ -204,13 +194,12 @@
       "name": "Horizon Bar",
       "deck": 16,
       "category": "AFT_BAR",
-      "description": "Aft outdoor bar overlooking the Horizon Amphitheatre and pool.",
+      "description": "Aft outdoor bar overlooking Horizon Pool on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "aft",
-        "wake-views",
-        "cocktails"
+        "bar"
       ]
     },
     {
@@ -218,13 +207,12 @@
       "name": "Polar Bar",
       "deck": 19,
       "category": "AQUAPARK_BAR",
-      "description": "Refreshing beverages within the Polar Aquapark zone.",
+      "description": "Beverage bar located in Polar Aquapark on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "aquapark",
-        "drinks",
-        "outdoor"
+        "bar"
       ]
     }
   ]

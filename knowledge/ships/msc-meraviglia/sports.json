@@ -2,7 +2,9 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "sports_and_recreation": [
     {
@@ -10,13 +12,12 @@
       "name": "Sportplex Arena",
       "deck": 16,
       "category": "MULTI_SPORT_ARENA",
-      "description": "Large indoor arena for basketball, volleyball, tennis, and five-a-side football.",
+      "description": "Indoor sports arena located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "sports",
-        "basketball",
-        "indoor-arena"
+        "arena"
       ]
     },
     {
@@ -24,14 +25,12 @@
       "name": "MSC Gym by Technogym",
       "deck": 16,
       "category": "FITNESS_CENTER",
-      "description": "State-of-the-art fitness center with Technogym cardio and strength equipment.",
+      "description": "Fitness center located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "gym",
-        "technogym",
-        "fitness",
-        "cardio"
+        "fitness"
       ]
     },
     {
@@ -39,11 +38,10 @@
       "name": "Power Walking Track",
       "deck": 16,
       "category": "OUTDOOR_TRACK",
-      "description": "Dedicated outdoor walking and jogging track.",
+      "description": "Outdoor walking track located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
-        "jogging",
         "walking-track",
         "outdoor"
       ]
@@ -53,13 +51,12 @@
       "name": "Himalayan Bridge",
       "deck": 19,
       "category": "ROPE_COURSE",
-      "description": "High-altitude suspended rope suspension bridge traversing the ship's aft.",
+      "description": "Suspension bridge attraction located on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
-        "rope-course",
-        "adventure",
-        "sky-bridge"
+        "bridge",
+        "outdoor"
       ]
     }
   ]

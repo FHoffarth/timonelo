@@ -4,16 +4,921 @@
     "title": "Official MSC Cruises Meraviglia Deckplans, Edition 11.2025 DEU",
     "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "edition": "11.2025 DEU",
-    "pages": 6
+    "pages": 6,
+    "document_class": "cruise_line_deck_plan"
   },
-  "events_count": 97,
-  "statements_count": 101,
-  "supported_statements": 97,
-  "unknown_statements": 4,
-  "approved_statements": 97,
-  "draft_statements": 4,
-  "publishable_statements": 97,
-  "blocked_statements": 4,
+  "events_count": 99,
+  "statements_count": 99,
+  "statement_axis": {
+    "unknown": 0,
+    "supported": 99,
+    "conflicted": 0
+  },
+  "review_axis": {
+    "draft": 99,
+    "under_review": 0,
+    "approved": 0,
+    "rejected": 0,
+    "superseded": 0
+  },
+  "publish_axis": {
+    "publish_blocked": 99,
+    "publish_allowed_with_warnings": 0,
+    "publish_allowed": 0
+  },
+  "audit_log": [
+    {
+      "statement_id": "STMT-EVT-MER-DECK-4-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-5-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-6-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-7-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-8-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-9-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:4"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-10-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:4"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-11-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:4"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-12-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:4"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-13-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:4"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-14-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-15-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-16-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-18-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-DECK-19-NAME",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-TOTAL-CABINS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-TOTAL-GUESTS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-TOTAL-DECKS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PAX-DECKS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-YC3",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-YJD",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-SXJ",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-SLJ",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BL3",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BL2",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BL1",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BR3",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BR2",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BR1",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BP",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-BS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-OL2",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-OR1",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-OM2",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-OO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-IR2",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-IR1",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-CABIN-CAT-IS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:2"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-WAVES",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-PANORAMA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-LOLIVO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-LE-CERISIER",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-HOLA-TACOS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-OCEAN-CAY",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-BUTCHERS-CUT",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-KAITO-TEPPANYAKI",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-KAITO-SUSHI",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-MARKETPLACE",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-YC-RESTAURANT",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-REST-REST-YC-GRILL",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-EDGE",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-JEAN-PHILIPPE-CHOCO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-JEAN-PHILIPPE-CREPES",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-MERAVIGLIA-BAR",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-BRASS-ANCHOR",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-CHAMPAGNE",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-CASINO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-TV-STUDIO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-CAROUSEL",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-BAMBOO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-ATMOSPHERE-NORTH",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-ATMOSPHERE-SOUTH",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-ICE-CREAM",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-SPORTS",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-HORIZON",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-BAR-BAR-POLAR",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-TOP-SAIL",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-SKY",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-CAROUSEL",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-ATTIC",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-POOL-POOL-ATMOSPHERE",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-POOL-POOL-BAMBOO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-POOL-POOL-HORIZON",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-POOL-POOL-AQUAPARK",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-POOL-POOL-YC",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-SPA-AUREA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-SPORT-SPORT-SPORTPLEX",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-SPORT-SPORT-GYM",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-SPORT-SPORT-TRACK",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-SPORT-SPORT-BRIDGE",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-BROADWAY",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-CAROUSEL",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-CASINO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-XD-CINEMA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-F1-RACER",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-BOWLING",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-TV-STUDIO",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-DOREMI-LAB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-BABY-CLUB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-MINI-CLUB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-JUNIOR-CLUB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-YOUNG-CLUB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-ENT-ENT-TEEN-CLUB",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PUB-PUB-GALLERIA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PUB-PUB-INFINITY-ATRIUM",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PUB-PUB-PLAZA",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PUB-PUB-TOP19-SOLARIUM",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PUB-PUB-HORIZON-AMPHI",
+      "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
+      "from_condition": "UNKNOWN",
+      "to_condition": "SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    }
+  ],
   "events": [
     {
       "event_id": "EVT-MER-DECK-4-NAME",
@@ -22,7 +927,7 @@
       "entity_id": "msc-meraviglia:deck:4",
       "question_id": "Q-DECK-4-NAME",
       "observed_value": "Kos",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -34,7 +939,7 @@
       "entity_id": "msc-meraviglia:deck:5",
       "question_id": "Q-DECK-5-NAME",
       "observed_value": "Colosseo",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -46,7 +951,7 @@
       "entity_id": "msc-meraviglia:deck:6",
       "question_id": "Q-DECK-6-NAME",
       "observed_value": "Petra",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -58,7 +963,7 @@
       "entity_id": "msc-meraviglia:deck:7",
       "question_id": "Q-DECK-7-NAME",
       "observed_value": "Taj Mahal",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -70,7 +975,7 @@
       "entity_id": "msc-meraviglia:deck:8",
       "question_id": "Q-DECK-8-NAME",
       "observed_value": "Machu Picchu",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -82,7 +987,7 @@
       "entity_id": "msc-meraviglia:deck:9",
       "question_id": "Q-DECK-9-NAME",
       "observed_value": "Alhambra",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -94,7 +999,7 @@
       "entity_id": "msc-meraviglia:deck:10",
       "question_id": "Q-DECK-10-NAME",
       "observed_value": "Hagia Sophia",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -106,7 +1011,7 @@
       "entity_id": "msc-meraviglia:deck:11",
       "question_id": "Q-DECK-11-NAME",
       "observed_value": "Acropolis",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -118,7 +1023,7 @@
       "entity_id": "msc-meraviglia:deck:12",
       "question_id": "Q-DECK-12-NAME",
       "observed_value": "Grand Canyon",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -130,7 +1035,7 @@
       "entity_id": "msc-meraviglia:deck:13",
       "question_id": "Q-DECK-13-NAME",
       "observed_value": "Kilimangiaro",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -142,7 +1047,7 @@
       "entity_id": "msc-meraviglia:deck:14",
       "question_id": "Q-DECK-14-NAME",
       "observed_value": "Angkor Wat",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -154,7 +1059,7 @@
       "entity_id": "msc-meraviglia:deck:15",
       "question_id": "Q-DECK-15-NAME",
       "observed_value": "Tour Eiffel",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -166,7 +1071,7 @@
       "entity_id": "msc-meraviglia:deck:16",
       "question_id": "Q-DECK-16-NAME",
       "observed_value": "Iguazu",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -178,7 +1083,7 @@
       "entity_id": "msc-meraviglia:deck:18",
       "question_id": "Q-DECK-18-NAME",
       "observed_value": "Pyramids",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -190,7 +1095,7 @@
       "entity_id": "msc-meraviglia:deck:19",
       "question_id": "Q-DECK-19-NAME",
       "observed_value": "Babylon",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -202,7 +1107,7 @@
       "entity_id": "msc-meraviglia",
       "question_id": "Q-SHIP-CABIN-COUNT",
       "observed_value": 2214,
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -214,7 +1119,31 @@
       "entity_id": "msc-meraviglia",
       "question_id": "Q-SHIP-PAX-MAX",
       "observed_value": 5714,
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
+      "observed_on": "2026-08-19",
+      "supersedes": null,
+      "notes": ""
+    },
+    {
+      "event_id": "EVT-MER-TOTAL-DECKS",
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "locator": "page:5",
+      "entity_id": "msc-meraviglia",
+      "question_id": "Q-SHIP-TOTAL-DECKS",
+      "observed_value": 18,
+      "observed_by": "deckplan_extraction_pipeline",
+      "observed_on": "2026-08-19",
+      "supersedes": null,
+      "notes": ""
+    },
+    {
+      "event_id": "EVT-MER-PAX-DECKS",
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "locator": "page:5",
+      "entity_id": "msc-meraviglia",
+      "question_id": "Q-SHIP-PAX-DECKS",
+      "observed_value": 15,
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -226,7 +1155,7 @@
       "entity_id": "msc-meraviglia:cabin_category:YC3",
       "question_id": "Q-CABIN-CAT-YC3",
       "observed_value": "MSC Yacht Club Royal Suite",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -238,7 +1167,7 @@
       "entity_id": "msc-meraviglia:cabin_category:YJD",
       "question_id": "Q-CABIN-CAT-YJD",
       "observed_value": "MSC Yacht Club Duplex Suite",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -250,7 +1179,7 @@
       "entity_id": "msc-meraviglia:cabin_category:SXJ",
       "question_id": "Q-CABIN-CAT-SXJ",
       "observed_value": "Grand Suite Aurea",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -262,7 +1191,7 @@
       "entity_id": "msc-meraviglia:cabin_category:SLJ",
       "question_id": "Q-CABIN-CAT-SLJ",
       "observed_value": "Premium Suite Aurea",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -274,7 +1203,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BA",
       "question_id": "Q-CABIN-CAT-BA",
       "observed_value": "Balkonkabine Aurea",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -285,8 +1214,8 @@
       "locator": "page:2",
       "entity_id": "msc-meraviglia:cabin_category:BL3",
       "question_id": "Q-CABIN-CAT-BL3",
-      "observed_value": "Balkonkabine Premium Deck 11-14",
-      "observed_by": "human_curator",
+      "observed_value": "Balkonkabine Premium Deck 13-14",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -297,8 +1226,8 @@
       "locator": "page:2",
       "entity_id": "msc-meraviglia:cabin_category:BL2",
       "question_id": "Q-CABIN-CAT-BL2",
-      "observed_value": "Balkonkabine Premium Deck 9-10",
-      "observed_by": "human_curator",
+      "observed_value": "Balkonkabine Premium Deck 11-12",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -309,8 +1238,8 @@
       "locator": "page:2",
       "entity_id": "msc-meraviglia:cabin_category:BL1",
       "question_id": "Q-CABIN-CAT-BL1",
-      "observed_value": "Balkonkabine Premium Deck 8",
-      "observed_by": "human_curator",
+      "observed_value": "Balkonkabine Premium Deck 10",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -322,7 +1251,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BR3",
       "question_id": "Q-CABIN-CAT-BR3",
       "observed_value": "Balkonkabine Deluxe Deck 13-14",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -334,7 +1263,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BR2",
       "question_id": "Q-CABIN-CAT-BR2",
       "observed_value": "Balkonkabine Deluxe Deck 11-12",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -346,7 +1275,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BR1",
       "question_id": "Q-CABIN-CAT-BR1",
       "observed_value": "Balkonkabine Deluxe Deck 8-10",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -358,7 +1287,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BP",
       "question_id": "Q-CABIN-CAT-BP",
       "observed_value": "Balkonkabine teilweise Sichteinschränkung",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -370,7 +1299,7 @@
       "entity_id": "msc-meraviglia:cabin_category:BS",
       "question_id": "Q-CABIN-CAT-BS",
       "observed_value": "Balkonkabine Studio",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -382,7 +1311,7 @@
       "entity_id": "msc-meraviglia:cabin_category:OL2",
       "question_id": "Q-CABIN-CAT-OL2",
       "observed_value": "Meerblick Premium",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -394,7 +1323,7 @@
       "entity_id": "msc-meraviglia:cabin_category:OR1",
       "question_id": "Q-CABIN-CAT-OR1",
       "observed_value": "Meerblick Deluxe",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -406,7 +1335,7 @@
       "entity_id": "msc-meraviglia:cabin_category:OM2",
       "question_id": "Q-CABIN-CAT-OM2",
       "observed_value": "Meerblick Junior",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -418,7 +1347,7 @@
       "entity_id": "msc-meraviglia:cabin_category:OO",
       "question_id": "Q-CABIN-CAT-OO",
       "observed_value": "Meerblick teilweise Sichteinschränkung",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -430,7 +1359,7 @@
       "entity_id": "msc-meraviglia:cabin_category:IR2",
       "question_id": "Q-CABIN-CAT-IR2",
       "observed_value": "Innenkabine Deluxe Deck 11-14",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -442,7 +1371,7 @@
       "entity_id": "msc-meraviglia:cabin_category:IR1",
       "question_id": "Q-CABIN-CAT-IR1",
       "observed_value": "Innenkabine Deluxe Deck 5-10",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -454,7 +1383,7 @@
       "entity_id": "msc-meraviglia:cabin_category:IS",
       "question_id": "Q-CABIN-CAT-IS",
       "observed_value": "Innenkabine Studio",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -466,7 +1395,7 @@
       "entity_id": "msc-meraviglia:venue:REST-WAVES",
       "question_id": "Q-VENUE-REST-WAVES",
       "observed_value": "Waves Restaurant",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -478,7 +1407,7 @@
       "entity_id": "msc-meraviglia:venue:REST-PANORAMA",
       "question_id": "Q-VENUE-REST-PANORAMA",
       "observed_value": "Panorama Restaurant",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -490,7 +1419,7 @@
       "entity_id": "msc-meraviglia:venue:REST-LOLIVO",
       "question_id": "Q-VENUE-REST-LOLIVO",
       "observed_value": "L'Olivo d'Oro",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -502,7 +1431,7 @@
       "entity_id": "msc-meraviglia:venue:REST-LE-CERISIER",
       "question_id": "Q-VENUE-REST-LE-CERISIER",
       "observed_value": "L'Olive Doree",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -514,7 +1443,7 @@
       "entity_id": "msc-meraviglia:venue:REST-HOLA-TACOS",
       "question_id": "Q-VENUE-REST-HOLA-TACOS",
       "observed_value": "Hola! Tacos & Cantina",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -526,7 +1455,7 @@
       "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
       "question_id": "Q-VENUE-REST-OCEAN-CAY",
       "observed_value": "Ocean Cay Restaurant",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -538,7 +1467,7 @@
       "entity_id": "msc-meraviglia:venue:REST-BUTCHERS-CUT",
       "question_id": "Q-VENUE-REST-BUTCHERS-CUT",
       "observed_value": "Butcher's Cut",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -550,7 +1479,7 @@
       "entity_id": "msc-meraviglia:venue:REST-KAITO-TEPPANYAKI",
       "question_id": "Q-VENUE-REST-KAITO-TEPPANYAKI",
       "observed_value": "Kaito Teppanyaki",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -562,7 +1491,7 @@
       "entity_id": "msc-meraviglia:venue:REST-KAITO-SUSHI",
       "question_id": "Q-VENUE-REST-KAITO-SUSHI",
       "observed_value": "Kaito Sushi Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -574,7 +1503,7 @@
       "entity_id": "msc-meraviglia:venue:REST-MARKETPLACE",
       "question_id": "Q-VENUE-REST-MARKETPLACE",
       "observed_value": "Marketplace Buffet",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -586,7 +1515,7 @@
       "entity_id": "msc-meraviglia:venue:REST-YC-RESTAURANT",
       "question_id": "Q-VENUE-REST-YC-RESTAURANT",
       "observed_value": "MSC Yacht Club Restaurant",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -598,7 +1527,7 @@
       "entity_id": "msc-meraviglia:venue:REST-YC-GRILL",
       "question_id": "Q-VENUE-REST-YC-GRILL",
       "observed_value": "MSC Yacht Club Grill",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -610,7 +1539,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-EDGE",
       "question_id": "Q-VENUE-BAR-EDGE",
       "observed_value": "Edge Cocktail Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -622,7 +1551,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-JEAN-PHILIPPE-CHOCO",
       "question_id": "Q-VENUE-BAR-JEAN-PHILIPPE-CHOCO",
       "observed_value": "Jean-Philippe Chocolat & Café",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -634,7 +1563,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-JEAN-PHILIPPE-CREPES",
       "question_id": "Q-VENUE-BAR-JEAN-PHILIPPE-CREPES",
       "observed_value": "Jean-Philippe Crêpes & Gelato",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -646,7 +1575,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-MERAVIGLIA-BAR",
       "question_id": "Q-VENUE-BAR-MERAVIGLIA-BAR",
       "observed_value": "Meraviglia Bar & Lounge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -658,7 +1587,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-BRASS-ANCHOR",
       "question_id": "Q-VENUE-BAR-BRASS-ANCHOR",
       "observed_value": "Brass Anchor Pub",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -670,7 +1599,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-CHAMPAGNE",
       "question_id": "Q-VENUE-BAR-CHAMPAGNE",
       "observed_value": "Champagne Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -682,7 +1611,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-CASINO",
       "question_id": "Q-VENUE-BAR-CASINO",
       "observed_value": "Casino Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -694,7 +1623,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-TV-STUDIO",
       "question_id": "Q-VENUE-BAR-TV-STUDIO",
       "observed_value": "TV Studio & Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -706,7 +1635,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-CAROUSEL",
       "question_id": "Q-VENUE-BAR-CAROUSEL",
       "observed_value": "Carousel Lounge Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -718,7 +1647,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-BAMBOO",
       "question_id": "Q-VENUE-BAR-BAMBOO",
       "observed_value": "Bamboo Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -730,7 +1659,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-ATMOSPHERE-NORTH",
       "question_id": "Q-VENUE-BAR-ATMOSPHERE-NORTH",
       "observed_value": "Atmosphere Bar North",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -742,7 +1671,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-ATMOSPHERE-SOUTH",
       "question_id": "Q-VENUE-BAR-ATMOSPHERE-SOUTH",
       "observed_value": "Atmosphere Bar South",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -754,7 +1683,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-ICE-CREAM",
       "question_id": "Q-VENUE-BAR-ICE-CREAM",
       "observed_value": "Atmosphere Ice Cream Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -766,7 +1695,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-SPORTS",
       "question_id": "Q-VENUE-BAR-SPORTS",
       "observed_value": "Sports Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -778,7 +1707,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-HORIZON",
       "question_id": "Q-VENUE-BAR-HORIZON",
       "observed_value": "Horizon Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -790,7 +1719,7 @@
       "entity_id": "msc-meraviglia:venue:BAR-POLAR",
       "question_id": "Q-VENUE-BAR-POLAR",
       "observed_value": "Polar Bar",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -802,7 +1731,7 @@
       "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
       "question_id": "Q-VENUE-LOUNGE-TOP-SAIL",
       "observed_value": "Top Sail Lounge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -814,7 +1743,7 @@
       "entity_id": "msc-meraviglia:venue:LOUNGE-SKY",
       "question_id": "Q-VENUE-LOUNGE-SKY",
       "observed_value": "Sky Lounge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -826,7 +1755,7 @@
       "entity_id": "msc-meraviglia:venue:LOUNGE-CAROUSEL",
       "question_id": "Q-VENUE-LOUNGE-CAROUSEL",
       "observed_value": "Carousel Lounge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -838,7 +1767,7 @@
       "entity_id": "msc-meraviglia:venue:LOUNGE-ATTIC",
       "question_id": "Q-VENUE-LOUNGE-ATTIC",
       "observed_value": "Attic Club",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -850,7 +1779,7 @@
       "entity_id": "msc-meraviglia:venue:POOL-ATMOSPHERE",
       "question_id": "Q-VENUE-POOL-ATMOSPHERE",
       "observed_value": "Atmosphere Pool",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -862,7 +1791,7 @@
       "entity_id": "msc-meraviglia:venue:POOL-BAMBOO",
       "question_id": "Q-VENUE-POOL-BAMBOO",
       "observed_value": "Bamboo Pool",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -874,7 +1803,7 @@
       "entity_id": "msc-meraviglia:venue:POOL-HORIZON",
       "question_id": "Q-VENUE-POOL-HORIZON",
       "observed_value": "Horizon Pool",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -886,7 +1815,7 @@
       "entity_id": "msc-meraviglia:venue:POOL-AQUAPARK",
       "question_id": "Q-VENUE-POOL-AQUAPARK",
       "observed_value": "Polar Aquapark",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -898,7 +1827,7 @@
       "entity_id": "msc-meraviglia:venue:POOL-YC",
       "question_id": "Q-VENUE-POOL-YC",
       "observed_value": "MSC Yacht Club Pool & Whirlpool",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -910,7 +1839,7 @@
       "entity_id": "msc-meraviglia:venue:SPA-AUREA-COMPLEX",
       "question_id": "Q-VENUE-SPA-AUREA",
       "observed_value": "MSC Aurea Spa",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -922,7 +1851,7 @@
       "entity_id": "msc-meraviglia:venue:SPORT-SPORTPLEX",
       "question_id": "Q-VENUE-SPORT-SPORTPLEX",
       "observed_value": "Sportplex Arena",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -934,7 +1863,7 @@
       "entity_id": "msc-meraviglia:venue:SPORT-GYM",
       "question_id": "Q-VENUE-SPORT-GYM",
       "observed_value": "MSC Gym by Technogym",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -946,7 +1875,7 @@
       "entity_id": "msc-meraviglia:venue:SPORT-TRACK",
       "question_id": "Q-VENUE-SPORT-TRACK",
       "observed_value": "Power Walking Track",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -958,7 +1887,7 @@
       "entity_id": "msc-meraviglia:venue:SPORT-BRIDGE",
       "question_id": "Q-VENUE-SPORT-BRIDGE",
       "observed_value": "Himalayan Bridge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -970,7 +1899,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-BROADWAY",
       "question_id": "Q-VENUE-ENT-BROADWAY",
       "observed_value": "Broadway Theatre",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -982,7 +1911,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-CAROUSEL",
       "question_id": "Q-VENUE-ENT-CAROUSEL",
       "observed_value": "Carousel Lounge",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -994,7 +1923,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-CASINO",
       "question_id": "Q-VENUE-ENT-CASINO",
       "observed_value": "Casino Imperiale",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1006,7 +1935,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-XD-CINEMA",
       "question_id": "Q-VENUE-ENT-XD-CINEMA",
       "observed_value": "Interactive XD Cinema",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1018,7 +1947,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-F1-RACER",
       "question_id": "Q-VENUE-ENT-F1-RACER",
       "observed_value": "MSC Formula Racer",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1030,7 +1959,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-BOWLING",
       "question_id": "Q-VENUE-ENT-BOWLING",
       "observed_value": "Full-Sized Bowling",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1042,7 +1971,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-TV-STUDIO",
       "question_id": "Q-VENUE-ENT-TV-STUDIO",
       "observed_value": "TV Studio & Games",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1054,7 +1983,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-DOREMI-LAB",
       "question_id": "Q-VENUE-ENT-DOREMI-LAB",
       "observed_value": "Doremi Lab",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1066,7 +1995,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-BABY-CLUB",
       "question_id": "Q-VENUE-ENT-BABY-CLUB",
       "observed_value": "Baby Club Chicco",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1078,7 +2007,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-MINI-CLUB",
       "question_id": "Q-VENUE-ENT-MINI-CLUB",
       "observed_value": "Mini Club Lego",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1090,7 +2019,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-JUNIOR-CLUB",
       "question_id": "Q-VENUE-ENT-JUNIOR-CLUB",
       "observed_value": "Junior Club Lego",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1102,7 +2031,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-YOUNG-CLUB",
       "question_id": "Q-VENUE-ENT-YOUNG-CLUB",
       "observed_value": "Young Club",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1114,7 +2043,7 @@
       "entity_id": "msc-meraviglia:venue:ENT-TEEN-CLUB",
       "question_id": "Q-VENUE-ENT-TEEN-CLUB",
       "observed_value": "Teen Club",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1126,7 +2055,7 @@
       "entity_id": "msc-meraviglia:venue:PUB-GALLERIA",
       "question_id": "Q-VENUE-PUB-GALLERIA",
       "observed_value": "Galleria Meraviglia",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1138,7 +2067,7 @@
       "entity_id": "msc-meraviglia:venue:PUB-INFINITY-ATRIUM",
       "question_id": "Q-VENUE-PUB-INFINITY-ATRIUM",
       "observed_value": "Infinity Atrium",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1150,7 +2079,7 @@
       "entity_id": "msc-meraviglia:venue:PUB-PLAZA",
       "question_id": "Q-VENUE-PUB-PLAZA",
       "observed_value": "Plaza Meraviglia",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1162,7 +2091,7 @@
       "entity_id": "msc-meraviglia:venue:PUB-TOP19-SOLARIUM",
       "question_id": "Q-VENUE-PUB-TOP19-SOLARIUM",
       "observed_value": "Top 19 Exclusive Solarium",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1174,7 +2103,7 @@
       "entity_id": "msc-meraviglia:venue:PUB-HORIZON-AMPHI",
       "question_id": "Q-VENUE-PUB-HORIZON-AMPHI",
       "observed_value": "Horizon Amphitheatre",
-      "observed_by": "human_curator",
+      "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
       "notes": ""
@@ -1192,8 +2121,8 @@
         "EVT-MER-DECK-4-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-5-NAME",
@@ -1206,8 +2135,8 @@
         "EVT-MER-DECK-5-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-6-NAME",
@@ -1220,8 +2149,8 @@
         "EVT-MER-DECK-6-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-7-NAME",
@@ -1234,8 +2163,8 @@
         "EVT-MER-DECK-7-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-8-NAME",
@@ -1248,8 +2177,8 @@
         "EVT-MER-DECK-8-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-9-NAME",
@@ -1262,8 +2191,8 @@
         "EVT-MER-DECK-9-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-10-NAME",
@@ -1276,8 +2205,8 @@
         "EVT-MER-DECK-10-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-11-NAME",
@@ -1290,8 +2219,8 @@
         "EVT-MER-DECK-11-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-12-NAME",
@@ -1304,8 +2233,8 @@
         "EVT-MER-DECK-12-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-13-NAME",
@@ -1318,8 +2247,8 @@
         "EVT-MER-DECK-13-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-14-NAME",
@@ -1332,8 +2261,8 @@
         "EVT-MER-DECK-14-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-15-NAME",
@@ -1346,8 +2275,8 @@
         "EVT-MER-DECK-15-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-16-NAME",
@@ -1360,8 +2289,8 @@
         "EVT-MER-DECK-16-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-18-NAME",
@@ -1374,8 +2303,8 @@
         "EVT-MER-DECK-18-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-DECK-19-NAME",
@@ -1388,8 +2317,8 @@
         "EVT-MER-DECK-19-NAME"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-TOTAL-CABINS",
@@ -1402,8 +2331,8 @@
         "EVT-MER-TOTAL-CABINS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-TOTAL-GUESTS",
@@ -1416,8 +2345,36 @@
         "EVT-MER-TOTAL-GUESTS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-TOTAL-DECKS",
+      "entity_id": "msc-meraviglia",
+      "question_id": "Q-SHIP-TOTAL-DECKS",
+      "value": 18,
+      "method": "DIRECT",
+      "derivation": "LOCAL",
+      "evidence_event_ids": [
+        "EVT-MER-TOTAL-DECKS"
+      ],
+      "evidence_condition": "SUPPORTED",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "statement_id": "STMT-EVT-MER-PAX-DECKS",
+      "entity_id": "msc-meraviglia",
+      "question_id": "Q-SHIP-PAX-DECKS",
+      "value": 15,
+      "method": "DIRECT",
+      "derivation": "LOCAL",
+      "evidence_event_ids": [
+        "EVT-MER-PAX-DECKS"
+      ],
+      "evidence_condition": "SUPPORTED",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-YC3",
@@ -1430,8 +2387,8 @@
         "EVT-MER-CABIN-CAT-YC3"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-YJD",
@@ -1444,8 +2401,8 @@
         "EVT-MER-CABIN-CAT-YJD"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-SXJ",
@@ -1458,8 +2415,8 @@
         "EVT-MER-CABIN-CAT-SXJ"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-SLJ",
@@ -1472,8 +2429,8 @@
         "EVT-MER-CABIN-CAT-SLJ"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BA",
@@ -1486,50 +2443,50 @@
         "EVT-MER-CABIN-CAT-BA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BL3",
       "entity_id": "msc-meraviglia:cabin_category:BL3",
       "question_id": "Q-CABIN-CAT-BL3",
-      "value": "Balkonkabine Premium Deck 11-14",
+      "value": "Balkonkabine Premium Deck 13-14",
       "method": "DIRECT",
       "derivation": "LOCAL",
       "evidence_event_ids": [
         "EVT-MER-CABIN-CAT-BL3"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BL2",
       "entity_id": "msc-meraviglia:cabin_category:BL2",
       "question_id": "Q-CABIN-CAT-BL2",
-      "value": "Balkonkabine Premium Deck 9-10",
+      "value": "Balkonkabine Premium Deck 11-12",
       "method": "DIRECT",
       "derivation": "LOCAL",
       "evidence_event_ids": [
         "EVT-MER-CABIN-CAT-BL2"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BL1",
       "entity_id": "msc-meraviglia:cabin_category:BL1",
       "question_id": "Q-CABIN-CAT-BL1",
-      "value": "Balkonkabine Premium Deck 8",
+      "value": "Balkonkabine Premium Deck 10",
       "method": "DIRECT",
       "derivation": "LOCAL",
       "evidence_event_ids": [
         "EVT-MER-CABIN-CAT-BL1"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BR3",
@@ -1542,8 +2499,8 @@
         "EVT-MER-CABIN-CAT-BR3"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BR2",
@@ -1556,8 +2513,8 @@
         "EVT-MER-CABIN-CAT-BR2"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BR1",
@@ -1570,8 +2527,8 @@
         "EVT-MER-CABIN-CAT-BR1"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BP",
@@ -1584,8 +2541,8 @@
         "EVT-MER-CABIN-CAT-BP"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-BS",
@@ -1598,8 +2555,8 @@
         "EVT-MER-CABIN-CAT-BS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-OL2",
@@ -1612,8 +2569,8 @@
         "EVT-MER-CABIN-CAT-OL2"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-OR1",
@@ -1626,8 +2583,8 @@
         "EVT-MER-CABIN-CAT-OR1"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-OM2",
@@ -1640,8 +2597,8 @@
         "EVT-MER-CABIN-CAT-OM2"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-OO",
@@ -1654,8 +2611,8 @@
         "EVT-MER-CABIN-CAT-OO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-IR2",
@@ -1668,8 +2625,8 @@
         "EVT-MER-CABIN-CAT-IR2"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-IR1",
@@ -1682,8 +2639,8 @@
         "EVT-MER-CABIN-CAT-IR1"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-CABIN-CAT-IS",
@@ -1696,8 +2653,8 @@
         "EVT-MER-CABIN-CAT-IS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-WAVES",
@@ -1710,8 +2667,8 @@
         "EVT-MER-REST-REST-WAVES"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-PANORAMA",
@@ -1724,8 +2681,8 @@
         "EVT-MER-REST-REST-PANORAMA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-LOLIVO",
@@ -1738,8 +2695,8 @@
         "EVT-MER-REST-REST-LOLIVO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-LE-CERISIER",
@@ -1752,8 +2709,8 @@
         "EVT-MER-REST-REST-LE-CERISIER"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-HOLA-TACOS",
@@ -1766,8 +2723,8 @@
         "EVT-MER-REST-REST-HOLA-TACOS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-OCEAN-CAY",
@@ -1780,8 +2737,8 @@
         "EVT-MER-REST-REST-OCEAN-CAY"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-BUTCHERS-CUT",
@@ -1794,8 +2751,8 @@
         "EVT-MER-REST-REST-BUTCHERS-CUT"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-KAITO-TEPPANYAKI",
@@ -1808,8 +2765,8 @@
         "EVT-MER-REST-REST-KAITO-TEPPANYAKI"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-KAITO-SUSHI",
@@ -1822,8 +2779,8 @@
         "EVT-MER-REST-REST-KAITO-SUSHI"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-MARKETPLACE",
@@ -1836,8 +2793,8 @@
         "EVT-MER-REST-REST-MARKETPLACE"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-YC-RESTAURANT",
@@ -1850,8 +2807,8 @@
         "EVT-MER-REST-REST-YC-RESTAURANT"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-REST-REST-YC-GRILL",
@@ -1864,8 +2821,8 @@
         "EVT-MER-REST-REST-YC-GRILL"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-EDGE",
@@ -1878,8 +2835,8 @@
         "EVT-MER-BAR-BAR-EDGE"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-JEAN-PHILIPPE-CHOCO",
@@ -1892,8 +2849,8 @@
         "EVT-MER-BAR-BAR-JEAN-PHILIPPE-CHOCO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-JEAN-PHILIPPE-CREPES",
@@ -1906,8 +2863,8 @@
         "EVT-MER-BAR-BAR-JEAN-PHILIPPE-CREPES"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-MERAVIGLIA-BAR",
@@ -1920,8 +2877,8 @@
         "EVT-MER-BAR-BAR-MERAVIGLIA-BAR"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-BRASS-ANCHOR",
@@ -1934,8 +2891,8 @@
         "EVT-MER-BAR-BAR-BRASS-ANCHOR"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-CHAMPAGNE",
@@ -1948,8 +2905,8 @@
         "EVT-MER-BAR-BAR-CHAMPAGNE"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-CASINO",
@@ -1962,8 +2919,8 @@
         "EVT-MER-BAR-BAR-CASINO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-TV-STUDIO",
@@ -1976,8 +2933,8 @@
         "EVT-MER-BAR-BAR-TV-STUDIO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-CAROUSEL",
@@ -1990,8 +2947,8 @@
         "EVT-MER-BAR-BAR-CAROUSEL"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-BAMBOO",
@@ -2004,8 +2961,8 @@
         "EVT-MER-BAR-BAR-BAMBOO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-ATMOSPHERE-NORTH",
@@ -2018,8 +2975,8 @@
         "EVT-MER-BAR-BAR-ATMOSPHERE-NORTH"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-ATMOSPHERE-SOUTH",
@@ -2032,8 +2989,8 @@
         "EVT-MER-BAR-BAR-ATMOSPHERE-SOUTH"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-ICE-CREAM",
@@ -2046,8 +3003,8 @@
         "EVT-MER-BAR-BAR-ICE-CREAM"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-SPORTS",
@@ -2060,8 +3017,8 @@
         "EVT-MER-BAR-BAR-SPORTS"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-HORIZON",
@@ -2074,8 +3031,8 @@
         "EVT-MER-BAR-BAR-HORIZON"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-BAR-BAR-POLAR",
@@ -2088,8 +3045,8 @@
         "EVT-MER-BAR-BAR-POLAR"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-TOP-SAIL",
@@ -2102,8 +3059,8 @@
         "EVT-MER-LOUNGE-LOUNGE-TOP-SAIL"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-SKY",
@@ -2116,8 +3073,8 @@
         "EVT-MER-LOUNGE-LOUNGE-SKY"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-CAROUSEL",
@@ -2130,8 +3087,8 @@
         "EVT-MER-LOUNGE-LOUNGE-CAROUSEL"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-LOUNGE-LOUNGE-ATTIC",
@@ -2144,8 +3101,8 @@
         "EVT-MER-LOUNGE-LOUNGE-ATTIC"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-POOL-POOL-ATMOSPHERE",
@@ -2158,8 +3115,8 @@
         "EVT-MER-POOL-POOL-ATMOSPHERE"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-POOL-POOL-BAMBOO",
@@ -2172,8 +3129,8 @@
         "EVT-MER-POOL-POOL-BAMBOO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-POOL-POOL-HORIZON",
@@ -2186,8 +3143,8 @@
         "EVT-MER-POOL-POOL-HORIZON"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-POOL-POOL-AQUAPARK",
@@ -2200,8 +3157,8 @@
         "EVT-MER-POOL-POOL-AQUAPARK"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-POOL-POOL-YC",
@@ -2214,8 +3171,8 @@
         "EVT-MER-POOL-POOL-YC"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-SPA-AUREA",
@@ -2228,8 +3185,8 @@
         "EVT-MER-SPA-AUREA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-SPORT-SPORT-SPORTPLEX",
@@ -2242,8 +3199,8 @@
         "EVT-MER-SPORT-SPORT-SPORTPLEX"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-SPORT-SPORT-GYM",
@@ -2256,8 +3213,8 @@
         "EVT-MER-SPORT-SPORT-GYM"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-SPORT-SPORT-TRACK",
@@ -2270,8 +3227,8 @@
         "EVT-MER-SPORT-SPORT-TRACK"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-SPORT-SPORT-BRIDGE",
@@ -2284,8 +3241,8 @@
         "EVT-MER-SPORT-SPORT-BRIDGE"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-BROADWAY",
@@ -2298,8 +3255,8 @@
         "EVT-MER-ENT-ENT-BROADWAY"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-CAROUSEL",
@@ -2312,8 +3269,8 @@
         "EVT-MER-ENT-ENT-CAROUSEL"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-CASINO",
@@ -2326,8 +3283,8 @@
         "EVT-MER-ENT-ENT-CASINO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-XD-CINEMA",
@@ -2340,8 +3297,8 @@
         "EVT-MER-ENT-ENT-XD-CINEMA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-F1-RACER",
@@ -2354,8 +3311,8 @@
         "EVT-MER-ENT-ENT-F1-RACER"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-BOWLING",
@@ -2368,8 +3325,8 @@
         "EVT-MER-ENT-ENT-BOWLING"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-TV-STUDIO",
@@ -2382,8 +3339,8 @@
         "EVT-MER-ENT-ENT-TV-STUDIO"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-DOREMI-LAB",
@@ -2396,8 +3353,8 @@
         "EVT-MER-ENT-ENT-DOREMI-LAB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-BABY-CLUB",
@@ -2410,8 +3367,8 @@
         "EVT-MER-ENT-ENT-BABY-CLUB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-MINI-CLUB",
@@ -2424,8 +3381,8 @@
         "EVT-MER-ENT-ENT-MINI-CLUB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-JUNIOR-CLUB",
@@ -2438,8 +3395,8 @@
         "EVT-MER-ENT-ENT-JUNIOR-CLUB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-YOUNG-CLUB",
@@ -2452,8 +3409,8 @@
         "EVT-MER-ENT-ENT-YOUNG-CLUB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-ENT-ENT-TEEN-CLUB",
@@ -2466,8 +3423,8 @@
         "EVT-MER-ENT-ENT-TEEN-CLUB"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-PUB-PUB-GALLERIA",
@@ -2480,8 +3437,8 @@
         "EVT-MER-PUB-PUB-GALLERIA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-PUB-PUB-INFINITY-ATRIUM",
@@ -2494,8 +3451,8 @@
         "EVT-MER-PUB-PUB-INFINITY-ATRIUM"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-PUB-PUB-PLAZA",
@@ -2508,8 +3465,8 @@
         "EVT-MER-PUB-PUB-PLAZA"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-PUB-PUB-TOP19-SOLARIUM",
@@ -2522,8 +3479,8 @@
         "EVT-MER-PUB-PUB-TOP19-SOLARIUM"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED"
     },
     {
       "statement_id": "STMT-EVT-MER-PUB-PUB-HORIZON-AMPHI",
@@ -2536,54 +3493,6 @@
         "EVT-MER-PUB-PUB-HORIZON-AMPHI"
       ],
       "evidence_condition": "SUPPORTED",
-      "human_review_state": "APPROVED",
-      "publish_status": "PUBLISH_ALLOWED"
-    },
-    {
-      "statement_id": "STMT-UNSOURCED-ship.imo",
-      "entity_id": "msc-meraviglia",
-      "question_id": "ship.imo",
-      "value": 9760512,
-      "method": "INFERRED",
-      "derivation": "REFERENCE_MODEL",
-      "evidence_event_ids": [],
-      "evidence_condition": "UNKNOWN",
-      "human_review_state": "DRAFT",
-      "publish_status": "PUBLISH_BLOCKED"
-    },
-    {
-      "statement_id": "STMT-UNSOURCED-ship.gross_tonnage",
-      "entity_id": "msc-meraviglia",
-      "question_id": "ship.gross_tonnage",
-      "value": 171598,
-      "method": "INFERRED",
-      "derivation": "REFERENCE_MODEL",
-      "evidence_event_ids": [],
-      "evidence_condition": "UNKNOWN",
-      "human_review_state": "DRAFT",
-      "publish_status": "PUBLISH_BLOCKED"
-    },
-    {
-      "statement_id": "STMT-UNSOURCED-ship.length_overall_meters",
-      "entity_id": "msc-meraviglia",
-      "question_id": "ship.length_overall_meters",
-      "value": 315.83,
-      "method": "INFERRED",
-      "derivation": "REFERENCE_MODEL",
-      "evidence_event_ids": [],
-      "evidence_condition": "UNKNOWN",
-      "human_review_state": "DRAFT",
-      "publish_status": "PUBLISH_BLOCKED"
-    },
-    {
-      "statement_id": "STMT-UNSOURCED-ship.beam_meters",
-      "entity_id": "msc-meraviglia",
-      "question_id": "ship.beam_meters",
-      "value": 43.0,
-      "method": "INFERRED",
-      "derivation": "REFERENCE_MODEL",
-      "evidence_event_ids": [],
-      "evidence_condition": "UNKNOWN",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED"
     }

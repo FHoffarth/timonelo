@@ -2,7 +2,9 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "pools_and_water_areas": [
     {
@@ -10,13 +12,12 @@
       "name": "Atmosphere Pool",
       "deck": 15,
       "category": "MAIN_OUTDOOR_POOL",
-      "description": "Central open-air resort pool surrounded by sun loungers and giant LED screen.",
+      "description": "Central outdoor resort pool on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "outdoor-pool",
-        "main-pool",
-        "lido"
+        "pool"
       ]
     },
     {
@@ -24,13 +25,12 @@
       "name": "Bamboo Pool",
       "deck": 15,
       "category": "SOLARIUM_POOL",
-      "description": "All-weather pool with retractable sliding glass magrodome roof.",
+      "description": "Pool with retractable glass roof located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "indoor-pool",
-        "retractable-roof",
-        "solarium"
+        "pool"
       ]
     },
     {
@@ -38,13 +38,12 @@
       "name": "Horizon Pool",
       "deck": 16,
       "category": "AFT_PANORAMIC_POOL",
-      "description": "Aft amphitheatre pool with open sun decks and ocean wake vistas.",
+      "description": "Aft amphitheatre pool located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "aft-pool",
-        "wake-views",
-        "sun-deck"
+        "pool"
       ]
     },
     {
@@ -52,14 +51,12 @@
       "name": "Polar Aquapark",
       "deck": 19,
       "category": "WATERPARK",
-      "description": "Multi-slide water park with twisting flumes and splash zones.",
+      "description": "Water park with slides located on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "aquapark",
-        "slides",
-        "splash-zone",
-        "family"
+        "pool"
       ]
     },
     {
@@ -67,13 +64,12 @@
       "name": "MSC Yacht Club Pool & Whirlpool",
       "deck": 19,
       "category": "EXCLUSIVE_POOL",
-      "description": "Private freshwater pool and whirlpool on the Yacht Club top sundeck.",
+      "description": "Private pool and whirlpool on the MSC Yacht Club sundeck on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "yacht-club",
-        "private-pool",
-        "exclusive"
+        "pool"
       ]
     }
   ]

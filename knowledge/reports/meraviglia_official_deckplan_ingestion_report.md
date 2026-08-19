@@ -29,9 +29,9 @@
    - Deck 18: **Pyramids** (Page 5)
    - Deck 19: **Babylon** (Page 5)
 3. **Deck 17 Structure**: Verified absent from passenger deck plan (Page 5).
-4. **22 Cabin Booking Categories**: Completely cataloged with deck ranges from Page 2.
+4. **20 Cabin Booking Categories**: Completely cataloged with deck ranges from Page 2.
 5. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
-6. **Technical Specs Separation**: IMO, GT, propulsion, dimensions isolated as `UNKNOWN` / `PUBLISH_BLOCKED` (not sourced from deck plans).
+6. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
 
 ---
 

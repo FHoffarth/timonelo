@@ -2,7 +2,9 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "restaurants": [
     {
@@ -10,14 +12,13 @@
       "name": "Waves Restaurant",
       "deck": 5,
       "category": "MAIN_DINING_ROOM",
-      "description": "Main restaurant serving classic Mediterranean cuisine.",
+      "description": "Main restaurant located on Deck 5.",
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "main-dining",
-        "mediterranean",
-        "included"
+        "restaurant"
       ]
     },
     {
@@ -25,14 +26,13 @@
       "name": "Panorama Restaurant",
       "deck": 6,
       "category": "MAIN_DINING_ROOM",
-      "description": "Aft main restaurant with floor-to-ceiling wake views.",
+      "description": "Main restaurant located aft on Deck 6.",
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "main-dining",
-        "wake-views",
-        "included"
+        "restaurant"
       ]
     },
     {
@@ -40,14 +40,13 @@
       "name": "L'Olivo d'Oro",
       "deck": 6,
       "category": "MAIN_DINING_ROOM",
-      "description": "Main dining room featuring regional Italian specialties.",
+      "description": "Main dining room located on Deck 6.",
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "main-dining",
-        "italian",
-        "included"
+        "restaurant"
       ]
     },
     {
@@ -55,13 +54,13 @@
       "name": "L'Olive Doree",
       "deck": 6,
       "category": "MAIN_DINING_ROOM",
-      "description": "Elegant main dining venue.",
+      "description": "Main dining venue located on Deck 6.",
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "main-dining",
-        "included"
+        "restaurant"
       ]
     },
     {
@@ -69,15 +68,13 @@
       "name": "Hola! Tacos & Cantina",
       "deck": 6,
       "category": "SPECIALTY_LATIN",
-      "description": "Latin American & Mexican street food concept.",
+      "description": "Latin dining concept located on Deck 6.",
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "specialty",
-        "mexican",
-        "tacos",
-        "cantina"
+        "restaurant"
       ]
     },
     {
@@ -85,14 +82,13 @@
       "name": "Ocean Cay Restaurant",
       "deck": 6,
       "category": "EXCLUSIVE_GOURMET",
-      "description": "Fine seafood dining venue.",
+      "description": "Seafood restaurant located on Deck 6.",
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "specialty",
-        "seafood",
-        "fine-dining"
+        "restaurant"
       ]
     },
     {
@@ -100,15 +96,14 @@
       "name": "Butcher's Cut",
       "deck": 7,
       "category": "SPECIALTY_STEAKHOUSE",
-      "description": "American-style steakhouse with open kitchen.",
+      "description": "Steakhouse restaurant located on Deck 7.",
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "specialty",
         "steakhouse",
-        "beef",
-        "wine"
+        "restaurant"
       ]
     },
     {
@@ -116,15 +111,14 @@
       "name": "Kaito Teppanyaki",
       "deck": 7,
       "category": "SPECIALTY_ASIAN",
-      "description": "Interactive Japanese teppanyaki cooking stations.",
+      "description": "Teppanyaki restaurant located on Deck 7.",
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "specialty",
-        "teppanyaki",
-        "japanese",
-        "show-cooking"
+        "asian",
+        "restaurant"
       ]
     },
     {
@@ -132,14 +126,14 @@
       "name": "Kaito Sushi Bar",
       "deck": 7,
       "category": "SPECIALTY_SUSHI",
-      "description": "Freshly prepared sushi and sashimi bar.",
+      "description": "Sushi bar located on Deck 7.",
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "specialty",
         "sushi",
-        "japanese"
+        "restaurant"
       ]
     },
     {
@@ -147,15 +141,14 @@
       "name": "Marketplace Buffet",
       "deck": 15,
       "category": "CASUAL_BUFFET",
-      "description": "Extensive 20-hour buffet with live preparation counters.",
+      "description": "Buffet restaurant located on Deck 15.",
       "dining_model": "INCLUDED_BUFFET",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "buffet",
         "casual",
-        "pizza",
-        "included"
+        "restaurant"
       ]
     },
     {
@@ -163,15 +156,13 @@
       "name": "MSC Yacht Club Restaurant",
       "deck": 18,
       "category": "EXCLUSIVE_GOURMET",
-      "description": "Dedicated private fine dining for MSC Yacht Club guests.",
+      "description": "Dedicated restaurant for MSC Yacht Club guests on Deck 18.",
       "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "yacht-club",
-        "private",
-        "fine-dining",
-        "exclusive"
+        "restaurant"
       ]
     },
     {
@@ -179,15 +170,14 @@
       "name": "MSC Yacht Club Grill",
       "deck": 19,
       "category": "EXCLUSIVE_OUTDOOR_GRILL",
-      "description": "Open-air grill and bar on the private Yacht Club sundeck.",
+      "description": "Outdoor grill and bar on MSC Yacht Club sundeck on Deck 19.",
       "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "yacht-club",
         "grill",
-        "outdoor",
-        "sundeck"
+        "restaurant"
       ]
     }
   ]

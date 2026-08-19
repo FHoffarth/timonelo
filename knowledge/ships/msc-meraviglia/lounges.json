@@ -2,7 +2,9 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "lounges": [
     {
@@ -10,13 +12,12 @@
       "name": "Top Sail Lounge",
       "deck": 16,
       "category": "YACHT_CLUB_LOUNGE",
-      "description": "Exclusive forward panoramic lounge for MSC Yacht Club guests.",
+      "description": "Forward lounge for MSC Yacht Club guests on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "yacht-club",
-        "panoramic",
-        "exclusive"
+        "lounge"
       ]
     },
     {
@@ -24,14 +25,12 @@
       "name": "Sky Lounge",
       "deck": 18,
       "category": "PANORAMIC_LOUNGE",
-      "description": "High-deck panoramic cocktail lounge with live piano and sea views.",
+      "description": "Panoramic lounge located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "panoramic",
-        "cocktails",
-        "live-music",
-        "high-deck"
+        "lounge"
       ]
     },
     {
@@ -39,13 +38,12 @@
       "name": "Carousel Lounge",
       "deck": 7,
       "category": "ENTERTAINMENT_LOUNGE",
-      "description": "Aft show lounge designed for immersive visual productions.",
+      "description": "Aft show lounge located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "tags": [
         "show",
-        "acrobatics",
-        "aft-lounge"
+        "lounge"
       ]
     },
     {
@@ -53,13 +51,12 @@
       "name": "Attic Club",
       "deck": 18,
       "category": "NIGHTCLUB",
-      "description": "Late-night dance club and DJ venue.",
+      "description": "Nightclub located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "tags": [
         "nightclub",
-        "dance",
-        "dj"
+        "lounge"
       ]
     }
   ]

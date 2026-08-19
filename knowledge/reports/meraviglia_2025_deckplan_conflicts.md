@@ -26,5 +26,5 @@
 
 - **Conflicts Resolved**: 6
 - **Unresolved Conflicts**: 0
-- **Directly Verified Facts**: 97
+- **Directly Verified Facts**: 99
 - **All facts directly cite source**: `MSC-MER-DECKPLAN-11-2025-DEU`
