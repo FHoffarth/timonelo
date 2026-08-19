@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "notes": "MSC Meraviglia features 18 physical decks (15 passenger-accessible), skipping deck 17. Verified from Official Deckplans Edition 11.2025 DEU.",
   "decks": [
@@ -16,7 +15,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "kos",
         "operational-and-medical"
@@ -31,7 +29,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "colosseo",
         "public-and-entertainment"
@@ -46,7 +43,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "petra",
         "promenade-and-dining"
@@ -61,7 +57,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "taj-mahal",
         "promenade-and-specialty"
@@ -76,7 +71,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "machu-picchu",
         "stateroom-deck"
@@ -91,7 +85,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
-      "confidence": 1.0,
       "tags": [
         "alhambra",
         "stateroom-deck"
@@ -106,7 +99,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
-      "confidence": 1.0,
       "tags": [
         "hagia-sophia",
         "stateroom-deck"
@@ -121,7 +113,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
-      "confidence": 1.0,
       "tags": [
         "acropolis",
         "stateroom-deck"
@@ -136,7 +127,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
-      "confidence": 1.0,
       "tags": [
         "grand-canyon",
         "stateroom-deck"
@@ -151,7 +141,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
-      "confidence": 1.0,
       "tags": [
         "kilimangiaro",
         "stateroom-deck"
@@ -166,7 +155,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "angkor-wat",
         "stateroom-deck"
@@ -181,7 +169,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "tour-eiffel",
         "lido-and-buffet"
@@ -196,7 +183,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "iguazu",
         "fitness-and-recreation"
@@ -211,7 +197,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "pyramids",
         "youth-and-entertainment"
@@ -226,7 +211,6 @@
       "passenger_accessible": true,
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "babylon",
         "aquapark-and-solarium"

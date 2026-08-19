@@ -1,8 +1,7 @@
 {
   "port_id": "valletta",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "emergency_numbers": [
     {
@@ -12,8 +11,11 @@
       "description": "General emergency dispatch in English, Maltese, and major European languages.",
       "source": "Emergency Services Malta",
       "provenance": "MT-EMERG-112",
-      "confidence": 1.0,
-      "tags": ["emergency", "universal", "112"]
+      "tags": [
+        "emergency",
+        "universal",
+        "112"
+      ]
     },
     {
       "id": "EMERG-MLA-TOURIST-POLICE",
@@ -23,8 +25,11 @@
       "description": "Specialized police unit handling tourist assistance, loss of belongings, and visitor safety.",
       "source": "Malta Police Force",
       "provenance": "MT-POL-TOURIST",
-      "confidence": 1.0,
-      "tags": ["police", "tourist-police", "valletta"]
+      "tags": [
+        "police",
+        "tourist-police",
+        "valletta"
+      ]
     }
   ]
 }

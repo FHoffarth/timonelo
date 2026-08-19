@@ -19,8 +19,11 @@
       "status": "Operational",
       "source": "Port Authority of the Strait of Messina (adspstretto.it)",
       "provenance": "MSN-PA-TERM-COLAPESCE",
-      "confidence": 1.0,
-      "tags": ["terminal-crociere", "banchina-colapesce", "strait-of-messina"]
+      "tags": [
+        "terminal-crociere",
+        "banchina-colapesce",
+        "strait-of-messina"
+      ]
     }
   ],
   "berths": [
@@ -34,8 +37,11 @@
       "notes": "350-meter-long continuous concrete quay with deep 10-12 meter drafts accommodating the largest cruise ships alongside.",
       "source": "Port Authority of the Strait of Messina Berth Specification",
       "provenance": "MSN-PA-BERTH-COLAPESCE",
-      "confidence": 1.0,
-      "tags": ["deep-water", "mega-ships", "banchina-colapesce"]
+      "tags": [
+        "deep-water",
+        "mega-ships",
+        "banchina-colapesce"
+      ]
     }
   ],
   "arrival_procedures": "Direct alongside docking. Passengers exit the gangway straight into the terminal building for a brief security/customs scan, and exit immediately onto the waterfront road (Via Vittorio Emanuele II).",
@@ -47,8 +53,13 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Port Authority of the Strait of Messina & Comune di Messina 2026",
-    "confidence": 1.0
+    "verification_authority": "Port Authority of the Strait of Messina & Comune di Messina 2026"
   },
-  "tags": ["messina", "sicily", "italy", "strait-of-messina", "taormina-gateway"]
+  "tags": [
+    "messina",
+    "sicily",
+    "italy",
+    "strait-of-messina",
+    "taormina-gateway"
+  ]
 }

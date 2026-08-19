@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "spa_and_wellness": {
     "id": "SPA-AUREA-COMPLEX",
@@ -17,8 +16,13 @@
     },
     "source": "MSC Aurea Spa Service Catalog",
     "provenance": "MSC-BEL-SPA-AUREA",
-    "confidence": 1.0,
-    "tags": ["spa", "wellness", "balinese", "massage", "thermal-suite"],
+    "tags": [
+      "spa",
+      "wellness",
+      "balinese",
+      "massage",
+      "thermal-suite"
+    ],
     "sub_venues": [
       {
         "id": "SPA-THERMAL-SUITE",
@@ -38,8 +42,14 @@
         ],
         "source": "MSC Aurea Spa Technical Blueprint",
         "provenance": "MSC-BEL-SPA-THERMAL",
-        "confidence": 1.0,
-        "tags": ["thermal-suite", "sauna", "steam-room", "snow-room", "salt-room", "thalassotherapy"]
+        "tags": [
+          "thermal-suite",
+          "sauna",
+          "steam-room",
+          "snow-room",
+          "salt-room",
+          "thalassotherapy"
+        ]
       },
       {
         "id": "SPA-TREATMENT-ROOMS",
@@ -57,8 +67,12 @@
         ],
         "source": "MSC Aurea Treatment Menu",
         "provenance": "MSC-BEL-SPA-THERAPIES",
-        "confidence": 1.0,
-        "tags": ["balinese-massage", "thai-massage", "facials", "body-treatments"]
+        "tags": [
+          "balinese-massage",
+          "thai-massage",
+          "facials",
+          "body-treatments"
+        ]
       },
       {
         "id": "SPA-SALON-JLD",
@@ -69,8 +83,14 @@
         "brand_partner": "Jean Louis David",
         "source": "MSC Aurea Salon Menu",
         "provenance": "MSC-BEL-SPA-JLD",
-        "confidence": 1.0,
-        "tags": ["salon", "hairdresser", "barber", "nails", "manicure", "pedicure"]
+        "tags": [
+          "salon",
+          "hairdresser",
+          "barber",
+          "nails",
+          "manicure",
+          "pedicure"
+        ]
       },
       {
         "id": "SPA-AUREA-BAR",
@@ -80,8 +100,13 @@
         "description": "A dedicated wellness juice and tea bar offering organic herbal teas, freshly squeezed fruit juices, and revitalizing health elixirs.",
         "source": "MSC Aurea Spa Menu",
         "provenance": "MSC-BEL-SPA-BAR",
-        "confidence": 1.0,
-        "tags": ["spa-bar", "herbal-tea", "smoothies", "fresh-juice", "wellness"]
+        "tags": [
+          "spa-bar",
+          "herbal-tea",
+          "smoothies",
+          "fresh-juice",
+          "wellness"
+        ]
       }
     ]
   }

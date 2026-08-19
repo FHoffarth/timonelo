@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SAFETY_AND_MUSTER_PLAN_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SAFETY_AND_MUSTER_PLAN_2026"
   },
   "emergency_and_muster_protocol": {
     "drill_type": "E-Muster Safety Protocol (Digital First)",
@@ -21,8 +20,13 @@
         "category": "PRIMARY_ASSEMBLY_STATION",
         "source": "MSC Bellissima Emergency Egress Plan",
         "provenance": "MSC-BEL-SAF-STATION-A",
-        "confidence": 1.0,
-        "tags": ["muster-station", "safety", "theatre", "evacuation", "deck-5"]
+        "tags": [
+          "muster-station",
+          "safety",
+          "theatre",
+          "evacuation",
+          "deck-5"
+        ]
       },
       {
         "id": "MUSTER-STATION-B",
@@ -32,8 +36,13 @@
         "category": "PRIMARY_ASSEMBLY_STATION",
         "source": "MSC Bellissima Emergency Egress Plan",
         "provenance": "MSC-BEL-SAF-STATION-B",
-        "confidence": 1.0,
-        "tags": ["muster-station", "safety", "theatre", "evacuation", "deck-6"]
+        "tags": [
+          "muster-station",
+          "safety",
+          "theatre",
+          "evacuation",
+          "deck-6"
+        ]
       },
       {
         "id": "MUSTER-STATION-C",
@@ -43,8 +52,13 @@
         "category": "PRIMARY_ASSEMBLY_STATION",
         "source": "MSC Bellissima Emergency Egress Plan",
         "provenance": "MSC-BEL-SAF-STATION-C",
-        "confidence": 1.0,
-        "tags": ["muster-station", "safety", "promenade", "evacuation", "deck-6"]
+        "tags": [
+          "muster-station",
+          "safety",
+          "promenade",
+          "evacuation",
+          "deck-6"
+        ]
       },
       {
         "id": "MUSTER-STATION-D",
@@ -54,8 +68,13 @@
         "category": "PRIMARY_ASSEMBLY_STATION",
         "source": "MSC Bellissima Emergency Egress Plan",
         "provenance": "MSC-BEL-SAF-STATION-D",
-        "confidence": 1.0,
-        "tags": ["muster-station", "safety", "casino", "evacuation", "deck-7"]
+        "tags": [
+          "muster-station",
+          "safety",
+          "casino",
+          "evacuation",
+          "deck-7"
+        ]
       },
       {
         "id": "MUSTER-STATION-E",
@@ -65,8 +84,13 @@
         "category": "PRIMARY_ASSEMBLY_STATION",
         "source": "MSC Bellissima Emergency Egress Plan",
         "provenance": "MSC-BEL-SAF-STATION-E",
-        "confidence": 1.0,
-        "tags": ["muster-station", "safety", "carousel-lounge", "evacuation", "deck-7-aft"]
+        "tags": [
+          "muster-station",
+          "safety",
+          "carousel-lounge",
+          "evacuation",
+          "deck-7-aft"
+        ]
       }
     ]
   }

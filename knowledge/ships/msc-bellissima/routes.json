@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_DEPLOYMENT_REGISTRY_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_DEPLOYMENT_REGISTRY_2026"
   },
   "deployed_route_ids": [
     "ROUTE_MSC_BELLISSIMA_WMED_7N"

@@ -1,8 +1,7 @@
 {
   "port_id": "valletta",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [
     {
@@ -15,8 +14,12 @@
       },
       "source": "Malta Public Transport Schedule",
       "provenance": "MLA-MPT-BUS-130",
-      "confidence": 1.0,
-      "tags": ["bus", "route-130", "waterfront", "city-gate"]
+      "tags": [
+        "bus",
+        "route-130",
+        "waterfront",
+        "city-gate"
+      ]
     }
   ],
   "public_transport": {
@@ -35,8 +38,12 @@
         "description": "High-speed outdoor panoramic elevator connecting the quayside directly to the heart of Valletta.",
         "source": "Transport Malta",
         "provenance": "MLA-TM-BARRAKKA-LIFT",
-        "confidence": 1.0,
-        "tags": ["elevator", "barrakka-lift", "panoramic", "upper-barrakka"]
+        "tags": [
+          "elevator",
+          "barrakka-lift",
+          "panoramic",
+          "upper-barrakka"
+        ]
       }
     ],
     "bus_terminus": {
@@ -44,13 +51,18 @@
       "popular_routes": [
         {
           "destination": "Mdina / Rabat (Silent City)",
-          "routes": ["Bus 51", "Bus 52"],
+          "routes": [
+            "Bus 51",
+            "Bus 52"
+          ],
           "duration_minutes": "30 - 40",
           "cost_eur": "2.00 - 2.50"
         },
         {
           "destination": "Marsaxlokk Fishing Village",
-          "routes": ["Bus 81"],
+          "routes": [
+            "Bus 81"
+          ],
           "duration_minutes": "35 - 45",
           "cost_eur": "2.00 - 2.50"
         }
@@ -59,7 +71,10 @@
     "ferries_and_water_taxis": [
       {
         "name": "Valletta Ferry Services",
-        "routes": ["Valletta to Sliema", "Valletta to The Three Cities (Birgu/Senglea/Cospicua)"]
+        "routes": [
+          "Valletta to Sliema",
+          "Valletta to The Three Cities (Birgu/Senglea/Cospicua)"
+        ]
       },
       {
         "name": "Traditional Maltese Dgħajsa Water Taxis",
@@ -75,7 +90,10 @@
       "airport_eur": 15.0
     },
     "rideshares": {
-      "available_apps": ["Bolt", "eCabs"],
+      "available_apps": [
+        "Bolt",
+        "eCabs"
+      ],
       "notes": "Highly active across Malta, easily booked via mobile app, and generally cost less than standard street taxis."
     }
   },

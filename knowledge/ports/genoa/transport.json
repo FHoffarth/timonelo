@@ -1,8 +1,7 @@
 {
   "port_id": "genoa",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [],
   "shuttle_notes": "No port shuttles are provided or necessary as the cruise terminal sits directly at the edge of the historic city center.",
@@ -15,8 +14,11 @@
         "description": "Short 6-minute walk from cruise terminal exit; connects to De Ferrari and Brignole.",
         "source": "AMT Genova",
         "provenance": "GOA-AMT-PRINCIPE",
-        "confidence": 1.0,
-        "tags": ["metro", "principe", "amt"]
+        "tags": [
+          "metro",
+          "principe",
+          "amt"
+        ]
       }
     ],
     "rail_stations": [
@@ -28,11 +30,21 @@
         "description": "Major rail junction with direct high-speed Frecciarossa and Intercity connections to Milan, Turin, Rome, and the Cinque Terre.",
         "source": "Rete Ferroviaria Italiana (RFI)",
         "provenance": "RFI-GOA-PRINCIPE",
-        "confidence": 1.0,
-        "tags": ["railway", "train-station", "principe", "frecciarossa"]
+        "tags": [
+          "railway",
+          "train-station",
+          "principe",
+          "frecciarossa"
+        ]
       }
     ],
-    "city_buses": ["Line 1", "Line 7", "Line 20", "Line N1", "Line N2"],
+    "city_buses": [
+      "Line 1",
+      "Line 7",
+      "Line 20",
+      "Line N1",
+      "Line N2"
+    ],
     "funiculars_and_elevators": [
       {
         "name": "Ascensore Castelletto Levante",

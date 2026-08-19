@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "lounges": [
     {
@@ -13,8 +12,13 @@
       "description": "Large, elegant multi-purpose lounge used for dance classes, daytime events, live musical ensembles, and evening social gatherings.",
       "source": "MSC Bellissima Lounge Directory",
       "provenance": "MSC-BEL-LNG-BELLISSIMA",
-      "confidence": 1.0,
-      "tags": ["social", "dance-floor", "live-music", "cocktails", "daytime-activities"]
+      "tags": [
+        "social",
+        "dance-floor",
+        "live-music",
+        "cocktails",
+        "daytime-activities"
+      ]
     },
     {
       "id": "LNG-CAROUSEL-LOUNGE",
@@ -30,8 +34,13 @@
       },
       "source": "MSC Bellissima Technical Entertainment Guide",
       "provenance": "MSC-BEL-LNG-CAROUSEL",
-      "confidence": 1.0,
-      "tags": ["carousel-productions", "theatre-lounge", "dinner-show", "acrobatics", "aft"]
+      "tags": [
+        "carousel-productions",
+        "theatre-lounge",
+        "dinner-show",
+        "acrobatics",
+        "aft"
+      ]
     },
     {
       "id": "LNG-SKY-LOUNGE",
@@ -42,8 +51,13 @@
       "restrictions": "Adults Only",
       "source": "MSC Bellissima Lounge Directory",
       "provenance": "MSC-BEL-LNG-SKYLOUNGE",
-      "confidence": 1.0,
-      "tags": ["adults-only", "panoramic", "piano-bar", "molecular-mixology", "gourmet-snacks"]
+      "tags": [
+        "adults-only",
+        "panoramic",
+        "piano-bar",
+        "molecular-mixology",
+        "gourmet-snacks"
+      ]
     },
     {
       "id": "LNG-YACHT-CLUB-TOP-SAIL",
@@ -54,8 +68,13 @@
       "access": "Exclusive to MSC Yacht Club Guests",
       "source": "MSC Yacht Club Directory",
       "provenance": "MSC-BEL-LNG-TOPSAIL",
-      "confidence": 1.0,
-      "tags": ["yacht-club", "exclusive", "panoramic", "complimentary-drinks", "forward-view"]
+      "tags": [
+        "yacht-club",
+        "exclusive",
+        "panoramic",
+        "complimentary-drinks",
+        "forward-view"
+      ]
     }
   ]
 }

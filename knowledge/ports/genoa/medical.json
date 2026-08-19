@@ -1,8 +1,7 @@
 {
   "port_id": "genoa",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "General Public Hospital (Approx. 10 minutes by taxi from port)",
       "source": "Ente Ospedaliero Ospedali Galliera",
       "provenance": "IT-MED-HOSP-GALLIERA",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "pronto-soccorso", "galliera"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "pronto-soccorso",
+        "galliera"
+      ]
     },
     {
       "id": "MED-GOA-SAN-MARTINO",
@@ -26,8 +29,12 @@
       "type": "University Polyclinic & Research Hospital",
       "source": "IRCCS Ospedale Policlinico San Martino",
       "provenance": "IT-MED-HOSP-SANMARTINO",
-      "confidence": 1.0,
-      "tags": ["hospital", "trauma-center", "university-hospital", "san-martino"]
+      "tags": [
+        "hospital",
+        "trauma-center",
+        "university-hospital",
+        "san-martino"
+      ]
     }
   ]
 }

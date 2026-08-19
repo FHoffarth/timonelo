@@ -19,8 +19,12 @@
       "status": "Operational",
       "source": "Valletta Cruise Port PLC (vallettacruiseport.com)",
       "provenance": "MLA-VCP-TERM-PINTO",
-      "confidence": 1.0,
-      "tags": ["valletta-waterfront", "pinto-vaults", "magazino-hall", "grand-harbour"]
+      "tags": [
+        "valletta-waterfront",
+        "pinto-vaults",
+        "magazino-hall",
+        "grand-harbour"
+      ]
     },
     {
       "id": "TERM-MLA-BOILER-WHARF",
@@ -30,8 +34,11 @@
       "status": "Operational",
       "source": "Valletta Cruise Port PLC",
       "provenance": "MLA-VCP-TERM-BOILER",
-      "confidence": 1.0,
-      "tags": ["boiler-wharf", "deep-water", "ops-electrified"]
+      "tags": [
+        "boiler-wharf",
+        "deep-water",
+        "ops-electrified"
+      ]
     }
   ],
   "berths": [
@@ -45,8 +52,13 @@
       "notes": "5 fully electrified berths delivering 64 MW of simultaneous shore-to-ship power for up to 5 vessels concurrently.",
       "source": "Transport Malta & Valletta Cruise Port PLC",
       "provenance": "MLA-TM-BERTH-PINTO",
-      "confidence": 1.0,
-      "tags": ["deep-water", "shore-power-pioneer", "64mw", "5-berths", "grand-harbour"]
+      "tags": [
+        "deep-water",
+        "shore-power-pioneer",
+        "64mw",
+        "5-berths",
+        "grand-harbour"
+      ]
     }
   ],
   "arrival_procedures": "Direct alongside docking inside deep natural Grand Harbour. Passengers step off the gangway directly onto the flat, paved waterfront promenade. Customs and check-in are handled within the historic terminal vaults.",
@@ -58,8 +70,14 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Valletta Cruise Port PLC & Transport Malta 2026",
-    "confidence": 1.0
+    "verification_authority": "Valletta Cruise Port PLC & Transport Malta 2026"
   },
-  "tags": ["valletta", "malta", "grand-harbour", "central-mediterranean", "shore-power-leader", "unesco"]
+  "tags": [
+    "valletta",
+    "malta",
+    "grand-harbour",
+    "central-mediterranean",
+    "shore-power-leader",
+    "unesco"
+  ]
 }

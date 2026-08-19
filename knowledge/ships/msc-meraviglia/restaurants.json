@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "restaurants": [
     {
@@ -15,7 +14,6 @@
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "main-dining",
         "mediterranean",
@@ -31,7 +29,6 @@
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "main-dining",
         "wake-views",
@@ -47,7 +44,6 @@
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "main-dining",
         "italian",
@@ -63,7 +59,6 @@
       "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "main-dining",
         "included"
@@ -78,7 +73,6 @@
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "specialty",
         "mexican",
@@ -95,7 +89,6 @@
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "specialty",
         "seafood",
@@ -111,7 +104,6 @@
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "specialty",
         "steakhouse",
@@ -128,7 +120,6 @@
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "specialty",
         "teppanyaki",
@@ -145,7 +136,6 @@
       "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "specialty",
         "sushi",
@@ -161,7 +151,6 @@
       "dining_model": "INCLUDED_BUFFET",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "buffet",
         "casual",
@@ -178,7 +167,6 @@
       "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "private",
@@ -195,7 +183,6 @@
       "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "grill",

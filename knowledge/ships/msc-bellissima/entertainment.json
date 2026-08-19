@@ -1,25 +1,36 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "entertainment_venues": [
     {
       "id": "ENT-LONDON-THEATRE",
       "name": "The London Theatre",
-      "deck": [5, 6],
+      "deck": [
+        5,
+        6
+      ],
       "category": "MAIN_BROADWAY_THEATRE",
       "position": "Forward",
       "description": "A 985-seat state-of-the-art main Broadway-style theater spanning Decks 5 and 6 forward. Stages grand production shows nightly, featuring acrobatics, musical ensembles, dance troupes, and international guest vocalists.",
       "metrics": {
         "seat_capacity": 985,
-        "decks": [5, 6]
+        "decks": [
+          5,
+          6
+        ]
       },
       "source": "MSC Bellissima Technical Factsheet",
       "provenance": "MSC-BEL-ENT-THEATRE",
-      "confidence": 1.0,
-      "tags": ["theatre", "broadway", "shows", "live-performances", "musicals", "forward"]
+      "tags": [
+        "theatre",
+        "broadway",
+        "shows",
+        "live-performances",
+        "musicals",
+        "forward"
+      ]
     },
     {
       "id": "ENT-IMPERIAL-CASINO",
@@ -27,11 +38,24 @@
       "deck": 7,
       "category": "CASINO_GAMING",
       "description": "A high-limit, expansive casino offering slot machines, electronic poker, table games (blackjack, roulette), daily bingo tournaments, and a dedicated casino bar.",
-      "features": ["Slot Machines", "Blackjack Tables", "Roulette", "Electronic Poker", "Daily Bingo", "Full-Service Bar"],
+      "features": [
+        "Slot Machines",
+        "Blackjack Tables",
+        "Roulette",
+        "Electronic Poker",
+        "Daily Bingo",
+        "Full-Service Bar"
+      ],
       "source": "MSC Bellissima Casino Directory",
       "provenance": "MSC-BEL-ENT-CASINO",
-      "confidence": 1.0,
-      "tags": ["casino", "gaming", "slots", "blackjack", "roulette", "bingo"]
+      "tags": [
+        "casino",
+        "gaming",
+        "slots",
+        "blackjack",
+        "roulette",
+        "bingo"
+      ]
     },
     {
       "id": "ENT-CAROUSEL-PRODUCTIONS",
@@ -42,8 +66,13 @@
       "description": "Modern theatrical circus productions developed specifically for the Meraviglia-class ships, incorporating acrobatics, modern dance, dynamic LED effects, and advanced lighting engineering.",
       "source": "MSC Carousel Entertainment Bulletin",
       "provenance": "MSC-BEL-ENT-CAROUSEL",
-      "confidence": 1.0,
-      "tags": ["carousel-productions", "circus", "acrobatics", "theatre", "special-effects"]
+      "tags": [
+        "carousel-productions",
+        "circus",
+        "acrobatics",
+        "theatre",
+        "special-effects"
+      ]
     },
     {
       "id": "ENT-ATTIC-CLUB",
@@ -53,8 +82,14 @@
       "description": "The ship's primary high-energy nightclub, featuring a late-night bar, resident DJs, state-of-the-art sound and lighting rigs, and a crowded dance floor into the early morning.",
       "source": "MSC Bellissima Nightlife Guide",
       "provenance": "MSC-BEL-ENT-ATTIC",
-      "confidence": 1.0,
-      "tags": ["nightclub", "dance-floor", "dj", "nightlife", "party", "late-night"]
+      "tags": [
+        "nightclub",
+        "dance-floor",
+        "dj",
+        "nightlife",
+        "party",
+        "late-night"
+      ]
     },
     {
       "id": "ENT-POLAR-AQUAPARK",
@@ -64,8 +99,13 @@
       "description": "An expansive outdoor water park featuring twisting water slides, splash pads, tipping water buckets, and interactive play zones for children and families.",
       "source": "MSC Bellissima Deck 19 Specification",
       "provenance": "MSC-BEL-ENT-AQUAPARK",
-      "confidence": 1.0,
-      "tags": ["aquapark", "water-slides", "splash-zone", "family-fun", "outdoor"]
+      "tags": [
+        "aquapark",
+        "water-slides",
+        "splash-zone",
+        "family-fun",
+        "outdoor"
+      ]
     }
   ]
 }

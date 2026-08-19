@@ -2,8 +2,7 @@
   "vessel_id": "msc-bellissima",
   "provenance": {
     "source_artifact": "MSC_BELLISSIMA_GA_PLANS_2026",
-    "sha256": "4b9218a09f7831d102e7741029c78201a1829e01928410a82740192837461928",
-    "confidence": 1.0
+    "sha256": "4b9218a09f7831d102e7741029c78201a1829e01928410a82740192837461928"
   },
   "notes": "MSC Bellissima features 18 physical decks, skipping deck number 17 due to Italian superstition. Passenger decks are named after legacy and modern ships in the MSC Cruises fleet.",
   "decks": [
@@ -16,8 +15,12 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK4",
-      "confidence": 1.0,
-      "tags": ["medical", "tendering", "gangway", "crew"]
+      "tags": [
+        "medical",
+        "tendering",
+        "gangway",
+        "crew"
+      ]
     },
     {
       "id": "DECK-05",
@@ -28,8 +31,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK5",
-      "confidence": 1.0,
-      "tags": ["reception", "atrium", "swarovski", "dining", "theatre"]
+      "tags": [
+        "reception",
+        "atrium",
+        "swarovski",
+        "dining",
+        "theatre"
+      ]
     },
     {
       "id": "DECK-06",
@@ -40,8 +48,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-GA-DECK6",
-      "confidence": 1.0,
-      "tags": ["promenade", "galleria", "dining", "shops", "theatre"]
+      "tags": [
+        "promenade",
+        "galleria",
+        "dining",
+        "shops",
+        "theatre"
+      ]
     },
     {
       "id": "DECK-07",
@@ -52,8 +65,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-GA-DECK7",
-      "confidence": 1.0,
-      "tags": ["specialty-dining", "spa", "casino", "lounge", "entertainment"]
+      "tags": [
+        "specialty-dining",
+        "spa",
+        "casino",
+        "lounge",
+        "entertainment"
+      ]
     },
     {
       "id": "DECK-08",
@@ -64,8 +82,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK8",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-09",
@@ -76,8 +96,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK9",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-10",
@@ -88,8 +110,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK10",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-11",
@@ -100,8 +124,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK11",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-12",
@@ -112,8 +138,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK12",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-13",
@@ -124,8 +152,10 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK13",
-      "confidence": 1.0,
-      "tags": ["cabins", "residential"]
+      "tags": [
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-14",
@@ -136,8 +166,12 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK14",
-      "confidence": 1.0,
-      "tags": ["bridge", "navigation", "cabins", "residential"]
+      "tags": [
+        "bridge",
+        "navigation",
+        "cabins",
+        "residential"
+      ]
     },
     {
       "id": "DECK-15",
@@ -148,8 +182,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK15",
-      "confidence": 1.0,
-      "tags": ["pool", "buffet", "magrodome", "yacht-club", "lido"]
+      "tags": [
+        "pool",
+        "buffet",
+        "magrodome",
+        "yacht-club",
+        "lido"
+      ]
     },
     {
       "id": "DECK-16",
@@ -160,8 +199,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK16",
-      "confidence": 1.0,
-      "tags": ["fitness", "sports", "arcade", "pool", "yacht-club"]
+      "tags": [
+        "fitness",
+        "sports",
+        "arcade",
+        "pool",
+        "yacht-club"
+      ]
     },
     {
       "id": "DECK-18",
@@ -172,8 +216,13 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK18",
-      "confidence": 1.0,
-      "tags": ["kids", "teens", "nightclub", "yacht-club-dining", "sundeck"]
+      "tags": [
+        "kids",
+        "teens",
+        "nightclub",
+        "yacht-club-dining",
+        "sundeck"
+      ]
     },
     {
       "id": "DECK-19",
@@ -184,8 +233,12 @@
       "passenger_accessible": true,
       "source": "Official MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK19",
-      "confidence": 1.0,
-      "tags": ["aquapark", "ropes-course", "solarium", "yacht-club-pool"]
+      "tags": [
+        "aquapark",
+        "ropes-course",
+        "solarium",
+        "yacht-club-pool"
+      ]
     }
   ]
 }

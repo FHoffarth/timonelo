@@ -19,8 +19,12 @@
       "status": "Operational",
       "source": "Port Authority of the Central Tyrrhenian Sea",
       "provenance": "NAP-PA-TERM-ANGIOINO",
-      "confidence": 1.0,
-      "tags": ["stazione-marittima", "molo-angioino", "galleria-del-mare", "piazza-municipio"]
+      "tags": [
+        "stazione-marittima",
+        "molo-angioino",
+        "galleria-del-mare",
+        "piazza-municipio"
+      ]
     },
     {
       "id": "TERM-NAP-MOLO-BEVERELLO",
@@ -30,8 +34,14 @@
       "status": "Operational",
       "source": "Port Authority of the Central Tyrrhenian Sea",
       "provenance": "NAP-PA-TERM-BEVERELLO",
-      "confidence": 1.0,
-      "tags": ["molo-beverello", "hydrofoils", "ferries", "capri", "ischia", "sorrento"]
+      "tags": [
+        "molo-beverello",
+        "hydrofoils",
+        "ferries",
+        "capri",
+        "ischia",
+        "sorrento"
+      ]
     },
     {
       "id": "TERM-NAP-PORTA-DI-MASSA",
@@ -41,8 +51,12 @@
       "status": "Operational",
       "source": "Port Authority of the Central Tyrrhenian Sea",
       "provenance": "NAP-PA-TERM-PORTADIMASSA",
-      "confidence": 1.0,
-      "tags": ["porta-di-massa", "car-ferries", "sicily", "gulf-islands"]
+      "tags": [
+        "porta-di-massa",
+        "car-ferries",
+        "sicily",
+        "gulf-islands"
+      ]
     }
   ],
   "berths": [
@@ -56,8 +70,12 @@
       "notes": "Features 1,100 meters of total quay length capable of handling multiple large modern cruise ships concurrently.",
       "source": "Port Authority of the Central Tyrrhenian Sea Berth Directory",
       "provenance": "NAP-PA-BERTH-ANGIOINO",
-      "confidence": 1.0,
-      "tags": ["deep-water", "mega-ships", "molo-angioino", "7-berths"]
+      "tags": [
+        "deep-water",
+        "mega-ships",
+        "molo-angioino",
+        "7-berths"
+      ]
     }
   ],
   "arrival_procedures": "Direct alongside docking. Upon exit, passengers traverse the modern, air-conditioned Galleria del Mare mall before passing through security gates into Piazza Municipio.",
@@ -69,8 +87,14 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Port Authority of the Central Tyrrhenian Sea & Comune di Napoli 2026",
-    "confidence": 1.0
+    "verification_authority": "Port Authority of the Central Tyrrhenian Sea & Comune di Napoli 2026"
   },
-  "tags": ["naples", "italy", "campania", "western-mediterranean", "castel-nuovo", "pompeii-gateway"]
+  "tags": [
+    "naples",
+    "italy",
+    "campania",
+    "western-mediterranean",
+    "castel-nuovo",
+    "pompeii-gateway"
+  ]
 }

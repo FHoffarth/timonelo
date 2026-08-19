@@ -1,8 +1,7 @@
 {
   "port_id": "genoa",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Partially Operational / Under Construction (Late 2025/2026)",
@@ -11,7 +10,10 @@
       "capacity": "Supplying up to 600 amps for superyachts and boutique cruise liners."
     },
     "cruise_infrastructure_pipeline": {
-      "terminals": ["Ponte dei Mille", "Ponte Andrea Doria"],
+      "terminals": [
+        "Ponte dei Mille",
+        "Ponte Andrea Doria"
+      ],
       "project_investment_eur": 18000000,
       "contractor": "Nidec ASI",
       "managing_authority": "Western Ligurian Sea Port Authority",
@@ -20,7 +22,13 @@
     },
     "source": "Western Ligurian Sea Port Authority Infrastructure Bulletin 2026",
     "provenance": "GOA-PA-OPS-NIDEC",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "nidec-asi", "ponte-dei-mille", "andrea-doria", "sustainability"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "nidec-asi",
+      "ponte-dei-mille",
+      "andrea-doria",
+      "sustainability"
+    ]
   }
 }

@@ -1,8 +1,7 @@
 {
   "port_id": "barcelona",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "University Public Hospital / Level 1 Trauma",
       "source": "CatSalut / Generalitat de Catalunya",
       "provenance": "CAT-MED-HOSP-CLINIC",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "medical", "clinic"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "medical",
+        "clinic"
+      ]
     },
     {
       "id": "MED-BCN-SANT-PAU",
@@ -26,8 +29,12 @@
       "type": "Major Public Teaching Hospital",
       "source": "CatSalut / Generalitat de Catalunya",
       "provenance": "CAT-MED-HOSP-SANTPAU",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "medical", "sant-pau"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "medical",
+        "sant-pau"
+      ]
     }
   ]
 }

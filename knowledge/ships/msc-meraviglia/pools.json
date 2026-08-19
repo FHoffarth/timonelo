@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "pools_and_water_areas": [
     {
@@ -14,7 +13,6 @@
       "description": "Central open-air resort pool surrounded by sun loungers and giant LED screen.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "outdoor-pool",
         "main-pool",
@@ -29,7 +27,6 @@
       "description": "All-weather pool with retractable sliding glass magrodome roof.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "indoor-pool",
         "retractable-roof",
@@ -44,7 +41,6 @@
       "description": "Aft amphitheatre pool with open sun decks and ocean wake vistas.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "aft-pool",
         "wake-views",
@@ -59,7 +55,6 @@
       "description": "Multi-slide water park with twisting flumes and splash zones.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "aquapark",
         "slides",
@@ -75,7 +70,6 @@
       "description": "Private freshwater pool and whirlpool on the Yacht Club top sundeck.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "private-pool",

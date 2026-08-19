@@ -1,10 +1,13 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
-  "brand_partnerships": ["LEGO", "Duplo", "Chicco"],
+  "brand_partnerships": [
+    "LEGO",
+    "Duplo",
+    "Chicco"
+  ],
   "kids_areas": [
     {
       "id": "KID-CHICCO-BABY-CLUB",
@@ -16,8 +19,13 @@
       "brand_partner": "Chicco",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-CHICCO",
-      "confidence": 1.0,
-      "tags": ["nursery", "baby-club", "chicco", "infants", "toddlers"]
+      "tags": [
+        "nursery",
+        "baby-club",
+        "chicco",
+        "infants",
+        "toddlers"
+      ]
     },
     {
       "id": "KID-MINI-CLUB-LEGO",
@@ -29,8 +37,13 @@
       "brand_partner": "LEGO & Duplo",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-MINILEGO",
-      "confidence": 1.0,
-      "tags": ["lego", "duplo", "mini-club", "ages-3-6", "supervised-play"]
+      "tags": [
+        "lego",
+        "duplo",
+        "mini-club",
+        "ages-3-6",
+        "supervised-play"
+      ]
     },
     {
       "id": "KID-JUNIORS-CLUB-LEGO",
@@ -42,8 +55,13 @@
       "brand_partner": "LEGO",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-JUNIORLEGO",
-      "confidence": 1.0,
-      "tags": ["lego", "juniors-club", "ages-7-11", "gaming", "stem"]
+      "tags": [
+        "lego",
+        "juniors-club",
+        "ages-7-11",
+        "gaming",
+        "stem"
+      ]
     },
     {
       "id": "KID-YOUNG-CLUB",
@@ -54,8 +72,14 @@
       "description": "A dedicated lounge designed for tweens equipped with PlayStation 4s, VR setups, foosball tables, and an interactive multimedia table to post messages on the club walls.",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-YOUNGCLUB",
-      "confidence": 1.0,
-      "tags": ["tweens", "young-club", "ages-12-14", "vr", "playstation", "foosball"]
+      "tags": [
+        "tweens",
+        "young-club",
+        "ages-12-14",
+        "vr",
+        "playstation",
+        "foosball"
+      ]
     },
     {
       "id": "KID-TEEN-CLUB",
@@ -66,8 +90,14 @@
       "description": "A circular lounge for older teens featuring a private dance floor, DJ mixing decks, beanbags, big-screen TVs, and gaming consoles (Nintendo Switch, PS4, VR).",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-TEENCLUB",
-      "confidence": 1.0,
-      "tags": ["teens", "teen-club", "ages-15-17", "dj", "nintendo-switch", "dance-floor"]
+      "tags": [
+        "teens",
+        "teen-club",
+        "ages-15-17",
+        "dj",
+        "nintendo-switch",
+        "dance-floor"
+      ]
     },
     {
       "id": "KID-DOREMI-STUDIO",
@@ -77,8 +107,12 @@
       "description": "A professional family-focused TV/recording studio where kids and parents can script, record, and star in their own video productions, game shows, and musical performances.",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-DOREMISTUDIO",
-      "confidence": 1.0,
-      "tags": ["doremi", "tv-studio", "recording", "family-activities"]
+      "tags": [
+        "doremi",
+        "tv-studio",
+        "recording",
+        "family-activities"
+      ]
     },
     {
       "id": "KID-DOREMI-LAB",
@@ -88,8 +122,13 @@
       "description": "A designated high-tech laboratory classroom utilized for interactive youth programming, robotics, 3D design, and science/technology workshops.",
       "source": "MSC Bellissima Youth Programming Guide",
       "provenance": "MSC-BEL-KID-DOREMILAB",
-      "confidence": 1.0,
-      "tags": ["doremi", "stem-lab", "robotics", "workshops", "science"]
+      "tags": [
+        "doremi",
+        "stem-lab",
+        "robotics",
+        "workshops",
+        "science"
+      ]
     }
   ]
 }

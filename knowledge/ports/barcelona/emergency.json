@@ -1,8 +1,7 @@
 {
   "port_id": "barcelona",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "emergency_numbers": [
     {
@@ -12,8 +11,13 @@
       "description": "General emergency dispatch for police, fire, and medical assistance in multiple languages.",
       "source": "European Commission Emergency Directory",
       "provenance": "EU-EMERG-112",
-      "confidence": 1.0,
-      "tags": ["emergency", "police", "ambulance", "fire", "universal"]
+      "tags": [
+        "emergency",
+        "police",
+        "ambulance",
+        "fire",
+        "universal"
+      ]
     },
     {
       "id": "EMERG-BCN-POLICIA-NACIONAL",
@@ -22,8 +26,12 @@
       "description": "Handles passport loss, immigration, and major criminal reports.",
       "source": "Ministerio del Interior (Spain)",
       "provenance": "ES-POL-091",
-      "confidence": 1.0,
-      "tags": ["police", "national", "passport", "crime"]
+      "tags": [
+        "police",
+        "national",
+        "passport",
+        "crime"
+      ]
     },
     {
       "id": "EMERG-BCN-GUARDIA-URBANA",
@@ -32,8 +40,12 @@
       "description": "Handles local city traffic, municipal bylaws, and public safety on street level.",
       "source": "Ajuntament de Barcelona",
       "provenance": "BCN-POL-092",
-      "confidence": 1.0,
-      "tags": ["police", "local", "traffic", "city"]
+      "tags": [
+        "police",
+        "local",
+        "traffic",
+        "city"
+      ]
     }
   ]
 }

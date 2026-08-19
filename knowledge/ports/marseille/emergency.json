@@ -1,8 +1,7 @@
 {
   "port_id": "marseille",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "emergency_numbers": [
     {
@@ -12,8 +11,11 @@
       "description": "General emergency dispatch in English, French, and multiple European languages.",
       "source": "European Commission Emergency Directory",
       "provenance": "EU-EMERG-112",
-      "confidence": 1.0,
-      "tags": ["emergency", "universal", "112"]
+      "tags": [
+        "emergency",
+        "universal",
+        "112"
+      ]
     },
     {
       "id": "EMERG-MRS-POLICE",
@@ -22,8 +24,10 @@
       "description": "Emergency police and law enforcement line in France.",
       "source": "Ministère de l'Intérieur",
       "provenance": "FR-POL-17",
-      "confidence": 1.0,
-      "tags": ["police", "law-enforcement"]
+      "tags": [
+        "police",
+        "law-enforcement"
+      ]
     },
     {
       "id": "EMERG-MRS-SAMU",
@@ -32,8 +36,11 @@
       "description": "Direct emergency medical response and mobile intensive care dispatch.",
       "source": "Ministère de la Santé",
       "provenance": "FR-SAMU-15",
-      "confidence": 1.0,
-      "tags": ["ambulance", "samu", "medical-emergency"]
+      "tags": [
+        "ambulance",
+        "samu",
+        "medical-emergency"
+      ]
     },
     {
       "id": "EMERG-MRS-FIRE",
@@ -42,8 +49,11 @@
       "description": "Fire services and maritime rescue response.",
       "source": "Bataillon de Marins-Pompiers de Marseille",
       "provenance": "FR-POMP-18",
-      "confidence": 1.0,
-      "tags": ["fire", "rescue", "marins-pompiers"]
+      "tags": [
+        "fire",
+        "rescue",
+        "marins-pompiers"
+      ]
     },
     {
       "id": "EMERG-MRS-PORT-AUTH",
@@ -52,8 +62,11 @@
       "description": "Grand Port Maritime de Marseille 24/7 security and operational command.",
       "source": "Grand Port Maritime de Marseille Security Office",
       "provenance": "MRS-PA-SEC",
-      "confidence": 1.0,
-      "tags": ["port-authority", "harbour-master", "security"]
+      "tags": [
+        "port-authority",
+        "harbour-master",
+        "security"
+      ]
     }
   ]
 }

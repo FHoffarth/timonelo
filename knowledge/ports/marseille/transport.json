@@ -1,8 +1,7 @@
 {
   "port_id": "marseille",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [
     {
@@ -18,8 +17,12 @@
       "walking_to_stop_minutes": "5 – 14 minutes along marked green line depending on berth",
       "source": "Grand Port Maritime de Marseille Public Notice",
       "provenance": "MRS-TRANS-FREE-SHUTTLE",
-      "confidence": 1.0,
-      "tags": ["free-shuttle", "green-line", "joliette", "terrasses-du-port"]
+      "tags": [
+        "free-shuttle",
+        "green-line",
+        "joliette",
+        "terrasses-du-port"
+      ]
     },
     {
       "id": "TRANS-MRS-CRUISE-LINE-SHUTTLE",
@@ -31,8 +34,11 @@
       },
       "source": "Cruise Line Shore Excursions Information",
       "provenance": "MRS-TRANS-CRUISE-SHUTTLE",
-      "confidence": 1.0,
-      "tags": ["cruise-line-shuttle", "vieux-port", "direct"]
+      "tags": [
+        "cruise-line-shuttle",
+        "vieux-port",
+        "direct"
+      ]
     }
   ],
   "public_transport": {
@@ -40,18 +46,27 @@
       {
         "id": "METRO-MRS-JOLIETTE",
         "name": "Joliette Metro Station",
-        "lines": ["Line 2 (Red Line)"],
+        "lines": [
+          "Line 2 (Red Line)"
+        ],
         "location": "Short walk from port shuttle drop-off at Place de la Joliette",
         "connectivity": "Direct two-stop connection to Marseille Saint-Charles central railway station.",
         "source": "RTM (Régie des Transports Métropolitains)",
         "provenance": "MRS-RTM-JOLIETTE",
-        "confidence": 1.0,
-        "tags": ["metro", "line-2", "joliette", "saint-charles"]
+        "tags": [
+          "metro",
+          "line-2",
+          "joliette",
+          "saint-charles"
+        ]
       }
     ],
     "tramways": [
       {
-        "lines": ["T2", "T3"],
+        "lines": [
+          "T2",
+          "T3"
+        ],
         "station": "Joliette",
         "description": "Step-free, accessible light rail connection operating through central Marseille."
       }

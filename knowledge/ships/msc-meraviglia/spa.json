@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "spa_and_wellness": {
     "id": "SPA-AUREA-COMPLEX",
@@ -13,7 +12,6 @@
     "description": "Authentic Balinese luxury spa offering thermal suite wellness circuits, saunas, and private therapy treatment rooms.",
     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
     "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-    "confidence": 1.0,
     "tags": [
       "spa",
       "wellness",
