@@ -8,9 +8,7 @@
     "last_audited": "2026-08-19"
   },
   "technical_specifications": {
-    "class": "Meraviglia-class",
     "capacities": {
-      "total_decks": 18,
       "passenger_accessible_decks": 15,
       "passenger_capacity_max_occupancy": 5714,
       "total_cabins_min": 2214,

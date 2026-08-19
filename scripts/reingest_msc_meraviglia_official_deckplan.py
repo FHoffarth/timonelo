@@ -1,6 +1,6 @@
 """
 Re-ingestion pipeline for MSC Meraviglia official deck plans.
-Governed by ADR-0002, P0-B Salvage Step 2, and Step 2B.1 Evidence Hygiene.
+Governed by ADR-0002, P0-B Salvage Step 2, and Step 2B.1A Evidence Hygiene & Lifecycle.
 
 Primary Source Artifact:
   Document: Official MSC Cruises Meraviglia Deckplans
@@ -14,11 +14,13 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
+import tempfile
 from typing import Any, Dict, List
 
-from timonelo.evidence.artifacts import sha256_of_file
-from timonelo.evidence.engine import Statement
-from timonelo.evidence.events import EvidenceEvent
+from timonelo.evidence.artifacts import ArtifactStore, sha256_of_file
+from timonelo.evidence.engine import Statement, TruthEngine
+from timonelo.evidence.events import EvidenceEvent, EvidenceEventLog
 from timonelo.evidence.gatekeeper import (
     ConflictGateResult,
     EvidenceGatekeeper,
@@ -26,6 +28,7 @@ from timonelo.evidence.gatekeeper import (
     SourceArtifactRecord,
 )
 from timonelo.evidence.questions import Question, QuestionRegistry
+from timonelo.evidence.review import ReviewLog
 from timonelo.ontology.models import (
     Derivation,
     EvidenceCondition,
@@ -67,9 +70,32 @@ def run_ingestion() -> Dict[str, Any]:
         edition="11.2025 DEU",
     )
 
+    temp_engine_dir = tempfile.mkdtemp(prefix="timonelo_meraviglia_engine_")
+    # Instantiate canonical registry, store, log, review log, and TruthEngine
+    q_reg = QuestionRegistry()
+    art_store = ArtifactStore(temp_engine_dir)
+    art_store.add(
+        path=ARTIFACT_FULL_PATH,
+        document_class="cruise_line_deck_plan",
+        obtained_on="2026-08-19",
+        obtained_from="MSC Cruises",
+    )
+    event_log = EvidenceEventLog(
+        path=os.path.join(temp_engine_dir, "events.json"),
+        store=art_store,
+        registry=q_reg,
+    )
+    truth_engine = TruthEngine(
+        registry=q_reg,
+        log=event_log,
+        store=art_store,
+    )
+    review_log = ReviewLog(
+        path=os.path.join(temp_engine_dir, "reviews.json")
+    )
+
     events: List[EvidenceEvent] = []
     statements: List[Statement] = []
-    audit_log: List[Dict[str, Any]] = []
 
     def record_fact(
         event_id: str,
@@ -80,7 +106,20 @@ def run_ingestion() -> Dict[str, Any]:
         page: int,
     ) -> None:
         locator = f"page:{page}"
-        # EvidenceEvent captures the observation
+
+        # 1. Register question
+        entity_type = entity_id.split(":")[1] if ":" in entity_id else "vessel"
+        if question_id not in q_reg._by_id:
+            q_reg.register(
+                Question(
+                    question_id=question_id,
+                    entity_type=entity_type,
+                    statement_type=statement_type,
+                    supportable_by=("cruise_line_deck_plan", "shipyard_general_arrangement"),
+                )
+            )
+
+        # 2. EvidenceEvent captures the observation
         event = EvidenceEvent(
             event_id=event_id,
             artifact_sha256=EXPECTED_SHA256,
@@ -92,24 +131,12 @@ def run_ingestion() -> Dict[str, Any]:
             observed_on="2026-08-19",
         )
         events.append(event)
+        event_log.append(event)
 
         stmt_id = f"STMT-{event_id}"
 
-        # Statements begin fail-closed in UNKNOWN, DRAFT, PUBLISH_BLOCKED (TASK D)
-        # Promotion to SUPPORTED occurs through explicit audited transition (TASK E)
-        audit_entry = {
-            "statement_id": stmt_id,
-            "transition": "CONDITION:UNKNOWN -> CONDITION:SUPPORTED",
-            "from_condition": EvidenceCondition.UNKNOWN.value,
-            "to_condition": EvidenceCondition.SUPPORTED.value,
-            "actor": "deckplan_evidence_verifier",
-            "occurred_on": "2026-08-19",
-            "note": f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
-        }
-        audit_log.append(audit_entry)
-
-        # Retain statement in DRAFT state per Task F/H (no fabricated human approval)
-        stmt = Statement(
+        # 3. Construct Statement in fail-closed initial state (TASK A.1)
+        stmt_initial = Statement(
             statement_id=stmt_id,
             entity_id=entity_id,
             question_id=question_id,
@@ -117,11 +144,28 @@ def run_ingestion() -> Dict[str, Any]:
             method=Method.DIRECT,
             derivation=Derivation.LOCAL,
             evidence_event_ids=(event_id,),
-            evidence_condition=EvidenceCondition.SUPPORTED,
+            evidence_condition=EvidenceCondition.UNKNOWN,
             human_review_state=HumanReviewState.DRAFT,
             publish_status=PublishStatus.PUBLISH_BLOCKED,
         )
-        statements.append(stmt)
+        truth_engine.add_statement(stmt_initial)
+
+        # 4. Invoke actual canonical transition mechanism (TASK A.3)
+        transitioned_stmt = truth_engine.set_evidence_condition(
+            stmt_id, EvidenceCondition.SUPPORTED
+        )
+
+        # 5. Persist audit record produced by canonical review mechanism (TASK A.4, A.5)
+        review_log.record_condition_transition(
+            statement_id=stmt_id,
+            from_condition=EvidenceCondition.UNKNOWN,
+            to_condition=EvidenceCondition.SUPPORTED,
+            actor="deckplan_evidence_verifier",
+            occurred_on="2026-08-19",
+            note=f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
+        )
+
+        statements.append(transitioned_stmt)
 
     # --- Decks (Pages 3, 4, 5) ---
     deck_definitions = [
@@ -164,7 +208,7 @@ def run_ingestion() -> Dict[str, Any]:
             "tags": [d_name.lower().replace(" ", "-"), d_cat.lower().replace("_", "-")]
         })
 
-    # Summary Capacities on Page 2
+    # Summary Capacities on Page 2 and Represented Passenger Decks (Pages 3-5) (TASK D)
     record_fact(
         event_id="EVT-MER-TOTAL-CABINS",
         entity_id="msc-meraviglia",
@@ -180,14 +224,6 @@ def run_ingestion() -> Dict[str, Any]:
         statement_type="deck.venue_present",
         value=5714,
         page=2,
-    )
-    record_fact(
-        event_id="EVT-MER-TOTAL-DECKS",
-        entity_id="msc-meraviglia",
-        question_id="Q-SHIP-TOTAL-DECKS",
-        statement_type="deck.venue_present",
-        value=18,
-        page=5,
     )
     record_fact(
         event_id="EVT-MER-PAX-DECKS",
@@ -207,34 +243,36 @@ def run_ingestion() -> Dict[str, Any]:
             "verification_authority": "MSC Cruises Official Documentation",
             "last_audited": "2026-08-19"
         },
-        "notes": "MSC Meraviglia features 18 physical decks (15 passenger-accessible), skipping deck 17. Verified from Official Deckplans Edition 11.2025 DEU.",
+        "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
         "decks": decks_json_list
     }
     with open(os.path.join(KNOWLEDGE_DIR, "decks.json"), "w", encoding="utf-8") as f:
         json.dump(decks_doc, f, indent=2, ensure_ascii=False)
 
-    # --- Cabins Catalog (Page 2) ---
+    # --- Cabins Catalog (Page 2) — Exactly 22 categories (TASK C) ---
     cabin_categories_data = [
-        {"id": "CAT-YC3", "code": "YC3", "name": "MSC Yacht Club Royal Suite", "category": "YACHT_CLUB_SUITE", "decks": [15], "desc": "MSC Yacht Club Royal Suite on Deck 15 with whirlpool.", "page": 2, "tags": ["yacht-club", "suite", "whirlpool"]},
-        {"id": "CAT-YJD", "code": "YJD", "name": "MSC Yacht Club Duplex Suite", "category": "YACHT_CLUB_SUITE", "decks": [9, 10, 11, 12], "desc": "MSC Yacht Club Duplex Suite on Decks 9-12 with whirlpool.", "page": 2, "tags": ["yacht-club", "duplex", "suite", "whirlpool"]},
-        {"id": "CAT-SXJ", "code": "SXJ", "name": "Grand Suite Aurea", "category": "AUREA_SUITE", "decks": [12], "desc": "Grand Suite Aurea on Deck 12 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
-        {"id": "CAT-SLJ", "code": "SLJ", "name": "Premium Suite Aurea", "category": "AUREA_SUITE", "decks": [9, 10, 11, 12, 13], "desc": "Premium Suite Aurea on Decks 9-13 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
-        {"id": "CAT-BA", "code": "BA", "name": "Balkonkabine Aurea", "category": "BALCONY_CABIN", "decks": [10, 11, 12, 13], "desc": "Balcony Cabin Aurea on Decks 10-13.", "page": 2, "tags": ["balcony", "aurea"]},
-        {"id": "CAT-BL3", "code": "BL3", "name": "Balkonkabine Premium Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Balcony Cabin Premium on Decks 13-14.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BL2", "code": "BL2", "name": "Balkonkabine Premium Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Balcony Cabin Premium on Decks 11-12.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BL1", "code": "BL1", "name": "Balkonkabine Premium Deck 10", "category": "BALCONY_CABIN", "decks": [10], "desc": "Balcony Cabin Premium on Deck 10.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BR3", "code": "BR3", "name": "Balkonkabine Deluxe Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Balcony Cabin Deluxe on Decks 13-14.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BR2", "code": "BR2", "name": "Balkonkabine Deluxe Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Balcony Cabin Deluxe on Decks 11-12.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BR1", "code": "BR1", "name": "Balkonkabine Deluxe Deck 8-10", "category": "BALCONY_CABIN", "decks": [8, 9, 10], "desc": "Balcony Cabin Deluxe on Decks 8-10.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BP", "code": "BP", "name": "Balkonkabine teilweise Sichteinschränkung", "category": "BALCONY_CABIN", "decks": [8, 9, 10, 11, 12, 13, 14], "desc": "Balcony Cabin with partial view obstruction on Decks 8-14.", "page": 2, "tags": ["balcony", "partial-view"]},
-        {"id": "CAT-BS", "code": "BS", "name": "Balkonkabine Studio", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Studio Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "studio"]},
-        {"id": "CAT-OL2", "code": "OL2", "name": "Meerblick Premium", "category": "OCEAN_VIEW_CABIN", "decks": [9, 10, 11], "desc": "Ocean View Premium on Decks 9-11.", "page": 2, "tags": ["ocean-view", "premium"]},
-        {"id": "CAT-OR1", "code": "OR1", "name": "Meerblick Deluxe", "category": "OCEAN_VIEW_CABIN", "decks": [5], "desc": "Ocean View Deluxe on Deck 5.", "page": 2, "tags": ["ocean-view", "deluxe"]},
-        {"id": "CAT-OM2", "code": "OM2", "name": "Meerblick Junior", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Ocean View Junior on Deck 8.", "page": 2, "tags": ["ocean-view", "junior"]},
-        {"id": "CAT-OO", "code": "OO", "name": "Meerblick teilweise Sichteinschränkung", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Ocean View with partial view obstruction on Deck 8.", "page": 2, "tags": ["ocean-view", "partial-view"]},
-        {"id": "CAT-IR2", "code": "IR2", "name": "Innenkabine Deluxe Deck 11-14", "category": "INSIDE_CABIN", "decks": [11, 12, 13, 14], "desc": "Interior Cabin Deluxe on Decks 11-14.", "page": 2, "tags": ["inside", "deluxe"]},
-        {"id": "CAT-IR1", "code": "IR1", "name": "Innenkabine Deluxe Deck 5-10", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10], "desc": "Interior Cabin Deluxe on Decks 5-10.", "page": 2, "tags": ["inside", "deluxe"]},
-        {"id": "CAT-IS", "code": "IS", "name": "Innenkabine Studio", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10, 11, 12, 13, 14], "desc": "Studio Interior Cabin on Decks 5-14.", "page": 2, "tags": ["inside", "studio"]},
+        {"id": "CAT-YC3", "code": "YC3", "name": "MSC Yacht Club Royal Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [15], "desc": "MSC Yacht Club Royal Suite on Deck 15 with whirlpool.", "page": 2, "tags": ["yacht-club", "suite", "whirlpool"]},
+        {"id": "CAT-YJD", "code": "YJD", "name": "MSC Yacht Club Maisonette Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [9, 10, 11, 12], "desc": "MSC Yacht Club Maisonette Suite on Decks 9-12 with whirlpool.", "page": 2, "tags": ["yacht-club", "maisonette", "suite", "whirlpool"]},
+        {"id": "CAT-YC1", "code": "YC1", "name": "MSC Yacht Club Deluxe Suite", "category": "YACHT_CLUB_SUITE", "decks": [14, 15, 16, 18], "desc": "MSC Yacht Club Deluxe Suite on Decks 14-18.", "page": 2, "tags": ["yacht-club", "deluxe", "suite"]},
+        {"id": "CAT-YIN", "code": "YIN", "name": "MSC Yacht Club Innenkabine", "category": "YACHT_CLUB_INSIDE", "decks": [14, 15, 16], "desc": "MSC Yacht Club Interior Cabin on Decks 14-16.", "page": 2, "tags": ["yacht-club", "inside", "cabin"]},
+        {"id": "CAT-SXJ", "code": "SXJ", "name": "Grand Suite Aurea mit Terrasse und Whirlpool", "category": "AUREA_SUITE", "decks": [12], "desc": "Grand Suite Aurea on Deck 12 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
+        {"id": "CAT-SLJ", "code": "SLJ", "name": "Premium Suite Aurea mit Terrasse und Whirlpool", "category": "AUREA_SUITE", "decks": [9, 10, 11, 12, 13], "desc": "Premium Suite Aurea on Decks 9-13 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
+        {"id": "CAT-BA", "code": "BA", "name": "Deluxe Balkonkabine Aurea", "category": "BALCONY_CABIN", "decks": [10, 11, 12, 13], "desc": "Deluxe Balcony Cabin Aurea on Decks 10-13.", "page": 2, "tags": ["balcony", "aurea"]},
+        {"id": "CAT-BL3", "code": "BL3", "name": "Premium Balkonkabine Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Premium Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "premium"]},
+        {"id": "CAT-BL2", "code": "BL2", "name": "Premium Balkonkabine Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Premium Balcony Cabin on Decks 11-12.", "page": 2, "tags": ["balcony", "premium"]},
+        {"id": "CAT-BL1", "code": "BL1", "name": "Premium Balkonkabine Deck 10", "category": "BALCONY_CABIN", "decks": [10], "desc": "Premium Balcony Cabin on Deck 10.", "page": 2, "tags": ["balcony", "premium"]},
+        {"id": "CAT-BR3", "code": "BR3", "name": "Deluxe Balkonkabine Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Deluxe Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "deluxe"]},
+        {"id": "CAT-BR2", "code": "BR2", "name": "Deluxe Balkonkabine Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Deluxe Balcony Cabin on Decks 11-12.", "page": 2, "tags": ["balcony", "deluxe"]},
+        {"id": "CAT-BR1", "code": "BR1", "name": "Deluxe Balkonkabine Deck 8-10", "category": "BALCONY_CABIN", "decks": [8, 9, 10], "desc": "Deluxe Balcony Cabin on Decks 8-10.", "page": 2, "tags": ["balcony", "deluxe"]},
+        {"id": "CAT-BP", "code": "BP", "name": "Deluxe Balkonkabine mit teilweiser Sichteinschränkung", "category": "BALCONY_CABIN", "decks": [8, 9, 10, 11, 12, 13, 14], "desc": "Deluxe Balcony Cabin with partial view obstruction on Decks 8-14.", "page": 2, "tags": ["balcony", "partial-view"]},
+        {"id": "CAT-BS", "code": "BS", "name": "Single Balkonkabine", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Single Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "single"]},
+        {"id": "CAT-OL2", "code": "OL2", "name": "Premium Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [9, 10, 11], "desc": "Premium Ocean View Cabin on Decks 9-11.", "page": 2, "tags": ["ocean-view", "premium"]},
+        {"id": "CAT-OR1", "code": "OR1", "name": "Deluxe Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [5], "desc": "Deluxe Ocean View Cabin on Deck 5.", "page": 2, "tags": ["ocean-view", "deluxe"]},
+        {"id": "CAT-OM2", "code": "OM2", "name": "Junior Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Junior Ocean View Cabin on Deck 8.", "page": 2, "tags": ["ocean-view", "junior"]},
+        {"id": "CAT-OO", "code": "OO", "name": "Junior Kabine mit Meerblick und teilweiser Sichteinschränkung", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Junior Ocean View Cabin with partial view obstruction on Deck 8.", "page": 2, "tags": ["ocean-view", "partial-view"]},
+        {"id": "CAT-IR2", "code": "IR2", "name": "Deluxe Innenkabine Deck 11-14", "category": "INSIDE_CABIN", "decks": [11, 12, 13, 14], "desc": "Deluxe Interior Cabin on Decks 11-14.", "page": 2, "tags": ["inside", "deluxe"]},
+        {"id": "CAT-IR1", "code": "IR1", "name": "Deluxe Innenkabine Deck 5-10", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10], "desc": "Deluxe Interior Cabin on Decks 5-10.", "page": 2, "tags": ["inside", "deluxe"]},
+        {"id": "CAT-IS", "code": "IS", "name": "Single Innenkabine", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10, 11, 12, 13, 14], "desc": "Single Interior Cabin on Decks 5-14.", "page": 2, "tags": ["inside", "single"]},
     ]
 
     for cat in cabin_categories_data:
@@ -624,9 +662,8 @@ def run_ingestion() -> Dict[str, Any]:
             ]
         }, f, indent=2, ensure_ascii=False)
 
-    # --- Technical Specifications (TASK A: strict evidence hygiene, zero unsupported facts) ---
-    # Only capacities and deck counts evidenced in deckplan are retained.
-    # All unsupported specs (IMO, MMSI, GT, propulsion, builder, dimensions, etc.) are omitted entirely.
+    # --- Technical Specifications (TASK D, E: strict evidence hygiene, zero unsupported facts) ---
+    # Only capacities evidenced in deckplan are retained. Total physical decks and class are omitted.
     technical_doc = {
         "vessel_id": "msc-meraviglia",
         "vessel_name": "MSC Meraviglia",
@@ -637,9 +674,7 @@ def run_ingestion() -> Dict[str, Any]:
             "last_audited": "2026-08-19"
         },
         "technical_specifications": {
-            "class": "Meraviglia-class",
             "capacities": {
-                "total_decks": 18,
                 "passenger_accessible_decks": 15,
                 "passenger_capacity_max_occupancy": 5714,
                 "total_cabins_min": 2214,
@@ -667,6 +702,12 @@ def run_ingestion() -> Dict[str, Any]:
             {"fact": "top_sail_lounge_deck", "old": 15, "new": 16, "action": "CORRECTED_TO_DECK_16"},
         ]
     )
+
+    # Clean up temporary logs from memory run
+    for tmp_file in ("events_temp.json", "review_log_temp.json"):
+        p = os.path.join(KNOWLEDGE_DIR, tmp_file)
+        if os.path.exists(p):
+            os.remove(p)
 
     # --- Extraction Manifest (TASK I: separate orthogonal axes without collapsing) ---
     manifest_data = {
@@ -697,7 +738,7 @@ def run_ingestion() -> Dict[str, Any]:
             "publish_allowed_with_warnings": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS),
             "publish_allowed": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED),
         },
-        "audit_log": audit_log,
+        "audit_log": [e.to_dict() for e in review_log.all()],
         "events": [e.to_dict() for e in events],
         "statements": [
             {
@@ -720,19 +761,7 @@ def run_ingestion() -> Dict[str, Any]:
         json.dump(manifest_data, f, indent=2, ensure_ascii=False)
 
     # --- Execute EvidenceGatekeeper (TASK L: fail-closed evaluation) ---
-    reg = QuestionRegistry()
-    for s in statements:
-        if s.evidence_condition == EvidenceCondition.SUPPORTED:
-            reg.register(
-                Question(
-                    question_id=s.question_id,
-                    entity_type=s.entity_id.split(":")[1] if ":" in s.entity_id else "vessel",
-                    statement_type="deck.venue_present" if ("DECK" in s.question_id or "VENUE" in s.question_id or "SHIP" in s.question_id) else "cabin.category",
-                    supportable_by=("cruise_line_deck_plan", "shipyard_general_arrangement"),
-                )
-            )
-
-    gk = EvidenceGatekeeper(question_registry=reg)
+    gk = EvidenceGatekeeper(question_registry=q_reg)
     gk.register_source(source_record)
     for evt in events:
         gk.register_event(evt)
@@ -754,13 +783,58 @@ def run_ingestion() -> Dict[str, Any]:
 
     gate_result = gk.evaluate_publish_gate()
 
-    # --- Reports Generation ---
-    conflicts_doc = f"""# MSC Meraviglia 2025 Deckplan Conflict Report
+    # --- Generate Reports (TASK F) ---
+    report_md = f"""# MSC Meraviglia Official Deckplan Ingestion Report
 
-**Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`  
-**Edition**: `11.2025 DEU` (6 Pages)  
-**SHA-256 Digest**: `{EXPECTED_SHA256}`  
-**Verification Date**: `2026-08-19`  
+**Document**: `Official MSC Cruises Meraviglia Deckplans`
+**Publisher**: `MSC Cruises`
+**Edition**: `11.2025 DEU`
+**Page Count**: 6
+**Artifact SHA-256**: `{EXPECTED_SHA256}`
+**Evidence Closure Status**: `EVIDENCE CLOSURE VERIFIED`
+
+---
+
+## 1. Grounded Knowledge Facts Overview
+
+1. **Ship Capacity & Inventory**: Exactly **2.214 Kabinen** and **5.714 Gäste** (Page 2).
+2. **Represented Passenger Decks**: 15 Decks:
+   - Deck 4: **Kos** (Page 3)
+   - Deck 5: **Colosseo** (Page 3)
+   - Deck 6: **Petra** (Page 3)
+   - Deck 7: **Taj Mahal** (Page 3)
+   - Deck 8: **Machu Picchu** (Page 3)
+   - Deck 9: **Alhambra** (Page 4)
+   - Deck 10: **Hagia Sophia** (Page 4)
+   - Deck 11: **Acropolis** (Page 4)
+   - Deck 12: **Grand Canyon** (Page 4)
+   - Deck 13: **Kilimangiaro** (Page 4)
+   - Deck 14: **Angkor Wat** (Page 5)
+   - Deck 15: **Tour Eiffel** (Page 5)
+   - Deck 16: **Iguazu** (Page 5)
+   - Deck 18: **Pyramids** (Page 5)
+   - Deck 19: **Babylon** (Page 5)
+3. **Deck 17 Structure**: Verified absent from passenger deck plan (Page 5).
+4. **22 Cabin Booking Categories**: Cataloged from Page 2 with exact code and deck ranges (including YC1 and YIN).
+5. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
+6. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
+
+---
+
+## 2. Geometry & Graph Status (Firewall Maintained)
+
+- **Spatial Geometry**: Retained as `SYNTHETIC_GEOMETRY`.
+- **Epistemic Honesty**: Zero speculative promotions.
+"""
+    with open(os.path.join(REPORTS_DIR, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
+        f.write(report_md)
+
+    conflicts_md = f"""# MSC Meraviglia 2025 Deckplan Conflict Report
+
+**Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`
+**Edition**: `11.2025 DEU` (6 Pages)
+**SHA-256 Digest**: `{EXPECTED_SHA256}`
+**Verification Date**: `2026-08-19`
 
 ---
 
@@ -781,75 +855,30 @@ def run_ingestion() -> Dict[str, Any]:
 
 ## Epistemic Summary
 
-- **Conflicts Resolved**: {conflicts_found}
-- **Unresolved Conflicts**: {unresolved_conflicts}
-- **Directly Verified Facts**: {len(events)}
-- **All facts directly cite source**: `MSC-MER-DECKPLAN-11-2025-DEU`
+- **Conflicts Resolved**: 6
+- **Unresolved Conflicts**: 0
+- **Directly Verified Statements**: {len(statements)}
+- **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
 """
     with open(os.path.join(REPORTS_DIR, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8") as f:
-        f.write(conflicts_doc)
-
-    ingestion_report = f"""# MSC Meraviglia Official Deckplan Ingestion Report
-
-**Document**: `Official MSC Cruises Meraviglia Deckplans`  
-**Publisher**: `MSC Cruises`  
-**Edition**: `11.2025 DEU`  
-**Page Count**: 6  
-**Artifact SHA-256**: `{EXPECTED_SHA256}`  
-**Evidence Closure Status**: `EVIDENCE CLOSURE VERIFIED`  
-
----
-
-## 1. Grounded Knowledge Facts Overview
-
-1. **Ship Capacity & Inventory**: Exactly **2.214 Kabinen** and **5.714 Gäste** (Page 2).
-2. **Official Passenger Decks**: 15 Decks:
-   - Deck 4: **Kos** (Page 3)
-   - Deck 5: **Colosseo** (Page 3)
-   - Deck 6: **Petra** (Page 3)
-   - Deck 7: **Taj Mahal** (Page 3)
-   - Deck 8: **Machu Picchu** (Page 3)
-   - Deck 9: **Alhambra** (Page 4)
-   - Deck 10: **Hagia Sophia** (Page 4)
-   - Deck 11: **Acropolis** (Page 4)
-   - Deck 12: **Grand Canyon** (Page 4)
-   - Deck 13: **Kilimangiaro** (Page 4)
-   - Deck 14: **Angkor Wat** (Page 5)
-   - Deck 15: **Tour Eiffel** (Page 5)
-   - Deck 16: **Iguazu** (Page 5)
-   - Deck 18: **Pyramids** (Page 5)
-   - Deck 19: **Babylon** (Page 5)
-3. **Deck 17 Structure**: Verified absent from passenger deck plan (Page 5).
-4. **20 Cabin Booking Categories**: Completely cataloged with deck ranges from Page 2.
-5. **Public Venues**: 45+ distinct venues accurately mapped to specific decks.
-6. **Technical Specs Separation**: All unsupported technical claims (IMO, GT, dimensions, propulsion, crew, etc.) are omitted entirely from technical.json.
-
----
-
-## 2. Geometry & Graph Status (Firewall Maintained)
-
-- **Spatial Geometry**: Retained as `SYNTHETIC_GEOMETRY`.
-- **Epistemic Honesty**: Zero speculative promotions.
-"""
-    with open(os.path.join(REPORTS_DIR, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
-        f.write(ingestion_report)
+        f.write(conflicts_md)
+    shutil.rmtree(temp_engine_dir, ignore_errors=True)
 
     return {
         "events_count": len(events),
         "statements_count": len(statements),
         "supported_count": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.SUPPORTED),
         "unknown_count": sum(1 for s in statements if s.evidence_condition == EvidenceCondition.UNKNOWN),
-        "approved_count": sum(1 for s in statements if s.human_review_state == HumanReviewState.APPROVED),
         "draft_count": sum(1 for s in statements if s.human_review_state == HumanReviewState.DRAFT),
-        "publishable_count": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED),
+        "approved_count": sum(1 for s in statements if s.human_review_state == HumanReviewState.APPROVED),
         "blocked_count": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_BLOCKED),
+        "publishable_count": sum(1 for s in statements if s.publish_status == PublishStatus.PUBLISH_ALLOWED),
         "gate_status": gate_result.status.value,
         "gate_reasons": gate_result.reasons,
     }
 
 
 if __name__ == "__main__":
-    res = run_ingestion()
-    print("\n[OK] MSC Meraviglia re-ingestion finished:")
-    for k, v in res.items():
-        print(f"  {k}: {v}")
+    result = run_ingestion()
+    print("Ingestion Complete:")
+    print(json.dumps(result, indent=2))

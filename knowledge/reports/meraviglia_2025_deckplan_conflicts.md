@@ -1,9 +1,9 @@
 # MSC Meraviglia 2025 Deckplan Conflict Report
 
-**Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`  
-**Edition**: `11.2025 DEU` (6 Pages)  
-**SHA-256 Digest**: `77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9`  
-**Verification Date**: `2026-08-19`  
+**Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`
+**Edition**: `11.2025 DEU` (6 Pages)
+**SHA-256 Digest**: `77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9`
+**Verification Date**: `2026-08-19`
 
 ---
 
@@ -26,5 +26,5 @@
 
 - **Conflicts Resolved**: 6
 - **Unresolved Conflicts**: 0
-- **Directly Verified Facts**: 99
-- **All facts directly cite source**: `MSC-MER-DECKPLAN-11-2025-DEU`
+- **Directly Verified Statements**: 100
+- **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
