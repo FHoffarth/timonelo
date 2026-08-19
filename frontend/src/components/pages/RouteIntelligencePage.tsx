@@ -1,5 +1,4 @@
 import { useState } from "react";
-import EpistemicBadge from "../ui/EpistemicBadge";
 import { knowledgeRepository } from "../../knowledge";
 import {
   Compass,

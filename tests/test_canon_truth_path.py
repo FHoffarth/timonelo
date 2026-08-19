@@ -790,3 +790,42 @@ def test_task_g_canon_vs_legacy_static_guard():
     # 5. DIRECT is never used as fallback for missing canonical evidence condition or state in apiClient
     assert '|| "DIRECT"' not in client_content
     assert 'parseLegacySemanticState(o.epistemic_state)' in client_content
+
+
+def test_phase_2c_frontend_fail_closed_static_guards():
+    """Phase 2C: Static CI guards ensuring fail-closed semantics across frontend contracts and badges."""
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    badge_path = os.path.join(repo_root, "frontend", "src", "components", "ui", "EpistemicBadge.tsx")
+    client_path = os.path.join(repo_root, "frontend", "src", "semantic-deck", "apiClient.ts")
+
+    with open(badge_path, "r", encoding="utf-8") as f:
+        badge_content = f.read()
+    with open(client_path, "r", encoding="utf-8") as f:
+        client_content = f.read()
+
+    # 1. parseMethod fallback is null (never DIRECT)
+    assert 'export function parseMethod(val: unknown): Method | null' in client_content
+    assert 'return "DIRECT";' not in client_content
+
+    # 2. MethodBadge has no default DIRECT and renders UNCLASSIFIED on missing value
+    assert 'method = "DIRECT"' not in badge_content
+    assert 'if (!method) {' in badge_content
+    assert 'UNCLASSIFIED' in badge_content
+
+    # 3. DerivationBadge has no default LOCAL and renders UNCLASSIFIED on missing value
+    assert 'derivation = "LOCAL"' not in badge_content
+    assert 'if (!derivation) {' in badge_content
+
+    # 4. No default export of EpistemicBadge remains
+    assert 'export default LegacyEpistemicBadge;' not in badge_content
+    assert 'export default' not in badge_content
+
+    # 5. Zero files in frontend/src import default EpistemicBadge
+    for root, _, files in os.walk(os.path.join(repo_root, "frontend", "src")):
+        for f in files:
+            if f.endswith((".ts", ".tsx")):
+                p = os.path.join(root, f)
+                with open(p, "r", encoding="utf-8") as fh:
+                    content = fh.read()
+                    assert "import EpistemicBadge from" not in content, f"Default import found in {p}"
+                    assert "import EpistemicBadge," not in content, f"Default import found in {p}"

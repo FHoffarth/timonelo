@@ -1,12 +1,12 @@
 import React from "react";
-import EpistemicBadge, { EpistemicTag } from "./EpistemicBadge";
+import { LegacyEpistemicBadge, LegacyEpistemicTag } from "./EpistemicBadge";
 
 interface InfoCardProps {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   description?: string;
-  epistemic?: EpistemicTag | string;
+  epistemic?: LegacyEpistemicTag | string;
   onClick?: () => void;
   className?: string;
 }
@@ -29,7 +29,7 @@ export default function InfoCard({
     >
       <div className="flex items-center justify-between">
         {eyebrow && <span className="eyebrow-tag block">{eyebrow}</span>}
-        {epistemic && <EpistemicBadge status={epistemic} />}
+        {epistemic && <LegacyEpistemicBadge status={epistemic} />}
       </div>
 
       <div className="space-y-0.5">

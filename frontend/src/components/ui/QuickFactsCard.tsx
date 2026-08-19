@@ -1,10 +1,10 @@
 import React from "react";
-import EpistemicBadge, { EpistemicTag } from "./EpistemicBadge";
+import { LegacyEpistemicBadge, LegacyEpistemicTag } from "./EpistemicBadge";
 
 export interface QuickFactItem {
   label: string;
   value: React.ReactNode;
-  epistemic?: EpistemicTag | string;
+  epistemic?: LegacyEpistemicTag | string;
   isMono?: boolean;
 }
 
@@ -47,7 +47,7 @@ export default function QuickFactsCard({
             >
               <div className={`flex items-center justify-between ${isNavy ? "text-[#94A3B8]" : "text-slate-500"}`}>
                 <span>{item.label}</span>
-                {item.epistemic && <EpistemicBadge status={item.epistemic} />}
+                {item.epistemic && <LegacyEpistemicBadge status={item.epistemic} />}
               </div>
               <div
                 className={`font-bold text-sm ${item.isMono ? "font-mono text-[#C58A46] text-xs" : isNavy ? "text-white" : "text-[#0C1B2A]"}`}

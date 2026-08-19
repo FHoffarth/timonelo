@@ -31,14 +31,14 @@ export function parseEvidenceCondition(val: unknown): EvidenceCondition {
   return "UNKNOWN";
 }
 
-export function parseMethod(val: unknown): Method {
+export function parseMethod(val: unknown): Method | null {
   if (typeof val === "string") {
     const upper = val.toUpperCase();
     if (upper === "DIRECT" || upper === "CALCULATED" || upper === "INFERRED") {
       return upper as Method;
     }
   }
-  return "DIRECT";
+  return null;
 }
 
 // Convert raw semantic datasets into Canonical Knowledge Graph representation

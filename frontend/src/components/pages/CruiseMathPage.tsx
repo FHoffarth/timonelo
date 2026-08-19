@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EpistemicBadge from "../ui/EpistemicBadge";
+import { LegacyEpistemicBadge } from "../ui/EpistemicBadge";
 import { CANONICAL_CRUISE_MATH } from "../../data/canonicalPlatformData";
 import { Calculator, Wine, Coffee, DollarSign, Check, Info } from "lucide-react";
 
@@ -83,11 +83,11 @@ export default function CruiseMathPage() {
                       <h3 className="font-display text-xl font-bold text-[#0C1B2A]">
                         {pkg.name}
                       </h3>
+                      <LegacyEpistemicBadge status={pkg.epistemic} />
                       <div className="text-sm font-semibold text-[#C58A46] mt-0.5 font-mono">
                         €{pkg.pricePerDayPerPerson} / day / person • {durationNights} nights × {travelers} = €{packageTotal}
                       </div>
                     </div>
-                    <EpistemicBadge status={pkg.epistemic} />
                   </div>
 
                   <p className="text-xs text-[#5B6570] leading-relaxed mt-3">

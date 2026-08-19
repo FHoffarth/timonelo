@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import EpistemicBadge from "../ui/EpistemicBadge";
+import { LegacyEpistemicBadge } from "../ui/EpistemicBadge";
 import { CANONICAL_CABINS } from "../../data/canonicalPlatformData";
 import { knowledgeRepository } from "../../knowledge";
 import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
@@ -188,7 +188,7 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Category</span>
-                <EpistemicBadge status="KNOWN" />
+                <LegacyEpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
                 {fallbackCabin.category} ({fallbackCabin.tier})
@@ -199,7 +199,7 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Size</span>
-                <EpistemicBadge status="KNOWN" />
+                <LegacyEpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
                 Approx. {fallbackCabin.sqmInterior}m² {fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}
@@ -210,7 +210,7 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Bed Config</span>
-                <EpistemicBadge status="KNOWN" />
+                <LegacyEpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
                 {fallbackCabin.bedConfig}
@@ -222,7 +222,7 @@ export default function CabinDeepDivePage({
               <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
                 <div className="flex items-center justify-between text-slate-500">
                   <span>Connecting Door</span>
-                  <EpistemicBadge status="KNOWN" />
+                  <LegacyEpistemicBadge status="KNOWN" />
                 </div>
                 <div className="font-bold text-[#0C1B2A] text-sm">
                   Cabin {fallbackCabin.connectingCabinId}
@@ -233,8 +233,8 @@ export default function CabinDeepDivePage({
             {/* Evidence Artifact */}
             <div className="space-y-1 pt-1">
               <div className="flex items-center justify-between text-slate-500">
-                <span>Originating Artifact</span>
-                <EpistemicBadge status="VERIFIED" />
+                <span>Lifeboat Sightline</span>
+                <LegacyEpistemicBadge status="VERIFIED" />
               </div>
               <div className="font-mono font-bold text-[#C58A46] text-xs">
                 {fallbackCabin.evidenceArtifactId || "MSC_BELLISSIMA_DECK_PLANS_11.2025_DEU"}

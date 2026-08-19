@@ -1,11 +1,11 @@
 import React from "react";
-import EpistemicBadge, { EpistemicTag } from "./EpistemicBadge";
+import { LegacyEpistemicBadge, LegacyEpistemicTag } from "./EpistemicBadge";
 
 interface TimelineCardProps {
   stepLabel: string;
   title: string;
   subtitle: string;
-  epistemic?: EpistemicTag | string;
+  epistemic?: LegacyEpistemicTag | string;
   onClick?: () => void;
   className?: string;
 }
@@ -39,7 +39,7 @@ export default function TimelineCard({
         </div>
       </div>
 
-      {epistemic && <EpistemicBadge status={epistemic} />}
+      {epistemic && <LegacyEpistemicBadge status={epistemic} />}
     </div>
   );
 }

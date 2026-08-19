@@ -17,7 +17,19 @@ export interface MethodBadgeProps {
   className?: string;
 }
 
-export function MethodBadge({ method = "DIRECT", className = "" }: MethodBadgeProps) {
+export function MethodBadge({ method, className = "" }: MethodBadgeProps) {
+  if (!method) {
+    return (
+      <span
+        className={`inline-flex items-center px-2 py-0.5 rounded text-[9.5px] font-mono font-bold uppercase tracking-wider border bg-slate-200 text-slate-700 border-slate-300 ${className}`}
+        title="Production Method: UNCLASSIFIED"
+      >
+        <span className="opacity-60 text-[8px] mr-1">METHOD:</span>
+        UNCLASSIFIED
+      </span>
+    );
+  }
+
   let style = "bg-slate-200 text-slate-800 border-slate-300";
   if (method === "DIRECT") {
     style = "bg-emerald-100/90 text-emerald-900 border-emerald-300";
@@ -135,9 +147,21 @@ export interface DerivationBadgeProps {
 }
 
 export function DerivationBadge({
-  derivation = "LOCAL",
+  derivation,
   className = "",
 }: DerivationBadgeProps) {
+  if (!derivation) {
+    return (
+      <span
+        className={`inline-flex items-center px-2 py-0.5 rounded text-[9.5px] font-mono font-bold uppercase tracking-wider border bg-slate-200 text-slate-700 border-slate-300 ${className}`}
+        title="Derivation: UNCLASSIFIED"
+      >
+        <span className="opacity-60 text-[8px] mr-1">ORIGIN:</span>
+        UNCLASSIFIED
+      </span>
+    );
+  }
+
   return (
     <span
       className={`inline-flex items-center px-2 py-0.5 rounded text-[9.5px] font-mono font-bold uppercase tracking-wider border bg-indigo-100/90 text-indigo-900 border-indigo-300 ${className}`}
@@ -238,6 +262,3 @@ export function LegacyEpistemicBadge({
     </span>
   );
 }
-
-// Default export delegates to LegacyEpistemicBadge for backwards compatibility with existing UI fixtures
-export default LegacyEpistemicBadge;

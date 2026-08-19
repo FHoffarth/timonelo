@@ -1,5 +1,5 @@
 import React from "react";
-import EpistemicBadge from "../ui/EpistemicBadge";
+import { LegacyEpistemicBadge } from "../ui/EpistemicBadge";
 import { CANONICAL_TRAVEL_INFO } from "../../data/canonicalPlatformData";
 import { ShieldCheck, AlertOctagon, FileCheck, Globe2 } from "lucide-react";
 
@@ -44,7 +44,7 @@ export default function TravelInfoPage() {
                     {item.jurisdiction}
                   </span>
                 </div>
-                <EpistemicBadge status={item.epistemicStatus} />
+                <LegacyEpistemicBadge status={item.epistemicStatus} />
               </div>
 
               <p className="text-sm text-[#5B6570] leading-relaxed">
