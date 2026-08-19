@@ -5,12 +5,13 @@
     "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
     "verification_authority": "Chantiers de l'Atlantique & MSC Cruises Specifications",
     "sha256": "8fa21e90d234a9b6c0e812d1b8273641b9d10e82c610927a4e610283c7491029",
-    "confidence": 1.0,
     "last_audited": "2026-08-18"
   },
   "technical_specifications": {
     "class": "Meraviglia-class (Vista Project)",
-    "sister_ships": ["MSC Meraviglia"],
+    "sister_ships": [
+      "MSC Meraviglia"
+    ],
     "imo_number": 9760524,
     "mmsi": 248992000,
     "call_sign": "9HA4902",
@@ -73,8 +74,13 @@
         "Deep interior refreshes across furnishings, carpets, and stateroom aesthetic upgrades for permanent Far East deployment"
       ],
       "provenance": "Huarun Dadong Dockyard Technical Bulletin 2023",
-      "confidence": 1.0,
-      "tags": ["drydock", "refurbishment", "shanghai", "hull-coating", "interior-refresh"]
+      "tags": [
+        "drydock",
+        "refurbishment",
+        "shanghai",
+        "hull-coating",
+        "interior-refresh"
+      ]
     }
   ]
 }

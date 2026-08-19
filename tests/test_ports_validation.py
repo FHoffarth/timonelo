@@ -62,7 +62,7 @@ class TestPortKnowledgeValidation(unittest.TestCase):
                     self.assertIn("name", item)
                     self.assertIn("source", item)
                     self.assertIn("provenance", item)
-                    self.assertIn("confidence", item)
+                    self.assertNotIn("confidence", item)
                     self.assertIn("tags", item)
 
             # Check medical.json
@@ -73,7 +73,7 @@ class TestPortKnowledgeValidation(unittest.TestCase):
                     self.assertIn("name", item)
                     self.assertIn("source", item)
                     self.assertIn("provenance", item)
-                    self.assertIn("confidence", item)
+                    self.assertNotIn("confidence", item)
                     self.assertIn("tags", item)
 
 

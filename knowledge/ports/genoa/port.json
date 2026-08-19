@@ -19,8 +19,12 @@
       "status": "Operational",
       "source": "Ports of Genoa (portsofgenoa.com)",
       "provenance": "GOA-PA-TERM-MILLE",
-      "confidence": 1.0,
-      "tags": ["stazione-marittima", "ponte-dei-mille", "msc-homeport", "turnaround"]
+      "tags": [
+        "stazione-marittima",
+        "ponte-dei-mille",
+        "msc-homeport",
+        "turnaround"
+      ]
     },
     {
       "id": "TERM-GOA-ANDREA-DORIA",
@@ -30,8 +34,11 @@
       "status": "Operational",
       "source": "Ports of Genoa",
       "provenance": "GOA-PA-TERM-DORIA",
-      "confidence": 1.0,
-      "tags": ["andrea-doria", "turnaround", "cruise-terminal"]
+      "tags": [
+        "andrea-doria",
+        "turnaround",
+        "cruise-terminal"
+      ]
     },
     {
       "id": "TERM-GOA-MOLO-VECCHIO",
@@ -41,8 +48,12 @@
       "status": "Operational",
       "source": "Ports of Genoa",
       "provenance": "GOA-PA-TERM-MOLO-VECCHIO",
-      "confidence": 1.0,
-      "tags": ["porto-antico", "molo-vecchio", "boutique", "superyachts"]
+      "tags": [
+        "porto-antico",
+        "molo-vecchio",
+        "boutique",
+        "superyachts"
+      ]
     }
   ],
   "berths": [
@@ -56,8 +67,12 @@
       "notes": "Multiple deep-water berths accommodating modern mega-cruise liners up to 340m length.",
       "source": "Western Ligurian Sea Port Authority Berth Specifications",
       "provenance": "GOA-PA-BERTH-STAZ",
-      "confidence": 1.0,
-      "tags": ["deep-water", "mega-ships", "mille", "doria"]
+      "tags": [
+        "deep-water",
+        "mega-ships",
+        "mille",
+        "doria"
+      ]
     },
     {
       "id": "BERTH-GOA-MOLO-VECCHIO",
@@ -69,8 +84,11 @@
       "notes": "Dedicated to luxury boutique ships and superyachts.",
       "source": "Western Ligurian Sea Port Authority",
       "provenance": "GOA-PA-BERTH-MV",
-      "confidence": 1.0,
-      "tags": ["molo-vecchio", "boutique", "yachts"]
+      "tags": [
+        "molo-vecchio",
+        "boutique",
+        "yachts"
+      ]
     }
   ],
   "arrival_procedures": "Direct alongside docking. Passenger processing is handled inside historic terminal structures that feature check-in desks, security, tourist information, and direct overhead gangway access. Genoa is a primary homeport for MSC Cruises.",
@@ -82,8 +100,14 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Western Ligurian Sea Port Authority (portsofgenoa.com) 2026",
-    "confidence": 1.0
+    "verification_authority": "Western Ligurian Sea Port Authority (portsofgenoa.com) 2026"
   },
-  "tags": ["genoa", "italy", "liguria", "western-mediterranean", "msc-homeport", "porto-antico"]
+  "tags": [
+    "genoa",
+    "italy",
+    "liguria",
+    "western-mediterranean",
+    "msc-homeport",
+    "porto-antico"
+  ]
 }

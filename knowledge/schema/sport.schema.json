@@ -4,7 +4,11 @@
   "title": "SportsAndRecreationSchema",
   "description": "Canonical schema for ship sport arenas, gyms, adventure ropes courses, and arcade simulators.",
   "type": "object",
-  "required": ["vessel_id", "provenance", "sports_and_recreation"],
+  "required": [
+    "vessel_id",
+    "provenance",
+    "sports_and_recreation"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
@@ -12,11 +16,24 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
-      }
+        "source_artifact": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "last_audited": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "sports_and_recreation": {
       "type": "array",
@@ -30,20 +47,33 @@
           "description",
           "source",
           "provenance",
-          "confidence",
           "tags"
         ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "deck": { "type": "integer" },
-          "category": { "type": "string" },
-          "description": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "deck": {
+            "type": "integer"
+          },
+          "category": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "activities": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "brand_partner": { "type": "string" },
+          "brand_partner": {
+            "type": "string"
+          },
           "metrics": {
             "type": "object",
             "additionalProperties": true
@@ -52,31 +82,61 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "name", "deck", "description", "source", "provenance", "confidence", "tags"],
+              "required": [
+                "id",
+                "name",
+                "deck",
+                "description",
+                "source",
+                "provenance",
+                "tags"
+              ],
               "properties": {
-                "id": { "type": "string" },
-                "name": { "type": "string" },
-                "deck": { "type": "integer" },
-                "description": { "type": "string" },
-                "units_count": { "type": "integer" },
-                "lanes_count": { "type": "integer" },
-                "source": { "type": "string" },
-                "provenance": { "type": "string" },
-                "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "deck": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "units_count": {
+                  "type": "integer"
+                },
+                "lanes_count": {
+                  "type": "integer"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "provenance": {
+                  "type": "string"
+                },
                 "tags": {
                   "type": "array",
-                  "items": { "type": "string" }
+                  "items": {
+                    "type": "string"
+                  }
                 }
               },
               "additionalProperties": false
             }
           },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "source": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false

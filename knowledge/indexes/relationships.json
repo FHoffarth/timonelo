@@ -1,7 +1,6 @@
 {
   "provenance": {
-    "source_artifact": "TIMONELO_RELATIONAL_KNOWLEDGE_GRAPH_INDEX_2026",
-    "confidence": 1.0
+    "source_artifact": "TIMONELO_RELATIONAL_KNOWLEDGE_GRAPH_INDEX_2026"
   },
   "ships_to_routes": {
     "msc-bellissima": [

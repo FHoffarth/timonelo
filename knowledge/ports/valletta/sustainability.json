@@ -1,8 +1,7 @@
 {
   "port_id": "valletta",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Fully Operational (Mediterranean Pioneer Leader)",
@@ -11,7 +10,10 @@
     "operational_launch": "Late 2023",
     "infrastructure_specs": {
       "electrified_berths_count": 5,
-      "berths": ["Pinto Wharf (Quays 1, 2, 4 & 5)", "Boiler Wharf"],
+      "berths": [
+        "Pinto Wharf (Quays 1, 2, 4 & 5)",
+        "Boiler Wharf"
+      ],
       "simultaneous_power_capacity_mw": 64,
       "simultaneous_cruise_ships_capacity": 5,
       "environmental_impact": "Allows up to five mega-cruise vessels to shut off auxiliary diesel generators concurrently while in port."
@@ -23,7 +25,14 @@
     },
     "source": "Transport Malta, Infrastructure Malta & Valletta Cruise Port PLC 2026",
     "provenance": "MLA-TM-OPS-CLEANAIR",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "clean-air-project", "64mw", "carnival-ppa", "enemalta", "mediterranean-pioneer"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "clean-air-project",
+      "64mw",
+      "carnival-ppa",
+      "enemalta",
+      "mediterranean-pioneer"
+    ]
   }
 }

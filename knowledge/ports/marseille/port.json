@@ -19,8 +19,12 @@
       "status": "Operational",
       "source": "Grand Port Maritime de Marseille (marseille-port.fr)",
       "provenance": "MRS-PA-TERM-MPCT",
-      "confidence": 1.0,
-      "tags": ["mpct", "leon-gourret", "terminals-a-f", "mega-ships"]
+      "tags": [
+        "mpct",
+        "leon-gourret",
+        "terminals-a-f",
+        "mega-ships"
+      ]
     },
     {
       "id": "TERM-MRS-J4-JOLIETTE",
@@ -30,8 +34,14 @@
       "status": "Operational",
       "source": "Grand Port Maritime de Marseille",
       "provenance": "MRS-PA-TERM-J4",
-      "confidence": 1.0,
-      "tags": ["j4", "joliette", "mucem", "luxury", "boutique", "historic-center"]
+      "tags": [
+        "j4",
+        "joliette",
+        "mucem",
+        "luxury",
+        "boutique",
+        "historic-center"
+      ]
     }
   ],
   "berths": [
@@ -45,8 +55,14 @@
       "notes": "Deep-water quays equipped with shore power connection capacity for 3 simultaneous vessels.",
       "source": "Grand Port Maritime de Marseille Berth Directory",
       "provenance": "MRS-PA-BERTH-MPCT",
-      "confidence": 1.0,
-      "tags": ["deep-water", "shore-power", "mega-ships", "berth-163", "berth-181", "berth-183"]
+      "tags": [
+        "deep-water",
+        "shore-power",
+        "mega-ships",
+        "berth-163",
+        "berth-181",
+        "berth-183"
+      ]
     },
     {
       "id": "BERTH-MRS-J4",
@@ -58,8 +74,12 @@
       "notes": "Central berth alongside the MuCEM museum for luxury vessels.",
       "source": "Grand Port Maritime de Marseille",
       "provenance": "MRS-PA-BERTH-J4",
-      "confidence": 1.0,
-      "tags": ["j4", "mucem", "boutique", "luxury"]
+      "tags": [
+        "j4",
+        "mucem",
+        "boutique",
+        "luxury"
+      ]
     }
   ],
   "arrival_procedures": "Direct alongside docking. Modern multi-level terminal buildings at MPCT manage baggage claim, customs, and security checkpoints. Staging areas for buses and taxis are located directly outside the baggage-claim exit.",
@@ -71,8 +91,14 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Grand Port Maritime de Marseille & MedCruise Association 2026",
-    "confidence": 1.0
+    "verification_authority": "Grand Port Maritime de Marseille & MedCruise Association 2026"
   },
-  "tags": ["marseille", "france", "western-mediterranean", "provence", "mpct", "vieux-port"]
+  "tags": [
+    "marseille",
+    "france",
+    "western-mediterranean",
+    "provence",
+    "mpct",
+    "vieux-port"
+  ]
 }

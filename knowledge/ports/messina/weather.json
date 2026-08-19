@@ -1,8 +1,7 @@
 {
   "port_id": "messina",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "climate_profile": {
     "climate_type": "Mediterranean",

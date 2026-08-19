@@ -1,8 +1,7 @@
 {
   "port_id": "marseille",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "Modern Private-Public General Hospital (Nearest to Joliette/Port)",
       "source": "ARS Provence-Alpes-Côte d'Azur",
       "provenance": "FR-MED-HOSP-EUROPEEN",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "joliette", "medical"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "joliette",
+        "medical"
+      ]
     },
     {
       "id": "MED-MRS-TIMONE",
@@ -26,8 +29,12 @@
       "type": "Regional University Hospital Complex",
       "source": "Assistance Publique - Hôpitaux de Marseille (AP-HM)",
       "provenance": "FR-MED-HOSP-TIMONE",
-      "confidence": 1.0,
-      "tags": ["hospital", "trauma-center", "university-hospital", "timone"]
+      "tags": [
+        "hospital",
+        "trauma-center",
+        "university-hospital",
+        "timone"
+      ]
     }
   ]
 }

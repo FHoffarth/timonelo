@@ -157,22 +157,122 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
         validator_cls = jsonschema.validators.validator_for(schema)
         validator = validator_cls(schema)
 
-        invalid_doc = [{
-            "deck_number": 5,
-            "name": "Invalid Deck",
-            "is_passenger_accessible": True,
-            "has_cabins": False,
-            "has_public_venues": True,
-            "vertical_transport_hubs": 2,
-            "muster_station_count": 1,
-            "lifeboat_embarkation_deck": False,
-            "zones": ["MIDSHIP"],
-            "elevation_m": 12.5,
-            "evidence_links": [{
-                "source_id": "SRC-1",
-                "locator": "p1",
-                "method": "INVALID_METHOD_ENUM_VALUE"
+        invalid_doc = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "test-source"},
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "INVALID_CATEGORY_ENUM",
+                "description": "Invalid category test",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
             }]
-        }]
+        }
         errors = list(validator.iter_errors(invalid_doc))
         self.assertTrue(len(errors) > 0, "Invalid enum value must fail validation")
+
+    def test_negative_confidence_field_forbidden_by_schema(self):
+        """Task E.2: canonical knowledge containing stored confidence fails validation."""
+        schema_path = os.path.join(SCHEMA_DIR, "deck.schema.json")
+        schema = self.load_json(schema_path)
+        validator_cls = jsonschema.validators.validator_for(schema)
+        validator = validator_cls(schema)
+
+        doc_with_confidence = {
+            "vessel_id": "test-vessel",
+            "provenance": {
+                "source_artifact": "test-source",
+                "confidence": 1.0  # Forbidden in modernized schema!
+            },
+            "decks": [{
+                "id": "DECK-05",
+                "name": "Deck 5",
+                "deck_number": 5,
+                "category": "STATEROOM_DECK",
+                "description": "Deck 5 description",
+                "passenger_accessible": True,
+                "source": "test-source",
+                "provenance": "page:1",
+                "tags": ["test"]
+            }]
+        }
+        errors = list(validator.iter_errors(doc_with_confidence))
+        self.assertTrue(len(errors) > 0, "Document with stored confidence must fail schema validation")
+
+    def test_negative_ship_schema_may_omit_technical_fields(self):
+        """Task E.3-7: ship knowledge may omit IMO, GT, builder, dimensions, capacities without dummy values."""
+        schema_path = os.path.join(SCHEMA_DIR, "ship.schema.json")
+        schema = self.load_json(schema_path)
+        validator_cls = jsonschema.validators.validator_for(schema)
+        validator = validator_cls(schema)
+
+        # Partially evidenced vessel: has identity and provenance, but no technical specs
+        minimal_doc = {
+            "vessel_id": "msc-partially-evidenced",
+            "vessel_name": "MSC Partially Evidenced",
+            "provenance": {
+                "source_artifact": "Official Deckplans PDF"
+            }
+        }
+        errors = list(validator.iter_errors(minimal_doc))
+        self.assertEqual(errors, [], "Partially evidenced ship with omitted technical_specifications must validate")
+
+        # Has technical_specifications with only class, omitting IMO, GT, dimensions, builder, capacities
+        partial_tech_doc = {
+            "vessel_id": "msc-partially-evidenced",
+            "vessel_name": "MSC Partially Evidenced",
+            "provenance": {
+                "source_artifact": "Official Deckplans PDF"
+            },
+            "technical_specifications": {
+                "class": "Meraviglia-class"
+            }
+        }
+        errors_partial = list(validator.iter_errors(partial_tech_doc))
+        self.assertEqual(errors_partial, [], "Ship with omitted IMO, GT, builder must validate")
+
+    def test_negative_invalid_technical_values_still_fail_validation(self):
+        """Task E.8: when technical fields are present, invalid values/types still fail validation."""
+        schema_path = os.path.join(SCHEMA_DIR, "ship.schema.json")
+        schema = self.load_json(schema_path)
+        validator_cls = jsonschema.validators.validator_for(schema)
+        validator = validator_cls(schema)
+
+        invalid_imo_doc = {
+            "vessel_id": "test-ship",
+            "vessel_name": "Test Ship",
+            "provenance": {"source_artifact": "test"},
+            "technical_specifications": {
+                "imo_number": 99  # Invalid IMO: minimum is 1000000
+            }
+        }
+        errors = list(validator.iter_errors(invalid_imo_doc))
+        self.assertTrue(len(errors) > 0, "Invalid IMO value must fail schema validation")
+
+    def test_schema_valid_does_not_imply_evidence_valid(self):
+        """Task E.10: schema validity does not imply evidence/gatekeeper validity."""
+        # A schema-valid document with unevidenced facts can be validated by schema,
+        # but must be rejected by EvidenceGatekeeper when evaluated fail-closed.
+        from timonelo.evidence.gatekeeper import EvidenceGatekeeper
+        from timonelo.evidence.engine import Statement
+        from timonelo.ontology.models import Method, Derivation, EvidenceCondition, HumanReviewState, PublishStatus
+
+        gk = EvidenceGatekeeper()
+        # Statement has schema-like fact, but is UNKNOWN
+        gk.add_statement(Statement(
+            statement_id="stmt-test",
+            entity_id="test-ship",
+            question_id="ship.imo",
+            value=9760512,
+            method=Method.INFERRED,
+            derivation=Derivation.REFERENCE_MODEL,
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.DRAFT,
+            publish_status=PublishStatus.PUBLISH_BLOCKED,
+        ))
+        res = gk.evaluate_publish_gate()
+        self.assertEqual(res.status, PublishStatus.PUBLISH_BLOCKED)

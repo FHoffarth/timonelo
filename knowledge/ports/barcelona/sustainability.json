@@ -1,8 +1,7 @@
 {
   "port_id": "barcelona",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Operational & Expanding (Nexigen Plan)",
@@ -35,7 +34,13 @@
     "grid_integration_target": "The port wide medium-voltage network is projected to fully support multiple simultaneous cruise ships by 2027/2028 under the Nexigen Master Plan.",
     "source": "Barcelona Port Authority Nexigen Plan 2025-2026",
     "provenance": "BCN-PA-NEXIGEN",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "nexigen", "sustainability", "powercon", "green-port"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "nexigen",
+      "sustainability",
+      "powercon",
+      "green-port"
+    ]
   }
 }

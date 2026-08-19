@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "lounges": [
     {
@@ -14,7 +13,6 @@
       "description": "Exclusive forward panoramic lounge for MSC Yacht Club guests.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "panoramic",
@@ -29,7 +27,6 @@
       "description": "High-deck panoramic cocktail lounge with live piano and sea views.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "panoramic",
         "cocktails",
@@ -45,7 +42,6 @@
       "description": "Aft show lounge designed for immersive visual productions.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "show",
         "acrobatics",
@@ -60,7 +56,6 @@
       "description": "Late-night dance club and DJ venue.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "nightclub",
         "dance",

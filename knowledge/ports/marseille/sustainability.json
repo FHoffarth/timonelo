@@ -1,15 +1,18 @@
 {
   "port_id": "marseille",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Fully Operational & Expanding (CENAQ Program)",
     "investment_eur": 50000000,
     "operational_capabilities": {
       "simultaneous_cruise_ships": 3,
-      "berths_electrified": ["Berth 163", "Berth 181", "Berth 183"],
+      "berths_electrified": [
+        "Berth 163",
+        "Berth 181",
+        "Berth 183"
+      ],
       "terminal": "Môle Léon Gourret (MPCT)",
       "technical_features": "Dedicated 50Hz-to-60Hz frequency conversion substation ensuring clean green grid electricity to international vessel standards.",
       "operational_since": "Early 2026"
@@ -24,7 +27,14 @@
     "environmental_regulations": "Under current maritime regulations, cruise vessels calling at Marseille that fail to connect to OPS must operate on LNG or clean equivalent fuels while at berth, or face stringent idle-emission financial penalties.",
     "source": "Marseille Fos Port Authority CENAQ Program Report & MedCruise Association 2026",
     "provenance": "MRS-PA-CENAQ-OPS",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "cenaq", "sustainability", "green-electricity", "lng", "regulations"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "cenaq",
+      "sustainability",
+      "green-electricity",
+      "lng",
+      "regulations"
+    ]
   }
 }

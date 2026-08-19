@@ -1,14 +1,16 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "public_areas": [
     {
       "id": "PUB-GALLERIA-BELLISSIMA",
       "name": "Galleria Bellissima",
-      "deck": [6, 7],
+      "deck": [
+        6,
+        7
+      ],
       "category": "CENTRAL_PROMENADE",
       "description": "A 96-meter-long indoor Mediterranean-style promenade serving as the social axis of the ship. Lined with boutiques, specialty dining, cafes, bars, and duty-free retail shops.",
       "metrics": {
@@ -16,13 +18,21 @@
       },
       "source": "MSC Bellissima Architectural Specification",
       "provenance": "MSC-BEL-SPEC-GALLERIA",
-      "confidence": 1.0,
-      "tags": ["promenade", "shopping", "dining", "social-hub", "mediterranean"]
+      "tags": [
+        "promenade",
+        "shopping",
+        "dining",
+        "social-hub",
+        "mediterranean"
+      ]
     },
     {
       "id": "PUB-GALLERIA-LED-DOME",
       "name": "Galleria LED Dome Sky",
-      "deck": [6, 7],
+      "deck": [
+        6,
+        7
+      ],
       "category": "DIGITAL_ARCHITECTURE",
       "description": "An 80-meter-long (480 m² / 5,170 sq ft) curved LED ceiling covering the central promenade. Acts as a digital sky transmitting sunrises, sunsets, dynamic atmospheres, and visual backdrops for parades and street shows.",
       "metrics": {
@@ -32,13 +42,21 @@
       },
       "source": "MSC Bellissima Technical Factsheet",
       "provenance": "MSC-BEL-SPEC-LEDDOME",
-      "confidence": 1.0,
-      "tags": ["led-dome", "digital-ceiling", "entertainment", "landmark"]
+      "tags": [
+        "led-dome",
+        "digital-ceiling",
+        "entertainment",
+        "landmark"
+      ]
     },
     {
       "id": "PUB-SWAROVSKI-STAIRCASE",
       "name": "Swarovski Crystal Staircases",
-      "deck": [5, 6, 7],
+      "deck": [
+        5,
+        6,
+        7
+      ],
       "category": "ATRIUM_FEATURE",
       "description": "Iconic multi-deck Atrium focal points. Features a total of 96 steps adorned with over 61,000 genuine Swarovski crystals.",
       "metrics": {
@@ -47,8 +65,13 @@
       },
       "source": "MSC Cruises Official Design Factsheet",
       "provenance": "MSC-BEL-SPEC-SWAROVSKI",
-      "confidence": 1.0,
-      "tags": ["swarovski", "atrium", "luxury", "photo-spot", "landmark"]
+      "tags": [
+        "swarovski",
+        "atrium",
+        "luxury",
+        "photo-spot",
+        "landmark"
+      ]
     },
     {
       "id": "PUB-TOP19-SOLARIUM",
@@ -58,8 +81,13 @@
       "description": "An adult-only, private sun deck containing premium sun loungers, whirlpools, and dedicated refreshments. Access restricted to Aurea Experience or premium package guests.",
       "source": "MSC Cruises Guest Experience Catalog",
       "provenance": "MSC-BEL-SPEC-TOP19",
-      "confidence": 1.0,
-      "tags": ["solarium", "adults-only", "aurea", "whirlpools", "sun-deck"]
+      "tags": [
+        "solarium",
+        "adults-only",
+        "aurea",
+        "whirlpools",
+        "sun-deck"
+      ]
     },
     {
       "id": "PUB-INFINITY-ATRIUM",
@@ -69,8 +97,12 @@
       "description": "The central 3-deck reception hub featuring Guest Relations, the Business Centre, live music lounge, and direct elevator access.",
       "source": "MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-GA-DECK5-ATRIUM",
-      "confidence": 1.0,
-      "tags": ["reception", "guest-relations", "lobby", "atrium"]
+      "tags": [
+        "reception",
+        "guest-relations",
+        "lobby",
+        "atrium"
+      ]
     }
   ]
 }

@@ -3,15 +3,54 @@
   "title": "7-Night Classic Western Mediterranean",
   "category": "Ocean Cruise",
   "season": "Year-Round (Peak: May–October)",
-  "turnaround_ports": ["genoa", "barcelona", "civitavecchia"],
+  "turnaround_ports": [
+    "genoa",
+    "barcelona",
+    "civitavecchia"
+  ],
   "ports_sequence": [
-    { "day": 1, "port_slug": "genoa", "type": "EMBARKATION_AND_CALL", "sea_state_typical": "Calm" },
-    { "day": 2, "port_slug": "civitavecchia", "type": "PORT_CALL", "sea_state_typical": "Moderate Swell" },
-    { "day": 3, "port_slug": "palermo", "type": "PORT_CALL", "sea_state_typical": "Calm" },
-    { "day": 4, "port_slug": "sea-day", "type": "AT_SEA", "sea_state_typical": "Open Sea" },
-    { "day": 5, "port_slug": "ibiza", "type": "TENDER_OR_DOCK", "sea_state_typical": "Calm" },
-    { "day": 6, "port_slug": "valencia", "type": "PORT_CALL", "sea_state_typical": "Calm" },
-    { "day": 7, "port_slug": "marseille", "type": "PORT_CALL", "sea_state_typical": "Mistral Risk" }
+    {
+      "day": 1,
+      "port_slug": "genoa",
+      "type": "EMBARKATION_AND_CALL",
+      "sea_state_typical": "Calm"
+    },
+    {
+      "day": 2,
+      "port_slug": "civitavecchia",
+      "type": "PORT_CALL",
+      "sea_state_typical": "Moderate Swell"
+    },
+    {
+      "day": 3,
+      "port_slug": "palermo",
+      "type": "PORT_CALL",
+      "sea_state_typical": "Calm"
+    },
+    {
+      "day": 4,
+      "port_slug": "sea-day",
+      "type": "AT_SEA",
+      "sea_state_typical": "Open Sea"
+    },
+    {
+      "day": 5,
+      "port_slug": "ibiza",
+      "type": "TENDER_OR_DOCK",
+      "sea_state_typical": "Calm"
+    },
+    {
+      "day": 6,
+      "port_slug": "valencia",
+      "type": "PORT_CALL",
+      "sea_state_typical": "Calm"
+    },
+    {
+      "day": 7,
+      "port_slug": "marseille",
+      "type": "PORT_CALL",
+      "sea_state_typical": "Mistral Risk"
+    }
   ],
   "negative_intelligence": [
     "Rome transit from Civitavecchia requires 70min regional train; book express slots to avoid missing all-aboard.",

@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "entertainment_venues": [
     {
@@ -14,7 +13,6 @@
       "description": "Two-tier 985-seat theatre presenting West End / Broadway-style productions.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "theatre",
         "broadway",
@@ -30,7 +28,6 @@
       "description": "Custom entertainment lounge with 360-degree rotating stage and LED screens.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "theatre",
         "acrobatics",
@@ -45,7 +42,6 @@
       "description": "Full-service casino featuring slot machines, roulette, and blackjack tables.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "casino",
         "gaming",
@@ -60,7 +56,6 @@
       "description": "Motion-seat 4D interactive gaming cinema.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "cinema",
         "4d",
@@ -75,7 +70,6 @@
       "description": "Full-scale virtual reality Formula 1 racing simulators.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "simulator",
         "f1",
@@ -90,7 +84,6 @@
       "description": "Two full-sized regulation bowling lanes.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "bowling",
         "family-games"
@@ -104,7 +97,6 @@
       "description": "Live television recording studio hosting games and karaoke.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "confidence": 1.0,
       "tags": [
         "tv-studio",
         "games",
@@ -119,7 +111,6 @@
       "description": "Creative technology and 3D printing lab for young cruisers.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "youth",
         "stem",
@@ -134,7 +125,6 @@
       "description": "Dedicated nursery and play center for children under 3.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "kids",
         "baby",
@@ -149,7 +139,6 @@
       "description": "Lego-themed activity center for ages 3 to 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "kids",
         "lego",
@@ -164,7 +153,6 @@
       "description": "Lego-themed activity center for ages 7 to 11.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "kids",
         "lego",
@@ -179,7 +167,6 @@
       "description": "Dedicated social space and gaming lounge for ages 12 to 14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "teens",
         "gaming",
@@ -194,7 +181,6 @@
       "description": "Dedicated lounge and disco for ages 15 to 17.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "confidence": 1.0,
       "tags": [
         "teens",
         "disco",

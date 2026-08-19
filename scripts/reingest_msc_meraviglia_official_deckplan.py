@@ -141,7 +141,6 @@ def run_ingestion() -> Dict[str, Any]:
             "passenger_accessible": True,
             "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{p_num}",
-            "confidence": 1.0,
             "tags": [d_name.lower().replace(" ", "-"), d_cat.lower().replace("_", "-")]
         })
 
@@ -169,7 +168,6 @@ def run_ingestion() -> Dict[str, Any]:
         "provenance": {
             "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "sha256": EXPECTED_SHA256,
-            "confidence": 1.0
         },
         "notes": "MSC Meraviglia features 18 physical decks (15 passenger-accessible), skipping deck 17. Verified from Official Deckplans Edition 11.2025 DEU.",
         "decks": decks_json_list
@@ -216,7 +214,6 @@ def run_ingestion() -> Dict[str, Any]:
         "provenance": {
             "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "sha256": EXPECTED_SHA256,
-            "confidence": 1.0
         },
         "summary": {
             "total_staterooms": 2214,
@@ -241,7 +238,6 @@ def run_ingestion() -> Dict[str, Any]:
                 "description": c["desc"],
                 "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                 "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{c['page']}",
-                "confidence": 1.0,
                 "tags": c["tags"]
             }
             for c in cabin_categories_data
@@ -277,7 +273,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "restaurants.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "restaurants": [
                 {
                     "id": r["id"],
@@ -288,7 +287,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "dining_model": r["dining_model"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{r['page']}",
-                    "confidence": 1.0,
                     "tags": r["tags"]
                 }
                 for r in restaurants_data
@@ -326,7 +324,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "bars.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "bars": [
                 {
                     "id": b["id"],
@@ -336,7 +337,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": b["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{b['page']}",
-                    "confidence": 1.0,
                     "tags": b["tags"]
                 }
                 for b in bars_data
@@ -361,7 +361,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "lounges.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "lounges": [
                 {
                     "id": l["id"],
@@ -371,7 +374,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": l["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{l['page']}",
-                    "confidence": 1.0,
                     "tags": l["tags"]
                 }
                 for l in lounges_data
@@ -398,7 +400,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "pools.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "pools_and_water_areas": [
                 {
                     "id": p["id"],
@@ -408,7 +413,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": p["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{p['page']}",
-                    "confidence": 1.0,
                     "tags": p["tags"]
                 }
                 for p in pools_data
@@ -429,7 +433,6 @@ def run_ingestion() -> Dict[str, Any]:
         "provenance": {
             "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "sha256": EXPECTED_SHA256,
-            "confidence": 1.0
         },
         "spa_and_wellness": {
             "id": "SPA-AUREA-COMPLEX",
@@ -439,7 +442,6 @@ def run_ingestion() -> Dict[str, Any]:
             "description": "Authentic Balinese luxury spa offering thermal suite wellness circuits, saunas, and private therapy treatment rooms.",
             "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-            "confidence": 1.0,
             "tags": ["spa", "wellness", "balinese", "thermal-suite"]
         }
     }
@@ -464,7 +466,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "sports.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "sports_and_recreation": [
                 {
                     "id": sp["id"],
@@ -474,7 +479,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": sp["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{sp['page']}",
-                    "confidence": 1.0,
                     "tags": sp["tags"]
                 }
                 for sp in sports_data
@@ -508,7 +512,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "entertainment.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "entertainment_venues": [
                 {
                     "id": e["id"],
@@ -518,7 +525,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": e["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{e['page']}",
-                    "confidence": 1.0,
                     "tags": e["tags"]
                 }
                 for e in entertainment_data
@@ -544,7 +550,10 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "public_areas.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
-            "provenance": {"source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)", "sha256": EXPECTED_SHA256, "confidence": 1.0},
+            "provenance": {
+                "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+                "sha256": EXPECTED_SHA256
+            },
             "public_areas": [
                 {
                     "id": pa["id"],
@@ -554,7 +563,6 @@ def run_ingestion() -> Dict[str, Any]:
                     "description": pa["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{pa['page']}",
-                    "confidence": 1.0,
                     "tags": pa["tags"]
                 }
                 for pa in public_areas_data
@@ -569,7 +577,6 @@ def run_ingestion() -> Dict[str, Any]:
             "source_artifact": "UNSOURCED_LEGACY_STAGING (Pending Builder Specification Artifact)",
             "verification_authority": "UNVERIFIED",
             "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-            "confidence": 0.0,
             "last_audited": "2026-08-19"
         },
         "technical_specifications": {

@@ -2,8 +2,7 @@
   "vessel_id": "msc-meraviglia",
   "provenance": {
     "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
-    "confidence": 1.0
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
   },
   "summary": {
     "total_staterooms": 2214,
@@ -30,7 +29,6 @@
       "description": "Exclusive Royal Suite with large balcony and private whirlpool bath.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "royal-suite",
@@ -49,7 +47,6 @@
       "description": "Two-deck Duplex suite with private balcony and whirlpool bath.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "yacht-club",
         "duplex",
@@ -71,7 +68,6 @@
       "description": "Grand Suite with large terrace and private outdoor whirlpool bath.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "aurea",
         "suite",
@@ -93,7 +89,6 @@
       "description": "Premium Suite with terrace and whirlpool bath.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "aurea",
         "suite",
@@ -114,7 +109,6 @@
       "description": "Aurea balcony staterooms with premium location and amenities.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "aurea",
@@ -134,7 +128,6 @@
       "description": "Premium balcony staterooms on higher residential decks.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "premium",
@@ -152,7 +145,6 @@
       "description": "Premium balcony staterooms on mid residential decks.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "premium",
@@ -169,7 +161,6 @@
       "description": "Premium balcony staterooms on deck 8.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "premium"
@@ -186,7 +177,6 @@
       "description": "Deluxe balcony staterooms on decks 13 and 14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "deluxe"
@@ -203,7 +193,6 @@
       "description": "Deluxe balcony staterooms on decks 11 and 12.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "deluxe"
@@ -221,7 +210,6 @@
       "description": "Deluxe balcony staterooms on decks 8 to 10.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "deluxe"
@@ -238,7 +226,6 @@
       "description": "Balcony staterooms with partial lifeboat or structural view obstruction.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "partial-obstruction",
@@ -256,7 +243,6 @@
       "description": "Studio balcony staterooms tailored for solo cruisers.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "balcony",
         "studio",
@@ -275,7 +261,6 @@
       "description": "Premium ocean view staterooms with panoramic picture window.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "ocean-view",
         "premium",
@@ -293,7 +278,6 @@
       "description": "Deluxe ocean view staterooms with picture window.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "ocean-view",
         "deluxe",
@@ -310,7 +294,6 @@
       "description": "Junior ocean view staterooms.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "ocean-view",
         "junior"
@@ -326,7 +309,6 @@
       "description": "Ocean view staterooms with partial view obstruction.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "ocean-view",
         "partial-obstruction"
@@ -345,7 +327,6 @@
       "description": "Deluxe interior staterooms on upper residential decks.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "inside",
         "deluxe"
@@ -364,7 +345,6 @@
       "description": "Deluxe interior staterooms on decks 5 to 10.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "inside",
         "deluxe"
@@ -387,7 +367,6 @@
       "description": "Studio interior staterooms designed for single occupancy.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
       "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "confidence": 1.0,
       "tags": [
         "inside",
         "studio",

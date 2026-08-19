@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "pools_and_water_areas": [
     {
@@ -18,8 +17,13 @@
       },
       "source": "MSC Bellissima Technical Specification",
       "provenance": "MSC-BEL-POOL-ATMOSPHERE",
-      "confidence": 1.0,
-      "tags": ["main-pool", "outdoor", "lido", "led-screen", "movies-under-stars"]
+      "tags": [
+        "main-pool",
+        "outdoor",
+        "lido",
+        "led-screen",
+        "movies-under-stars"
+      ]
     },
     {
       "id": "POOL-BAMBOO",
@@ -27,11 +31,19 @@
       "deck": 15,
       "category": "INDOOR_MAGRODOME_POOL",
       "description": "An indoor, glass-domed magrodome pool designed for all-weather swimming, accompanied by multi-level thalassotherapy hot tubs and lush tropical lounge seating.",
-      "features": ["Retractable Glass Magrodome Roof", "Thalassotherapy Hot Tubs"],
+      "features": [
+        "Retractable Glass Magrodome Roof",
+        "Thalassotherapy Hot Tubs"
+      ],
       "source": "MSC Bellissima Technical Specification",
       "provenance": "MSC-BEL-POOL-BAMBOO",
-      "confidence": 1.0,
-      "tags": ["indoor-pool", "magrodome", "all-weather", "whirlpools", "thalassotherapy"]
+      "tags": [
+        "indoor-pool",
+        "magrodome",
+        "all-weather",
+        "whirlpools",
+        "thalassotherapy"
+      ]
     },
     {
       "id": "POOL-HORIZON",
@@ -39,11 +51,20 @@
       "deck": 16,
       "category": "AFT_OUTDOOR_POOL",
       "description": "A large open-air pool deck situated at the aft offering panoramic wake views. The sun lounging amphitheatre layout transforms into an outdoor dance floor and live stage at night.",
-      "features": ["Amphitheatre Sun Seating", "Night Stage Transformation", "Wake Views"],
+      "features": [
+        "Amphitheatre Sun Seating",
+        "Night Stage Transformation",
+        "Wake Views"
+      ],
       "source": "MSC Bellissima Deck Plan",
       "provenance": "MSC-BEL-POOL-HORIZON",
-      "confidence": 1.0,
-      "tags": ["aft-pool", "wake-view", "amphitheatre", "dance-floor", "outdoor"]
+      "tags": [
+        "aft-pool",
+        "wake-view",
+        "amphitheatre",
+        "dance-floor",
+        "outdoor"
+      ]
     },
     {
       "id": "POOL-YACHT-CLUB",
@@ -54,13 +75,22 @@
       "access": "Exclusive to MSC Yacht Club Guests",
       "source": "MSC Yacht Club Directory",
       "provenance": "MSC-BEL-POOL-YC",
-      "confidence": 1.0,
-      "tags": ["yacht-club", "exclusive", "private-pool", "sundeck", "whirlpool"]
+      "tags": [
+        "yacht-club",
+        "exclusive",
+        "private-pool",
+        "sundeck",
+        "whirlpool"
+      ]
     },
     {
       "id": "POOL-WHIRLPOOLS-NETWORK",
       "name": "Jacuzzis / Whirlpool Network",
-      "deck": [15, 16, 19],
+      "deck": [
+        15,
+        16,
+        19
+      ],
       "category": "WHIRLPOOLS",
       "description": "Nine outdoor whirlpool tubs situated throughout the lido, aft amphitheatre, and private sundecks.",
       "metrics": {
@@ -68,8 +98,12 @@
       },
       "source": "MSC Bellissima GA Plan",
       "provenance": "MSC-BEL-POOL-JACUZZIS",
-      "confidence": 1.0,
-      "tags": ["whirlpools", "jacuzzis", "hot-tubs", "relaxation"]
+      "tags": [
+        "whirlpools",
+        "jacuzzis",
+        "hot-tubs",
+        "relaxation"
+      ]
     }
   ]
 }

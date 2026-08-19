@@ -1,8 +1,7 @@
 {
   "port_id": "messina",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "Public Hospital (Closest emergency room, 10 minutes drive from port)",
       "source": "IRCCS Centro Neurolesi Bonino Pulejo / Ospedale Piemonte",
       "provenance": "IT-MED-HOSP-PIEMONTE",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "piemonte", "pronto-soccorso"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "piemonte",
+        "pronto-soccorso"
+      ]
     },
     {
       "id": "MED-MSN-POLICLINICO",
@@ -26,8 +29,11 @@
       "type": "Main University Teaching Hospital",
       "source": "A.O.U. Policlinico G. Martino",
       "provenance": "IT-MED-HOSP-POLICLINICO",
-      "confidence": 1.0,
-      "tags": ["hospital", "university-hospital", "trauma-center"]
+      "tags": [
+        "hospital",
+        "university-hospital",
+        "trauma-center"
+      ]
     }
   ]
 }

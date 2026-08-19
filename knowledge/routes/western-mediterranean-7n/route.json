@@ -97,8 +97,6 @@
   ],
   "provenance": {
     "source_artifact": "MSC_BELLISSIMA_ROUTE_INTELLIGENCE_WMED_7N_2026",
-    "confidence": 1.0,
-    "confidence_score": "5/5",
     "validation_status": "VALIDATED"
   },
   "sources": [
