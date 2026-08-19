@@ -175,6 +175,13 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
     "deck.venue_present":         ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
     "deck.venue_position":        ("cruise_line_deck_plan", "shipyard_general_arrangement"),
 
+    # -- vessel overview: capacity and stateroom counts from operator deck plans / specifications
+    "vessel.total_cabins":        ("cruise_line_deck_plan", "builder_specification", "classification_society_record"),
+    "vessel.passenger_capacity_max": ("cruise_line_deck_plan", "builder_specification", "classification_society_record"),
+
+    # -- cabin features: bed arrangement explicitly stated on deck plans / surveys
+    "cabin.bed_configuration":    ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+
     # -- geometry: dimensioned quantities. Deck plans are NOT authoritative.
     "cabin.area_sqm":             ("shipyard_general_arrangement", "builder_specification"),
     "cabin.wall_composition":     ("shipyard_general_arrangement", "builder_specification"),

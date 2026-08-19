@@ -81,6 +81,84 @@ class TestKnowledgeSchemaValidation(unittest.TestCase):
     def test_cabins_schema(self):
         self.validate_document("cabins.json", "cabin.schema.json")
 
+    def test_cabins_schema_validates_when_summary_optional_fields_are_absent(self):
+        """TASK E: Verify cabin schema validates when balcony_percentage and standard_amenities are absent."""
+        schema_path = os.path.join(SCHEMA_DIR, "cabin.schema.json")
+        schema = self.load_json(schema_path)
+        validator = jsonschema.validators.validator_for(schema)(schema)
+
+        doc = {
+            "vessel_id": "test-vessel",
+            "provenance": {
+                "source_artifact": "Test Artifact"
+            },
+            "summary": {
+                "total_staterooms": 2214,
+                "distinct_categories_count": 22
+            },
+            "cabin_categories": []
+        }
+        errors = list(validator.iter_errors(doc))
+        self.assertEqual(errors, [], "Cabins doc without balcony_percentage and standard_amenities must validate cleanly")
+
+    def test_cabins_schema_validates_when_summary_optional_fields_are_present_and_typed(self):
+        """TASK D: Verify cabin schema validates when balcony_percentage and standard_amenities are present and typed."""
+        schema_path = os.path.join(SCHEMA_DIR, "cabin.schema.json")
+        schema = self.load_json(schema_path)
+        validator = jsonschema.validators.validator_for(schema)(schema)
+
+        doc = {
+            "vessel_id": "test-vessel",
+            "provenance": {
+                "source_artifact": "Test Artifact"
+            },
+            "summary": {
+                "total_staterooms": 2214,
+                "distinct_categories_count": 22,
+                "balcony_percentage": 75.0,
+                "standard_amenities": [
+                    "Doppelbett umstellbar zu zwei Einzelbetten (ausgenommen IS, YC3)"
+                ]
+            },
+            "cabin_categories": []
+        }
+        errors = list(validator.iter_errors(doc))
+        self.assertEqual(errors, [], "Cabins doc with valid typed optional fields must validate cleanly")
+
+    def test_cabins_schema_rejects_invalid_balcony_percentage_or_amenities(self):
+        """TASK D: Verify cabin schema rejects invalid balcony_percentage or standard_amenities."""
+        schema_path = os.path.join(SCHEMA_DIR, "cabin.schema.json")
+        schema = self.load_json(schema_path)
+        validator = jsonschema.validators.validator_for(schema)(schema)
+
+        # Invalid balcony percentage (> 100)
+        doc_bad_pct = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "Test"},
+            "summary": {
+                "total_staterooms": 2214,
+                "distinct_categories_count": 22,
+                "balcony_percentage": 105.0
+            },
+            "cabin_categories": []
+        }
+        errors = list(validator.iter_errors(doc_bad_pct))
+        self.assertTrue(len(errors) > 0, "balcony_percentage > 100 must be rejected")
+
+        # Invalid standard_amenities (string instead of array of strings)
+        doc_bad_amenities = {
+            "vessel_id": "test-vessel",
+            "provenance": {"source_artifact": "Test"},
+            "summary": {
+                "total_staterooms": 2214,
+                "distinct_categories_count": 22,
+                "standard_amenities": "not an array"
+            },
+            "cabin_categories": []
+        }
+        errors = list(validator.iter_errors(doc_bad_amenities))
+        self.assertTrue(len(errors) > 0, "non-array standard_amenities must be rejected")
+
     def test_tier1_all_knowledge_ships_validate(self):
         """Tier 1: Dynamic traversal validating all ships in knowledge/ships/ against canonical schemas."""
         ships_dir = os.path.join(REPO_ROOT, "knowledge", "ships")

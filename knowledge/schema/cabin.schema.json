@@ -41,9 +41,7 @@
       "type": "object",
       "required": [
         "total_staterooms",
-        "distinct_categories_count",
-        "balcony_percentage",
-        "standard_amenities"
+        "distinct_categories_count"
       ],
       "properties": {
         "total_staterooms": {
@@ -53,7 +51,9 @@
           "type": "integer"
         },
         "balcony_percentage": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
         },
         "standard_amenities": {
           "type": "array",
