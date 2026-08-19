@@ -1,7 +1,8 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0
   },
   "public_areas": [
@@ -13,15 +14,15 @@
         7
       ],
       "category": "CENTRAL_PROMENADE",
-      "description": "Central 96-meter Mediterranean-style indoor promenade crowned by an awe-inspiring 480m² curved LED digital sky.",
-      "source": "MSC Meraviglia Public Area Guide",
-      "provenance": "MSC-MER-PUB-GALLERIA",
+      "description": "Indoor Mediterranean-style promenade with 80-meter LED sky dome.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "promenade",
         "led-dome",
         "shops",
-        "dining"
+        "landmark"
       ]
     },
     {
@@ -32,16 +33,60 @@
         6,
         7
       ],
-      "category": "GRAND_ATRIUM",
-      "description": "Triple-height glass architectural lobby featuring signature Swarovski crystal staircases and live string quartet music.",
-      "source": "MSC Meraviglia Public Area Guide",
-      "provenance": "MSC-MER-PUB-ATRIUM",
+      "category": "ATRIUM",
+      "description": "Triple-deck central atrium featuring Swarovski crystal staircases.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "atrium",
         "swarovski",
-        "reception",
-        "guest-services"
+        "reception"
+      ]
+    },
+    {
+      "id": "PUB-PLAZA",
+      "name": "Plaza Meraviglia",
+      "deck": 6,
+      "category": "PUBLIC_SQUARE",
+      "description": "Central gathering square surrounded by specialty cafes and shops.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
+      "confidence": 1.0,
+      "tags": [
+        "plaza",
+        "shopping",
+        "promenade"
+      ]
+    },
+    {
+      "id": "PUB-TOP19-SOLARIUM",
+      "name": "Top 19 Exclusive Solarium",
+      "deck": 19,
+      "category": "ADULT_SOLARIUM",
+      "description": "Adult-only sun deck with premium loungers and whirlpools.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "adult-only",
+        "solarium",
+        "sun-deck"
+      ]
+    },
+    {
+      "id": "PUB-HORIZON-AMPHI",
+      "name": "Horizon Amphitheatre",
+      "deck": 16,
+      "category": "AMPHITHEATRE",
+      "description": "Open-air tiered amphitheatre around the aft pool.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "amphitheatre",
+        "aft",
+        "wake-views"
       ]
     }
   ]

@@ -1,246 +1,397 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0
   },
   "summary": {
-    "total_staterooms": 2244,
+    "total_staterooms": 2214,
     "distinct_categories_count": 20,
     "balcony_percentage": 75.0,
     "standard_amenities": [
       "Twin beds convertible to double (king size)",
-      "Flat-screen interactive TV with MSC for Me infotainment",
-      "Zoe in-cabin digital assistant",
-      "Dedicated vanity and desk workspace",
-      "Electronic in-room digital safe",
-      "Minibar and refrigerator",
-      "Hairdryer and individually controlled air conditioning",
-      "Private bathroom with shower or whirlpool bathtub"
+      "Interactive TV",
+      "Dedicated vanity desk area",
+      "Digital safe",
+      "Minibar",
+      "Air conditioning",
+      "En-suite bathroom with shower"
     ]
   },
   "cabin_categories": [
     {
-      "id": "CAT-STUDIO-INSIDE",
-      "name": "Studio Inside (IS)",
-      "category": "INSIDE_CABIN",
-      "deck": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Compact, efficient interior staterooms tailored for solo travelers.",
-      "metrics": {
-        "sqm_approx_min": 12,
-        "sqm_approx_max": 15,
-        "occupancy_type": "Solo / Single Occupancy"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-STUDIOIN",
-      "confidence": 1.0,
-      "tags": [
-        "inside",
-        "solo",
-        "studio"
-      ]
-    },
-    {
-      "id": "CAT-DELUXE-INSIDE",
-      "name": "Deluxe Inside (IR1 / IR2)",
-      "category": "INSIDE_CABIN",
-      "deck": [
-        5,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Comfortable interior staterooms with wardrobe, desk, and bathroom with shower.",
-      "metrics": {
-        "sqm_approx_min": 16,
-        "sqm_approx_max": 17,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-DELUXEIN",
-      "confidence": 1.0,
-      "tags": [
-        "inside",
-        "deluxe",
-        "family"
-      ]
-    },
-    {
-      "id": "CAT-OCEAN-VIEW",
-      "name": "Premium Ocean View (OL1 / OL2)",
-      "category": "OCEAN_VIEW",
-      "deck": [
-        5,
-        8
-      ],
-      "description": "Staterooms with large picture window offering panoramic ocean views.",
-      "metrics": {
-        "sqm_approx_min": 17,
-        "sqm_approx_max": 19,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-OCEANVIEW",
-      "confidence": 1.0,
-      "tags": [
-        "ocean-view",
-        "picture-window"
-      ]
-    },
-    {
-      "id": "CAT-BALCONY-DELUXE",
-      "name": "Deluxe Balcony (BR1 / BR2 / BR3)",
-      "category": "BALCONY_CABIN",
-      "deck": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Signature staterooms with private glass-railing step-out veranda overlooking the sea.",
-      "metrics": {
-        "sqm_approx_min": 19,
-        "sqm_approx_max": 22,
-        "balcony_sqm_min": 4,
-        "balcony_sqm_max": 6,
-        "occupancy_type": "Double / Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-BALCONY",
-      "confidence": 1.0,
-      "tags": [
-        "balcony",
-        "veranda",
-        "ocean-view"
-      ]
-    },
-    {
-      "id": "CAT-AUREA-SUITE",
-      "name": "Premium Suite Aurea (SL1)",
-      "category": "SUITE_AUREA",
-      "deck": [
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "description": "Spacious suite with large wardrobe, seating area, private balcony, and inclusive Aurea thermal spa privileges.",
-      "metrics": {
-        "sqm_approx_min": 27,
-        "sqm_approx_max": 30,
-        "balcony_sqm_min": 5,
-        "balcony_sqm_max": 8,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-AUREASUITE",
-      "confidence": 1.0,
-      "tags": [
-        "suite",
-        "aurea",
-        "balcony",
-        "spa-included"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-DELUXE",
-      "name": "MSC Yacht Club Deluxe Suite (YC1)",
-      "category": "YACHT_CLUB",
-      "deck": [
-        14,
-        15,
-        16,
-        18
-      ],
-      "description": "Luxury suite in the private MSC Yacht Club enclave with 24-hour butler service and private balcony.",
-      "metrics": {
-        "sqm_approx_min": 28,
-        "sqm_approx_max": 30,
-        "balcony_sqm_min": 5,
-        "balcony_sqm_max": 7,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCDELUXE",
-      "confidence": 1.0,
-      "tags": [
-        "yacht-club",
-        "luxury",
-        "butler",
-        "vip"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-DUPLEX",
-      "name": "MSC Yacht Club Duplex Suite with Whirlpool (YJD)",
-      "deck": [
-        9,
-        10,
-        11,
-        12
-      ],
-      "category": "YACHT_CLUB_DUPLEX",
-      "description": "Two-deck maisonette suite with master bedroom upstairs, living/dining downstairs, and private veranda whirlpool.",
-      "metrics": {
-        "sqm_approx_min": 59,
-        "sqm_approx_max": 62,
-        "balcony_sqm_min": 22,
-        "balcony_sqm_max": 24,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCDUPLEX",
-      "confidence": 1.0,
-      "tags": [
-        "yacht-club",
-        "duplex",
-        "whirlpool",
-        "two-storey"
-      ]
-    },
-    {
-      "id": "CAT-YACHT-ROYAL",
-      "name": "MSC Yacht Club Royal Suite with Whirlpool (YC3)",
+      "id": "CAT-YC3",
+      "name": "MSC Yacht Club Royal Suite (YC3)",
+      "category": "YACHT_CLUB_SUITE",
       "deck": [
         15
       ],
-      "category": "YACHT_CLUB_ROYAL",
-      "description": "The pinnacle of shipboard luxury: expansive separate living room, dining table, master bedroom, and private whirlpool terrace.",
-      "metrics": {
-        "sqm_approx_min": 56,
-        "sqm_approx_max": 58,
-        "balcony_sqm_min": 12,
-        "balcony_sqm_max": 14,
-        "occupancy_type": "Up to 4 guests"
-      },
-      "source": "MSC Meraviglia Stateroom Catalog",
-      "provenance": "MSC-MER-CAB-YCROYAL",
+      "description": "Exclusive Royal Suite with large balcony and private whirlpool bath.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
       "confidence": 1.0,
       "tags": [
         "yacht-club",
         "royal-suite",
         "whirlpool",
-        "vip"
+        "luxury"
+      ]
+    },
+    {
+      "id": "CAT-YJD",
+      "name": "MSC Yacht Club Duplex Suite (YJD)",
+      "category": "YACHT_CLUB_SUITE",
+      "deck": [
+        9,
+        12
+      ],
+      "description": "Two-deck Duplex suite with private balcony and whirlpool bath.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "yacht-club",
+        "duplex",
+        "suite",
+        "luxury"
+      ]
+    },
+    {
+      "id": "CAT-SXJ",
+      "name": "Grand Suite Aurea (SXJ)",
+      "category": "AUREA_SUITE",
+      "deck": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "description": "Grand Suite with large terrace and private outdoor whirlpool bath.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "aurea",
+        "suite",
+        "terrace",
+        "whirlpool"
+      ]
+    },
+    {
+      "id": "CAT-SLJ",
+      "name": "Premium Suite Aurea (SLJ)",
+      "category": "AUREA_SUITE",
+      "deck": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "description": "Premium Suite with terrace and whirlpool bath.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "aurea",
+        "suite",
+        "terrace",
+        "whirlpool"
+      ]
+    },
+    {
+      "id": "CAT-BA",
+      "name": "Balkonkabine Aurea (BA)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "description": "Aurea balcony staterooms with premium location and amenities.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "aurea",
+        "premium-location"
+      ]
+    },
+    {
+      "id": "CAT-BL3",
+      "name": "Balkonkabine Premium Deck 11-14 (BL3)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "description": "Premium balcony staterooms on higher residential decks.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "premium",
+        "upper-decks"
+      ]
+    },
+    {
+      "id": "CAT-BL2",
+      "name": "Balkonkabine Premium Deck 9-10 (BL2)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        9,
+        10
+      ],
+      "description": "Premium balcony staterooms on mid residential decks.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "premium",
+        "mid-decks"
+      ]
+    },
+    {
+      "id": "CAT-BL1",
+      "name": "Balkonkabine Premium Deck 8 (BL1)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        8
+      ],
+      "description": "Premium balcony staterooms on deck 8.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "premium"
+      ]
+    },
+    {
+      "id": "CAT-BR3",
+      "name": "Balkonkabine Deluxe Deck 13-14 (BR3)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        13,
+        14
+      ],
+      "description": "Deluxe balcony staterooms on decks 13 and 14.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "deluxe"
+      ]
+    },
+    {
+      "id": "CAT-BR2",
+      "name": "Balkonkabine Deluxe Deck 11-12 (BR2)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        11,
+        12
+      ],
+      "description": "Deluxe balcony staterooms on decks 11 and 12.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "deluxe"
+      ]
+    },
+    {
+      "id": "CAT-BR1",
+      "name": "Balkonkabine Deluxe Deck 8-10 (BR1)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        8,
+        9,
+        10
+      ],
+      "description": "Deluxe balcony staterooms on decks 8 to 10.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "deluxe"
+      ]
+    },
+    {
+      "id": "CAT-BP",
+      "name": "Balkonkabine teilweise Sichteinschränkung (BP)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        8,
+        14
+      ],
+      "description": "Balcony staterooms with partial lifeboat or structural view obstruction.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "partial-obstruction",
+        "value"
+      ]
+    },
+    {
+      "id": "CAT-BS",
+      "name": "Balkonkabine Studio (BS)",
+      "category": "BALCONY_CABIN",
+      "deck": [
+        13,
+        14
+      ],
+      "description": "Studio balcony staterooms tailored for solo cruisers.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "balcony",
+        "studio",
+        "solo"
+      ]
+    },
+    {
+      "id": "CAT-OL2",
+      "name": "Meerblick Premium (OL2)",
+      "category": "OCEAN_VIEW_CABIN",
+      "deck": [
+        9,
+        10,
+        11
+      ],
+      "description": "Premium ocean view staterooms with panoramic picture window.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "ocean-view",
+        "premium",
+        "window"
+      ]
+    },
+    {
+      "id": "CAT-OR1",
+      "name": "Meerblick Deluxe (OR1)",
+      "category": "OCEAN_VIEW_CABIN",
+      "deck": [
+        5,
+        8
+      ],
+      "description": "Deluxe ocean view staterooms with picture window.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "ocean-view",
+        "deluxe",
+        "window"
+      ]
+    },
+    {
+      "id": "CAT-OM2",
+      "name": "Meerblick Junior (OM2)",
+      "category": "OCEAN_VIEW_CABIN",
+      "deck": [
+        8
+      ],
+      "description": "Junior ocean view staterooms.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "ocean-view",
+        "junior"
+      ]
+    },
+    {
+      "id": "CAT-OO",
+      "name": "Meerblick teilweise Sichteinschränkung (OO)",
+      "category": "OCEAN_VIEW_CABIN",
+      "deck": [
+        8
+      ],
+      "description": "Ocean view staterooms with partial view obstruction.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "ocean-view",
+        "partial-obstruction"
+      ]
+    },
+    {
+      "id": "CAT-IR2",
+      "name": "Innenkabine Deluxe Deck 11-14 (IR2)",
+      "category": "INSIDE_CABIN",
+      "deck": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "description": "Deluxe interior staterooms on upper residential decks.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "inside",
+        "deluxe"
+      ]
+    },
+    {
+      "id": "CAT-IR1",
+      "name": "Innenkabine Deluxe Deck 5-10 (IR1)",
+      "category": "INSIDE_CABIN",
+      "deck": [
+        5,
+        8,
+        9,
+        10
+      ],
+      "description": "Deluxe interior staterooms on decks 5 to 10.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "inside",
+        "deluxe"
+      ]
+    },
+    {
+      "id": "CAT-IS",
+      "name": "Innenkabine Studio (IS)",
+      "category": "INSIDE_CABIN",
+      "deck": [
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "description": "Studio interior staterooms designed for single occupancy.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
+      "confidence": 1.0,
+      "tags": [
+        "inside",
+        "studio",
+        "solo"
       ]
     }
   ]

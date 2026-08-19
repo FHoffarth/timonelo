@@ -2,11 +2,11 @@
   "vessel_id": "msc-meraviglia",
   "vessel_name": "MSC Meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "verification_authority": "Chantiers de l'Atlantique & MSC Cruises S.A.",
-    "sha256": "9a71b283c4e512d109f8721a34bc0981e271409283741029c782109283741029",
-    "confidence": 1.0,
-    "last_audited": "2026-08-18"
+    "source_artifact": "UNSOURCED_LEGACY_STAGING (Pending Builder Specification Artifact)",
+    "verification_authority": "UNVERIFIED",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "confidence": 0.0,
+    "last_audited": "2026-08-19"
   },
   "technical_specifications": {
     "class": "Meraviglia-class (Vista Project Lead Ship)",
@@ -51,14 +51,18 @@
       "passenger_capacity_max_occupancy": 5714,
       "crew_capacity_min": 1536,
       "crew_capacity_max": 1595,
-      "total_cabins_min": 2244,
-      "total_cabins_max": 2244,
+      "total_cabins_min": 2214,
+      "total_cabins_max": 2214,
       "balcony_cabin_percentage": 75
     },
     "connectivity_and_smart_systems": {
       "satellite_network": "Starlink High-Speed Maritime Internet",
-      "iot_wearables": "Near Field Communication (NFC) smart wristbands",
-      "digital_platform": "MSC for Me digital platform with Zoe virtual assistant"
+      "iot_wearables": "Near Field Communication (NFC) smart wristbands"
+    },
+    "environmental_features": {
+      "scrubber_fitted": true,
+      "advanced_wastewater_treatment": "AWT compliant with IMO MARPOL Annex IV",
+      "shore_power_connectivity": true
     }
   }
 }

@@ -1,81 +1,204 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0
   },
   "entertainment_venues": [
     {
       "id": "ENT-BROADWAY",
       "name": "Broadway Theatre",
-      "deck": [
-        5,
-        6
-      ],
-      "category": "MAIN_BROADWAY_THEATRE",
-      "description": "Two-level Broadway-calibre main stage hosting six distinct production shows per voyage.",
-      "metrics": {
-        "seat_capacity": 985
-      },
-      "source": "MSC Meraviglia Entertainment Catalog",
-      "provenance": "MSC-MER-ENT-BROADWAY",
+      "deck": 6,
+      "category": "MAIN_THEATRE",
+      "description": "Two-tier 985-seat theatre presenting West End / Broadway-style productions.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "theatre",
         "broadway",
         "shows",
-        "live-performances"
+        "included"
       ]
     },
     {
       "id": "ENT-CAROUSEL",
       "name": "Carousel Lounge",
       "deck": 7,
-      "category": "THEATRICAL_CIRCUS_SHOWS",
-      "description": "High-tech 360-degree entertainment space with interactive LED stages and aerial rigging.",
-      "metrics": {
-        "capacity": 413
-      },
-      "source": "MSC Meraviglia Entertainment Catalog",
-      "provenance": "MSC-MER-ENT-CAROUSEL",
+      "category": "SPECIALTY_THEATRE",
+      "description": "Custom entertainment lounge with 360-degree rotating stage and LED screens.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "cirque",
+        "theatre",
         "acrobatics",
-        "aerial",
-        "dinner-show"
+        "specialty-show"
       ]
     },
     {
       "id": "ENT-CASINO",
       "name": "Casino Imperiale",
       "deck": 7,
-      "category": "CASINO_GAMING",
-      "description": "World-class casino with over 150 slot machines, blackjack, roulette, and poker tables.",
-      "source": "MSC Meraviglia Entertainment Catalog",
-      "provenance": "MSC-MER-ENT-CASINO",
+      "category": "CASINO",
+      "description": "Full-service casino featuring slot machines, roulette, and blackjack tables.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "casino",
         "gaming",
-        "slots",
         "blackjack"
       ]
     },
     {
-      "id": "ENT-ATTIC-CLUB",
-      "name": "Attic Club",
-      "deck": 18,
-      "category": "NIGHTCLUB",
-      "description": "The ship's primary high-energy nightclub featuring a late-night bar and resident DJs.",
-      "source": "MSC Meraviglia Nightlife Guide",
-      "provenance": "MSC-MER-ENT-ATTIC",
+      "id": "ENT-XD-CINEMA",
+      "name": "Interactive XD Cinema",
+      "deck": 16,
+      "category": "DIGITAL_CINEMA",
+      "description": "Motion-seat 4D interactive gaming cinema.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "nightclub",
-        "dance-floor",
-        "dj",
-        "nightlife"
+        "cinema",
+        "4d",
+        "gaming"
+      ]
+    },
+    {
+      "id": "ENT-F1-RACER",
+      "name": "MSC Formula Racer",
+      "deck": 16,
+      "category": "SIMULATOR",
+      "description": "Full-scale virtual reality Formula 1 racing simulators.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "simulator",
+        "f1",
+        "racing"
+      ]
+    },
+    {
+      "id": "ENT-BOWLING",
+      "name": "Full-Sized Bowling",
+      "deck": 16,
+      "category": "BOWLING",
+      "description": "Two full-sized regulation bowling lanes.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "bowling",
+        "family-games"
+      ]
+    },
+    {
+      "id": "ENT-TV-STUDIO",
+      "name": "TV Studio & Games",
+      "deck": 7,
+      "category": "TV_STUDIO",
+      "description": "Live television recording studio hosting games and karaoke.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
+      "confidence": 1.0,
+      "tags": [
+        "tv-studio",
+        "games",
+        "entertainment"
+      ]
+    },
+    {
+      "id": "ENT-DOREMI-LAB",
+      "name": "Doremi Lab",
+      "deck": 18,
+      "category": "YOUTH_TECH",
+      "description": "Creative technology and 3D printing lab for young cruisers.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "youth",
+        "stem",
+        "doremi"
+      ]
+    },
+    {
+      "id": "ENT-BABY-CLUB",
+      "name": "Baby Club Chicco",
+      "deck": 18,
+      "category": "BABY_CLUB",
+      "description": "Dedicated nursery and play center for children under 3.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "kids",
+        "baby",
+        "chicco"
+      ]
+    },
+    {
+      "id": "ENT-MINI-CLUB",
+      "name": "Mini Club Lego",
+      "deck": 18,
+      "category": "KIDS_CLUB",
+      "description": "Lego-themed activity center for ages 3 to 6.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "kids",
+        "lego",
+        "activities"
+      ]
+    },
+    {
+      "id": "ENT-JUNIOR-CLUB",
+      "name": "Junior Club Lego",
+      "deck": 18,
+      "category": "KIDS_CLUB",
+      "description": "Lego-themed activity center for ages 7 to 11.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "kids",
+        "lego",
+        "activities"
+      ]
+    },
+    {
+      "id": "ENT-YOUNG-CLUB",
+      "name": "Young Club",
+      "deck": 18,
+      "category": "TEEN_CLUB",
+      "description": "Dedicated social space and gaming lounge for ages 12 to 14.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "teens",
+        "gaming",
+        "social"
+      ]
+    },
+    {
+      "id": "ENT-TEEN-CLUB",
+      "name": "Teen Club",
+      "deck": 18,
+      "category": "TEEN_CLUB",
+      "description": "Dedicated lounge and disco for ages 15 to 17.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "teens",
+        "disco",
+        "social"
       ]
     }
   ]

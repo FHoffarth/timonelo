@@ -1,69 +1,83 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0
   },
   "bars": [
-    {
-      "id": "BAR-MERAVIGLIA",
-      "name": "Meraviglia Bar & Lounge",
-      "deck": 6,
-      "category": "PROMENADE_BAR",
-      "description": "Vibrant central bar at the heart of Galleria Meraviglia with live acoustic performances.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-MERAVIGLIA",
-      "confidence": 1.0,
-      "tags": [
-        "promenade",
-        "cocktails",
-        "live-music"
-      ]
-    },
     {
       "id": "BAR-EDGE",
       "name": "Edge Cocktail Bar",
       "deck": 6,
       "category": "COCKTAIL_BAR",
-      "description": "Sleek mezzanine cocktail venue overlooking the Infinity Atrium.",
-      "source": "Official MSC Meraviglia Deck Plan (Edition 2025/2026)",
-      "provenance": "MSC-MER-BAR-EDGE",
+      "description": "Promenade-side cocktail lounge.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "atrium",
         "cocktails",
-        "aperitif"
+        "promenade",
+        "bar"
       ]
     },
     {
-      "id": "BAR-JEAN-PHILIPPE",
+      "id": "BAR-JEAN-PHILIPPE-CHOCO",
       "name": "Jean-Philippe Chocolat & Café",
       "deck": 6,
-      "category": "SPECIALTY_CAFE",
-      "description": "Open chocolate atelier and specialty café by World Pastry Champion Jean-Philippe Maury.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-JEANPHILIPPE",
+      "category": "CHOCOLATE_CAFE",
+      "description": "Artisan chocolate boutique and specialty cafe.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "chocolate",
-        "pastry",
-        "coffee",
-        "artisan"
+        "cafe",
+        "pastry"
+      ]
+    },
+    {
+      "id": "BAR-JEAN-PHILIPPE-CREPES",
+      "name": "Jean-Philippe Crêpes & Gelato",
+      "deck": 6,
+      "category": "GELATO_BAR",
+      "description": "Gourmet crepes and Italian gelato bar.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
+      "confidence": 1.0,
+      "tags": [
+        "gelato",
+        "crepes",
+        "sweets"
+      ]
+    },
+    {
+      "id": "BAR-MERAVIGLIA-BAR",
+      "name": "Meraviglia Bar & Lounge",
+      "deck": 6,
+      "category": "LOUNGE_BAR",
+      "description": "Central gathering bar along the promenade.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
+      "confidence": 1.0,
+      "tags": [
+        "bar",
+        "lounge",
+        "promenade"
       ]
     },
     {
       "id": "BAR-BRASS-ANCHOR",
       "name": "Brass Anchor Pub",
       "deck": 7,
-      "category": "PUB",
-      "description": "Traditional British maritime pub featuring craft drafts, ciders, and live acoustic rock.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-BRASSANCHOR",
+      "category": "TRADITIONAL_PUB",
+      "description": "British-style pub with draft beers and live music.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "pub",
-        "craft-beer",
-        "cider",
+        "beer",
         "live-music"
       ]
     },
@@ -72,29 +86,28 @@
       "name": "Champagne Bar",
       "deck": 7,
       "category": "CHAMPAGNE_BAR",
-      "description": "Elegant caviar and bubbly venue serving vintage Champagnes by the flute.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-CHAMPAGNE",
+      "description": "Upscale bar serving premium champagnes and oysters.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "champagne",
         "caviar",
-        "seafood-bar"
+        "luxury"
       ]
     },
     {
       "id": "BAR-CASINO",
-      "name": "Casino Imperiale Bar",
+      "name": "Casino Bar",
       "deck": 7,
       "category": "CASINO_BAR",
-      "description": "Full-service spirits and cocktail bar located in the center of the casino gaming floor.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-CASINO",
+      "description": "Bar located within Casino Imperiale.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
         "casino",
-        "cocktails",
-        "spirits"
+        "cocktails"
       ]
     },
     {
@@ -102,45 +115,103 @@
       "name": "TV Studio & Bar",
       "deck": 7,
       "category": "ENTERTAINMENT_BAR",
-      "description": "High-tech broadcasting studio bar hosting live games, karaoke, and interactive radio shows.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-TVSTUDIO",
+      "description": "Broadcasting studio and interactive entertainment bar.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "karaoke",
+        "tv-studio",
         "games",
-        "cocktails"
+        "karaoke"
       ]
     },
     {
-      "id": "BAR-ATMOSPHERE",
-      "name": "Atmosphere Pool Bar North & South",
-      "deck": 15,
-      "category": "POOL_BAR",
-      "description": "Dual open-air pool bars serving frozen daiquiris, craft beers, and refreshments poolside.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-ATMOSPHERE",
+      "id": "BAR-CAROUSEL",
+      "name": "Carousel Lounge Bar",
+      "deck": 7,
+      "category": "SHOW_LOUNGE_BAR",
+      "description": "Aft venue bar hosting spectacular acrobatic shows.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "pool",
-        "outdoor",
-        "cocktails"
+        "show",
+        "cocktails",
+        "entertainment"
       ]
     },
     {
       "id": "BAR-BAMBOO",
       "name": "Bamboo Bar",
       "deck": 15,
-      "category": "SOLARIUM_BAR",
-      "description": "Indoor solarium bar sheltered by the retractable magrodome glass ceiling.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-BAMBOO",
+      "category": "POOL_BAR",
+      "description": "Indoor pool bar with tropical solarium atmosphere.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
+        "pool-bar",
         "solarium",
-        "indoor",
-        "pool",
-        "fresh-juice"
+        "drinks"
+      ]
+    },
+    {
+      "id": "BAR-ATMOSPHERE-NORTH",
+      "name": "Atmosphere Bar North",
+      "deck": 15,
+      "category": "POOL_BAR",
+      "description": "Open-air poolside bar by the main Atmosphere Pool.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "pool-bar",
+        "outdoor",
+        "cocktails"
+      ]
+    },
+    {
+      "id": "BAR-ATMOSPHERE-SOUTH",
+      "name": "Atmosphere Bar South",
+      "deck": 15,
+      "category": "POOL_BAR",
+      "description": "Poolside refreshments on the south side of Deck 15.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "pool-bar",
+        "outdoor",
+        "drinks"
+      ]
+    },
+    {
+      "id": "BAR-ICE-CREAM",
+      "name": "Atmosphere Ice Cream Bar",
+      "deck": 15,
+      "category": "ICE_CREAM_BAR",
+      "description": "Soft-serve and scoop ice cream bar on the pool deck.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "ice-cream",
+        "poolside"
+      ]
+    },
+    {
+      "id": "BAR-SPORTS",
+      "name": "Sports Bar",
+      "deck": 16,
+      "category": "SPORTS_BAR",
+      "description": "Sports lounge with multiple broadcast screens and bar snacks.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
+      "confidence": 1.0,
+      "tags": [
+        "sports",
+        "beer",
+        "screens"
       ]
     },
     {
@@ -148,31 +219,14 @@
       "name": "Horizon Bar",
       "deck": 16,
       "category": "AFT_BAR",
-      "description": "Open-air sunset cocktail venue overlooking the wake at the Horizon amphitheatre pool.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-HORIZON",
+      "description": "Aft outdoor bar overlooking the Horizon Amphitheatre and pool.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "sunset",
-        "outdoor",
-        "cocktails",
-        "wake-view"
-      ]
-    },
-    {
-      "id": "BAR-ATTIC",
-      "name": "Attic Club",
-      "deck": 18,
-      "category": "NIGHTCLUB_BAR",
-      "description": "Late-night dance lounge bar serving premium spirits and high-energy nightclub cocktails.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-ATTIC",
-      "confidence": 1.0,
-      "tags": [
-        "nightclub",
-        "dj",
-        "shots",
-        "late-night"
+        "aft",
+        "wake-views",
+        "cocktails"
       ]
     },
     {
@@ -180,15 +234,14 @@
       "name": "Polar Bar",
       "deck": 19,
       "category": "AQUAPARK_BAR",
-      "description": "Family snack and smoothie bar serving soft drinks and treats at the Polar Aquapark.",
-      "source": "MSC Meraviglia Bar Directory",
-      "provenance": "MSC-MER-BAR-POLAR",
+      "description": "Refreshing beverages within the Polar Aquapark zone.",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
         "aquapark",
-        "family",
-        "smoothies",
-        "snacks"
+        "drinks",
+        "outdoor"
       ]
     }
   ]

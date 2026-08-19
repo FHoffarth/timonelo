@@ -1,26 +1,25 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "sha256": "9a71b283c4e512d109f8721a34bc0981e271409283741029c782109283741029",
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
     "confidence": 1.0
   },
-  "notes": "MSC Meraviglia features 18 physical decks, skipping deck number 17 due to Italian maritime tradition. Passenger decks are named after world heritage monuments and historical wonders.",
+  "notes": "MSC Meraviglia features 18 physical decks (15 passenger-accessible), skipping deck 17. Verified from Official Deckplans Edition 11.2025 DEU.",
   "decks": [
     {
       "id": "DECK-04",
-      "name": "Deck 4 (Corallo)",
+      "name": "Deck 4 (Kos)",
       "deck_number": 4,
       "category": "OPERATIONAL_AND_MEDICAL",
-      "description": "Medical Center, Tender Boarding Stations, Gangway access.",
+      "description": "Medical Center, Tendering and Gangway access.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK4",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "medical",
-        "tendering",
-        "gangway"
+        "kos",
+        "operational-and-medical"
       ]
     },
     {
@@ -28,16 +27,14 @@
       "name": "Deck 5 (Colosseo)",
       "deck_number": 5,
       "category": "PUBLIC_AND_ENTERTAINMENT",
-      "description": "Main Lobby, Reception Guest Relations, Broadway Theatre (Lower Level), Waves Restaurant, Passenger Staterooms.",
+      "description": "Main Lobby, Reception, Infinity Atrium, Broadway Theatre (lower), Waves Restaurant.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK5",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "reception",
-        "theatre",
-        "dining",
-        "staterooms"
+        "colosseo",
+        "public-and-entertainment"
       ]
     },
     {
@@ -45,17 +42,14 @@
       "name": "Deck 6 (Petra)",
       "deck_number": 6,
       "category": "PROMENADE_AND_DINING",
-      "description": "Galleria Meraviglia 96m LED Dome, Broadway Theatre (Upper Level), Panorama Restaurant, L'Olivo d'Oro, Jean-Philippe Chocolat & Café, Edge Cocktail Bar, Boutiques.",
+      "description": "Galleria Meraviglia Promenade, Hola! Tacos & Cantina, Ocean Cay Restaurant, L'Olivo d'Oro, Panorama Restaurant, Broadway Theatre (upper), Jean-Philippe Chocolate & Café.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK6",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "promenade",
-        "dining",
-        "chocolatier",
-        "bars",
-        "theatre"
+        "petra",
+        "promenade-and-dining"
       ]
     },
     {
@@ -63,17 +57,14 @@
       "name": "Deck 7 (Taj Mahal)",
       "deck_number": 7,
       "category": "PROMENADE_AND_SPECIALTY",
-      "description": "Carousel Lounge, Butcher's Cut Steakhouse, Kaito Teppanyaki & Sushi Bar, Brass Anchor Pub, Casino Imperiale, TV Studio & Bar, MSC Aurea Spa.",
+      "description": "Galleria Meraviglia (Upper), Butcher's Cut, Kaito Teppanyaki, Kaito Sushi Bar, Champagne Bar, Brass Anchor Pub, MSC Aurea Spa, Casino Imperiale, Carousel Lounge.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK7",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "specialty-dining",
-        "spa",
-        "casino",
-        "lounge",
-        "entertainment"
+        "taj-mahal",
+        "promenade-and-specialty"
       ]
     },
     {
@@ -81,15 +72,14 @@
       "name": "Deck 8 (Machu Picchu)",
       "deck_number": 8,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms (Balcony, Ocean View, Interior).",
+      "description": "Passenger staterooms, Infinity Bridge views.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK8",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential",
-        "balcony"
+        "machu-picchu",
+        "stateroom-deck"
       ]
     },
     {
@@ -97,15 +87,14 @@
       "name": "Deck 9 (Alhambra)",
       "deck_number": 9,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms and MSC Yacht Club Duplex Suites.",
+      "description": "Passenger staterooms.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK9",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential",
-        "yacht-club"
+        "alhambra",
+        "stateroom-deck"
       ]
     },
     {
@@ -113,14 +102,14 @@
       "name": "Deck 10 (Hagia Sophia)",
       "deck_number": 10,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms (Balcony, Interior, Aurea Suites).",
+      "description": "Passenger staterooms.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK10",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential"
+        "hagia-sophia",
+        "stateroom-deck"
       ]
     },
     {
@@ -128,14 +117,14 @@
       "name": "Deck 11 (Acropolis)",
       "deck_number": 11,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms (Balcony, Interior).",
+      "description": "Passenger staterooms.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK11",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential"
+        "acropolis",
+        "stateroom-deck"
       ]
     },
     {
@@ -143,46 +132,44 @@
       "name": "Deck 12 (Grand Canyon)",
       "deck_number": 12,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms and MSC Yacht Club Duplex Upper Levels.",
+      "description": "Passenger staterooms.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK12",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential",
-        "yacht-club"
+        "grand-canyon",
+        "stateroom-deck"
       ]
     },
     {
       "id": "DECK-13",
-      "name": "Deck 13 (Kilimanjaro)",
+      "name": "Deck 13 (Kilimangiaro)",
       "deck_number": 13,
       "category": "STATEROOM_DECK",
-      "description": "Passenger Staterooms (Balcony, Interior).",
+      "description": "Passenger staterooms, Bridge access.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK13",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:4",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "residential"
+        "kilimangiaro",
+        "stateroom-deck"
       ]
     },
     {
       "id": "DECK-14",
       "name": "Deck 14 (Angkor Wat)",
       "deck_number": 14,
-      "category": "STATEROOM_AND_BRIDGE",
-      "description": "Passenger Staterooms and Navigational Navigation Bridge Access.",
+      "category": "STATEROOM_DECK",
+      "description": "Passenger staterooms, MSC Yacht Club suites.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK14",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "staterooms",
-        "bridge",
-        "navigation"
+        "angkor-wat",
+        "stateroom-deck"
       ]
     },
     {
@@ -190,16 +177,14 @@
       "name": "Deck 15 (Tour Eiffel)",
       "deck_number": 15,
       "category": "LIDO_AND_BUFFET",
-      "description": "Marketplace Buffet (3,650m²), Atmosphere Main Pool, Bamboo Solarium Pool, Top Sail Lounge.",
+      "description": "Atmosphere Pool, Bamboo Pool (sliding roof), Marketplace Buffet, Bamboo Bar.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK15",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "pool",
-        "buffet",
-        "lido",
-        "yacht-club"
+        "tour-eiffel",
+        "lido-and-buffet"
       ]
     },
     {
@@ -207,16 +192,14 @@
       "name": "Deck 16 (Iguazu)",
       "deck_number": 16,
       "category": "FITNESS_AND_RECREATION",
-      "description": "Horizon Pool, Sportplex Arena, F1 Simulators, Full-Size Bowling Alley, MSC Gym by Technogym, Power Walking Track.",
+      "description": "Horizon Pool & Amphitheatre, MSC Gym by Technogym, Top Sail Lounge, Sports Bar, MSC Formula Racer, Interactive XD Cinema, Bowling, Power Walking Track.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK16",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "gym",
-        "sports",
-        "bowling",
-        "horizon-pool"
+        "iguazu",
+        "fitness-and-recreation"
       ]
     },
     {
@@ -224,16 +207,14 @@
       "name": "Deck 18 (Pyramids)",
       "deck_number": 18,
       "category": "YOUTH_AND_ENTERTAINMENT",
-      "description": "Doremiland Kids Clubs (LEGO & Chicco), Attic Club Disco, MSC Yacht Club Restaurant.",
+      "description": "Sportplex, Doremi Lab, Doremi Studio, Baby Club Chicco, Mini Club Lego, Junior Club Lego, Young Club, Teen Club, Attic Club, Sky Lounge, MSC Yacht Club Restaurant.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK18",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "kids",
-        "teens",
-        "nightclub",
-        "yacht-club-dining"
+        "pyramids",
+        "youth-and-entertainment"
       ]
     },
     {
@@ -241,16 +222,14 @@
       "name": "Deck 19 (Babylon)",
       "deck_number": 19,
       "category": "AQUAPARK_AND_SOLARIUM",
-      "description": "Polar Aquapark with 3 waterslides, Himalayan 82m High Rope Suspension Bridge, MSC Yacht Club Top 19 Exclusive Solarium.",
+      "description": "Polar Aquapark, Himalayan Bridge, Polar Bar, Top 19 Exclusive Solarium, MSC Yacht Club Sundeck & Pool, Grill & Bar.",
       "passenger_accessible": true,
-      "source": "Official MSC Meraviglia Deck Plan",
-      "provenance": "MSC-MER-GA-DECK19",
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
       "confidence": 1.0,
       "tags": [
-        "aquapark",
-        "ropes-course",
-        "solarium",
-        "yacht-club"
+        "babylon",
+        "aquapark-and-solarium"
       ]
     }
   ]
