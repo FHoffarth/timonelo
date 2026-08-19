@@ -754,3 +754,39 @@ def test_task_j_no_bare_verified_canonical_state_remains():
     for enum_cls in canonical_enums:
         values = [e.value for e in enum_cls]
         assert "VERIFIED" not in values, f"Bare VERIFIED found in {enum_cls.__name__}: {values}"
+
+
+def test_task_g_canon_vs_legacy_static_guard():
+    """G: Static CI guard asserting frontend canon contract integrity."""
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    badge_path = os.path.join(repo_root, "frontend", "src", "components", "ui", "EpistemicBadge.tsx")
+    types_path = os.path.join(repo_root, "frontend", "src", "semantic-deck", "types.ts")
+    client_path = os.path.join(repo_root, "frontend", "src", "semantic-deck", "apiClient.ts")
+
+    with open(badge_path, "r", encoding="utf-8") as f:
+        badge_content = f.read()
+    with open(types_path, "r", encoding="utf-8") as f:
+        types_content = f.read()
+    with open(client_path, "r", encoding="utf-8") as f:
+        client_content = f.read()
+
+    # 1. Canonical frontend modules import generated canon types
+    assert 'from "../../generated/canon"' in badge_content or "from '../generated/canon'" in types_content
+
+    # 2. Canonical badges exist with separate axes (no axis conflation)
+    assert "export function MethodBadge" in badge_content
+    assert "export function EvidenceConditionBadge" in badge_content
+    assert "export function HumanReviewStateBadge" in badge_content
+    assert "export function PublishStatusBadge" in badge_content
+
+    # 3. Legacy types are explicitly prefixed with Legacy
+    assert "export type LegacySemanticDeckState" in types_content
+    assert "export type LegacyEpistemicTag" in badge_content
+
+    # 4. Canonical badges do not accept legacy KNOWN / DERIVED / LIKELY / CONFLICT
+    assert "method?: Method;" in badge_content
+    assert "condition?: EvidenceCondition;" in badge_content
+
+    # 5. DIRECT is never used as fallback for missing canonical evidence condition or state in apiClient
+    assert '|| "DIRECT"' not in client_content
+    assert 'parseLegacySemanticState(o.epistemic_state)' in client_content

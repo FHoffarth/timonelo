@@ -8,7 +8,24 @@
  * - JSON-LD (Linked Data Representation)
  */
 
-export type EpistemicState = "DIRECT" | "DERIVED" | "UNKNOWN" | "CONFLICT";
+// Canonical Epistemic Enums re-exported from Python canon generator
+export type {
+  Method,
+  Derivation,
+  EvidenceCondition,
+  HumanReviewState,
+  PublishStatus,
+  GeometryProvenance,
+} from "../generated/canon";
+
+/**
+ * Non-canonical legacy display state for prototype 2D viewport fixtures.
+ * NOT for canonical epistemic ground truth. Governed by ADR-0002.
+ */
+export type LegacySemanticDeckState = "DIRECT" | "DERIVED" | "UNKNOWN" | "CONFLICT";
+
+/** @deprecated Use LegacySemanticDeckState for legacy fixtures or canonical types from generated/canon */
+export type EpistemicState = LegacySemanticDeckState;
 
 export type SpatialClassification =
   | "STATEROOM_INTERIOR"

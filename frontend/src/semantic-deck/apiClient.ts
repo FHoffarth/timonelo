@@ -5,9 +5,41 @@ import {
   SemanticLevel,
   SemanticEntity,
   SpatialClassification,
-  EpistemicState,
+  LegacySemanticDeckState,
+  Method,
+  EvidenceCondition,
   StandardsExportPayload,
 } from "./types";
+
+export function parseLegacySemanticState(val: unknown): LegacySemanticDeckState {
+  if (typeof val === "string") {
+    const upper = val.toUpperCase();
+    if (upper === "DIRECT" || upper === "DERIVED" || upper === "UNKNOWN" || upper === "CONFLICT") {
+      return upper;
+    }
+  }
+  return "UNKNOWN";
+}
+
+export function parseEvidenceCondition(val: unknown): EvidenceCondition {
+  if (typeof val === "string") {
+    const upper = val.toUpperCase();
+    if (upper === "SUPPORTED" || upper === "UNSUPPORTED" || upper === "CONFLICTED" || upper === "UNKNOWN") {
+      return upper as EvidenceCondition;
+    }
+  }
+  return "UNKNOWN";
+}
+
+export function parseMethod(val: unknown): Method {
+  if (typeof val === "string") {
+    const upper = val.toUpperCase();
+    if (upper === "DIRECT" || upper === "CALCULATED" || upper === "INFERRED") {
+      return upper as Method;
+    }
+  }
+  return "DIRECT";
+}
 
 // Convert raw semantic datasets into Canonical Knowledge Graph representation
 function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
@@ -18,7 +50,7 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
     let conflict = 0;
 
     const spaces: SemanticEntity[] = (d.objects || []).map((o: any) => {
-      const epistemic = (o.epistemic_state as EpistemicState) || "UNKNOWN";
+      const epistemic = parseLegacySemanticState(o.epistemic_state);
       if (epistemic === "DIRECT") direct++;
       else if (epistemic === "DERIVED") derived++;
       else if (epistemic === "UNKNOWN") unknown++;
