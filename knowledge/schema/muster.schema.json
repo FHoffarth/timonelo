@@ -12,7 +12,8 @@
   "properties": {
     "vessel_id": {
       "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "pattern": "\\S",
+      "minLength": 1
     },
     "provenance": {
       "type": "object",
@@ -21,16 +22,24 @@
       ],
       "properties": {
         "source_artifact": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "sha256": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "verification_authority": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "last_audited": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "confidence": false,
         "confidence_score": false
@@ -38,24 +47,25 @@
     },
     "emergency_and_muster_protocol": {
       "type": "object",
-      "required": [
-        "drill_type",
-        "procedure",
-        "wayfinding_and_egress",
-        "physical_muster_stations"
-      ],
       "properties": {
         "drill_type": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "procedure": {
           "type": "array",
           "items": {
-            "type": "string"
-          }
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
         },
         "wayfinding_and_egress": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "physical_muster_stations": {
           "type": "array",
@@ -63,40 +73,49 @@
             "type": "object",
             "required": [
               "id",
-              "name",
-              "deck",
-              "location",
-              "category",
               "source",
-              "provenance",
-              "tags"
+              "provenance"
             ],
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "name": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "deck": {
                 "type": "integer"
               },
               "location": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "category": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "source": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "provenance": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
               },
               "tags": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
                 }
               },
               "confidence": false,

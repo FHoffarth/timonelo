@@ -12,7 +12,8 @@
   "properties": {
     "vessel_id": {
       "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "pattern": "\\S",
+      "minLength": 1
     },
     "provenance": {
       "type": "object",
@@ -21,16 +22,24 @@
       ],
       "properties": {
         "source_artifact": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "sha256": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "verification_authority": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "last_audited": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "confidence": false,
         "confidence_score": false
@@ -42,20 +51,19 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "deck",
-          "category",
-          "description",
           "source",
-          "provenance",
-          "tags"
+          "provenance"
         ],
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "deck": {
             "oneOf": [
@@ -66,29 +74,40 @@
                 "type": "array",
                 "items": {
                   "type": "integer"
-                }
+                },
+                "minItems": 1
               }
             ]
           },
           "category": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "metrics": {
             "type": "object"
           },
           "source": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "provenance": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "tags": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
             }
           },
           "confidence": false,

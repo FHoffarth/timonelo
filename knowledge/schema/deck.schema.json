@@ -12,7 +12,8 @@
   "properties": {
     "vessel_id": {
       "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "pattern": "\\S",
+      "minLength": 1
     },
     "provenance": {
       "type": "object",
@@ -21,23 +22,33 @@
       ],
       "properties": {
         "source_artifact": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "sha256": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "verification_authority": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "last_audited": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "confidence": false,
         "confidence_score": false
       }
     },
     "notes": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "decks": {
       "type": "array",
@@ -45,21 +56,20 @@
         "type": "object",
         "required": [
           "id",
-          "name",
           "deck_number",
-          "category",
-          "description",
-          "passenger_accessible",
           "source",
-          "provenance",
-          "tags"
+          "provenance"
         ],
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "deck_number": {
             "type": "integer",
@@ -80,24 +90,34 @@
               "YOUTH_AND_ENTERTAINMENT",
               "AQUAPARK_AND_SOLARIUM",
               "OTHER"
-            ]
+            ],
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "passenger_accessible": {
             "type": "boolean"
           },
           "source": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "provenance": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           },
           "tags": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
             }
           },
           "confidence": false,
