@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "sports_and_recreation": [
     {
@@ -11,11 +10,23 @@
       "deck": 16,
       "category": "INDOOR_MULTI_SPORT_ARENA",
       "description": "A massive indoor multi-sport arena hosting basketball, tennis, football (soccer), and volleyball tournaments by day, which transforms into an active social, gaming, and dance venue by night.",
-      "activities": ["Basketball", "Tennis", "Football / Soccer", "Volleyball", "Night Social Dancing"],
+      "activities": [
+        "Basketball",
+        "Tennis",
+        "Football / Soccer",
+        "Volleyball",
+        "Night Social Dancing"
+      ],
       "source": "MSC Bellissima Activities Guide",
       "provenance": "MSC-BEL-SPT-SPORTPLEX",
-      "confidence": 1.0,
-      "tags": ["sportplex", "basketball", "tennis", "volleyball", "soccer", "indoor-arena"]
+      "tags": [
+        "sportplex",
+        "basketball",
+        "tennis",
+        "volleyball",
+        "soccer",
+        "indoor-arena"
+      ]
     },
     {
       "id": "SPT-HIMALAYAN-BRIDGE",
@@ -29,8 +40,13 @@
       },
       "source": "MSC Bellissima Technical Blueprint",
       "provenance": "MSC-BEL-SPT-HIMALAYAN",
-      "confidence": 1.0,
-      "tags": ["ropes-course", "himalayan-bridge", "thrill", "outdoor", "adventure"]
+      "tags": [
+        "ropes-course",
+        "himalayan-bridge",
+        "thrill",
+        "outdoor",
+        "adventure"
+      ]
     },
     {
       "id": "SPT-WALKING-TRACK",
@@ -40,8 +56,13 @@
       "description": "An outdoor, multi-lane walking and jogging loop wrapping around the upper deck perimeter with unobstructed sea views.",
       "source": "MSC Bellissima GA Deck 16",
       "provenance": "MSC-BEL-SPT-TRACK",
-      "confidence": 1.0,
-      "tags": ["jogging", "walking-track", "running", "fitness", "outdoor"]
+      "tags": [
+        "jogging",
+        "walking-track",
+        "running",
+        "fitness",
+        "outdoor"
+      ]
     },
     {
       "id": "SPT-VIRTUAL-ARCADE",
@@ -58,8 +79,12 @@
           "units_count": 2,
           "source": "MSC Bellissima Attractions Guide",
           "provenance": "MSC-BEL-SPT-F1",
-          "confidence": 1.0,
-          "tags": ["f1", "simulator", "racing", "virtual-reality"]
+          "tags": [
+            "f1",
+            "simulator",
+            "racing",
+            "virtual-reality"
+          ]
         },
         {
           "id": "SPT-BOWLING-ALLEY",
@@ -69,8 +94,11 @@
           "lanes_count": 2,
           "source": "MSC Bellissima Attractions Guide",
           "provenance": "MSC-BEL-SPT-BOWLING",
-          "confidence": 1.0,
-          "tags": ["bowling", "family-activity", "arcade"]
+          "tags": [
+            "bowling",
+            "family-activity",
+            "arcade"
+          ]
         },
         {
           "id": "SPT-XD-DARK-RIDE",
@@ -79,14 +107,23 @@
           "description": "An interactive 3D shooter/ride game theater featuring synchronized motion seats and laser blasting challenges.",
           "source": "MSC Bellissima Attractions Guide",
           "provenance": "MSC-BEL-SPT-XDCINEMA",
-          "confidence": 1.0,
-          "tags": ["xd-cinema", "3d-ride", "motion-seats", "arcade"]
+          "tags": [
+            "xd-cinema",
+            "3d-ride",
+            "motion-seats",
+            "arcade"
+          ]
         }
       ],
       "source": "MSC Bellissima Attractions Guide",
       "provenance": "MSC-BEL-SPT-ARCADE",
-      "confidence": 1.0,
-      "tags": ["arcade", "virtual-games", "f1", "bowling", "xd-cinema"]
+      "tags": [
+        "arcade",
+        "virtual-games",
+        "f1",
+        "bowling",
+        "xd-cinema"
+      ]
     },
     {
       "id": "SPT-MSC-GYM",
@@ -97,8 +134,15 @@
       "brand_partner": "Technogym",
       "source": "MSC Fitness Catalog",
       "provenance": "MSC-BEL-SPT-GYM",
-      "confidence": 1.0,
-      "tags": ["gym", "technogym", "fitness", "weights", "cardio", "spin", "yoga"]
+      "tags": [
+        "gym",
+        "technogym",
+        "fitness",
+        "weights",
+        "cardio",
+        "spin",
+        "yoga"
+      ]
     }
   ]
 }

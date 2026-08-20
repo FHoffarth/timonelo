@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://timonelo.com/schema/deck_geometry.schema.json",
   "title": "DeckGeometrySchema",
-  "description": "Canonical schema for ship spatial geometry extracted from official deck plans with strict provenance and epistemic confidence scoring.",
+  "description": "Canonical schema for ship spatial geometry extracted from official deck plans with strict provenance.",
   "type": "object",
   "required": [
     "vessel_id",
@@ -13,29 +13,74 @@
     "objects"
   ],
   "properties": {
-    "vessel_id": { "type": "string" },
-    "deck_number": { "type": "integer" },
-    "deck_name": { "type": "string" },
+    "vessel_id": {
+      "type": "string"
+    },
+    "deck_number": {
+      "type": "integer"
+    },
+    "deck_name": {
+      "type": "string"
+    },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "evidence_page", "extracted_at", "confidence"],
+      "required": [
+        "source_artifact",
+        "evidence_page",
+        "extracted_at"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "evidence_page": { "type": "integer" },
-        "extracted_at": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "evidence_page": {
+          "type": "integer"
+        },
+        "extracted_at": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "last_audited": {
+          "type": "string"
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "bounding_box": {
       "type": "object",
-      "required": ["min_x", "min_y", "max_x", "max_y", "width", "height"],
+      "required": [
+        "min_x",
+        "min_y",
+        "max_x",
+        "max_y",
+        "width",
+        "height"
+      ],
       "properties": {
-        "min_x": { "type": "number" },
-        "min_y": { "type": "number" },
-        "max_x": { "type": "number" },
-        "max_y": { "type": "number" },
-        "width": { "type": "number" },
-        "height": { "type": "number" }
+        "min_x": {
+          "type": "number"
+        },
+        "min_y": {
+          "type": "number"
+        },
+        "max_x": {
+          "type": "number"
+        },
+        "max_y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        }
       }
     },
     "objects": {
@@ -51,26 +96,44 @@
           "orientation",
           "bounding_box",
           "adjacent_objects",
-          "confidence",
           "provenance_breakdown"
         ],
         "properties": {
-          "id": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
           "type": {
             "type": "string",
-            "enum": ["CABIN", "VENUE", "LIFT", "CORRIDOR", "STAIRS", "SERVICE"]
+            "enum": [
+              "CABIN",
+              "VENUE",
+              "LIFT",
+              "CORRIDOR",
+              "STAIRS",
+              "SERVICE"
+            ]
           },
-          "label": { "type": "string" },
-          "category": { "type": "string" },
+          "label": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
           "side": {
             "type": "string",
-            "enum": ["PORT", "STARBOARD", "CENTER"]
+            "enum": [
+              "PORT",
+              "STARBOARD",
+              "CENTER"
+            ]
           },
           "polygon": {
             "type": "array",
             "items": {
               "type": "array",
-              "items": { "type": "number" },
+              "items": {
+                "type": "number"
+              },
               "minItems": 2,
               "maxItems": 2
             },
@@ -78,64 +141,164 @@
           },
           "centroid": {
             "type": "object",
-            "required": ["x", "y"],
+            "required": [
+              "x",
+              "y"
+            ],
             "properties": {
-              "x": { "type": "number" },
-              "y": { "type": "number" }
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
             }
           },
           "door_position": {
-            "type": ["object", "null"],
+            "type": [
+              "object",
+              "null"
+            ],
             "properties": {
-              "x": { "type": "number" },
-              "y": { "type": "number" }
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
             }
           },
           "orientation": {
             "type": "string",
-            "enum": ["PORT", "STARBOARD", "FORE", "AFT", "CENTER"]
+            "enum": [
+              "PORT",
+              "STARBOARD",
+              "FORE",
+              "AFT",
+              "CENTER"
+            ]
           },
           "bounding_box": {
             "type": "object",
-            "required": ["x", "y", "width", "height"],
+            "required": [
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
             "properties": {
-              "x": { "type": "number" },
-              "y": { "type": "number" },
-              "width": { "type": "number" },
-              "height": { "type": "number" }
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "width": {
+                "type": "number"
+              },
+              "height": {
+                "type": "number"
+              }
             }
           },
           "adjacent_objects": {
             "type": "object",
             "properties": {
-              "fore": { "type": ["string", "null"] },
-              "aft": { "type": ["string", "null"] },
-              "across": { "type": ["string", "null"] },
-              "corridor": { "type": ["string", "null"] },
-              "nearest_lift": { "type": ["string", "null"] }
+              "fore": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "aft": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "across": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "corridor": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "nearest_lift": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
             }
-          },
-          "confidence": {
-            "type": "number",
-            "minimum": 0.0,
-            "maximum": 1.0
           },
           "provenance_breakdown": {
             "type": "object",
-            "required": ["polygon", "centroid", "bounding_box", "orientation", "door_position", "adjacent_objects"],
+            "required": [
+              "polygon",
+              "centroid",
+              "bounding_box",
+              "orientation",
+              "door_position",
+              "adjacent_objects"
+            ],
             "properties": {
-              "polygon": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
-              "centroid": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
-              "bounding_box": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
-              "orientation": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
-              "door_position": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] },
-              "adjacent_objects": { "type": "string", "enum": ["DIRECT", "DERIVED", "UNKNOWN"] }
+              "polygon": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              },
+              "centroid": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              },
+              "bounding_box": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              },
+              "orientation": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              },
+              "door_position": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              },
+              "adjacent_objects": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "DERIVED",
+                  "UNKNOWN"
+                ]
+              }
             }
           }
-        },
-        "additionalProperties": true
+        }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

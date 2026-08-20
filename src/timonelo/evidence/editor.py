@@ -19,88 +19,30 @@ If any of those is missing the statement cannot be created.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, replace
-from typing import Any, Dict, List, Optional
+from dataclasses import replace
+from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.registry import ArtifactRegistry
-from timonelo.evidence.conflicts import ConflictError, ConflictLog, values_disagree
-from timonelo.evidence.review import ReviewError, ReviewLog
+from timonelo.evidence.conflicts import (
+    ConflictError,
+    ConflictLog,
+    validity_overlaps,
+    values_disagree,
+)
+from timonelo.evidence.models import Statement
+from timonelo.evidence.review import ReviewLog
 from timonelo.ontology.models import (
     EvidenceCondition,
     HumanReviewState,
+    Method,
     PublishStatus,
 )
 
 
 class EditorError(ValueError):
     pass
-
-
-@dataclass(frozen=True)
-class Statement:
-    """One manually authored claim, tied to one artifact.
-
-    Carries no confidence field (ADR-0002 I1). Confidence is computed from the
-    artifact's document class at query time.
-    """
-    statement_id: str
-    entity_id: str
-    question_id: str
-    statement_type: str
-    value: Any
-    artifact_id: str
-    page: Optional[int]
-    locator: str
-    read_by: str
-    read_on: str
-    method: str = "DIRECT"
-    derivation_note: str = ""
-    evidence_condition: str = EvidenceCondition.UNKNOWN.value
-    human_review_state: str = HumanReviewState.DRAFT.value
-    publish_status: str = PublishStatus.PUBLISH_BLOCKED.value
-    valid_from: Optional[str] = None
-    valid_until: Optional[str] = None
-    note: str = ""
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "statement_id": self.statement_id,
-            "entity_id": self.entity_id,
-            "question_id": self.question_id,
-            "statement_type": self.statement_type,
-            "value": self.value,
-            "artifact_id": self.artifact_id,
-            "page": self.page,
-            "locator": self.locator,
-            "read_by": self.read_by,
-            "read_on": self.read_on,
-            "method": self.method,
-            "derivation_note": self.derivation_note,
-            "evidence_condition": self.evidence_condition,
-            "human_review_state": self.human_review_state,
-            "publish_status": self.publish_status,
-            "valid_from": self.valid_from,
-            "valid_until": self.valid_until,
-            "note": self.note,
-        }
-
-    @property
-    def state(self) -> HumanReviewState:
-        return HumanReviewState(self.human_review_state)
-
-    @property
-    def review_state(self) -> str:
-        return self.human_review_state
-
-    @property
-    def condition(self) -> EvidenceCondition:
-        return EvidenceCondition(self.evidence_condition)
-
-    @property
-    def publishing(self) -> PublishStatus:
-        return PublishStatus(self.publish_status)
 
 
 class StatementEditor:
@@ -159,6 +101,7 @@ class StatementEditor:
         valid_from: Optional[str] = None,
         valid_until: Optional[str] = None,
         note: str = "",
+        evidence_event_ids: Tuple[str, ...] = (),
     ) -> Statement:
         """Author one statement in DRAFT with UNKNOWN evidence condition."""
         artifact = self.registry.get(artifact_id)  # raises if not held
@@ -168,9 +111,11 @@ class StatementEditor:
                 "A statement requires a locator: WHERE in the artifact the "
                 "value was read."
             )
-        if method not in ("DIRECT", "CALCULATED", "INFERRED"):
+        try:
+            canonical_method = Method(method)
+        except ValueError:
             raise EditorError(f"Unknown method {method!r}.")
-        if method != "DIRECT" and not derivation_note:
+        if canonical_method is not Method.DIRECT and not derivation_note:
             raise EditorError(
                 f"A {method} statement must record its derivation_note: which "
                 "printed facts were combined, and how."
@@ -194,11 +139,12 @@ class StatementEditor:
             locator=locator,
             read_by=read_by,
             read_on=read_on,
-            method=method,
+            method=canonical_method,
             derivation_note=derivation_note,
-            evidence_condition=EvidenceCondition.UNKNOWN.value,
-            human_review_state=HumanReviewState.DRAFT.value,
-            publish_status=PublishStatus.PUBLISH_BLOCKED.value,
+            evidence_event_ids=evidence_event_ids,
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.DRAFT,
+            publish_status=PublishStatus.PUBLISH_BLOCKED,
             valid_from=valid_from,
             valid_until=valid_until,
             note=note,
@@ -206,16 +152,26 @@ class StatementEditor:
         self._by_id[statement.statement_id] = statement
         self._flush()
 
-        # Conflict detection. Runs against statements a passenger could already
-        # be seeing; a disagreement with a DRAFT is not yet a contradiction in
-        # the published record.
+        # Conflict existence is independent from evidence, review, and publish axes.
         if self.conflict_log is not None:
+            self.conflict_log._record_detection_run(
+                candidate_statement_id=statement.statement_id,
+                checked_statement_count=len(self._by_id) - 1,
+                executed_on=read_on,
+            )
             for existing in self._by_id.values():
                 if existing.statement_id == statement.statement_id:
                     continue
                 if existing.entity_id != entity_id or existing.question_id != question_id:
                     continue
-                if existing.publishing is not PublishStatus.PUBLISH_ALLOWED:
+                if existing.statement_type != statement_type:
+                    continue
+                if not validity_overlaps(
+                    existing.valid_from,
+                    existing.valid_until,
+                    statement.valid_from,
+                    statement.valid_until,
+                ):
                     continue
                 if values_disagree(existing.value, value):
                     self.conflict_log.record(
@@ -255,8 +211,8 @@ class StatementEditor:
 
         pub_status = current.publish_status
         if to_cond is not EvidenceCondition.SUPPORTED:
-            pub_status = PublishStatus.PUBLISH_BLOCKED.value
-        updated = replace(current, evidence_condition=to_cond.value, publish_status=pub_status)
+            pub_status = PublishStatus.PUBLISH_BLOCKED
+        updated = replace(current, evidence_condition=to_cond, publish_status=pub_status)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -278,9 +234,9 @@ class StatementEditor:
         # If rejected or superseded, ensure publish status is BLOCKED
         pub_status = current.publish_status
         if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED):
-            pub_status = PublishStatus.PUBLISH_BLOCKED.value
+            pub_status = PublishStatus.PUBLISH_BLOCKED
 
-        updated = replace(current, human_review_state=to_state.value, publish_status=pub_status)
+        updated = replace(current, human_review_state=to_state, publish_status=pub_status)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -320,7 +276,7 @@ class StatementEditor:
                 f"{statement_id} may not be published: {reason}"
             )
 
-        updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED.value)
+        updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -345,54 +301,12 @@ class StatementEditor:
         occurred_on: str,
         note: str,
     ):
-        """Resolve a conflict and move both statements to their end states.
-
-        The winner is carried to APPROVED, SUPPORTED, and PUBLISH_ALLOWED; the loser becomes
-        SUPERSEDED, CONFLICTED, and PUBLISH_BLOCKED. If neither reading survives, both are
-        REJECTED and BLOCKED.
-        """
+        """Record a conflict decision without changing any lifecycle axis."""
         if self.conflict_log is None:
             raise EditorError("No conflict log is attached to this editor.")
         conflict = self.conflict_log.get(conflict_id)
 
-        if winning_statement_id is None:
-            for sid in conflict.statement_ids():
-                self._force_state(sid, HumanReviewState.REJECTED, actor, occurred_on,
-                                  f"both readings rejected ({conflict_id})")
-                self.set_evidence_condition(sid, EvidenceCondition.CONFLICTED, actor, occurred_on,
-                                            f"both rejected in {conflict_id}")
-        else:
-            if winning_statement_id not in conflict.statement_ids():
-                raise ConflictError(f"{winning_statement_id} is not part of conflict {conflict_id}")
-            loser = next(s for s in conflict.statement_ids() if s != winning_statement_id)
-            winner = self.get(winning_statement_id)
-            if winner.state is HumanReviewState.DRAFT:
-                self.transition(winning_statement_id, HumanReviewState.UNDER_REVIEW,
-                                actor, occurred_on, f"conflict {conflict_id}")
-            if self.get(winning_statement_id).state is HumanReviewState.UNDER_REVIEW:
-                self.transition(winning_statement_id, HumanReviewState.APPROVED,
-                                actor, occurred_on, f"conflict {conflict_id}")
-
-            # Only attempt publish if evidence condition is already SUPPORTED (does not auto-grant SUPPORTED)
-            winner_curr = self.get(winning_statement_id)
-            if winner_curr.condition is EvidenceCondition.SUPPORTED and winner_curr.state is HumanReviewState.APPROVED:
-                self.publish(winning_statement_id, actor, occurred_on, f"resolves {conflict_id}")
-
-            # The loser always reaches a terminal state, whatever it was in.
-            if self.get(loser).state not in (HumanReviewState.SUPERSEDED,
-                                             HumanReviewState.REJECTED):
-                self._force_state(loser, HumanReviewState.SUPERSEDED, actor, occurred_on,
-                                  f"superseded by {winning_statement_id} ({conflict_id})")
-                self.set_evidence_condition(loser, EvidenceCondition.CONFLICTED, actor, occurred_on,
-                                            f"superseded in {conflict_id}")
+        if winning_statement_id is not None and winning_statement_id not in conflict.statement_ids():
+            raise ConflictError(f"{winning_statement_id} is not part of conflict {conflict_id}")
         return self.conflict_log.resolve(
             conflict_id, winning_statement_id, actor, occurred_on, note)
-
-    def _force_state(self, statement_id: str, to_state: HumanReviewState,
-                     actor: str, occurred_on: str, note: str) -> None:
-        current = self._by_id[statement_id]
-        self.review_log.transition(statement_id, current.state, to_state,
-                                   actor, occurred_on, note)
-        pub_status = PublishStatus.PUBLISH_BLOCKED.value if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED) else current.publish_status
-        self._by_id[statement_id] = replace(current, human_review_state=to_state.value, publish_status=pub_status)
-        self._flush()

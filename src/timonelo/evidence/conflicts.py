@@ -7,14 +7,13 @@ When a new statement contradicts one that is already answerable, the store does
 not overwrite, does not discard, and does not pick a winner. It records the
 disagreement and hands it to a human.
 
-    detect -> record -> mark both -> require review -> publish resolution
+    detect -> record -> resolve
 
 Three rules follow from ADR-0002 and are enforced here rather than by habit:
 
-1. NOTHING DISAPPEARS. A losing statement becomes SUPERSEDED, never deleted and
-   never REJECTED. Those are different claims: REJECTED means the reading was
-   wrong; SUPERSEDED means it was right for its source and has been replaced by
-   a better one. Collapsing them destroys the record of why the value changed.
+1. NOTHING DISAPPEARS. Conflict resolution records a decision but does not mutate
+   evidence, review, or publication axes. Those transitions require separate,
+   explicit lifecycle actions.
 
 2. DETECTION IS DELIBERATELY BLUNT. Any difference in value for the same entity
    and question is a conflict. Normalising values before comparing ("14" vs 14,
@@ -41,7 +40,7 @@ from timonelo.canonical import canonical_dump
 
 class ConflictStatus(str, Enum):
     OPEN = "OPEN"                    # detected, awaiting a human
-    RESOLVED = "RESOLVED"            # a winner was chosen and published
+    RESOLVED = "RESOLVED"            # a preferred statement was recorded
     BOTH_REJECTED = "BOTH_REJECTED"  # neither reading survived review
 
 
@@ -98,12 +97,40 @@ class ConflictLog:
         self.path = path
         self._by_id: Dict[str, Conflict] = {}
         self._history: List[Dict[str, Any]] = []
+        self._detection_runs: List[Dict[str, Any]] = []
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 raw = json.load(f)
             self._history = raw.get("history", [])
+            self._detection_runs = raw.get("detection_runs", [])
             for cid, d in raw.get("conflicts", {}).items():
                 self._by_id[cid] = Conflict(**d)
+
+    def _record_detection_run(
+        self,
+        candidate_statement_id: str,
+        checked_statement_count: int,
+        executed_on: str,
+    ) -> None:
+        """Internal hook: record that the canonical detector evaluated a candidate."""
+        self._detection_runs.append({
+            "run_id": f"CDR-{len(self._detection_runs) + 1:04d}",
+            "candidate_statement_id": candidate_statement_id,
+            "checked_statement_count": checked_statement_count,
+            "executed_on": executed_on,
+        })
+        self._flush()
+
+    @property
+    def detection_executed(self) -> bool:
+        return bool(self._detection_runs)
+
+    @property
+    def detection_run_count(self) -> int:
+        return len(self._detection_runs)
+
+    def detection_runs(self) -> List[Dict[str, Any]]:
+        return [dict(run) for run in self._detection_runs]
 
     def _next_id(self) -> str:
         n = 1 + max((int(k[len(self.ID_PREFIX):]) for k in self._by_id), default=0)
@@ -219,7 +246,8 @@ class ConflictLog:
     def _flush(self) -> None:
         canonical_dump(
             {"conflicts": {k: v.to_dict() for k, v in self._by_id.items()},
-             "history": self._history},
+             "history": self._history,
+             "detection_runs": self._detection_runs},
             self.path,
         )
 
@@ -233,3 +261,17 @@ def values_disagree(a: Any, b: Any) -> bool:
     differently before the store decides they meant the same thing.
     """
     return a != b
+
+
+def validity_overlaps(
+    first_from: Optional[str],
+    first_until: Optional[str],
+    second_from: Optional[str],
+    second_until: Optional[str],
+) -> bool:
+    """Return whether two applicability windows can be current concurrently."""
+    if first_until is not None and second_from is not None and first_until < second_from:
+        return False
+    if second_until is not None and first_from is not None and second_until < first_from:
+        return False
+    return True

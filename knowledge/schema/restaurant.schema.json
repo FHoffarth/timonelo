@@ -4,18 +4,45 @@
   "title": "RestaurantsSchema",
   "description": "Canonical schema for ship restaurants, dining rooms, buffets, and specialty culinary venues.",
   "type": "object",
-  "required": ["vessel_id", "provenance", "restaurants"],
+  "required": [
+    "vessel_id",
+    "provenance",
+    "restaurants"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "pattern": "\\S",
+      "minLength": 1
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "verification_authority": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "last_audited": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "restaurants": {
@@ -24,23 +51,32 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "deck",
-          "category",
-          "description",
-          "dining_model",
           "source",
-          "provenance",
-          "confidence",
-          "tags"
+          "provenance"
         ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
           "deck": {
             "oneOf": [
-              { "type": "integer" },
-              { "type": "array", "items": { "type": "integer" } }
+              {
+                "type": "integer"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 1
+              }
             ]
           },
           "category": {
@@ -57,23 +93,50 @@
               "EXCLUSIVE_GOURMET",
               "EXCLUSIVE_OUTDOOR_GRILL",
               "OTHER_DINING"
-            ]
+            ],
+            "minLength": 1,
+            "pattern": "\\S"
           },
-          "description": { "type": "string" },
-          "dining_model": { "type": "string" },
-          "cuisine_type": { "type": "string" },
-          "seating_capacity": { "type": "integer" },
-          "source": { "type": "string" },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "dining_model": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "cuisine_type": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "seating_capacity": {
+            "type": "integer"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
-          }
-        },
-        "additionalProperties": false
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "confidence": false,
+          "confidence_score": false
+        }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

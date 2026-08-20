@@ -1,8 +1,7 @@
 {
   "port_id": "messina",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Under Construction (Late 2026)",
@@ -15,7 +14,13 @@
     },
     "source": "Port Authority of the Strait of Messina PNRR Infrastructure Updates 2026",
     "provenance": "MSN-PA-PNRR-2026",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "pnrr", "banchina-colapesce", "sustainability", "green-port"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "pnrr",
+      "banchina-colapesce",
+      "sustainability",
+      "green-port"
+    ]
   }
 }

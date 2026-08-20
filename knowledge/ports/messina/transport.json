@@ -1,8 +1,7 @@
 {
   "port_id": "messina",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [],
   "shuttle_notes": "No port shuttles are provided or necessary as the cruise terminal exits directly into central Messina.",
@@ -23,8 +22,12 @@
         ],
         "source": "Trenitalia",
         "provenance": "MSN-TRAIN-CENTRALE",
-        "confidence": 1.0,
-        "tags": ["train", "trenitalia", "taormina", "messina-centrale"]
+        "tags": [
+          "train",
+          "trenitalia",
+          "taormina",
+          "messina-centrale"
+        ]
       }
     ],
     "city_tram": {

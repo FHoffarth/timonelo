@@ -1,8 +1,7 @@
 {
   "port_id": "naples",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shore_power_ops": {
     "status": "Under Construction / Commissioning (Late 2026)",
@@ -14,7 +13,12 @@
     },
     "source": "Port Authority of the Central Tyrrhenian Sea Green Port Strategy 2026",
     "provenance": "NAP-PA-OPS-2026",
-    "confidence": 1.0,
-    "tags": ["shore-power", "ops", "molo-angioino", "electrification", "sustainability"]
+    "tags": [
+      "shore-power",
+      "ops",
+      "molo-angioino",
+      "electrification",
+      "sustainability"
+    ]
   }
 }

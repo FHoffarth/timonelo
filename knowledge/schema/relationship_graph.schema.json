@@ -14,39 +14,28 @@
   "properties": {
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        "source_artifact": {
+          "type": "string"
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "ships_to_routes": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "type": "object"
     },
     "routes_to_ports": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "type": "object"
     },
     "ports_to_terminals": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "type": "object"
     },
     "port_slug_to_unlocode": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
-      }
+      "type": "object"
     }
-  },
-  "additionalProperties": false
+  }
 }

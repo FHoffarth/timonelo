@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "bars": [
     {
@@ -13,8 +12,13 @@
       "description": "Located at the base of the central atrium, serving Italian aperitifs, espresso, and cocktails amidst live musical performances.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-INFINITY",
-      "confidence": 1.0,
-      "tags": ["atrium", "cocktails", "espresso", "live-music", "aperitif"]
+      "tags": [
+        "atrium",
+        "cocktails",
+        "espresso",
+        "live-music",
+        "aperitif"
+      ]
     },
     {
       "id": "BAR-GALLERIA",
@@ -24,8 +28,12 @@
       "description": "Centrally located along the indoor promenade beneath the 80-meter LED sky dome.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-GALLERIA",
-      "confidence": 1.0,
-      "tags": ["promenade", "coffee", "cocktails", "social-hub"]
+      "tags": [
+        "promenade",
+        "coffee",
+        "cocktails",
+        "social-hub"
+      ]
     },
     {
       "id": "BAR-MASTERS-OF-THE-SEA",
@@ -39,8 +47,14 @@
       },
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-MASTERSOFTHESEA",
-      "confidence": 1.0,
-      "tags": ["pub", "beer", "craft-beer", "british-pub", "live-music", "pub-food"]
+      "tags": [
+        "pub",
+        "beer",
+        "craft-beer",
+        "british-pub",
+        "live-music",
+        "pub-food"
+      ]
     },
     {
       "id": "BAR-TV-STUDIO",
@@ -50,8 +64,13 @@
       "description": "A high-tech, multi-purpose lounge and broadcast bar featuring karaoke, live music, late-night dancing, and interactive game shows.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-TVSTUDIO",
-      "confidence": 1.0,
-      "tags": ["karaoke", "broadcast", "game-shows", "cocktails", "nightlife"]
+      "tags": [
+        "karaoke",
+        "broadcast",
+        "game-shows",
+        "cocktails",
+        "nightlife"
+      ]
     },
     {
       "id": "BAR-CHAMPAGNE",
@@ -64,8 +83,14 @@
       },
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-CHAMPAGNE",
-      "confidence": 1.0,
-      "tags": ["champagne", "caviar", "seafood", "swarovski", "luxury", "wine"]
+      "tags": [
+        "champagne",
+        "caviar",
+        "seafood",
+        "swarovski",
+        "luxury",
+        "wine"
+      ]
     },
     {
       "id": "BAR-EDGE",
@@ -75,8 +100,12 @@
       "description": "Pre-dinner cocktail bar situated on the promenade gallery overlooking the central atrium.",
       "source": "MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-BAR-EDGE",
-      "confidence": 1.0,
-      "tags": ["cocktails", "aperitif", "promenade-view", "pre-dinner"]
+      "tags": [
+        "cocktails",
+        "aperitif",
+        "promenade-view",
+        "pre-dinner"
+      ]
     },
     {
       "id": "BAR-IMPERIAL-CASINO",
@@ -86,8 +115,12 @@
       "description": "Conveniently integrated into the casino floor serving players table-side and at the bar counter.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-CASINO",
-      "confidence": 1.0,
-      "tags": ["casino", "cocktails", "spirits", "gaming"]
+      "tags": [
+        "casino",
+        "cocktails",
+        "spirits",
+        "gaming"
+      ]
     },
     {
       "id": "BAR-ATMOSPHERE-NORTH-SOUTH",
@@ -97,8 +130,13 @@
       "description": "Twin poolside bars serving tropical cocktails, frozen beverages, beers, and quick snacks around the Atmosphere Pool.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-ATMOSPHERE",
-      "confidence": 1.0,
-      "tags": ["poolside", "cocktails", "frozen-drinks", "lido", "outdoor"]
+      "tags": [
+        "poolside",
+        "cocktails",
+        "frozen-drinks",
+        "lido",
+        "outdoor"
+      ]
     },
     {
       "id": "BAR-HORIZON",
@@ -108,8 +146,13 @@
       "description": "Outdoor aft bar looking out directly onto the ship's wake with sunset cocktail service.",
       "source": "MSC Bellissima Bar Directory",
       "provenance": "MSC-BEL-BAR-HORIZON",
-      "confidence": 1.0,
-      "tags": ["wake-view", "outdoor", "sunset", "cocktails", "aft"]
+      "tags": [
+        "wake-view",
+        "outdoor",
+        "sunset",
+        "cocktails",
+        "aft"
+      ]
     }
   ]
 }

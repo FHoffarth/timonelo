@@ -1,8 +1,7 @@
 {
   "port_id": "messina",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "emergency_numbers": [
     {
@@ -12,8 +11,11 @@
       "description": "General emergency dispatch in Italian, English, and other EU languages.",
       "source": "Numero Unico Europeo 112",
       "provenance": "IT-EMERG-112",
-      "confidence": 1.0,
-      "tags": ["emergency", "universal", "112"]
+      "tags": [
+        "emergency",
+        "universal",
+        "112"
+      ]
     },
     {
       "id": "EMERG-MSN-POLIZIA",
@@ -22,8 +24,9 @@
       "description": "Emergency police dispatch.",
       "source": "Polizia di Stato",
       "provenance": "IT-POL-113",
-      "confidence": 1.0,
-      "tags": ["police"]
+      "tags": [
+        "police"
+      ]
     },
     {
       "id": "EMERG-MSN-AMBULANZA",
@@ -32,8 +35,10 @@
       "description": "Direct medical emergency dispatch.",
       "source": "Servizio Sanitario Nazionale (SSN)",
       "provenance": "IT-SSN-118",
-      "confidence": 1.0,
-      "tags": ["ambulance", "medical-emergency"]
+      "tags": [
+        "ambulance",
+        "medical-emergency"
+      ]
     },
     {
       "id": "EMERG-MSN-VIGILI-FUOCO",
@@ -42,8 +47,10 @@
       "description": "National fire department and sea rescue operations.",
       "source": "Corpo Nazionale dei Vigili del Fuoco",
       "provenance": "IT-VVF-115",
-      "confidence": 1.0,
-      "tags": ["fire", "rescue"]
+      "tags": [
+        "fire",
+        "rescue"
+      ]
     }
   ]
 }

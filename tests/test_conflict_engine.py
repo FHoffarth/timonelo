@@ -1,9 +1,4 @@
-"""
-Sprint 0010 — Truth Conflict Engine.
-
-detect -> record -> mark both -> require review -> publish resolution.
-Nothing is overwritten and nothing disappears.
-"""
+"""Truth conflict detection and lifecycle-independent resolution tests."""
 
 import os
 import shutil
@@ -12,8 +7,13 @@ import unittest
 
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
-from timonelo.evidence.conflicts import ConflictError, ConflictStatus, values_disagree
-from timonelo.evidence.review import ReviewError
+from timonelo.evidence.conflicts import (
+    ConflictError,
+    ConflictStatus,
+    validity_overlaps,
+    values_disagree,
+)
+from timonelo.evidence.gatekeeper import EvidenceGatekeeper
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
@@ -63,12 +63,21 @@ class ConflictCase(unittest.TestCase):
         shutil.rmtree(self.root, ignore_errors=True)
         authority.DOCUMENT_CLASSES.pop(CLASS, None)
 
-    def _stmt(self, value, artifact, reader="reader.one", on="2026-08-17"):
+    def _stmt(
+        self,
+        value,
+        artifact,
+        reader="reader.one",
+        on="2026-08-17",
+        valid_from=None,
+        valid_until=None,
+    ):
         return self.ws.create_statement(
             entity_id="cabin:1", question_id="Q-0001",
             statement_type="fixture.deck", value=value,
             artifact_id=artifact.artifact_id, page=1, locator="p1",
-            read_by=reader, read_on=on)
+            read_by=reader, read_on=on,
+            valid_from=valid_from, valid_until=valid_until)
 
     def _publish(self, s, actor="reviewer.two"):
         self.ws.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED, actor, "2026-08-17")
@@ -79,11 +88,34 @@ class ConflictCase(unittest.TestCase):
 
 class TestDetection(ConflictCase):
 
-    def test_no_conflict_against_a_draft(self):
-        """A disagreement with an unpublished draft is not yet a contradiction."""
+    def test_non_overlapping_historical_values_are_not_live_conflict(self):
+        self._publish(
+            self._stmt(14, self.a, valid_from="2024-01-01", valid_until="2024-12-31")
+        )
+        self._stmt(
+            15,
+            self.b,
+            reader="reader.two",
+            valid_from="2025-01-01",
+        )
+        self.assertEqual(len(self.ws.conflicts), 0)
+
+
+    def test_draft_vs_draft_incompatible_overlap_is_live_conflict(self):
         self._stmt(14, self.a)
         self._stmt(15, self.b)
-        self.assertEqual(len(self.ws.conflicts), 0)
+        self.assertEqual(len(self.ws.conflicts), 1)
+
+    def test_under_review_vs_draft_incompatible_overlap_is_live_conflict(self):
+        incumbent = self._stmt(14, self.a)
+        self.ws.transition(
+            incumbent.statement_id,
+            HumanReviewState.UNDER_REVIEW,
+            incumbent.read_by,
+            "2026-08-17",
+        )
+        self._stmt(15, self.b, reader="reader.two")
+        self.assertEqual(len(self.ws.conflicts), 1)
 
     def test_conflict_detected_against_published(self):
         self._publish(self._stmt(14, self.a))
@@ -95,9 +127,51 @@ class TestDetection(ConflictCase):
         self.assertTrue(c.is_open)
 
     def test_agreement_is_not_a_conflict(self):
-        self._publish(self._stmt(14, self.a))
+        self._stmt(14, self.a)
         self._stmt(14, self.b, reader="reader.two")
         self.assertEqual(len(self.ws.conflicts), 0)
+
+    def test_inclusive_boundary_touch_is_live_conflict(self):
+        self._stmt(14, self.a, valid_until="2025-01-01")
+        self._stmt(15, self.b, reader="reader.two", valid_from="2025-01-01")
+        self.assertEqual(len(self.ws.conflicts), 1)
+
+    def test_validity_overlap_matrix(self):
+        self.assertTrue(validity_overlaps(None, None, None, None))
+        self.assertTrue(validity_overlaps("2025-01-01", None, None, "2025-02-01"))
+        self.assertFalse(
+            validity_overlaps("2024-01-01", "2024-12-31", "2025-01-01", None)
+        )
+        self.assertTrue(
+            validity_overlaps(None, "2025-01-01", "2025-01-01", None)
+        )
+        self.assertTrue(
+            validity_overlaps(
+                "2025-01-01", "2025-01-02", "2025-01-02", "2025-01-03"
+            )
+        )
+
+    def test_gatekeeper_derives_executed_zero_from_actual_detector_run(self):
+        self._stmt(14, self.a)
+        reloaded = type(self.ws.conflicts)(self.ws.conflicts.path)
+        gatekeeper = EvidenceGatekeeper()
+        gatekeeper.use_conflict_log(reloaded)
+        result = gatekeeper.evaluate_publish_gate().conflict_gate
+        self.assertTrue(result.executed)
+        self.assertEqual(result.checked_entities, 1)
+        self.assertEqual(result.conflicts_found, 0)
+        self.assertEqual(result.unresolved_conflicts, 0)
+
+    def test_gatekeeper_derives_open_conflict_from_actual_detector_run(self):
+        self._stmt(14, self.a)
+        self._stmt(15, self.b, reader="reader.two")
+        gatekeeper = EvidenceGatekeeper()
+        gatekeeper.use_conflict_log(self.ws.conflicts)
+        result = gatekeeper.evaluate_publish_gate().conflict_gate
+        self.assertTrue(result.executed)
+        self.assertEqual(result.checked_entities, 2)
+        self.assertEqual(result.conflicts_found, 1)
+        self.assertEqual(result.unresolved_conflicts, 1)
 
     def test_detection_is_blunt_by_design(self):
         """"14" and 14 are a conflict. A curator decides whether they agree."""
@@ -163,44 +237,42 @@ class TestResolution(ConflictCase):
                 self.conflict.conflict_id, other.statement_id,
                 "reviewer.two", "2026-08-18", "because")
 
-    def test_challenger_wins_and_incumbent_is_superseded(self):
+    def test_resolution_does_not_mutate_lifecycle_axes(self):
         self.ws.set_evidence_condition(self.s2.statement_id, EvidenceCondition.SUPPORTED,
                                        "reviewer.two", "2026-08-18")
+        before_winner = self.ws.editor.get(self.s2.statement_id)
+        before_loser = self.ws.editor.get(self.s1.statement_id)
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, self.s2.statement_id,
             "reviewer.two", "2026-08-18", "source B is the later edition")
-        self.assertEqual(self.ws.editor.get(self.s2.statement_id).state,
-                         HumanReviewState.APPROVED)
-        self.assertEqual(self.ws.editor.get(self.s2.statement_id).publishing,
-                         PublishStatus.PUBLISH_ALLOWED)
-        self.assertEqual(self.ws.editor.get(self.s1.statement_id).state,
-                         HumanReviewState.SUPERSEDED)
-        self.assertEqual(self.ws.editor.get(self.s1.statement_id).publishing,
-                         PublishStatus.PUBLISH_BLOCKED)
-        self.assertEqual(self.ws.engine.answer("cabin:1", "Q-0001").value, 15)
+        self.assertEqual(self.ws.editor.get(self.s2.statement_id), before_winner)
+        self.assertEqual(self.ws.editor.get(self.s1.statement_id), before_loser)
 
-    def test_loser_always_reaches_a_terminal_state(self):
-        """A losing DRAFT left alive could be published later and recreate
-        the same conflict."""
+    def test_resolution_does_not_mark_winner_supported(self):
         self.ws.editor.resolve_conflict(
-            self.conflict.conflict_id, self.s1.statement_id,
-            "reviewer.two", "2026-08-18", "incumbent reading confirmed")
-        self.assertEqual(self.ws.editor.get(self.s2.statement_id).state,
-                         HumanReviewState.SUPERSEDED)
+            self.conflict.conflict_id, self.s2.statement_id,
+            "reviewer.two", "2026-08-18", "preferred for conflict record")
+        self.assertEqual(
+            self.ws.editor.get(self.s2.statement_id).condition,
+            EvidenceCondition.UNKNOWN,
+        )
 
-    def test_superseded_is_terminal(self):
+    def test_resolution_does_not_mark_loser_unsupported(self):
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, self.s1.statement_id,
             "reviewer.two", "2026-08-18", "confirmed")
-        with self.assertRaises(ReviewError):
-            self.ws.transition(self.s2.statement_id, HumanReviewState.APPROVED,
-                               "reviewer.two", "2026-08-19")
+        self.assertEqual(
+            self.ws.editor.get(self.s2.statement_id).condition,
+            EvidenceCondition.UNKNOWN,
+        )
 
-    def test_both_rejected_returns_the_question_to_unknown(self):
+    def test_reject_both_decision_does_not_reject_statements(self):
+        before = [self.ws.editor.get(sid) for sid in self.conflict.statement_ids()]
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, None,
             "reviewer.two", "2026-08-18", "neither reading is legible")
-        self.assertFalse(self.ws.engine.answer("cabin:1", "Q-0001").known)
+        after = [self.ws.editor.get(sid) for sid in self.conflict.statement_ids()]
+        self.assertEqual(after, before)
 
     def test_resolution_clears_the_contested_flag(self):
         self.ws.editor.resolve_conflict(
@@ -251,17 +323,14 @@ class TestHistoryIsPreserved(ConflictCase):
         events = [h["event"] for h in self.ws.conflicts.history(c.conflict_id)]
         self.assertEqual(events, ["DETECTED", "RESOLVED"])
 
-    def test_review_log_records_the_supersession(self):
+    def test_resolution_does_not_write_review_history(self):
         s1 = self._publish(self._stmt(14, self.a))
         s2 = self._stmt(15, self.b, reader="reader.two")
         c = self.ws.conflicts.all()[0]
         self.ws.editor.resolve_conflict(c.conflict_id, s1.statement_id,
                                         "reviewer.two", "2026-08-18", "confirmed")
         hist = self.ws.reviews.history(s2.statement_id)
-        states = [h.to_state for h in hist]
-        self.assertIn("SUPERSEDED", states)
-        superseded_entry = next(h for h in hist if h.to_state == "SUPERSEDED")
-        self.assertIn("CFL-", superseded_entry.note)
+        self.assertEqual(hist, [])
 
     def test_resolution_reason_is_retained(self):
         self._publish(self._stmt(14, self.a))

@@ -4,7 +4,11 @@
   "title": "ShipTechnicalSpecification",
   "description": "Canonical schema for ship technical specifications, dimensions, capacities, and refit history.",
   "type": "object",
-  "required": ["vessel_id", "vessel_name", "provenance", "technical_specifications"],
+  "required": [
+    "vessel_id",
+    "vessel_name",
+    "provenance"
+  ],
   "properties": {
     "vessel_id": {
       "type": "string",
@@ -15,131 +19,245 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "verification_authority": { "type": "string" },
-        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
-        "last_audited": { "type": "string" }
+        "source_artifact": {
+          "type": "string"
+        },
+        "verification_authority": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "last_audited": {
+          "type": "string"
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "technical_specifications": {
       "type": "object",
-      "required": [
-        "class",
-        "imo_number",
-        "builder",
-        "tonnage_gt",
-        "dimensions",
-        "capacities"
-      ],
       "properties": {
-        "class": { "type": "string" },
+        "class": {
+          "type": "string"
+        },
         "sister_ships": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "imo_number": { "type": "integer", "minimum": 1000000, "maximum": 9999999 },
-        "mmsi": { "type": "integer" },
-        "call_sign": { "type": "string" },
-        "builder": { "type": "string" },
+        "imo_number": {
+          "type": "integer",
+          "minimum": 1000000,
+          "maximum": 9999999
+        },
+        "mmsi": {
+          "type": "integer"
+        },
+        "call_sign": {
+          "type": "string"
+        },
+        "builder": {
+          "type": "string"
+        },
         "cost_to_build": {
           "type": "object",
           "properties": {
-            "usd": { "type": "number" },
-            "eur": { "type": "number" }
+            "usd": {
+              "type": "number"
+            },
+            "eur": {
+              "type": "number"
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "key_milestones": {
           "type": "object",
           "properties": {
-            "steel_cutting": { "type": "string" },
-            "launch_date": { "type": "string" },
-            "maiden_voyage": { "type": "string" }
+            "steel_cutting": {
+              "type": "string"
+            },
+            "launch_date": {
+              "type": "string"
+            },
+            "maiden_voyage": {
+              "type": "string"
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
-        "port_of_registry": { "type": "string" },
-        "flag_state": { "type": "string" },
-        "tonnage_gt": { "type": "integer", "minimum": 100 },
+        "port_of_registry": {
+          "type": "string"
+        },
+        "flag_state": {
+          "type": "string"
+        },
+        "tonnage_gt": {
+          "type": "integer",
+          "minimum": 100
+        },
         "dimensions": {
           "type": "object",
-          "required": ["length_meters", "beam_meters", "draft_meters"],
           "properties": {
-            "length_meters": { "type": "number" },
-            "length_feet": { "type": "number" },
-            "beam_meters": { "type": "number" },
-            "beam_feet": { "type": "number" },
-            "draft_meters": { "type": "number" },
-            "draft_feet_inches": { "type": "string" }
+            "length_meters": {
+              "type": "number"
+            },
+            "length_feet": {
+              "type": "number"
+            },
+            "beam_meters": {
+              "type": "number"
+            },
+            "beam_feet": {
+              "type": "number"
+            },
+            "draft_meters": {
+              "type": "number"
+            },
+            "draft_feet_inches": {
+              "type": "string"
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "propulsion_and_power": {
           "type": "object",
           "properties": {
-            "propulsion_type": { "type": "string" },
-            "installed_power_kw": { "type": "number" },
-            "installed_power_hp": { "type": "number" },
-            "cruising_speed_knots": { "type": "number" },
-            "max_speed_knots": { "type": "number" }
+            "propulsion_type": {
+              "type": "string"
+            },
+            "installed_power_kw": {
+              "type": "number"
+            },
+            "installed_power_hp": {
+              "type": "number"
+            },
+            "cruising_speed_knots": {
+              "type": "number"
+            },
+            "max_speed_knots": {
+              "type": "number"
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "capacities": {
           "type": "object",
-          "required": [
-            "total_decks",
-            "passenger_accessible_decks",
-            "passenger_capacity_double_occupancy",
-            "passenger_capacity_max_occupancy",
-            "crew_capacity_min"
-          ],
           "properties": {
-            "total_decks": { "type": "integer", "minimum": 1 },
-            "passenger_accessible_decks": { "type": "integer", "minimum": 1 },
-            "passenger_capacity_double_occupancy": { "type": "integer" },
-            "passenger_capacity_max_occupancy": { "type": "integer" },
-            "crew_capacity_min": { "type": "integer" },
-            "crew_capacity_max": { "type": "integer" },
-            "total_cabins_min": { "type": "integer" },
-            "total_cabins_max": { "type": "integer" },
-            "balcony_cabin_percentage": { "type": "number", "minimum": 0, "maximum": 100 }
+            "total_decks": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "passenger_accessible_decks": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "passenger_capacity_double_occupancy": {
+              "type": "integer"
+            },
+            "passenger_capacity_max_occupancy": {
+              "type": "integer"
+            },
+            "crew_capacity_min": {
+              "type": "integer"
+            },
+            "crew_capacity_max": {
+              "type": "integer"
+            },
+            "total_cabins_min": {
+              "type": "integer"
+            },
+            "total_cabins_max": {
+              "type": "integer"
+            },
+            "balcony_cabin_percentage": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "confidence": false,
+            "confidence_score": false
           }
         },
         "connectivity_and_smart_systems": {
           "type": "object",
           "properties": {
-            "satellite_network": { "type": "string" },
-            "iot_wearables": { "type": "string" },
-            "digital_platform": { "type": "string" }
+            "satellite_network": {
+              "type": "string"
+            },
+            "iot_wearables": {
+              "type": "string"
+            },
+            "digital_platform": {
+              "type": "string"
+            },
+            "confidence": false,
+            "confidence_score": false
           }
-        }
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "refurbishment_history": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "location", "confidence", "provenance"],
+        "required": [
+          "id",
+          "name",
+          "location",
+          "provenance"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "date_start": { "type": "string" },
-          "date_end": { "type": "string" },
-          "location": { "type": "string" },
-          "significance": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "date_start": {
+            "type": "string"
+          },
+          "date_end": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "significance": {
+            "type": "string"
+          },
           "scope": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "provenance": { "type": "string" },
-          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "provenance": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" }
-          }
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": false,
+          "confidence_score": false
         }
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

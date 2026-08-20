@@ -16,11 +16,22 @@
     "route_id": {
       "type": "string"
     },
-    "title": { "type": "string" },
-    "vessel_name": { "type": "string" },
-    "itinerary_type": { "type": "string" },
-    "duration_nights": { "type": "integer", "minimum": 1 },
-    "total_nautical_miles_approx": { "type": "number" },
+    "title": {
+      "type": "string"
+    },
+    "vessel_name": {
+      "type": "string"
+    },
+    "itinerary_type": {
+      "type": "string"
+    },
+    "duration_nights": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "total_nautical_miles_approx": {
+      "type": "number"
+    },
     "legs": {
       "type": "array",
       "items": {
@@ -34,49 +45,85 @@
           "homeport"
         ],
         "properties": {
-          "leg_sequence": { "type": "integer", "minimum": 1 },
-          "day": { "type": "integer", "minimum": 1 },
-          "origin_canonical_id": { "type": "string" },
-          "destination_canonical_id": { "type": "string" },
+          "leg_sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "day": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "origin_canonical_id": {
+            "type": "string"
+          },
+          "destination_canonical_id": {
+            "type": "string"
+          },
           "arrival": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "departure": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
-          "sea_day": { "type": "boolean" },
-          "homeport": { "type": "boolean" },
-          "distance_if_known_nm": { "type": "number" }
-        },
-        "additionalProperties": false
+          "sea_day": {
+            "type": "boolean"
+          },
+          "homeport": {
+            "type": "boolean"
+          },
+          "distance_if_known_nm": {
+            "type": "number"
+          },
+          "confidence": false,
+          "confidence_score": false
+        }
       }
     },
     "provenance": {
       "type": "object",
-      "required": ["source_artifact", "confidence"],
+      "required": [
+        "source_artifact"
+      ],
       "properties": {
-        "source_artifact": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
-        "confidence_score": { "type": "string" },
-        "validation_status": { "type": "string" }
+        "source_artifact": {
+          "type": "string"
+        },
+        "validation_status": {
+          "type": "string"
+        },
+        "confidence": false,
+        "confidence_score": false
       }
     },
     "sources": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name", "type"],
+        "required": [
+          "name",
+          "type"
+        ],
         "properties": {
-          "name": { "type": "string" },
-          "type": { "type": "string" }
-        },
-        "additionalProperties": false
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
       }
     },
     "tags": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
-  },
-  "additionalProperties": false
+  }
 }

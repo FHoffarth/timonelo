@@ -50,7 +50,10 @@ class TestPortKnowledgeValidation(unittest.TestCase):
                 self.fail(err_msg)
 
     def test_entity_provenance_and_metadata_completeness(self):
-        """Ensure every sub-entity in port files has id, name, source, provenance, confidence, tags."""
+        """Ensure every sub-entity in port files has id, name, source, provenance, tags.
+        Note: confidence/confidence_score are prohibited by canonical schema (P0-B Step 2B.0C)
+        and must NOT be asserted as present.
+        """
         for port_id in EXPECTED_PORTS:
             port_dir = os.path.join(PORTS_DIR, port_id)
 
@@ -62,7 +65,8 @@ class TestPortKnowledgeValidation(unittest.TestCase):
                     self.assertIn("name", item)
                     self.assertIn("source", item)
                     self.assertIn("provenance", item)
-                    self.assertIn("confidence", item)
+                    self.assertNotIn("confidence", item,
+                        f"confidence is prohibited by canonical schema in {port_id}/emergency.json")
                     self.assertIn("tags", item)
 
             # Check medical.json
@@ -73,8 +77,10 @@ class TestPortKnowledgeValidation(unittest.TestCase):
                     self.assertIn("name", item)
                     self.assertIn("source", item)
                     self.assertIn("provenance", item)
-                    self.assertIn("confidence", item)
+                    self.assertNotIn("confidence", item,
+                        f"confidence is prohibited by canonical schema in {port_id}/medical.json")
                     self.assertIn("tags", item)
+
 
 
 if __name__ == "__main__":

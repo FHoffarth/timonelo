@@ -1,66 +1,39 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "lounges": [
     {
-      "id": "LNG-CAROUSEL",
+      "id": "LOUNGE-TOP-SAIL",
+      "name": "Top Sail Lounge",
+      "deck": 16,
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
+    },
+    {
+      "id": "LOUNGE-SKY",
+      "name": "Sky Lounge",
+      "deck": 18,
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
+    },
+    {
+      "id": "LOUNGE-CAROUSEL",
       "name": "Carousel Lounge",
       "deck": 7,
-      "category": "ENTERTAINMENT_LOUNGE",
-      "description": "Custom-designed 360-degree aft performance lounge offering panoramic 20m high glass walls and acrobatic theatre.",
-      "metrics": {
-        "capacity": 413
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-CAROUSEL",
-      "confidence": 1.0,
-      "tags": [
-        "theatre",
-        "cirque",
-        "cocktails",
-        "panoramic"
-      ]
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
-      "id": "LNG-TOP-SAIL",
-      "name": "Top Sail Lounge",
-      "deck": 15,
-      "category": "YACHT_CLUB_EXCLUSIVE",
-      "description": "Prestigious forward-facing panoramic lounge offering complimentary gourmet canapés and premium drinks for Yacht Club guests.",
-      "metrics": {
-        "capacity": 160
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-TOPSAIL",
-      "confidence": 1.0,
-      "tags": [
-        "exclusive",
-        "yacht-club",
-        "panoramic",
-        "bow-view"
-      ]
-    },
-    {
-      "id": "LNG-INFINITY-ATRIUM",
-      "name": "Infinity Atrium Lounge",
-      "deck": 5,
-      "category": "ATRIUM_LOUNGE",
-      "description": "Central three-storey atrium lounge surrounded by sparkling Swarovski crystal staircases.",
-      "metrics": {
-        "capacity": 120
-      },
-      "source": "MSC Meraviglia Lounge Directory",
-      "provenance": "MSC-MER-LNG-ATRIUM",
-      "confidence": 1.0,
-      "tags": [
-        "atrium",
-        "swarovski",
-        "piano-bar",
-        "coffee"
-      ]
+      "id": "LOUNGE-ATTIC",
+      "name": "Attic Club",
+      "deck": 18,
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

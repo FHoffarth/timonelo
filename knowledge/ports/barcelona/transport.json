@@ -1,8 +1,7 @@
 {
   "port_id": "barcelona",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [
     {
@@ -14,12 +13,20 @@
         "single_ticket_eur": 3.0,
         "round_trip_ticket_eur": 4.5
       },
-      "payment_methods": ["Cash onboard", "Online via cruisebus.barcelona"],
+      "payment_methods": [
+        "Cash onboard",
+        "Online via cruisebus.barcelona"
+      ],
       "restrictions": "Standard T-Casual / Barcelona city transit passes are NOT valid.",
       "source": "Port de Barcelona Official Shuttle Schedule",
       "provenance": "BCN-TRANS-T3",
-      "confidence": 1.0,
-      "tags": ["shuttle", "t3-bus", "blue-bus", "moll-adossat", "columbus-monument"]
+      "tags": [
+        "shuttle",
+        "t3-bus",
+        "blue-bus",
+        "moll-adossat",
+        "columbus-monument"
+      ]
     }
   ],
   "public_transport": {
@@ -27,16 +34,28 @@
       {
         "id": "METRO-BCN-DRASSANES",
         "name": "Drassanes Metro Station",
-        "lines": ["L3 (Green Line)"],
+        "lines": [
+          "L3 (Green Line)"
+        ],
         "location": "Directly at the Columbus Monument (Plaça del Portal de la Pau)",
         "connectivity": "Direct access to Plaça Catalunya, Passeig de Gràcia, and connection to Sants railway station.",
         "source": "TMB (Transports Metropolitans de Barcelona)",
         "provenance": "BCN-TMB-DRASSANES",
-        "confidence": 1.0,
-        "tags": ["metro", "l3", "drassanes", "la-rambla"]
+        "tags": [
+          "metro",
+          "l3",
+          "drassanes",
+          "la-rambla"
+        ]
       }
     ],
-    "city_buses": ["D20", "H14", "59", "21", "88"],
+    "city_buses": [
+      "D20",
+      "H14",
+      "59",
+      "21",
+      "88"
+    ],
     "rail_stations": [
       {
         "name": "Barcelona Sants",

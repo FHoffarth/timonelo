@@ -1,8 +1,7 @@
 {
   "port_id": "naples",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "Public Hospital (Closest emergency facility to the port)",
       "source": "ASL Napoli 1 Centro",
       "provenance": "IT-MED-HOSP-LORETO",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "pronto-soccorso", "loreto-mare"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "pronto-soccorso",
+        "loreto-mare"
+      ]
     },
     {
       "id": "MED-NAP-CARDARELLI",
@@ -26,8 +29,11 @@
       "type": "Largest Hospital and Trauma Center in Southern Italy",
       "source": "AORN Cardarelli",
       "provenance": "IT-MED-HOSP-CARDARELLI",
-      "confidence": 1.0,
-      "tags": ["hospital", "trauma-center", "cardarelli"]
+      "tags": [
+        "hospital",
+        "trauma-center",
+        "cardarelli"
+      ]
     }
   ]
 }

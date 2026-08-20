@@ -1,8 +1,7 @@
 {
   "port_id": "naples",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "shuttle_services": [],
   "shuttle_notes": "No port shuttles are provided or necessary as the cruise terminal is directly in the city center at Piazza Municipio.",
@@ -11,27 +10,46 @@
       {
         "id": "METRO-NAP-MUNICIPIO",
         "name": "Municipio Metro Station",
-        "lines": ["Line 1 (Yellow Line / Linea dell'Arte)"],
+        "lines": [
+          "Line 1 (Yellow Line / Linea dell'Arte)"
+        ],
         "location": "Directly across the street from the cruise terminal exit in Piazza Municipio",
         "connectivity": "Direct three-stop subway connection to Napoli Centrale railway station (Piazza Garibaldi).",
         "source": "ANM (Azienda Napoletana Mobilità)",
         "provenance": "NAP-ANM-MUNICIPIO",
-        "confidence": 1.0,
-        "tags": ["metro", "line-1", "municipio", "garibaldi"]
+        "tags": [
+          "metro",
+          "line-1",
+          "municipio",
+          "garibaldi"
+        ]
       }
     ],
     "ferries_and_hydrofoils": [
       {
         "id": "FERRY-NAP-BEVERELLO",
         "pier": "Molo Beverello",
-        "destinations": ["Capri", "Ischia", "Procida", "Sorrento"],
-        "operators": ["Caremar", "SNAV", "NLG"],
+        "destinations": [
+          "Capri",
+          "Ischia",
+          "Procida",
+          "Sorrento"
+        ],
+        "operators": [
+          "Caremar",
+          "SNAV",
+          "NLG"
+        ],
         "description": "High-speed passenger hydrofoils leaving continuously throughout the day."
       },
       {
         "id": "FERRY-NAP-PORTA-MASSA",
         "pier": "Calata Porta di Massa",
-        "destinations": ["Capri", "Ischia", "Palermo (Sicily)"],
+        "destinations": [
+          "Capri",
+          "Ischia",
+          "Palermo (Sicily)"
+        ],
         "description": "Conventional passenger and roll-on/roll-off vehicle ferries."
       }
     ]

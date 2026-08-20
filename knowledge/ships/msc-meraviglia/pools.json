@@ -1,84 +1,46 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "verification_authority": "MSC Cruises Official Documentation",
+    "last_audited": "2026-08-19"
   },
   "pools_and_water_areas": [
     {
       "id": "POOL-ATMOSPHERE",
-      "name": "Atmosphere Main Pool",
+      "name": "Atmosphere Pool",
       "deck": 15,
-      "category": "MAIN_RESORT_POOL",
-      "description": "Expansive main lido resort pool with shallow sun lounging ledges and poolside movie screen.",
-      "metrics": {
-        "area_sqm": 840
-      },
-      "source": "MSC Meraviglia Pool Directory",
-      "provenance": "MSC-MER-POOL-ATMOSPHERE",
-      "confidence": 1.0,
-      "tags": [
-        "pool",
-        "main-lido",
-        "outdoor",
-        "led-screen"
-      ]
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-BAMBOO",
-      "name": "Bamboo Solarium Pool",
+      "name": "Bamboo Pool",
       "deck": 15,
-      "category": "ALL_WEATHER_SOLARIUM",
-      "description": "All-weather indoor relaxation pool sheltered beneath a motorized magrodome glass roof.",
-      "metrics": {
-        "area_sqm": 420
-      },
-      "source": "MSC Meraviglia Pool Directory",
-      "provenance": "MSC-MER-POOL-BAMBOO",
-      "confidence": 1.0,
-      "tags": [
-        "solarium",
-        "magrodome",
-        "indoor-pool",
-        "all-weather"
-      ]
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-HORIZON",
-      "name": "Horizon Amphitheatre Pool",
+      "name": "Horizon Pool",
       "deck": 16,
-      "category": "AFT_PANORAMIC_POOL",
-      "description": "Tiered stern pool offering direct panoramic wake views and sunset cocktail seating.",
-      "metrics": {
-        "area_sqm": 310
-      },
-      "source": "MSC Meraviglia Pool Directory",
-      "provenance": "MSC-MER-POOL-HORIZON",
-      "confidence": 1.0,
-      "tags": [
-        "aft-pool",
-        "sunset",
-        "wake-view"
-      ]
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
-      "id": "POOL-POLAR-AQUAPARK",
+      "id": "POOL-AQUAPARK",
       "name": "Polar Aquapark",
       "deck": 19,
-      "category": "WATERPARK",
-      "description": "Multi-level waterpark with twisting high-speed tube waterslides and interactive splash zone.",
-      "metrics": {
-        "area_sqm": 950
-      },
-      "source": "MSC Meraviglia Pool Directory",
-      "provenance": "MSC-MER-POOL-POLAR",
-      "confidence": 1.0,
-      "tags": [
-        "aquapark",
-        "waterslides",
-        "splash-zone",
-        "family"
-      ]
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
+    },
+    {
+      "id": "POOL-YC",
+      "name": "MSC Yacht Club Pool",
+      "deck": 19,
+      "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

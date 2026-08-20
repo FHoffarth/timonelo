@@ -1,8 +1,7 @@
 {
   "port_id": "valletta",
   "provenance": {
-    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "confidence": 1.0
+    "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026"
   },
   "medical_facilities": [
     {
@@ -14,8 +13,12 @@
       "type": "Primary Public University Teaching Hospital (10-15 min drive from port)",
       "source": "Ministry for Health (Malta)",
       "provenance": "MT-MED-HOSP-MATERDEI",
-      "confidence": 1.0,
-      "tags": ["hospital", "emergency", "mater-dei", "public-hospital"]
+      "tags": [
+        "hospital",
+        "emergency",
+        "mater-dei",
+        "public-hospital"
+      ]
     },
     {
       "id": "MED-MLA-ST-JAMES",
@@ -26,8 +29,11 @@
       "type": "Private Medical Facility & Specialist Hospital",
       "source": "Saint James Hospital Group",
       "provenance": "MT-MED-HOSP-STJAMES",
-      "confidence": 1.0,
-      "tags": ["hospital", "private-clinic", "sliema"]
+      "tags": [
+        "hospital",
+        "private-clinic",
+        "sliema"
+      ]
     }
   ]
 }

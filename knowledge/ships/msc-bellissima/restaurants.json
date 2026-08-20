@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-bellissima",
   "provenance": {
-    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026",
-    "confidence": 1.0
+    "source_artifact": "MSC_BELLISSIMA_SHIP_INTELLIGENCE_PROFILE_2026"
   },
   "restaurants": [
     {
@@ -14,8 +13,15 @@
       "dining_model": "Complimentary / Traditional Assigned Seating & Open Breakfast/Lunch",
       "source": "MSC Bellissima Dining Directory",
       "provenance": "MSC-BEL-RES-POSIDONIA",
-      "confidence": 1.0,
-      "tags": ["complimentary", "mdr", "mediterranean", "international", "breakfast", "lunch", "dinner"]
+      "tags": [
+        "complimentary",
+        "mdr",
+        "mediterranean",
+        "international",
+        "breakfast",
+        "lunch",
+        "dinner"
+      ]
     },
     {
       "id": "RES-LE-CERISIER",
@@ -26,8 +32,12 @@
       "dining_model": "Complimentary / Traditional Two-Seating Dinner",
       "source": "MSC Bellissima Dining Directory",
       "provenance": "MSC-BEL-RES-LECERISIER",
-      "confidence": 1.0,
-      "tags": ["complimentary", "mdr", "dinner", "traditional-seating"]
+      "tags": [
+        "complimentary",
+        "mdr",
+        "dinner",
+        "traditional-seating"
+      ]
     },
     {
       "id": "RES-LIGHTHOUSE",
@@ -38,8 +48,13 @@
       "dining_model": "Complimentary / Flexible 'My Choice' for Aurea & Assigned Seating",
       "source": "MSC Bellissima Dining Directory",
       "provenance": "MSC-BEL-RES-LIGHTHOUSE",
-      "confidence": 1.0,
-      "tags": ["complimentary", "mdr", "my-choice", "aurea", "dinner"]
+      "tags": [
+        "complimentary",
+        "mdr",
+        "my-choice",
+        "aurea",
+        "dinner"
+      ]
     },
     {
       "id": "RES-IL-CILIEGIO",
@@ -50,8 +65,12 @@
       "dining_model": "Complimentary / Traditional Assigned Seating",
       "source": "MSC Bellissima Dining Directory",
       "provenance": "MSC-BEL-RES-ILCILIEGIO",
-      "confidence": 1.0,
-      "tags": ["complimentary", "mdr", "mediterranean", "dinner"]
+      "tags": [
+        "complimentary",
+        "mdr",
+        "mediterranean",
+        "dinner"
+      ]
     },
     {
       "id": "RES-MARKETPLACE-BUFFET",
@@ -62,8 +81,17 @@
       "dining_model": "Complimentary / 20 Hours Daily Open Service",
       "source": "MSC Bellissima Dining Directory",
       "provenance": "MSC-BEL-RES-BUFFET",
-      "confidence": 1.0,
-      "tags": ["complimentary", "buffet", "20-hour", "pizza", "casual", "breakfast", "lunch", "dinner", "late-night"]
+      "tags": [
+        "complimentary",
+        "buffet",
+        "20-hour",
+        "pizza",
+        "casual",
+        "breakfast",
+        "lunch",
+        "dinner",
+        "late-night"
+      ]
     },
     {
       "id": "RES-BUTCHERS-CUT",
@@ -74,8 +102,13 @@
       "dining_model": "Specialty / A la Carte or Dining Package",
       "source": "MSC Bellissima Specialty Dining Guide",
       "provenance": "MSC-BEL-RES-BUTCHERS",
-      "confidence": 1.0,
-      "tags": ["specialty", "steakhouse", "angus-beef", "craft-beer", "dinner"]
+      "tags": [
+        "specialty",
+        "steakhouse",
+        "angus-beef",
+        "craft-beer",
+        "dinner"
+      ]
     },
     {
       "id": "RES-KAITO-TEPPANYAKI",
@@ -86,8 +119,13 @@
       "dining_model": "Specialty / Fixed Menu or Dining Package",
       "source": "MSC Bellissima Specialty Dining Guide",
       "provenance": "MSC-BEL-RES-TEPPANYAKI",
-      "confidence": 1.0,
-      "tags": ["specialty", "teppanyaki", "hibachi", "interactive", "dinner"]
+      "tags": [
+        "specialty",
+        "teppanyaki",
+        "hibachi",
+        "interactive",
+        "dinner"
+      ]
     },
     {
       "id": "RES-KAITO-SUSHI-BAR",
@@ -98,8 +136,13 @@
       "dining_model": "Specialty / A la Carte",
       "source": "MSC Bellissima Specialty Dining Guide",
       "provenance": "MSC-BEL-RES-SUSHIBAR",
-      "confidence": 1.0,
-      "tags": ["specialty", "sushi", "sashimi", "tempura", "promenade-view"]
+      "tags": [
+        "specialty",
+        "sushi",
+        "sashimi",
+        "tempura",
+        "promenade-view"
+      ]
     },
     {
       "id": "RES-HOLA-TACOS",
@@ -110,8 +153,14 @@
       "dining_model": "Specialty / A la Carte or Fixed Price",
       "source": "MSC Bellissima Deck Plan (11.2025)",
       "provenance": "MSC-BEL-RES-HOLATAPAS",
-      "confidence": 1.0,
-      "tags": ["specialty", "tapas", "latin", "ramon-freixa", "casual", "promenade"]
+      "tags": [
+        "specialty",
+        "tapas",
+        "latin",
+        "ramon-freixa",
+        "casual",
+        "promenade"
+      ]
     },
     {
       "id": "RES-LATELIER-BISTROT",
@@ -122,8 +171,13 @@
       "dining_model": "Specialty / A la Carte",
       "source": "MSC Bellissima Specialty Dining Guide",
       "provenance": "MSC-BEL-RES-BISTROT",
-      "confidence": 1.0,
-      "tags": ["specialty", "french", "bistro", "cheese-boards", "charcuterie"]
+      "tags": [
+        "specialty",
+        "french",
+        "bistro",
+        "cheese-boards",
+        "charcuterie"
+      ]
     },
     {
       "id": "RES-YACHT-CLUB-RESTAURANT",
@@ -134,8 +188,13 @@
       "dining_model": "Complimentary / Exclusive to MSC Yacht Club Guests",
       "source": "MSC Yacht Club Directory",
       "provenance": "MSC-BEL-RES-YCREST",
-      "confidence": 1.0,
-      "tags": ["yacht-club", "exclusive", "gourmet", "private", "complimentary-yc"]
+      "tags": [
+        "yacht-club",
+        "exclusive",
+        "gourmet",
+        "private",
+        "complimentary-yc"
+      ]
     },
     {
       "id": "RES-YACHT-CLUB-GRILL",
@@ -146,8 +205,13 @@
       "dining_model": "Complimentary / Exclusive to MSC Yacht Club Guests",
       "source": "MSC Yacht Club Directory",
       "provenance": "MSC-BEL-RES-YCGRILL",
-      "confidence": 1.0,
-      "tags": ["yacht-club", "grill", "sundeck", "exclusive", "outdoor"]
+      "tags": [
+        "yacht-club",
+        "grill",
+        "sundeck",
+        "exclusive",
+        "outdoor"
+      ]
     }
   ]
 }

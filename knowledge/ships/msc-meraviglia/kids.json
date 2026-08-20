@@ -1,8 +1,7 @@
 {
   "vessel_id": "msc-meraviglia",
   "provenance": {
-    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)",
-    "confidence": 1.0
+    "source_artifact": "MSC Meraviglia Official Deck Plans & Builder Specifications (Edition 2025/2026)"
   },
   "doremiland": {
     "name": "Doremiland Family Village",
@@ -54,7 +53,6 @@
     ],
     "source": "MSC Meraviglia Family Guide",
     "provenance": "MSC-MER-KID-DOREMILAND",
-    "confidence": 1.0,
     "tags": [
       "kids",
       "lego",

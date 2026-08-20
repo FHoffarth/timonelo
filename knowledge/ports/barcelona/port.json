@@ -19,8 +19,12 @@
       "status": "Operational",
       "source": "Barcelona Port Authority (portdebarcelona.cat)",
       "provenance": "BCN-PA-TERM-A",
-      "confidence": 1.0,
-      "tags": ["terminal-a", "moll-adossat", "turnaround", "mega-ship"]
+      "tags": [
+        "terminal-a",
+        "moll-adossat",
+        "turnaround",
+        "mega-ship"
+      ]
     },
     {
       "id": "TERM-BCN-ADOSAT-B",
@@ -30,8 +34,12 @@
       "status": "Operational",
       "source": "Barcelona Port Authority (portdebarcelona.cat)",
       "provenance": "BCN-PA-TERM-B",
-      "confidence": 1.0,
-      "tags": ["terminal-b", "moll-adossat", "turnaround", "mega-ship"]
+      "tags": [
+        "terminal-b",
+        "moll-adossat",
+        "turnaround",
+        "mega-ship"
+      ]
     },
     {
       "id": "TERM-BCN-ADOSAT-C",
@@ -41,8 +49,11 @@
       "status": "Operational",
       "source": "Barcelona Port Authority (portdebarcelona.cat)",
       "provenance": "BCN-PA-TERM-C",
-      "confidence": 1.0,
-      "tags": ["terminal-c", "moll-adossat", "turnaround"]
+      "tags": [
+        "terminal-c",
+        "moll-adossat",
+        "turnaround"
+      ]
     },
     {
       "id": "TERM-BCN-ADOSAT-D",
@@ -52,8 +63,12 @@
       "status": "Operational",
       "source": "Barcelona Port Authority (portdebarcelona.cat)",
       "provenance": "BCN-PA-TERM-D",
-      "confidence": 1.0,
-      "tags": ["terminal-d", "palacruceros", "carnival-corp", "costa"]
+      "tags": [
+        "terminal-d",
+        "palacruceros",
+        "carnival-corp",
+        "costa"
+      ]
     },
     {
       "id": "TERM-BCN-ADOSAT-E",
@@ -63,8 +78,12 @@
       "status": "Operational",
       "source": "Barcelona Port Authority (portdebarcelona.cat)",
       "provenance": "BCN-PA-TERM-E",
-      "confidence": 1.0,
-      "tags": ["terminal-e", "helix", "carnival-corp", "mega-ship"]
+      "tags": [
+        "terminal-e",
+        "helix",
+        "carnival-corp",
+        "mega-ship"
+      ]
     },
     {
       "id": "TERM-BCN-ADOSAT-H",
@@ -74,8 +93,12 @@
       "status": "Operational / Commissioning 2026",
       "source": "Barcelona Port Authority & MSC Cruises",
       "provenance": "BCN-PA-TERM-H-MSC",
-      "confidence": 1.0,
-      "tags": ["terminal-h", "msc-cruises", "ops-shore-power", "new-terminal"]
+      "tags": [
+        "terminal-h",
+        "msc-cruises",
+        "ops-shore-power",
+        "new-terminal"
+      ]
     },
     {
       "id": "TERM-BCN-WTC-S",
@@ -85,8 +108,13 @@
       "status": "Closing End of 2026",
       "source": "Barcelona Port Authority Nexigen Plan",
       "provenance": "BCN-PA-TERM-WTC-S",
-      "confidence": 1.0,
-      "tags": ["wtcb", "terminal-s", "boutique", "luxury", "closing-2026"]
+      "tags": [
+        "wtcb",
+        "terminal-s",
+        "boutique",
+        "luxury",
+        "closing-2026"
+      ]
     },
     {
       "id": "TERM-BCN-WTC-N",
@@ -96,8 +124,11 @@
       "status": "Closed (End of 2023)",
       "source": "Barcelona Port Authority",
       "provenance": "BCN-PA-TERM-WTC-N",
-      "confidence": 1.0,
-      "tags": ["wtcb", "terminal-n", "closed"]
+      "tags": [
+        "wtcb",
+        "terminal-n",
+        "closed"
+      ]
     }
   ],
   "berths": [
@@ -111,8 +142,11 @@
       "notes": "Accommodates up to 7 mega-cruise vessels simultaneously with direct alongside docking.",
       "source": "Barcelona Port Authority Berth Directory",
       "provenance": "BCN-PA-BERTH-ADOSAT",
-      "confidence": 1.0,
-      "tags": ["deep-water", "mega-ships", "moll-adossat"]
+      "tags": [
+        "deep-water",
+        "mega-ships",
+        "moll-adossat"
+      ]
     },
     {
       "id": "BERTH-BCN-WTCB",
@@ -124,8 +158,11 @@
       "notes": "Dedicated to boutique vessels under 200m in length.",
       "source": "Barcelona Port Authority",
       "provenance": "BCN-PA-BERTH-WTCB",
-      "confidence": 1.0,
-      "tags": ["boutique", "small-vessels", "wtcb"]
+      "tags": [
+        "boutique",
+        "small-vessels",
+        "wtcb"
+      ]
     }
   ],
   "arrival_procedures": "Direct-dock port. Customs, immigration, and security checkpoints are located inside each individual terminal building. Ground floors handle baggage claim, check-in, and security scanners.",
@@ -137,8 +174,13 @@
   },
   "provenance": {
     "source_artifact": "CRUISE_PORT_INTELLIGENCE_PROFILE_WEST_MED_2026",
-    "verification_authority": "Barcelona Port Authority (portdebarcelona.cat) Nexigen Plan 2026",
-    "confidence": 1.0
+    "verification_authority": "Barcelona Port Authority (portdebarcelona.cat) Nexigen Plan 2026"
   },
-  "tags": ["barcelona", "spain", "western-mediterranean", "turnaround-hub", "moll-adossat"]
+  "tags": [
+    "barcelona",
+    "spain",
+    "western-mediterranean",
+    "turnaround-hub",
+    "moll-adossat"
+  ]
 }

@@ -13,11 +13,12 @@ Human review state, evidence condition, and publication status are distinct axes
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog
+from timonelo.evidence.models import Statement
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.ontology.models import (
     Method,
@@ -38,40 +39,6 @@ SOURCE_RELIABILITY: Dict[str, float] = {
     "onboard_survey": 0.90,
     "cruise_line_marketing": 0.55,
 }
-
-
-@dataclass(frozen=True)
-class Statement:
-    """A claim, with the record of how it came into existence.
-
-    Deliberately carries no confidence field (ADR-0002 I1). It carries the IDs
-    of every input it consumed, so the derivation closure is inspectable and
-    the blast-radius criterion (ADR-0003 §6) is verifiable.
-    """
-    statement_id: str
-    entity_id: str
-    question_id: str
-    value: Any
-    method: Method
-    derivation: Derivation
-    evidence_event_ids: Tuple[str, ...] = ()
-    input_statement_ids: Tuple[str, ...] = ()
-    rule_hash: Optional[str] = None
-    evidence_condition: EvidenceCondition = EvidenceCondition.UNKNOWN
-    human_review_state: HumanReviewState = HumanReviewState.DRAFT
-    publish_status: PublishStatus = PublishStatus.PUBLISH_BLOCKED
-    valid_from: Optional[str] = None
-    valid_until: Optional[str] = None
-
-    def is_valid_at(self, as_of: Optional[str]) -> bool:
-        """Outside its window a statement does not degrade — it ceases to be one."""
-        if as_of is None:
-            return True
-        if self.valid_from and as_of < self.valid_from:
-            return False
-        if self.valid_until and as_of > self.valid_until:
-            return False
-        return True
 
 
 @dataclass(frozen=True)
@@ -146,7 +113,7 @@ class TruthEngine:
     def set_human_review_state(self, statement_id: str, state: HumanReviewState) -> Statement:
         """Transitions the human review workflow state."""
         s = self._statements[statement_id]
-        updated = Statement(**{**s.__dict__, "human_review_state": state})
+        updated = replace(s, human_review_state=state)
         self._statements[statement_id] = updated
         return updated
 
@@ -156,7 +123,7 @@ class TruthEngine:
         pub_status = s.publish_status
         if condition != EvidenceCondition.SUPPORTED and condition != EvidenceCondition.SUPPORTED.value:
             pub_status = PublishStatus.PUBLISH_BLOCKED
-        updated = Statement(**{**s.__dict__, "evidence_condition": condition, "publish_status": pub_status})
+        updated = replace(s, evidence_condition=condition, publish_status=pub_status)
         self._statements[statement_id] = updated
         return updated
 
@@ -179,7 +146,7 @@ class TruthEngine:
                 raise ValueError(
                     f"Statement {statement_id!r} may not be published: {blocked}"
                 )
-        updated = Statement(**{**s.__dict__, "publish_status": status})
+        updated = replace(s, publish_status=status)
         self._statements[statement_id] = updated
         return updated
 
