@@ -195,13 +195,70 @@ class ArtifactRegistry:
         return artifact_id in self._by_id
 
     def blob_path(self, artifact_id: str) -> str:
+        """Return the legacy extensionless blob path used by registration."""
         return os.path.join(self.blobs, self.get(artifact_id).sha256)
 
+    @staticmethod
+    def _valid_digest(digest: str) -> bool:
+        return len(digest) == 64 and all(c in "0123456789abcdef" for c in digest)
+
+    @staticmethod
+    def _matches_identity(path: str, artifact: Artifact) -> bool:
+        if not os.path.isfile(path) or os.path.islink(path):
+            return False
+        if artifact.byte_size and os.path.getsize(path) != artifact.byte_size:
+            return False
+        return sha256_of_file(path) == artifact.sha256
+
+    def _vault_candidates(self, artifact: Artifact) -> List[str]:
+        """Return exact-digest files from the sibling SHA vault.
+
+        Extensions are intentionally not guessed from the human filename. The
+        digest directory may contain an extensionless file or one typed by its
+        real media suffix; exactly one candidate is required.
+        """
+        digest = artifact.sha256
+        if not self._valid_digest(digest):
+            return []
+        vault_dir = os.path.join(
+            os.path.dirname(os.path.abspath(self.root)),
+            "raw",
+            "sha256",
+            digest[:2],
+        )
+        if not os.path.isdir(vault_dir):
+            return []
+        candidates = []
+        for entry in os.scandir(vault_dir):
+            if not entry.is_file(follow_symlinks=False):
+                continue
+            if entry.name == digest or entry.name.startswith(f"{digest}."):
+                candidates.append(entry.path)
+        return sorted(candidates)
+
+    def resolve_path(self, artifact_id: str) -> Optional[str]:
+        """Resolve one verified physical representation of an artifact.
+
+        The canonical SHA vault has authority when it contains a candidate.
+        Multiple candidates or an invalid canonical candidate fail closed; a
+        legacy blob is considered only when the canonical vault has none.
+        """
+        artifact = self.get(artifact_id)
+        if not self._valid_digest(artifact.sha256):
+            return None
+        candidates = self._vault_candidates(artifact)
+        if candidates:
+            if len(candidates) != 1:
+                return None
+            candidate = candidates[0]
+            return candidate if self._matches_identity(candidate, artifact) else None
+
+        legacy = self.blob_path(artifact_id)
+        return legacy if self._matches_identity(legacy, artifact) else None
+
     def verify(self, artifact_id: str) -> bool:
-        """Re-hash the stored bytes. Detects corruption or substitution."""
-        art = self.get(artifact_id)
-        blob = os.path.join(self.blobs, art.sha256)
-        return os.path.isfile(blob) and sha256_of_file(blob) == art.sha256
+        """Resolve and re-hash stored bytes, failing closed on ambiguity."""
+        return self.resolve_path(artifact_id) is not None
 
     def verify_all(self) -> List[str]:
         return sorted(a for a in self._by_id if not self.verify(a))
