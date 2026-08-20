@@ -1,0 +1,202 @@
+{
+  "capture_http": {
+    "async_safe": false,
+    "client_body_sha256": "d47c712a9424a0856ff8daeff9fe03fc96ae2c8abe2b54449ea0c733b9027ede",
+    "global_http_client_monkey_patch": true,
+    "httpx_intercepted": false,
+    "httpx_record_count": 0,
+    "records": [
+      "response",
+      "request"
+    ],
+    "requests_compatible": true,
+    "stored_equals_input": true,
+    "stored_s2_sha256": "125505933507bfc20a36a48094b685d74134ae2b58796695af22ab065c792368",
+    "stored_s3_sha256": "01f3588a2d68c120b1667eb8bf47c263c26540046397e48cdee22305f058764d",
+    "stored_s4_sha256": "d47c712a9424a0856ff8daeff9fe03fc96ae2c8abe2b54449ea0c733b9027ede",
+    "warc_version": "WARC/1.1"
+  },
+  "combined": {
+    "content_stream_s4_equal": true,
+    "digest_coverage": {
+      "block_digest_covers": "S1+S2",
+      "content_stream_exposes": "S4",
+      "payload_digest_covers": "S2",
+      "raw_stream_exposes": "S2",
+      "sha1_block_s1_plus_s2": "sha1:QLXFDFIAWVORHNJCLU3PZDUG4IOPFXY5",
+      "sha1_s1": "sha1:AJLHSVLX3JATUHZ24TEX2QF4FNWMKVJ3",
+      "sha1_s2": "sha1:HRTGSW3E4LOUACTM3EERFLPFM3CJHVFF",
+      "sha1_s3": "sha1:QDR6F2MSADS2FVD3YTAZOATTCMR7Q67T",
+      "sha1_s4": "sha1:GGENZTNVXQS5BSKXR2OAE5OXS7KJHN4Q",
+      "warc_block_digest": "sha1:QLXFDFIAWVORHNJCLU3PZDUG4IOPFXY5",
+      "warc_payload_digest": "sha1:HRTGSW3E4LOUACTM3EERFLPFM3CJHVFF"
+    },
+    "hashes": {
+      "container_seal_sha256": "101a53b0a622154538a7439bac32e0babf3a114a4dee3e9200378fec5cd4dae7",
+      "content_sha256": "d47c712a9424a0856ff8daeff9fe03fc96ae2c8abe2b54449ea0c733b9027ede",
+      "payload_sha256": "01f3588a2d68c120b1667eb8bf47c263c26540046397e48cdee22305f058764d",
+      "warc_record_sha256": "101a53b0a622154538a7439bac32e0babf3a114a4dee3e9200378fec5cd4dae7",
+      "wire_body_sha256": "125505933507bfc20a36a48094b685d74134ae2b58796695af22ab065c792368",
+      "wire_head_sha256": "20b197be648c3c79e3610c7d8ff3132cd98a72ee3c2b86beeea7990ba20de1e4"
+    },
+    "round_trip_s4_equal": true,
+    "sizes": {
+      "s1": 71,
+      "s2": 109,
+      "s3": 59,
+      "s4": 288
+    }
+  },
+  "container": {
+    "per_record_gzip_bytes": 667,
+    "per_record_gzip_seal_sha256": "78bce93a3db7e06bf41d92f67404f56d0c014dc3684f1039bc3bb18c7e36dbc5",
+    "per_record_members": 2,
+    "per_record_replay_records": 2,
+    "uncompressed_bytes": 8974,
+    "uncompressed_seal_sha256": "dd18a0837d785c9289f4e13bbcbfd497487e7f53c4ed83bb9b8d6c284c8208d5",
+    "whole_file_gzip_bytes": 448,
+    "whole_file_gzip_seal_sha256": "8cc063ac57473b532878e7f583c8c5c19eb1c73ad50e90ae6d6cce6ab14fa6e0",
+    "whole_file_replay_error": "ArchiveLoadFailed: ERROR: non-chunked gzip file detected, gzip block continues\n    beyond single record.\n\n    This file is probably not a multi-member gzip but a single gzip file.\n\n    To allow seek, a gzipped WARC must have each record compressed into\n    a single gzip member and concatenated together.\n\n    This file is likely still valid and can be fixed by running:\n\n    warcio recompress <path/to/file> <path/to/new_file>",
+    "whole_file_replay_records": 0
+  },
+  "corruption": {
+    "A_truncated_warc_header": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "TRUNCATED_WARC_HEADER"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "B_truncated_record_body": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "TRUNCATED_WARC_RECORD_BODY"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "C_bad_warc_content_length": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "TRUNCATED_WARC_RECORD_BODY"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "D_malformed_http_status": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "PAYLOAD_DECODE_FAILURE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "E_malformed_http_header_terminator": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "WARC_RECORD_TERMINATOR_INVALID",
+        "WARC_PARSE_FAILURE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": true
+    },
+    "F_broken_warc_payload_digest": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "WARC_DIGEST_VALIDATION_FAILURE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": true
+    },
+    "G_broken_warc_block_digest": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "WARC_DIGEST_VALIDATION_FAILURE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": true
+    },
+    "H_duplicate_warc_record_id": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "DUPLICATE_WARC_RECORD_ID"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "I_missing_request_response_pair": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "MISSING_REQUEST_RESPONSE_PAIR"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "J_container_truncation": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "TRUNCATED_WARC_HEADER",
+        "NO_WARC_RECORDS"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "K_truncated_gzip_member": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "PAYLOAD_DECODE_FAILURE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    },
+    "L_invalid_linkage": {
+      "accepted_without_finding": false,
+      "finding_codes": [
+        "INVALID_LINKAGE"
+      ],
+      "timonelo_guard_required": true,
+      "warcio_detected": false
+    }
+  },
+  "environment": {
+    "brotli": "1.2.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "requests": "2.34.2",
+    "urllib3": "2.7.0",
+    "warc_version": "WARC/1.1",
+    "warcio": "1.8.1",
+    "zstandard": "0.25.0"
+  },
+  "http2": {
+    "alpn": "h2",
+    "capture_fidelity": "DECODED",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "dns_answers": [
+      "139.162.123.134"
+    ],
+    "egress_ip": "93.195.232.11",
+    "egress_region": "FRA",
+    "endpoint": "https://nghttp2.org/httpbin/get",
+    "final_uri": "https://nghttp2.org/httpbin/get",
+    "header_representation": "decoded ordered name/value API, not HPACK/frame bytes",
+    "http_version": "HTTP/2",
+    "recommendation": "ALLOW_HTTP_2_WITH_DECODED_FIDELITY",
+    "resolved_ip": "139.162.123.134",
+    "status_code": 200,
+    "tls_version": "TLSv1.3",
+    "wire_http2_frames_observable": false
+  },
+  "large_streaming": {
+    "bytes": 33554432,
+    "container_bytes": 130801,
+    "content_sha256": "e09320c5b00b34bb704802136c599a95b3996332ba84d7c7f21112b6231b6bd0",
+    "peak_traced_bytes": 16223865,
+    "replay_bytes": 33554432,
+    "replay_sha256": "e09320c5b00b34bb704802136c599a95b3996332ba84d7c7f21112b6231b6bd0",
+    "temp_file_behavior": "disk-backed payload and container"
+  }
+}
