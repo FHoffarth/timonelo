@@ -1,0 +1,928 @@
+{
+  "schema": "timonelo.one-deck-geometry-raw.v1",
+  "source": {
+    "artifact_id": "ART-0001",
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "physical_pdf_path": "evidence/raw/sha256/08/085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0.pdf",
+    "pdf_page_number": 5,
+    "visible_deck_number": 14,
+    "visible_deck_name": "World Class",
+    "page_dimensions_points": [
+      589.606,
+      807.874
+    ],
+    "media_box_points": [
+      0.0,
+      0.0,
+      589.606,
+      807.874
+    ],
+    "crop_box_points": [
+      0.0,
+      0.0,
+      589.606,
+      807.874
+    ],
+    "rotation_degrees": 0,
+    "source_coordinate_system": "PDF page points as exposed by PyMuPDF; origin top-left; +x right; +y down",
+    "extraction_timestamp": "2026-08-20T00:00:00Z",
+    "extraction_tool": "PyMuPDF 1.26.4"
+  },
+  "locked_scope": {
+    "deck_numbers": [
+      14
+    ],
+    "pdf_pages": [
+      5
+    ]
+  },
+  "geometry": [
+    {
+      "source_reference": "page5:drawing-index-4:seqno-7",
+      "drawing_index": 4,
+      "sequence_number": 7,
+      "paint_type": "s",
+      "source_bbox": [
+        37.133801,
+        246.544495,
+        49.583801,
+        254.038498
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-5:seqno-8",
+      "drawing_index": 5,
+      "sequence_number": 8,
+      "paint_type": "s",
+      "source_bbox": [
+        37.133801,
+        254.03894,
+        49.583801,
+        261.572937
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-6:seqno-9",
+      "drawing_index": 6,
+      "sequence_number": 9,
+      "paint_type": "s",
+      "source_bbox": [
+        37.133801,
+        261.572754,
+        49.583801,
+        269.086761
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-10:seqno-13",
+      "drawing_index": 10,
+      "sequence_number": 13,
+      "paint_type": "s",
+      "source_bbox": [
+        98.520699,
+        261.572754,
+        110.918701,
+        269.086761
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-11:seqno-14",
+      "drawing_index": 11,
+      "sequence_number": 14,
+      "paint_type": "s",
+      "source_bbox": [
+        98.520699,
+        269.077454,
+        110.918701,
+        276.591461
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-12:seqno-15",
+      "drawing_index": 12,
+      "sequence_number": 15,
+      "paint_type": "s",
+      "source_bbox": [
+        81.919205,
+        270.440918,
+        93.106201,
+        275.570923
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-15:seqno-18",
+      "drawing_index": 15,
+      "sequence_number": 18,
+      "paint_type": "s",
+      "source_bbox": [
+        55.2957,
+        261.530212,
+        66.112701,
+        266.568207
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-16:seqno-19",
+      "drawing_index": 16,
+      "sequence_number": 19,
+      "paint_type": "s",
+      "source_bbox": [
+        55.2957,
+        256.632141,
+        66.112701,
+        261.531128
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-17:seqno-20",
+      "drawing_index": 17,
+      "sequence_number": 20,
+      "paint_type": "s",
+      "source_bbox": [
+        98.520699,
+        276.591248,
+        110.918701,
+        284.105255
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-18:seqno-21",
+      "drawing_index": 18,
+      "sequence_number": 21,
+      "paint_type": "s",
+      "source_bbox": [
+        98.520699,
+        284.094421,
+        110.918701,
+        291.608429
+      ],
+      "item_count": 4,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-1222:seqno-1225",
+      "drawing_index": 1222,
+      "sequence_number": 1225,
+      "paint_type": "s",
+      "source_bbox": [
+        75.801804,
+        307.423218,
+        94.513802,
+        325.66922
+      ],
+      "item_count": 30,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    },
+    {
+      "source_reference": "page5:drawing-index-1227:seqno-1230",
+      "drawing_index": 1227,
+      "sequence_number": 1230,
+      "paint_type": "s",
+      "source_bbox": [
+        53.560699,
+        307.423218,
+        72.272697,
+        325.66922
+      ],
+      "item_count": 30,
+      "fill_rgb": null,
+      "stroke_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+    }
+  ],
+  "text": [
+    {
+      "source_reference": "page5:text-block-29:line-0:word-0",
+      "text": "14001",
+      "source_bbox": [
+        40.990574,
+        247.807999,
+        48.785778,
+        253.225021
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-27:line-0:word-0",
+      "text": "14002",
+      "source_bbox": [
+        99.256332,
+        262.812164,
+        107.051537,
+        268.229156
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-28:line-0:word-0",
+      "text": "14003",
+      "source_bbox": [
+        40.990574,
+        255.229813,
+        48.785778,
+        260.64682
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-34:line-0:word-0",
+      "text": "14004",
+      "source_bbox": [
+        82.899857,
+        270.345917,
+        90.695061,
+        275.762909
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-32:line-3:word-0",
+      "text": "14005",
+      "source_bbox": [
+        57.588974,
+        256.458038,
+        65.384178,
+        261.875031
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-26:line-0:word-0",
+      "text": "14006",
+      "source_bbox": [
+        99.256332,
+        270.372101,
+        107.051537,
+        275.789093
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-19:line-0:word-0",
+      "text": "14007",
+      "source_bbox": [
+        40.99057,
+        262.812225,
+        48.785774,
+        268.229218
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-25:line-0:word-0",
+      "text": "14008",
+      "source_bbox": [
+        99.256332,
+        277.842438,
+        107.051537,
+        283.25943
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-32:line-2:word-0",
+      "text": "14009",
+      "source_bbox": [
+        57.588974,
+        261.505463,
+        65.384178,
+        266.922455
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-24:line-0:word-0",
+      "text": "14010",
+      "source_bbox": [
+        99.256332,
+        285.241852,
+        107.051537,
+        290.658844
+      ],
+      "object_kind": "selectable_text"
+    },
+    {
+      "source_reference": "page5:text-block-61:line-0:word-0",
+      "text": "Lift",
+      "source_bbox": [
+        71.676498,
+        312.234772,
+        75.725304,
+        317.651764
+      ],
+      "object_kind": "selectable_text"
+    }
+  ],
+  "symbols": [
+    {
+      "symbol_id": "deck14-lift-vector-groups",
+      "source_references": [
+        "page5:drawing-index-1222:seqno-1225",
+        "page5:drawing-index-1227:seqno-1230"
+      ],
+      "classification": "source_vector_groups_adjacent_to_selectable_lift_label"
+    }
+  ],
+  "semantic_associations": [
+    {
+      "semantic_id": "14001",
+      "text_reference": "page5:text-block-29:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14001",
+      "label_bbox": [
+        40.990574,
+        247.807999,
+        48.785778,
+        253.225021
+      ],
+      "reference_point": [
+        44.888176,
+        250.51651
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-4:seqno-7"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-4:seqno-7",
+        "drawing_index": 4,
+        "sequence_number": 7,
+        "paint_type": "s",
+        "source_bbox": [
+          37.133801,
+          246.544495,
+          49.583801,
+          254.038498
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14002",
+      "text_reference": "page5:text-block-27:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14002",
+      "label_bbox": [
+        99.256332,
+        262.812164,
+        107.051537,
+        268.229156
+      ],
+      "reference_point": [
+        103.153934,
+        265.52066
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-10:seqno-13"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-10:seqno-13",
+        "drawing_index": 10,
+        "sequence_number": 13,
+        "paint_type": "s",
+        "source_bbox": [
+          98.520699,
+          261.572754,
+          110.918701,
+          269.086761
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14003",
+      "text_reference": "page5:text-block-28:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14003",
+      "label_bbox": [
+        40.990574,
+        255.229813,
+        48.785778,
+        260.64682
+      ],
+      "reference_point": [
+        44.888176,
+        257.938316
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-5:seqno-8"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-5:seqno-8",
+        "drawing_index": 5,
+        "sequence_number": 8,
+        "paint_type": "s",
+        "source_bbox": [
+          37.133801,
+          254.03894,
+          49.583801,
+          261.572937
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14004",
+      "text_reference": "page5:text-block-34:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14004",
+      "label_bbox": [
+        82.899857,
+        270.345917,
+        90.695061,
+        275.762909
+      ],
+      "reference_point": [
+        86.797459,
+        273.054413
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-12:seqno-15"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-12:seqno-15",
+        "drawing_index": 12,
+        "sequence_number": 15,
+        "paint_type": "s",
+        "source_bbox": [
+          81.919205,
+          270.440918,
+          93.106201,
+          275.570923
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14005",
+      "text_reference": "page5:text-block-32:line-3:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14005",
+      "label_bbox": [
+        57.588974,
+        256.458038,
+        65.384178,
+        261.875031
+      ],
+      "reference_point": [
+        61.486576,
+        259.166535
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-16:seqno-19"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-16:seqno-19",
+        "drawing_index": 16,
+        "sequence_number": 19,
+        "paint_type": "s",
+        "source_bbox": [
+          55.2957,
+          256.632141,
+          66.112701,
+          261.531128
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14006",
+      "text_reference": "page5:text-block-26:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14006",
+      "label_bbox": [
+        99.256332,
+        270.372101,
+        107.051537,
+        275.789093
+      ],
+      "reference_point": [
+        103.153934,
+        273.080597
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-11:seqno-14"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-11:seqno-14",
+        "drawing_index": 11,
+        "sequence_number": 14,
+        "paint_type": "s",
+        "source_bbox": [
+          98.520699,
+          269.077454,
+          110.918701,
+          276.591461
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14007",
+      "text_reference": "page5:text-block-19:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14007",
+      "label_bbox": [
+        40.99057,
+        262.812225,
+        48.785774,
+        268.229218
+      ],
+      "reference_point": [
+        44.888172,
+        265.520722
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-6:seqno-9"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-6:seqno-9",
+        "drawing_index": 6,
+        "sequence_number": 9,
+        "paint_type": "s",
+        "source_bbox": [
+          37.133801,
+          261.572754,
+          49.583801,
+          269.086761
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14008",
+      "text_reference": "page5:text-block-25:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14008",
+      "label_bbox": [
+        99.256332,
+        277.842438,
+        107.051537,
+        283.25943
+      ],
+      "reference_point": [
+        103.153934,
+        280.550934
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-17:seqno-20"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-17:seqno-20",
+        "drawing_index": 17,
+        "sequence_number": 20,
+        "paint_type": "s",
+        "source_bbox": [
+          98.520699,
+          276.591248,
+          110.918701,
+          284.105255
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14009",
+      "text_reference": "page5:text-block-32:line-2:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14009",
+      "label_bbox": [
+        57.588974,
+        261.505463,
+        65.384178,
+        266.922455
+      ],
+      "reference_point": [
+        61.486576,
+        264.213959
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-15:seqno-18"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-15:seqno-18",
+        "drawing_index": 15,
+        "sequence_number": 18,
+        "paint_type": "s",
+        "source_bbox": [
+          55.2957,
+          261.530212,
+          66.112701,
+          266.568207
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "14010",
+      "text_reference": "page5:text-block-24:line-0:word-0",
+      "method": "strict-label-centroid-containment-with-cardinality-gate",
+      "label_text": "14010",
+      "label_bbox": [
+        99.256332,
+        285.241852,
+        107.051537,
+        290.658844
+      ],
+      "reference_point": [
+        103.153934,
+        287.950348
+      ],
+      "candidate_count": 1,
+      "candidate_source_drawing_ids": [
+        "page5:drawing-index-18:seqno-21"
+      ],
+      "containment_policy": {
+        "reference_point": "label_bbox_centroid",
+        "epsilon_points": 0.01,
+        "rule": "strictly inside on all axes by more than epsilon",
+        "boundary_behavior": "excluded; unresolved unless exactly one other candidate contains the point"
+      },
+      "status": "ACCEPTED",
+      "reason": "exactly one source boundary strictly contains the label reference point",
+      "accepted_geometry": {
+        "source_reference": "page5:drawing-index-18:seqno-21",
+        "drawing_index": 18,
+        "sequence_number": 21,
+        "paint_type": "s",
+        "source_bbox": [
+          98.520699,
+          284.094421,
+          110.918701,
+          291.608429
+        ],
+        "item_count": 4,
+        "fill_rgb": null,
+        "stroke_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "ambiguity": false,
+      "human_review_required": true
+    },
+    {
+      "semantic_id": "bellissima-deck14-lift-core-proof",
+      "text_reference": "page5:text-block-61:line-0:word-0",
+      "geometry_references": [
+        "page5:drawing-index-1222:seqno-1225",
+        "page5:drawing-index-1227:seqno-1230"
+      ],
+      "method": "label-contained-by-union-bbox-of-two-source-vector-groups",
+      "rule": "locked source drawing groups 1222 and 1227 flank the selectable Lift label",
+      "ambiguity": true,
+      "human_review_required": true
+    }
+  ]
+}
