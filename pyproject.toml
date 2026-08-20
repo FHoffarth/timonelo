@@ -28,7 +28,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0"
+    "pytest>=7.0",
+    "pypdf>=5.0",
+    "brotli>=1.1",
+    "zstandard>=0.22",
+    "warcio>=1.7.4"
 ]
 harvester = [
     "crawl4ai>=0.9.2",

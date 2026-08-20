@@ -27,13 +27,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest pydantic pyyaml jsonschema
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install -e .
+          pip install -e ".[dev]"
 
       - name: Run Test Suite (pytest)
         run: |
-          python -m pytest tests/ -v
+          python -m pytest -v
 
   build-frontend:
     name: Frontend Production Build
