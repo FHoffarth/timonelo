@@ -14,14 +14,8 @@
         6,
         7
       ],
-      "category": "CENTRAL_PROMENADE",
-      "description": "Indoor promenade with LED dome located on Decks 6 and 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "promenade",
-        "public-area"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "PUB-INFINITY-ATRIUM",
@@ -31,53 +25,29 @@
         6,
         7
       ],
-      "category": "ATRIUM",
-      "description": "Central atrium located on Decks 5, 6, and 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "atrium",
-        "public-area"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "PUB-PLAZA",
       "name": "Plaza Meraviglia",
       "deck": 6,
-      "category": "PUBLIC_SQUARE",
-      "description": "Central plaza located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "plaza",
-        "public-area"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "PUB-TOP19-SOLARIUM",
       "name": "Top 19 Exclusive Solarium",
       "deck": 19,
-      "category": "ADULT_SOLARIUM",
-      "description": "Solarium sundeck located on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "solarium",
-        "public-area"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "PUB-HORIZON-AMPHI",
       "name": "Horizon Amphitheatre",
       "deck": 16,
-      "category": "AMPHITHEATRE",
-      "description": "Outdoor amphitheatre located aft on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "amphitheatre",
-        "public-area"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

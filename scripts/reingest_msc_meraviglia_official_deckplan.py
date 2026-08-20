@@ -55,9 +55,13 @@ KNOWLEDGE_DIR = os.path.join(REPO_ROOT, "knowledge", "ships", "msc-meraviglia")
 REPORTS_DIR = os.path.join(REPO_ROOT, "knowledge", "reports")
 
 
-def run_ingestion() -> Dict[str, Any]:
-    os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
-    os.makedirs(REPORTS_DIR, exist_ok=True)
+def run_ingestion(
+    knowledge_dir: str = KNOWLEDGE_DIR,
+    reports_dir: str = REPORTS_DIR,
+) -> Dict[str, Any]:
+    """Run ingestion, optionally targeting isolated output directories."""
+    os.makedirs(knowledge_dir, exist_ok=True)
+    os.makedirs(reports_dir, exist_ok=True)
 
     # 1. Verify physical artifact cryptographic integrity (TASK B)
     if not os.path.exists(ARTIFACT_FULL_PATH):
@@ -171,25 +175,25 @@ def run_ingestion() -> Dict[str, Any]:
 
     # --- Decks (Pages 3, 4, 5) ---
     deck_definitions = [
-        (4, "Kos", "OPERATIONAL_AND_MEDICAL", "Medical Centre, Tendering and Gangway access.", 3),
-        (5, "Colosseo", "PUBLIC_AND_ENTERTAINMENT", "Main Lobby, Reception, Infinity Atrium, Broadway Theatre lower tier, Waves Restaurant.", 3),
-        (6, "Petra", "PROMENADE_AND_DINING", "Galleria Meraviglia Promenade, Hola! Tacos & Cantina, Ocean Cay Restaurant, L'Olivo d'Oro, Panorama Restaurant, Broadway Theatre upper tier, Jean-Philippe Chocolate & Café.", 3),
-        (7, "Taj Mahal", "PROMENADE_AND_SPECIALTY", "Galleria Meraviglia Upper, Butcher's Cut, Kaito Teppanyaki, Kaito Sushi Bar, Champagne Bar, Brass Anchor Pub, MSC Aurea Spa, Casino Imperiale, Carousel Lounge.", 3),
-        (8, "Machu Picchu", "STATEROOM_DECK", "Passenger staterooms.", 3),
-        (9, "Alhambra", "STATEROOM_DECK", "Passenger staterooms.", 4),
-        (10, "Hagia Sophia", "STATEROOM_DECK", "Passenger staterooms.", 4),
-        (11, "Acropolis", "STATEROOM_DECK", "Passenger staterooms.", 4),
-        (12, "Grand Canyon", "STATEROOM_DECK", "Passenger staterooms.", 4),
-        (13, "Kilimangiaro", "STATEROOM_DECK", "Passenger staterooms.", 4),
-        (14, "Angkor Wat", "STATEROOM_DECK", "Passenger staterooms.", 5),
-        (15, "Tour Eiffel", "LIDO_AND_BUFFET", "Atmosphere Pool, Bamboo Pool, Marketplace Buffet, Bamboo Bar.", 5),
-        (16, "Iguazu", "FITNESS_AND_RECREATION", "Horizon Pool & Amphitheatre, MSC Gym by Technogym, Top Sail Lounge, Sports Bar, MSC Formula Racer, Interactive XD Cinema, Bowling, Power Walking Track.", 5),
-        (18, "Pyramids", "YOUTH_AND_ENTERTAINMENT", "Sportplex, Doremi Lab, Doremi Studio, Baby Club Chicco, Mini Club Lego, Junior Club Lego, Young Club, Teen Club, Attic Club, Sky Lounge, MSC Yacht Club Restaurant.", 5),
-        (19, "Babylon", "AQUAPARK_AND_SOLARIUM", "Polar Aquapark, Himalayan Bridge, Polar Bar, Top 19 Exclusive Solarium, MSC Yacht Club Sundeck & Pool, Grill & Bar.", 5),
+        (4, "Kos", 3),
+        (5, "Colosseo", 3),
+        (6, "Petra", 3),
+        (7, "Taj Mahal", 3),
+        (8, "Machu Picchu", 3),
+        (9, "Alhambra", 4),
+        (10, "Hagia Sophia", 4),
+        (11, "Acropolis", 4),
+        (12, "Grand Canyon", 4),
+        (13, "Kilimangiaro", 4),
+        (14, "Angkor Wat", 5),
+        (15, "Tour Eiffel", 5),
+        (16, "Iguazu", 5),
+        (18, "Pyramids", 5),
+        (19, "Babylon", 5),
     ]
 
     decks_json_list = []
-    for d_num, d_name, d_cat, d_desc, p_num in deck_definitions:
+    for d_num, d_name, p_num in deck_definitions:
         record_fact(
             event_id=f"EVT-MER-DECK-{d_num}-NAME",
             entity_id=f"msc-meraviglia:deck:{d_num}",
@@ -202,12 +206,8 @@ def run_ingestion() -> Dict[str, Any]:
             "id": f"DECK-{d_num:02d}",
             "name": f"Deck {d_num} ({d_name})",
             "deck_number": d_num,
-            "category": d_cat,
-            "description": d_desc,
-            "passenger_accessible": True,
             "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{p_num}",
-            "tags": [d_name.lower().replace(" ", "-"), d_cat.lower().replace("_", "-")]
         })
 
     # Summary Capacities on Page 2 and Represented Passenger Decks (Pages 3-5) (TASK E, F)
@@ -258,33 +258,33 @@ def run_ingestion() -> Dict[str, Any]:
         "notes": "15 passenger decks are represented in this deckplan (Deck 17 is not represented in the plan). Verified from Official Deckplans Edition 11.2025 DEU.",
         "decks": decks_json_list
     }
-    with open(os.path.join(KNOWLEDGE_DIR, "decks.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "decks.json"), "w", encoding="utf-8") as f:
         json.dump(decks_doc, f, indent=2, ensure_ascii=False)
 
     # --- Cabins Catalog (Page 2) — Exactly 22 categories (TASK G) ---
     cabin_categories_data = [
-        {"id": "CAT-YC3", "code": "YC3", "name": "MSC Yacht Club Royal Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [15], "desc": "MSC Yacht Club Royal Suite on Deck 15 with whirlpool.", "page": 2, "tags": ["yacht-club", "suite", "whirlpool"]},
-        {"id": "CAT-YJD", "code": "YJD", "name": "MSC Yacht Club Maisonette Suite mit Whirlpool", "category": "YACHT_CLUB_SUITE", "decks": [9, 10, 11, 12], "desc": "MSC Yacht Club Maisonette Suite on Decks 9-12 with whirlpool.", "page": 2, "tags": ["yacht-club", "maisonette", "suite", "whirlpool"]},
-        {"id": "CAT-YC1", "code": "YC1", "name": "MSC Yacht Club Deluxe Suite", "category": "YACHT_CLUB_SUITE", "decks": [14, 15, 16, 18], "desc": "MSC Yacht Club Deluxe Suite on Decks 14-18.", "page": 2, "tags": ["yacht-club", "deluxe", "suite"]},
-        {"id": "CAT-YIN", "code": "YIN", "name": "MSC Yacht Club Innenkabine", "category": "YACHT_CLUB_INSIDE", "decks": [14, 15, 16], "desc": "MSC Yacht Club Interior Cabin on Decks 14-16.", "page": 2, "tags": ["yacht-club", "inside", "cabin"]},
-        {"id": "CAT-SXJ", "code": "SXJ", "name": "Grand Suite Aurea mit Terrasse und Whirlpool", "category": "AUREA_SUITE", "decks": [12], "desc": "Grand Suite Aurea on Deck 12 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
-        {"id": "CAT-SLJ", "code": "SLJ", "name": "Premium Suite Aurea mit Terrasse und Whirlpool", "category": "AUREA_SUITE", "decks": [9, 10, 11, 12, 13], "desc": "Premium Suite Aurea on Decks 9-13 with terrace and whirlpool.", "page": 2, "tags": ["aurea", "suite", "terrace", "whirlpool"]},
-        {"id": "CAT-BA", "code": "BA", "name": "Deluxe Balkonkabine Aurea", "category": "BALCONY_CABIN", "decks": [10, 11, 12, 13], "desc": "Deluxe Balcony Cabin Aurea on Decks 10-13.", "page": 2, "tags": ["balcony", "aurea"]},
-        {"id": "CAT-BL3", "code": "BL3", "name": "Premium Balkonkabine Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Premium Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BL2", "code": "BL2", "name": "Premium Balkonkabine Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Premium Balcony Cabin on Decks 11-12.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BL1", "code": "BL1", "name": "Premium Balkonkabine Deck 10", "category": "BALCONY_CABIN", "decks": [10], "desc": "Premium Balcony Cabin on Deck 10.", "page": 2, "tags": ["balcony", "premium"]},
-        {"id": "CAT-BR3", "code": "BR3", "name": "Deluxe Balkonkabine Deck 13-14", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Deluxe Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BR2", "code": "BR2", "name": "Deluxe Balkonkabine Deck 11-12", "category": "BALCONY_CABIN", "decks": [11, 12], "desc": "Deluxe Balcony Cabin on Decks 11-12.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BR1", "code": "BR1", "name": "Deluxe Balkonkabine Deck 8-10", "category": "BALCONY_CABIN", "decks": [8, 9, 10], "desc": "Deluxe Balcony Cabin on Decks 8-10.", "page": 2, "tags": ["balcony", "deluxe"]},
-        {"id": "CAT-BP", "code": "BP", "name": "Deluxe Balkonkabine mit teilweiser Sichteinschränkung", "category": "BALCONY_CABIN", "decks": [8, 9, 10, 11, 12, 13, 14], "desc": "Deluxe Balcony Cabin with partial view obstruction on Decks 8-14.", "page": 2, "tags": ["balcony", "partial-view"]},
-        {"id": "CAT-BS", "code": "BS", "name": "Single Balkonkabine", "category": "BALCONY_CABIN", "decks": [13, 14], "desc": "Single Balcony Cabin on Decks 13-14.", "page": 2, "tags": ["balcony", "single"]},
-        {"id": "CAT-OL2", "code": "OL2", "name": "Premium Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [9, 10, 11], "desc": "Premium Ocean View Cabin on Decks 9-11.", "page": 2, "tags": ["ocean-view", "premium"]},
-        {"id": "CAT-OR1", "code": "OR1", "name": "Deluxe Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [5], "desc": "Deluxe Ocean View Cabin on Deck 5.", "page": 2, "tags": ["ocean-view", "deluxe"]},
-        {"id": "CAT-OM2", "code": "OM2", "name": "Junior Kabine mit Meerblick", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Junior Ocean View Cabin on Deck 8.", "page": 2, "tags": ["ocean-view", "junior"]},
-        {"id": "CAT-OO", "code": "OO", "name": "Junior Kabine mit Meerblick und teilweiser Sichteinschränkung", "category": "OCEAN_VIEW_CABIN", "decks": [8], "desc": "Junior Ocean View Cabin with partial view obstruction on Deck 8.", "page": 2, "tags": ["ocean-view", "partial-view"]},
-        {"id": "CAT-IR2", "code": "IR2", "name": "Deluxe Innenkabine Deck 11-14", "category": "INSIDE_CABIN", "decks": [11, 12, 13, 14], "desc": "Deluxe Interior Cabin on Decks 11-14.", "page": 2, "tags": ["inside", "deluxe"]},
-        {"id": "CAT-IR1", "code": "IR1", "name": "Deluxe Innenkabine Deck 5-10", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10], "desc": "Deluxe Interior Cabin on Decks 5-10.", "page": 2, "tags": ["inside", "deluxe"]},
-        {"id": "CAT-IS", "code": "IS", "name": "Single Innenkabine", "category": "INSIDE_CABIN", "decks": [5, 8, 9, 10, 11, 12, 13, 14], "desc": "Single Interior Cabin on Decks 5-14.", "page": 2, "tags": ["inside", "single"]},
+        {"id": "CAT-YC3", "code": "YC3", "name": "MSC Yacht Club Royal Suite mit Whirlpool", "decks": [15], "page": 2},
+        {"id": "CAT-YJD", "code": "YJD", "name": "MSC Yacht Club Maisonette Suite mit Whirlpool", "decks": [9, 10, 11, 12], "page": 2},
+        {"id": "CAT-YC1", "code": "YC1", "name": "MSC Yacht Club Deluxe Suite", "decks": [14, 15, 16, 18], "page": 2},
+        {"id": "CAT-YIN", "code": "YIN", "name": "MSC Yacht Club Innenkabine", "decks": [14, 15, 16], "page": 2},
+        {"id": "CAT-SXJ", "code": "SXJ", "name": "Grand Suite Aurea mit Terrasse und Whirlpool", "decks": [12], "page": 2},
+        {"id": "CAT-SLJ", "code": "SLJ", "name": "Premium Suite Aurea mit Terrasse und Whirlpool", "decks": [9, 10, 11, 12, 13], "page": 2},
+        {"id": "CAT-BA", "code": "BA", "name": "Deluxe Balkonkabine Aurea", "decks": [10, 11, 12, 13], "page": 2},
+        {"id": "CAT-BL3", "code": "BL3", "name": "Premium Balkonkabine Deck 13-14", "decks": [13, 14], "page": 2},
+        {"id": "CAT-BL2", "code": "BL2", "name": "Premium Balkonkabine Deck 11-12", "decks": [11, 12], "page": 2},
+        {"id": "CAT-BL1", "code": "BL1", "name": "Premium Balkonkabine Deck 10", "decks": [10], "page": 2},
+        {"id": "CAT-BR3", "code": "BR3", "name": "Deluxe Balkonkabine Deck 13-14", "decks": [13, 14], "page": 2},
+        {"id": "CAT-BR2", "code": "BR2", "name": "Deluxe Balkonkabine Deck 11-12", "decks": [11, 12], "page": 2},
+        {"id": "CAT-BR1", "code": "BR1", "name": "Deluxe Balkonkabine Deck 8-10", "decks": [8, 9, 10], "page": 2},
+        {"id": "CAT-BP", "code": "BP", "name": "Deluxe Balkonkabine mit teilweiser Sichteinschränkung", "decks": [8, 9, 10, 11, 12, 13, 14], "page": 2},
+        {"id": "CAT-BS", "code": "BS", "name": "Single Balkonkabine", "decks": [13, 14], "page": 2},
+        {"id": "CAT-OL2", "code": "OL2", "name": "Premium Kabine mit Meerblick", "decks": [9, 10, 11], "page": 2},
+        {"id": "CAT-OR1", "code": "OR1", "name": "Deluxe Kabine mit Meerblick", "decks": [5], "page": 2},
+        {"id": "CAT-OM2", "code": "OM2", "name": "Junior Kabine mit Meerblick", "decks": [8], "page": 2},
+        {"id": "CAT-OO", "code": "OO", "name": "Junior Kabine mit Meerblick und teilweiser Sichteinschränkung", "decks": [8], "page": 2},
+        {"id": "CAT-IR2", "code": "IR2", "name": "Deluxe Innenkabine Deck 11-14", "decks": [11, 12, 13, 14], "page": 2},
+        {"id": "CAT-IR1", "code": "IR1", "name": "Deluxe Innenkabine Deck 5-10", "decks": [5, 8, 9, 10], "page": 2},
+        {"id": "CAT-IS", "code": "IS", "name": "Single Innenkabine", "decks": [5, 8, 9, 10, 11, 12, 13, 14], "page": 2},
     ]
 
     for cat in cabin_categories_data:
@@ -314,33 +314,30 @@ def run_ingestion() -> Dict[str, Any]:
             {
                 "id": c["id"],
                 "name": f"{c['name']} ({c['code']})",
-                "category": c["category"],
                 "deck": c["decks"],
-                "description": c["desc"],
                 "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                 "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{c['page']}",
-                "tags": c["tags"]
             }
             for c in cabin_categories_data
         ]
     }
-    with open(os.path.join(KNOWLEDGE_DIR, "cabins.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "cabins.json"), "w", encoding="utf-8") as f:
         json.dump(cabins_doc, f, indent=2, ensure_ascii=False)
 
     # --- Restaurants (Pages 3, 5) — Cleaned of legacy REST-LE-CERISIER (TASK J, K) ---
     restaurants_data = [
-        {"id": "REST-WAVES", "name": "Waves Restaurant", "deck": 5, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main restaurant located on Deck 5.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-PANORAMA", "name": "Panorama Restaurant", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main restaurant located aft on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-LOLIVO-DORO", "name": "L'Olivo d'oro", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining room located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-LOLIVE-DOREE", "name": "L'Olive dorée", "deck": 6, "cat": "MAIN_DINING_ROOM", "dining_model": "FIXED_SEATING_AND_MY_CHOICE", "desc": "Main dining venue located on Deck 6.", "page": 3, "tags": ["main-dining", "restaurant"]},
-        {"id": "REST-HOLA-TACOS", "name": "Hola! Tacos & Cantina", "deck": 6, "cat": "SPECIALTY_LATIN", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Latin dining concept located on Deck 6.", "page": 3, "tags": ["specialty", "restaurant"]},
-        {"id": "REST-OCEAN-CAY", "name": "Ocean Cay", "deck": 6, "cat": "EXCLUSIVE_GOURMET", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Seafood restaurant located on Deck 6.", "page": 3, "tags": ["specialty", "restaurant"]},
-        {"id": "REST-BUTCHERS-CUT", "name": "Butcher's Cut", "deck": 7, "cat": "SPECIALTY_STEAKHOUSE", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Steakhouse restaurant located on Deck 7.", "page": 3, "tags": ["specialty", "steakhouse", "restaurant"]},
-        {"id": "REST-KAITO-TEPPANYAKI", "name": "Kaito Teppanyaki", "deck": 7, "cat": "SPECIALTY_ASIAN", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Teppanyaki restaurant located on Deck 7.", "page": 3, "tags": ["specialty", "asian", "restaurant"]},
-        {"id": "REST-KAITO-SUSHI", "name": "Kaito Sushi Bar", "deck": 7, "cat": "SPECIALTY_SUSHI", "dining_model": "SPECIALTY_A_LA_CARTE", "desc": "Sushi bar located on Deck 7.", "page": 3, "tags": ["specialty", "sushi", "restaurant"]},
-        {"id": "REST-MARKETPLACE", "name": "Marketplace Buffet", "deck": 15, "cat": "CASUAL_BUFFET", "dining_model": "INCLUDED_BUFFET", "desc": "Buffet restaurant located on Deck 15.", "page": 5, "tags": ["buffet", "casual", "restaurant"]},
-        {"id": "REST-YC-RESTAURANT", "name": "MSC Yacht Club Restaurant", "deck": 18, "cat": "EXCLUSIVE_GOURMET", "dining_model": "EXCLUSIVE_YACHT_CLUB", "desc": "Dedicated restaurant for MSC Yacht Club guests on Deck 18.", "page": 5, "tags": ["yacht-club", "restaurant"]},
-        {"id": "REST-YC-GRILL", "name": "MSC Yacht Club Grill", "deck": 19, "cat": "EXCLUSIVE_OUTDOOR_GRILL", "dining_model": "EXCLUSIVE_YACHT_CLUB", "desc": "Outdoor grill and bar on MSC Yacht Club sundeck on Deck 19.", "page": 5, "tags": ["yacht-club", "grill", "restaurant"]},
+        {"id": "REST-WAVES", "name": "Waves Restaurant", "deck": 5, "page": 3},
+        {"id": "REST-PANORAMA", "name": "Panorama Restaurant", "deck": 6, "page": 3},
+        {"id": "REST-LOLIVO-DORO", "name": "L'Olivo d'oro", "deck": 6, "page": 3},
+        {"id": "REST-LOLIVE-DOREE", "name": "L'Olive dorée", "deck": 6, "page": 3},
+        {"id": "REST-HOLA-TACOS", "name": "Hola! Tacos & Cantina", "deck": 6, "page": 3},
+        {"id": "REST-OCEAN-CAY", "name": "Ocean Cay", "deck": 6, "page": 3},
+        {"id": "REST-BUTCHERS-CUT", "name": "Butcher's Cut", "deck": 7, "page": 3},
+        {"id": "REST-KAITO-TEPPANYAKI", "name": "Kaito Teppanyaki", "deck": 7, "page": 3},
+        {"id": "REST-KAITO-SUSHI", "name": "Kaito Sushi Bar", "deck": 7, "page": 3},
+        {"id": "REST-MARKETPLACE", "name": "Marketplace Buffet", "deck": 15, "page": 5},
+        {"id": "REST-YC-RESTAURANT", "name": "MSC Yacht Club Restaurant", "deck": 18, "page": 5},
+        {"id": "REST-YC-GRILL", "name": "MSC Yacht Club Grill", "deck": 19, "page": 5},
     ]
     for r in restaurants_data:
         record_fact(
@@ -351,7 +348,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=r["name"],
             page=r["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "restaurants.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "restaurants.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -365,12 +362,8 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": r["id"],
                     "name": r["name"],
                     "deck": r["deck"],
-                    "category": r["cat"],
-                    "description": r["desc"],
-                    "dining_model": r["dining_model"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{r['page']}",
-                    "tags": r["tags"]
                 }
                 for r in restaurants_data
             ]
@@ -378,22 +371,22 @@ def run_ingestion() -> Dict[str, Any]:
 
     # --- Bars (Pages 3, 5) ---
     bars_data = [
-        {"id": "BAR-EDGE", "name": "Edge Cocktail Bar", "deck": 6, "cat": "COCKTAIL_BAR", "desc": "Cocktail bar located on Deck 6.", "page": 3, "tags": ["cocktails", "bar"]},
-        {"id": "BAR-JEAN-PHILIPPE-CHOCO", "name": "Jean-Philippe Chocolate & Coffee", "deck": 6, "cat": "CHOCOLATE_CAFE", "desc": "Chocolate boutique and café located on Deck 6.", "page": 3, "tags": ["cafe", "pastry"]},
-        {"id": "BAR-JEAN-PHILIPPE-CREPES", "name": "Jean-Philippe Crepes & Ice Cream", "deck": 6, "cat": "GELATO_BAR", "desc": "Crêpes and ice cream bar located on Deck 6.", "page": 3, "tags": ["gelato", "bar"]},
-        {"id": "BAR-MERAVIGLIA-BAR", "name": "Meraviglia Bar & Lounge", "deck": 6, "cat": "LOUNGE_BAR", "desc": "Bar and lounge located on Deck 6.", "page": 3, "tags": ["bar", "lounge"]},
-        {"id": "BAR-BRASS-ANCHOR", "name": "Brass Anchor Pub", "deck": 7, "cat": "TRADITIONAL_PUB", "desc": "Pub located on Deck 7.", "page": 3, "tags": ["pub", "bar"]},
-        {"id": "BAR-CHAMPAGNE", "name": "Champagne Bar", "deck": 7, "cat": "CHAMPAGNE_BAR", "desc": "Champagne bar located on Deck 7.", "page": 3, "tags": ["champagne", "bar"]},
-        {"id": "BAR-CASINO", "name": "Casino Imperiale", "deck": 7, "cat": "CASINO_BAR", "desc": "Bar located within Casino Imperiale on Deck 7.", "page": 3, "tags": ["casino", "bar"]},
-        {"id": "BAR-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "cat": "ENTERTAINMENT_BAR", "desc": "TV studio and bar located on Deck 7.", "page": 3, "tags": ["tv-studio", "bar"]},
-        {"id": "BAR-CAROUSEL", "name": "Carousel Lounge Bar", "deck": 7, "cat": "SHOW_LOUNGE_BAR", "desc": "Aft venue bar in Carousel Lounge on Deck 7.", "page": 3, "tags": ["show", "bar"]},
-        {"id": "BAR-BAMBOO", "name": "Bamboo Bar", "deck": 15, "cat": "POOL_BAR", "desc": "Pool bar located by Bamboo Pool on Deck 15.", "page": 5, "tags": ["pool-bar", "bar"]},
-        {"id": "BAR-ATMOSPHERE-NORTH", "name": "Atmosphere Bar North", "deck": 15, "cat": "POOL_BAR", "desc": "Poolside bar north located on Deck 15.", "page": 5, "tags": ["pool-bar", "bar"]},
-        {"id": "BAR-ATMOSPHERE-SOUTH", "name": "Atmosphere Bar South", "deck": 15, "cat": "POOL_BAR", "desc": "Poolside bar south located on Deck 15.", "page": 5, "tags": ["pool-bar", "bar"]},
-        {"id": "BAR-ICE-CREAM", "name": "Atmosphere Ice Cream Bar", "deck": 15, "cat": "ICE_CREAM_BAR", "desc": "Ice cream bar located on Deck 15.", "page": 5, "tags": ["ice-cream", "bar"]},
-        {"id": "BAR-SPORTS", "name": "Sports Bar", "deck": 16, "cat": "SPORTS_BAR", "desc": "Sports bar located on Deck 16.", "page": 5, "tags": ["sports", "bar"]},
-        {"id": "BAR-HORIZON", "name": "Horizon Bar", "deck": 16, "cat": "AFT_BAR", "desc": "Aft outdoor bar overlooking Horizon Pool on Deck 16.", "page": 5, "tags": ["aft", "bar"]},
-        {"id": "BAR-POLAR", "name": "Polar Bar", "deck": 19, "cat": "AQUAPARK_BAR", "desc": "Beverage bar located in Polar Aquapark on Deck 19.", "page": 5, "tags": ["aquapark", "bar"]},
+        {"id": "BAR-EDGE", "name": "Edge Cocktail Bar", "deck": 6, "page": 3},
+        {"id": "BAR-JEAN-PHILIPPE-CHOCO", "name": "Jean-Philippe Chocolate & Coffee", "deck": 6, "page": 3},
+        {"id": "BAR-JEAN-PHILIPPE-CREPES", "name": "Jean-Philippe Crepes & Ice Cream", "deck": 6, "page": 3},
+        {"id": "BAR-MERAVIGLIA-BAR", "name": "Meraviglia Bar & Lounge", "deck": 6, "page": 3},
+        {"id": "BAR-BRASS-ANCHOR", "name": "Brass Anchor Pub", "deck": 7, "page": 3},
+        {"id": "BAR-CHAMPAGNE", "name": "Champagne Bar", "deck": 7, "page": 3},
+        {"id": "BAR-CASINO", "name": "Casino Imperiale", "deck": 7, "page": 3},
+        {"id": "BAR-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "page": 3},
+        {"id": "BAR-CAROUSEL", "name": "Carousel Lounge Bar", "deck": 7, "page": 3},
+        {"id": "BAR-BAMBOO", "name": "Bamboo Bar", "deck": 15, "page": 5},
+        {"id": "BAR-ATMOSPHERE-NORTH", "name": "Atmosphere Bar North", "deck": 15, "page": 5},
+        {"id": "BAR-ATMOSPHERE-SOUTH", "name": "Atmosphere Bar South", "deck": 15, "page": 5},
+        {"id": "BAR-ICE-CREAM", "name": "Atmosphere Ice Cream Bar", "deck": 15, "page": 5},
+        {"id": "BAR-SPORTS", "name": "Sports Bar", "deck": 16, "page": 5},
+        {"id": "BAR-HORIZON", "name": "Horizon Bar", "deck": 16, "page": 5},
+        {"id": "BAR-POLAR", "name": "Polar Bar", "deck": 19, "page": 5},
     ]
     for b in bars_data:
         record_fact(
@@ -404,7 +397,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=b["name"],
             page=b["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "bars.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "bars.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -418,21 +411,18 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": b["id"],
                     "name": b["name"],
                     "deck": b["deck"],
-                    "category": b["cat"],
-                    "description": b["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{b['page']}",
-                    "tags": b["tags"]
                 }
                 for b in bars_data
             ]
         }, f, indent=2, ensure_ascii=False)
 
     lounges_data = [
-        {"id": "LOUNGE-TOP-SAIL", "name": "Top Sail Lounge", "deck": 16, "cat": "YACHT_CLUB_LOUNGE", "desc": "Forward lounge for MSC Yacht Club guests on Deck 16.", "page": 5, "tags": ["yacht-club", "lounge"]},
-        {"id": "LOUNGE-SKY", "name": "Sky Lounge", "deck": 18, "cat": "PANORAMIC_LOUNGE", "desc": "Panoramic lounge located on Deck 18.", "page": 5, "tags": ["panoramic", "lounge"]},
-        {"id": "LOUNGE-CAROUSEL", "name": "Carousel Lounge", "deck": 7, "cat": "ENTERTAINMENT_LOUNGE", "desc": "Aft show lounge located on Deck 7.", "page": 3, "tags": ["show", "lounge"]},
-        {"id": "LOUNGE-ATTIC", "name": "Attic Club", "deck": 18, "cat": "NIGHTCLUB", "desc": "Nightclub located on Deck 18.", "page": 5, "tags": ["nightclub", "lounge"]},
+        {"id": "LOUNGE-TOP-SAIL", "name": "Top Sail Lounge", "deck": 16, "page": 5},
+        {"id": "LOUNGE-SKY", "name": "Sky Lounge", "deck": 18, "page": 5},
+        {"id": "LOUNGE-CAROUSEL", "name": "Carousel Lounge", "deck": 7, "page": 3},
+        {"id": "LOUNGE-ATTIC", "name": "Attic Club", "deck": 18, "page": 5},
     ]
     for l in lounges_data:
         record_fact(
@@ -443,7 +433,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=l["name"],
             page=l["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "lounges.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "lounges.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -457,22 +447,19 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": l["id"],
                     "name": l["name"],
                     "deck": l["deck"],
-                    "category": l["cat"],
-                    "description": l["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{l['page']}",
-                    "tags": l["tags"]
                 }
                 for l in lounges_data
             ]
         }, f, indent=2, ensure_ascii=False)
 
     pools_data = [
-        {"id": "POOL-ATMOSPHERE", "name": "Atmosphere Pool", "deck": 15, "cat": "MAIN_OUTDOOR_POOL", "desc": "Central outdoor resort pool on Deck 15.", "page": 5, "tags": ["outdoor-pool", "pool"]},
-        {"id": "POOL-BAMBOO", "name": "Bamboo Pool", "deck": 15, "cat": "SOLARIUM_POOL", "desc": "Pool with retractable glass roof located on Deck 15.", "page": 5, "tags": ["indoor-pool", "pool"]},
-        {"id": "POOL-HORIZON", "name": "Horizon Pool", "deck": 16, "cat": "AFT_PANORAMIC_POOL", "desc": "Aft amphitheatre pool located on Deck 16.", "page": 5, "tags": ["aft-pool", "pool"]},
-        {"id": "POOL-AQUAPARK", "name": "Polar Aquapark", "deck": 19, "cat": "WATERPARK", "desc": "Water park with slides located on Deck 19.", "page": 5, "tags": ["aquapark", "pool"]},
-        {"id": "POOL-YC", "name": "MSC Yacht Club Pool", "deck": 19, "cat": "EXCLUSIVE_POOL", "desc": "Private pool on the MSC Yacht Club sundeck on Deck 19.", "page": 5, "tags": ["yacht-club", "pool"]},
+        {"id": "POOL-ATMOSPHERE", "name": "Atmosphere Pool", "deck": 15, "page": 5},
+        {"id": "POOL-BAMBOO", "name": "Bamboo Pool", "deck": 15, "page": 5},
+        {"id": "POOL-HORIZON", "name": "Horizon Pool", "deck": 16, "page": 5},
+        {"id": "POOL-AQUAPARK", "name": "Polar Aquapark", "deck": 19, "page": 5},
+        {"id": "POOL-YC", "name": "MSC Yacht Club Pool", "deck": 19, "page": 5},
     ]
     for p in pools_data:
         record_fact(
@@ -483,7 +470,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=p["name"],
             page=p["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "pools.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "pools.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -497,11 +484,8 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": p["id"],
                     "name": p["name"],
                     "deck": p["deck"],
-                    "category": p["cat"],
-                    "description": p["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{p['page']}",
-                    "tags": p["tags"]
                 }
                 for p in pools_data
             ]
@@ -528,21 +512,18 @@ def run_ingestion() -> Dict[str, Any]:
             "id": "SPA-AUREA-COMPLEX",
             "name": "MSC Aurea Spa",
             "deck": 7,
-            "category": "BALINESE_SPA_COMPLEX",
-            "description": "Spa facility offering wellness treatments and thermal suite located on Deck 7.",
             "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
             "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-            "tags": ["spa", "wellness"]
         }
     }
-    with open(os.path.join(KNOWLEDGE_DIR, "spa.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "spa.json"), "w", encoding="utf-8") as f:
         json.dump(spa_doc, f, indent=2, ensure_ascii=False)
 
     sports_data = [
-        {"id": "SPORT-SPORTPLEX", "name": "Sportplex", "deck": 16, "cat": "MULTI_SPORT_ARENA", "desc": "Indoor sports arena located on Deck 16.", "page": 5, "tags": ["sports", "arena"]},
-        {"id": "SPORT-GYM", "name": "MSC Gym by Technogym", "deck": 16, "cat": "FITNESS_CENTER", "desc": "Fitness center located on Deck 16.", "page": 5, "tags": ["gym", "fitness"]},
-        {"id": "SPORT-TRACK", "name": "Power Walking Track", "deck": 16, "cat": "OUTDOOR_TRACK", "desc": "Outdoor walking track located on Deck 16.", "page": 5, "tags": ["walking-track", "outdoor"]},
-        {"id": "SPORT-BRIDGE", "name": "Himalayan Bridge", "deck": 19, "cat": "ROPE_COURSE", "desc": "Suspension bridge attraction located on Deck 19.", "page": 5, "tags": ["bridge", "outdoor"]},
+        {"id": "SPORT-SPORTPLEX", "name": "Sportplex", "deck": 16, "page": 5},
+        {"id": "SPORT-GYM", "name": "MSC Gym by Technogym", "deck": 16, "page": 5},
+        {"id": "SPORT-TRACK", "name": "Power Walking Track", "deck": 16, "page": 5},
+        {"id": "SPORT-BRIDGE", "name": "Himalayan Bridge", "deck": 19, "page": 5},
     ]
     for sp in sports_data:
         record_fact(
@@ -553,7 +534,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=sp["name"],
             page=sp["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "sports.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "sports.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -567,30 +548,27 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": sp["id"],
                     "name": sp["name"],
                     "deck": sp["deck"],
-                    "category": sp["cat"],
-                    "description": sp["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{sp['page']}",
-                    "tags": sp["tags"]
                 }
                 for sp in sports_data
             ]
         }, f, indent=2, ensure_ascii=False)
 
     entertainment_data = [
-        {"id": "ENT-BROADWAY", "name": "Broadway Theatre", "deck": 6, "cat": "MAIN_THEATRE", "desc": "Main theatre located on Decks 5 and 6.", "page": 3, "tags": ["theatre", "entertainment"]},
-        {"id": "ENT-CAROUSEL", "name": "Carousel Lounge", "deck": 7, "cat": "SPECIALTY_THEATRE", "desc": "Custom entertainment show lounge located on Deck 7.", "page": 3, "tags": ["theatre", "lounge"]},
-        {"id": "ENT-CASINO", "name": "Casino Imperiale", "deck": 7, "cat": "CASINO", "desc": "Casino gaming venue located on Deck 7.", "page": 3, "tags": ["casino", "gaming"]},
-        {"id": "ENT-XD-CINEMA", "name": "Interactive XD Cinema", "deck": 16, "cat": "DIGITAL_CINEMA", "desc": "Interactive cinema located on Deck 16.", "page": 5, "tags": ["cinema", "entertainment"]},
-        {"id": "ENT-F1-RACER", "name": "MSC Formula Racer", "deck": 16, "cat": "SIMULATOR", "desc": "Racing simulator located on Deck 16.", "page": 5, "tags": ["simulator", "entertainment"]},
-        {"id": "ENT-BOWLING", "name": "Bowling", "deck": 16, "cat": "BOWLING", "desc": "Bowling lanes located on Deck 16.", "page": 5, "tags": ["bowling", "entertainment"]},
-        {"id": "ENT-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "cat": "TV_STUDIO", "desc": "TV studio and games venue located on Deck 7.", "page": 3, "tags": ["tv-studio", "entertainment"]},
-        {"id": "ENT-DOREMI-LAB", "name": "Doremi Lab", "deck": 18, "cat": "YOUTH_TECH", "desc": "Youth activity lab located on Deck 18.", "page": 5, "tags": ["youth", "kids"]},
-        {"id": "ENT-BABY-CLUB", "name": "Baby Club Chicco", "deck": 18, "cat": "BABY_CLUB", "desc": "Play center for infants located on Deck 18.", "page": 5, "tags": ["kids", "baby"]},
-        {"id": "ENT-MINI-CLUB", "name": "Mini Club Lego", "deck": 18, "cat": "KIDS_CLUB", "desc": "Activity club for children ages 3-6 located on Deck 18.", "page": 5, "tags": ["kids", "club"]},
-        {"id": "ENT-JUNIOR-CLUB", "name": "Junior Club Lego", "deck": 18, "cat": "KIDS_CLUB", "desc": "Activity club for children ages 7-11 located on Deck 18.", "page": 5, "tags": ["kids", "club"]},
-        {"id": "ENT-YOUNG-CLUB", "name": "Young Club", "deck": 18, "cat": "TEEN_CLUB", "desc": "Social lounge for youth ages 12-14 located on Deck 18.", "page": 5, "tags": ["teens", "club"]},
-        {"id": "ENT-TEEN-CLUB", "name": "Teen Club", "deck": 18, "cat": "TEEN_CLUB", "desc": "Dedicated lounge for teens ages 15-17 located on Deck 18.", "page": 5, "tags": ["teens", "club"]},
+        {"id": "ENT-BROADWAY", "name": "Broadway Theatre", "deck": 6, "page": 3},
+        {"id": "ENT-CAROUSEL", "name": "Carousel Lounge", "deck": 7, "page": 3},
+        {"id": "ENT-CASINO", "name": "Casino Imperiale", "deck": 7, "page": 3},
+        {"id": "ENT-XD-CINEMA", "name": "Interactive XD Cinema", "deck": 16, "page": 5},
+        {"id": "ENT-F1-RACER", "name": "MSC Formula Racer", "deck": 16, "page": 5},
+        {"id": "ENT-BOWLING", "name": "Bowling", "deck": 16, "page": 5},
+        {"id": "ENT-TV-STUDIO", "name": "TV Studio & Bar", "deck": 7, "page": 3},
+        {"id": "ENT-DOREMI-LAB", "name": "Doremi Lab", "deck": 18, "page": 5},
+        {"id": "ENT-BABY-CLUB", "name": "Baby Club Chicco", "deck": 18, "page": 5},
+        {"id": "ENT-MINI-CLUB", "name": "Mini Club Lego", "deck": 18, "page": 5},
+        {"id": "ENT-JUNIOR-CLUB", "name": "Junior Club Lego", "deck": 18, "page": 5},
+        {"id": "ENT-YOUNG-CLUB", "name": "Young Club", "deck": 18, "page": 5},
+        {"id": "ENT-TEEN-CLUB", "name": "Teen Club", "deck": 18, "page": 5},
     ]
     for e in entertainment_data:
         record_fact(
@@ -601,7 +579,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=e["name"],
             page=e["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "entertainment.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "entertainment.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -615,22 +593,19 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": e["id"],
                     "name": e["name"],
                     "deck": e["deck"],
-                    "category": e["cat"],
-                    "description": e["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{e['page']}",
-                    "tags": e["tags"]
                 }
                 for e in entertainment_data
             ]
         }, f, indent=2, ensure_ascii=False)
 
     public_areas_data = [
-        {"id": "PUB-GALLERIA", "name": "Galleria Meraviglia", "deck": [6, 7], "cat": "CENTRAL_PROMENADE", "desc": "Indoor promenade with LED dome located on Decks 6 and 7.", "page": 3, "tags": ["promenade", "public-area"]},
-        {"id": "PUB-INFINITY-ATRIUM", "name": "Infinity Atrium", "deck": [5, 6, 7], "cat": "ATRIUM", "desc": "Central atrium located on Decks 5, 6, and 7.", "page": 3, "tags": ["atrium", "public-area"]},
-        {"id": "PUB-PLAZA", "name": "Plaza Meraviglia", "deck": 6, "cat": "PUBLIC_SQUARE", "desc": "Central plaza located on Deck 6.", "page": 3, "tags": ["plaza", "public-area"]},
-        {"id": "PUB-TOP19-SOLARIUM", "name": "Top 19 Exclusive Solarium", "deck": 19, "cat": "ADULT_SOLARIUM", "desc": "Solarium sundeck located on Deck 19.", "page": 5, "tags": ["solarium", "public-area"]},
-        {"id": "PUB-HORIZON-AMPHI", "name": "Horizon Amphitheatre", "deck": 16, "cat": "AMPHITHEATRE", "desc": "Outdoor amphitheatre located aft on Deck 16.", "page": 5, "tags": ["amphitheatre", "public-area"]},
+        {"id": "PUB-GALLERIA", "name": "Galleria Meraviglia", "deck": [6, 7], "page": 3},
+        {"id": "PUB-INFINITY-ATRIUM", "name": "Infinity Atrium", "deck": [5, 6, 7], "page": 3},
+        {"id": "PUB-PLAZA", "name": "Plaza Meraviglia", "deck": 6, "page": 3},
+        {"id": "PUB-TOP19-SOLARIUM", "name": "Top 19 Exclusive Solarium", "deck": 19, "page": 5},
+        {"id": "PUB-HORIZON-AMPHI", "name": "Horizon Amphitheatre", "deck": 16, "page": 5},
     ]
     for pa in public_areas_data:
         record_fact(
@@ -641,7 +616,7 @@ def run_ingestion() -> Dict[str, Any]:
             value=pa["name"],
             page=pa["page"],
         )
-    with open(os.path.join(KNOWLEDGE_DIR, "public_areas.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "public_areas.json"), "w", encoding="utf-8") as f:
         json.dump({
             "vessel_id": "msc-meraviglia",
             "provenance": {
@@ -655,11 +630,8 @@ def run_ingestion() -> Dict[str, Any]:
                     "id": pa["id"],
                     "name": pa["name"],
                     "deck": pa["deck"],
-                    "category": pa["cat"],
-                    "description": pa["desc"],
                     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
                     "provenance": f"MSC-MER-DECKPLAN-11-2025-DEU/page:{pa['page']}",
-                    "tags": pa["tags"]
                 }
                 for pa in public_areas_data
             ]
@@ -684,7 +656,7 @@ def run_ingestion() -> Dict[str, Any]:
             }
         }
     }
-    with open(os.path.join(KNOWLEDGE_DIR, "technical.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(knowledge_dir, "technical.json"), "w", encoding="utf-8") as f:
         json.dump(technical_doc, f, indent=2, ensure_ascii=False)
 
     # --- Historical Correction Audit ---
@@ -772,7 +744,7 @@ def run_ingestion() -> Dict[str, Any]:
         "events": [e.to_dict() for e in events],
         "statements": [s.to_dict() for s in statements]
     }
-    manifest_path = os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json")
+    manifest_path = os.path.join(knowledge_dir, "extraction_manifest.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, indent=2, ensure_ascii=False)
 
@@ -843,7 +815,7 @@ def run_ingestion() -> Dict[str, Any]:
 - **Spatial Geometry**: Retained as `SYNTHETIC_GEOMETRY`.
 - **Epistemic Honesty**: Zero speculative promotions.
 """
-    with open(os.path.join(REPORTS_DIR, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(reports_dir, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
         f.write(report_md)
 
     conflicts_md = f"""# MSC Meraviglia 2025 Deckplan Historical Correction Report
@@ -877,7 +849,7 @@ def run_ingestion() -> Dict[str, Any]:
 - **SUPPORTED Statements with Evidence Closure**: {len(statements)}
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
 """
-    with open(os.path.join(REPORTS_DIR, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(reports_dir, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8") as f:
         f.write(conflicts_md)
     shutil.rmtree(temp_engine_dir, ignore_errors=True)
 

@@ -11,53 +11,29 @@
       "id": "LOUNGE-TOP-SAIL",
       "name": "Top Sail Lounge",
       "deck": 16,
-      "category": "YACHT_CLUB_LOUNGE",
-      "description": "Forward lounge for MSC Yacht Club guests on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "yacht-club",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "LOUNGE-SKY",
       "name": "Sky Lounge",
       "deck": 18,
-      "category": "PANORAMIC_LOUNGE",
-      "description": "Panoramic lounge located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "panoramic",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "LOUNGE-CAROUSEL",
       "name": "Carousel Lounge",
       "deck": 7,
-      "category": "ENTERTAINMENT_LOUNGE",
-      "description": "Aft show lounge located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "show",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "LOUNGE-ATTIC",
       "name": "Attic Club",
       "deck": 18,
-      "category": "NIGHTCLUB",
-      "description": "Nightclub located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "nightclub",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

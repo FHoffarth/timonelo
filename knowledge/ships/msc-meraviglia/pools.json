@@ -11,66 +11,36 @@
       "id": "POOL-ATMOSPHERE",
       "name": "Atmosphere Pool",
       "deck": 15,
-      "category": "MAIN_OUTDOOR_POOL",
-      "description": "Central outdoor resort pool on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "outdoor-pool",
-        "pool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-BAMBOO",
       "name": "Bamboo Pool",
       "deck": 15,
-      "category": "SOLARIUM_POOL",
-      "description": "Pool with retractable glass roof located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "indoor-pool",
-        "pool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-HORIZON",
       "name": "Horizon Pool",
       "deck": 16,
-      "category": "AFT_PANORAMIC_POOL",
-      "description": "Aft amphitheatre pool located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "aft-pool",
-        "pool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-AQUAPARK",
       "name": "Polar Aquapark",
       "deck": 19,
-      "category": "WATERPARK",
-      "description": "Water park with slides located on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "aquapark",
-        "pool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "POOL-YC",
       "name": "MSC Yacht Club Pool",
       "deck": 19,
-      "category": "EXCLUSIVE_POOL",
-      "description": "Private pool on the MSC Yacht Club sundeck on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "yacht-club",
-        "pool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

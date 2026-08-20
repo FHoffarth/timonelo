@@ -11,170 +11,92 @@
       "id": "ENT-BROADWAY",
       "name": "Broadway Theatre",
       "deck": 6,
-      "category": "MAIN_THEATRE",
-      "description": "Main theatre located on Decks 5 and 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "theatre",
-        "entertainment"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "ENT-CAROUSEL",
       "name": "Carousel Lounge",
       "deck": 7,
-      "category": "SPECIALTY_THEATRE",
-      "description": "Custom entertainment show lounge located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "theatre",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "ENT-CASINO",
       "name": "Casino Imperiale",
       "deck": 7,
-      "category": "CASINO",
-      "description": "Casino gaming venue located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "casino",
-        "gaming"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "ENT-XD-CINEMA",
       "name": "Interactive XD Cinema",
       "deck": 16,
-      "category": "DIGITAL_CINEMA",
-      "description": "Interactive cinema located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "cinema",
-        "entertainment"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-F1-RACER",
       "name": "MSC Formula Racer",
       "deck": 16,
-      "category": "SIMULATOR",
-      "description": "Racing simulator located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "simulator",
-        "entertainment"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-BOWLING",
       "name": "Bowling",
       "deck": 16,
-      "category": "BOWLING",
-      "description": "Bowling lanes located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "bowling",
-        "entertainment"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-TV-STUDIO",
       "name": "TV Studio & Bar",
       "deck": 7,
-      "category": "TV_STUDIO",
-      "description": "TV studio and games venue located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "tv-studio",
-        "entertainment"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "ENT-DOREMI-LAB",
       "name": "Doremi Lab",
       "deck": 18,
-      "category": "YOUTH_TECH",
-      "description": "Youth activity lab located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "youth",
-        "kids"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-BABY-CLUB",
       "name": "Baby Club Chicco",
       "deck": 18,
-      "category": "BABY_CLUB",
-      "description": "Play center for infants located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "kids",
-        "baby"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-MINI-CLUB",
       "name": "Mini Club Lego",
       "deck": 18,
-      "category": "KIDS_CLUB",
-      "description": "Activity club for children ages 3-6 located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "kids",
-        "club"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-JUNIOR-CLUB",
       "name": "Junior Club Lego",
       "deck": 18,
-      "category": "KIDS_CLUB",
-      "description": "Activity club for children ages 7-11 located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "kids",
-        "club"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-YOUNG-CLUB",
       "name": "Young Club",
       "deck": 18,
-      "category": "TEEN_CLUB",
-      "description": "Social lounge for youth ages 12-14 located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "teens",
-        "club"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "ENT-TEEN-CLUB",
       "name": "Teen Club",
       "deck": 18,
-      "category": "TEEN_CLUB",
-      "description": "Dedicated lounge for teens ages 15-17 located on Deck 18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "teens",
-        "club"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

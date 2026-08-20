@@ -11,209 +11,113 @@
       "id": "BAR-EDGE",
       "name": "Edge Cocktail Bar",
       "deck": 6,
-      "category": "COCKTAIL_BAR",
-      "description": "Cocktail bar located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "cocktails",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-JEAN-PHILIPPE-CHOCO",
       "name": "Jean-Philippe Chocolate & Coffee",
       "deck": 6,
-      "category": "CHOCOLATE_CAFE",
-      "description": "Chocolate boutique and café located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "cafe",
-        "pastry"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-JEAN-PHILIPPE-CREPES",
       "name": "Jean-Philippe Crepes & Ice Cream",
       "deck": 6,
-      "category": "GELATO_BAR",
-      "description": "Crêpes and ice cream bar located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "gelato",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-MERAVIGLIA-BAR",
       "name": "Meraviglia Bar & Lounge",
       "deck": 6,
-      "category": "LOUNGE_BAR",
-      "description": "Bar and lounge located on Deck 6.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "bar",
-        "lounge"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-BRASS-ANCHOR",
       "name": "Brass Anchor Pub",
       "deck": 7,
-      "category": "TRADITIONAL_PUB",
-      "description": "Pub located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "pub",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-CHAMPAGNE",
       "name": "Champagne Bar",
       "deck": 7,
-      "category": "CHAMPAGNE_BAR",
-      "description": "Champagne bar located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "champagne",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-CASINO",
       "name": "Casino Imperiale",
       "deck": 7,
-      "category": "CASINO_BAR",
-      "description": "Bar located within Casino Imperiale on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "casino",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-TV-STUDIO",
       "name": "TV Studio & Bar",
       "deck": 7,
-      "category": "ENTERTAINMENT_BAR",
-      "description": "TV studio and bar located on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "tv-studio",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-CAROUSEL",
       "name": "Carousel Lounge Bar",
       "deck": 7,
-      "category": "SHOW_LOUNGE_BAR",
-      "description": "Aft venue bar in Carousel Lounge on Deck 7.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "show",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "BAR-BAMBOO",
       "name": "Bamboo Bar",
       "deck": 15,
-      "category": "POOL_BAR",
-      "description": "Pool bar located by Bamboo Pool on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "pool-bar",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-ATMOSPHERE-NORTH",
       "name": "Atmosphere Bar North",
       "deck": 15,
-      "category": "POOL_BAR",
-      "description": "Poolside bar north located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "pool-bar",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-ATMOSPHERE-SOUTH",
       "name": "Atmosphere Bar South",
       "deck": 15,
-      "category": "POOL_BAR",
-      "description": "Poolside bar south located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "pool-bar",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-ICE-CREAM",
       "name": "Atmosphere Ice Cream Bar",
       "deck": 15,
-      "category": "ICE_CREAM_BAR",
-      "description": "Ice cream bar located on Deck 15.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "ice-cream",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-SPORTS",
       "name": "Sports Bar",
       "deck": 16,
-      "category": "SPORTS_BAR",
-      "description": "Sports bar located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "sports",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-HORIZON",
       "name": "Horizon Bar",
       "deck": 16,
-      "category": "AFT_BAR",
-      "description": "Aft outdoor bar overlooking Horizon Pool on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "aft",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "BAR-POLAR",
       "name": "Polar Bar",
       "deck": 19,
-      "category": "AQUAPARK_BAR",
-      "description": "Beverage bar located in Polar Aquapark on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "aquapark",
-        "bar"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

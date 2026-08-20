@@ -11,174 +11,85 @@
       "id": "REST-WAVES",
       "name": "Waves Restaurant",
       "deck": 5,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main restaurant located on Deck 5.",
-      "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "main-dining",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-PANORAMA",
       "name": "Panorama Restaurant",
       "deck": 6,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main restaurant located aft on Deck 6.",
-      "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "main-dining",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-LOLIVO-DORO",
       "name": "L'Olivo d'oro",
       "deck": 6,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main dining room located on Deck 6.",
-      "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "main-dining",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-LOLIVE-DOREE",
       "name": "L'Olive dorée",
       "deck": 6,
-      "category": "MAIN_DINING_ROOM",
-      "description": "Main dining venue located on Deck 6.",
-      "dining_model": "FIXED_SEATING_AND_MY_CHOICE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "main-dining",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-HOLA-TACOS",
       "name": "Hola! Tacos & Cantina",
       "deck": 6,
-      "category": "SPECIALTY_LATIN",
-      "description": "Latin dining concept located on Deck 6.",
-      "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "specialty",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-OCEAN-CAY",
       "name": "Ocean Cay",
       "deck": 6,
-      "category": "EXCLUSIVE_GOURMET",
-      "description": "Seafood restaurant located on Deck 6.",
-      "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "specialty",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-BUTCHERS-CUT",
       "name": "Butcher's Cut",
       "deck": 7,
-      "category": "SPECIALTY_STEAKHOUSE",
-      "description": "Steakhouse restaurant located on Deck 7.",
-      "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "specialty",
-        "steakhouse",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-KAITO-TEPPANYAKI",
       "name": "Kaito Teppanyaki",
       "deck": 7,
-      "category": "SPECIALTY_ASIAN",
-      "description": "Teppanyaki restaurant located on Deck 7.",
-      "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "specialty",
-        "asian",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-KAITO-SUSHI",
       "name": "Kaito Sushi Bar",
       "deck": 7,
-      "category": "SPECIALTY_SUSHI",
-      "description": "Sushi bar located on Deck 7.",
-      "dining_model": "SPECIALTY_A_LA_CARTE",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-      "tags": [
-        "specialty",
-        "sushi",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
     },
     {
       "id": "REST-MARKETPLACE",
       "name": "Marketplace Buffet",
       "deck": 15,
-      "category": "CASUAL_BUFFET",
-      "description": "Buffet restaurant located on Deck 15.",
-      "dining_model": "INCLUDED_BUFFET",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "buffet",
-        "casual",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "REST-YC-RESTAURANT",
       "name": "MSC Yacht Club Restaurant",
       "deck": 18,
-      "category": "EXCLUSIVE_GOURMET",
-      "description": "Dedicated restaurant for MSC Yacht Club guests on Deck 18.",
-      "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "yacht-club",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "REST-YC-GRILL",
       "name": "MSC Yacht Club Grill",
       "deck": 19,
-      "category": "EXCLUSIVE_OUTDOOR_GRILL",
-      "description": "Outdoor grill and bar on MSC Yacht Club sundeck on Deck 19.",
-      "dining_model": "EXCLUSIVE_YACHT_CLUB",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "yacht-club",
-        "grill",
-        "restaurant"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

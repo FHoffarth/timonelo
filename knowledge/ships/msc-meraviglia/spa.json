@@ -10,13 +10,7 @@
     "id": "SPA-AUREA-COMPLEX",
     "name": "MSC Aurea Spa",
     "deck": 7,
-    "category": "BALINESE_SPA_COMPLEX",
-    "description": "Spa facility offering wellness treatments and thermal suite located on Deck 7.",
     "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-    "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3",
-    "tags": [
-      "spa",
-      "wellness"
-    ]
+    "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:3"
   }
 }

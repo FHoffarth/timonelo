@@ -11,53 +11,29 @@
       "id": "SPORT-SPORTPLEX",
       "name": "Sportplex",
       "deck": 16,
-      "category": "MULTI_SPORT_ARENA",
-      "description": "Indoor sports arena located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "sports",
-        "arena"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "SPORT-GYM",
       "name": "MSC Gym by Technogym",
       "deck": 16,
-      "category": "FITNESS_CENTER",
-      "description": "Fitness center located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "gym",
-        "fitness"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "SPORT-TRACK",
       "name": "Power Walking Track",
       "deck": 16,
-      "category": "OUTDOOR_TRACK",
-      "description": "Outdoor walking track located on Deck 16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "walking-track",
-        "outdoor"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     },
     {
       "id": "SPORT-BRIDGE",
       "name": "Himalayan Bridge",
       "deck": 19,
-      "category": "ROPE_COURSE",
-      "description": "Suspension bridge attraction located on Deck 19.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5",
-      "tags": [
-        "bridge",
-        "outdoor"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:5"
     }
   ]
 }

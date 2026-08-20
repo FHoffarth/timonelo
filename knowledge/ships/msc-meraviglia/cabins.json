@@ -14,97 +14,59 @@
     {
       "id": "CAT-YC3",
       "name": "MSC Yacht Club Royal Suite mit Whirlpool (YC3)",
-      "category": "YACHT_CLUB_SUITE",
       "deck": [
         15
       ],
-      "description": "MSC Yacht Club Royal Suite on Deck 15 with whirlpool.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "yacht-club",
-        "suite",
-        "whirlpool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-YJD",
       "name": "MSC Yacht Club Maisonette Suite mit Whirlpool (YJD)",
-      "category": "YACHT_CLUB_SUITE",
       "deck": [
         9,
         10,
         11,
         12
       ],
-      "description": "MSC Yacht Club Maisonette Suite on Decks 9-12 with whirlpool.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "yacht-club",
-        "maisonette",
-        "suite",
-        "whirlpool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-YC1",
       "name": "MSC Yacht Club Deluxe Suite (YC1)",
-      "category": "YACHT_CLUB_SUITE",
       "deck": [
         14,
         15,
         16,
         18
       ],
-      "description": "MSC Yacht Club Deluxe Suite on Decks 14-18.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "yacht-club",
-        "deluxe",
-        "suite"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-YIN",
       "name": "MSC Yacht Club Innenkabine (YIN)",
-      "category": "YACHT_CLUB_INSIDE",
       "deck": [
         14,
         15,
         16
       ],
-      "description": "MSC Yacht Club Interior Cabin on Decks 14-16.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "yacht-club",
-        "inside",
-        "cabin"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-SXJ",
       "name": "Grand Suite Aurea mit Terrasse und Whirlpool (SXJ)",
-      "category": "AUREA_SUITE",
       "deck": [
         12
       ],
-      "description": "Grand Suite Aurea on Deck 12 with terrace and whirlpool.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "aurea",
-        "suite",
-        "terrace",
-        "whirlpool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-SLJ",
       "name": "Premium Suite Aurea mit Terrasse und Whirlpool (SLJ)",
-      "category": "AUREA_SUITE",
       "deck": [
         9,
         10,
@@ -112,134 +74,84 @@
         12,
         13
       ],
-      "description": "Premium Suite Aurea on Decks 9-13 with terrace and whirlpool.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "aurea",
-        "suite",
-        "terrace",
-        "whirlpool"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BA",
       "name": "Deluxe Balkonkabine Aurea (BA)",
-      "category": "BALCONY_CABIN",
       "deck": [
         10,
         11,
         12,
         13
       ],
-      "description": "Deluxe Balcony Cabin Aurea on Decks 10-13.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "aurea"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BL3",
       "name": "Premium Balkonkabine Deck 13-14 (BL3)",
-      "category": "BALCONY_CABIN",
       "deck": [
         13,
         14
       ],
-      "description": "Premium Balcony Cabin on Decks 13-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "premium"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BL2",
       "name": "Premium Balkonkabine Deck 11-12 (BL2)",
-      "category": "BALCONY_CABIN",
       "deck": [
         11,
         12
       ],
-      "description": "Premium Balcony Cabin on Decks 11-12.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "premium"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BL1",
       "name": "Premium Balkonkabine Deck 10 (BL1)",
-      "category": "BALCONY_CABIN",
       "deck": [
         10
       ],
-      "description": "Premium Balcony Cabin on Deck 10.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "premium"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BR3",
       "name": "Deluxe Balkonkabine Deck 13-14 (BR3)",
-      "category": "BALCONY_CABIN",
       "deck": [
         13,
         14
       ],
-      "description": "Deluxe Balcony Cabin on Decks 13-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BR2",
       "name": "Deluxe Balkonkabine Deck 11-12 (BR2)",
-      "category": "BALCONY_CABIN",
       "deck": [
         11,
         12
       ],
-      "description": "Deluxe Balcony Cabin on Decks 11-12.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BR1",
       "name": "Deluxe Balkonkabine Deck 8-10 (BR1)",
-      "category": "BALCONY_CABIN",
       "deck": [
         8,
         9,
         10
       ],
-      "description": "Deluxe Balcony Cabin on Decks 8-10.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BP",
       "name": "Deluxe Balkonkabine mit teilweiser Sichteinschränkung (BP)",
-      "category": "BALCONY_CABIN",
       "deck": [
         8,
         9,
@@ -249,132 +161,84 @@
         13,
         14
       ],
-      "description": "Deluxe Balcony Cabin with partial view obstruction on Decks 8-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "partial-view"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-BS",
       "name": "Single Balkonkabine (BS)",
-      "category": "BALCONY_CABIN",
       "deck": [
         13,
         14
       ],
-      "description": "Single Balcony Cabin on Decks 13-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "balcony",
-        "single"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-OL2",
       "name": "Premium Kabine mit Meerblick (OL2)",
-      "category": "OCEAN_VIEW_CABIN",
       "deck": [
         9,
         10,
         11
       ],
-      "description": "Premium Ocean View Cabin on Decks 9-11.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "ocean-view",
-        "premium"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-OR1",
       "name": "Deluxe Kabine mit Meerblick (OR1)",
-      "category": "OCEAN_VIEW_CABIN",
       "deck": [
         5
       ],
-      "description": "Deluxe Ocean View Cabin on Deck 5.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "ocean-view",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-OM2",
       "name": "Junior Kabine mit Meerblick (OM2)",
-      "category": "OCEAN_VIEW_CABIN",
       "deck": [
         8
       ],
-      "description": "Junior Ocean View Cabin on Deck 8.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "ocean-view",
-        "junior"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-OO",
       "name": "Junior Kabine mit Meerblick und teilweiser Sichteinschränkung (OO)",
-      "category": "OCEAN_VIEW_CABIN",
       "deck": [
         8
       ],
-      "description": "Junior Ocean View Cabin with partial view obstruction on Deck 8.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "ocean-view",
-        "partial-view"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-IR2",
       "name": "Deluxe Innenkabine Deck 11-14 (IR2)",
-      "category": "INSIDE_CABIN",
       "deck": [
         11,
         12,
         13,
         14
       ],
-      "description": "Deluxe Interior Cabin on Decks 11-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "inside",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-IR1",
       "name": "Deluxe Innenkabine Deck 5-10 (IR1)",
-      "category": "INSIDE_CABIN",
       "deck": [
         5,
         8,
         9,
         10
       ],
-      "description": "Deluxe Interior Cabin on Decks 5-10.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "inside",
-        "deluxe"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     },
     {
       "id": "CAT-IS",
       "name": "Single Innenkabine (IS)",
-      "category": "INSIDE_CABIN",
       "deck": [
         5,
         8,
@@ -385,13 +249,8 @@
         13,
         14
       ],
-      "description": "Single Interior Cabin on Decks 5-14.",
       "source": "Official MSC Cruises Meraviglia Deckplans (11.2025 DEU)",
-      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2",
-      "tags": [
-        "inside",
-        "single"
-      ]
+      "provenance": "MSC-MER-DECKPLAN-11-2025-DEU/page:2"
     }
   ]
 }
