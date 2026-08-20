@@ -24,8 +24,7 @@ from typing import Any, Dict, List
 
 from timonelo.evidence.artifacts import sha256_of_file
 from timonelo.evidence.conflicts import ConflictLog
-from timonelo.evidence.editor import Statement, StatementEditor
-from timonelo.evidence.engine import Statement as EngineStatement
+from timonelo.evidence.editor import StatementEditor
 from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.gatekeeper import (
     ConflictGateResult,
@@ -33,15 +32,13 @@ from timonelo.evidence.gatekeeper import (
     GeometryProvenanceRecord,
     SourceArtifactRecord,
 )
+from timonelo.evidence.models import Statement
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.review import ReviewLog
 from timonelo.ontology.models import (
-    Derivation,
     EvidenceCondition,
     GeometryProvenance,
-    HumanReviewState,
     Method,
-    PublishStatus,
 )
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -111,30 +108,7 @@ def run_ingestion() -> Dict[str, Any]:
     ) -> None:
         locator = f"page:{page}"
 
-        # 1. Author statement via StatementEditor (sole creator, checked against central authority) (TASK A, D)
-        stmt = editor.create(
-            entity_id=entity_id,
-            question_id=question_id,
-            statement_type=statement_type,
-            value=value,
-            artifact_id=registered_artifact.artifact_id,
-            locator=locator,
-            read_by="deckplan_extraction_pipeline",
-            read_on="2026-08-19",
-            page=page,
-            method="DIRECT",
-        )
-
-        # 2. Canonical promotion via StatementEditor.set_evidence_condition (TASK C)
-        promoted = editor.set_evidence_condition(
-            statement_id=stmt.statement_id,
-            condition=EvidenceCondition.SUPPORTED,
-            actor="deckplan_evidence_verifier",
-            occurred_on="2026-08-19",
-            note=f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
-        )
-
-        # 3. EvidenceEvent captures the observation
+        # 1. EvidenceEvent captures the observation before its statement cites it.
         event = EvidenceEvent(
             event_id=event_id,
             artifact_sha256=registered_artifact.sha256,
@@ -146,6 +120,31 @@ def run_ingestion() -> Dict[str, Any]:
             observed_on="2026-08-19",
         )
         events.append(event)
+
+        # 2. Author the canonical statement with explicit event identity.
+        stmt = editor.create(
+            entity_id=entity_id,
+            question_id=question_id,
+            statement_type=statement_type,
+            value=value,
+            artifact_id=registered_artifact.artifact_id,
+            locator=locator,
+            read_by="deckplan_extraction_pipeline",
+            read_on="2026-08-19",
+            page=page,
+            method=Method.DIRECT,
+            evidence_event_ids=(event.event_id,),
+        )
+
+        # 3. Canonical promotion via StatementEditor.set_evidence_condition (TASK C)
+        promoted = editor.set_evidence_condition(
+            statement_id=stmt.statement_id,
+            condition=EvidenceCondition.SUPPORTED,
+            actor="deckplan_evidence_verifier",
+            occurred_on="2026-08-19",
+            note=f"Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at {locator}",
+        )
+
         statements.append(promoted)
 
     # --- Decks (Pages 3, 4, 5) ---
@@ -727,20 +726,8 @@ def run_ingestion() -> Dict[str, Any]:
     gk.register_source(source_record)
     for evt in events:
         gk.register_event(evt)
-    for s, evt in zip(statements, events):
-        engine_stmt = EngineStatement(
-            statement_id=s.statement_id,
-            entity_id=s.entity_id,
-            question_id=s.question_id,
-            value=s.value,
-            method=Method.DIRECT,
-            derivation=Derivation.LOCAL,
-            evidence_event_ids=(evt.event_id,),
-            evidence_condition=EvidenceCondition.SUPPORTED if s.evidence_condition == "SUPPORTED" else EvidenceCondition.UNKNOWN,
-            human_review_state=HumanReviewState.DRAFT if s.human_review_state == "DRAFT" else HumanReviewState.APPROVED,
-            publish_status=PublishStatus.PUBLISH_BLOCKED if s.publish_status == "PUBLISH_BLOCKED" else PublishStatus.PUBLISH_ALLOWED,
-        )
-        gk.add_statement(engine_stmt)
+    for statement in statements:
+        gk.add_statement(statement)
     gk.set_conflict_result(conflict_gate)
 
     # Living Deck geometry remains synthetic (TASK Q)

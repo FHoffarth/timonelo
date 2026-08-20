@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from timonelo.evidence import authority
-from timonelo.evidence.editor import Statement
+from timonelo.evidence.models import Statement
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 
 

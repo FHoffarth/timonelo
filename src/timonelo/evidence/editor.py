@@ -19,88 +19,25 @@ If any of those is missing the statement cannot be created.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, replace
-from typing import Any, Dict, List, Optional
+from dataclasses import replace
+from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.conflicts import ConflictError, ConflictLog, values_disagree
+from timonelo.evidence.models import Statement
 from timonelo.evidence.review import ReviewError, ReviewLog
 from timonelo.ontology.models import (
     EvidenceCondition,
     HumanReviewState,
+    Method,
     PublishStatus,
 )
 
 
 class EditorError(ValueError):
     pass
-
-
-@dataclass(frozen=True)
-class Statement:
-    """One manually authored claim, tied to one artifact.
-
-    Carries no confidence field (ADR-0002 I1). Confidence is computed from the
-    artifact's document class at query time.
-    """
-    statement_id: str
-    entity_id: str
-    question_id: str
-    statement_type: str
-    value: Any
-    artifact_id: str
-    page: Optional[int]
-    locator: str
-    read_by: str
-    read_on: str
-    method: str = "DIRECT"
-    derivation_note: str = ""
-    evidence_condition: str = EvidenceCondition.UNKNOWN.value
-    human_review_state: str = HumanReviewState.DRAFT.value
-    publish_status: str = PublishStatus.PUBLISH_BLOCKED.value
-    valid_from: Optional[str] = None
-    valid_until: Optional[str] = None
-    note: str = ""
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "statement_id": self.statement_id,
-            "entity_id": self.entity_id,
-            "question_id": self.question_id,
-            "statement_type": self.statement_type,
-            "value": self.value,
-            "artifact_id": self.artifact_id,
-            "page": self.page,
-            "locator": self.locator,
-            "read_by": self.read_by,
-            "read_on": self.read_on,
-            "method": self.method,
-            "derivation_note": self.derivation_note,
-            "evidence_condition": self.evidence_condition,
-            "human_review_state": self.human_review_state,
-            "publish_status": self.publish_status,
-            "valid_from": self.valid_from,
-            "valid_until": self.valid_until,
-            "note": self.note,
-        }
-
-    @property
-    def state(self) -> HumanReviewState:
-        return HumanReviewState(self.human_review_state)
-
-    @property
-    def review_state(self) -> str:
-        return self.human_review_state
-
-    @property
-    def condition(self) -> EvidenceCondition:
-        return EvidenceCondition(self.evidence_condition)
-
-    @property
-    def publishing(self) -> PublishStatus:
-        return PublishStatus(self.publish_status)
 
 
 class StatementEditor:
@@ -159,6 +96,7 @@ class StatementEditor:
         valid_from: Optional[str] = None,
         valid_until: Optional[str] = None,
         note: str = "",
+        evidence_event_ids: Tuple[str, ...] = (),
     ) -> Statement:
         """Author one statement in DRAFT with UNKNOWN evidence condition."""
         artifact = self.registry.get(artifact_id)  # raises if not held
@@ -168,9 +106,11 @@ class StatementEditor:
                 "A statement requires a locator: WHERE in the artifact the "
                 "value was read."
             )
-        if method not in ("DIRECT", "CALCULATED", "INFERRED"):
+        try:
+            canonical_method = Method(method)
+        except ValueError:
             raise EditorError(f"Unknown method {method!r}.")
-        if method != "DIRECT" and not derivation_note:
+        if canonical_method is not Method.DIRECT and not derivation_note:
             raise EditorError(
                 f"A {method} statement must record its derivation_note: which "
                 "printed facts were combined, and how."
@@ -194,11 +134,12 @@ class StatementEditor:
             locator=locator,
             read_by=read_by,
             read_on=read_on,
-            method=method,
+            method=canonical_method,
             derivation_note=derivation_note,
-            evidence_condition=EvidenceCondition.UNKNOWN.value,
-            human_review_state=HumanReviewState.DRAFT.value,
-            publish_status=PublishStatus.PUBLISH_BLOCKED.value,
+            evidence_event_ids=evidence_event_ids,
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.DRAFT,
+            publish_status=PublishStatus.PUBLISH_BLOCKED,
             valid_from=valid_from,
             valid_until=valid_until,
             note=note,
@@ -255,8 +196,8 @@ class StatementEditor:
 
         pub_status = current.publish_status
         if to_cond is not EvidenceCondition.SUPPORTED:
-            pub_status = PublishStatus.PUBLISH_BLOCKED.value
-        updated = replace(current, evidence_condition=to_cond.value, publish_status=pub_status)
+            pub_status = PublishStatus.PUBLISH_BLOCKED
+        updated = replace(current, evidence_condition=to_cond, publish_status=pub_status)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -278,9 +219,9 @@ class StatementEditor:
         # If rejected or superseded, ensure publish status is BLOCKED
         pub_status = current.publish_status
         if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED):
-            pub_status = PublishStatus.PUBLISH_BLOCKED.value
+            pub_status = PublishStatus.PUBLISH_BLOCKED
 
-        updated = replace(current, human_review_state=to_state.value, publish_status=pub_status)
+        updated = replace(current, human_review_state=to_state, publish_status=pub_status)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -320,7 +261,7 @@ class StatementEditor:
                 f"{statement_id} may not be published: {reason}"
             )
 
-        updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED.value)
+        updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED)
         self._by_id[statement_id] = updated
         self._flush()
         return updated
@@ -393,6 +334,6 @@ class StatementEditor:
         current = self._by_id[statement_id]
         self.review_log.transition(statement_id, current.state, to_state,
                                    actor, occurred_on, note)
-        pub_status = PublishStatus.PUBLISH_BLOCKED.value if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED) else current.publish_status
-        self._by_id[statement_id] = replace(current, human_review_state=to_state.value, publish_status=pub_status)
+        pub_status = PublishStatus.PUBLISH_BLOCKED if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED) else current.publish_status
+        self._by_id[statement_id] = replace(current, human_review_state=to_state, publish_status=pub_status)
         self._flush()

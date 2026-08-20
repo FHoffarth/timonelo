@@ -29,8 +29,8 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 from timonelo.evidence.artifacts import Artifact, sha256_of_file
-from timonelo.evidence.engine import Statement
 from timonelo.evidence.events import EvidenceEvent
+from timonelo.evidence.models import Statement
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.ontology.models import (
     EvidenceCondition,

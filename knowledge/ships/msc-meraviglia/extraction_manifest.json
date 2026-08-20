@@ -2064,7 +2064,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-4-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2084,7 +2090,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-5-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2104,7 +2116,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-6-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2124,7 +2142,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-7-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2144,7 +2168,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-8-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2164,7 +2194,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-9-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2184,7 +2220,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-10-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2204,7 +2246,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-11-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2224,7 +2272,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-12-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2244,7 +2298,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-13-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2264,7 +2324,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-14-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2284,7 +2350,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-15-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2304,7 +2376,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-16-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2324,7 +2402,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-18-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2344,7 +2428,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-19-NAME"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2364,7 +2454,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-TOTAL-CABINS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2384,7 +2480,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-TOTAL-GUESTS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2404,7 +2506,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PAX-DECKS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2424,7 +2532,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-BED-CONFIG"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2444,7 +2558,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-YC3"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2464,7 +2584,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-YJD"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2484,7 +2610,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-YC1"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2504,7 +2636,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-YIN"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2524,7 +2662,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-SXJ"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2544,7 +2688,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-SLJ"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2564,7 +2714,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2584,7 +2740,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BL3"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2604,7 +2766,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BL2"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2624,7 +2792,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BL1"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2644,7 +2818,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BR3"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2664,7 +2844,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BR2"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2684,7 +2870,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BR1"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2704,7 +2896,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BP"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2724,7 +2922,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-BS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2744,7 +2948,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-OL2"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2764,7 +2974,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-OR1"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2784,7 +3000,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-OM2"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2804,7 +3026,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-OO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2824,7 +3052,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-IR2"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2844,7 +3078,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-IR1"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2864,7 +3104,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-CABIN-CAT-IS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2884,7 +3130,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-WAVES"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2904,7 +3156,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-PANORAMA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2924,7 +3182,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-LOLIVO-DORO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2944,7 +3208,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-LOLIVE-DOREE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2964,7 +3234,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-HOLA-TACOS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -2984,7 +3260,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-OCEAN-CAY"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3004,7 +3286,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-BUTCHERS-CUT"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3024,7 +3312,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-KAITO-TEPPANYAKI"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3044,7 +3338,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-KAITO-SUSHI"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3064,7 +3364,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-MARKETPLACE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3084,7 +3390,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-YC-RESTAURANT"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3104,7 +3416,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-YC-GRILL"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3124,7 +3442,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-EDGE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3144,7 +3468,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-JEAN-PHILIPPE-CHOCO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3164,7 +3494,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-JEAN-PHILIPPE-CREPES"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3184,7 +3520,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-MERAVIGLIA-BAR"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3204,7 +3546,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-BRASS-ANCHOR"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3224,7 +3572,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-CHAMPAGNE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3244,7 +3598,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-CASINO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3264,7 +3624,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-TV-STUDIO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3284,7 +3650,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-CAROUSEL"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3304,7 +3676,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-BAMBOO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3324,7 +3702,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-ATMOSPHERE-NORTH"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3344,7 +3728,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-ATMOSPHERE-SOUTH"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3364,7 +3754,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-ICE-CREAM"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3384,7 +3780,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-SPORTS"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3404,7 +3806,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-HORIZON"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3424,7 +3832,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-BAR-BAR-POLAR"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3444,7 +3858,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-LOUNGE-TOP-SAIL"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3464,7 +3884,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-LOUNGE-SKY"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3484,7 +3910,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-LOUNGE-CAROUSEL"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3504,7 +3936,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-LOUNGE-ATTIC"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3524,7 +3962,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-POOL-POOL-ATMOSPHERE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3544,7 +3988,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-POOL-POOL-BAMBOO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3564,7 +4014,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-POOL-POOL-HORIZON"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3584,7 +4040,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-POOL-POOL-AQUAPARK"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3604,7 +4066,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-POOL-POOL-YC"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3624,7 +4092,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-SPA-AUREA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3644,7 +4118,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-SPORT-SPORT-SPORTPLEX"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3664,7 +4144,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-SPORT-SPORT-GYM"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3684,7 +4170,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-SPORT-SPORT-TRACK"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3704,7 +4196,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-SPORT-SPORT-BRIDGE"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3724,7 +4222,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-BROADWAY"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3744,7 +4248,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-CAROUSEL"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3764,7 +4274,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-CASINO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3784,7 +4300,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-XD-CINEMA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3804,7 +4326,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-F1-RACER"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3824,7 +4352,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-BOWLING"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3844,7 +4378,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-TV-STUDIO"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3864,7 +4404,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-DOREMI-LAB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3884,7 +4430,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-BABY-CLUB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3904,7 +4456,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-MINI-CLUB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3924,7 +4482,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-JUNIOR-CLUB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3944,7 +4508,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-YOUNG-CLUB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3964,7 +4534,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-ENT-ENT-TEEN-CLUB"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -3984,7 +4560,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PUB-PUB-GALLERIA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -4004,7 +4586,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PUB-PUB-INFINITY-ATRIUM"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -4024,7 +4612,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PUB-PUB-PLAZA"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -4044,7 +4638,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PUB-PUB-TOP19-SOLARIUM"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",
@@ -4064,7 +4664,13 @@
       "read_by": "deckplan_extraction_pipeline",
       "read_on": "2026-08-19",
       "method": "DIRECT",
+      "derivation": "LOCAL",
       "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-PUB-PUB-HORIZON-AMPHI"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
       "evidence_condition": "SUPPORTED",
       "human_review_state": "DRAFT",
       "publish_status": "PUBLISH_BLOCKED",

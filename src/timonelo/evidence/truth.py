@@ -20,7 +20,8 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence import authority
-from timonelo.evidence.editor import Statement, StatementEditor
+from timonelo.evidence.editor import StatementEditor
+from timonelo.evidence.models import Statement
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
