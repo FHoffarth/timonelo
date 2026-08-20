@@ -511,8 +511,8 @@ def test_task_g2_legacy_record_missing_condition_loads_unknown(tmp_path):
     assert loaded.condition is EvidenceCondition.UNKNOWN
 
 
-def test_task_g10_conflict_winner_conflicted_cannot_auto_publish(tmp_path):
-    """G.10: Conflict winner with CONFLICTED/UNKNOWN condition cannot auto-publish."""
+def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
+    """G.10: Recording a conflict decision leaves all lifecycle axes untouched."""
     pdf_a = _write_pdf(str(tmp_path / "a.pdf"), "A")
     pdf_b = _write_pdf(str(tmp_path / "b.pdf"), "B")
     reg = ArtifactRegistry(str(tmp_path / "artifacts"))
@@ -537,17 +537,17 @@ def test_task_g10_conflict_winner_conflicted_cannot_auto_publish(tmp_path):
     # Resolve conflict selecting s2 as winner (s2 condition is UNKNOWN)
     editor.resolve_conflict(conflicts[0].conflict_id, s2.statement_id, "reviewer.2", "2026-08-18", "source B preferred")
 
-    # Winner reached APPROVED, but because condition was UNKNOWN, it CANNOT auto-publish
+    # The winner remains DRAFT/UNKNOWN/BLOCKED until explicit lifecycle actions occur.
     winner = editor.get(s2.statement_id)
-    assert winner.state is HumanReviewState.APPROVED
+    assert winner.state is HumanReviewState.DRAFT
     assert winner.publishing is PublishStatus.PUBLISH_BLOCKED
     assert winner.condition is EvidenceCondition.UNKNOWN
 
-    # Loser reached SUPERSEDED and CONFLICTED
+    # The loser remains exactly as it was before the resolution record.
     loser = editor.get(s1.statement_id)
-    assert loser.state is HumanReviewState.SUPERSEDED
-    assert loser.condition is EvidenceCondition.CONFLICTED
-    assert loser.publishing is PublishStatus.PUBLISH_BLOCKED
+    assert loser.state is HumanReviewState.APPROVED
+    assert loser.condition is EvidenceCondition.SUPPORTED
+    assert loser.publishing is PublishStatus.PUBLISH_ALLOWED
 
 
 def test_task_g11_normalizer_missing_trust_level_defaults_to_unknown():

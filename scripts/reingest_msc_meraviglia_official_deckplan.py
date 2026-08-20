@@ -24,10 +24,13 @@ from typing import Any, Dict, List
 
 from timonelo.evidence.artifacts import sha256_of_file
 from timonelo.evidence.conflicts import ConflictLog
+from timonelo.evidence.corrections import (
+    CorrectionKind,
+    HistoricalCorrectionLog,
+)
 from timonelo.evidence.editor import StatementEditor
 from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.gatekeeper import (
-    ConflictGateResult,
     EvidenceGatekeeper,
     GeometryProvenanceRecord,
     SourceArtifactRecord,
@@ -75,7 +78,7 @@ def run_ingestion() -> Dict[str, Any]:
 
     temp_engine_dir = tempfile.mkdtemp(prefix="timonelo_meraviglia_engine_")
 
-    # 2. Canonical ArtifactRegistry, ReviewLog, ConflictLog, and StatementEditor (TASK A, B)
+    # 2. Canonical registries, logs, and StatementEditor (TASK A, B)
     registry = ArtifactRegistry(os.path.join(temp_engine_dir, "registry"))
     registered_artifact = registry.register(
         path=ARTIFACT_FULL_PATH,
@@ -88,6 +91,9 @@ def run_ingestion() -> Dict[str, Any]:
 
     review_log = ReviewLog(os.path.join(temp_engine_dir, "reviews.json"))
     conflict_log = ConflictLog(os.path.join(temp_engine_dir, "conflicts.json"))
+    correction_log = HistoricalCorrectionLog(
+        os.path.join(temp_engine_dir, "historical_corrections.json")
+    )
     editor = StatementEditor(
         path=os.path.join(temp_engine_dir, "statements.json"),
         registry=registry,
@@ -97,6 +103,26 @@ def run_ingestion() -> Dict[str, Any]:
 
     events: List[EvidenceEvent] = []
     statements: List[Statement] = []
+
+    def record_observation(
+        event_id: str,
+        entity_id: str,
+        question_id: str,
+        value: Any,
+        page: int,
+    ) -> EvidenceEvent:
+        event = EvidenceEvent(
+            event_id=event_id,
+            artifact_sha256=registered_artifact.sha256,
+            locator=f"page:{page}",
+            entity_id=entity_id,
+            question_id=question_id,
+            observed_value=value,
+            observed_by="deckplan_extraction_pipeline",
+            observed_on="2026-08-19",
+        )
+        events.append(event)
+        return event
 
     def record_fact(
         event_id: str,
@@ -109,17 +135,13 @@ def run_ingestion() -> Dict[str, Any]:
         locator = f"page:{page}"
 
         # 1. EvidenceEvent captures the observation before its statement cites it.
-        event = EvidenceEvent(
+        event = record_observation(
             event_id=event_id,
-            artifact_sha256=registered_artifact.sha256,
-            locator=locator,
             entity_id=entity_id,
             question_id=question_id,
-            observed_value=value,
-            observed_by="deckplan_extraction_pipeline",
-            observed_on="2026-08-19",
+            value=value,
+            page=page,
         )
-        events.append(event)
 
         # 2. Author the canonical statement with explicit event identity.
         stmt = editor.create(
@@ -665,23 +687,55 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(KNOWLEDGE_DIR, "technical.json"), "w", encoding="utf-8") as f:
         json.dump(technical_doc, f, indent=2, ensure_ascii=False)
 
-    # --- Conflict Detection & Audit ---
-    conflicts_found = 6
-    unresolved_conflicts = 0
-    conflict_gate = ConflictGateResult(
-        executed=True,
-        checked_entities=len(statements),
-        conflicts_found=conflicts_found,
-        unresolved_conflicts=unresolved_conflicts,
-        conflicts_log=[
-            {"fact": "total_cabins", "old": 2244, "new": 2214, "action": "SUPERSEDED_BY_OFFICIAL_DECKPLAN"},
-            {"fact": "deck_4_name", "old": "Corallo", "new": "Kos", "action": "SUPERSEDED_BY_OFFICIAL_DECKPLAN"},
-            {"fact": "deck_13_name", "old": "Kilimanjaro", "new": "Kilimangiaro", "action": "CONFIRMED_ITALIAN_NOTATION"},
-            {"fact": "hola_concept", "old": "HOLA! Tapas Bar", "new": "Hola! Tacos & Cantina", "action": "SUPERSEDED_ACTIVE_CONCEPT"},
-            {"fact": "ocean_cay_deck", "old": 7, "new": 6, "action": "CORRECTED_TO_DECK_6"},
-            {"fact": "top_sail_lounge_deck", "old": 15, "new": 16, "action": "CORRECTED_TO_DECK_16"},
-        ]
+    # --- Historical Correction Audit ---
+    # These are prior representations, not concurrently applicable Statements.
+    # No synthetic incumbent Statement or live Conflict is created for comparison.
+    statements_by_question = {statement.question_id: statement for statement in statements}
+    record_observation(
+        event_id="EVT-MER-REST-OCEAN-CAY-DECK",
+        entity_id="msc-meraviglia:venue:REST-OCEAN-CAY",
+        question_id="Q-HIST-OCEAN-CAY-DECK",
+        value=6,
+        page=3,
     )
+    record_observation(
+        event_id="EVT-MER-LOUNGE-TOP-SAIL-DECK",
+        entity_id="msc-meraviglia:venue:LOUNGE-TOP-SAIL",
+        question_id="Q-HIST-TOP-SAIL-DECK",
+        value=16,
+        page=5,
+    )
+    correction_specs = [
+        ("msc-meraviglia", "Q-SHIP-CABIN-COUNT", "EVT-MER-TOTAL-CABINS",
+         "Prior unsupported inventory value 2244 replaced by the official 11.2025 deck plan."),
+        ("msc-meraviglia:deck:4", "Q-DECK-4-NAME", "EVT-MER-DECK-4-NAME",
+         "Prior deck name Corallo replaced by the official 11.2025 deck-plan name Kos."),
+        ("msc-meraviglia:deck:13", "Q-DECK-13-NAME", "EVT-MER-DECK-13-NAME",
+         "Prior spelling Kilimanjaro corrected to the source spelling Kilimangiaro."),
+        ("msc-meraviglia:venue:REST-HOLA-TACOS", "Q-VENUE-REST-HOLA-TACOS",
+         "EVT-MER-REST-REST-HOLA-TACOS",
+         "Prior venue concept name replaced by the active concept shown in the official deck plan."),
+        ("msc-meraviglia:venue:REST-OCEAN-CAY", "Q-HIST-OCEAN-CAY-DECK",
+         "EVT-MER-REST-OCEAN-CAY-DECK",
+         "Prior Deck 7 representation corrected to the Deck 6 location shown in the official deck plan."),
+        ("msc-meraviglia:venue:LOUNGE-TOP-SAIL", "Q-HIST-TOP-SAIL-DECK",
+         "EVT-MER-LOUNGE-TOP-SAIL-DECK",
+         "Prior Deck 15 representation corrected to the Deck 16 location shown in the official deck plan."),
+    ]
+    for entity_id, question_id, event_id, basis in correction_specs:
+        replacement = statements_by_question.get(question_id)
+        correction_log.record(
+            entity_id=entity_id,
+            question_id=question_id,
+            correction_kind=CorrectionKind.VALUE_CORRECTED,
+            basis=basis,
+            evidence_event_ids=(event_id,),
+            replacement_statement_id=(replacement.statement_id if replacement else None),
+            recorded_at="2026-08-19",
+            recorded_by="deckplan_evidence_verifier",
+            known_statement_ids={statement.statement_id for statement in statements},
+            known_evidence_event_ids={event.event_id for event in events},
+        )
 
     # --- Extraction Manifest (TASK O: separate orthogonal axes without collapsing) ---
     manifest_data = {
@@ -714,6 +768,7 @@ def run_ingestion() -> Dict[str, Any]:
             "publish_allowed": sum(1 for s in statements if s.publish_status == "PUBLISH_ALLOWED"),
         },
         "audit_log": [e.to_dict() for e in review_log.all()],
+        "historical_corrections": [record.to_dict() for record in correction_log.all()],
         "events": [e.to_dict() for e in events],
         "statements": [s.to_dict() for s in statements]
     }
@@ -728,7 +783,7 @@ def run_ingestion() -> Dict[str, Any]:
         gk.register_event(evt)
     for statement in statements:
         gk.add_statement(statement)
-    gk.set_conflict_result(conflict_gate)
+    gk.use_conflict_log(conflict_log)
 
     # Living Deck geometry remains synthetic (TASK Q)
     for d_num in range(4, 20):
@@ -791,7 +846,7 @@ def run_ingestion() -> Dict[str, Any]:
     with open(os.path.join(REPORTS_DIR, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
         f.write(report_md)
 
-    conflicts_md = f"""# MSC Meraviglia 2025 Deckplan Conflict Report
+    conflicts_md = f"""# MSC Meraviglia 2025 Deckplan Historical Correction Report
 
 **Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`
 **Edition**: `11.2025 DEU` (6 Pages)
@@ -800,25 +855,25 @@ def run_ingestion() -> Dict[str, Any]:
 
 ---
 
-## Conflict & Discrepancy Matrix
+## Historical Correction Matrix
 
 | FACT | OLD VALUE | PDF VALUE (Edition 11/2025) | NEW LOCATOR | STATUS | ACTION |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Total Cabins** | `2244 cabins` | `2214 KABINEN` | `page:2` | `CONTRADICTED` | `SUPERSEDED` by official deck plan |
+| **Total Cabins** | `2244 cabins` | `2214 KABINEN` | `page:2` | `HISTORICAL_DISCREPANCY` | Correction recorded from official deck plan |
 | **Max Guests** | `5714 guests` | `5.714 GÄSTE` | `page:2` | `CONFIRMED` | Grounded with direct citation |
-| **Deck 4 Name** | `Corallo` | `KOS` | `page:3` | `CONTRADICTED` | `SUPERSEDED` (Deck 4 is official named KOS) |
+| **Deck 4 Name** | `Corallo` | `KOS` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded from official deck plan |
 | **Deck 13 Name** | `Kilimanjaro` | `KILIMANGIARO` | `page:4` | `CONFIRMED / NOTATION` | Italian spelling confirmed in German edition |
-| **Deck 6 Dining** | `HOLA! Tapas Bar` | `Hola! Tacos & Cantina` | `page:3` | `CONTRADICTED` | `SUPERSEDED` by active concept |
-| **Deck 6 Dining** | `Ocean Cay (Deck 7)` | `Ocean Cay (Deck 6)` | `page:3` | `CONTRADICTED` | `SUPERSEDED` to Deck 6 location |
-| **Top Sail Lounge** | `Deck 15` | `Deck 16` | `page:5` | `CONTRADICTED` | `SUPERSEDED` to Deck 16 layout |
+| **Deck 6 Dining** | `HOLA! Tapas Bar` | `Hola! Tacos & Cantina` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded for active concept |
+| **Deck 6 Dining** | `Ocean Cay (Deck 7)` | `Ocean Cay (Deck 6)` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded for Deck 6 location |
+| **Top Sail Lounge** | `Deck 15` | `Deck 16` | `page:5` | `HISTORICAL_DISCREPANCY` | Correction recorded for Deck 16 location |
 | **Deck 17 Missing Reason** | "Skipped due to Italian superstition" | `Deck 17 not present in passenger deck plan` | `page:5` | `OBSERVATION` | Fact preserved; causal folklore marked unsupported |
 
 ---
 
 ## Epistemic Summary
 
-- **Conflicts Resolved**: 6
-- **Unresolved Conflicts**: 0
+- **Historical Corrections Recorded**: {len(correction_log)}
+- **Live Conflicts Detected**: {len(conflict_log)}
 - **SUPPORTED Statements with Evidence Closure**: {len(statements)}
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
 """
@@ -837,6 +892,9 @@ def run_ingestion() -> Dict[str, Any]:
         "publishable_count": sum(1 for s in statements if s.publish_status == "PUBLISH_ALLOWED"),
         "gate_status": gate_result.status.value,
         "gate_reasons": gate_result.reasons,
+        "historical_corrections_count": len(correction_log),
+        "live_conflicts_count": len(conflict_log),
+        "conflict_detection_executed": gate_result.conflict_gate.executed,
     }
 
 

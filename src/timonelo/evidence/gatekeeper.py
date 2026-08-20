@@ -126,6 +126,19 @@ class ConflictGateResult:
     unresolved_conflicts: int = 0
     conflicts_log: List[Dict[str, Any]] = field(default_factory=list)
 
+    @classmethod
+    def from_conflict_log(
+        cls, conflict_log: "ConflictLog"
+    ) -> "ConflictGateResult":
+        conflicts = conflict_log.all()
+        return cls(
+            executed=conflict_log.detection_executed,
+            checked_entities=conflict_log.detection_run_count,
+            conflicts_found=len(conflicts),
+            unresolved_conflicts=len(conflict_log.open_conflicts()),
+            conflicts_log=[conflict.to_dict() for conflict in conflicts],
+        )
+
     @property
     def status_summary(self) -> str:
         if not self.executed:
@@ -203,7 +216,12 @@ class EvidenceGatekeeper:
         self._geometries.append(geometry)
 
     def set_conflict_result(self, result: ConflictGateResult) -> None:
+        """Legacy non-canonical injection seam; production paths use ConflictLog."""
         self._conflict_result = result
+
+    def use_conflict_log(self, conflict_log: "ConflictLog") -> None:
+        """Derive detector status from canonical log provenance."""
+        self._conflict_result = ConflictGateResult.from_conflict_log(conflict_log)
 
     def evaluate_publish_gate(self) -> GateResult:
         reasons: List[str] = []

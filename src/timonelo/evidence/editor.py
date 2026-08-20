@@ -25,9 +25,14 @@ from typing import Any, Dict, List, Optional, Tuple
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.registry import ArtifactRegistry
-from timonelo.evidence.conflicts import ConflictError, ConflictLog, values_disagree
+from timonelo.evidence.conflicts import (
+    ConflictError,
+    ConflictLog,
+    validity_overlaps,
+    values_disagree,
+)
 from timonelo.evidence.models import Statement
-from timonelo.evidence.review import ReviewError, ReviewLog
+from timonelo.evidence.review import ReviewLog
 from timonelo.ontology.models import (
     EvidenceCondition,
     HumanReviewState,
@@ -147,16 +152,26 @@ class StatementEditor:
         self._by_id[statement.statement_id] = statement
         self._flush()
 
-        # Conflict detection. Runs against statements a passenger could already
-        # be seeing; a disagreement with a DRAFT is not yet a contradiction in
-        # the published record.
+        # Conflict existence is independent from evidence, review, and publish axes.
         if self.conflict_log is not None:
+            self.conflict_log._record_detection_run(
+                candidate_statement_id=statement.statement_id,
+                checked_statement_count=len(self._by_id) - 1,
+                executed_on=read_on,
+            )
             for existing in self._by_id.values():
                 if existing.statement_id == statement.statement_id:
                     continue
                 if existing.entity_id != entity_id or existing.question_id != question_id:
                     continue
-                if existing.publishing is not PublishStatus.PUBLISH_ALLOWED:
+                if existing.statement_type != statement_type:
+                    continue
+                if not validity_overlaps(
+                    existing.valid_from,
+                    existing.valid_until,
+                    statement.valid_from,
+                    statement.valid_until,
+                ):
                     continue
                 if values_disagree(existing.value, value):
                     self.conflict_log.record(
@@ -286,54 +301,12 @@ class StatementEditor:
         occurred_on: str,
         note: str,
     ):
-        """Resolve a conflict and move both statements to their end states.
-
-        The winner is carried to APPROVED, SUPPORTED, and PUBLISH_ALLOWED; the loser becomes
-        SUPERSEDED, CONFLICTED, and PUBLISH_BLOCKED. If neither reading survives, both are
-        REJECTED and BLOCKED.
-        """
+        """Record a conflict decision without changing any lifecycle axis."""
         if self.conflict_log is None:
             raise EditorError("No conflict log is attached to this editor.")
         conflict = self.conflict_log.get(conflict_id)
 
-        if winning_statement_id is None:
-            for sid in conflict.statement_ids():
-                self._force_state(sid, HumanReviewState.REJECTED, actor, occurred_on,
-                                  f"both readings rejected ({conflict_id})")
-                self.set_evidence_condition(sid, EvidenceCondition.CONFLICTED, actor, occurred_on,
-                                            f"both rejected in {conflict_id}")
-        else:
-            if winning_statement_id not in conflict.statement_ids():
-                raise ConflictError(f"{winning_statement_id} is not part of conflict {conflict_id}")
-            loser = next(s for s in conflict.statement_ids() if s != winning_statement_id)
-            winner = self.get(winning_statement_id)
-            if winner.state is HumanReviewState.DRAFT:
-                self.transition(winning_statement_id, HumanReviewState.UNDER_REVIEW,
-                                actor, occurred_on, f"conflict {conflict_id}")
-            if self.get(winning_statement_id).state is HumanReviewState.UNDER_REVIEW:
-                self.transition(winning_statement_id, HumanReviewState.APPROVED,
-                                actor, occurred_on, f"conflict {conflict_id}")
-
-            # Only attempt publish if evidence condition is already SUPPORTED (does not auto-grant SUPPORTED)
-            winner_curr = self.get(winning_statement_id)
-            if winner_curr.condition is EvidenceCondition.SUPPORTED and winner_curr.state is HumanReviewState.APPROVED:
-                self.publish(winning_statement_id, actor, occurred_on, f"resolves {conflict_id}")
-
-            # The loser always reaches a terminal state, whatever it was in.
-            if self.get(loser).state not in (HumanReviewState.SUPERSEDED,
-                                             HumanReviewState.REJECTED):
-                self._force_state(loser, HumanReviewState.SUPERSEDED, actor, occurred_on,
-                                  f"superseded by {winning_statement_id} ({conflict_id})")
-                self.set_evidence_condition(loser, EvidenceCondition.CONFLICTED, actor, occurred_on,
-                                            f"superseded in {conflict_id}")
+        if winning_statement_id is not None and winning_statement_id not in conflict.statement_ids():
+            raise ConflictError(f"{winning_statement_id} is not part of conflict {conflict_id}")
         return self.conflict_log.resolve(
             conflict_id, winning_statement_id, actor, occurred_on, note)
-
-    def _force_state(self, statement_id: str, to_state: HumanReviewState,
-                     actor: str, occurred_on: str, note: str) -> None:
-        current = self._by_id[statement_id]
-        self.review_log.transition(statement_id, current.state, to_state,
-                                   actor, occurred_on, note)
-        pub_status = PublishStatus.PUBLISH_BLOCKED if to_state in (HumanReviewState.REJECTED, HumanReviewState.SUPERSEDED) else current.publish_status
-        self._by_id[statement_id] = replace(current, human_review_state=to_state, publish_status=pub_status)
-        self._flush()

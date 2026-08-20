@@ -26,7 +26,6 @@ from timonelo.evidence.editor import Statement, StatementEditor
 from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.gatekeeper import (
     ArtifactVerificationStatus,
-    ConflictGateResult,
     EvidenceGatekeeper,
     GeometryProvenanceRecord,
     SourceArtifactRecord,
@@ -354,7 +353,7 @@ def test_meraviglia_24_central_authority_accepts_every_retained_source_claim(man
             check(stype, doc_class)
 
 
-def test_meraviglia_25_geometry_remains_synthetic_geometry():
+def test_meraviglia_25_geometry_remains_synthetic_geometry(tmp_path):
     """25. Spatial geometry remains SYNTHETIC_GEOMETRY."""
     gk = EvidenceGatekeeper()
     for d_num in range(4, 20):
@@ -367,7 +366,7 @@ def test_meraviglia_25_geometry_remains_synthetic_geometry():
                 geometry_provenance=GeometryProvenance.SYNTHETIC_GEOMETRY,
             )
         )
-    gk.set_conflict_result(ConflictGateResult(executed=True, conflicts_found=0, unresolved_conflicts=0))
+    gk.use_conflict_log(ConflictLog(str(tmp_path / "conflicts.json")))
     res = gk.evaluate_publish_gate()
     assert res.synthetic_geometry_count == 15
     assert res.direct_geometry_count == 0
@@ -404,3 +403,36 @@ def test_meraviglia_reingestion_is_idempotent():
     assert content1 == content2
     assert res1["events_count"] == res2["events_count"]
     assert res1["statements_count"] == res2["statements_count"]
+
+
+def test_meraviglia_historical_discrepancies_are_corrections_not_live_conflicts():
+    result = run_ingestion()
+    with open(os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json"), encoding="utf-8") as f:
+        current_manifest = json.load(f)
+
+    assert result["historical_corrections_count"] == 6
+    assert result["live_conflicts_count"] == 0
+    assert result["conflict_detection_executed"] is True
+    assert len(current_manifest["historical_corrections"]) == 6
+    assert all(
+        correction["references_validated"] is True
+        for correction in current_manifest["historical_corrections"]
+    )
+
+    events_by_id = {event["event_id"]: event for event in current_manifest["events"]}
+    corrections_by_question = {
+        correction["question_id"]: correction
+        for correction in current_manifest["historical_corrections"]
+    }
+    ocean_event = events_by_id[
+        corrections_by_question["Q-HIST-OCEAN-CAY-DECK"]["evidence_event_ids"][0]
+    ]
+    top_sail_event = events_by_id[
+        corrections_by_question["Q-HIST-TOP-SAIL-DECK"]["evidence_event_ids"][0]
+    ]
+    assert ocean_event["question_id"] == "Q-HIST-OCEAN-CAY-DECK"
+    assert ocean_event["observed_value"] == 6
+    assert ocean_event["locator"] == "page:3"
+    assert top_sail_event["question_id"] == "Q-HIST-TOP-SAIL-DECK"
+    assert top_sail_event["observed_value"] == 16
+    assert top_sail_event["locator"] == "page:5"
