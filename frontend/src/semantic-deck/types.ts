@@ -42,11 +42,13 @@ export type SpatialClassification =
 
 export type SpatialSide = "PORT" | "STARBOARD" | "CENTER";
 
+// P0-H1: provenance fields are nullable — absent source data fails closed
+// rather than being substituted with a fabricated value.
 export interface EvidenceReference {
-  artifact_id: string;
-  source_title: string;
+  artifact_id: string | null;
+  source_title: string | null;
   digest: string | null;
-  locator: string;
+  locator: string | null;
   page?: number;
 }
 
@@ -83,9 +85,10 @@ export interface SemanticEntity {
   has_balcony: boolean;
   
   // Epistemic Ground Truth
+  // P0-H1: review_state / confidence are null when the source omits them.
   epistemic_state: EpistemicState;
-  review_state: string;
-  confidence: number;
+  review_state: string | null;
+  confidence: number | null;
   statement_count: number;
   statements: string[];
   artifact_count: number;

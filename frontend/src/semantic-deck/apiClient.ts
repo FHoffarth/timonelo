@@ -83,17 +83,20 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
         accessible: Boolean(o.accessible),
         connecting: Boolean(o.connecting),
         has_balcony: Boolean(o.balcony),
+        // P0-H1 FAIL-CLOSED: trust/provenance is passed through from the raw
+        // source only. Absent values stay null (or 0) — never defaulted to a
+        // verified / high-confidence value, and never synthesized here.
         epistemic_state: epistemic,
-        review_state: o.review_state || "PUBLISHED_VERIFIED",
-        confidence: typeof o.confidence === "number" ? o.confidence : 1.0,
-        statement_count: (o.statements || []).length || 1,
-        statements: o.statements || [`STM-${raw.vessel_id}-${o.id}`],
-        artifact_count: (o.evidence_links || []).length || 1,
+        review_state: o.review_state ?? null,
+        confidence: typeof o.confidence === "number" ? o.confidence : null,
+        statement_count: (o.statements || []).length,
+        statements: o.statements || [],
+        artifact_count: (o.evidence_links || []).length,
         evidence_links: (o.evidence_links || []).map((ev: any) => ({
-          artifact_id: ev.artifact_id || "MSC-BEL-ART-001",
-          source_title: "Official Builder Spatial Register Stand 11.2025",
-          digest: ev.digest || "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
-          locator: ev.locator || `Space Locator [${o.id}]`,
+          artifact_id: ev.artifact_id ?? null,
+          source_title: ev.source_title ?? null,
+          digest: ev.digest ?? null,
+          locator: ev.locator ?? null,
           page: ev.page,
         })),
         relations: {
@@ -102,8 +105,8 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
           adjacent_across: o.known_relations?.across_corridor || null,
           adjacent_overhead: o.known_relations?.overhead || null,
           adjacent_underfoot: o.known_relations?.underfoot || null,
-          connected_vertical_core: o.known_relations?.nearest_elevator || "Core-Midship",
-          nearest_assembly_station: o.known_relations?.nearest_emergency_station || "Assembly-B",
+          connected_vertical_core: o.known_relations?.nearest_elevator || null,
+          nearest_assembly_station: o.known_relations?.nearest_emergency_station || null,
         },
         unknown_fields: unkFields,
       };
@@ -237,7 +240,16 @@ export class TimoneloSpatialApiClient {
 
     const botTurtle = `@prefix bot: <https://w3id.org/bot#> .\n@prefix tim: <https://timonelo.io/spatial/ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<${entity.iri}>\n    a bot:Space, tim:Stateroom ;\n    rdfs:label "${entity.label}" ;\n    bot:hasBuildingStorey <https://timonelo.io/spatial/${this.activeGraph.vessel_id}/levels/${entity.level}> ;\n    tim:side "${entity.side}" ;\n    tim:zone "${entity.zone}" ;\n    tim:epistemicState "${entity.epistemic_state}" .\n`;
 
-    const provTurtle = `@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix tim: <https://timonelo.io/ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<${entity.iri}>\n    a prov:Entity ;\n    prov:wasDerivedFrom <urn:artifact:${entity.evidence_links[0]?.artifact_id || "MSC-BEL-ART-001"}> ;\n    prov:wasGeneratedBy <urn:activity:TimoneloTruthEngineExtraction> ;\n    prov:qualifiedAttribution [\n        a prov:Attribution ;\n        prov:agent <urn:agent:TimoneloScientificExtractor> ;\n        tim:confidence "${entity.confidence}"^^xsd:decimal\n    ] .\n`;
+    // P0-H1: emit provenance triples only for values the entity actually has.
+    // A missing artifact or confidence is omitted, never back-filled.
+    const provArtifactId = entity.evidence_links[0]?.artifact_id ?? null;
+    const derivedFromLine = provArtifactId
+      ? `    prov:wasDerivedFrom <urn:artifact:${provArtifactId}> ;\n`
+      : "";
+    const confidenceLine = typeof entity.confidence === "number"
+      ? ` ;\n        tim:confidence "${entity.confidence}"^^xsd:decimal`
+      : "";
+    const provTurtle = `@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix tim: <https://timonelo.io/ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<${entity.iri}>\n    a prov:Entity ;\n${derivedFromLine}    prov:wasGeneratedBy <urn:activity:TimoneloTruthEngineExtraction> ;\n    prov:qualifiedAttribution [\n        a prov:Attribution ;\n        prov:agent <urn:agent:TimoneloScientificExtractor>${confidenceLine}\n    ] .\n`;
 
     const indoorGml = `<?xml version="1.0" encoding="UTF-8"?>\n<IndoorFeatures xmlns="http://www.opengis.net/indoorgml/1.0/core"\n                xmlns:gml="http://www.opengis.net/gml/3.2"\n                xmlns:xlink="http://www.w3.org/1999/xlink">\n  <primalSpaceFeatures>\n    <CellSpace gml:id="CS_${entity.id}">\n      <gml:name>${entity.label}</gml:name>\n      <duality xlink:href="#State_${entity.id}"/>\n      ${fore ? `<connects xlink:href="#CS_${fore}"/>\n` : ""}\n      ${aft ? `<connects xlink:href="#CS_${aft}"/>\n` : ""}\n    </CellSpace>\n  </primalSpaceFeatures>\n</IndoorFeatures>`;
 
