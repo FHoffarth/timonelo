@@ -1,7 +1,16 @@
 # Timonelo
 
-> **Cruise Intelligence Platform**
-> Explainable, evidence-based answers about ships, cabins, routes and ports.
+> **Evidence-first cruise intelligence.**
+
+Explainable knowledge about ships, cabins, routes and ports —
+with provenance, uncertainty and geometry kept visible.
+
+**Trust is part of the product. UNKNOWN is a valid answer.**
+
+`Evidence → Knowledge → Geometry → Graph → Intelligence → Explainability → User`
+
+Timonelo is an experimental Cruise Intelligence Platform built to answer
+not only *what* is true, but *why the system believes it is true*.
 
 ---
 
