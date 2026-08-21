@@ -1,12 +1,13 @@
 import React, { useMemo } from "react";
 import { LegacyEpistemicBadge } from "../ui/EpistemicBadge";
 import { CANONICAL_CABINS } from "../../data/canonicalPlatformData";
+import { isKnownCabin, resolveCabinMeta } from "../../data/cabinResolution";
 import { knowledgeRepository } from "../../knowledge";
 import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
 import { SemanticEntity } from "../../semantic-deck/types";
 import CabinIntelligenceCard from "../../intelligence/CabinIntelligenceCard";
 import ExplainabilityCard from "../../explainability/ExplainabilityCard";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin, HelpCircle } from "lucide-react";
 
 interface CabinDeepDivePageProps {
   cabinId?: string;
@@ -17,7 +18,25 @@ export default function CabinDeepDivePage({
   cabinId = "14122",
   onBack,
 }: CabinDeepDivePageProps) {
-  const fallbackCabin = CANONICAL_CABINS[cabinId] || CANONICAL_CABINS["14122"];
+  // Spatial Client Entity Lookup (constructed first so resolution can consult it)
+  const apiClient = useMemo(() => new TimoneloSpatialApiClient("msc-bellissima"), []);
+
+  // P0-D FAIL-CLOSED: only treat this cabin as known if it is backed by real
+  // data — a canonical record OR a real spatial-graph entity. Unknown IDs must
+  // never be substituted with cabin 14122, nor have facts fabricated for them.
+  const canonicalCabin = CANONICAL_CABINS[cabinId];
+  const knownEntity = apiClient.getEntity(cabinId);
+  const cabinIsKnown = isKnownCabin(cabinId, CANONICAL_CABINS, (id) => apiClient.getEntity(id));
+
+  // Metadata resolution (P0-D follow-up): a graph-only cabin (present in the
+  // spatial graph but absent from CANONICAL_CABINS) renders ONLY its own
+  // available data. It must NOT borrow cabin 14122's category / sqm / hero
+  // image / deck name / PRM flag. Fields the graph does not carry stay null and
+  // render as "Unavailable" below (null, never another cabin's value). The
+  // trailing 14122 default is an unreachable placeholder for the unknown
+  // early-return path only.
+  const fallbackCabin: any =
+    resolveCabinMeta(cabinId, canonicalCabin, knownEntity) || CANONICAL_CABINS["14122"];
 
   // Query knowledge layer for Bellissima stateroom
   const isBellissima = fallbackCabin.shipSlug === "msc-bellissima" || cabinId === "14122";
@@ -29,8 +48,6 @@ export default function CabinDeepDivePage({
   const deckName = bellissimaDeck ? bellissimaDeck.name : fallbackCabin.deckName;
   const standardAmenities = bellissimaCabins?.summary?.standard_amenities || [];
 
-  // Spatial Client Entity Lookup
-  const apiClient = useMemo(() => new TimoneloSpatialApiClient("msc-bellissima"), []);
   const stateroomEntity: SemanticEntity = useMemo(() => {
     const found = apiClient.getEntity(cabinId);
     if (found) return found;
@@ -68,6 +85,52 @@ export default function CabinDeepDivePage({
     };
   }, [cabinId, apiClient, fallbackCabin, deckName]);
 
+  // P0-D FAIL-CLOSED: unknown cabin IDs render a calm "unavailable" state. We do
+  // NOT substitute another cabin, invoke cabin intelligence / explainability on
+  // fabricated data, or emit any DIRECT / PUBLISHED_VERIFIED / confidence /
+  // adjacency / overhead / underfoot claims.
+  if (!cabinIsKnown) {
+    return (
+      <div className="flex-1 flex flex-col bg-[#FBF8F3] select-none pb-20">
+        <div className="max-w-7xl mx-auto w-full px-6 pt-10 pb-6 space-y-3">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-1.5 text-xs text-[#5B6570] hover:text-[#0C1B2A] transition-colors cursor-pointer"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Back</span>
+          </button>
+        </div>
+
+        <div className="max-w-2xl mx-auto w-full px-6 pt-8">
+          <div className="p-8 bg-white rounded-3xl border border-[#0C1B2A]/10 shadow-card space-y-4 text-center">
+            <div className="mx-auto w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
+              <HelpCircle className="w-6 h-6 text-slate-400" />
+            </div>
+            <div className="flex items-center justify-center">
+              <LegacyEpistemicBadge status="UNKNOWN" />
+            </div>
+            <h1 className="font-display text-2xl sm:text-3xl font-bold text-[#0C1B2A] tracking-tight">
+              Cabin {cabinId} is not in our verified records
+            </h1>
+            <p className="text-sm text-[#5B6570] leading-relaxed">
+              We don&apos;t hold source-backed spatial data for this cabin, so we
+              can&apos;t show a verified briefing for it. No location, adjacency,
+              or evidence claims are available.
+            </p>
+            <button
+              onClick={onBack}
+              className="inline-flex items-center gap-1.5 mt-2 px-4 py-2 rounded-xl bg-[#0C1B2A] text-white text-xs font-semibold hover:bg-[#0C1B2A]/90 transition-colors cursor-pointer"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Return to ship</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex-1 flex flex-col bg-[#FBF8F3] select-none pb-20">
       {/* 1. Breadcrumbs & Title */}
@@ -92,11 +155,17 @@ export default function CabinDeepDivePage({
       {/* 2. Hero Photography with Floating Glass Pill */}
       <div className="max-w-7xl mx-auto w-full px-6 pb-10">
         <div className="relative w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden shadow-lg">
-          <img
-            src={fallbackCabin.heroImageUrl}
-            alt={`Cabin ${fallbackCabin.id}`}
-            className="w-full h-full object-cover"
-          />
+          {fallbackCabin.heroImageUrl ? (
+            <img
+              src={fallbackCabin.heroImageUrl}
+              alt={`Cabin ${fallbackCabin.id}`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-slate-100 flex items-center justify-center text-xs font-mono text-slate-400 uppercase tracking-wider">
+              No cabin photography available
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0C1B2A]/50 to-transparent" />
 
           {/* Floating Pill Metadata */}
@@ -191,7 +260,7 @@ export default function CabinDeepDivePage({
                 <LegacyEpistemicBadge status="KNOWN" />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {fallbackCabin.category} ({fallbackCabin.tier})
+                {fallbackCabin.category}{fallbackCabin.tier ? ` (${fallbackCabin.tier})` : ""}
               </div>
             </div>
 
@@ -199,10 +268,12 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Size</span>
-                <LegacyEpistemicBadge status="KNOWN" />
+                <LegacyEpistemicBadge status={fallbackCabin.sqmInterior != null ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                Approx. {fallbackCabin.sqmInterior}m² {fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}
+                {fallbackCabin.sqmInterior != null
+                  ? `Approx. ${fallbackCabin.sqmInterior}m² ${fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}`
+                  : "Unavailable"}
               </div>
             </div>
 
@@ -210,10 +281,10 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Bed Config</span>
-                <LegacyEpistemicBadge status="KNOWN" />
+                <LegacyEpistemicBadge status={fallbackCabin.bedConfig ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {fallbackCabin.bedConfig}
+                {fallbackCabin.bedConfig || "Unavailable"}
               </div>
             </div>
 
@@ -234,10 +305,10 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pt-1">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Originating Artifact</span>
-                <LegacyEpistemicBadge status="VERIFIED" />
+                <LegacyEpistemicBadge status={fallbackCabin.evidenceArtifactId ? "VERIFIED" : "UNKNOWN"} />
               </div>
               <div className="font-mono font-bold text-[#C58A46] text-xs">
-                {fallbackCabin.evidenceArtifactId || "MSC_BELLISSIMA_DECK_PLANS_11.2025_DEU"}
+                {fallbackCabin.evidenceArtifactId || "Unavailable"}
               </div>
             </div>
           </div>
