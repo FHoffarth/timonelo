@@ -76,20 +76,22 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
             Cabin {intel.cabin_id} Decision Trace
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            {intel.deck_name} • Every score is mathematically broken down to its primary source evidence.
+            {intel.deck_name} • Every score is broken down step by step into the rules that produced it.
           </p>
         </div>
 
-        {/* Global Confidence Pill */}
-        <div className="flex items-center gap-2 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-white/10">
-          <ShieldCheck className="w-5 h-5 text-emerald-500" />
-          <div>
-            <div className="text-[10px] uppercase font-mono text-slate-400 font-bold">Audit Confidence</div>
-            <div className="font-mono text-sm font-bold text-slate-800 dark:text-white">
-              {(intel.global_epistemic_confidence * 100).toFixed(0)}% Evidence Grounded
+        {/* Global Confidence Pill — only when a backed confidence exists (P0-H2) */}
+        {intel.global_epistemic_confidence !== null && (
+          <div className="flex items-center gap-2 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-white/10">
+            <ShieldCheck className="w-5 h-5 text-emerald-500" />
+            <div>
+              <div className="text-[10px] uppercase font-mono text-slate-400 font-bold">Source Confidence</div>
+              <div className="font-mono text-sm font-bold text-slate-800 dark:text-white">
+                {(intel.global_epistemic_confidence * 100).toFixed(0)}%
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Category Tabs */}
@@ -207,10 +209,16 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
                     <span className="text-slate-400">Graph Edge:</span>
                     <span className="text-sky-400 font-bold">{step.provenance.graph_edge}</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-400">
-                    <span>Artifact: {step.provenance.source_title}</span>
-                    <span className="text-emerald-400 font-bold">PDF Page {step.provenance.page ?? 1}</span>
-                  </div>
+                  {(step.provenance.artifact_id || step.provenance.source_title || step.provenance.page != null) && (
+                    <div className="flex items-center justify-between text-slate-400">
+                      {(step.provenance.source_title || step.provenance.artifact_id) && (
+                        <span>Artifact: {step.provenance.source_title || step.provenance.artifact_id}</span>
+                      )}
+                      {step.provenance.page != null && (
+                        <span className="text-emerald-400 font-bold">PDF Page {step.provenance.page}</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -231,9 +239,12 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
               {currentScore.positive_evidence.map((ev, i) => (
                 <div key={i} className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900/40 text-xs space-y-1">
                   <div className="font-semibold text-slate-800 dark:text-slate-200">{ev.raw_finding}</div>
-                  <div className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400">
-                    {ev.source_title} • Page {ev.page ?? 1}
-                  </div>
+                  {(ev.source_title || ev.artifact_id) && (
+                    <div className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400">
+                      {ev.source_title || ev.artifact_id}
+                      {ev.page != null ? ` • Page ${ev.page}` : ""}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -250,9 +261,12 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
                 currentScore.negative_evidence.map((ev, i) => (
                   <div key={i} className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-rose-100 dark:border-rose-900/40 text-xs space-y-1">
                     <div className="font-semibold text-slate-800 dark:text-slate-200">{ev.raw_finding}</div>
-                    <div className="text-[10px] font-mono text-rose-600 dark:text-rose-400">
-                      {ev.source_title} • Page {ev.page ?? 1}
-                    </div>
+                    {(ev.source_title || ev.artifact_id) && (
+                      <div className="text-[10px] font-mono text-rose-600 dark:text-rose-400">
+                        {ev.source_title || ev.artifact_id}
+                        {ev.page != null ? ` • Page ${ev.page}` : ""}
+                      </div>
+                    )}
                   </div>
                 ))
               ) : (
@@ -267,23 +281,28 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
       {activeTab === "sources" && (
         <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 space-y-2">
           <div className="text-xs font-bold text-slate-800 dark:text-white mb-2">
-            Canonical Primary Sources & Verified Artifacts
+            Referenced Sources
           </div>
           <div className="space-y-2">
-            {currentScore.sources.map((src, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300">
-                <FileText className="w-4 h-4 text-[#C58A46]" />
-                <span>{src}</span>
+            {currentScore.sources.length > 0 ? (
+              currentScore.sources.map((src, i) => (
+                <div key={i} className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+                  <FileText className="w-4 h-4 text-[#C58A46]" />
+                  <span>{src}</span>
+                </div>
+              ))
+            ) : (
+              <div className="text-xs text-slate-400 italic">
+                No source document is linked to these rules.
               </div>
-            ))}
+            )}
           </div>
         </div>
       )}
 
       {/* Footer */}
       <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-slate-400 font-mono border-t border-slate-100 dark:border-white/5">
-        <span>Grounded in W3C Building Topology Ontology (BOT) & MSC Bellissima GA Blueprint</span>
-        <span className="text-emerald-500 font-bold">100% Explainable Provenance</span>
+        <span>Rule-based scoring · sources shown where linked</span>
       </div>
     </div>
   );

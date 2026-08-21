@@ -7,17 +7,19 @@
 
 export type EvidencePolarity = "POSITIVE" | "NEGATIVE" | "CONFLICTING" | "UNKNOWN";
 
+// P0-H2: provenance fields are nullable — unbacked values fail closed to null
+// rather than being synthesized.
 export interface EvidenceProvenance {
-  evidence_id: string;
-  source_title: string;
-  artifact_id: string;
+  evidence_id: string | null;
+  source_title: string | null;
+  artifact_id: string | null;
   page?: number;
-  locator?: string;
-  graph_edge?: string;
-  geometry_file?: string;
+  locator?: string | null;
+  graph_edge?: string | null;
+  geometry_file?: string | null;
   knowledge_entity_id?: string;
-  statement_id?: string;
-  confidence: number;
+  statement_id?: string | null;
+  confidence: number | null;
   status: "DIRECT" | "DERIVED" | "CONFLICT" | "UNKNOWN";
   raw_finding: string;
 }
@@ -62,7 +64,8 @@ export interface ExplainableScore {
   baseline_score: number;
   final_score: number;
   grade: "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION";
-  confidence: number;
+  // P0-H2: null when no triggered rule carried a backed confidence value.
+  confidence: number | null;
   steps: ReasonStep[];
   rules_triggered: TriggeredRule[];
   positive_evidence: EvidenceProvenance[];
@@ -79,6 +82,7 @@ export interface ExplainableCabinIntelligence {
   deck_name: string;
   scores: Record<string, ExplainableScore>;
   all_triggered_rules: TriggeredRule[];
-  global_epistemic_confidence: number;
+  // P0-H2: null when no rule carried a backed confidence value.
+  global_epistemic_confidence: number | null;
   evaluated_at: string;
 }

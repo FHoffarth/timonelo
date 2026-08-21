@@ -11,6 +11,22 @@ import { EvidenceResolver } from "./EvidenceResolver";
 import { ReasonTreeBuilder } from "./ReasonTree";
 import { SemanticEntity } from "../semantic-deck/types";
 
+/**
+ * P0-H2: mean of backed confidence values only.
+ * Nulls are excluded, never coerced to 0. Returns null when nothing is backed,
+ * so callers can render "unavailable" instead of a fabricated number. Never
+ * returns NaN.
+ */
+export function meanBackedConfidence(values: Array<number | null | undefined>): number | null {
+  const backed = [];
+  for (const v of values) {
+    if (typeof v === "number" && Number.isFinite(v)) backed.push(v);
+  }
+  if (backed.length === 0) return null;
+  const mean = backed.reduce((a, b) => a + b, 0) / backed.length;
+  return Number(mean.toFixed(2));
+}
+
 export class ExplainabilityEngine {
   public static explainCabin(entity: SemanticEntity, vesselId: string = "msc-bellissima"): ExplainableCabinIntelligence {
     const cid = entity.id;
@@ -141,9 +157,10 @@ export class ExplainabilityEngine {
       accessibility: accessExplainable,
     };
 
-    // Calculate global confidence
-    const allConfs = allTriggeredRules.map((r) => r.provenance.confidence);
-    const globalConfidence = allConfs.length > 0 ? allConfs.reduce((a, b) => a + b, 0) / allConfs.length : 0.95;
+    // Calculate global confidence over backed values only (P0-H2).
+    const globalConfidence = meanBackedConfidence(
+      allTriggeredRules.map((r) => r.provenance.confidence)
+    );
 
     return {
       cabin_id: cid,
@@ -152,7 +169,7 @@ export class ExplainabilityEngine {
       deck_name: entity.level_name || `Deck ${level}`,
       scores,
       all_triggered_rules: allTriggeredRules,
-      global_epistemic_confidence: Number(globalConfidence.toFixed(2)),
+      global_epistemic_confidence: globalConfidence,
       evaluated_at: "2026-08-18",
     };
   }

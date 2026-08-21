@@ -30,12 +30,14 @@ export class ReasonTreeBuilder {
       delta: baseline,
       running_total: runningTotal,
       rationale: "Theoretical starting baseline prior to empirical spatial adjustments.",
+      // P0-H2: the baseline is a scoring step, not evidence. It carries no
+      // artifact, statement, confidence, or verified status.
       provenance: {
-        evidence_id: "EV-BASELINE",
-        source_title: "Timonelo Maritime Baseline Model",
-        artifact_id: "TIMONELO-CORE-STANDARDS",
-        confidence: 1.0,
-        status: "DIRECT",
+        evidence_id: null,
+        source_title: null,
+        artifact_id: null,
+        confidence: null,
+        status: "UNKNOWN",
         raw_finding: "Initial neutral score value",
       },
     });
@@ -79,9 +81,9 @@ export class ReasonTreeBuilder {
     else if (finalScore >= 60) grade = "MODERATE";
     else grade = "ATTENTION";
 
-    // Mean confidence
-    const confs = triggeredRules.map((r) => r.provenance.confidence);
-    const meanConf = confs.length > 0 ? confs.reduce((a, b) => a + b, 0) / confs.length : 0.95;
+    // Mean confidence over backed values only (P0-H2): nulls are excluded,
+    // never coerced to 0, and an unbacked set yields null rather than NaN.
+    const meanConf = meanBackedConfidence(triggeredRules.map((r) => r.provenance.confidence));
 
     return {
       key,
@@ -89,7 +91,7 @@ export class ReasonTreeBuilder {
       baseline_score: baseline,
       final_score: finalScore,
       grade,
-      confidence: round(meanConf, 2),
+      confidence: meanConf,
       steps,
       rules_triggered: triggeredRules,
       positive_evidence: positiveEvidence,
@@ -101,6 +103,17 @@ export class ReasonTreeBuilder {
   }
 }
 
-function round(val: number, decimals: number): number {
-  return Number(Math.round(Number(val + "e" + decimals)) + "e-" + decimals);
+/**
+ * P0-H2: mean of backed confidence values only.
+ * Nulls/undefined and non-finite values are excluded rather than coerced to 0.
+ * Returns null when nothing is backed. Never returns NaN.
+ */
+function meanBackedConfidence(values: Array<number | null | undefined>): number | null {
+  const backed = [];
+  for (const v of values) {
+    if (typeof v === "number" && Number.isFinite(v)) backed.push(v);
+  }
+  if (backed.length === 0) return null;
+  const mean = backed.reduce((a, b) => a + b, 0) / backed.length;
+  return Number(mean.toFixed(2));
 }

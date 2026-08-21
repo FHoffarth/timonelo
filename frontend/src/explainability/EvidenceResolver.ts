@@ -1,100 +1,91 @@
 /**
  * explainability/EvidenceResolver.ts
- * 
- * Resolves any topological fact, relation, or spatial geometry coordinate
- * back to its primary ground truth artifact document, PDF page, and statement.
+ *
+ * Resolves a rule's provenance from the entity's canonical evidence only.
+ *
+ * P0-H2 FAIL-CLOSED: this resolver must never synthesize evidence, provenance,
+ * or trust. Every returned field is either a real value carried by the
+ * SemanticEntity (evidence_links / statements / epistemic_state / confidence)
+ * or null. No invented evidence or statement identifiers, no hardcoded DIRECT
+ * status, no hardcoded confidence, no unverified geometry filename, and no
+ * entity-specific physical claims.
  */
 
-import { EvidenceProvenance, RuleDefinition } from "./types";
-import { SemanticEntity } from "../semantic-deck/types";
+import type { EvidenceProvenance, RuleDefinition } from "./types";
+import type { SemanticEntity } from "../semantic-deck/types";
+
+// Keys in required_graph_relations that are entity attributes rather than
+// entries in entity.relations.
+const ENTITY_ATTRIBUTE_KEYS = new Set([
+  "level",
+  "zone",
+  "side",
+  "accessible",
+  "has_balcony",
+  "connecting",
+]);
+
+/**
+ * Resolve one required key to a real value on the entity, or null.
+ * Never invents a fallback.
+ */
+function resolveRequiredKey(entity: SemanticEntity, key: string): string | null {
+  if (ENTITY_ATTRIBUTE_KEYS.has(key)) {
+    const val = (entity as unknown as Record<string, unknown>)[key];
+    if (val === undefined || val === null || val === "") return null;
+    return String(val);
+  }
+  const rel = (entity.relations || {})[key];
+  if (rel === undefined || rel === null || rel === "") return null;
+  return String(rel);
+}
 
 export class EvidenceResolver {
   public static resolveRuleEvidence(
     rule: RuleDefinition,
     entity: SemanticEntity,
-    vesselId: string = "msc-bellissima"
+    _vesselId: string = "msc-bellissima"
   ): EvidenceProvenance {
     const cid = entity.id;
-    const level = entity.level;
-    const relations = entity.relations || {};
 
-    let graphEdge = "";
-    let geometryFile = `deck${level < 10 ? "0" + level : level}.geometry.json`;
-    let rawFinding = rule.description;
-    let status: "DIRECT" | "DERIVED" | "CONFLICT" | "UNKNOWN" = "DIRECT";
-    let confidence = 0.95;
+    // Canonical evidence for this entity. Absent -> everything fails closed.
+    const link = (entity.evidence_links || [])[0];
 
-    // Resolve specific graph edges based on rule ID
-    switch (rule.id) {
-      case "RULE-QUIET-004":
-        graphEdge = `ABOVE(Cabin_${cid}, ${relations.adjacent_overhead || "Marketplace_Buffet"})`;
-        geometryFile = "deck15.geometry.json";
-        rawFinding = `Marketplace Buffet on Deck 15 is directly positioned above Deck 14 Cabin ${cid}`;
-        confidence = 0.98;
-        break;
-
-      case "RULE-QUIET-001":
-        graphEdge = `SANDWICHED_BETWEEN(Cabin_${cid}, Deck_${level + 1}_Staterooms, Deck_${level - 1}_Staterooms)`;
-        rawFinding = `Pure residential buffers above (Deck ${level + 1}) and below (Deck ${level - 1})`;
-        confidence = 0.96;
-        break;
-
-      case "RULE-QUIET-002":
-        graphEdge = `DISJOINT(Cabin_${cid}, Entertainment_Venues)`;
-        rawFinding = `No public entertainment or theatre directly bordering Cabin ${cid}`;
-        confidence = 0.95;
-        break;
-
-      case "RULE-MOTION-001":
-        graphEdge = `POSITIONED_IN(Cabin_${cid}, Midship_Neutral_Axis)`;
-        rawFinding = `Located within midship neutral flotation envelope (FR-110 to FR-160)`;
-        confidence = 0.96;
-        break;
-
-      case "RULE-MOTION-002":
-        graphEdge = `POSITIONED_IN(Cabin_${cid}, Forward_Bow_Zone)`;
-        rawFinding = `Positioned in forward bow zone with high vertical pitch moment`;
-        confidence = 0.92;
-        break;
-
-      case "RULE-MOTION-004":
-        graphEdge = `ELEVATED_AT(Cabin_${cid}, Level_${level})`;
-        rawFinding = `Elevation at Deck ${level} increases angular roll displacement`;
-        confidence = 0.94;
-        break;
-
-      case "RULE-ACC-001":
-        graphEdge = `HAS_ATTRIBUTE(Cabin_${cid}, PRM_ACCESSIBLE)`;
-        rawFinding = `Designated accessible cabin with wide door and roll-in shower (Symbol H)`;
-        status = "DIRECT";
-        confidence = 1.0;
-        break;
-
-      case "RULE-WALK-001":
-        graphEdge = `CONNECTED_TO(Cabin_${cid}, ${relations.connected_vertical_core || "Lift_Core_B"})`;
-        rawFinding = `Direct corridor access to ${relations.connected_vertical_core || "Midship Lift Bank"}`;
-        confidence = 0.92;
-        break;
-
-      default:
-        graphEdge = `ASSOCIATED_WITH(Cabin_${cid}, ${rule.category})`;
-        rawFinding = rule.description;
-        confidence = 0.90;
-        break;
+    // graph_edge is emitted only when every relation/attribute the rule
+    // requires resolves to a real value on the entity. The edge text restates
+    // those resolved bindings; it never asserts an unbacked topology claim.
+    const requiredKeys = rule.required_graph_relations || [];
+    let graphEdge: string | null = null;
+    if (requiredKeys.length > 0) {
+      const bindings: string[] = [];
+      let allResolved = true;
+      for (const key of requiredKeys) {
+        const value = resolveRequiredKey(entity, key);
+        if (value === null) {
+          allResolved = false;
+          break;
+        }
+        bindings.push(`${key}(Cabin_${cid}) = ${value}`);
+      }
+      if (allResolved) graphEdge = bindings.join("; ");
     }
 
     return {
-      evidence_id: `EV-${rule.id}-${cid}`,
-      source_title: rule.required_evidence.title,
-      artifact_id: rule.required_evidence.artifact_id,
-      page: rule.required_evidence.page,
+      // No canonical evidence identifier exists in the source data.
+      evidence_id: null,
+      source_title: link?.source_title ?? null,
+      artifact_id: link?.artifact_id ?? null,
+      page: link?.page,
+      locator: link?.locator ?? null,
       graph_edge: graphEdge,
-      geometry_file: geometryFile,
-      knowledge_entity_id: rule.required_knowledge_entities[0],
-      statement_id: `STM-${vesselId.toUpperCase()}-${cid}`,
-      confidence: confidence,
-      status: status,
-      raw_finding: rawFinding,
+      // Geometry files are not verified from the frontend.
+      geometry_file: null,
+      knowledge_entity_id: rule.required_knowledge_entities?.[0],
+      statement_id: entity.statements?.[0] ?? null,
+      confidence: typeof entity.confidence === "number" ? entity.confidence : null,
+      status: entity.epistemic_state ?? "UNKNOWN",
+      // Neutral rule description only — never an entity-specific invented claim.
+      raw_finding: rule.description,
     };
   }
 }
