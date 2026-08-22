@@ -462,7 +462,7 @@ def test_art_0001_resolves_through_the_canonical_sha_vault_not_the_legacy_blobs(
 
 def test_deck14_proof_objects_are_all_publication_blocked():
     proof = load_proof()
-    assert len(proof["objects"]) == 11
+    assert len(proof["objects"]) == 244
     for obj in proof["objects"]:
         assert obj["human_review_state"] == "DRAFT"
         assert obj["evidence_condition"] == "UNKNOWN"
@@ -473,7 +473,7 @@ def test_deck14_proof_objects_are_all_publication_blocked():
     assert graph.edge_ids == ()
 
     report = graph.admission_report()
-    assert len(report.rejected_nodes) == 11
+    assert len(report.rejected_nodes) == 244
     for reasons in report.rejected_nodes.values():
         assert AdmissionRejection.PUBLISH_BLOCKED in reasons
         assert AdmissionRejection.REVIEW_NOT_ACCEPTED in reasons
@@ -497,8 +497,8 @@ def _hypothetically_adjudicated_nodes():
 
     This does not adjudicate anything and is never used by production code. It
     exists to isolate the second, independent reason Deck 14 is unroutable:
-    even if a human approved all ten cabin boundaries tomorrow, the proof
-    still contains no connection between them.
+    even if a human approved every cabin boundary tomorrow, the proof still
+    contains no connection between them.
     """
     proof = copy.deepcopy(load_proof())
     for obj in proof["objects"]:
@@ -514,8 +514,8 @@ def test_genuine_cabin_geometry_does_not_establish_traversability():
     _, nodes = _hypothetically_adjudicated_nodes()
     graph = SpatialGraph(nodes=nodes, edges=())
 
-    # All ten cabins plus the lift region become places...
-    assert len(graph.node_ids) == 11
+    # Every cabin plus the lift region becomes a place...
+    assert len(graph.node_ids) == 244
     # ...and still nothing connects them.
     assert graph.edge_ids == ()
 
@@ -609,13 +609,20 @@ def test_deck14_nodes_carry_real_source_provenance():
     assert "drawing-index" in link.locator
 
 
-def test_proof_cabin_set_is_disjoint_from_the_published_statement_set():
-    """No Bellissima cabin currently has both a published fact and a shape."""
+def test_no_cabin_has_both_a_published_fact_and_an_admitted_shape():
+    """No Bellissima cabin is currently both stated and located.
+
+    This used to hold trivially: the proof covered 14001-14010 and the
+    statements covered 14102-14136, so the two sets could not meet. Now that
+    the proof covers the whole Deck 14 cabin block the sets do overlap, and the
+    separation rests on the axis that actually carries it — every envelope is
+    PUBLISH_BLOCKED, so an overlapping cabin still has no admitted shape.
+    """
     proof = load_proof()
     geometry_cabins = {
         o["cabin_number"] for o in proof["objects"] if o["semantic_type"] == "cabin"
     }
-    assert geometry_cabins == {f"140{n:02d}" for n in range(1, 11)}
+    assert len(geometry_cabins) == 243
 
     statements_path = os.path.join(
         repo_root(), "evidence", "statements", "statements.json"
@@ -627,9 +634,16 @@ def test_proof_cabin_set_is_disjoint_from_the_published_statement_set():
         for s in statements.values()
         if s["statement_type"] == "cabin.exists"
     }
-
     assert statement_cabins
-    assert geometry_cabins.isdisjoint(statement_cabins)
+
+    # The sets now genuinely intersect, which is why the publish axis is load-bearing.
+    overlap = geometry_cabins & statement_cabins
+    assert overlap, "expected the widened proof to reach the stated cabins"
+    for obj in proof["objects"]:
+        if obj.get("cabin_number") in overlap:
+            assert obj["publish_status"] == "PUBLISH_BLOCKED"
+            assert obj["evidence_condition"] == "UNKNOWN"
+            assert obj["human_review_state"] == "DRAFT"
 
 
 def test_proof_path_is_the_locked_deck14_proof():

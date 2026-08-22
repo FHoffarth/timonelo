@@ -91,8 +91,7 @@ def test_every_proof_object_has_complete_fail_closed_provenance():
 def test_cabin_proof_set_is_source_backed_without_port_starboard_inference():
     raw, proof = _load_outputs()
     cabins = [obj for obj in proof["objects"] if obj["semantic_type"] == "cabin"]
-    assert 5 <= len(cabins) <= 15
-    assert len(cabins) == 10
+    assert len(cabins) == 243
     associations = {item["semantic_id"]: item for item in raw["semantic_associations"]}
     assert all(associations[cabin["cabin_number"]]["ambiguity"] is False for cabin in cabins)
     assert all(cabin["semantic_association_method"] == "strict-label-centroid-containment-with-cardinality-gate" for cabin in cabins)

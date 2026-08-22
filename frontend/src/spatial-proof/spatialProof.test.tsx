@@ -50,7 +50,7 @@ describe("loader fails closed", () => {
   });
 
   it("accepts the canonical artifact", () => {
-    expect(parseProof(doc).objects).toHaveLength(11);
+    expect(parseProof(doc).objects).toHaveLength(244);
   });
 });
 
@@ -87,13 +87,15 @@ describe("canvas rendering", () => {
     <ProofCanvas objects={objects} selectedId={null} onSelect={() => {}} />,
   );
 
-  it("renders all 11 proof objects", () => {
+  it("renders all 244 proof objects", () => {
     for (const o of objects) expect(svg).toContain(`object-${o.object_id}`);
-    expect(svg.match(/data-object-id="/g)).toHaveLength(11);
+    expect(svg.match(/data-object-id="/g)).toHaveLength(244);
   });
 
   it("outlines no object outside the proof set", () => {
-    for (const absent of ["14011", "14013", "14015", "14019", "14021"]) {
+    // Deck 14 is now covered in full, so the out-of-set examples are cabins on
+    // the neighbouring deck panels that page 5 also draws.
+    for (const absent of ["15001", "15002", "15003", "15004", "15005"]) {
       expect(svg).not.toContain(`>${absent}<`);
     }
   });
@@ -102,13 +104,13 @@ describe("canvas rendering", () => {
     expect(svg).toContain(`data-provenance="DERIVED_GEOMETRY"`);
     expect(svg).toContain("url(#derived-hatch)");
     expect(svg.match(/data-provenance-style="derived"/g)).toHaveLength(1);
-    expect(svg.match(/data-provenance-style="transformed"/g)).toHaveLength(10);
+    expect(svg.match(/data-provenance-style="transformed"/g)).toHaveLength(243);
   });
 
   it("drives geometry styling from provenance, not publish status", () => {
     // Every object shares PUBLISH_BLOCKED, yet two distinct geometry styles exist.
     const blocked = svg.match(/data-publish-status="PUBLISH_BLOCKED"/g);
-    expect(blocked).toHaveLength(11);
+    expect(blocked).toHaveLength(244);
     expect(new Set(["derived", "transformed"]).size).toBe(2);
   });
 
@@ -250,13 +252,16 @@ describe("source-plan underlay is optional context, never evidence", () => {
   });
 
   it("5. pickObjectAt remains proof-only regardless of the underlay", () => {
-    // A point over a visible-but-unproven cabin (14015 sits below 14007) resolves
-    // to nothing: the underlay adds pixels, never pickable objects.
-    const c7 = byCabin("14007");
-    const belowProofSet = c7.normalized_bbox[3] + 0.004;
-    const x = (c7.normalized_bbox[0] + c7.normalized_bbox[2]) / 2;
-    expect(pickObjectAt(objects, x, belowProofSet)).toBeNull();
-    expect(objects).toHaveLength(11);
+    // The proof now covers every Deck 14 cabin, so the unproven content the
+    // raster still shows is the neighbouring deck panels: page 5 draws Decks
+    // 14-19 side by side and the proof describes Deck 14 alone. A point over
+    // the Deck 15 panel resolves to nothing — the underlay adds pixels, never
+    // pickable objects.
+    const deck14RightEdge = Math.max(...objects.map((o) => o.normalized_bbox[2]));
+    const inNeighbouringPanel = deck14RightEdge + 0.1;
+    expect(inNeighbouringPanel).toBeLessThan(1);
+    expect(pickObjectAt(objects, inNeighbouringPanel, 0.5)).toBeNull();
+    expect(objects).toHaveLength(244);
   });
 
   it("6. refusal behaviour is unchanged by the underlay", () => {
@@ -274,7 +279,7 @@ describe("source-plan underlay is optional context, never evidence", () => {
   });
 
   it("8. proof geometry stays provenance-styled with the underlay on", () => {
-    expect(on.match(/data-provenance-style="transformed"/g)).toHaveLength(10);
+    expect(on.match(/data-provenance-style="transformed"/g)).toHaveLength(243);
     expect(on.match(/data-provenance-style="derived"/g)).toHaveLength(1);
     expect(on).toContain("url(#derived-hatch)");
     // Styling identical with and without the raster: the underlay changes nothing.
