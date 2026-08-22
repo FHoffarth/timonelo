@@ -11,7 +11,6 @@ import os
 from pathlib import Path
 import re
 import sys
-import pdfplumber
 import jsonschema
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -46,6 +45,14 @@ def extract_all_geometries(pdf_path: Path, geometry_dir: Path, schema_path: Path
         raise FileNotFoundError(f"Source PDF not found: {pdf_path}. Specify --pdf-path explicitly.")
     if not schema_path.exists():
         raise FileNotFoundError(f"Schema not found: {schema_path}.")
+
+    try:
+        import pdfplumber
+    except ImportError as e:
+        raise ImportError(
+            "pdfplumber is required for spatial geometry extraction. "
+            "Install it via `pip install pdfplumber` or `pip install -e '.[dev]'`."
+        ) from e
 
     geometry_dir.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
