@@ -1,4 +1,4 @@
-# MSC Meraviglia 2025 Deckplan Conflict Report
+# MSC Meraviglia 2025 Deckplan Historical Correction Report
 
 **Authoritative Primary Source**: `Official MSC Cruises Meraviglia Deckplans`
 **Edition**: `11.2025 DEU` (6 Pages)
@@ -7,24 +7,24 @@
 
 ---
 
-## Conflict & Discrepancy Matrix
+## Historical Correction Matrix
 
 | FACT | OLD VALUE | PDF VALUE (Edition 11/2025) | NEW LOCATOR | STATUS | ACTION |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Total Cabins** | `2244 cabins` | `2214 KABINEN` | `page:2` | `CONTRADICTED` | `SUPERSEDED` by official deck plan |
+| **Total Cabins** | `2244 cabins` | `2214 KABINEN` | `page:2` | `HISTORICAL_DISCREPANCY` | Correction recorded from official deck plan |
 | **Max Guests** | `5714 guests` | `5.714 GÄSTE` | `page:2` | `CONFIRMED` | Grounded with direct citation |
-| **Deck 4 Name** | `Corallo` | `KOS` | `page:3` | `CONTRADICTED` | `SUPERSEDED` (Deck 4 is official named KOS) |
+| **Deck 4 Name** | `Corallo` | `KOS` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded from official deck plan |
 | **Deck 13 Name** | `Kilimanjaro` | `KILIMANGIARO` | `page:4` | `CONFIRMED / NOTATION` | Italian spelling confirmed in German edition |
-| **Deck 6 Dining** | `HOLA! Tapas Bar` | `Hola! Tacos & Cantina` | `page:3` | `CONTRADICTED` | `SUPERSEDED` by active concept |
-| **Deck 6 Dining** | `Ocean Cay (Deck 7)` | `Ocean Cay (Deck 6)` | `page:3` | `CONTRADICTED` | `SUPERSEDED` to Deck 6 location |
-| **Top Sail Lounge** | `Deck 15` | `Deck 16` | `page:5` | `CONTRADICTED` | `SUPERSEDED` to Deck 16 layout |
+| **Deck 6 Dining** | `HOLA! Tapas Bar` | `Hola! Tacos & Cantina` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded for active concept |
+| **Deck 6 Dining** | `Ocean Cay (Deck 7)` | `Ocean Cay (Deck 6)` | `page:3` | `HISTORICAL_DISCREPANCY` | Correction recorded for Deck 6 location |
+| **Top Sail Lounge** | `Deck 15` | `Deck 16` | `page:5` | `HISTORICAL_DISCREPANCY` | Correction recorded for Deck 16 location |
 | **Deck 17 Missing Reason** | "Skipped due to Italian superstition" | `Deck 17 not present in passenger deck plan` | `page:5` | `OBSERVATION` | Fact preserved; causal folklore marked unsupported |
 
 ---
 
 ## Epistemic Summary
 
-- **Conflicts Resolved**: 6
-- **Unresolved Conflicts**: 0
+- **Historical Corrections Recorded**: 6
+- **Live Conflicts Detected**: 0
 - **SUPPORTED Statements with Evidence Closure**: 101
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
