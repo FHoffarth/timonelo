@@ -64,6 +64,24 @@ def _by_slug(slug: str) -> dict:
 # --- 1. the exact artifact resolves from the canonical SHA vault -----------
 
 
+#: Statement types introduced by the Deck 14 cabin-feature layer.
+#:
+#: The quarantine assertions below describe the claim set that existed when
+#: ART-0001's source identity was repaired. Selecting purely on artifact_id now
+#: also sweeps in the later feature statements, which are a different cohort
+#: with a different lifecycle — DRAFT and PUBLISH_BLOCKED rather than APPROVED
+#: and quarantined by evidence condition. Excluding them keeps these tests
+#: about the thing they were written to protect.
+_FEATURE_TYPES = {
+    "cabin.sofa_bed",
+    "cabin.sofa_bed_double",
+    "cabin.sofa_bed_single",
+    "cabin.third_bed",
+    "cabin.third_and_fourth_bed",
+    "cabin.bunk_or_convertible_sofa",
+}
+
+
 def test_art_0002_resolves_from_the_canonical_sha_vault():
     registry = ArtifactRegistry(str(ARTIFACTS))
     artifact = registry.get(ARTIFACT_ID)
@@ -450,7 +468,10 @@ def test_art_0001_is_untouched_by_this_intake():
     assert registry.verify("ART-0001")
 
     raw = _statements()
-    affected = [s for s in raw.values() if s["artifact_id"] == "ART-0001"]
+    affected = [
+        s for s in raw.values()
+        if s["artifact_id"] == "ART-0001" and s["statement_type"] not in _FEATURE_TYPES
+    ]
     assert len(affected) == 113
     # Still persisted in their original schema: rewriting them would be a
     # silent mutation of accepted facts.

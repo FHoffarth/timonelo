@@ -17,6 +17,7 @@ import { describe, expect, it } from "vitest";
 import EvidenceDrawer from "./EvidenceDrawer";
 import ProofCanvas, { UNDERLAY_HREF } from "./ProofCanvas";
 import SpatialProofViewer, { PathfindingUnavailable } from "./SpatialProofViewer";
+import { parseFeatures } from "./cabinFeatures";
 import { ProofLoadError, hasAdmittedConnectivity, parseProof, pickObjectAt } from "./loadProof";
 import type { ProofDocument, ProofObject } from "./proofTypes";
 
@@ -294,5 +295,127 @@ describe("source-plan underlay is optional context, never evidence", () => {
     const opacity = Number(on.match(/<image[^>]*opacity="([\d.]+)"/)?.[1]);
     expect(opacity).toBeGreaterThan(0);
     expect(opacity).toBeLessThan(0.5);
+  });
+});
+
+describe("cabin features are positive-only and evidence-backed", () => {
+  const featureDoc = parseFeatures(
+    JSON.parse(
+      readFileSync(resolve(__dirname, "../../public/data/deck14.features.json"), "utf-8"),
+    ),
+  );
+  const drawerFor = (cabin: string) =>
+    renderToStaticMarkup(
+      <EvidenceDrawer object={byCabin(cabin)} doc={doc} features={featureDoc} />,
+    );
+
+  // One cabin per grounded shape class, plus one the deck plan says nothing about.
+  const WITH_SOFA_BED = "14001";
+  const WITH_PAIRED_SQUARES = "14052"; // 3rd and 4th pull-down beds
+  const WITH_PAIRED_CIRCLES = "14030"; // convertible bunk / sofa
+  const WITHOUT_ANY_SYMBOL = "14004";
+
+  it("shows the Cabin features section for a cabin with a grounded symbol", () => {
+    const html = drawerFor(WITH_SOFA_BED);
+    expect(html).toContain("Cabin features");
+    expect(html).toContain("Sofa bed");
+    expect(html).toContain('data-family="sofa_bed"');
+    expect(html).not.toContain("Other cabin features are not established");
+  });
+
+  it("renders the paired-square and paired-circle families", () => {
+    expect(drawerFor(WITH_PAIRED_SQUARES)).toContain("3rd and 4th pull-down beds");
+    expect(drawerFor(WITH_PAIRED_CIRCLES)).toContain("Convertible bunk / sofa");
+  });
+
+  it("exposes provenance for every feature shown", () => {
+    const html = drawerFor(WITH_PAIRED_CIRCLES);
+    expect(html).toContain("Official MSC deck plan (ART-0001), page 5");
+    expect(html).toContain("page5:drawing-index-");
+    expect(html).toContain("Etagenbett"); // the legend family it was read from
+    expect(html).toContain("DRAFT");
+    expect(html).toContain("PUBLISH_BLOCKED");
+    expect(html).toContain('data-testid="feature-provenance-toggle"');
+    // A cardinality-derived family must say so where the reader can see it.
+    expect(html).toContain("cardinality");
+  });
+
+  it("says UNKNOWN, not absent, when no symbol is printed", () => {
+    const html = drawerFor(WITHOUT_ANY_SYMBOL);
+    expect(html).toContain("Cabin features");
+    expect(html).toContain("Other cabin features are not established from the current evidence.");
+    expect(html).not.toContain('data-testid="cabin-feature"');
+  });
+
+  it("emits no negative feature language for any cabin", () => {
+    const cabins = objects.filter((o) => o.cabin_number).map((o) => o.cabin_number as string);
+    const all = cabins.map(drawerFor).join("\n").toLowerCase();
+    for (const forbidden of [
+      "no features", "no sofa bed", "no pullman", "no bunk bed", "none",
+      "not available", "does not have", "feature absent", "no cabin features",
+    ]) {
+      expect(all).not.toContain(forbidden);
+    }
+  });
+
+  it("derives features from the extraction output, never from underlay pixels", () => {
+    // The underlay is a ProofCanvas concern; the drawer never receives it. The
+    // same cabin therefore renders identically whichever way the layer is set.
+    const off = renderToStaticMarkup(
+      <ProofCanvas objects={objects} selectedId={null} onSelect={() => {}} />,
+    );
+    const on = renderToStaticMarkup(
+      <ProofCanvas objects={objects} selectedId={null} onSelect={() => {}} showUnderlay />,
+    );
+    expect(off).not.toEqual(on); // the layer really did change the canvas
+    // ...and neither canvas carries any feature vocabulary at all.
+    for (const html of [off, on]) {
+      expect(html).not.toContain("Cabin features");
+      expect(html).not.toContain("Sofa bed");
+    }
+    // The drawer's answer is unchanged by anything the canvas did.
+    expect(drawerFor(WITH_SOFA_BED)).toEqual(drawerFor(WITH_SOFA_BED));
+  });
+
+  it("adds no feature section to the lift region", () => {
+    const html = renderToStaticMarkup(
+      <EvidenceDrawer object={lift} doc={doc} features={featureDoc} />,
+    );
+    expect(html).not.toContain("Cabin features");
+  });
+
+  it("treats a missing feature document as unknown, not as absence", () => {
+    const html = renderToStaticMarkup(
+      <EvidenceDrawer object={byCabin(WITH_SOFA_BED)} doc={doc} features={null} />,
+    );
+    expect(html).toContain("Other cabin features are not established from the current evidence.");
+    expect(html).not.toContain('data-testid="cabin-feature"');
+  });
+
+  it("leaves the routing refusal untouched", () => {
+    expect(hasAdmittedConnectivity(doc)).toBe(false);
+    const html = renderToStaticMarkup(<PathfindingUnavailable doc={doc} />);
+    expect(html).toContain("Pathfinding not available on this deck yet");
+    const drawer = drawerFor(WITH_SOFA_BED).toLowerCase();
+    expect(drawer).not.toContain("route");
+    expect(drawer).not.toContain("corridor");
+    expect(drawer).not.toContain("door");
+  });
+
+  it("introduces no measurement vocabulary", () => {
+    // The drawer's own disclaimers legitimately contain "metres" in order to
+    // deny them, and the coordinate rows are labelled "not a measurement".
+    // Scanning those would flag the very text that prevents the misreading, so
+    // they are stripped first — the check is on claim-bearing content only.
+    const DISCLAIMERS = [
+      "not metres. no scale has been established.",
+      "(pdf points — provenance, not a measurement)",
+      "(page fractions — not a measurement)",
+    ];
+    let html = drawerFor(WITH_PAIRED_CIRCLES).toLowerCase();
+    for (const d of DISCLAIMERS) html = html.split(d).join(" ");
+    for (const forbidden of ["metre", "meter", "sq m", "walking time", "distance"]) {
+      expect(html).not.toContain(forbidden);
+    }
   });
 });
