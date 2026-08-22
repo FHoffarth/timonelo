@@ -43,10 +43,21 @@ from timonelo.ontology.models import (
 
 
 @pytest.fixture(scope="module")
-def manifest():
+def manifest(tmp_path_factory):
+    """The committed manifest, or a temp regeneration if it is absent.
+
+    Never regenerates in place: `run_ingestion()` with default paths writes into
+    tracked `knowledge/` and `knowledge/reports/`, so a test run would dirty the
+    working tree and make a clean-tree gate fail for reasons unrelated to the
+    change under review.
+    """
     manifest_path = os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json")
     if not os.path.exists(manifest_path):
-        run_ingestion()
+        scratch = tmp_path_factory.mktemp("meraviglia_manifest")
+        knowledge_dir = scratch / "knowledge"
+        knowledge_dir.mkdir()
+        run_ingestion(str(knowledge_dir), str(scratch / "reports"))
+        manifest_path = os.path.join(str(knowledge_dir), "extraction_manifest.json")
     with open(manifest_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -395,14 +406,18 @@ def test_meraviglia_27_no_confidence_or_confidence_score_anywhere():
                 assert '"confidence_score"' not in content, f"confidence_score found in {fname}"
 
 
-def test_meraviglia_reingestion_is_idempotent():
+def test_meraviglia_reingestion_is_idempotent(tmp_path):
     """Consecutive execution of run_ingestion produces zero diff."""
-    res1 = run_ingestion()
-    manifest_p = os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json")
+    knowledge_dir = tmp_path / "knowledge"
+    knowledge_dir.mkdir()
+    reports_dir = tmp_path / "reports"
+
+    res1 = run_ingestion(str(knowledge_dir), str(reports_dir))
+    manifest_p = os.path.join(str(knowledge_dir), "extraction_manifest.json")
     with open(manifest_p, "r", encoding="utf-8") as f:
         content1 = f.read()
 
-    res2 = run_ingestion()
+    res2 = run_ingestion(str(knowledge_dir), str(reports_dir))
     with open(manifest_p, "r", encoding="utf-8") as f:
         content2 = f.read()
 
@@ -411,9 +426,14 @@ def test_meraviglia_reingestion_is_idempotent():
     assert res1["statements_count"] == res2["statements_count"]
 
 
-def test_meraviglia_historical_discrepancies_are_corrections_not_live_conflicts():
-    result = run_ingestion()
-    with open(os.path.join(KNOWLEDGE_DIR, "extraction_manifest.json"), encoding="utf-8") as f:
+def test_meraviglia_historical_discrepancies_are_corrections_not_live_conflicts(tmp_path):
+    knowledge_dir = tmp_path / "knowledge"
+    knowledge_dir.mkdir()
+
+    result = run_ingestion(str(knowledge_dir), str(tmp_path / "reports"))
+    with open(
+        os.path.join(str(knowledge_dir), "extraction_manifest.json"), encoding="utf-8"
+    ) as f:
         current_manifest = json.load(f)
 
     assert result["historical_corrections_count"] == 6
