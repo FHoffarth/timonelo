@@ -14,6 +14,20 @@
 import { provenanceClass, type ProofObject } from "./proofTypes";
 
 /**
+ * Full-MediaBox raster of the source deck plan, opt-in and off by default.
+ *
+ * Context, never evidence. Page 5 carries 243 Deck-14 cabin labels; the proof
+ * accepts 10, so with this layer on, most of what is visible is NOT accepted
+ * evidence. It is therefore desaturated and dimmed so the proof geometry stays
+ * dominant, it is never hit-tested, and it carries no GeometryProvenance —
+ * because it has none.
+ *
+ * See `frontend/public/data/deck14.page5.provenance.json` for its source
+ * artifact, digest, page, MediaBox and exact render command.
+ */
+export const UNDERLAY_HREF = "/data/deck14.page5.png";
+
+/**
  * Presentational inset, in normalized units, applied when drawing only.
  *
  * Adjacent cabin cells share an edge, so at low zoom their outlines merge and a
@@ -41,6 +55,8 @@ export interface ProofCanvasProps {
   objects: ProofObject[];
   selectedId: string | null;
   onSelect: (o: ProofObject) => void;
+  /** Source-plan context layer. Off unless the reader explicitly asks for it. */
+  showUnderlay?: boolean;
   /**
    * Breathing room around the objects' extent, in normalized units.
    *
@@ -55,6 +71,7 @@ export default function ProofCanvas({
   objects,
   selectedId,
   onSelect,
+  showUnderlay = false,
   padding = 0.006,
 }: ProofCanvasProps) {
   if (objects.length === 0) return null;
@@ -75,6 +92,21 @@ export default function ProofCanvas({
       data-testid="proof-canvas"
       className="w-full h-full bg-[#0C1B2A]"
     >
+      {showUnderlay && (
+        <image
+          href={UNDERLAY_HREF}
+          x={0}
+          y={0}
+          width={1}
+          height={1}
+          preserveAspectRatio="none"
+          data-testid="source-underlay"
+          data-layer="source-context"
+          opacity={0.24}
+          style={{ filter: "grayscale(1)", pointerEvents: "none" }}
+        />
+      )}
+
       <defs>
         {/* Hatch marks the derived region as an area whose exact boundary is not established. */}
         <pattern

@@ -1,0 +1,46 @@
+{
+  "asset": "deck14.page5.png",
+  "frame": {
+    "cropbox_equals_mediabox": true,
+    "cropped": false,
+    "full_mediabox": true,
+    "mediabox_points": [
+      0.0,
+      0.0,
+      589.6060180664062,
+      807.8740234375
+    ],
+    "page_height_points": 807.8740234375,
+    "page_width_points": 589.6060180664062,
+    "review_viewport_used": false,
+    "rotation_degrees": 0
+  },
+  "output_sha256": "ea218d18464f9223c28680028e09c87c76bec3f84f962f86834e279e1c6e97ff",
+  "purpose": "visual context only; not canonical geometry",
+  "render": {
+    "alpha": false,
+    "colorspace": "DeviceRGB",
+    "command": "page.get_pixmap(matrix=fitz.Matrix(2.083333, 2.083333), alpha=False)",
+    "dpi": 150,
+    "height_px": 1684,
+    "mupdf_version": "1.26.7",
+    "pymupdf_version": "1.26.4",
+    "renderer": "PyMuPDF",
+    "width_px": 1229,
+    "zoom": 2.083333
+  },
+  "semantics": {
+    "carries_geometry_provenance": false,
+    "hit_testable": false,
+    "implies_connectivity": false,
+    "implies_metric_scale": false,
+    "is_canonical_geometry": false,
+    "note": "Full-MediaBox raster of the source deck plan. It is visual context beneath the accepted proof geometry and is never evidence. Page 5 shows 243 Deck-14 cabin labels; the proof accepts 10. The remaining content is unproven and must never appear accepted, selectable, or connected."
+  },
+  "source": {
+    "artifact_id": "ART-0001",
+    "filename": "MSC_BELLISSIMA_DECKPLAN_GER.pdf",
+    "pdf_page_number": 5,
+    "sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0"
+  }
+}

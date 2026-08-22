@@ -15,6 +15,7 @@ from __future__ import annotations
 import hashlib
 import json
 import pathlib
+import re
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
 CANONICAL = REPO_ROOT / "geometry" / "proofs" / "bellissima" / "deck14" / "deck14.proof.json"
@@ -69,11 +70,19 @@ def test_viewer_does_not_read_the_display_only_overlay():
     # The check is on USE, not on mention. Both the overlay and the viewport are
     # named in prose explaining why they are excluded, and flagging that prose
     # would penalise the documentation for describing the exclusion.
-    assert "<image" not in source
+    #
+    # This deliberately no longer bans `<image` outright. The viewer now renders
+    # an opt-in full-MediaBox source-plan underlay, which is a different asset
+    # with its own provenance record (see test_spatial_proof_underlay.py). The
+    # concern this test protects is unchanged and narrower: the DISPLAY_ONLY
+    # `deck14.review.png` crop must never become a render frame.
     assert 'src="/data/deck14.review' not in source
     assert "url(/data/deck14.review" not in source
     assert ".review_viewport" not in source
     assert "review_viewport[" not in source
+    # Any raster the viewer does render must be the provenanced underlay.
+    for href in re.findall(r'href=\{?["\']?(/data/[^"\'}\s]+)', source):
+        assert href == "/data/deck14.page5.png", f"unexpected raster source: {href}"
 
 
 def test_viewer_uses_no_legacy_synthetic_geometry():
