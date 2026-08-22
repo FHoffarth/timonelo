@@ -8,24 +8,30 @@ Adheres strictly to the scientific architecture:
 - Orthogonal content (category) vs knowledge (epistemic state: DIRECT | DERIVED | UNKNOWN | CONFLICT).
 """
 
+import argparse
 import json
 import os
+from pathlib import Path
 import yaml
 
-BELLISSIMA_DIR = "C:/Users/Flo/Desktop/energyradar/timonelo-knowledge-factory/ships/msc-bellissima"
-OUT_DIR = "C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/data"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_OUT_DIR = REPO_ROOT / "frontend" / "src" / "data"
 
-os.makedirs(OUT_DIR, exist_ok=True)
-
-def build_bellissima():
+def build_bellissima(bellissima_dir: Path, out_dir: Path):
     print("Building semantic model for MSC Bellissima...")
-    with open(os.path.join(BELLISSIMA_DIR, "cabins.yaml"), "r", encoding="utf-8") as f:
+    if not bellissima_dir.exists():
+        raise FileNotFoundError(
+            f"Bellissima source directory not found: {bellissima_dir}. "
+            f"Specify --bellissima-dir explicitly."
+        )
+
+    with open(bellissima_dir / "cabins.yaml", "r", encoding="utf-8") as f:
         raw_cabins = yaml.safe_load(f)
 
-    with open(os.path.join(BELLISSIMA_DIR, "decks.yaml"), "r", encoding="utf-8") as f:
+    with open(bellissima_dir / "decks.yaml", "r", encoding="utf-8") as f:
         raw_decks = yaml.safe_load(f)
 
-    with open(os.path.join(BELLISSIMA_DIR, "venues.yaml"), "r", encoding="utf-8") as f:
+    with open(bellissima_dir / "venues.yaml", "r", encoding="utf-8") as f:
         raw_venues = yaml.safe_load(f)
 
     deck_names = {
@@ -245,13 +251,13 @@ def build_bellissima():
         "decks": decks_list
     }
 
-    out_path = os.path.join(OUT_DIR, "semantic_vessel_bellissima.json")
+    out_path = out_dir / "semantic_vessel_bellissima.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(vessel_model, f, indent=2)
 
     print(f"Generated semantic vessel model for MSC Bellissima ({vessel_model['epistemic_summary']['total_objects']} objects) to {out_path}")
 
-def build_andorinha():
+def build_andorinha(out_dir: Path):
     print("Building semantic model for MS Andorinha (River Vessel)...")
     andorinha_decks = [
         {
@@ -375,12 +381,36 @@ def build_andorinha():
         "decks": andorinha_decks
     }
 
-    out_path = os.path.join(OUT_DIR, "semantic_vessel_andorinha.json")
+    out_path = out_dir / "semantic_vessel_andorinha.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(model, f, indent=2)
 
     print(f"Generated semantic vessel model for MS Andorinha to {out_path}")
 
+def main():
+    parser = argparse.ArgumentParser(description="Generate semantic vessel models.")
+    parser.add_argument(
+        "--bellissima-dir",
+        type=Path,
+        default=None,
+        help="Path to Bellissima YAML source directory (e.g. knowledge/ships/msc-bellissima)",
+    )
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=DEFAULT_OUT_DIR,
+        help=f"Output directory for semantic vessel models (default: {DEFAULT_OUT_DIR})",
+    )
+    args = parser.parse_args()
+
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+
+    if args.bellissima_dir:
+        build_bellissima(args.bellissima_dir, args.out_dir)
+    else:
+        print("Note: --bellissima-dir not provided; skipping Bellissima model generation.")
+
+    build_andorinha(args.out_dir)
+
 if __name__ == "__main__":
-    build_bellissima()
-    build_andorinha()
+    main()

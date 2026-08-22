@@ -30,6 +30,7 @@ dependencies = [
 dev = [
     "pytest>=7.0",
     "pypdf>=5.0",
+    "pdfplumber>=0.10",
     # Pinned, not floated. The Deck 14 geometry proof records
     # `extraction_tool: "PyMuPDF 1.26.4"`, and
     # test_transform_is_explicit_and_deterministic re-runs extract() and

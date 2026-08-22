@@ -1,9 +1,14 @@
+import argparse
 import os
+from pathlib import Path
 import time
 from playwright.sync_api import sync_playwright
 
-def run():
-    artifacts_dir = r"C:\Users\Flo\.gemini\antigravity\brain\20d31e34-a159-4223-a758-2695e9de02c4"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "knowledge" / "reports" / "screenshots"
+
+def run(artifacts_dir: Path = DEFAULT_OUTPUT_DIR):
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -29,13 +34,13 @@ def run():
         page.wait_for_timeout(1500)
         
         print("Saving 01_cabin_intelligence_card_hero.png...")
-        page.screenshot(path=os.path.join(artifacts_dir, "01_cabin_intelligence_card_hero.png"))
+        page.screenshot(path=str(artifacts_dir / "01_cabin_intelligence_card_hero.png"))
         
         # Scroll down to view the full CabinIntelligenceCard and factors
         page.evaluate("window.scrollTo({ top: 420, behavior: 'instant' });")
         page.wait_for_timeout(1000)
         print("Saving 02_cabin_intelligence_scores_breakdown.png...")
-        page.screenshot(path=os.path.join(artifacts_dir, "02_cabin_intelligence_scores_breakdown.png"))
+        page.screenshot(path=str(artifacts_dir / "02_cabin_intelligence_scores_breakdown.png"))
         
         # Click on Living Deck tab in ship profile
         print("5. Opening Living Deck with Cabin Intelligence in Inspector...")
@@ -48,10 +53,17 @@ def run():
         page.wait_for_timeout(1000)
         
         print("Saving 03_living_deck_with_cabin_intel_inspector.png...")
-        page.screenshot(path=os.path.join(artifacts_dir, "03_living_deck_with_cabin_intel_inspector.png"))
+        page.screenshot(path=str(artifacts_dir / "03_living_deck_with_cabin_intel_inspector.png"))
 
         browser.close()
         print("Captured all intelligence screenshots successfully!")
 
+def main():
+    parser = argparse.ArgumentParser(description="Capture cabin intelligence screenshots.")
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help=f"Output screenshot directory (default: {DEFAULT_OUTPUT_DIR})")
+    args = parser.parse_args()
+
+    run(args.output_dir)
+
 if __name__ == "__main__":
-    run()
+    main()

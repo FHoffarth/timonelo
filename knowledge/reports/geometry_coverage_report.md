@@ -1,8 +1,8 @@
 # Spatial Geometry Layer Extraction & Coverage Report
 
-**Primary Evidence Source**: `MSC Bellissima Deck Plan (Edition 11.2025 DEU)`  
-**Output Directory**: [`geometry/`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/geometry)  
-**Schema Standard**: [`knowledge/schema/deck_geometry.schema.json`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/knowledge/schema/deck_geometry.schema.json)  
+**Primary Evidence Source**: `MSC Bellissima Deck Plan (Edition 11.2025 DEU)`
+**Output Directory**: [`geometry/`](../../geometry)
+**Schema Standard**: [`knowledge/schema/deck_geometry.schema.json`](../schema/deck_geometry.schema.json)
 
 ## 1. Deck Geometry Coverage Summary
 

@@ -9,22 +9,31 @@ Rules:
 - Validates against knowledge/schema/deck_geometry.schema.json.
 - Produces knowledge/reports/geometry_provenance_report.md.
 """
-import os
-import json
 import glob
+import json
+import os
+from pathlib import Path
+import sys
 import jsonschema
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT / "src"))
+
 from timonelo.canonical import deterministic_dump
+DEFAULT_GEOMETRY_DIR = REPO_ROOT / "geometry"
+DEFAULT_SCHEMA_PATH = REPO_ROOT / "knowledge" / "schema" / "deck_geometry.schema.json"
+DEFAULT_REPORT_PATH = REPO_ROOT / "knowledge" / "reports" / "geometry_provenance_report.md"
 
 def audit_and_update_geometry_provenance():
-    geometry_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\geometry"
-    schema_path = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\schema\deck_geometry.schema.json"
-    report_path = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\reports\geometry_provenance_report.md"
+    geometry_dir = DEFAULT_GEOMETRY_DIR
+    schema_path = DEFAULT_SCHEMA_PATH
+    report_path = DEFAULT_REPORT_PATH
     
     with open(schema_path, "r", encoding="utf-8") as f:
         schema = json.load(f)
         
-    geometry_files = sorted(glob.glob(os.path.join(geometry_dir, "deck*.geometry.json")))
+    geometry_files = sorted(glob.glob(str(geometry_dir / "deck*.geometry.json")))
     
     total_objects_audited = 0
     provenance_attribute_counts = {

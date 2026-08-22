@@ -5,6 +5,11 @@ Evidence artifact: Official MSC Bellissima Deck Plan (November 2025, 11.2025 DEU
 """
 import json
 import os
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_BASE_DIR = REPO_ROOT / "knowledge" / "ships" / "msc-bellissima"
+DEFAULT_REPORT_DIR = REPO_ROOT / "knowledge" / "reports"
 
 AUDIT_RESULTS = []
 
@@ -22,7 +27,7 @@ def add_entry(file_name, entity_id, field_name, current_val, evidence_val, page,
     })
 
 def run_audit():
-    base_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\ships\msc-bellissima"
+    base_dir = DEFAULT_BASE_DIR
 
     # 1. technical.json
     add_entry("technical.json", "msc-bellissima", "vessel_name", "MSC Bellissima", "MSC BELLISSIMA", "Page 1, 2, 3", "MATCH", "Keep current value")
@@ -154,11 +159,11 @@ def write_reports(results):
     for r in results:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
 
-    report_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\reports"
-    os.makedirs(report_dir, exist_ok=True)
+    report_dir = DEFAULT_REPORT_DIR
+    report_dir.mkdir(parents=True, exist_ok=True)
 
-    json_path = os.path.join(report_dir, "bellissima_evidence_audit.json")
-    md_path = os.path.join(report_dir, "bellissima_evidence_audit.md")
+    json_path = report_dir / "bellissima_evidence_audit.json"
+    md_path = report_dir / "bellissima_evidence_audit.md"
 
     # 1. JSON Report
     json_data = {
