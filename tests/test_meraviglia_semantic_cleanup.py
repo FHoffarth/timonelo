@@ -234,14 +234,18 @@ def test_isolated_reingestion_reproduces_cleaned_canonical_payloads(tmp_path):
     )
     corrections = manifest["historical_corrections"]
     assert result["historical_corrections_count"] == len(corrections) == 6
-    assert all(correction["references_validated"] is True for correction in corrections)
-    corrections_by_question = {
-        correction["question_id"]: correction for correction in corrections
+    assert all(
+        correction["reference_integrity"] == "VALIDATED" for correction in corrections
+    )
+    # Keyed by entity: both venue-deck corrections answer the same registered
+    # question Q-0016, so question_id alone is no longer unique.
+    corrections_by_entity = {
+        correction["entity_id"]: correction for correction in corrections
     }
-    assert corrections_by_question["Q-HIST-OCEAN-CAY-DECK"][
+    assert corrections_by_entity["msc-meraviglia:venue:REST-OCEAN-CAY"][
         "evidence_event_ids"
     ] == ["EVT-MER-REST-OCEAN-CAY-DECK"]
-    assert corrections_by_question["Q-HIST-TOP-SAIL-DECK"][
+    assert corrections_by_entity["msc-meraviglia:venue:LOUNGE-TOP-SAIL"][
         "evidence_event_ids"
     ] == ["EVT-MER-LOUNGE-TOP-SAIL-DECK"]
     assert result["conflict_detection_executed"] is True

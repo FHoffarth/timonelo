@@ -17,6 +17,36 @@ class CorrectionKind(str, Enum):
     VALUE_CORRECTED = "VALUE_CORRECTED"
 
 
+class PriorRepresentation(str, Enum):
+    """What the corrected value REPLACED. Declared, never inferred.
+
+    A null `prior_statement_id` is ambiguous on its own: it may mean the prior
+    reading was a legacy artefact that was never a Statement, or it may mean the
+    caller simply failed to supply it. Those are different claims, so the caller
+    must say which one it is.
+    """
+
+    STATEMENT = "STATEMENT"                          # prior_statement_id required
+    LEGACY_NON_STATEMENT = "LEGACY_NON_STATEMENT"    # prior_statement_id must be None
+
+
+class ReferenceIntegrity(str, Enum):
+    """Whether this record's ID references were checked against known IDs.
+
+    LOCAL integrity metadata about the correction record itself. It is NOT a
+    canonical truth or lifecycle axis: it says nothing about evidence condition,
+    review state, or publication eligibility, and the TruthEngine never reads it.
+
+    It replaces a boolean that could reach its strongest value in its weakest
+    case: with no statement references at all, `not any(statement_ids)` was
+    trivially true, so a record referencing nothing reported "validated".
+    """
+
+    VALIDATED = "VALIDATED"                      # references present and all checked
+    UNVALIDATED = "UNVALIDATED"                  # no known-ID sets supplied; unchecked
+    NOTHING_TO_VALIDATE = "NOTHING_TO_VALIDATE"  # checking requested, no references
+
+
 @dataclass(frozen=True)
 class HistoricalCorrectionRecord:
     correction_id: str
@@ -30,11 +60,18 @@ class HistoricalCorrectionRecord:
     replacement_statement_id: Optional[str] = None
     note: str = ""
     recorded_by: Optional[str] = None
-    references_validated: bool = False
+    prior_representation: PriorRepresentation = PriorRepresentation.STATEMENT
+    reference_integrity: ReferenceIntegrity = ReferenceIntegrity.UNVALIDATED
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "correction_kind", CorrectionKind(self.correction_kind))
         object.__setattr__(self, "evidence_event_ids", tuple(self.evidence_event_ids))
+        object.__setattr__(
+            self, "prior_representation", PriorRepresentation(self.prior_representation)
+        )
+        object.__setattr__(
+            self, "reference_integrity", ReferenceIntegrity(self.reference_integrity)
+        )
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -49,7 +86,8 @@ class HistoricalCorrectionRecord:
             "note": self.note,
             "recorded_at": self.recorded_at,
             "recorded_by": self.recorded_by,
-            "references_validated": self.references_validated,
+            "prior_representation": self.prior_representation.value,
+            "reference_integrity": self.reference_integrity.value,
         }
 
 
@@ -65,9 +103,28 @@ class HistoricalCorrectionLog:
             with open(path, encoding="utf-8") as f:
                 raw = json.load(f)
             self._by_id = {
-                correction_id: HistoricalCorrectionRecord(**record)
+                correction_id: self._record_from_dict(correction_id, record)
                 for correction_id, record in raw.get("corrections", {}).items()
             }
+
+    @staticmethod
+    def _record_from_dict(correction_id: str, record: Dict[str, Any]) -> "HistoricalCorrectionRecord":
+        """Load one persisted record, refusing the superseded boolean shape.
+
+        Pre-tri-state files carry `references_validated: bool`. That value is not
+        translatable: `true` could mean "every reference resolved" or "there were
+        no references to check", and those map to different states now. Guessing
+        would reintroduce exactly the ambiguity the tri-state removes, so this
+        fails closed and asks for a regeneration instead.
+        """
+        if "references_validated" in record:
+            raise ValueError(
+                f"{correction_id} uses the superseded 'references_validated' boolean. "
+                "It cannot be migrated automatically: 'true' was reachable both when "
+                "all references resolved and when there were none to check. "
+                "Regenerate the correction log."
+            )
+        return HistoricalCorrectionRecord(**record)
 
     def _next_id(self) -> str:
         number = 1 + max(
@@ -83,6 +140,7 @@ class HistoricalCorrectionLog:
         basis: str,
         evidence_event_ids: Tuple[str, ...],
         recorded_at: str,
+        prior_representation: PriorRepresentation,
         prior_statement_id: Optional[str] = None,
         replacement_statement_id: Optional[str] = None,
         note: str = "",
@@ -92,6 +150,31 @@ class HistoricalCorrectionLog:
     ) -> HistoricalCorrectionRecord:
         if not basis:
             raise ValueError("A historical correction requires an auditable basis.")
+
+        prior_representation = PriorRepresentation(prior_representation)
+        correction_kind = CorrectionKind(correction_kind)
+
+        # A corrected value must exist as answerable knowledge. Recording that a
+        # value changed while proving no Statement carries the new one asserts a
+        # correction nothing can answer.
+        if correction_kind is CorrectionKind.VALUE_CORRECTED and not replacement_statement_id:
+            raise ValueError(
+                "CorrectionKind.VALUE_CORRECTED requires replacement_statement_id: "
+                "the corrected value must exist as a Statement."
+            )
+        # The null prior must be a declaration, never an omission.
+        if prior_representation is PriorRepresentation.STATEMENT and not prior_statement_id:
+            raise ValueError(
+                "prior_representation=STATEMENT requires prior_statement_id. "
+                "If the prior reading was never a Statement, declare "
+                "prior_representation=LEGACY_NON_STATEMENT."
+            )
+        if prior_representation is PriorRepresentation.LEGACY_NON_STATEMENT and prior_statement_id:
+            raise ValueError(
+                "prior_representation=LEGACY_NON_STATEMENT forbids prior_statement_id: "
+                "a legacy representation is by definition not a Statement."
+            )
+
         statement_ids = (prior_statement_id, replacement_statement_id)
         if known_statement_ids is not None:
             dangling_statements = [
@@ -115,20 +198,22 @@ class HistoricalCorrectionLog:
                     f"Historical correction references unknown EvidenceEvent IDs: "
                     f"{dangling_events}"
                 )
-        validation_requested = (
-            known_statement_ids is not None or known_evidence_event_ids is not None
-        )
-        statement_references_validated = (
-            not any(statement_ids) or known_statement_ids is not None
-        )
-        evidence_references_validated = (
-            not evidence_event_ids or known_evidence_event_ids is not None
-        )
-        references_validated = (
-            validation_requested
-            and statement_references_validated
-            and evidence_references_validated
-        )
+        # Tri-state, so "nothing was checked" can never masquerade as "checked".
+        # Dangling IDs already raised above, so reaching here with references
+        # present and both known-ID sets supplied means every reference resolved.
+        present_statement_ids = [sid for sid in statement_ids if sid is not None]
+        checked_statements = known_statement_ids is not None
+        checked_events = known_evidence_event_ids is not None
+        if not checked_statements and not checked_events:
+            reference_integrity = ReferenceIntegrity.UNVALIDATED
+        elif (present_statement_ids and not checked_statements) or (
+            evidence_event_ids and not checked_events
+        ):
+            reference_integrity = ReferenceIntegrity.UNVALIDATED
+        elif not present_statement_ids and not evidence_event_ids:
+            reference_integrity = ReferenceIntegrity.NOTHING_TO_VALIDATE
+        else:
+            reference_integrity = ReferenceIntegrity.VALIDATED
         record = HistoricalCorrectionRecord(
             correction_id=self._next_id(),
             entity_id=entity_id,
@@ -141,7 +226,8 @@ class HistoricalCorrectionLog:
             note=note,
             recorded_at=recorded_at,
             recorded_by=recorded_by,
-            references_validated=references_validated,
+            prior_representation=prior_representation,
+            reference_integrity=reference_integrity,
         )
         self._by_id[record.correction_id] = record
         self._flush()

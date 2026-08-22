@@ -28,6 +28,7 @@ from timonelo.evidence.conflicts import ConflictLog
 from timonelo.evidence.corrections import (
     CorrectionKind,
     HistoricalCorrectionLog,
+    PriorRepresentation,
 )
 from timonelo.evidence.editor import StatementEditor
 from timonelo.evidence.events import EvidenceEvent
@@ -54,6 +55,9 @@ ARTIFACT_FULL_PATH = os.path.join(REPO_ROOT, ARTIFACT_REL_PATH)
 EXPECTED_SHA256 = "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9"
 KNOWLEDGE_DIR = os.path.join(REPO_ROOT, "knowledge", "ships", "msc-meraviglia")
 REPORTS_DIR = os.path.join(REPO_ROOT, "knowledge", "reports")
+
+
+_UNSET = object()
 
 
 def write_knowledge_doc(knowledge_dir: str, filename: str, document) -> None:
@@ -154,8 +158,19 @@ def run_ingestion(
         statement_type: str,
         value: Any,
         page: int,
+        statement_value: Any = _UNSET,
     ) -> None:
+        """Record one observation and the statement that cites it.
+
+        `statement_value` exists because an event records the raw reading while a
+        statement must use its registered question's value domain. Q-0016 answers
+        "which deck is this venue on" as an ordered deck LIST, so the plan reading
+        `6` becomes the statement value `[6]`. Defaults to `value`, leaving every
+        existing call site byte-identical.
+        """
         locator = f"page:{page}"
+        if statement_value is _UNSET:
+            statement_value = value
 
         # 1. EvidenceEvent captures the observation before its statement cites it.
         event = record_observation(
@@ -171,7 +186,7 @@ def run_ingestion(
             entity_id=entity_id,
             question_id=question_id,
             statement_type=statement_type,
-            value=value,
+            value=statement_value,
             artifact_id=registered_artifact.artifact_id,
             locator=locator,
             read_by="deckplan_extraction_pipeline",
@@ -670,21 +685,36 @@ def run_ingestion(
     # --- Historical Correction Audit ---
     # These are prior representations, not concurrently applicable Statements.
     # No synthetic incumbent Statement or live Conflict is created for comparison.
-    statements_by_question = {statement.question_id: statement for statement in statements}
-    record_observation(
+    # Venue deck assignment under the REGISTERED canonical question Q-0016
+    # ("Which deck is this venue on?"), statement_type deck.venue_present, whose
+    # authority already covers cruise_line_deck_plan. The former Q-HIST-* ids were
+    # unregistered, so statements under them would have been invisible to coverage.
+    # The event keeps the raw plan reading; the statement uses the deck-list domain.
+    record_fact(
         event_id="EVT-MER-REST-OCEAN-CAY-DECK",
         entity_id="msc-meraviglia:venue:REST-OCEAN-CAY",
-        question_id="Q-HIST-OCEAN-CAY-DECK",
+        question_id="Q-0016",
+        statement_type="deck.venue_present",
         value=6,
+        statement_value=[6],
         page=3,
     )
-    record_observation(
+    record_fact(
         event_id="EVT-MER-LOUNGE-TOP-SAIL-DECK",
         entity_id="msc-meraviglia:venue:LOUNGE-TOP-SAIL",
-        question_id="Q-HIST-TOP-SAIL-DECK",
+        question_id="Q-0016",
+        statement_type="deck.venue_present",
         value=16,
+        statement_value=[16],
         page=5,
     )
+    # Keyed by (entity, question): both venue-deck corrections now answer the same
+    # registered question Q-0016, so question_id alone is no longer unique.
+    statements_by_entity_question = {
+        (statement.entity_id, statement.question_id): statement
+        for statement in statements
+    }
+
     correction_specs = [
         ("msc-meraviglia", "Q-SHIP-CABIN-COUNT", "EVT-MER-TOTAL-CABINS",
          "Prior unsupported inventory value 2244 replaced by the official 11.2025 deck plan."),
@@ -695,22 +725,25 @@ def run_ingestion(
         ("msc-meraviglia:venue:REST-HOLA-TACOS", "Q-VENUE-REST-HOLA-TACOS",
          "EVT-MER-REST-REST-HOLA-TACOS",
          "Prior venue concept name replaced by the active concept shown in the official deck plan."),
-        ("msc-meraviglia:venue:REST-OCEAN-CAY", "Q-HIST-OCEAN-CAY-DECK",
+        ("msc-meraviglia:venue:REST-OCEAN-CAY", "Q-0016",
          "EVT-MER-REST-OCEAN-CAY-DECK",
          "Prior Deck 7 representation corrected to the Deck 6 location shown in the official deck plan."),
-        ("msc-meraviglia:venue:LOUNGE-TOP-SAIL", "Q-HIST-TOP-SAIL-DECK",
+        ("msc-meraviglia:venue:LOUNGE-TOP-SAIL", "Q-0016",
          "EVT-MER-LOUNGE-TOP-SAIL-DECK",
          "Prior Deck 15 representation corrected to the Deck 16 location shown in the official deck plan."),
     ]
     for entity_id, question_id, event_id, basis in correction_specs:
-        replacement = statements_by_question.get(question_id)
+        replacement = statements_by_entity_question[(entity_id, question_id)]
         correction_log.record(
             entity_id=entity_id,
             question_id=question_id,
             correction_kind=CorrectionKind.VALUE_CORRECTED,
             basis=basis,
             evidence_event_ids=(event_id,),
-            replacement_statement_id=(replacement.statement_id if replacement else None),
+            # Every prior reading here came from a legacy knowledge file that was
+            # never a Statement, so the null prior is declared, not omitted.
+            prior_representation=PriorRepresentation.LEGACY_NON_STATEMENT,
+            replacement_statement_id=replacement.statement_id,
             recorded_at="2026-08-19",
             recorded_by="deckplan_evidence_verifier",
             known_statement_ids={statement.statement_id for statement in statements},
