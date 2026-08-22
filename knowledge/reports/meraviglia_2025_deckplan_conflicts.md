@@ -26,5 +26,5 @@
 
 - **Historical Corrections Recorded**: 6
 - **Live Conflicts Detected**: 0
-- **SUPPORTED Statements with Evidence Closure**: 101
+- **SUPPORTED Statements with Evidence Closure**: 103
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`

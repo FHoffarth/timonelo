@@ -255,8 +255,14 @@ def test_meraviglia_19_all_venue_name_deck_pairs_statement_covered(manifest):
         ("public_areas.json", "public_areas"),
     ]
 
+    # Restricted to the venue-NAME statements (Q-VENUE-*). A venue entity may now
+    # carry a second statement answering Q-0016 ("which deck is this venue on"),
+    # and keying by entity alone silently collapsed the two.
     manifest_venue_stmts = {
-        s["entity_id"]: s for s in manifest["statements"] if "msc-meraviglia:venue:" in s["entity_id"]
+        s["entity_id"]: s
+        for s in manifest["statements"]
+        if "msc-meraviglia:venue:" in s["entity_id"]
+        and s["question_id"].startswith("Q-VENUE-")
     }
 
     for fname, key in venue_files:
@@ -415,24 +421,26 @@ def test_meraviglia_historical_discrepancies_are_corrections_not_live_conflicts(
     assert result["conflict_detection_executed"] is True
     assert len(current_manifest["historical_corrections"]) == 6
     assert all(
-        correction["references_validated"] is True
+        correction["reference_integrity"] == "VALIDATED"
         for correction in current_manifest["historical_corrections"]
     )
 
     events_by_id = {event["event_id"]: event for event in current_manifest["events"]}
-    corrections_by_question = {
-        correction["question_id"]: correction
+    # Keyed by entity: both venue-deck corrections now answer the same
+    # registered question Q-0016, so question_id alone is no longer unique.
+    corrections_by_entity = {
+        correction["entity_id"]: correction
         for correction in current_manifest["historical_corrections"]
     }
     ocean_event = events_by_id[
-        corrections_by_question["Q-HIST-OCEAN-CAY-DECK"]["evidence_event_ids"][0]
+        corrections_by_entity["msc-meraviglia:venue:REST-OCEAN-CAY"]["evidence_event_ids"][0]
     ]
     top_sail_event = events_by_id[
-        corrections_by_question["Q-HIST-TOP-SAIL-DECK"]["evidence_event_ids"][0]
+        corrections_by_entity["msc-meraviglia:venue:LOUNGE-TOP-SAIL"]["evidence_event_ids"][0]
     ]
-    assert ocean_event["question_id"] == "Q-HIST-OCEAN-CAY-DECK"
+    assert ocean_event["question_id"] == "Q-0016"
     assert ocean_event["observed_value"] == 6
     assert ocean_event["locator"] == "page:3"
-    assert top_sail_event["question_id"] == "Q-HIST-TOP-SAIL-DECK"
+    assert top_sail_event["question_id"] == "Q-0016"
     assert top_sail_event["observed_value"] == 16
     assert top_sail_event["locator"] == "page:5"

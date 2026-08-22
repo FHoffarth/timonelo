@@ -9,21 +9,21 @@
     "document_class": "cruise_line_deck_plan"
   },
   "events_count": 103,
-  "statements_count": 101,
+  "statements_count": 103,
   "statement_axis": {
     "unknown": 0,
-    "supported": 101,
+    "supported": 103,
     "conflicted": 0
   },
   "review_axis": {
-    "draft": 101,
+    "draft": 103,
     "under_review": 0,
     "approved": 0,
     "rejected": 0,
     "superseded": 0
   },
   "publish_axis": {
-    "publish_blocked": 101,
+    "publish_blocked": 103,
     "publish_allowed_with_warnings": 0,
     "publish_allowed": 0
   },
@@ -835,6 +835,22 @@
       "actor": "deckplan_evidence_verifier",
       "occurred_on": "2026-08-19",
       "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    },
+    {
+      "statement_id": "STM-0102",
+      "from_state": "CONDITION:UNKNOWN",
+      "to_state": "CONDITION:SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:3"
+    },
+    {
+      "statement_id": "STM-0103",
+      "from_state": "CONDITION:UNKNOWN",
+      "to_state": "CONDITION:SUPPORTED",
+      "actor": "deckplan_evidence_verifier",
+      "occurred_on": "2026-08-19",
+      "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
     }
   ],
   "historical_corrections": [
@@ -852,7 +868,8 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     },
     {
       "correction_id": "COR-0002",
@@ -868,7 +885,8 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     },
     {
       "correction_id": "COR-0003",
@@ -884,7 +902,8 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     },
     {
       "correction_id": "COR-0004",
@@ -900,14 +919,15 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     },
     {
       "correction_id": "COR-0005",
       "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
-      "question_id": "Q-HIST-OCEAN-CAY-DECK",
+      "question_id": "Q-0016",
       "prior_statement_id": null,
-      "replacement_statement_id": null,
+      "replacement_statement_id": "STM-0102",
       "correction_kind": "VALUE_CORRECTED",
       "basis": "Prior Deck 7 representation corrected to the Deck 6 location shown in the official deck plan.",
       "evidence_event_ids": [
@@ -916,14 +936,15 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     },
     {
       "correction_id": "COR-0006",
       "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
-      "question_id": "Q-HIST-TOP-SAIL-DECK",
+      "question_id": "Q-0016",
       "prior_statement_id": null,
-      "replacement_statement_id": null,
+      "replacement_statement_id": "STM-0103",
       "correction_kind": "VALUE_CORRECTED",
       "basis": "Prior Deck 15 representation corrected to the Deck 16 location shown in the official deck plan.",
       "evidence_event_ids": [
@@ -932,7 +953,8 @@
       "note": "",
       "recorded_at": "2026-08-19",
       "recorded_by": "deckplan_evidence_verifier",
-      "references_validated": true
+      "prior_representation": "LEGACY_NON_STATEMENT",
+      "reference_integrity": "VALIDATED"
     }
   ],
   "events": [
@@ -2153,7 +2175,7 @@
       "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
       "locator": "page:3",
       "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
-      "question_id": "Q-HIST-OCEAN-CAY-DECK",
+      "question_id": "Q-0016",
       "observed_value": 6,
       "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
@@ -2165,7 +2187,7 @@
       "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
       "locator": "page:5",
       "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
-      "question_id": "Q-HIST-TOP-SAIL-DECK",
+      "question_id": "Q-0016",
       "observed_value": 16,
       "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
@@ -4790,6 +4812,62 @@
       "derivation_note": "",
       "evidence_event_ids": [
         "EVT-MER-PUB-PUB-HORIZON-AMPHI"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
+      "evidence_condition": "SUPPORTED",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "valid_from": null,
+      "valid_until": null,
+      "note": ""
+    },
+    {
+      "statement_id": "STM-0102",
+      "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "value": [
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "page": 3,
+      "locator": "page:3",
+      "read_by": "deckplan_extraction_pipeline",
+      "read_on": "2026-08-19",
+      "method": "DIRECT",
+      "derivation": "LOCAL",
+      "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-REST-OCEAN-CAY-DECK"
+      ],
+      "input_statement_ids": [],
+      "rule_hash": null,
+      "evidence_condition": "SUPPORTED",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "valid_from": null,
+      "valid_until": null,
+      "note": ""
+    },
+    {
+      "statement_id": "STM-0103",
+      "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "value": [
+        16
+      ],
+      "artifact_id": "ART-0001",
+      "page": 5,
+      "locator": "page:5",
+      "read_by": "deckplan_extraction_pipeline",
+      "read_on": "2026-08-19",
+      "method": "DIRECT",
+      "derivation": "LOCAL",
+      "derivation_note": "",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-TOP-SAIL-DECK"
       ],
       "input_statement_ids": [],
       "rule_hash": null,
