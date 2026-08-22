@@ -1,0 +1,832 @@
+{
+  "schema": "timonelo.one-deck-geometry-proof.v1",
+  "source": {
+    "artifact_id": "ART-0001",
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "physical_pdf_path": "evidence/raw/sha256/08/085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0.pdf",
+    "pdf_page_number": 5,
+    "visible_deck_number": 14,
+    "visible_deck_name": "World Class",
+    "page_dimensions_points": [
+      589.606,
+      807.874
+    ],
+    "media_box_points": [
+      0.0,
+      0.0,
+      589.606,
+      807.874
+    ],
+    "crop_box_points": [
+      0.0,
+      0.0,
+      589.606,
+      807.874
+    ],
+    "rotation_degrees": 0,
+    "source_coordinate_system": "PDF page points as exposed by PyMuPDF; origin top-left; +x right; +y down",
+    "extraction_timestamp": "2026-08-20T00:00:00Z",
+    "extraction_tool": "PyMuPDF 1.26.4"
+  },
+  "deck": {
+    "number": 14,
+    "name": "World Class"
+  },
+  "transform": {
+    "transform_id": "pdf-page5-mediabox-to-unit-v2",
+    "frame_type": "PDF_PAGE_MEDIABOX",
+    "frame_semantics": "CANONICAL_NON_SEMANTIC_PAGE_FRAME",
+    "source_origin": [
+      0.0,
+      0.0
+    ],
+    "source_units": "PDF points",
+    "source_axis_direction": {
+      "x": "right",
+      "y": "down"
+    },
+    "source_bbox": [
+      0.0,
+      0.0,
+      589.606,
+      807.874
+    ],
+    "source_width": 589.606,
+    "source_height": 807.874,
+    "frame_source": "physical PDF page 5 MediaBox as exposed by PyMuPDF page.rect",
+    "target_origin": [
+      0.0,
+      0.0
+    ],
+    "target_units": "normalized fraction of PDF page MediaBox",
+    "target_axis_direction": {
+      "x": "right",
+      "y": "down"
+    },
+    "rotation_degrees": 0,
+    "translation": [
+      0.0,
+      0.0
+    ],
+    "scaling": [
+      0.00169604781728563,
+      0.0012378167523508243
+    ],
+    "clipping": null,
+    "formula": "x'=x/page_width; y'=y/page_height",
+    "semantic": false,
+    "display_only": false
+  },
+  "review_viewport": {
+    "bbox": [
+      24.0,
+      198.0,
+      128.0,
+      748.0
+    ],
+    "classification": "DISPLAY_ONLY",
+    "semantic": false,
+    "geometry_provenance": false,
+    "reason": "hand-selected viewport used only to make the Deck 14 overlay legible"
+  },
+  "objects": [
+    {
+      "object_id": "bellissima-deck14-cabin-14001",
+      "semantic_type": "cabin",
+      "cabin_number": "14001",
+      "source_text_bbox": [
+        40.990574,
+        247.807999,
+        48.785778,
+        253.225021
+      ],
+      "source_bbox": [
+        37.133801,
+        246.544495,
+        49.583801,
+        254.038498
+      ],
+      "normalized_bbox": [
+        0.062980702,
+        0.305176906,
+        0.084096497,
+        0.314453109
+      ],
+      "normalized_polygon": [
+        [
+          0.062980702,
+          0.305176906
+        ],
+        [
+          0.084096497,
+          0.305176906
+        ],
+        [
+          0.084096497,
+          0.314453109
+        ],
+        [
+          0.062980702,
+          0.314453109
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-29:line-0:word-0",
+        "page5:drawing-index-4:seqno-7"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-4:seqno-7",
+        "drawing_index": 4,
+        "sequence_number": 7,
+        "source_bbox": [
+          37.133801,
+          246.544495,
+          49.583801,
+          254.038498
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14002",
+      "semantic_type": "cabin",
+      "cabin_number": "14002",
+      "source_text_bbox": [
+        99.256332,
+        262.812164,
+        107.051537,
+        268.229156
+      ],
+      "source_bbox": [
+        98.520699,
+        261.572754,
+        110.918701,
+        269.086761
+      ],
+      "normalized_bbox": [
+        0.167095816,
+        0.323779137,
+        0.188123421,
+        0.333080101
+      ],
+      "normalized_polygon": [
+        [
+          0.167095816,
+          0.323779137
+        ],
+        [
+          0.188123421,
+          0.323779137
+        ],
+        [
+          0.188123421,
+          0.333080101
+        ],
+        [
+          0.167095816,
+          0.333080101
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-27:line-0:word-0",
+        "page5:drawing-index-10:seqno-13"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-10:seqno-13",
+        "drawing_index": 10,
+        "sequence_number": 13,
+        "source_bbox": [
+          98.520699,
+          261.572754,
+          110.918701,
+          269.086761
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14003",
+      "semantic_type": "cabin",
+      "cabin_number": "14003",
+      "source_text_bbox": [
+        40.990574,
+        255.229813,
+        48.785778,
+        260.64682
+      ],
+      "source_bbox": [
+        37.133801,
+        254.03894,
+        49.583801,
+        261.572937
+      ],
+      "normalized_bbox": [
+        0.062980702,
+        0.314453656,
+        0.084096497,
+        0.323779363
+      ],
+      "normalized_polygon": [
+        [
+          0.062980702,
+          0.314453656
+        ],
+        [
+          0.084096497,
+          0.314453656
+        ],
+        [
+          0.084096497,
+          0.323779363
+        ],
+        [
+          0.062980702,
+          0.323779363
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-28:line-0:word-0",
+        "page5:drawing-index-5:seqno-8"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-5:seqno-8",
+        "drawing_index": 5,
+        "sequence_number": 8,
+        "source_bbox": [
+          37.133801,
+          254.03894,
+          49.583801,
+          261.572937
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14004",
+      "semantic_type": "cabin",
+      "cabin_number": "14004",
+      "source_text_bbox": [
+        82.899857,
+        270.345917,
+        90.695061,
+        275.762909
+      ],
+      "source_bbox": [
+        81.919205,
+        270.440918,
+        93.106201,
+        275.570923
+      ],
+      "normalized_bbox": [
+        0.138938889,
+        0.334756299,
+        0.157912569,
+        0.341106305
+      ],
+      "normalized_polygon": [
+        [
+          0.138938889,
+          0.334756299
+        ],
+        [
+          0.157912569,
+          0.334756299
+        ],
+        [
+          0.157912569,
+          0.341106305
+        ],
+        [
+          0.138938889,
+          0.341106305
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-34:line-0:word-0",
+        "page5:drawing-index-12:seqno-15"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-12:seqno-15",
+        "drawing_index": 12,
+        "sequence_number": 15,
+        "source_bbox": [
+          81.919205,
+          270.440918,
+          93.106201,
+          275.570923
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14005",
+      "semantic_type": "cabin",
+      "cabin_number": "14005",
+      "source_text_bbox": [
+        57.588974,
+        256.458038,
+        65.384178,
+        261.875031
+      ],
+      "source_bbox": [
+        55.2957,
+        256.632141,
+        66.112701,
+        261.531128
+      ],
+      "normalized_bbox": [
+        0.093784151,
+        0.317663563,
+        0.112130302,
+        0.323727611
+      ],
+      "normalized_polygon": [
+        [
+          0.093784151,
+          0.317663563
+        ],
+        [
+          0.112130302,
+          0.317663563
+        ],
+        [
+          0.112130302,
+          0.323727611
+        ],
+        [
+          0.093784151,
+          0.323727611
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-32:line-3:word-0",
+        "page5:drawing-index-16:seqno-19"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-16:seqno-19",
+        "drawing_index": 16,
+        "sequence_number": 19,
+        "source_bbox": [
+          55.2957,
+          256.632141,
+          66.112701,
+          261.531128
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14006",
+      "semantic_type": "cabin",
+      "cabin_number": "14006",
+      "source_text_bbox": [
+        99.256332,
+        270.372101,
+        107.051537,
+        275.789093
+      ],
+      "source_bbox": [
+        98.520699,
+        269.077454,
+        110.918701,
+        276.591461
+      ],
+      "normalized_bbox": [
+        0.167095816,
+        0.33306858,
+        0.188123421,
+        0.342369544
+      ],
+      "normalized_polygon": [
+        [
+          0.167095816,
+          0.33306858
+        ],
+        [
+          0.188123421,
+          0.33306858
+        ],
+        [
+          0.188123421,
+          0.342369544
+        ],
+        [
+          0.167095816,
+          0.342369544
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-26:line-0:word-0",
+        "page5:drawing-index-11:seqno-14"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-11:seqno-14",
+        "drawing_index": 11,
+        "sequence_number": 14,
+        "source_bbox": [
+          98.520699,
+          269.077454,
+          110.918701,
+          276.591461
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14007",
+      "semantic_type": "cabin",
+      "cabin_number": "14007",
+      "source_text_bbox": [
+        40.99057,
+        262.812225,
+        48.785774,
+        268.229218
+      ],
+      "source_bbox": [
+        37.133801,
+        261.572754,
+        49.583801,
+        269.086761
+      ],
+      "normalized_bbox": [
+        0.062980702,
+        0.323779137,
+        0.084096497,
+        0.333080101
+      ],
+      "normalized_polygon": [
+        [
+          0.062980702,
+          0.323779137
+        ],
+        [
+          0.084096497,
+          0.323779137
+        ],
+        [
+          0.084096497,
+          0.333080101
+        ],
+        [
+          0.062980702,
+          0.333080101
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-19:line-0:word-0",
+        "page5:drawing-index-6:seqno-9"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-6:seqno-9",
+        "drawing_index": 6,
+        "sequence_number": 9,
+        "source_bbox": [
+          37.133801,
+          261.572754,
+          49.583801,
+          269.086761
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14008",
+      "semantic_type": "cabin",
+      "cabin_number": "14008",
+      "source_text_bbox": [
+        99.256332,
+        277.842438,
+        107.051537,
+        283.25943
+      ],
+      "source_bbox": [
+        98.520699,
+        276.591248,
+        110.918701,
+        284.105255
+      ],
+      "normalized_bbox": [
+        0.167095816,
+        0.34236928,
+        0.188123421,
+        0.351670244
+      ],
+      "normalized_polygon": [
+        [
+          0.167095816,
+          0.34236928
+        ],
+        [
+          0.188123421,
+          0.34236928
+        ],
+        [
+          0.188123421,
+          0.351670244
+        ],
+        [
+          0.167095816,
+          0.351670244
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-25:line-0:word-0",
+        "page5:drawing-index-17:seqno-20"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-17:seqno-20",
+        "drawing_index": 17,
+        "sequence_number": 20,
+        "source_bbox": [
+          98.520699,
+          276.591248,
+          110.918701,
+          284.105255
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14009",
+      "semantic_type": "cabin",
+      "cabin_number": "14009",
+      "source_text_bbox": [
+        57.588974,
+        261.505463,
+        65.384178,
+        266.922455
+      ],
+      "source_bbox": [
+        55.2957,
+        261.530212,
+        66.112701,
+        266.568207
+      ],
+      "normalized_bbox": [
+        0.093784151,
+        0.323726478,
+        0.112130302,
+        0.329962592
+      ],
+      "normalized_polygon": [
+        [
+          0.093784151,
+          0.323726478
+        ],
+        [
+          0.112130302,
+          0.323726478
+        ],
+        [
+          0.112130302,
+          0.329962592
+        ],
+        [
+          0.093784151,
+          0.329962592
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-32:line-2:word-0",
+        "page5:drawing-index-15:seqno-18"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-15:seqno-18",
+        "drawing_index": 15,
+        "sequence_number": 18,
+        "source_bbox": [
+          55.2957,
+          261.530212,
+          66.112701,
+          266.568207
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-cabin-14010",
+      "semantic_type": "cabin",
+      "cabin_number": "14010",
+      "source_text_bbox": [
+        99.256332,
+        285.241852,
+        107.051537,
+        290.658844
+      ],
+      "source_bbox": [
+        98.520699,
+        284.094421,
+        110.918701,
+        291.608429
+      ],
+      "normalized_bbox": [
+        0.167095816,
+        0.351656834,
+        0.188123421,
+        0.360957799
+      ],
+      "normalized_polygon": [
+        [
+          0.167095816,
+          0.351656834
+        ],
+        [
+          0.188123421,
+          0.351656834
+        ],
+        [
+          0.188123421,
+          0.360957799
+        ],
+        [
+          0.167095816,
+          0.360957799
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-24:line-0:word-0",
+        "page5:drawing-index-18:seqno-21"
+      ],
+      "source_geometry": {
+        "source_reference": "page5:drawing-index-18:seqno-21",
+        "drawing_index": 18,
+        "sequence_number": 21,
+        "source_bbox": [
+          98.520699,
+          284.094421,
+          110.918701,
+          291.608429
+        ],
+        "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+      },
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "semantic_association_method": "strict-label-centroid-containment-with-cardinality-gate",
+      "association_staging_note": "source containment is deterministic; visual adjudication remains required",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    },
+    {
+      "object_id": "bellissima-deck14-lift-core-proof",
+      "semantic_type": "vertical_core_region",
+      "source_text_bbox": [
+        71.676498,
+        312.234772,
+        75.725304,
+        317.651764
+      ],
+      "source_bbox": [
+        53.560699,
+        307.423218,
+        94.513802,
+        325.66922
+      ],
+      "normalized_bbox": [
+        0.090841507,
+        0.380533609,
+        0.160299928,
+        0.403118816
+      ],
+      "normalized_polygon": [
+        [
+          0.090841507,
+          0.380533609
+        ],
+        [
+          0.160299928,
+          0.380533609
+        ],
+        [
+          0.160299928,
+          0.403118816
+        ],
+        [
+          0.090841507,
+          0.403118816
+        ]
+      ],
+      "source_references": [
+        "page5:text-block-61:line-0:word-0",
+        "page5:drawing-index-1222:seqno-1225",
+        "page5:drawing-index-1227:seqno-1230"
+      ],
+      "source_geometry_components": [
+        {
+          "source_reference": "page5:drawing-index-1222:seqno-1225",
+          "drawing_index": 1222,
+          "sequence_number": 1225,
+          "source_bbox": [
+            75.801804,
+            307.423218,
+            94.513802,
+            325.66922
+          ],
+          "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+        },
+        {
+          "source_reference": "page5:drawing-index-1227:seqno-1230",
+          "drawing_index": 1227,
+          "sequence_number": 1230,
+          "source_bbox": [
+            53.560699,
+            307.423218,
+            72.272697,
+            325.66922
+          ],
+          "geometry_provenance": "DIRECT_SOURCE_GEOMETRY"
+        }
+      ],
+      "transform_id": "pdf-page5-mediabox-to-unit-v2",
+      "geometry_provenance": "DERIVED_GEOMETRY",
+      "derivation": "union bbox of two DIRECT_SOURCE_GEOMETRY records, then normalized in the page MediaBox frame",
+      "semantic_association_method": "label-contained-by-union-bbox-of-two-source-vector-groups",
+      "association_staging_note": "source supports a labelled lift region, not connectivity or nearest-core claims",
+      "human_review_state": "DRAFT",
+      "evidence_condition": "UNKNOWN",
+      "publish_status": "PUBLISH_BLOCKED"
+    }
+  ],
+  "corridor_observation": {
+    "classification": "INFERRED_NEGATIVE_SPACE",
+    "accepted_geometry": false,
+    "geometry": null,
+    "reason": "The apparent corridor is negative space; no independently bounded source polygon was established.",
+    "human_review_state": "DRAFT",
+    "evidence_condition": "UNKNOWN",
+    "publish_status": "PUBLISH_BLOCKED"
+  },
+  "venue_observation": {
+    "accepted_geometry": false,
+    "geometry": null,
+    "reason": "No public venue is labelled within the locked Deck 14 proof region."
+  },
+  "cross_deck_relationships": [],
+  "navigation_graph": null,
+  "nearest_core_calculation": null,
+  "above_below_relations": [],
+  "port_starboard_associations": []
+}
