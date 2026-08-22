@@ -389,7 +389,7 @@ def extract_all_geometries(pdf_path: Path, geometry_dir: Path, schema_path: Path
     md_lines.append("- `adjacent_objects`: Graph relations linking `fore`, `aft`, `across`, `corridor`, and `nearest_lift`")
     md_lines.append("- `confidence`: `1.0` (Directly verified from November 2025 Deck Plan artifact)")
     
-    with open(report_path, "w", encoding="utf-8") as f:
+    with open(report_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(md_lines))
         
     print(f"Generated Geometry Coverage Report at {report_path}")

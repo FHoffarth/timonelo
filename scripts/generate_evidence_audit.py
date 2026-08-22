@@ -234,7 +234,7 @@ def write_reports(results):
         lines.append(f"| `{m['file']}` | `{m['entity_id']}` | `{m['field']}` | `{m['current_value']}` | {m['evidence_page']} | `MATCH` |")
     lines.append("")
 
-    with open(md_path, "w", encoding="utf-8") as f:
+    with open(md_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines))
     print(f"Wrote Markdown report to {md_path}")
 

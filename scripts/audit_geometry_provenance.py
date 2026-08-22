@@ -190,7 +190,7 @@ def audit_and_update_geometry_provenance():
     lines.append("- ✅ **Knowledge & Graph unmutated**: `knowledge/` and `data/` graphs remain untouched; provenance updates are strictly confined to `geometry/`.")
     lines.append("- ✅ **Schema Validated**: All 15 files conform to `deck_geometry.schema.json`.")
     
-    with open(report_path, "w", encoding="utf-8") as f:
+    with open(report_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines))
         
     print(f"Wrote Geometry Provenance Report to {report_path}")

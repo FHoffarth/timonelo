@@ -822,7 +822,7 @@ def run_ingestion(
 - **Spatial Geometry**: Retained as `SYNTHETIC_GEOMETRY`.
 - **Epistemic Honesty**: Zero speculative promotions.
 """
-    with open(os.path.join(reports_dir, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(reports_dir, "meraviglia_official_deckplan_ingestion_report.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(report_md)
 
     conflicts_md = f"""# MSC Meraviglia 2025 Deckplan Historical Correction Report
@@ -856,7 +856,7 @@ def run_ingestion(
 - **SUPPORTED Statements with Evidence Closure**: {len(statements)}
 - **Source Artifact**: `MSC-MER-DECKPLAN-11-2025-DEU`
 """
-    with open(os.path.join(reports_dir, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(reports_dir, "meraviglia_2025_deckplan_conflicts.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(conflicts_md)
     shutil.rmtree(temp_engine_dir, ignore_errors=True)
 
