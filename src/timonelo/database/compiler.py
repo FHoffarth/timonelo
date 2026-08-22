@@ -9,6 +9,8 @@ import os
 import json
 from typing import Dict, Any, List, Tuple
 
+from timonelo.canonical import canonical_dump
+
 
 class KnowledgeDBCompiler:
     def __init__(self, root_dir: str):
@@ -102,15 +104,17 @@ class KnowledgeDBCompiler:
             "graph_summary": graph_export["statistics"],
         }
 
-        # Save to data/cruise_intelligence_db.json and data/cruise_knowledge_graph.json
+        # Save to data/cruise_intelligence_db.json and data/cruise_knowledge_graph.json.
+        # Both go through canonical_dump: same sorted keys, indent and encoding
+        # as before, plus LF newlines on every platform and the trailing newline
+        # the canonical form requires.
         os.makedirs(self.data_dir, exist_ok=True)
-        out_path = os.path.join(self.data_dir, "cruise_intelligence_db.json")
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(compiled_db, f, indent=2, sort_keys=True, ensure_ascii=False)
-
-        graph_path = os.path.join(self.data_dir, "cruise_knowledge_graph.json")
-        with open(graph_path, "w", encoding="utf-8") as f:
-            json.dump(graph_export, f, indent=2, sort_keys=True, ensure_ascii=False)
+        canonical_dump(
+            compiled_db, os.path.join(self.data_dir, "cruise_intelligence_db.json")
+        )
+        canonical_dump(
+            graph_export, os.path.join(self.data_dir, "cruise_knowledge_graph.json")
+        )
 
         return compiled_db
 

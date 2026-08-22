@@ -14,6 +14,8 @@ import json
 import glob
 import jsonschema
 
+from timonelo.canonical import deterministic_dump
+
 def audit_and_update_geometry_provenance():
     geometry_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\geometry"
     schema_path = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\schema\deck_geometry.schema.json"
@@ -120,9 +122,16 @@ def audit_and_update_geometry_provenance():
         # Validate against schema
         jsonschema.validate(instance=deck_data, schema=schema)
         
-        # Save updated file
-        with open(fpath, "w", encoding="utf-8") as f:
-            json.dump(deck_data, f, indent=2, ensure_ascii=False)
+        # Save updated file.
+        #
+        # Same byte contract as scripts/extract_spatial_geometry.py: these
+        # files are hashed byte-for-byte by the Deck 14 proof tests, so key
+        # order and the absent final newline are preserved deliberately.
+        # deterministic_dump pins the newline so this script no longer emits
+        # CRLF when run on Windows.
+        deterministic_dump(
+            deck_data, fpath, sort_keys=False, trailing_newline=False
+        )
             
         deck_summaries.append({
             "deck_number": deck_num,
