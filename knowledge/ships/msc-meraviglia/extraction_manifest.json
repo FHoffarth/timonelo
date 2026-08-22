@@ -8,7 +8,7 @@
     "pages": 6,
     "document_class": "cruise_line_deck_plan"
   },
-  "events_count": 101,
+  "events_count": 103,
   "statements_count": 101,
   "statement_axis": {
     "unknown": 0,
@@ -835,6 +835,104 @@
       "actor": "deckplan_evidence_verifier",
       "occurred_on": "2026-08-19",
       "note": "Directly evidenced in Official MSC Cruises Meraviglia Deckplans (11.2025 DEU) at page:5"
+    }
+  ],
+  "historical_corrections": [
+    {
+      "correction_id": "COR-0001",
+      "entity_id": "msc-meraviglia",
+      "question_id": "Q-SHIP-CABIN-COUNT",
+      "prior_statement_id": null,
+      "replacement_statement_id": "STM-0016",
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior unsupported inventory value 2244 replaced by the official 11.2025 deck plan.",
+      "evidence_event_ids": [
+        "EVT-MER-TOTAL-CABINS"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
+    },
+    {
+      "correction_id": "COR-0002",
+      "entity_id": "msc-meraviglia:deck:4",
+      "question_id": "Q-DECK-4-NAME",
+      "prior_statement_id": null,
+      "replacement_statement_id": "STM-0001",
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior deck name Corallo replaced by the official 11.2025 deck-plan name Kos.",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-4-NAME"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
+    },
+    {
+      "correction_id": "COR-0003",
+      "entity_id": "msc-meraviglia:deck:13",
+      "question_id": "Q-DECK-13-NAME",
+      "prior_statement_id": null,
+      "replacement_statement_id": "STM-0010",
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior spelling Kilimanjaro corrected to the source spelling Kilimangiaro.",
+      "evidence_event_ids": [
+        "EVT-MER-DECK-13-NAME"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
+    },
+    {
+      "correction_id": "COR-0004",
+      "entity_id": "msc-meraviglia:venue:REST-HOLA-TACOS",
+      "question_id": "Q-VENUE-REST-HOLA-TACOS",
+      "prior_statement_id": null,
+      "replacement_statement_id": "STM-0046",
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior venue concept name replaced by the active concept shown in the official deck plan.",
+      "evidence_event_ids": [
+        "EVT-MER-REST-REST-HOLA-TACOS"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
+    },
+    {
+      "correction_id": "COR-0005",
+      "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
+      "question_id": "Q-HIST-OCEAN-CAY-DECK",
+      "prior_statement_id": null,
+      "replacement_statement_id": null,
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior Deck 7 representation corrected to the Deck 6 location shown in the official deck plan.",
+      "evidence_event_ids": [
+        "EVT-MER-REST-OCEAN-CAY-DECK"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
+    },
+    {
+      "correction_id": "COR-0006",
+      "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
+      "question_id": "Q-HIST-TOP-SAIL-DECK",
+      "prior_statement_id": null,
+      "replacement_statement_id": null,
+      "correction_kind": "VALUE_CORRECTED",
+      "basis": "Prior Deck 15 representation corrected to the Deck 16 location shown in the official deck plan.",
+      "evidence_event_ids": [
+        "EVT-MER-LOUNGE-TOP-SAIL-DECK"
+      ],
+      "note": "",
+      "recorded_at": "2026-08-19",
+      "recorded_by": "deckplan_evidence_verifier",
+      "references_validated": true
     }
   ],
   "events": [
@@ -2045,6 +2143,30 @@
       "entity_id": "msc-meraviglia:venue:PUB-HORIZON-AMPHI",
       "question_id": "Q-VENUE-PUB-HORIZON-AMPHI",
       "observed_value": "Horizon Amphitheatre",
+      "observed_by": "deckplan_extraction_pipeline",
+      "observed_on": "2026-08-19",
+      "supersedes": null,
+      "notes": ""
+    },
+    {
+      "event_id": "EVT-MER-REST-OCEAN-CAY-DECK",
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "locator": "page:3",
+      "entity_id": "msc-meraviglia:venue:REST-OCEAN-CAY",
+      "question_id": "Q-HIST-OCEAN-CAY-DECK",
+      "observed_value": 6,
+      "observed_by": "deckplan_extraction_pipeline",
+      "observed_on": "2026-08-19",
+      "supersedes": null,
+      "notes": ""
+    },
+    {
+      "event_id": "EVT-MER-LOUNGE-TOP-SAIL-DECK",
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "locator": "page:5",
+      "entity_id": "msc-meraviglia:venue:LOUNGE-TOP-SAIL",
+      "question_id": "Q-HIST-TOP-SAIL-DECK",
+      "observed_value": 16,
       "observed_by": "deckplan_extraction_pipeline",
       "observed_on": "2026-08-19",
       "supersedes": null,
