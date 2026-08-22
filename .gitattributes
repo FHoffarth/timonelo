@@ -1,0 +1,26 @@
+# Line endings are part of the evidence model here, not a formatting detail.
+#
+# Several tests hash the BYTES of committed artifacts — geometry files, proof
+# records, knowledge packs — to prove they have not changed. Without this file
+# those bytes depend on the checkout platform: a Windows clone with
+# core.autocrlf=true materialises CRLF while Linux CI materialises LF, so the
+# same commit hashes two different ways and a byte-comparison test can only
+# ever pass on one of them.
+#
+# Normalising to LF in the working tree makes those digests a property of the
+# commit rather than of the machine that checked it out.
+
+* text=auto eol=lf
+
+# Evidence artifacts and binaries: never transformed, never diffed as text.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.warc binary
+*.warc.gz binary
