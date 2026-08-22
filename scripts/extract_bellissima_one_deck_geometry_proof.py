@@ -3,6 +3,11 @@
 This is deliberately a one-page, one-deck experiment. It is not a fleet or
 whole-ship extractor. PyMuPDF is loaded lazily because it is forensic tooling,
 not a Timonelo runtime dependency.
+
+Cabin detection and association now live in
+`timonelo.spatial.deck14_extract`, which covers the whole Deck 14 cabin block
+rather than a locked ten. This script keeps the lift-region derivation, the
+source identity block and the artifact writers.
 """
 
 from __future__ import annotations
@@ -14,6 +19,7 @@ from pathlib import Path
 from typing import Any
 
 from timonelo.evidence.registry import ArtifactRegistry
+from timonelo.spatial import deck14_extract
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +32,10 @@ PAGE_WIDTH_POINTS = 589.606
 PAGE_HEIGHT_POINTS = 807.874
 REVIEW_VIEWPORT = (24.0, 198.0, 128.0, 748.0)
 STRICT_INTERIOR_EPSILON_POINTS = 0.01
+#: The original locked proof subset. The cabin block is now extracted in full
+#: by `timonelo.spatial.deck14_extract`; this tuple is retained only as the
+#: regression scope for `resolve_cabin_boundary_association`, which predates
+#: the module and is still exercised directly by the test suite.
 PROOF_CABINS = (
     "14001", "14002", "14003", "14004", "14005",
     "14006", "14007", "14008", "14009", "14010",
@@ -202,69 +212,38 @@ def extract() -> tuple[dict[str, Any], dict[str, Any], Path]:
     associations: list[dict[str, Any]] = []
     proof_objects: list[dict[str, Any]] = []
 
-    for cabin_number in PROOF_CABINS:
-        matches = [word for word in words if word[4] == cabin_number]
-        word = require_unique_text_match(cabin_number, matches)
-        text_bbox = [round(value, 6) for value in word[:4]]
-        candidate_records = [
-            _source_path(draw, index)
-            for index, draw in enumerate(drawings)
-            if draw["type"] == "s"
-            and draw["rect"].get_area() < 200
-            and len(draw["items"]) == 4
-        ]
-        resolution = resolve_cabin_boundary_association(
-            cabin_number, text_bbox, candidate_records
+    labels = deck14_extract.extract_labels(words)
+    bounds = deck14_extract.panel_bounds(labels)
+    candidates = deck14_extract.detect_cell_candidates(drawings, bounds)
+    cells, containers = deck14_extract.partition_containers(candidates, labels)
+
+    extraction = deck14_extract.associate(
+        deck14_extract.extract_labels(words),
+        cells,
+    )
+    if (
+        extraction.ambiguous_labels
+        or extraction.contested_cells
+        or extraction.unresolved_labels
+    ):
+        raise RuntimeError(
+            "Deck 14 cabin association is not deterministic; refusing to write a proof"
         )
-        for candidate in candidate_records:
-            if candidate["source_reference"] in resolution["candidate_source_drawing_ids"]:
-                selected_paths[candidate["drawing_index"]] = candidate
-        text_ref = f"page5:text-block-{word[5]}:line-{word[6]}:word-{word[7]}"
+    for association in sorted(extraction.associations, key=lambda item: item["label_text"]):
+        accepted = association["accepted_geometry"]
+        selected_paths[accepted["drawing_index"]] = accepted
         selected_text.append({
-            "source_reference": text_ref,
-            "text": cabin_number,
-            "source_bbox": text_bbox,
+            "source_reference": association["text_reference"],
+            "text": association["label_text"],
+            "source_bbox": association["label_bbox"],
             "object_kind": "selectable_text",
         })
-        association = {
-            "semantic_id": cabin_number,
-            "text_reference": text_ref,
-            "method": "strict-label-centroid-containment-with-cardinality-gate",
-            **resolution,
-            "human_review_required": True,
-        }
         associations.append(association)
-        if resolution["status"] != "ACCEPTED":
-            continue
-        accepted = resolution["accepted_geometry"]
-        boundary_bbox = accepted["source_bbox"]
-        normalized_bbox = normalize_bbox(
-            boundary_bbox, page.rect.width, page.rect.height
+        proof_objects.append(
+            deck14_extract.build_cabin_object(
+                association, page.rect.width, page.rect.height
+            )
         )
-        proof_objects.append({
-            "object_id": f"bellissima-deck14-cabin-{cabin_number}",
-            "semantic_type": "cabin",
-            "cabin_number": cabin_number,
-            "source_text_bbox": text_bbox,
-            "source_bbox": boundary_bbox,
-            "normalized_bbox": normalized_bbox,
-            "normalized_polygon": _polygon_from_bbox(normalized_bbox),
-            "source_references": [text_ref, accepted["source_reference"]],
-            "source_geometry": {
-                "source_reference": accepted["source_reference"],
-                "drawing_index": accepted["drawing_index"],
-                "sequence_number": accepted["sequence_number"],
-                "source_bbox": accepted["source_bbox"],
-                "geometry_provenance": accepted["geometry_provenance"],
-            },
-            "transform_id": "pdf-page5-mediabox-to-unit-v2",
-            "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
-            "semantic_association_method": association["method"],
-            "association_staging_note": "source containment is deterministic; visual adjudication remains required",
-            "human_review_state": "DRAFT",
-            "evidence_condition": "UNKNOWN",
-            "publish_status": "PUBLISH_BLOCKED",
-        })
 
     lift_word_matches = [
         word for word in words
@@ -348,6 +327,35 @@ def extract() -> tuple[dict[str, Any], dict[str, Any], Path]:
         "source": source_identity,
         "locked_scope": {"deck_numbers": [DECK_NUMBER], "pdf_pages": [PAGE_NUMBER]},
         "geometry": [selected_paths[index] for index in sorted(selected_paths)],
+        "excluded_candidates": {
+            "policy": {
+                "multi_label_container": (
+                    "a stroked rectangle enclosing two or more cabin labels is a block "
+                    "outline, not a cabin, and is removed before association"
+                ),
+                "unlabeled_cell": (
+                    "a candidate enclosing no cabin label yields no object; it is "
+                    "recorded, never assigned"
+                ),
+            },
+            "multi_label_containers": [
+                {
+                    "source_reference": container["source_reference"],
+                    "drawing_index": container["drawing_index"],
+                    "source_bbox": container["source_bbox"],
+                    "enclosed_labels": container["enclosed_labels"],
+                }
+                for container in containers
+            ],
+            "unlabeled_cells": [
+                {
+                    "source_reference": cell["source_reference"],
+                    "drawing_index": cell["drawing_index"],
+                    "source_bbox": cell["source_bbox"],
+                }
+                for cell in extraction.unlabeled_cells
+            ],
+        },
         "text": selected_text,
         "symbols": [{
             "symbol_id": "deck14-lift-vector-groups",
@@ -441,8 +449,19 @@ def _render_overlay(proof: dict[str, Any], source_path: Path) -> None:
 def write_outputs() -> None:
     raw, proof, source_path = extract()
     RAW_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    RAW_OUTPUT.write_text(json.dumps(raw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    PROOF_OUTPUT.write_text(json.dumps(proof, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # Newlines are pinned to LF so the artifact is byte-identical regardless of
+    # the platform it was generated on. The shipped frontend copy is compared to
+    # this file by digest, and a CRLF host would break that comparison.
+    RAW_OUTPUT.write_text(
+        json.dumps(raw, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    PROOF_OUTPUT.write_text(
+        json.dumps(proof, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     _render_overlay(proof, source_path)
 
 

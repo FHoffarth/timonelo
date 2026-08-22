@@ -16,9 +16,11 @@ resolver only when the canonical vault holds nothing; this module never reads
 it directly.
 
 What the canonical proof establishes:
-    * ten cabin labels (14001-14010) each uniquely contained by one
-      source-drawn vector boundary -> TRANSFORMED_SOURCE_GEOMETRY, backed by
-      DIRECT_SOURCE_GEOMETRY drawing records
+    * 243 cabin labels — every selectable `14xxx` label on page 5 — each
+      uniquely contained by one source-drawn vector boundary ->
+      TRANSFORMED_SOURCE_GEOMETRY, backed by DIRECT_SOURCE_GEOMETRY drawing
+      records. See `timonelo.spatial.deck14_extract` for the detection and
+      cardinality rules.
     * one labelled lift region -> DERIVED_GEOMETRY (union bbox of two direct
       source vector groups)
 
@@ -52,10 +54,11 @@ records all fifteen such files as SYNTHETIC_GEOMETRY and non-canonical; the
 admission gate in `spatial.graph` would refuse them even if they were loaded.
 
 Separately: `evidence/statements/statements.json` holds 113 PUBLISHED
-statements about Deck 14 staterooms 14102-14136. That cabin set is disjoint
-from the geometry proof set 14001-14010, and those statements carry no
-geometry at all. No cabin on this ship currently has both a published fact and
-a source-linked shape, which is why nothing here is both admitted and located.
+statements about Deck 14 staterooms 14102-14136. Those cabins now do carry
+source-linked shapes, but the shapes are DRAFT / UNKNOWN / PUBLISH_BLOCKED, so
+still no cabin is both admitted and located. The statements themselves carry no
+geometry, and this module derives none for them: a published fact and a
+pending envelope are not a joined claim, and nothing here joins them.
 """
 
 from __future__ import annotations

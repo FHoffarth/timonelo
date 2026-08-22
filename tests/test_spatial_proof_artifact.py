@@ -42,7 +42,7 @@ def test_shipped_proof_still_refuses_connectivity():
 
     assert doc["schema"] == "timonelo.one-deck-geometry-proof.v1"
     assert doc["deck"]["number"] == 14
-    assert len(doc["objects"]) == 11
+    assert len(doc["objects"]) == 244
 
     assert doc["navigation_graph"] is None
     assert doc["nearest_core_calculation"] is None
