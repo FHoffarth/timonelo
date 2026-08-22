@@ -12,5 +12,19 @@
     "publisher": "MSC Cruises",
     "sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
     "version": "11.2025 DEU"
+  },
+  "ART-0002": {
+    "acquired_on": "2026-08-22",
+    "acquisition_method": "supplied by project owner; obtained from the myMSC application",
+    "artifact_id": "ART-0002",
+    "byte_size": 1177146,
+    "document_class": "official_ship_map",
+    "filename": "be_en-gb.pdf",
+    "language": "en-GB",
+    "notes": "MSC BELLISSIMA SHIP MAP. Vessel: MSC Bellissima. Interactive ship map, 10 pages, English (en-GB). Venue-to-deck index tables on pages 3-10; page 2 carries the overall map and the deck selector.",
+    "published_on": null,
+    "publisher": "MSC Cruises",
+    "sha256": "4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603",
+    "version": null
   }
 }

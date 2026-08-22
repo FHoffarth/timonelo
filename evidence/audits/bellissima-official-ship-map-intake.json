@@ -1,0 +1,152 @@
+{
+  "acquisition": {
+    "acquired_on": "2026-08-22",
+    "distribution_rights_asserted": false,
+    "method": "supplied by project owner; obtained from the myMSC application",
+    "source_filename": "be_en-gb.pdf"
+  },
+  "artifact": {
+    "artifact_id": "ART-0002",
+    "byte_size": 1177146,
+    "canonical_vault_path": "evidence/raw/sha256/4f/4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603.pdf",
+    "document_class": "official_ship_map",
+    "language": "en-GB",
+    "page_count": 10,
+    "publisher": "MSC Cruises",
+    "sha256": "4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603",
+    "vessel_identity": "MSC Bellissima",
+    "visible_title": "MSC BELLISSIMA SHIP MAP"
+  },
+  "extraction": {
+    "corroborated_across_pages": 22,
+    "deck_selector_page": 2,
+    "decks_declared_by_source": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19
+    ],
+    "distinct_venue_deck_facts": 87,
+    "intra_document_conflicts": 0,
+    "multi_deck_facts": [
+      {
+        "decks": [
+          6,
+          7
+        ],
+        "printed_token": "6-7",
+        "venue": "GALLERIA BELLISSIMA"
+      },
+      {
+        "decks": [
+          16,
+          18
+        ],
+        "printed_token": "16-18",
+        "venue": "HORIZON AMPHITHEATRE"
+      },
+      {
+        "decks": [
+          5,
+          6
+        ],
+        "printed_token": "5-6",
+        "venue": "LONDON THEATRE"
+      },
+      {
+        "decks": [
+          5,
+          6
+        ],
+        "printed_token": "5-6",
+        "venue": "MSC EXCURSIONS"
+      }
+    ],
+    "printed_table_rows_read": 115,
+    "range_collapse_performed": false,
+    "table_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "legacy_noncanonical_discrepancies": {
+    "classification": "LEGACY_NONCANONICAL",
+    "policy": "preserved unchanged; cites no registered artifact; may not override an artifact-backed fact",
+    "records": [
+      {
+        "file": "knowledge/ships/msc-bellissima/venues.json",
+        "legacy_value": 5,
+        "ship_map_value": [
+          5,
+          6
+        ],
+        "venue": "London Theatre"
+      },
+      {
+        "file": "knowledge/ships/msc-bellissima/venues.json",
+        "legacy_value": 6,
+        "ship_map_value": [
+          6,
+          7
+        ],
+        "venue": "Galleria Bellissima"
+      }
+    ]
+  },
+  "reconciliation": {
+    "actual_byte_size": 1177146,
+    "actual_sha256": "4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603",
+    "claimed_byte_size": 1177146,
+    "claimed_sha256": "4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603",
+    "classification": "EXACT_MATCH",
+    "legacy_blob_store_used": false,
+    "resolved_path": "evidence/raw/sha256/4f/4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603.pdf"
+  },
+  "scope": {
+    "accessibility_claims_created": false,
+    "distance_claims_created": false,
+    "geometry_created_or_modified": false,
+    "position_inferred_from_callout_lines": false,
+    "routing_edges_created": false,
+    "venue_position_authority_granted": false,
+    "walking_time_claims_created": false
+  },
+  "statements": {
+    "art_0001_statements_modified": false,
+    "entity_type": "venue",
+    "evidence_condition": [
+      "UNKNOWN"
+    ],
+    "human_review_state": [
+      "DRAFT"
+    ],
+    "method_counts": {
+      "CALCULATED": 4,
+      "DIRECT": 83
+    },
+    "publish_status": [
+      "PUBLISH_BLOCKED"
+    ],
+    "question_id": "Q-0016",
+    "statement_type": "deck.venue_present",
+    "statements_created": 87,
+    "trust_promotion_performed": false
+  }
+}

@@ -129,6 +129,21 @@ DOCUMENT_CLASSES: Dict[str, DocumentClass] = {
         use_permission=UsePermission.CITE_ONLY,
         notes="Schematic, undated, not dimensioned. Topology yes, geometry no.",
     ),
+    "official_ship_map": DocumentClass(
+        "official_ship_map", "Operator official ship map",
+        reliability=0.80, validity_scope=ValidityScope.REFIT_SCOPED,
+        acquisition=Acquisition.REQUESTABLE,
+        use_permission=UsePermission.CITE_ONLY,
+        notes=(
+            "Operator-published thematic ship map. Tabulates which deck a "
+            "venue is on, by category (dining, bars, shopping, spa, sport, "
+            "entertainment). Distinct from cruise_line_deck_plan: that class "
+            "draws stateroom topology, this one indexes venues. Neither is "
+            "dimensioned. The silhouettes and callout lines on a ship map are "
+            "presentational: they carry no position, distance, adjacency, "
+            "door, corridor or connectivity claim."
+        ),
+    ),
     "daily_programme": DocumentClass(
         "daily_programme", "Daily programme",
         reliability=0.90, validity_scope=ValidityScope.DAY_SCOPED,
@@ -172,7 +187,11 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
     "cabin.corridor_position":    ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
     "cabin.connecting_cabin":     ("cruise_line_deck_plan", "shipyard_general_arrangement"),
     "cabin.nearest_lift":         ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
-    "deck.venue_present":         ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    # An official ship map indexes venues by deck; that is exactly and only
+    # what it adds here. It is deliberately absent from deck.venue_position
+    # below: a thematic map draws a venue where the layout reads well, not
+    # where the venue is.
+    "deck.venue_present":         ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey", "official_ship_map"),
     "deck.venue_position":        ("cruise_line_deck_plan", "shipyard_general_arrangement"),
 
     # -- vessel overview: capacity and stateroom counts from operator deck plans / specifications

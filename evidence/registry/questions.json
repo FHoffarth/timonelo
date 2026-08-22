@@ -149,6 +149,16 @@
       "statement_type": "cabin.vibration",
       "supportable_by": [],
       "unknown_guidance": "Timonelo has not surveyed this stateroom."
+    },
+    "Q-0016": {
+      "entity_type": "venue",
+      "labels": {
+        "en": "Which deck is this venue on?"
+      },
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "supportable_by": [],
+      "unknown_guidance": "Not listed on any ship map or deck plan held."
     }
   },
   "version": "bellissima-2026-08-17"
