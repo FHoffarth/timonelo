@@ -222,5 +222,87 @@ class TestCanonicalSerialization(unittest.TestCase):
         self.assertEqual(offenders, [], f"Unsorted json.dump: {offenders}")
 
 
+#: Modules whose file output is a COMMITTED artifact whose bytes are asserted
+#: elsewhere — by SHA-256 digest, by `is_canonical`, or by a byte round-trip
+#: test. These must persist through `timonelo.canonical`, because
+#: `json.dump(f)` inherits the platform newline and makes the bytes depend on
+#: the machine that wrote them.
+#:
+#: This list is deliberately NOT "every file that mentions json". Plenty of
+#: modules serialise to memory, to a response, or to a scratch path where byte
+#: stability is irrelevant, and banning that would be noise. Add a module here
+#: when its output becomes a committed artifact, not before.
+DETERMINISTIC_OUTPUT_MODULES = (
+    os.path.join("src", "timonelo", "database", "compiler.py"),
+    os.path.join("scripts", "extract_spatial_geometry.py"),
+    os.path.join("scripts", "audit_geometry_provenance.py"),
+    os.path.join("scripts", "reingest_msc_meraviglia_official_deckplan.py"),
+)
+
+
+class TestDeterministicPersistence(unittest.TestCase):
+    """ADR-0003 §5.1 — committed artifacts must not carry platform bytes."""
+
+    def _read(self, rel):
+        path = os.path.join(REPO, rel)
+        self.assertTrue(os.path.isfile(path), f"missing scoped module: {rel}")
+        with open(path, encoding="utf-8") as f:
+            return f.read()
+
+    def test_scoped_writers_do_not_call_json_dump_directly(self):
+        """`json.dump(fp)` writes through the platform's newline translation."""
+        offenders = []
+        for rel in DETERMINISTIC_OUTPUT_MODULES:
+            for i, line in enumerate(self._read(rel).splitlines(), 1):
+                # json.dumps() is in-memory and unaffected; only the file-writing
+                # form is banned here.
+                if re.search(r"\bjson\.dump\s*\(", line):
+                    offenders.append(f"{rel}:{i}")
+        self.assertEqual(
+            offenders,
+            [],
+            "Direct json.dump persistence reappeared in a module whose output "
+            f"is a committed artifact: {offenders}. Use timonelo.canonical "
+            "(canonical_dump, or deterministic_dump for artifacts with a "
+            "pre-canonical byte contract).",
+        )
+
+    def test_scoped_writers_persist_through_the_canonical_module(self):
+        missing = [
+            rel
+            for rel in DETERMINISTIC_OUTPUT_MODULES
+            if "from timonelo.canonical import" not in self._read(rel)
+        ]
+        self.assertEqual(
+            missing, [], f"Scoped writer does not import the canonical module: {missing}"
+        )
+
+    def test_guard_is_scoped_not_a_blanket_ban(self):
+        """In-memory serialization stays legal, and so does unscoped json.dump.
+
+        A naive repo-wide rule would flag harmless `json.dumps` calls and every
+        tools/ script whose output contract does not require canonical bytes.
+        This asserts the guard has not quietly become that.
+        """
+        self.assertNotIn(
+            os.path.join("tools", "generate_frontend_bridge.py"),
+            DETERMINISTIC_OUTPUT_MODULES,
+            "tools/ generators are intentionally out of scope for now",
+        )
+        # `json.dumps` (no file handle) is untouched by the rule above.
+        sample = "payload = json.dumps({'a': 1})"
+        self.assertIsNone(re.search(r"\bjson\.dump\s*\(", sample))
+
+    def test_canonical_module_is_the_single_write_implementation(self):
+        source = self._read(os.path.join("src", "timonelo", "canonical.py"))
+        # Exactly one open(..., "w") in the module: every writer funnels through it.
+        self.assertEqual(
+            len(re.findall(r'open\([^)]*"w"', source)),
+            1,
+            "canonical.py must keep a single write site",
+        )
+        self.assertIn('newline="\\n"', source)
+
+
 if __name__ == "__main__":
     unittest.main()

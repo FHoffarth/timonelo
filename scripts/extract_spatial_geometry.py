@@ -11,6 +11,8 @@ import re
 import pdfplumber
 import jsonschema
 
+from timonelo.canonical import deterministic_dump
+
 DECKS_MAP = {
     4: {"name": "Lirica", "page": 3, "type": "PUBLIC"},
     5: {"name": "Opera", "page": 3, "type": "MIXED"},
@@ -296,10 +298,23 @@ def extract_all_geometries():
             # Validate against schema
             jsonschema.validate(instance=deck_geometry_payload, schema=schema)
             
-            # Save geometry file
+            # Save geometry file.
+            #
+            # sort_keys=False and trailing_newline=False are deliberate: these
+            # fifteen files are hashed byte-for-byte by
+            # tests/test_bellissima_one_deck_geometry_proof.py, and they were
+            # committed in insertion-key order with no final newline. Switching
+            # either flag rewrites every byte and invalidates all fifteen
+            # digests, which is a separate decision from making the WRITE
+            # platform-independent. deterministic_dump pins the newline so this
+            # script no longer emits CRLF when run on Windows.
             out_file = os.path.join(geometry_dir, f"deck{deck_num:02d}.geometry.json")
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(deck_geometry_payload, f, indent=2, ensure_ascii=False)
+            deterministic_dump(
+                deck_geometry_payload,
+                out_file,
+                sort_keys=False,
+                trailing_newline=False,
+            )
                 
             extracted_reports.append({
                 "deck_number": deck_num,
