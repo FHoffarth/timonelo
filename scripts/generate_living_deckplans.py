@@ -6,23 +6,27 @@ Extracts native SVG vectors, injects interactive object IDs, and attaches
 Ground Truth epistemology metadata directly to every cabin, venue, and elevator.
 """
 
-import fitz
+import argparse
 import json
 import os
+from pathlib import Path
 import re
 
-PDF_PATH = "C:/Users/Flo/Desktop/energyradar/msc-meraviglia-graph/data/source/msc-meraviglia-deckplan.pdf"
-GRAPH_PATH = "C:/Users/Flo/Desktop/energyradar/msc-meraviglia-graph/output/ship-graph.json"
-OUT_DIR = "C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/data"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_OUT_DIR = REPO_ROOT / "frontend" / "src" / "data"
 
-os.makedirs(OUT_DIR, exist_ok=True)
+def generate(pdf_path: Path, graph_path: Path, out_dir: Path):
+    if not pdf_path.exists():
+        raise FileNotFoundError(f"Deck plan PDF not found: {pdf_path}. Specify --pdf-path explicitly.")
+    if not graph_path.exists():
+        raise FileNotFoundError(f"Ship graph JSON not found: {graph_path}. Specify --graph-path explicitly.")
 
-def generate():
-    print(f"Loading official deck plan PDF from {PDF_PATH}...")
-    doc = fitz.open(PDF_PATH)
+    print(f"Loading official deck plan PDF from {pdf_path}...")
+    import fitz
+    doc = fitz.open(pdf_path)
     page = doc[0]
 
-    with open(GRAPH_PATH, "r", encoding="utf-8") as f:
+    with open(graph_path, "r", encoding="utf-8") as f:
         graph = json.load(f)
 
     # Deck names mapping from canonical MSC Meraviglia / Bellissima specification
@@ -163,11 +167,21 @@ def generate():
         "decks": decks_data,
     }
 
-    out_file = os.path.join(OUT_DIR, "living_decks.json")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_file = out_dir / "living_decks.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(bundle, f, indent=2)
 
     print(f"Generated Living Deck Plans dataset to {out_file} with {len(decks_data)} decks and {len(all_cabins_dict)} staterooms.")
 
+def main():
+    parser = argparse.ArgumentParser(description="Generate Living Deck Plans dataset from PDF and graph JSON.")
+    parser.add_argument("--pdf-path", type=Path, required=True, help="Path to official deck plan PDF")
+    parser.add_argument("--graph-path", type=Path, required=True, help="Path to ship graph JSON")
+    parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR, help=f"Output directory (default: {DEFAULT_OUT_DIR})")
+    args = parser.parse_args()
+
+    generate(args.pdf_path, args.graph_path, args.out_dir)
+
 if __name__ == "__main__":
-    generate()
+    main()

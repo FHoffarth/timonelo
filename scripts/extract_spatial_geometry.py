@@ -5,13 +5,23 @@ Generates geometry/deck<N>.geometry.json for all passenger decks (4 to 19).
 Validates against knowledge/schema/deck_geometry.schema.json.
 Generates knowledge/reports/geometry_coverage_report.md.
 """
-import os
+import argparse
 import json
+import os
+from pathlib import Path
 import re
+import sys
 import pdfplumber
 import jsonschema
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT / "src"))
+
 from timonelo.canonical import deterministic_dump
+DEFAULT_GEOMETRY_DIR = REPO_ROOT / "geometry"
+DEFAULT_SCHEMA_PATH = REPO_ROOT / "knowledge" / "schema" / "deck_geometry.schema.json"
+DEFAULT_REPORT_PATH = REPO_ROOT / "knowledge" / "reports" / "geometry_coverage_report.md"
 
 DECKS_MAP = {
     4: {"name": "Lirica", "page": 3, "type": "PUBLIC"},
@@ -31,13 +41,14 @@ DECKS_MAP = {
     19: {"name": "Splendida", "page": 5, "type": "PUBLIC_AND_SUITE"}
 }
 
-def extract_all_geometries():
-    pdf_path = r"C:\Users\Flo\.gemini\antigravity\brain\20d31e34-a159-4223-a758-2695e9de02c4\.user_uploaded\media_1786996657251.pdf"
-    geometry_dir = r"C:\Users\Flo\Desktop\energyradar\timonelo\geometry"
-    schema_path = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\schema\deck_geometry.schema.json"
-    report_path = r"C:\Users\Flo\Desktop\energyradar\timonelo\knowledge\reports\geometry_coverage_report.md"
-    
-    os.makedirs(geometry_dir, exist_ok=True)
+def extract_all_geometries(pdf_path: Path, geometry_dir: Path, schema_path: Path, report_path: Path):
+    if not pdf_path.exists():
+        raise FileNotFoundError(f"Source PDF not found: {pdf_path}. Specify --pdf-path explicitly.")
+    if not schema_path.exists():
+        raise FileNotFoundError(f"Schema not found: {schema_path}.")
+
+    geometry_dir.mkdir(parents=True, exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(schema_path, "r", encoding="utf-8") as f:
         schema = json.load(f)
@@ -333,9 +344,9 @@ def extract_all_geometries():
     md_lines = []
     md_lines.append("# Spatial Geometry Layer Extraction & Coverage Report")
     md_lines.append("")
-    md_lines.append("**Primary Evidence Source**: `MSC Bellissima Deck Plan (Edition 11.2025 DEU)`  ")
-    md_lines.append("**Output Directory**: [`geometry/`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/geometry)  ")
-    md_lines.append("**Schema Standard**: [`knowledge/schema/deck_geometry.schema.json`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/knowledge/schema/deck_geometry.schema.json)  ")
+    md_lines.append("**Primary Evidence Source**: `MSC Bellissima Deck Plan (Edition 11.2025 DEU)`")
+    md_lines.append("**Output Directory**: [`geometry/`](../../geometry)")
+    md_lines.append("**Schema Standard**: [`knowledge/schema/deck_geometry.schema.json`](../schema/deck_geometry.schema.json)")
     md_lines.append("")
     md_lines.append("## 1. Deck Geometry Coverage Summary")
     md_lines.append("")
@@ -376,5 +387,15 @@ def extract_all_geometries():
         
     print(f"Generated Geometry Coverage Report at {report_path}")
 
+def main():
+    parser = argparse.ArgumentParser(description="Extract spatial geometry layer from PDF.")
+    parser.add_argument("--pdf-path", type=Path, required=True, help="Path to deck plan PDF")
+    parser.add_argument("--geometry-dir", type=Path, default=DEFAULT_GEOMETRY_DIR, help=f"Geometry output directory (default: {DEFAULT_GEOMETRY_DIR})")
+    parser.add_argument("--schema-path", type=Path, default=DEFAULT_SCHEMA_PATH, help=f"Schema path (default: {DEFAULT_SCHEMA_PATH})")
+    parser.add_argument("--report-path", type=Path, default=DEFAULT_REPORT_PATH, help=f"Report path (default: {DEFAULT_REPORT_PATH})")
+    args = parser.parse_args()
+
+    extract_all_geometries(args.pdf_path, args.geometry_dir, args.schema_path, args.report_path)
+
 if __name__ == "__main__":
-    extract_all_geometries()
+    main()

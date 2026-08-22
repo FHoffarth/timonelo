@@ -31,8 +31,8 @@ The **Knowledge Factory** is the automated production pipeline for turning raw m
 ```
 
 ## Module Reference
-- [`ArtifactQueue.ts`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/knowledge/pipeline/ArtifactQueue.ts): Ingestion queue and stage tracker.
-- [`KnowledgeDiff.ts`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/knowledge/pipeline/KnowledgeDiff.ts): Structured entity and field comparator.
-- [`ConflictResolver.ts`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/knowledge/pipeline/ConflictResolver.ts): Contradiction auditor (`MATCH`, `CONFLICT`, `UNKNOWN`, `SUPERSEDED`).
-- [`KnowledgePublisher.ts`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/knowledge/pipeline/KnowledgePublisher.ts): Multi-gate publication validator.
-- [`KnowledgeFactory.ts`](file:///C:/Users/Flo/Desktop/energyradar/timonelo/frontend/src/knowledge/pipeline/KnowledgeFactory.ts): End-to-end production orchestrator and fleet metrics aggregator.
+- [`ArtifactQueue.ts`](../../frontend/src/knowledge/pipeline/ArtifactQueue.ts): Ingestion queue and stage tracker.
+- [`KnowledgeDiff.ts`](../../frontend/src/knowledge/pipeline/KnowledgeDiff.ts): Structured entity and field comparator.
+- [`ConflictResolver.ts`](../../frontend/src/knowledge/pipeline/ConflictResolver.ts): Contradiction auditor (`MATCH`, `CONFLICT`, `UNKNOWN`, `SUPERSEDED`).
+- [`KnowledgePublisher.ts`](../../frontend/src/knowledge/pipeline/KnowledgePublisher.ts): Multi-gate publication validator.
+- [`KnowledgeFactory.ts`](../../frontend/src/knowledge/pipeline/KnowledgeFactory.ts): End-to-end production orchestrator and fleet metrics aggregator.
