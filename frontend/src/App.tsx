@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MainNavbar, { NavRoute } from "./components/ui/MainNavbar";
+import SpatialProofViewer from "./spatial-proof/SpatialProofViewer";
 import Footer from "./components/ui/Footer";
 import HomePage from "./components/pages/HomePage";
 import ShipProfilePage from "./components/pages/ShipProfilePage";
@@ -15,6 +16,13 @@ import { SemanticEntity } from "./semantic-deck/types";
 import { X } from "lucide-react";
 
 export default function App() {
+  // Evidence viewer, reached deliberately rather than through the product nav:
+  // every object in the Deck 14 proof is DRAFT / UNKNOWN / PUBLISH_BLOCKED, so it
+  // must not appear as a passenger-facing destination.
+  if (typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("view") === "spatial-proof") {
+    return <SpatialProofViewer />;
+  }
   const [currentRoute, setCurrentRoute] = useState<NavRoute | "cabin">("home");
   const [selectedShipSlug, setSelectedShipSlug] = useState<string>("msc-bellissima");
   const [selectedCabinId, setSelectedCabinId] = useState<string>("14122");
