@@ -60,6 +60,24 @@ def _vault_path(root: Path, digest: str, extension: str = ".bin") -> Path:
     return path
 
 
+#: Statement types introduced by the Deck 14 cabin-feature layer.
+#:
+#: The quarantine assertions below describe the claim set that existed when
+#: ART-0001's source identity was repaired. Selecting purely on artifact_id now
+#: also sweeps in the later feature statements, which are a different cohort
+#: with a different lifecycle — DRAFT and PUBLISH_BLOCKED rather than APPROVED
+#: and quarantined by evidence condition. Excluding them keeps these tests
+#: about the thing they were written to protect.
+_FEATURE_TYPES = {
+    "cabin.sofa_bed",
+    "cabin.sofa_bed_double",
+    "cabin.sofa_bed_single",
+    "cabin.third_bed",
+    "cabin.third_and_fourth_bed",
+    "cabin.bunk_or_convertible_sofa",
+}
+
+
 def test_canonical_sha_vault_resolves_and_verifies_without_copy(tmp_path):
     content = b"canonical source bytes"
     registry, digest = _write_registry(tmp_path, content)
@@ -200,7 +218,10 @@ def test_meraviglia_sha_vault_artifact_remains_intact():
 
 def test_verified_artifact_does_not_bypass_bellissima_claim_quarantine():
     workspace = Workspace(str(REPO_ROOT / "evidence"))
-    statements = workspace.statements_for_artifact("ART-0001")
+    statements = [
+        s for s in workspace.statements_for_artifact("ART-0001")
+        if s.statement_type not in _FEATURE_TYPES
+    ]
 
     assert workspace.registry.verify("ART-0001") is True
     assert len(statements) == 113

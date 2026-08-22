@@ -1,0 +1,3477 @@
+{
+  "schema": "timonelo.deck14-cabin-features.v0",
+  "vessel": "MSC-BELLISSIMA",
+  "deck": 14,
+  "source": {
+    "artifact_id": "ART-0001",
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "pdf_page_number": 5,
+    "legend_page_number": 2,
+    "document_class": "cruise_line_deck_plan"
+  },
+  "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking.",
+  "families": [
+    {
+      "family_id": "sofa_bed",
+      "label_en": "Sofa bed",
+      "legend_de": "Schlafsofa",
+      "statement_type": "cabin.sofa_bed",
+      "question_id": "Q-0017",
+      "derived_from_cardinality": false
+    },
+    {
+      "family_id": "sofa_bed_double",
+      "label_en": "Sofa bed for two",
+      "legend_de": "Schlafsofa für zwei Personen",
+      "statement_type": "cabin.sofa_bed_double",
+      "question_id": "Q-0018",
+      "derived_from_cardinality": false
+    },
+    {
+      "family_id": "third_bed",
+      "label_en": "3rd pull-down bed",
+      "legend_de": "3. Bett zum Herunterklappen",
+      "statement_type": "cabin.third_bed",
+      "question_id": "Q-0020",
+      "derived_from_cardinality": true
+    },
+    {
+      "family_id": "third_and_fourth_bed",
+      "label_en": "3rd and 4th pull-down beds",
+      "legend_de": "3. und 4. Bett zum Herunterklappen",
+      "statement_type": "cabin.third_and_fourth_bed",
+      "question_id": "Q-0021",
+      "derived_from_cardinality": true
+    },
+    {
+      "family_id": "bunk_or_convertible_sofa",
+      "label_en": "Convertible bunk / sofa",
+      "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+      "statement_type": "cabin.bunk_or_convertible_sofa",
+      "question_id": "Q-0022",
+      "derived_from_cardinality": true
+    },
+    {
+      "family_id": "sofa_bed_single",
+      "label_en": "Sofa bed for one",
+      "legend_de": "Schlafsofa für eine Person",
+      "statement_type": "cabin.sofa_bed_single",
+      "question_id": "Q-0019",
+      "derived_from_cardinality": false
+    }
+  ],
+  "cabins": {
+    "14001": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0201",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14001; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1349:seqno-1353",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14002": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0202",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14002; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1367:seqno-1371",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14003": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0203",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14003; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1350:seqno-1354",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14006": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0204",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14006; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1366:seqno-1370",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14007": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0205",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14007; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1351:seqno-1355",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14008": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0206",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14008; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1365:seqno-1369",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14010": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0207",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14010; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1364:seqno-1368",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14012": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0208",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14012; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1363:seqno-1367",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14014": [
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0209",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14014; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1359:seqno-1363",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14015": [
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0210",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14015; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1346:seqno-1350",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14016": [
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0211",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14016; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1360:seqno-1364",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14018": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0212",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14018; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1362:seqno-1366",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14019": [
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0213",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14019; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1347:seqno-1351",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14020": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0214",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14020; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1361:seqno-1365",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14021": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0215",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14021; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1352:seqno-1356",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14023": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0216",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14023; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1353:seqno-1357",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14025": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0217",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14025; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1354:seqno-1358",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14026": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0218",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14026; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1368:seqno-1372",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14027": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0219",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14027; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1355:seqno-1359",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14029": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0220",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14029; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1356:seqno-1360",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14030": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0221",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14030; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1369:seqno-1373, page5:drawing-index-1370:seqno-1374",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14034": [
+      {
+        "family_id": "third_bed",
+        "label_en": "3rd pull-down bed",
+        "legend_de": "3. Bett zum Herunterklappen",
+        "statement_id": "STM-0222",
+        "statement_type": "cabin.third_bed",
+        "question_id": "Q-0020",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14034; legend symbol '3. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1589:seqno-1593",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 1 adjacent instance(s) form one symbol. This observation grouped 1 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14036": [
+      {
+        "family_id": "third_bed",
+        "label_en": "3rd pull-down bed",
+        "legend_de": "3. Bett zum Herunterklappen",
+        "statement_id": "STM-0223",
+        "statement_type": "cabin.third_bed",
+        "question_id": "Q-0020",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14036; legend symbol '3. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1591:seqno-1595",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 1 adjacent instance(s) form one symbol. This observation grouped 1 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14037": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0224",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14037; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1357:seqno-1361, page5:drawing-index-1358:seqno-1362",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14038": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0225",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14038; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1592:seqno-1596, page5:drawing-index-1593:seqno-1597",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14040": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0226",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14040; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1594:seqno-1598",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14041": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0227",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14041; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1348:seqno-1352",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14042": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0228",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14042; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1616:seqno-1620, page5:drawing-index-1617:seqno-1621",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14044": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0229",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14044; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1615:seqno-1619",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14045": [
+      {
+        "family_id": "third_bed",
+        "label_en": "3rd pull-down bed",
+        "legend_de": "3. Bett zum Herunterklappen",
+        "statement_id": "STM-0230",
+        "statement_type": "cabin.third_bed",
+        "question_id": "Q-0020",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14045; legend symbol '3. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1514:seqno-1518",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 1 adjacent instance(s) form one symbol. This observation grouped 1 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14047": [
+      {
+        "family_id": "third_bed",
+        "label_en": "3rd pull-down bed",
+        "legend_de": "3. Bett zum Herunterklappen",
+        "statement_id": "STM-0231",
+        "statement_type": "cabin.third_bed",
+        "question_id": "Q-0020",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14047; legend symbol '3. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1516:seqno-1520",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 1 adjacent instance(s) form one symbol. This observation grouped 1 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14048": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0232",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14048; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1595:seqno-1599",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14049": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0233",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14049; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1517:seqno-1521",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14050": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0234",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14050; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1596:seqno-1600, page5:drawing-index-1597:seqno-1601",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14051": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0235",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14051; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1518:seqno-1522, page5:drawing-index-1519:seqno-1523",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14052": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0236",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14052; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1377:seqno-1381, page5:drawing-index-1378:seqno-1382",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14053": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0237",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14053; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1587:seqno-1591",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14054": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0238",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14054; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1375:seqno-1379, page5:drawing-index-1376:seqno-1380",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14055": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0239",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14055; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1585:seqno-1589, page5:drawing-index-1586:seqno-1590",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14056": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0240",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14056; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1373:seqno-1377, page5:drawing-index-1374:seqno-1378",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14057": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0241",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14057; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1584:seqno-1588",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14058": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0242",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14058; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1371:seqno-1375, page5:drawing-index-1372:seqno-1376",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14060": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0243",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14060; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1598:seqno-1602",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14061": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0244",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14061; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1520:seqno-1524",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14062": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0245",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14062; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1599:seqno-1603, page5:drawing-index-1600:seqno-1604",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14063": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0246",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14063; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1521:seqno-1525, page5:drawing-index-1522:seqno-1526",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14064": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0247",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14064; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1601:seqno-1605",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14065": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0248",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14065; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1523:seqno-1527",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14066": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0249",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14066; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1602:seqno-1606, page5:drawing-index-1603:seqno-1607",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14067": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0250",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14067; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1524:seqno-1528, page5:drawing-index-1525:seqno-1529",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14068": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0251",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14068; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1604:seqno-1608",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14069": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0252",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14069; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1526:seqno-1530",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14070": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0253",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14070; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1605:seqno-1609, page5:drawing-index-1606:seqno-1610",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14072": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0254",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14072; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1607:seqno-1611",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14073": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0255",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14073; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1527:seqno-1531",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14075": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0256",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14075; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1528:seqno-1532, page5:drawing-index-1529:seqno-1533",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14076": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0257",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14076; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1608:seqno-1612",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14077": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0258",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14077; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1530:seqno-1534",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14080": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0259",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14080; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1609:seqno-1613",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14081": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0260",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14081; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1531:seqno-1535",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14082": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0261",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14082; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1610:seqno-1614, page5:drawing-index-1611:seqno-1615",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14084": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0262",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14084; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1612:seqno-1616",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14085": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0263",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14085; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1532:seqno-1536",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14086": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0264",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14086; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1613:seqno-1617, page5:drawing-index-1614:seqno-1618",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14087": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0265",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14087; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1581:seqno-1585, page5:drawing-index-1582:seqno-1586",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14088": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0266",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14088; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1385:seqno-1389, page5:drawing-index-1386:seqno-1390",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14089": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0267",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14089; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1583:seqno-1587",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14090": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0268",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14090; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1387:seqno-1391, page5:drawing-index-1388:seqno-1392",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14091": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0269",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14091; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1434:seqno-1438",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14092": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0270",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14092; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1389:seqno-1393, page5:drawing-index-1390:seqno-1394",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14093": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0271",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14093; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1379:seqno-1383, page5:drawing-index-1380:seqno-1384",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14094": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0272",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14094; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1391:seqno-1395, page5:drawing-index-1392:seqno-1396",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14095": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0273",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14095; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1466:seqno-1470, page5:drawing-index-1467:seqno-1471",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14096": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0274",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14096; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1432:seqno-1436, page5:drawing-index-1433:seqno-1437",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14097": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0275",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14097; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1381:seqno-1385, page5:drawing-index-1382:seqno-1386",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14099": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0276",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14099; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1435:seqno-1439",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14100": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0277",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14100; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1400:seqno-1404",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14101": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0278",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14101; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1383:seqno-1387, page5:drawing-index-1384:seqno-1388",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14102": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0279",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14102; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1393:seqno-1397, page5:drawing-index-1394:seqno-1398",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14103": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0280",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14103; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1464:seqno-1468, page5:drawing-index-1465:seqno-1469",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14104": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0281",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14104; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1430:seqno-1434, page5:drawing-index-1431:seqno-1435",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14106": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0282",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14106; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1395:seqno-1399, page5:drawing-index-1396:seqno-1400",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14107": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0283",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14107; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1436:seqno-1440",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14108": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0284",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14108; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1399:seqno-1403",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14110": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0285",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14110; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1397:seqno-1401, page5:drawing-index-1398:seqno-1402",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14111": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0286",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14111; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1462:seqno-1466, page5:drawing-index-1463:seqno-1467",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14112": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0287",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14112; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1428:seqno-1432, page5:drawing-index-1429:seqno-1433",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14115": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0288",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14115; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1437:seqno-1441",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14116": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0289",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14116; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1401:seqno-1405",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14120": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0290",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14120; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1426:seqno-1430, page5:drawing-index-1427:seqno-1431",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14121": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0291",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14121; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1460:seqno-1464, page5:drawing-index-1461:seqno-1465",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14124": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0292",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14124; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1402:seqno-1406",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14125": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0293",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14125; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1438:seqno-1442",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14126": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0294",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14126; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1424:seqno-1428, page5:drawing-index-1425:seqno-1429",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14127": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0295",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14127; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1458:seqno-1462, page5:drawing-index-1459:seqno-1463",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14128": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0296",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14128; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1403:seqno-1407",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14129": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0297",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14129; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1439:seqno-1443",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14130": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0298",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14130; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1422:seqno-1426, page5:drawing-index-1423:seqno-1427",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14131": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0299",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14131; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1456:seqno-1460, page5:drawing-index-1457:seqno-1461",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14132": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0300",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14132; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1404:seqno-1408",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14133": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0301",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14133; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1440:seqno-1444",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14134": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0302",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14134; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1420:seqno-1424, page5:drawing-index-1421:seqno-1425",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14135": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0303",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14135; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1454:seqno-1458, page5:drawing-index-1455:seqno-1459",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14136": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0304",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14136; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1405:seqno-1409",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14137": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0305",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14137; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1441:seqno-1445",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14138": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0306",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14138; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1418:seqno-1422, page5:drawing-index-1419:seqno-1423",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14139": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0307",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14139; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1452:seqno-1456, page5:drawing-index-1453:seqno-1457",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14140": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0308",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14140; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1406:seqno-1410",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14141": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0309",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14141; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1442:seqno-1446",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14142": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0310",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14142; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1416:seqno-1420, page5:drawing-index-1417:seqno-1421",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14143": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0311",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14143; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1450:seqno-1454, page5:drawing-index-1451:seqno-1455",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14144": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0312",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14144; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1407:seqno-1411",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14145": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0313",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14145; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1443:seqno-1447",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14146": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0314",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14146; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1414:seqno-1418, page5:drawing-index-1415:seqno-1419",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14147": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0315",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14147; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1448:seqno-1452, page5:drawing-index-1449:seqno-1453",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14148": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0316",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14148; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1408:seqno-1412",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14149": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0317",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14149; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1444:seqno-1448",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14150": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0318",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14150; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1412:seqno-1416, page5:drawing-index-1413:seqno-1417",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14151": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0319",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14151; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1446:seqno-1450, page5:drawing-index-1447:seqno-1451",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14152": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0320",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14152; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1409:seqno-1413",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14153": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0321",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14153; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1445:seqno-1449",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14154": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0322",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14154; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1410:seqno-1414, page5:drawing-index-1411:seqno-1415",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14155": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0323",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14155; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1533:seqno-1537, page5:drawing-index-1534:seqno-1538",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14157": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0324",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14157; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1535:seqno-1539",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14159": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0325",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14159; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1536:seqno-1540, page5:drawing-index-1537:seqno-1541",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14161": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0326",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14161; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1538:seqno-1542",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14163": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0327",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14163; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1539:seqno-1543, page5:drawing-index-1540:seqno-1544",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14165": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0328",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14165; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1541:seqno-1545",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14167": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0329",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14167; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1542:seqno-1546, page5:drawing-index-1543:seqno-1547",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14169": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0330",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14169; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1544:seqno-1548",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14171": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0331",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14171; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1545:seqno-1549, page5:drawing-index-1546:seqno-1550",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14173": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0332",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14173; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1547:seqno-1551",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14175": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0333",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14175; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1548:seqno-1552, page5:drawing-index-1549:seqno-1553",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14177": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0334",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14177; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1550:seqno-1554",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14179": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0335",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14179; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1551:seqno-1555, page5:drawing-index-1552:seqno-1556",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14181": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0336",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14181; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1553:seqno-1557",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14183": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0337",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14183; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1555:seqno-1559, page5:drawing-index-1556:seqno-1560",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14185": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0338",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14185; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1554:seqno-1558",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14187": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0339",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14187; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1480:seqno-1484, page5:drawing-index-1481:seqno-1485",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14189": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0340",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14189; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1469:seqno-1473",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14191": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0341",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14191; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1482:seqno-1486, page5:drawing-index-1483:seqno-1487",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14193": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0342",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14193; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1470:seqno-1474",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14195": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0343",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14195; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1478:seqno-1482, page5:drawing-index-1479:seqno-1483",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14196": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0344",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14196; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1557:seqno-1561",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14197": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0345",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14197; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1471:seqno-1475",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14198": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0346",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14198; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1558:seqno-1562, page5:drawing-index-1559:seqno-1563",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14199": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0347",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14199; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1476:seqno-1480, page5:drawing-index-1477:seqno-1481",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14200": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0348",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14200; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1560:seqno-1564",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14201": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0349",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14201; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1472:seqno-1476",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14202": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0350",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14202; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1561:seqno-1565, page5:drawing-index-1562:seqno-1566",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14204": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0351",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14204; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1563:seqno-1567",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14205": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0352",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14205; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1474:seqno-1478, page5:drawing-index-1475:seqno-1479",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14206": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0353",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14206; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1564:seqno-1568, page5:drawing-index-1565:seqno-1569",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14207": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0354",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14207; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1484:seqno-1488, page5:drawing-index-1485:seqno-1489",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14208": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0355",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14208; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1566:seqno-1570",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14209": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0356",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14209; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1473:seqno-1477",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14210": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0357",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14210; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1567:seqno-1571, page5:drawing-index-1568:seqno-1572",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14211": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0358",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14211; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1486:seqno-1490, page5:drawing-index-1487:seqno-1491",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14212": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0359",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14212; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1569:seqno-1573",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14213": [
+      {
+        "family_id": "sofa_bed_single",
+        "label_en": "Sofa bed for one",
+        "legend_de": "Schlafsofa für eine Person",
+        "statement_id": "STM-0360",
+        "statement_type": "cabin.sofa_bed_single",
+        "question_id": "Q-0019",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14213; legend symbol 'Schlafsofa für eine Person' (page 2 legend); symbol drawing page5:drawing-index-1634:seqno-1638",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14214": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0361",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14214; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1570:seqno-1574, page5:drawing-index-1571:seqno-1575",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14216": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0362",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14216; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1572:seqno-1576",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14218": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0363",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14218; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1573:seqno-1577, page5:drawing-index-1574:seqno-1578",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14219": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0364",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14219; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1618:seqno-1622, page5:drawing-index-1619:seqno-1623",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      },
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0365",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14219; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1620:seqno-1624",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14220": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0366",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14220; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1575:seqno-1579",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14222": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0367",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14222; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1576:seqno-1580, page5:drawing-index-1577:seqno-1581",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14223": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0368",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14223; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1622:seqno-1626, page5:drawing-index-1623:seqno-1627",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      },
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0369",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14223; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1624:seqno-1628",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14224": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0370",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14224; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1580:seqno-1584",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14225": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0371",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14225; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1509:seqno-1513, page5:drawing-index-1510:seqno-1514",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14226": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0372",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14226; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1578:seqno-1582, page5:drawing-index-1579:seqno-1583",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14228": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0373",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14228; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1492:seqno-1496",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14230": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0374",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14230; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1503:seqno-1507, page5:drawing-index-1504:seqno-1508",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14232": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0375",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14232; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1493:seqno-1497",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14234": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0376",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14234; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1505:seqno-1509, page5:drawing-index-1506:seqno-1510",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14236": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0377",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14236; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1494:seqno-1498",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14238": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0378",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14238; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1501:seqno-1505, page5:drawing-index-1502:seqno-1506",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14240": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0379",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14240; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1495:seqno-1499",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14244": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0380",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14244; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1499:seqno-1503, page5:drawing-index-1500:seqno-1504",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14248": [
+      {
+        "family_id": "sofa_bed",
+        "label_en": "Sofa bed",
+        "legend_de": "Schlafsofa",
+        "statement_id": "STM-0381",
+        "statement_type": "cabin.sofa_bed",
+        "question_id": "Q-0017",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14248; legend symbol 'Schlafsofa' (page 2 legend); symbol drawing page5:drawing-index-1496:seqno-1500",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14250": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0382",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14250; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1488:seqno-1492, page5:drawing-index-1489:seqno-1493",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14252": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0383",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14252; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1497:seqno-1501, page5:drawing-index-1498:seqno-1502",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14254": [
+      {
+        "family_id": "third_and_fourth_bed",
+        "label_en": "3rd and 4th pull-down beds",
+        "legend_de": "3. und 4. Bett zum Herunterklappen",
+        "statement_id": "STM-0384",
+        "statement_type": "cabin.third_and_fourth_bed",
+        "question_id": "Q-0021",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14254; legend symbol '3. und 4. Bett zum Herunterklappen' (page 2 legend); symbol drawing page5:drawing-index-1490:seqno-1494, page5:drawing-index-1491:seqno-1495",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare square, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14256": [
+      {
+        "family_id": "sofa_bed_single",
+        "label_en": "Sofa bed for one",
+        "legend_de": "Schlafsofa für eine Person",
+        "statement_id": "STM-0385",
+        "statement_type": "cabin.sofa_bed_single",
+        "question_id": "Q-0019",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14256; legend symbol 'Schlafsofa für eine Person' (page 2 legend); symbol drawing page5:drawing-index-1636:seqno-1640",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14260": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0386",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14260; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1630:seqno-1634, page5:drawing-index-1631:seqno-1635",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      },
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0387",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14260; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1632:seqno-1636",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14264": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0388",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14264; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1626:seqno-1630, page5:drawing-index-1627:seqno-1631",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      },
+      {
+        "family_id": "sofa_bed_double",
+        "label_en": "Sofa bed for two",
+        "legend_de": "Schlafsofa für zwei Personen",
+        "statement_id": "STM-0389",
+        "statement_type": "cabin.sofa_bed_double",
+        "question_id": "Q-0018",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14264; legend symbol 'Schlafsofa für zwei Personen' (page 2 legend); symbol drawing page5:drawing-index-1628:seqno-1632",
+        "method": "DIRECT",
+        "derivation_note": "",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ],
+    "14266": [
+      {
+        "family_id": "bunk_or_convertible_sofa",
+        "label_en": "Convertible bunk / sofa",
+        "legend_de": "Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann",
+        "statement_id": "STM-0390",
+        "statement_type": "cabin.bunk_or_convertible_sofa",
+        "question_id": "Q-0022",
+        "artifact_id": "ART-0001",
+        "page": 5,
+        "locator": "Page 5, Deck 14 (World Class) plan, cell labelled 14266; legend symbol 'Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann' (page 2 legend); symbol drawing page5:drawing-index-1511:seqno-1515, page5:drawing-index-1512:seqno-1516",
+        "method": "CALCULATED",
+        "derivation_note": "The printed primitive is a bare circle, which carries no shape information on its own. The legend distinguishes this family by cardinality: 2 adjacent instance(s) form one symbol. This observation grouped 2 instance(s) using the legend's own pair spacing, then attributed the group to exactly one cabin envelope by strict centroid containment.",
+        "evidence_condition": "UNKNOWN",
+        "human_review_state": "DRAFT",
+        "publish_status": "PUBLISH_BLOCKED"
+      }
+    ]
+  }
+}

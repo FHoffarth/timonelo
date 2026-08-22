@@ -159,6 +159,72 @@
       "statement_type": "deck.venue_present",
       "supportable_by": [],
       "unknown_guidance": "Not listed on any ship map or deck plan held."
+    },
+    "Q-0017": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein Schlafsofa?",
+        "en": "Does this stateroom have a sofa bed?"
+      },
+      "question_id": "Q-0017",
+      "statement_type": "cabin.sofa_bed",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0018": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein Schlafsofa für zwei Personen?",
+        "en": "Does this stateroom have a sofa bed for two?"
+      },
+      "question_id": "Q-0018",
+      "statement_type": "cabin.sofa_bed_double",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0019": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein Schlafsofa für eine Person?",
+        "en": "Does this stateroom have a sofa bed for one?"
+      },
+      "question_id": "Q-0019",
+      "statement_type": "cabin.sofa_bed_single",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0020": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein 3. Bett zum Herunterklappen?",
+        "en": "Does this stateroom have a 3rd pull-down bed?"
+      },
+      "question_id": "Q-0020",
+      "statement_type": "cabin.third_bed",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0021": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein 3. und 4. Bett zum Herunterklappen?",
+        "en": "Does this stateroom have a 3rd and 4th pull-down beds?"
+      },
+      "question_id": "Q-0021",
+      "statement_type": "cabin.third_and_fourth_bed",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0022": {
+      "entity_type": "cabin",
+      "labels": {
+        "de": "Hat diese Kabine ein Etagenbett oder Sofa, das in ein Etagenbett umgewandelt werden kann?",
+        "en": "Does this stateroom have a convertible bunk / sofa?"
+      },
+      "question_id": "Q-0022",
+      "statement_type": "cabin.bunk_or_convertible_sofa",
+      "supportable_by": [],
+      "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
     }
   },
   "version": "bellissima-2026-08-17"

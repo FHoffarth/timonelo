@@ -45,8 +45,38 @@ def _workspace() -> Workspace:
     return Workspace(str(REPO_ROOT / "evidence"))
 
 
+#: Statement types introduced by the Deck 14 cabin-feature layer.
+#:
+#: The quarantine assertions below describe the claim set that existed when
+#: ART-0001's source identity was repaired. Selecting purely on artifact_id now
+#: also sweeps in the later feature statements, which are a different cohort
+#: with a different lifecycle — DRAFT and PUBLISH_BLOCKED rather than APPROVED
+#: and quarantined by evidence condition. Excluding them keeps these tests
+#: about the thing they were written to protect.
+_FEATURE_TYPES = {
+    "cabin.sofa_bed",
+    "cabin.sofa_bed_double",
+    "cabin.sofa_bed_single",
+    "cabin.third_bed",
+    "cabin.third_and_fourth_bed",
+    "cabin.bunk_or_convertible_sofa",
+}
+
+
 def _art_0001_statements(workspace: Workspace):
-    return workspace.statements_for_artifact("ART-0001")
+    """The intake cohort: ART-0001 claims other than the cabin-feature layer.
+
+    These tests describe the claim set that existed when ART-0001's source
+    identity was repaired, and assert it is quarantined by evidence condition
+    while remaining APPROVED. The later Deck 14 symbol features are also
+    ART-0001-backed but are a separate cohort in a different lifecycle state
+    (DRAFT / PUBLISH_BLOCKED), so including them would change what is being
+    measured rather than extend it.
+    """
+    return [
+        s for s in workspace.statements_for_artifact("ART-0001")
+        if s.statement_type not in _FEATURE_TYPES
+    ]
 
 
 def test_art_0001_registry_path_resolves_to_exact_physical_bytes():
@@ -128,7 +158,11 @@ def test_art_0001_inventory_and_historical_states_remain_auditable():
             encoding="utf-8"
         )
     )
-    affected = [record for record in raw.values() if record["artifact_id"] == "ART-0001"]
+    affected = [
+        record for record in raw.values()
+        if record["artifact_id"] == "ART-0001"
+        and record["statement_type"] not in _FEATURE_TYPES
+    ]
 
     assert len(affected) == 113
     assert Counter(record["review_state"] for record in affected) == {

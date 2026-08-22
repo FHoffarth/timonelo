@@ -9,6 +9,7 @@
 import { useEffect, useState } from "react";
 import EvidenceDrawer from "./EvidenceDrawer";
 import ProofCanvas from "./ProofCanvas";
+import { loadFeatures, type FeatureDocument } from "./cabinFeatures";
 import { hasAdmittedConnectivity, loadProof } from "./loadProof";
 import {
   REFERENCE_FRAME_STATEMENT,
@@ -73,11 +74,22 @@ export default function SpatialProofViewer() {
   // Default OFF. The evidence-only view is the default view: with the source
   // plan on, most visible content is unproven, so seeing it must be a choice.
   const [showUnderlay, setShowUnderlay] = useState(false);
+  const [features, setFeatures] = useState<FeatureDocument | null>(null);
 
   useEffect(() => {
     loadProof()
       .then(setDoc)
       .catch((e: Error) => setError(e.message));
+  }, []);
+
+  // Features load separately and are allowed to fail without taking the proof
+  // down: geometry is the primary evidence here, and a viewer that renders
+  // envelopes with no feature list is still correct. A failure leaves
+  // `features` null, which reads as unknown rather than as absent.
+  useEffect(() => {
+    loadFeatures()
+      .then(setFeatures)
+      .catch(() => setFeatures(null));
   }, []);
 
   if (error) {
@@ -160,7 +172,7 @@ export default function SpatialProofViewer() {
         <div className="flex flex-col gap-4 lg:h-full lg:min-h-0">
           {!hasAdmittedConnectivity(doc) && <PathfindingUnavailable doc={doc} />}
           <div className="rounded-2xl border border-white/10 bg-white/5 lg:flex-1 lg:min-h-0 lg:overflow-y-auto">
-            <EvidenceDrawer object={selected} doc={doc} />
+            <EvidenceDrawer object={selected} doc={doc} features={features} />
           </div>
         </div>
       </main>

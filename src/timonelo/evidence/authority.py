@@ -201,6 +201,24 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
     # -- cabin features: bed arrangement explicitly stated on deck plans / surveys
     "cabin.bed_configuration":    ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
 
+    # -- sleeping-arrangement symbols printed in the deck-plan legend.
+    #
+    # One type per legend family, each boolean, because a stateroom carries
+    # several of these at once. Folding them into cabin.bed_configuration would
+    # make co-occurring features look like competing answers to one question,
+    # and the conflict log would fill with pairs that do not disagree.
+    #
+    # Boolean and positive-only: the statement records that the operator printed
+    # the symbol. A cabin with no such statement is UNKNOWN for that question,
+    # which is computed from the registry — never stored as a denial. An unmarked
+    # cabin is unmarked, not a cabin without a sofa bed.
+    "cabin.sofa_bed":                  ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    "cabin.sofa_bed_double":           ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    "cabin.sofa_bed_single":           ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    "cabin.third_bed":                 ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    "cabin.third_and_fourth_bed":      ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+    "cabin.bunk_or_convertible_sofa":  ("cruise_line_deck_plan", "shipyard_general_arrangement", "onboard_survey"),
+
     # -- geometry: dimensioned quantities. Deck plans are NOT authoritative.
     "cabin.area_sqm":             ("shipyard_general_arrangement", "builder_specification"),
     "cabin.wall_composition":     ("shipyard_general_arrangement", "builder_specification"),

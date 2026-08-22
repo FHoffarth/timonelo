@@ -6,6 +6,14 @@
  * provenance, explicitly labelled as page fractions, never as a measurement.
  */
 
+import { useState } from "react";
+
+import {
+  UNKNOWN_FEATURES_COPY,
+  featuresForCabin,
+  type CabinFeature,
+  type FeatureDocument,
+} from "./cabinFeatures";
 import {
   REFERENCE_FRAME_STATEMENT,
   type ProofDocument,
@@ -29,12 +37,97 @@ function Row({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
+/**
+ * One positively evidenced feature, with its provenance one click away.
+ *
+ * The feature line states what the operator printed. The provenance panel
+ * states where that was read and how far it is from being publishable — every
+ * one of these is DRAFT and PUBLISH_BLOCKED, and hiding that behind a clean
+ * bullet would overstate what is known.
+ */
+function FeatureItem({ feature }: { feature: CabinFeature }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <li data-testid="cabin-feature" data-family={feature.family_id} className="py-1">
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[12px] text-[#F5F1EA]">• {feature.label_en}</span>
+        <button
+          type="button"
+          data-testid="feature-provenance-toggle"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="text-[10px] uppercase tracking-wider text-[#C58A46] hover:underline shrink-0"
+        >
+          Evidence
+        </button>
+      </div>
+      <div
+        data-testid="feature-provenance"
+        hidden={!open}
+        className="mt-1 pl-3 border-l border-white/10 space-y-0.5"
+      >
+        <p className="text-[10px] text-[#8FA3B8]">
+          Official MSC deck plan ({feature.artifact_id}), page {feature.page}
+        </p>
+        <p className="text-[10px] text-[#8FA3B8] break-all">{feature.locator}</p>
+        <p className="text-[10px] text-[#8FA3B8]">
+          Legend symbol: {feature.legend_de}
+        </p>
+        <p className="text-[10px] text-[#8FA3B8]">
+          {feature.statement_id} · {feature.statement_type} · {feature.question_id}
+        </p>
+        <p className="text-[10px] text-[#8FA3B8]">
+          Method {feature.method} · {feature.human_review_state} ·{" "}
+          {feature.evidence_condition} · {feature.publish_status}
+        </p>
+        {feature.derivation_note && (
+          <p className="text-[10px] text-[#8FA3B8] leading-relaxed">
+            {feature.derivation_note}
+          </p>
+        )}
+      </div>
+    </li>
+  );
+}
+
+export function CabinFeatures({
+  object,
+  features,
+}: {
+  object: ProofObject;
+  features: FeatureDocument | null;
+}) {
+  if (object.semantic_type !== "cabin") return null;
+  const found = featuresForCabin(features, object.cabin_number);
+  return (
+    <section data-testid="cabin-features">
+      <Group title="Cabin features" />
+      {found.length > 0 ? (
+        <ul data-testid="cabin-feature-list" className="space-y-0.5">
+          {found.map((feature) => (
+            <FeatureItem key={feature.statement_id} feature={feature} />
+          ))}
+        </ul>
+      ) : (
+        <p
+          data-testid="cabin-features-unknown"
+          className="text-[11px] text-[#8FA3B8] leading-relaxed"
+        >
+          {UNKNOWN_FEATURES_COPY}
+        </p>
+      )}
+    </section>
+  );
+}
+
 export default function EvidenceDrawer({
   object,
   doc,
+  features = null,
 }: {
   object: ProofObject | null;
   doc: ProofDocument;
+  features?: FeatureDocument | null;
 }) {
   if (!object) {
     return (
@@ -62,6 +155,8 @@ export default function EvidenceDrawer({
           read as the lift's footprint.
         </p>
       )}
+
+      <CabinFeatures object={object} features={features} />
 
       <Group title="Identity" />
       <Row label="Object ID" value={object.object_id} />
