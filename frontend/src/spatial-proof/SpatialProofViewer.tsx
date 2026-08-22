@@ -70,6 +70,9 @@ export default function SpatialProofViewer() {
   const [doc, setDoc] = useState<ProofDocument | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<ProofObject | null>(null);
+  // Default OFF. The evidence-only view is the default view: with the source
+  // plan on, most visible content is unproven, so seeing it must be a choice.
+  const [showUnderlay, setShowUnderlay] = useState(false);
 
   useEffect(() => {
     loadProof()
@@ -120,12 +123,38 @@ export default function SpatialProofViewer() {
         silently rescaled as a side effect of reading its own evidence.
       */}
       <main className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-4 p-4 lg:h-[calc(100vh-172px)]">
-        <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[5/4] lg:aspect-auto lg:h-full">
-          <ProofCanvas
-            objects={doc.objects}
-            selectedId={selected?.object_id ?? null}
-            onSelect={setSelected}
-          />
+        <div className="flex flex-col gap-2 lg:h-full lg:min-h-0">
+          <div className="flex flex-wrap items-center gap-3">
+            <label className="flex items-center gap-2 text-[11px] text-[#8FA3B8] cursor-pointer">
+              <input
+                type="checkbox"
+                data-testid="underlay-toggle"
+                checked={showUnderlay}
+                onChange={(e) => setShowUnderlay(e.target.checked)}
+              />
+              Show source plan context
+            </label>
+            {showUnderlay && (
+              <div data-testid="underlay-legend" className="flex flex-wrap items-center gap-3 text-[11px]">
+                <span className="flex items-center gap-1.5 text-[#8FA3B8]">
+                  <span className="inline-block w-3 h-3 bg-[#8FA3B8]/40 border border-[#8FA3B8]/60" />
+                  Source plan context — not accepted evidence
+                </span>
+                <span className="flex items-center gap-1.5 text-[#7FB2E5]">
+                  <span className="inline-block w-3 h-3 bg-[#7FB2E5]/40 border border-[#7FB2E5]" />
+                  Accepted proof geometry
+                </span>
+              </div>
+            )}
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[5/4] lg:aspect-auto lg:flex-1 lg:min-h-0">
+            <ProofCanvas
+              objects={doc.objects}
+              selectedId={selected?.object_id ?? null}
+              onSelect={setSelected}
+              showUnderlay={showUnderlay}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 lg:h-full lg:min-h-0">

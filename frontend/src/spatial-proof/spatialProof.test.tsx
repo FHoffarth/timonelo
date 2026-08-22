@@ -15,7 +15,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import EvidenceDrawer from "./EvidenceDrawer";
-import ProofCanvas from "./ProofCanvas";
+import ProofCanvas, { UNDERLAY_HREF } from "./ProofCanvas";
 import SpatialProofViewer, { PathfindingUnavailable } from "./SpatialProofViewer";
 import { ProofLoadError, hasAdmittedConnectivity, parseProof, pickObjectAt } from "./loadProof";
 import type { ProofDocument, ProofObject } from "./proofTypes";
@@ -206,5 +206,88 @@ describe("viewer composition", () => {
     expect(typeof SpatialProofViewer).toBe("function");
     expect(doc.deck.number).toBe(14);
     expect(doc.source.artifact_id).toBe("ART-0001");
+  });
+});
+
+
+describe("source-plan underlay is optional context, never evidence", () => {
+  const off = renderToStaticMarkup(
+    <ProofCanvas objects={objects} selectedId={null} onSelect={() => {}} />,
+  );
+  const on = renderToStaticMarkup(
+    <ProofCanvas objects={objects} selectedId={null} onSelect={() => {}} showUnderlay />,
+  );
+
+  it("1. is OFF by default", () => {
+    expect(off).not.toContain('data-testid="source-underlay"');
+    expect(off).not.toContain("<image");
+    // The viewer's own default state is off, not merely the canvas prop's.
+    const src = readFileSync(resolve(__dirname, "SpatialProofViewer.tsx"), "utf-8");
+    expect(src).toContain("useState(false)");
+  });
+
+  it("2. can be enabled", () => {
+    expect(on).toContain('data-testid="source-underlay"');
+    expect(on).toContain(UNDERLAY_HREF);
+  });
+
+  it("3. is the only raster layer, mapped 1:1 to the unit square", () => {
+    expect(on.match(/<image/g)).toHaveLength(1);
+    expect(on).toContain('preserveAspectRatio="none"');
+    // x=0 y=0 w=1 h=1: the raster is the full MediaBox and the viewBox is the
+    // normalized unit square, so no transform math is involved.
+    expect(on).toMatch(/<image[^>]*x="0"[^>]*y="0"[^>]*width="1"[^>]*height="1"/);
+  });
+
+  it("4. unproven source content is never selectable", () => {
+    // The raster cannot receive pointer events at all.
+    expect(on).toMatch(/<image[^>]*pointer-events:none/);
+    expect(on).toContain('data-layer="source-context"');
+    // It is not an object: no object id, no provenance styling.
+    const imageTag = on.slice(on.indexOf("<image"), on.indexOf(">", on.indexOf("<image")));
+    expect(imageTag).not.toContain("data-object-id");
+    expect(imageTag).not.toContain("data-provenance");
+  });
+
+  it("5. pickObjectAt remains proof-only regardless of the underlay", () => {
+    // A point over a visible-but-unproven cabin (14015 sits below 14007) resolves
+    // to nothing: the underlay adds pixels, never pickable objects.
+    const c7 = byCabin("14007");
+    const belowProofSet = c7.normalized_bbox[3] + 0.004;
+    const x = (c7.normalized_bbox[0] + c7.normalized_bbox[2]) / 2;
+    expect(pickObjectAt(objects, x, belowProofSet)).toBeNull();
+    expect(objects).toHaveLength(11);
+  });
+
+  it("6. refusal behaviour is unchanged by the underlay", () => {
+    expect(hasAdmittedConnectivity(doc)).toBe(false);
+    const html = renderToStaticMarkup(<PathfindingUnavailable doc={doc} />);
+    expect(html).toContain("Pathfinding not available on this deck yet");
+    expect(on.toLowerCase()).not.toContain("corridor");
+    expect(on.toLowerCase()).not.toContain("door");
+  });
+
+  it("7. the metric disclaimer is untouched", () => {
+    const drawer = renderToStaticMarkup(<EvidenceDrawer object={byCabin("14001")} doc={doc} />);
+    expect(drawer).toContain("Not metres. No scale has been established.");
+    expect(on).not.toMatch(/metre|meter|km/i);
+  });
+
+  it("8. proof geometry stays provenance-styled with the underlay on", () => {
+    expect(on.match(/data-provenance-style="transformed"/g)).toHaveLength(10);
+    expect(on.match(/data-provenance-style="derived"/g)).toHaveLength(1);
+    expect(on).toContain("url(#derived-hatch)");
+    // Styling identical with and without the raster: the underlay changes nothing.
+    // React emits <image ...></image>, so both tags must go.
+    const stripImage = (s: string) =>
+      s.replace(/<image[^>]*>/, "").replace(/<\/image>/, "");
+    expect(stripImage(on)).toBe(stripImage(off));
+  });
+
+  it("is desaturated and subordinate so proof geometry dominates", () => {
+    expect(on).toMatch(/<image[^>]*grayscale\(1\)/);
+    const opacity = Number(on.match(/<image[^>]*opacity="([\d.]+)"/)?.[1]);
+    expect(opacity).toBeGreaterThan(0);
+    expect(opacity).toBeLessThan(0.5);
   });
 });
