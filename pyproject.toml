@@ -30,7 +30,14 @@ dependencies = [
 dev = [
     "pytest>=7.0",
     "pypdf>=5.0",
-    "pymupdf>=1.26",
+    # Pinned, not floated. The Deck 14 geometry proof records
+    # `extraction_tool: "PyMuPDF 1.26.4"`, and
+    # test_transform_is_explicit_and_deterministic re-runs extract() and
+    # compares against that committed artifact. A newer PyMuPDF returns
+    # different vector drawing records, so an unpinned range makes a
+    # reproducibility test fail on a dependency release rather than on a
+    # code change. Bump this and the proof together, never separately.
+    "pymupdf==1.26.4",
     "brotli>=1.1",
     "zstandard>=0.22",
     "warcio>=1.7.4"

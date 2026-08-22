@@ -11,21 +11,21 @@ SCRIPT = ROOT / "scripts" / "extract_bellissima_one_deck_geometry_proof.py"
 RAW_PATH = ROOT / "geometry" / "proofs" / "bellissima" / "deck14" / "deck14.raw.json"
 PROOF_PATH = ROOT / "geometry" / "proofs" / "bellissima" / "deck14" / "deck14.proof.json"
 EXPECTED_SYNTHETIC_HASHES = {
-    "deck04.geometry.json": "e0a2e6dd2be1f3343274b3062504ae648bc3cf6423f89fb36f9ba627d8fc514a",
-    "deck05.geometry.json": "608ff1f5bb8fcd1c74f8005a58750d6d5f3435f7ee6796634164757966bde591",
-    "deck06.geometry.json": "d31ee3e93cdbbb1fdae9aba18f9f4b758c98e7bfa92d58fa84ed4977858b026d",
-    "deck07.geometry.json": "1b6f5286287f3e8ca0f67d3565fa2db8678e9b66f486d7c448a40096272b528c",
-    "deck08.geometry.json": "67624b83db34f290a25ff8f1c2db022a0f1024884d3c79a583a69a91f5c0cc5a",
-    "deck09.geometry.json": "a9c4063d9fdecdcb655ecf3bcfeba372d6fc1c4f23e25221f809f185332070bb",
-    "deck10.geometry.json": "8f047667ec64727525cc7fcb4636f1c7116752deba061b584916fbf278ea5ee7",
-    "deck11.geometry.json": "7b40ca9f948851cc919d552d02b38bcacac3057cf5d2220e0766c622eb447682",
-    "deck12.geometry.json": "d2f1e85434223c821692a38c4aa7dc554fad258337fd36c63e28537465d6e3a3",
-    "deck13.geometry.json": "43c056fff19dbe3d73118d0f1799d1e8312b45f4368937834eecc32028c4b265",
-    "deck14.geometry.json": "2db7c36b01683c9ec7353d2aeec90bce2ffeece2111f5153c0619b4a38016b05",
-    "deck15.geometry.json": "eb8a9a0206d605f77a57eb35aeb407fcd9c8ce6ec42c852896fb7b676ae0cfbf",
-    "deck16.geometry.json": "7f318291a4f35981f1031bc8936372b9fc3ceec370bb76f657ae233eabb69893",
-    "deck18.geometry.json": "6fbef1d3d13c2e88f474328afae3cf98139ff03805dc9547d3a4e1e929fde748",
-    "deck19.geometry.json": "0ed07dc553147eb685dd393ffff8e66236ee5510e42756f8c3f2ff639dc5bac5",
+    "deck04.geometry.json": "dc8ad36e5de20a9ba727d0284e7dd9503fd09603d485f7bf5b68c58ccfa99233",
+    "deck05.geometry.json": "f668be7d220c942c81a6c467b00a6c4a497067d3a57c90613547ab211106dc9c",
+    "deck06.geometry.json": "54b7f0b51fdae6ca364d14f155ddc98bfae65337e7ceb722d9259be684f5a20a",
+    "deck07.geometry.json": "70e6a79186674c815798c091cfc0e58197e227756e47f07060ce831000b60cdf",
+    "deck08.geometry.json": "e30112b4602e05fb60f41b77a393b28bce4ca2befedfbdffa711569390de0c0f",
+    "deck09.geometry.json": "55d7fcb321198b89c8e45e5099d8d1e7445ba9af86cc6e8dc39ef196f9058ed5",
+    "deck10.geometry.json": "6614cfc9254ab41523dcd9c2318e1304958cb916120bb0eb3b1671e7e0a69417",
+    "deck11.geometry.json": "9404955265bafdb7f9cfb930925bc8bc9a7ba12bdab67bd7908cf0883d8178a5",
+    "deck12.geometry.json": "d21fcc5565c5ce3a914043b4e3a6fa489921a05387d3b171c089c79a52d98a7f",
+    "deck13.geometry.json": "9e4f9d405d0787c19d102aea52415518818f04faa8b366bdd57a7d4e550fd6c9",
+    "deck14.geometry.json": "36ace8c93c6ff1ebaf05ba50d3f76332a99aef4371082fcf6c46f4758cdbefd4",
+    "deck15.geometry.json": "d5a9bb38b2ccc54bb1f411a2fa32c1f0103185e83edd0cef25eeedc3691dcf41",
+    "deck16.geometry.json": "1f742ac92ae984948d01418a990f7bc4efe92212ced2babee0bfeed828217c59",
+    "deck18.geometry.json": "ebdd7e6153af818d0cc0baf459c7f0eafeed88775e1a2cd5c89bb67c013a72e0",
+    "deck19.geometry.json": "32d9b60a78349b3dcf3c61f57e283aedf9f16f0465c5303be78682e37710702f",
 }
 
 
@@ -107,6 +107,17 @@ def test_transform_is_explicit_and_deterministic():
     assert proof["transform"]["source_bbox"] == [0.0, 0.0, 589.606, 807.874]
     bbox = [37.133801, 246.544495, 49.583801, 254.038498]
     assert module.normalize_bbox(bbox) == module.normalize_bbox(bbox)
+    # Re-extraction reproduces the committed artifact only under the tool the
+    # artifact names. Check that first, so a dependency bump fails with a
+    # readable sentence instead of a multi-thousand-line dict diff.
+    import fitz
+
+    recorded = proof["source"]["extraction_tool"]
+    assert recorded == f"PyMuPDF {fitz.version[0]}", (
+        f"proof was extracted with {recorded!r} but PyMuPDF "
+        f"{fitz.version[0]} is installed; pin the dependency or re-run the "
+        "extraction and commit the new proof"
+    )
     raw_again, proof_again, _ = module.extract()
     raw, committed_proof = _load_outputs()
     assert raw_again == raw

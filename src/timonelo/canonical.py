@@ -44,7 +44,12 @@ def canonical_dump(data: Any, path: str) -> None:
     parent = os.path.dirname(path)
     if parent:
         os.makedirs(parent, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    # newline="\n" is not cosmetic. Python's default text mode rewrites "\n" to
+    # the platform separator, so identical data written on Windows and on Linux
+    # produces different BYTES — which defeats the byte-reproducibility this
+    # module exists to guarantee, and makes any digest taken over engine output
+    # a property of the machine that produced it rather than of the data.
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(canonical_dumps(data))
         f.write("\n")
 
