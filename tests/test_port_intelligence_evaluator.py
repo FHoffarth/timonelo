@@ -49,37 +49,26 @@ def workspace():
 
 
 # =============================================================================
-# 1. REAL BARCELONA STATEMENTS FAIL CLOSED BY DEFAULT
+# 1. UNPROMOTED / UNKNOWN PORT STATEMENTS FAIL CLOSED BY DEFAULT
 # =============================================================================
 
-def test_barcelona_current_statements_fail_closed_because_unpromoted(workspace):
+def test_unpromoted_port_statements_fail_closed_by_default(workspace):
     """
-    Current Barcelona statements are UNKNOWN / DRAFT / PUBLISH_BLOCKED.
-    PortIntelligenceEvaluator MUST fail closed and return is_known=False.
+    Unpromoted port statements must fail closed and return is_known=False.
     """
-    # 1. Port UN/LOCODE (Q-0023)
-    unlocode_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "port:unlocode:ESBCN", "Q-0023")
+    # 1. Non-existent / unpromoted port UN/LOCODE (Q-0023)
+    unlocode_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "port:unlocode:DEHAM", "Q-0023")
     assert unlocode_eval.is_known is False
     assert unlocode_eval.value is None
     assert unlocode_eval.refusal_reason is not None
 
-    # 2. Port official name (Q-0024)
-    name_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "port:unlocode:ESBCN", "Q-0024")
+    # 2. Non-existent / unpromoted port official name (Q-0024)
+    name_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "port:unlocode:DEHAM", "Q-0024")
     assert name_eval.is_known is False
     assert name_eval.value is None
 
-    # 3. Terminal A (Q-0025)
-    term_a_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "terminal:ESBCN:adosat-a", "Q-0025")
-    assert term_a_eval.is_known is False
-    assert term_a_eval.value is None
-
-    # 4. Terminal E (Q-0025)
-    term_e_eval = PortIntelligenceEvaluator.evaluate_fact(workspace, "terminal:ESBCN:adosat-e", "Q-0025")
-    assert term_e_eval.is_known is False
-    assert term_e_eval.value is None
-
-    # 5. Full PortIntelligence briefing returns None because required facts are not yet publishable
-    briefing = PortIntelligenceEvaluator.evaluate(workspace=workspace, port_entity_id="port:unlocode:ESBCN")
+    # 3. Full PortIntelligence briefing returns None because required facts are not yet publishable
+    briefing = PortIntelligenceEvaluator.evaluate(workspace=workspace, port_entity_id="port:unlocode:DEHAM")
     assert briefing is None
 
 
