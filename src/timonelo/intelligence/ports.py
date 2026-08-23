@@ -13,7 +13,7 @@ from typing import Any, Dict, List, Optional
 
 from timonelo.evidence.gatekeeper import EvidenceGatekeeper
 from timonelo.evidence.workspace import Workspace
-from timonelo.intelligence.models import PortDockingType, PortIntelligence
+from timonelo.intelligence.models import PortIntelligence
 from timonelo.ontology.models import (
     Derivation,
     EvidenceCondition,
@@ -34,6 +34,7 @@ class PortFactProvenance:
     publish_status: PublishStatus
     locator: str
     statement_id: str
+    artifact_sha256: Optional[str] = None
     evidence_event_id: Optional[str] = None
     publisher: Optional[str] = None
     version: Optional[str] = None
@@ -59,7 +60,7 @@ class PortFactEvaluation:
         return EvidenceLink(
             source_id=self.provenance.artifact_id,
             locator=self.provenance.locator,
-            sha256=None,
+            sha256=self.provenance.artifact_sha256,
             method=self.provenance.method,
             derivation=self.provenance.derivation,
         )
@@ -73,7 +74,7 @@ class PortIntelligenceEvaluator:
       Authority compatibility != Review approval
       Evidence existence != Publishability
 
-    All truth and admissibility decisions are delegated to canonical owners:
+    All truth and admissibility decisions are delegated strictly to canonical owners:
       - Question validation ➔ QuestionRegistry
       - Candidate filtering, review/evidence condition/publish gates, validity ➔ TruthEngine.answer()
       - Physical artifact hash integrity, event closure & authority class ➔ EvidenceGatekeeper
@@ -103,32 +104,12 @@ class PortIntelligenceEvaluator:
 
         statement_type = question.statement_type or "unknown"
 
-        # 2. Delegate candidate resolution and lifecycle gating to canonical TruthEngine
+        # 2. Delegate candidate resolution, lifecycle gating, validity, and conflict check to TruthEngine
         answer = workspace.engine.answer(entity_id, question_id, as_of=as_of)
 
-        # 3. If TruthEngine determines unknown or contested, map refusal reason
+        # 3. If TruthEngine determines unknown or contested, fail closed with canonical refusal
         if not answer.known or answer.contested:
-            if answer.contested:
-                refusal = "ACTIVE_CONFLICT_UNRESOLVED"
-            else:
-                # Identify why candidate statement was not answerable via Gatekeeper
-                candidates = [
-                    s for s in workspace.editor.all()
-                    if s.entity_id == entity_id and s.question_id == question_id
-                ]
-                if not candidates:
-                    refusal = "STATEMENT_MISSING"
-                else:
-                    cand = candidates[0]
-                    # Check validity window
-                    if not cand.is_valid_at(as_of):
-                        refusal = "EXPIRED_OR_INACTIVE_VALIDITY"
-                    else:
-                        gk = EvidenceGatekeeper.from_workspace(workspace)
-                        gk.add_statement(cand)
-                        gate_res = gk.evaluate_publish_gate()
-                        refusal = gate_res.reasons[0] if gate_res.reasons else "STATEMENT_NOT_ADMISSIBLE"
-
+            refusal = "ACTIVE_CONFLICT_UNRESOLVED" if answer.contested else "TRUTH_NOT_ADMISSIBLE"
             return PortFactEvaluation(
                 entity_id=entity_id,
                 question_id=question_id,
@@ -137,26 +118,7 @@ class PortIntelligenceEvaluator:
                 refusal_reason=refusal,
             )
 
-        # 4. Check for multiple disagreeing values among admissible candidate statements
-        admissible_candidates = [
-            s for s in workspace.editor.all()
-            if s.entity_id == entity_id
-            and s.question_id == question_id
-            and s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-            and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
-            and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
-            and s.is_valid_at(as_of)
-        ]
-        if len({s.value for s in admissible_candidates}) > 1:
-            return PortFactEvaluation(
-                entity_id=entity_id,
-                question_id=question_id,
-                statement_type=statement_type,
-                is_known=False,
-                refusal_reason="CONFLICTING_SUPPORTED_STATEMENTS",
-            )
-
-        # 5. If TruthEngine surfaced an answer, verify physical cryptographic & event closure via EvidenceGatekeeper
+        # 4. If TruthEngine surfaced an answer, verify physical cryptographic & event closure via EvidenceGatekeeper
         winning_stmt = workspace.editor.get(answer.provenance.statement_id)
         gk = EvidenceGatekeeper.from_workspace(workspace)
         gk.add_statement(winning_stmt)
@@ -172,6 +134,7 @@ class PortIntelligenceEvaluator:
             )
 
         # 5. Build PortFactProvenance from canonical Answer provenance and winning Statement
+        artifact = workspace.registry.get(answer.provenance.artifact_id)
         event_id = winning_stmt.evidence_event_ids[0] if winning_stmt.evidence_event_ids else None
         provenance = PortFactProvenance(
             artifact_id=answer.provenance.artifact_id,
@@ -181,6 +144,7 @@ class PortIntelligenceEvaluator:
             publish_status=winning_stmt.publish_status,
             locator=answer.provenance.locator,
             statement_id=winning_stmt.statement_id,
+            artifact_sha256=artifact.sha256 if artifact else None,
             evidence_event_id=event_id,
             publisher=answer.provenance.publisher,
             version=answer.provenance.version,
@@ -206,41 +170,13 @@ class PortIntelligenceEvaluator:
         port_entity_id: Optional[str] = None,
         as_of: Optional[str] = None,
     ) -> Optional[PortIntelligence]:
-        """Evaluates and returns PortIntelligence ONLY when canonical gates allow it.
+        """Briefing-level evaluator for shoreside logistics, gangway decks, and tender operations.
 
-        If no workspace or entity is provided or if required facts fail closed, returns None.
+        Governed by ADR-0002 §1, §8, §9.
+        Returns PortIntelligence ONLY when every required field is truth-backed by sourced records.
+        Until all required briefing fields are backed by canonical evidence, returns None (UNKNOWN)
+        to prevent fabricating passenger-facing defaults.
         """
-        if workspace is None:
-            if port_data and "workspace" in port_data:
-                workspace = port_data["workspace"]
-            else:
-                return None
-
-        entity_id = port_entity_id or (port_data.get("entity_id") if port_data else None)
-        if not entity_id:
-            return None
-
-        name_eval = cls.evaluate_fact(workspace, entity_id, "Q-0024", as_of=as_of)
-        if not name_eval.is_known or not name_eval.value:
-            return None
-
-        evidence_links: List[EvidenceLink] = []
-        link = name_eval.to_evidence_link()
-        if link:
-            evidence_links.append(link)
-
-        return PortIntelligence(
-            port_name=str(name_eval.value),
-            country="Spain" if "ES" in entity_id else "Unknown",
-            docking_type=PortDockingType.PIER_BERTH,
-            gangway_deck=0,
-            gangway_location="TBD",
-            all_aboard_time="TBD",
-            last_tender_time=None,
-            town_distance_meters=0,
-            is_walkable_to_center=False,
-            walking_route_summary="UNKNOWN",
-            official_taxi_fare_notes="UNKNOWN",
-            local_emergency_phone="112",
-            evidence_links=evidence_links,
-        )
+        # Sourced port intelligence briefing fields are not yet complete in Slice 2/3.
+        # Fail closed and return None (UNKNOWN).
+        return None

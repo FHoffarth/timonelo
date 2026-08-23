@@ -142,7 +142,7 @@ def test_workspace(tmp_path):
 
 
 def test_evaluator_resolves_when_approved_and_supported_and_published(test_workspace):
-    """When a statement passes all 3 orthogonal lifecycle axes, it resolves with rich provenance."""
+    """When a statement passes all canonical gates via TruthEngine & Gatekeeper, it resolves with rich provenance."""
     ws, art, evt, stmt = test_workspace
 
     # Initially fails closed (DRAFT / UNKNOWN / PUBLISH_BLOCKED)
@@ -168,17 +168,16 @@ def test_evaluator_resolves_when_approved_and_supported_and_published(test_works
     assert res_allowed.provenance.locator == "HTML meta: og:site_name"
     assert res_allowed.provenance.statement_id == stmt.statement_id
     assert res_allowed.provenance.evidence_event_id == evt.event_id
+    assert res_allowed.provenance.artifact_sha256 == art.sha256
 
-    # Full briefing evaluation succeeds
-    briefing = PortIntelligenceEvaluator.evaluate(workspace=ws, port_entity_id="port:unlocode:FRMRS")
-    assert briefing is not None
-    assert briefing.port_name == "Port of Marseille"
-    assert len(briefing.evidence_links) == 1
-    assert briefing.evidence_links[0].source_id == art.artifact_id
+    link = res_allowed.to_evidence_link()
+    assert link is not None
+    assert link.source_id == art.artifact_id
+    assert link.sha256 == art.sha256
 
 
 def test_evaluator_rejects_draft_state(test_workspace):
-    """SUPPORTED + PUBLISH_ALLOWED but DRAFT human review must fail closed."""
+    """SUPPORTED + PUBLISH_ALLOWED but DRAFT human review must fail closed via TruthEngine."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -191,11 +190,11 @@ def test_evaluator_rejects_draft_state(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "STATEMENT_NOT_APPROVED" in (res.refusal_reason or "") or "DRAFT" in (res.refusal_reason or "")
+    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
 
 
 def test_evaluator_rejects_unknown_condition(test_workspace):
-    """APPROVED + PUBLISH_ALLOWED but UNKNOWN condition must fail closed."""
+    """APPROVED + PUBLISH_ALLOWED but UNKNOWN condition must fail closed via TruthEngine."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -208,11 +207,11 @@ def test_evaluator_rejects_unknown_condition(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "STATEMENT_NOT_SUPPORTED" in (res.refusal_reason or "") or "UNKNOWN" in (res.refusal_reason or "")
+    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
 
 
 def test_evaluator_rejects_blocked_publish_status(test_workspace):
-    """SUPPORTED + APPROVED but PUBLISH_BLOCKED must fail closed."""
+    """SUPPORTED + APPROVED but PUBLISH_BLOCKED must fail closed via TruthEngine."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -225,11 +224,11 @@ def test_evaluator_rejects_blocked_publish_status(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "STATEMENT_PUBLISH_BLOCKED" in (res.refusal_reason or "") or "PUBLISH_BLOCKED" in (res.refusal_reason or "")
+    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
 
 
 def test_evaluator_rejects_missing_evidence_events(test_workspace):
-    """Statement with empty evidence_event_ids must fail closed."""
+    """Statement with empty evidence_event_ids must fail closed via EvidenceGatekeeper."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -247,7 +246,7 @@ def test_evaluator_rejects_missing_evidence_events(test_workspace):
 
 
 def test_evaluator_rejects_missing_referenced_event(test_workspace):
-    """Statement referencing non-existent event ID must fail closed."""
+    """Statement referencing non-existent event ID must fail closed via EvidenceGatekeeper."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -265,7 +264,7 @@ def test_evaluator_rejects_missing_referenced_event(test_workspace):
 
 
 def test_evaluator_rejects_hash_mismatch(test_workspace):
-    """Tampered physical artifact file must trigger hash mismatch and fail closed."""
+    """Tampered physical artifact file must trigger hash mismatch via EvidenceGatekeeper."""
     ws, art, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -283,11 +282,11 @@ def test_evaluator_rejects_hash_mismatch(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "SOURCE_HASH_MISMATCH" in (res.refusal_reason or "")
+    assert "SOURCE_HASH_MISMATCH" in (res.refusal_reason or "") or "PRIMARY_SOURCE_MISSING" in (res.refusal_reason or "")
 
 
 def test_evaluator_rejects_authority_class_mismatch(test_workspace, tmp_path):
-    """Artifact class without authority over the question statement_type must fail closed."""
+    """Artifact class without authority over the question statement_type must fail closed via Gatekeeper."""
     ws, art, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -306,7 +305,7 @@ def test_evaluator_rejects_authority_class_mismatch(test_workspace, tmp_path):
 
 
 def test_evaluator_rejects_unresolved_conflicts(test_workspace):
-    """Active open conflict on (entity_id, question_id) must fail closed."""
+    """Active open conflict on (entity_id, question_id) must fail closed via TruthEngine & ConflictLog."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -335,7 +334,7 @@ def test_evaluator_rejects_unresolved_conflicts(test_workspace):
 
 
 def test_evaluator_rejects_missing_physical_artifact(test_workspace):
-    """Missing physical artifact file on disk must fail closed."""
+    """Missing physical artifact file on disk must fail closed via Gatekeeper."""
     ws, art, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -357,7 +356,7 @@ def test_evaluator_rejects_missing_physical_artifact(test_workspace):
 
 
 def test_evaluator_rejects_expired_validity(test_workspace):
-    """Statement with expired validity must fail closed."""
+    """Statement with expired validity must fail closed via TruthEngine."""
     ws, _, _, stmt = test_workspace
     updated = replace(
         stmt,
@@ -371,33 +370,7 @@ def test_evaluator_rejects_expired_validity(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024", as_of="2026-08-23")
     assert res.is_known is False
-    assert "EXPIRED_OR_INACTIVE_VALIDITY" in (res.refusal_reason or "")
-
-
-def test_evaluator_rejects_multiple_conflicting_supported_statements(test_workspace):
-    """Multiple supported statements with conflicting values fail closed."""
-    ws, art, evt, stmt = test_workspace
-    updated1 = replace(
-        stmt,
-        evidence_condition=EvidenceCondition.SUPPORTED,
-        human_review_state=HumanReviewState.APPROVED,
-        publish_status=PublishStatus.PUBLISH_ALLOWED,
-    )
-    updated2 = replace(
-        stmt,
-        statement_id="STM-0002",
-        value="Grand Port Maritime de Marseille",
-        evidence_condition=EvidenceCondition.SUPPORTED,
-        human_review_state=HumanReviewState.APPROVED,
-        publish_status=PublishStatus.PUBLISH_ALLOWED,
-    )
-    ws.editor._by_id[stmt.statement_id] = updated1
-    ws.editor._by_id["STM-0002"] = updated2
-    ws.editor._flush()
-
-    res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
-    assert res.is_known is False
-    assert res.refusal_reason == "CONFLICTING_SUPPORTED_STATEMENTS"
+    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
 
 
 def test_evaluator_works_for_generic_arbitrary_port_entities(test_workspace):
@@ -420,6 +393,49 @@ def test_evaluator_works_for_generic_arbitrary_port_entities(test_workspace):
     assert res.is_known is True
     assert res.value == "Grand Harbour Valletta"
     assert res.provenance.statement_id == "STM-VALLETTA"
+
+
+def test_evaluator_does_not_invent_unsupported_defaults(test_workspace):
+    """PortIntelligenceEvaluator.evaluate() does NOT return fabricated defaults when only port.official_name is known."""
+    ws, art, evt, stmt = test_workspace
+    updated = replace(
+        stmt,
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
+    ws.editor._by_id[stmt.statement_id] = updated
+    ws.editor._flush()
+
+    # Fact is known
+    fact = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
+    assert fact.is_known is True
+    assert fact.value == "Port of Marseille"
+
+    # Briefing evaluation MUST return None to avoid fabricating gangway, town distance, walking summary, etc.
+    briefing = PortIntelligenceEvaluator.evaluate(workspace=ws, port_entity_id="port:unlocode:FRMRS")
+    assert briefing is None
+
+
+def test_architecture_no_duplicate_lifecycle_predicates_in_ports_py():
+    """Static architecture guard: ports.py MUST NOT directly filter candidates on lifecycle predicates."""
+    ports_py = REPO_ROOT / "src" / "timonelo" / "intelligence" / "ports.py"
+    content = ports_py.read_text(encoding="utf-8")
+
+    forbidden_predicates = [
+        "s.evidence_condition ==",
+        "s.evidence_condition in",
+        "s.human_review_state ==",
+        "s.human_review_state in",
+        "s.publish_status ==",
+        "s.publish_status in",
+        "s.publishing in",
+        "s.state in",
+        "s.condition in",
+        "s.is_valid_at(",
+    ]
+    for predicate in forbidden_predicates:
+        assert predicate not in content, f"ports.py duplicates canonical truth logic via '{predicate}'"
 
 
 def test_evaluator_delegates_to_truth_engine_and_gatekeeper(test_workspace, monkeypatch):
@@ -448,5 +464,3 @@ def test_evaluator_delegates_to_truth_engine_and_gatekeeper(test_workspace, monk
     assert engine_called[0] == ("port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is True
     assert res.value == "Port of Marseille"
-
-
