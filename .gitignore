@@ -46,3 +46,7 @@ scratch/*.png
 scratch/*.jpg
 scratch/*.log
 *.log
+
+# Local / Private evidence outside git tracking
+.local/
+.private/

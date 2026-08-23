@@ -58,9 +58,10 @@ class Artifact:
     language: Optional[str] = None      # BCP-47, e.g. "en", "de"
     byte_size: int = 0
     notes: str = ""
+    private_source: bool = False
 
     def to_dict(self) -> Dict[str, object]:
-        return {
+        d: Dict[str, object] = {
             "artifact_id": self.artifact_id,
             "sha256": self.sha256,
             "filename": self.filename,
@@ -74,6 +75,9 @@ class Artifact:
             "byte_size": self.byte_size,
             "notes": self.notes,
         }
+        if self.private_source:
+            d["private_source"] = True
+        return d
 
     @staticmethod
     def from_dict(d: Dict[str, object]) -> "Artifact":
@@ -244,10 +248,30 @@ class ArtifactRegistry:
         The canonical SHA vault has authority when it contains a candidate.
         Multiple candidates or an invalid canonical candidate fail closed; a
         legacy blob is considered only when the canonical vault has none.
+        For private_source artifacts, local private directories outside git are checked.
         """
         artifact = self.get(artifact_id)
         if not self._valid_digest(artifact.sha256):
             return None
+
+        if artifact.private_source:
+            # Check local private storage paths outside the public repository vault
+            for private_dir in [
+                os.path.join(self.root, "..", ".local", "private-evidence"),
+                os.path.join(self.root, "..", ".private", "evidence"),
+                os.environ.get("TIMONELO_PRIVATE_EVIDENCE_DIR", ""),
+            ]:
+                if private_dir and os.path.isdir(private_dir):
+                    prefix = artifact.sha256[:2]
+                    for candidate in [
+                        os.path.join(private_dir, f"{artifact.sha256}.pdf"),
+                        os.path.join(private_dir, prefix, f"{artifact.sha256}.pdf"),
+                        os.path.join(private_dir, artifact.filename),
+                    ]:
+                        if os.path.isfile(candidate) and self._matches_identity(candidate, artifact):
+                            return candidate
+            return None
+
         candidates = self._vault_candidates(artifact)
         if candidates:
             if len(candidates) != 1:
@@ -259,11 +283,29 @@ class ArtifactRegistry:
         return legacy if self._matches_identity(legacy, artifact) else None
 
     def verify(self, artifact_id: str) -> bool:
-        """Resolve and re-hash stored bytes, failing closed on ambiguity."""
+        """Resolve and re-hash stored bytes, failing closed on missing physical bytes."""
         return self.resolve_path(artifact_id) is not None
 
-    def verify_all(self) -> List[str]:
-        return sorted(a for a in self._by_id if not self.verify(a))
+    def verification_status(self, artifact_id: str) -> str:
+        """Explicit verification status distinguishing physical reverification from reference registration."""
+        artifact = self.get(artifact_id)
+        if self.resolve_path(artifact_id) is not None:
+            if artifact.private_source:
+                return "PRIVATE_ARTIFACT_SHA_VERIFIED"
+            return "PUBLIC_ARTIFACT_SHA_VERIFIED"
+        if artifact.private_source and self._valid_digest(artifact.sha256):
+            return "PRIVATE_ARTIFACT_REFERENCE_REGISTERED"
+        return "MISSING"
+
+    def has_provenance_reference(self, artifact_id: str) -> bool:
+        """Whether artifact metadata contains valid cryptographic digest and provenance."""
+        artifact = self.get(artifact_id)
+        return self._valid_digest(artifact.sha256) and bool(artifact.document_class) and bool(artifact.publisher)
+
+    def verify_all(self, *, include_private: bool = True) -> List[str]:
+        if include_private:
+            return sorted(a for a in self._by_id if not self.verify(a))
+        return sorted(a for a in self._by_id if not self.get(a).private_source and not self.verify(a))
 
     def list_all(self) -> List[Artifact]:
         return [self._by_id[k] for k in sorted(self._by_id)]

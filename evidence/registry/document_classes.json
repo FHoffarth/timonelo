@@ -60,6 +60,58 @@
     ],
     "cabin.vibration": [
       "onboard_survey"
+    ],
+    "berth.max_draft": [
+      "port_authority_berth_directory"
+    ],
+    "cruise_terminal.official_address": [
+      "port_authority_official_directory",
+      "terminal_operator_specification"
+    ],
+    "cruise_terminal.official_name": [
+      "port_authority_official_directory",
+      "terminal_operator_specification"
+    ],
+    "port.official_name": [
+      "port_authority_official_directory",
+      "un_locode_registry"
+    ],
+    "port.un_locode": [
+      "un_locode_registry"
+    ],
+    "transport_node.official_name": [
+      "municipal_transit_authority",
+      "port_authority_official_directory"
+    ],
+    "transport_node.operator": [
+      "municipal_transit_authority",
+      "port_authority_official_directory"
+    ],
+    "voyage.arrival_date": [
+      "official_cruise_operator_booking_confirmation"
+    ],
+    "voyage.arrival_location": [
+      "official_cruise_operator_booking_confirmation"
+    ],
+    "voyage.arrival_port": [
+      "official_cruise_operator_booking_confirmation",
+      "un_locode_registry"
+    ],
+    "voyage.check_in_time": [
+      "official_cruise_operator_booking_confirmation"
+    ],
+    "voyage.departure_date": [
+      "official_cruise_operator_booking_confirmation"
+    ],
+    "voyage.departure_location": [
+      "official_cruise_operator_booking_confirmation"
+    ],
+    "voyage.departure_port": [
+      "official_cruise_operator_booking_confirmation",
+      "un_locode_registry"
+    ],
+    "voyage.vessel": [
+      "official_cruise_operator_booking_confirmation"
     ]
   },
   "document_classes": {}

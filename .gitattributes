@@ -24,3 +24,5 @@
 *.zip binary
 *.warc binary
 *.warc.gz binary
+
+evidence/raw/** binary

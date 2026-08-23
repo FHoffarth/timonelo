@@ -54,5 +54,48 @@
     "publisher": "Autoritat Portuària de Barcelona (Port de Barcelona)",
     "sha256": "f0f04f664d3644a82d18a06eeab4674d716316866954ec04b868d34c21188bdf",
     "version": "2026"
+  },
+  "ART-0005": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "HTTP GET from https://www.tptc.co.jp/terminal/guide/cruise (status=200, content-type=text/html; charset=UTF-8)",
+    "artifact_id": "ART-0005",
+    "byte_size": 30627,
+    "document_class": "port_authority_official_directory",
+    "filename": "tptc_tokyo_cruise_terminal_guide.html",
+    "language": "ja",
+    "notes": "Official Tokyo Port Terminal Corporation guide for Tokyo International Cruise Terminal (東京国際クルーズターミナル).",
+    "published_on": "2026",
+    "publisher": "Tokyo Port Terminal Corporation (東京港埠頭株式会社 / 東京都港湾局)",
+    "sha256": "a10b925fded165cfd89c70b707ea7cbeda2b371c21d97c5959b6ca6aed347c0d",
+    "version": "2026"
+  },
+  "ART-0006": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "HTTP GET from https://www.tptc.co.jp/terminal/access/cruise (status=200, content-type=text/html; charset=UTF-8)",
+    "artifact_id": "ART-0006",
+    "byte_size": 30895,
+    "document_class": "port_authority_official_directory",
+    "filename": "tptc_tokyo_cruise_terminal_access.html",
+    "language": "ja",
+    "notes": "Official Tokyo Port Terminal Corporation access guide for Tokyo International Cruise Terminal (所在地: 〒135-0064 東京都江東区青海二丁目地先; nearest station: 東京国際クルーズターミナル駅).",
+    "published_on": "2026",
+    "publisher": "Tokyo Port Terminal Corporation (東京港埠頭株式会社 / 東京都港湾局)",
+    "sha256": "5f542b9ee297cab87db449cb21af3b7dd9a2c9653fb94830ff970b68e954ceeb",
+    "version": "2026"
+  },
+  "ART-0007": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "supplied by project owner",
+    "artifact_id": "ART-0007",
+    "byte_size": 441304,
+    "document_class": "official_cruise_operator_booking_confirmation",
+    "filename": "Buchungsbestaetigung_MSC_BELLISSIMA_20261004.pdf",
+    "language": "de",
+    "notes": "Official MSC Cruises booking confirmation for MSC Bellissima Shanghai to Tokyo sailing on 2026-10-04, supplied directly by project owner.",
+    "private_source": true,
+    "published_on": "2026-05-24",
+    "publisher": "MSC Cruises S.A.",
+    "sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "version": "2026-05-24 17:10"
   }
 }
