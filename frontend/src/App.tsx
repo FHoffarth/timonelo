@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import MainNavbar, { NavRoute } from "./components/ui/MainNavbar";
 import SpatialProofViewer from "./spatial-proof/SpatialProofViewer";
 import Footer from "./components/ui/Footer";
@@ -17,6 +17,11 @@ import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
 import { X } from "lucide-react";
 
+// Internal review tool (dev-only lazy import, completely stripped from production build)
+const DeckReviewPage = import.meta.env.DEV
+  ? React.lazy(() => import("./components/pages/DeckReviewPage"))
+  : null;
+
 export default function App() {
   // Evidence viewer, reached deliberately rather than through the product nav:
   // every object in the Deck 14 proof is DRAFT / UNKNOWN / PUBLISH_BLOCKED, so it
@@ -24,6 +29,18 @@ export default function App() {
   if (typeof window !== "undefined" &&
       new URLSearchParams(window.location.search).get("view") === "spatial-proof") {
     return <SpatialProofViewer />;
+  }
+
+  // Human Review workspace for Public Deck Geometry Adjudication (dev/internal review only)
+  if (typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("view") === "deck-review") {
+    if (import.meta.env.DEV && DeckReviewPage) {
+      return (
+        <Suspense fallback={<div className="p-8 text-center text-xs font-mono text-slate-400">Loading review workspace...</div>}>
+          <DeckReviewPage />
+        </Suspense>
+      );
+    }
   }
   const [currentRoute, setCurrentRoute] = useState<NavRoute | "cabin">("home");
   const [selectedShipSlug, setSelectedShipSlug] = useState<string>("msc-bellissima");

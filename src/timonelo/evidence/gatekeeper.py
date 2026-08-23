@@ -431,3 +431,40 @@ def sanitize_report_content(report_text: str, gate_result: GateResult) -> str:
         for pattern in BANNED_UNGROUNDED_CLAIMS:
             report_text = re.sub(pattern, "[UNVERIFIED / BLOCKED]", report_text, flags=re.IGNORECASE)
     return report_text
+
+
+def is_canonical_statement_admitted(statement: Union[Statement, Dict[str, Any]]) -> Tuple[bool, str]:
+    """
+    Shared canonical predicate for statement publication admission (ADR-0002 §8, ADR-0003 §7).
+    A statement participates in published truth if and only if all three lifecycle axes pass:
+      1. evidence_condition == EvidenceCondition.SUPPORTED
+      2. human_review_state == HumanReviewState.APPROVED
+      3. publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+    """
+    if isinstance(statement, Statement):
+        cond = statement.evidence_condition
+        rev = statement.human_review_state
+        pub = statement.publish_status
+        sid = statement.statement_id
+    elif isinstance(statement, dict):
+        cond_val = statement.get("evidence_condition")
+        rev_val = statement.get("human_review_state")
+        pub_val = statement.get("publish_status")
+        try:
+            cond = EvidenceCondition(cond_val) if isinstance(cond_val, str) else cond_val
+            rev = HumanReviewState(rev_val) if isinstance(rev_val, str) else rev_val
+            pub = PublishStatus(pub_val) if isinstance(pub_val, str) else pub_val
+        except (ValueError, TypeError):
+            return False, f"Invalid enum values in statement: cond={cond_val}, rev={rev_val}, pub={pub_val}"
+        sid = statement.get("statement_id", "dict_statement")
+    else:
+        return False, f"Invalid statement type: {type(statement)}"
+
+    if cond != EvidenceCondition.SUPPORTED:
+        return False, f"Statement {sid} evidence_condition is {cond.value if hasattr(cond, 'value') else cond} (must be SUPPORTED)"
+    if rev != HumanReviewState.APPROVED:
+        return False, f"Statement {sid} human_review_state is {rev.value if hasattr(rev, 'value') else rev} (must be APPROVED)"
+    if pub not in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
+        return False, f"Statement {sid} publish_status is {pub.value if hasattr(pub, 'value') else pub} (must be PUBLISH_ALLOWED)"
+
+    return True, "Canonical publication criteria satisfied"
