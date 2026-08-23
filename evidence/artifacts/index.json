@@ -26,5 +26,33 @@
     "publisher": "MSC Cruises",
     "sha256": "4f7f1aba2fe1adfe4a2539362cfc39ad51f9f606c9765245245c7a0eece0c603",
     "version": null
+  },
+  "ART-0003": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "HTTP GET from https://opensource.unicc.org/un/unece/uncefact/vocab-locode/-/jobs/artifacts/2025-1/download?job=package-release (verified TLS, status=200, content-type=application/zip)",
+    "artifact_id": "ART-0003",
+    "byte_size": 13507338,
+    "document_class": "un_locode_registry",
+    "filename": "UNLOCODE-2025-1-package-release.zip",
+    "language": "en",
+    "notes": "Official UNECE UN/LOCODE release package containing authoritative global trade and transport location code lists (CSV, TXT, MDB, TTL).",
+    "published_on": "2025-01",
+    "publisher": "United Nations Economic Commission for Europe (UNECE) / UN-CEFACT (via UNICC official release)",
+    "sha256": "ad409fc7149b10f98d61190c34d9daf78b78bb8b31464cc66de1a89d09b01b5d",
+    "version": "2025-1"
+  },
+  "ART-0004": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "HTTP GET from https://www.portdebarcelona.cat/en/business-and-services/cruise-ships/information-passenger/passenger-terminals (status=200, content-type=text/html; charset=UTF-8)",
+    "artifact_id": "ART-0004",
+    "byte_size": 116126,
+    "document_class": "port_authority_official_directory",
+    "filename": "passenger-terminals.html",
+    "language": "en",
+    "notes": "Official Port de Barcelona passenger cruise terminals directory.",
+    "published_on": "2026",
+    "publisher": "Autoritat Portuària de Barcelona (Port de Barcelona)",
+    "sha256": "f0f04f664d3644a82d18a06eeab4674d716316866954ec04b868d34c21188bdf",
+    "version": "2026"
   }
 }

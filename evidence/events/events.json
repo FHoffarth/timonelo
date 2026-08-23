@@ -1,0 +1,50 @@
+[
+  {
+    "artifact_sha256": "ad409fc7149b10f98d61190c34d9daf78b78bb8b31464cc66de1a89d09b01b5d",
+    "entity_id": "port:unlocode:ESBCN",
+    "event_id": "EVT-PORT-0001",
+    "locator": "release/csv/UNLOCODE CodeListPart1.csv: Row: ,ES,BCN,Barcelona,Barcelona,,12345---,AI,9601,,,",
+    "notes": "Official UNECE UN/LOCODE entry for Barcelona, Spain (ES BCN)",
+    "observed_by": "port-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "ESBCN",
+    "question_id": "Q-0023",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "f0f04f664d3644a82d18a06eeab4674d716316866954ec04b868d34c21188bdf",
+    "entity_id": "port:unlocode:ESBCN",
+    "event_id": "EVT-PORT-0002",
+    "locator": "<meta property=\"og:site_name\" content=\"Port de Barcelona\" />",
+    "notes": "Official port authority entity name in site metadata",
+    "observed_by": "port-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "Port de Barcelona",
+    "question_id": "Q-0024",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "f0f04f664d3644a82d18a06eeab4674d716316866954ec04b868d34c21188bdf",
+    "entity_id": "terminal:ESBCN:adosat-a",
+    "event_id": "EVT-PORT-0003",
+    "locator": "<h3><span class=\"field field--name-title field--type-string field--label-hidden\">Terminal A</span></h3>",
+    "notes": "Official passenger cruise terminal name",
+    "observed_by": "port-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "Terminal A",
+    "question_id": "Q-0025",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "f0f04f664d3644a82d18a06eeab4674d716316866954ec04b868d34c21188bdf",
+    "entity_id": "terminal:ESBCN:adosat-e",
+    "event_id": "EVT-PORT-0004",
+    "locator": "<h3><span class=\"field field--name-title field--type-string field--label-hidden\">Terminal E – Helix</span></h3>",
+    "notes": "Official passenger cruise terminal name",
+    "observed_by": "port-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "Terminal E – Helix",
+    "question_id": "Q-0025",
+    "supersedes": null
+  }
+]

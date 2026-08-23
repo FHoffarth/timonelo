@@ -1157,6 +1157,54 @@
       "checked_statement_count": 389,
       "executed_on": "2026-08-22",
       "run_id": "CDR-0190"
+    },
+    {
+      "candidate_statement_id": "STM-0391",
+      "checked_statement_count": 390,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0191"
+    },
+    {
+      "candidate_statement_id": "STM-0392",
+      "checked_statement_count": 391,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0192"
+    },
+    {
+      "candidate_statement_id": "STM-0393",
+      "checked_statement_count": 392,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0193"
+    },
+    {
+      "candidate_statement_id": "STM-0394",
+      "checked_statement_count": 393,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0194"
+    },
+    {
+      "candidate_statement_id": "STM-0395",
+      "checked_statement_count": 394,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0195"
+    },
+    {
+      "candidate_statement_id": "STM-0396",
+      "checked_statement_count": 395,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0196"
+    },
+    {
+      "candidate_statement_id": "STM-0397",
+      "checked_statement_count": 396,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0197"
+    },
+    {
+      "candidate_statement_id": "STM-0398",
+      "checked_statement_count": 397,
+      "executed_on": "2026-08-23",
+      "run_id": "CDR-0198"
     }
   ],
   "history": [
