@@ -36,6 +36,7 @@ from timonelo.ontology.models import (
     EvidenceCondition,
     GeometryProvenance,
     HumanReviewState,
+    Method,
     PublishStatus,
 )
 
@@ -282,7 +283,12 @@ class EvidenceGatekeeper:
                 supported_count += 1
 
                 # Statement-Specific Evidence Closure Verification
-                if not stmt.evidence_event_ids:
+                if stmt.method == Method.INFERRED:
+                    if not stmt.input_statement_ids or not stmt.rule_hash:
+                        reasons.append(
+                            f"INFERRED_STATEMENT_INCOMPLETE_CLOSURE: {stmt.statement_id} is marked INFERRED but missing input_statement_ids or rule_hash"
+                        )
+                elif not stmt.evidence_event_ids:
                     reasons.append(
                         f"STATEMENT_ZERO_EVIDENCE_EVENTS: {stmt.statement_id} is marked SUPPORTED but has no evidence_event_ids"
                     )

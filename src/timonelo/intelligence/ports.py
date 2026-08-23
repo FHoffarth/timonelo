@@ -134,7 +134,7 @@ class PortIntelligenceEvaluator:
             )
 
         # 5. Build PortFactProvenance from canonical Answer provenance and winning Statement
-        artifact = workspace.registry.get(answer.provenance.artifact_id)
+        artifact = workspace.registry.get(answer.provenance.artifact_id) if answer.provenance.artifact_id else None
         event_id = winning_stmt.evidence_event_ids[0] if winning_stmt.evidence_event_ids else None
         provenance = PortFactProvenance(
             artifact_id=answer.provenance.artifact_id,
