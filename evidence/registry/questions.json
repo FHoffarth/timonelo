@@ -225,6 +225,83 @@
       "statement_type": "cabin.bunk_or_convertible_sofa",
       "supportable_by": [],
       "unknown_guidance": "The deck plan prints no such symbol for this stateroom. That is not a statement that the feature is absent; confirm with MSC when booking."
+    },
+    "Q-0023": {
+      "entity_type": "port",
+      "labels": {
+        "de": "Wie lautet der offizielle UN/LOCODE dieses Hafens?",
+        "en": "What is the official UN/LOCODE for this port?"
+      },
+      "question_id": "Q-0023",
+      "statement_type": "port.un_locode",
+      "supportable_by": [],
+      "unknown_guidance": "UN/LOCODE not established by official registry."
+    },
+    "Q-0024": {
+      "entity_type": "port",
+      "labels": {
+        "de": "Wie lautet der offizielle Name des Hafens / der Hafenbehörde?",
+        "en": "What is the official name of the port authority / port?"
+      },
+      "question_id": "Q-0024",
+      "statement_type": "port.official_name",
+      "supportable_by": [],
+      "unknown_guidance": "Official port name not sourced."
+    },
+    "Q-0025": {
+      "entity_type": "cruise_terminal",
+      "labels": {
+        "de": "Wie lautet der offizielle Name dieses Kreuzfahrtterminals?",
+        "en": "What is the official name of this cruise terminal?"
+      },
+      "question_id": "Q-0025",
+      "statement_type": "cruise_terminal.official_name",
+      "supportable_by": [],
+      "unknown_guidance": "Terminal name not sourced from port or operator authority."
+    },
+    "Q-0026": {
+      "entity_type": "cruise_terminal",
+      "labels": {
+        "de": "Wie lautet die offizielle Adresse / Kaianlage dieses Terminals?",
+        "en": "What is the official postal address / quayside location of this terminal?"
+      },
+      "question_id": "Q-0026",
+      "statement_type": "cruise_terminal.official_address",
+      "supportable_by": [],
+      "unknown_guidance": "Terminal address not established."
+    },
+    "Q-0027": {
+      "entity_type": "berth",
+      "labels": {
+        "de": "Was ist der maximal zulässige Tiefgang (in Metern) für diesen Liegeplatz?",
+        "en": "What is the maximum permissible draft (in metres) for this berth?"
+      },
+      "question_id": "Q-0027",
+      "statement_type": "berth.max_draft",
+      "supportable_by": [],
+      "unknown_guidance": "Berth max draft not stated in official berth directory."
+    },
+    "Q-0028": {
+      "entity_type": "transport_node",
+      "labels": {
+        "de": "Wie lautet der offizielle Name dieser Haltestelle / dieses Verkehrsknotenpunkts?",
+        "en": "What is the official name of this port transport node / stop?"
+      },
+      "question_id": "Q-0028",
+      "statement_type": "transport_node.official_name",
+      "supportable_by": [],
+      "unknown_guidance": "Transport node not sourced."
+    },
+    "Q-0029": {
+      "entity_type": "transport_node",
+      "labels": {
+        "de": "Wer ist der Betreiber dieses Verkehrsmittels?",
+        "en": "Who is the licensed operating agency for this transport service?"
+      },
+      "question_id": "Q-0029",
+      "statement_type": "transport_node.operator",
+      "supportable_by": [],
+      "unknown_guidance": "Operator not established from municipal or port authority."
     }
   },
   "version": "bellissima-2026-08-17"

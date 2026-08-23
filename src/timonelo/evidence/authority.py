@@ -169,6 +169,41 @@ DOCUMENT_CLASSES: Dict[str, DocumentClass] = {
         acquisition=Acquisition.PUBLIC,
         use_permission=UsePermission.CITE_ONLY,
     ),
+    "un_locode_registry": DocumentClass(
+        "un_locode_registry", "UN/LOCODE official registry",
+        reliability=0.97, validity_scope=ValidityScope.STRUCTURAL,
+        acquisition=Acquisition.PUBLIC,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="UN/ECE standard code list for ports and other locations.",
+    ),
+    "port_authority_official_directory": DocumentClass(
+        "port_authority_official_directory", "Port authority official directory / master plan",
+        reliability=0.95, validity_scope=ValidityScope.SEASON_SCOPED,
+        acquisition=Acquisition.PUBLIC,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="Official directory and infrastructure plans published by the port authority.",
+    ),
+    "port_authority_berth_directory": DocumentClass(
+        "port_authority_berth_directory", "Port authority berth and wharf directory",
+        reliability=0.95, validity_scope=ValidityScope.SEASON_SCOPED,
+        acquisition=Acquisition.PUBLIC,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="Physical berth dimensions, depths, and wharf technical specifications.",
+    ),
+    "terminal_operator_specification": DocumentClass(
+        "terminal_operator_specification", "Cruise terminal operator specification",
+        reliability=0.90, validity_scope=ValidityScope.SEASON_SCOPED,
+        acquisition=Acquisition.PUBLIC,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="Facility operator technical specifications and terminal building descriptions.",
+    ),
+    "municipal_transit_authority": DocumentClass(
+        "municipal_transit_authority", "Municipal transit authority official timetable / tariff",
+        reliability=0.90, validity_scope=ValidityScope.SEASON_SCOPED,
+        acquisition=Acquisition.PUBLIC,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="Official local public transport and port shuttle schedules, routes, and fares.",
+    ),
 }
 
 
@@ -243,6 +278,15 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
 
     # -- vessel history: internal only.
     "vessel.inspection_finding":  ("port_state_inspection",),
+
+    # -- port & shoreside infrastructure: port authority, UN/LOCODE, operator, and municipal transit
+    "port.un_locode":                   ("un_locode_registry",),
+    "port.official_name":               ("port_authority_official_directory", "un_locode_registry"),
+    "cruise_terminal.official_name":    ("port_authority_official_directory", "terminal_operator_specification"),
+    "cruise_terminal.official_address": ("port_authority_official_directory", "terminal_operator_specification"),
+    "berth.max_draft":                  ("port_authority_berth_directory",),
+    "transport_node.official_name":     ("municipal_transit_authority", "port_authority_official_directory"),
+    "transport_node.operator":          ("municipal_transit_authority", "port_authority_official_directory"),
 }
 
 
