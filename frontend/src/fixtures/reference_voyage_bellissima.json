@@ -1,0 +1,143 @@
+{
+  "voyage_entity": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+  "input_vessel": "MSC BELLISSIMA",
+  "input_departure_date": "2026-10-04",
+  "input_departure_location": "Shanghai, China",
+  "input_arrival_date": "2026-10-07",
+  "input_arrival_location": "Tokyo, Japan",
+  "input_check_in_time": "14:00",
+  "vessel": "MSC BELLISSIMA",
+  "departure_port": "port:unlocode:CNSGH",
+  "arrival_port": "port:unlocode:JPTYO",
+  "departure_date": "2026-10-04",
+  "departure_location": "Shanghai, China",
+  "arrival_date": "2026-10-07",
+  "arrival_location": "Tokyo, Japan",
+  "check_in_time": "14:00",
+  "departure_terminal": null,
+  "departure_berth": null,
+  "arrival_terminal": null,
+  "arrival_berth": null,
+  "known_facts": [
+    {
+      "question_id": "Q-0030",
+      "value": "MSC BELLISSIMA",
+      "statement_id": "STM-0403"
+    },
+    {
+      "question_id": "Q-0031",
+      "value": "2026-10-04",
+      "statement_id": "STM-0404"
+    },
+    {
+      "question_id": "Q-0032",
+      "value": "Shanghai, China",
+      "statement_id": "STM-0405"
+    },
+    {
+      "question_id": "Q-0033",
+      "value": "port:unlocode:CNSGH",
+      "statement_id": "STM-0406"
+    },
+    {
+      "question_id": "Q-0034",
+      "value": "2026-10-07",
+      "statement_id": "STM-0407"
+    },
+    {
+      "question_id": "Q-0035",
+      "value": "Tokyo, Japan",
+      "statement_id": "STM-0408"
+    },
+    {
+      "question_id": "Q-0036",
+      "value": "port:unlocode:JPTYO",
+      "statement_id": "STM-0409"
+    },
+    {
+      "question_id": "Q-0037",
+      "value": "14:00",
+      "statement_id": "STM-0410"
+    }
+  ],
+  "gaps": [
+    {
+      "question_id": "Q-0038",
+      "statement_type": "voyage.departure_terminal",
+      "status": "UNKNOWN",
+      "reason": "No authoritative day-specific departure terminal assignment found for sailing date",
+      "needed_source_class": "port_authority_berth_directory",
+      "authoritative_source_family": "port_authority",
+      "recheck_strategy": "Periodic verification of official embarkation port terminal call schedule",
+      "recheck_window": "30-60 days prior to call",
+      "last_checked_on": "2026-08-23"
+    },
+    {
+      "question_id": "Q-0039",
+      "statement_type": "voyage.arrival_terminal",
+      "status": "UNKNOWN",
+      "reason": "No authoritative day-specific arrival terminal assignment found for sailing date",
+      "needed_source_class": "port_authority_berth_directory",
+      "authoritative_source_family": "port_authority",
+      "recheck_strategy": "Periodic verification of official debarkation port terminal call schedule",
+      "recheck_window": "30-60 days prior to call",
+      "last_checked_on": "2026-08-23"
+    },
+    {
+      "question_id": "Q-0040",
+      "statement_type": "voyage.departure_berth",
+      "status": "UNKNOWN",
+      "reason": "No authoritative day-specific departure berth assignment found for sailing date",
+      "needed_source_class": "port_authority_berth_directory",
+      "authoritative_source_family": "port_authority",
+      "recheck_strategy": "Official port authority daily berth assignment log inspection",
+      "recheck_window": "30-60 days prior to call",
+      "last_checked_on": "2026-08-23"
+    },
+    {
+      "question_id": "Q-0041",
+      "statement_type": "voyage.arrival_berth",
+      "status": "UNKNOWN",
+      "reason": "No authoritative day-specific arrival berth assignment found for sailing date",
+      "needed_source_class": "port_authority_berth_directory",
+      "authoritative_source_family": "port_authority",
+      "recheck_strategy": "Official port authority daily berth assignment log inspection",
+      "recheck_window": "30-60 days prior to call",
+      "last_checked_on": "2026-08-23"
+    }
+  ],
+  "publishability": "PUBLISH_ALLOWED",
+  "passenger_pack": {
+    "voyage_entity": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "vessel_name": "MSC BELLISSIMA",
+    "departure_date": "2026-10-04",
+    "departure_location": "Shanghai, China",
+    "departure_port_unlocode": "CNSGH",
+    "arrival_date": "2026-10-07",
+    "arrival_location": "Tokyo, Japan",
+    "arrival_port_unlocode": "JPTYO",
+    "check_in_time": "14:00",
+    "departure_terminal_status": "UNCONFIRMED",
+    "departure_berth_status": "UNCONFIRMED",
+    "arrival_terminal_status": "UNCONFIRMED",
+    "arrival_berth_status": "UNCONFIRMED",
+    "known_generic_infrastructure": [
+      {
+        "entity_id": "terminal:JPTYO:tokyo-international-cruise-terminal",
+        "name": "東京国際クルーズターミナル",
+        "notice": "Generic port facility in destination port; specific arrival berth assignment is unconfirmed."
+      }
+    ],
+    "trust_metadata": {
+      "governance": "ADR-0002 Truth Engine",
+      "truth_model": "Fail-Closed Cryptographic Evidence Graph",
+      "pii_isolation": "Zero PII or raw booking payloads in canonical repository"
+    },
+    "next_evidence_gaps": [
+      "voyage.departure_terminal: No authoritative day-specific departure terminal assignment found for sailing date",
+      "voyage.arrival_terminal: No authoritative day-specific arrival terminal assignment found for sailing date",
+      "voyage.departure_berth: No authoritative day-specific departure berth assignment found for sailing date",
+      "voyage.arrival_berth: No authoritative day-specific arrival berth assignment found for sailing date"
+    ]
+  }
+}

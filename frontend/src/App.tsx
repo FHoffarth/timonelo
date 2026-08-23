@@ -10,6 +10,7 @@ import RouteIntelligencePage from "./components/pages/RouteIntelligencePage";
 import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
 import KnowledgeDashboardPage from "./components/pages/KnowledgeDashboardPage";
+import { ReferenceTripShellPreview } from "./components/pages/TripShellPage";
 import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
 import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
@@ -129,8 +130,7 @@ export default function App() {
         )}
 
         {currentRoute === "my-cruise" && (
-          <CabinDeepDivePage
-            cabinId="14122"
+          <ReferenceTripShellPreview
             onBack={() => handleNavigate("home")}
           />
         )}
