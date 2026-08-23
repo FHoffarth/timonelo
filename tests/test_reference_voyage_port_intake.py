@@ -10,7 +10,7 @@ import subprocess
 import zipfile
 import pytest
 
-from timonelo.evidence.authority import authoritative_classes, DOCUMENT_CLASSES
+from timonelo.evidence.authority import authoritative_classes, DOCUMENT_CLASSES, check
 from timonelo.evidence.workspace import Workspace
 from timonelo.intelligence.ports import PortIntelligenceEvaluator
 from timonelo.ontology.models import (
@@ -22,6 +22,8 @@ from timonelo.ontology.models import (
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE_DIR = REPO_ROOT / "evidence"
+
+VOYAGE_ENTITY = "voyage:msc-bellissima:20261004-shanghai-tokyo"
 
 # Strict allowlist of permissible non-private reference voyage values
 ALLOWED_VOYAGE_STATEMENT_VALUES = frozenset({
@@ -157,6 +159,7 @@ def test_private_booking_artifact_metadata_and_verification_semantics(workspace)
     4. verification_status() returns 'PRIVATE_ARTIFACT_REFERENCE_REGISTERED'.
     5. has_provenance_reference() returns True.
     6. No raw private PDF is tracked in Git.
+    7. Public CE artifacts are not suppressed by ignore rules.
     """
     art = workspace.registry.get("ART-0007")
     assert art.artifact_id == "ART-0007"
@@ -220,12 +223,14 @@ def test_document_class_canonical_registration(workspace):
         "voyage.departure_date",
         "voyage.departure_location",
         "voyage.departure_port",
+        "voyage.departure_terminal",
         "voyage.arrival_date",
         "voyage.arrival_location",
         "voyage.arrival_port",
+        "voyage.arrival_terminal",
         "voyage.check_in_time",
     ]:
-        assert doc_class in authority_map.get(stype, [])
+        assert doc_class in authority_map.get(stype, []), f"{doc_class} missing authority for {stype}"
 
 
 def test_inferred_statement_closure_and_rule_hash(workspace):
@@ -259,11 +264,9 @@ def test_msc_booking_reference_voyage_intake(workspace):
     MSC Bellissima reference voyage statements STM-0403..STM-0410 are registered
     from official MSC Cruises booking confirmation ART-0007.
     """
-    voyage_entity = "voyage:msc-bellissima:20261004-shanghai-tokyo"
-
     # Vessel
     stm_vessel = workspace.editor.get("STM-0403")
-    assert stm_vessel.entity_id == voyage_entity
+    assert stm_vessel.entity_id == VOYAGE_ENTITY
     assert stm_vessel.question_id == "Q-0030"
     assert stm_vessel.value == "MSC BELLISSIMA"
     assert stm_vessel.artifact_id == "ART-0007"
@@ -271,41 +274,41 @@ def test_msc_booking_reference_voyage_intake(workspace):
 
     # Departure Date & Location
     stm_dep_date = workspace.editor.get("STM-0404")
-    assert stm_dep_date.entity_id == voyage_entity
+    assert stm_dep_date.entity_id == VOYAGE_ENTITY
     assert stm_dep_date.question_id == "Q-0031"
     assert stm_dep_date.value == "2026-10-04"
 
     stm_dep_loc = workspace.editor.get("STM-0405")
-    assert stm_dep_loc.entity_id == voyage_entity
+    assert stm_dep_loc.entity_id == VOYAGE_ENTITY
     assert stm_dep_loc.question_id == "Q-0032"
     assert stm_dep_loc.value == "Shanghai, China"
 
     # Canonical Departure Port (Derived)
     stm_dep_port = workspace.editor.get("STM-0406")
-    assert stm_dep_port.entity_id == voyage_entity
+    assert stm_dep_port.entity_id == VOYAGE_ENTITY
     assert stm_dep_port.question_id == "Q-0033"
     assert stm_dep_port.value == "port:unlocode:CNSGH"
 
     # Arrival Date & Location
     stm_arr_date = workspace.editor.get("STM-0407")
-    assert stm_arr_date.entity_id == voyage_entity
+    assert stm_arr_date.entity_id == VOYAGE_ENTITY
     assert stm_arr_date.question_id == "Q-0034"
     assert stm_arr_date.value == "2026-10-07"
 
     stm_arr_loc = workspace.editor.get("STM-0408")
-    assert stm_arr_loc.entity_id == voyage_entity
+    assert stm_arr_loc.entity_id == VOYAGE_ENTITY
     assert stm_arr_loc.question_id == "Q-0035"
     assert stm_arr_loc.value == "Tokyo, Japan"
 
     # Canonical Arrival Port (Derived)
     stm_arr_port = workspace.editor.get("STM-0409")
-    assert stm_arr_port.entity_id == voyage_entity
+    assert stm_arr_port.entity_id == VOYAGE_ENTITY
     assert stm_arr_port.question_id == "Q-0036"
     assert stm_arr_port.value == "port:unlocode:JPTYO"
 
     # Check-In Time
     stm_checkin = workspace.editor.get("STM-0410")
-    assert stm_checkin.entity_id == voyage_entity
+    assert stm_checkin.entity_id == VOYAGE_ENTITY
     assert stm_checkin.question_id == "Q-0037"
     assert stm_checkin.value == "14:00"
 
@@ -356,22 +359,47 @@ def test_voyage_events_and_artifact_metadata_contain_no_pii_fields(workspace):
                 assert pii_concept not in evt.question_id.lower()
 
 
-def test_terminal_assignment_remains_unproven(workspace):
+def test_voyage_terminal_and_berth_assignments_remain_unproven(workspace):
     """
-    MSC booking confirmation proves voyage dates and ports, but NOT terminal assignments.
-    Tokyo International Cruise Terminal is NOT assigned to Bellissima.
-    Shanghai terminal remains UNKNOWN.
+    Core Rule: Generic terminal existence != voyage-specific terminal assignment.
+    Neither Shanghai departure terminal nor Tokyo arrival terminal nor any berths
+    are proven for MSC Bellissima on 2026-10-04 / 2026-10-07.
     """
-    voyage_terminal_stmts = [
-        s for s in workspace.editor.all()
-        if "voyage" in s.entity_id and "terminal" in s.statement_type
-    ]
-    assert len(voyage_terminal_stmts) == 0
+    # Q-0038: voyage.departure_terminal
+    ans_dep_term = PortIntelligenceEvaluator.evaluate_fact(workspace, VOYAGE_ENTITY, "Q-0038")
+    assert ans_dep_term.is_known is False
+    assert ans_dep_term.value is None
 
-    shanghai_term = PortIntelligenceEvaluator.evaluate_fact(
-        workspace, "terminal:CNSGH:wusongkou", "Q-0025"
-    )
-    assert shanghai_term.is_known is False
+    # Q-0039: voyage.arrival_terminal
+    ans_arr_term = PortIntelligenceEvaluator.evaluate_fact(workspace, VOYAGE_ENTITY, "Q-0039")
+    assert ans_arr_term.is_known is False
+    assert ans_arr_term.value is None
+
+    # Q-0040: voyage.departure_berth
+    ans_dep_berth = PortIntelligenceEvaluator.evaluate_fact(workspace, VOYAGE_ENTITY, "Q-0040")
+    assert ans_dep_berth.is_known is False
+    assert ans_dep_berth.value is None
+
+    # Q-0041: voyage.arrival_berth
+    ans_arr_berth = PortIntelligenceEvaluator.evaluate_fact(workspace, VOYAGE_ENTITY, "Q-0041")
+    assert ans_arr_berth.is_known is False
+    assert ans_arr_berth.value is None
+
+
+def test_generic_terminal_existence_does_not_infer_voyage_assignment(workspace):
+    """
+    Generic Tokyo terminal existence from ART-0005 / ART-0006 proves terminal entity existence,
+    but does NOT assign Tokyo International Cruise Terminal to the Bellissima voyage.
+    """
+    # Generic terminal entity facts exist in store
+    term_entity = "terminal:JPTYO:tokyo-international-cruise-terminal"
+    stm_name = workspace.editor.get("STM-0399")
+    assert stm_name.entity_id == term_entity
+
+    # Voyage terminal question remains strictly UNKNOWN
+    ans = workspace.engine.answer(VOYAGE_ENTITY, "Q-0039")
+    assert ans.known is False
+    assert ans.value is None
 
 
 def test_no_guessed_coordinates_or_routes(workspace):

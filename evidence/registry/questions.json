@@ -390,6 +390,50 @@
       "statement_type": "voyage.check_in_time",
       "supportable_by": [],
       "unknown_guidance": "Check-in time not stated."
+    },
+    "Q-0038": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Von welchem Kreuzfahrtterminal legt die Reise ab?",
+        "en": "From which cruise terminal does this voyage embark?"
+      },
+      "question_id": "Q-0038",
+      "statement_type": "voyage.departure_terminal",
+      "supportable_by": [],
+      "unknown_guidance": "Departure cruise terminal not established from authoritative port call schedule."
+    },
+    "Q-0039": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "An welchem Kreuzfahrtterminal kommt die Reise an?",
+        "en": "At which cruise terminal does this voyage arrive / disembark?"
+      },
+      "question_id": "Q-0039",
+      "statement_type": "voyage.arrival_terminal",
+      "supportable_by": [],
+      "unknown_guidance": "Arrival cruise terminal not established from authoritative port call schedule."
+    },
+    "Q-0040": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "An welchem Liegeplatz legt das Schiff bei der Abfahrt an?",
+        "en": "Which berth is assigned for departure / embarkation?"
+      },
+      "question_id": "Q-0040",
+      "statement_type": "voyage.departure_berth",
+      "supportable_by": [],
+      "unknown_guidance": "Departure berth assignment not sourced from port authority berth register."
+    },
+    "Q-0041": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "An welchem Liegeplatz legt das Schiff bei der Ankunft an?",
+        "en": "Which berth is assigned for arrival / disembarkation?"
+      },
+      "question_id": "Q-0041",
+      "statement_type": "voyage.arrival_berth",
+      "supportable_by": [],
+      "unknown_guidance": "Arrival berth assignment not sourced from port authority berth register."
     }
   },
   "version": "bellissima-2026-08-17"
