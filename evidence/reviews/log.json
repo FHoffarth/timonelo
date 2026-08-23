@@ -2694,5 +2694,101 @@
     "occurred_on": "2026-08-17",
     "statement_id": "STM-0113",
     "to_state": "PUBLISHED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Evidence verified against official source bytes in SHA vault.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0391",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for human review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0391",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "human-reviewer",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit human approval received from project owner on 2026-08-23 after evidence review.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0391",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Evidence verified against official source bytes in SHA vault.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0392",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for human review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0392",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "human-reviewer",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit human approval received from project owner on 2026-08-23 after evidence review.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0392",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Evidence verified against official source bytes in SHA vault.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0393",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for human review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0393",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "human-reviewer",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit human approval received from project owner on 2026-08-23 after evidence review.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0393",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Evidence verified against official source bytes in SHA vault.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0394",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for human review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0394",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "human-reviewer",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit human approval received from project owner on 2026-08-23 after evidence review.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0394",
+    "to_state": "APPROVED"
   }
 ]

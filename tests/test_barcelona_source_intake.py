@@ -139,13 +139,13 @@ def test_statements_have_valid_evidence_event_linkage(workspace):
         assert evt.artifact_sha256 == workspace.registry.get(expected_art).sha256
 
 
-def test_barcelona_statements_conservative_lifecycle(workspace):
-    """All newly ingested statements must be UNKNOWN / DRAFT / PUBLISH_BLOCKED."""
+def test_barcelona_statements_promoted_lifecycle(workspace):
+    """All curated Barcelona statements are SUPPORTED / APPROVED / PUBLISH_ALLOWED."""
     for sid, _, _, _, _, _, _ in BARCELONA_STATEMENTS:
         stmt = workspace.editor.get(sid)
-        assert stmt.evidence_condition == EvidenceCondition.UNKNOWN
-        assert stmt.human_review_state == HumanReviewState.DRAFT
-        assert stmt.publish_status == PublishStatus.PUBLISH_BLOCKED
+        assert stmt.evidence_condition == EvidenceCondition.SUPPORTED
+        assert stmt.human_review_state == HumanReviewState.APPROVED
+        assert stmt.publish_status == PublishStatus.PUBLISH_ALLOWED
 
 
 def test_barcelona_statements_direct_and_local(workspace):
