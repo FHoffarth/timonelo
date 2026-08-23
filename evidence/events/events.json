@@ -142,5 +142,77 @@
     "observed_value": "ゆりかもめ",
     "question_id": "Q-0029",
     "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0001",
+    "locator": "Page 1: Schiff: MSC BELLISSIMA",
+    "notes": "Official operating vessel stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "MSC BELLISSIMA",
+    "question_id": "Q-0030",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0002",
+    "locator": "Page 1: Abfahrtsdatum: 04/10/2026",
+    "notes": "Official voyage departure date (ISO 2026-10-04) stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "2026-10-04",
+    "question_id": "Q-0031",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0003",
+    "locator": "Page 1: Abfahrtshafen: Shanghai, China",
+    "notes": "Official departure port location label stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "Shanghai, China",
+    "question_id": "Q-0032",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0004",
+    "locator": "Page 1: Ausschiffungsdatum: 07/10/2026",
+    "notes": "Official voyage arrival/disembarkation date (ISO 2026-10-07) stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "2026-10-07",
+    "question_id": "Q-0034",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0005",
+    "locator": "Page 1: Ankunftshafen: Tokyo, Japan",
+    "notes": "Official arrival port location label stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "Tokyo, Japan",
+    "question_id": "Q-0035",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "entity_id": "voyage:msc-bellissima:20261004-shanghai-tokyo",
+    "event_id": "EVT-VOYAGE-0006",
+    "locator": "Page 1: Ihre Check-In Zeit: 14:00",
+    "notes": "Official scheduled passenger check-in time stated on MSC Cruises booking confirmation",
+    "observed_by": "voyage-intake-curator",
+    "observed_on": "2026-08-23",
+    "observed_value": "14:00",
+    "question_id": "Q-0037",
+    "supersedes": null
   }
 ]

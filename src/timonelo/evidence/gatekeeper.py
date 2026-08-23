@@ -49,6 +49,7 @@ class ArtifactVerificationStatus(str, Enum):
     PRESENT = "PRESENT"
     MISSING = "MISSING"
     HASH_MISMATCH = "HASH_MISMATCH"
+    PRIVATE_SOURCE_NOT_LOCALLY_REVERIFIABLE = "PRIVATE_SOURCE_NOT_LOCALLY_REVERIFIABLE"
 
 
 PLACEHOLDER_LOCATORS = frozenset({
@@ -75,10 +76,13 @@ class SourceArtifactRecord:
     document_class: str
     publisher: Optional[str] = None
     edition: Optional[str] = None
+    private_source: bool = False
 
     def verify_physical_artifact(self) -> ArtifactVerificationStatus:
         """Computes real SHA-256 of file on disk and compares against expected hash."""
         if not os.path.exists(self.file_path):
+            if self.private_source and len(self.expected_sha256) == 64:
+                return ArtifactVerificationStatus.PRIVATE_SOURCE_NOT_LOCALLY_REVERIFIABLE
             return ArtifactVerificationStatus.MISSING
         actual_sha = sha256_of_file(self.file_path)
         if actual_sha.lower() != self.expected_sha256.lower():
@@ -242,6 +246,7 @@ class EvidenceGatekeeper:
                         document_class=artifact.document_class,
                         publisher=artifact.publisher,
                         edition=artifact.version,
+                        private_source=getattr(artifact, "private_source", False),
                     )
                 )
         if hasattr(workspace, "events") and workspace.events is not None:
@@ -316,6 +321,11 @@ class EvidenceGatekeeper:
                             reasons.append(
                                 f"EVENT_ARTIFACT_HASH_MISMATCH: Event {event_id} cites hash-mismatched artifact {source.source_id}"
                             )
+                        elif source_status == ArtifactVerificationStatus.PRIVATE_SOURCE_NOT_LOCALLY_REVERIFIABLE:
+                            if stmt.publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
+                                reasons.append(
+                                    f"PRIVATE_SOURCE_UNVERIFIED_FOR_PUBLICATION: Statement {stmt.statement_id} depends on private source {source.source_id} whose bytes are not locally held for reverification"
+                                )
 
                         # Document Class Eligibility Check
                         if self._question_registry is not None:

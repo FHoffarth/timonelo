@@ -302,6 +302,94 @@
       "statement_type": "transport_node.operator",
       "supportable_by": [],
       "unknown_guidance": "Operator not established from municipal or port authority."
+    },
+    "Q-0030": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Welches Schiff führt diese Reise durch?",
+        "en": "Which vessel operates this voyage?"
+      },
+      "question_id": "Q-0030",
+      "statement_type": "voyage.vessel",
+      "supportable_by": [],
+      "unknown_guidance": "Vessel not established from official booking confirmation."
+    },
+    "Q-0031": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wann ist das geplante Abfahrtsdatum der Reise?",
+        "en": "What is the scheduled departure date of this voyage?"
+      },
+      "question_id": "Q-0031",
+      "statement_type": "voyage.departure_date",
+      "supportable_by": [],
+      "unknown_guidance": "Departure date not sourced."
+    },
+    "Q-0032": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wie lautet die Ortsbezeichnung des Abfahrtshafens in der Buchung?",
+        "en": "What is the departure location label in the booking confirmation?"
+      },
+      "question_id": "Q-0032",
+      "statement_type": "voyage.departure_location",
+      "supportable_by": [],
+      "unknown_guidance": "Departure location label not sourced."
+    },
+    "Q-0033": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wie lautet der kanonische Abfahrtshafen (UN/LOCODE)?",
+        "en": "What is the canonical departure port entity (UN/LOCODE)?"
+      },
+      "question_id": "Q-0033",
+      "statement_type": "voyage.departure_port",
+      "supportable_by": [],
+      "unknown_guidance": "Canonical departure port not established."
+    },
+    "Q-0034": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wann ist das geplante Ankunfts- / Ausschiffungsdatum der Reise?",
+        "en": "What is the scheduled arrival / disembarkation date of this voyage?"
+      },
+      "question_id": "Q-0034",
+      "statement_type": "voyage.arrival_date",
+      "supportable_by": [],
+      "unknown_guidance": "Arrival date not sourced."
+    },
+    "Q-0035": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wie lautet die Ortsbezeichnung des Ankunftshafens in der Buchung?",
+        "en": "What is the arrival location label in the booking confirmation?"
+      },
+      "question_id": "Q-0035",
+      "statement_type": "voyage.arrival_location",
+      "supportable_by": [],
+      "unknown_guidance": "Arrival location label not sourced."
+    },
+    "Q-0036": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wie lautet der kanonische Ankunftshafen (UN/LOCODE)?",
+        "en": "What is the canonical arrival port entity (UN/LOCODE)?"
+      },
+      "question_id": "Q-0036",
+      "statement_type": "voyage.arrival_port",
+      "supportable_by": [],
+      "unknown_guidance": "Canonical arrival port not established."
+    },
+    "Q-0037": {
+      "entity_type": "voyage",
+      "labels": {
+        "de": "Wie lautet die angegebene Check-In-Zeit?",
+        "en": "What is the scheduled check-in time indicated in the booking?"
+      },
+      "question_id": "Q-0037",
+      "statement_type": "voyage.check_in_time",
+      "supportable_by": [],
+      "unknown_guidance": "Check-in time not stated."
     }
   },
   "version": "bellissima-2026-08-17"

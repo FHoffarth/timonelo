@@ -82,5 +82,20 @@
     "publisher": "Tokyo Port Terminal Corporation (東京港埠頭株式会社 / 東京都港湾局)",
     "sha256": "5f542b9ee297cab87db449cb21af3b7dd9a2c9653fb94830ff970b68e954ceeb",
     "version": "2026"
+  },
+  "ART-0007": {
+    "acquired_on": "2026-08-23",
+    "acquisition_method": "supplied by project owner",
+    "artifact_id": "ART-0007",
+    "byte_size": 441304,
+    "document_class": "official_cruise_operator_booking_confirmation",
+    "filename": "Buchungsbestaetigung_MSC_BELLISSIMA_20261004.pdf",
+    "language": "de",
+    "notes": "Official MSC Cruises booking confirmation for MSC Bellissima Shanghai to Tokyo sailing on 2026-10-04, supplied directly by project owner.",
+    "private_source": true,
+    "published_on": "2026-05-24",
+    "publisher": "MSC Cruises S.A.",
+    "sha256": "ceee0af752e3bafede5f126f42c5639fd78be5bed240a0acbbeb50d22a7f4b64",
+    "version": "2026-05-24 17:10"
   }
 }

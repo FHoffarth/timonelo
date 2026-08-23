@@ -204,6 +204,13 @@ DOCUMENT_CLASSES: Dict[str, DocumentClass] = {
         use_permission=UsePermission.CITE_AND_STORE,
         notes="Official local public transport and port shuttle schedules, routes, and fares.",
     ),
+    "official_cruise_operator_booking_confirmation": DocumentClass(
+        "official_cruise_operator_booking_confirmation", "Operator official booking confirmation",
+        reliability=0.95, validity_scope=ValidityScope.SAILING_SCOPED,
+        acquisition=Acquisition.RESTRICTED,
+        use_permission=UsePermission.CITE_AND_STORE,
+        notes="Operator-issued official booking confirmation establishing sailing, vessel, dates, and ports of call.",
+    ),
 }
 
 
@@ -287,6 +294,16 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
     "berth.max_draft":                  ("port_authority_berth_directory",),
     "transport_node.official_name":     ("municipal_transit_authority", "port_authority_official_directory"),
     "transport_node.operator":          ("municipal_transit_authority", "port_authority_official_directory"),
+
+    # -- voyage & itinerary facts: operator booking confirmation & cross-source port linking
+    "voyage.vessel":              ("official_cruise_operator_booking_confirmation",),
+    "voyage.departure_date":      ("official_cruise_operator_booking_confirmation",),
+    "voyage.departure_location":  ("official_cruise_operator_booking_confirmation",),
+    "voyage.departure_port":      ("official_cruise_operator_booking_confirmation", "un_locode_registry"),
+    "voyage.arrival_date":        ("official_cruise_operator_booking_confirmation",),
+    "voyage.arrival_location":    ("official_cruise_operator_booking_confirmation",),
+    "voyage.arrival_port":        ("official_cruise_operator_booking_confirmation", "un_locode_registry"),
+    "voyage.check_in_time":       ("official_cruise_operator_booking_confirmation",),
 }
 
 
