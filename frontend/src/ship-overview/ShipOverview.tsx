@@ -8,6 +8,7 @@ import {
   ChevronUp,
   X,
   AlertCircle,
+  MapPin,
 } from 'lucide-react';
 import {
   SpatialPassengerViewModel,
@@ -65,9 +66,13 @@ export default function ShipOverview({
   const hasSearchHits =
     searchResults.mappedHits.length > 0 || searchResults.unmappedHits.length > 0;
 
+  const currentDeckEntities = useMemo(() => {
+    return viewModel.spatialEntities.filter((e) => e.deckNumber === selectedDeckNumber);
+  }, [viewModel.spatialEntities, selectedDeckNumber]);
+
   return (
-    <div className={`w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8 sm:space-y-10 ${className}`}>
-      {/* 1. Ship Header */}
+    <div className={`w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 ${className}`}>
+      {/* 1. Ship Header & Status */}
       <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0C1B2A]/10 shadow-sm space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -85,11 +90,11 @@ export default function ShipOverview({
           </div>
         </div>
 
-        <div>
+        <div className="space-y-1">
           <h1 className="text-2xl sm:text-4xl font-display font-bold text-[#0C1B2A] tracking-tight">
             Ship Deck Overview
           </h1>
-          <p className="text-sm text-[#5B6570] mt-1 font-medium">
+          <p className="text-sm text-[#5B6570] font-medium">
             Explore verified deck layouts and stateroom locations.
           </p>
         </div>
@@ -107,7 +112,7 @@ export default function ShipOverview({
       </section>
 
       {/* 2. Deck Selector Bar */}
-      <section className="space-y-3">
+      <section className="space-y-2">
         <div className="flex items-center justify-between px-1">
           <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B6570] uppercase">
             SELECT DECK
@@ -182,6 +187,9 @@ export default function ShipOverview({
                 key={hit.id}
                 onClick={() => {
                   setSelectedEntity(hit);
+                  if (hit.deckNumber !== selectedDeckNumber) {
+                    setSelectedDeckNumber(hit.deckNumber);
+                  }
                   setSearchQuery('');
                 }}
                 className="w-full text-left p-3 rounded-xl hover:bg-slate-50 flex items-center justify-between text-xs transition-colors cursor-pointer"
@@ -193,7 +201,7 @@ export default function ShipOverview({
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/50">
-                  Mapped
+                  Mapped on Deck {hit.deckNumber}
                 </span>
               </button>
             ))}
@@ -236,7 +244,8 @@ export default function ShipOverview({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-bold text-[#C58A46] uppercase tracking-wider">
+                <span className="text-[11px] font-mono font-bold text-[#C58A46] uppercase tracking-wider flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5" />
                   DECK {selectedEntity.deckNumber}
                 </span>
                 <span className="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">
@@ -279,13 +288,13 @@ export default function ShipOverview({
             DECK VIEW
           </h2>
           <span className="text-[11px] text-slate-400 font-mono">
-            {viewModel.spatialEntities.length} verified spaces
+            {currentDeckEntities.length} verified spaces
           </span>
         </div>
 
         <DeckCanvas
           deck={viewModel.selectedDeck}
-          entities={viewModel.spatialEntities}
+          entities={currentDeckEntities}
           selectedEntityId={selectedEntity?.id || null}
           onSelectEntity={(entity) => setSelectedEntity(entity)}
         />

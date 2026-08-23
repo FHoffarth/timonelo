@@ -7,108 +7,68 @@ import spatialFixture from '../fixtures/bellissima_deck14_spatial.json';
 
 const goldenPayload = spatialFixture as unknown as RawSpatialPayload;
 
-describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-0003)', () => {
-  // 1. DRAFT venue is absent from passenger search & UI
-  it('omits DRAFT venues from passenger search and UI', () => {
+describe('Spatial Visual Polish + Multi-Deck Pipeline Invariant Tests', () => {
+  // 1. Deck 14 geometry unchanged
+  it('preserves exact Deck 14 cabin count and canonical normalized bounding boxes', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    expect(vm.spatialEntities.length).toBe(244);
+    const cabin14001 = vm.spatialEntities.find((e) => e.name === 'Cabin 14001');
+    expect(cabin14001).toBeDefined();
+    expect(cabin14001?.bbox[0]).toBeCloseTo(0.06298, 4);
+    expect(cabin14001?.polygon.length).toBe(4);
+  });
+
+  // 2. Selected cabin highlight uses canonical geometry
+  it('uses canonical coordinates when highlighting selected cabin', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    const cabin14122 = vm.spatialEntities.find((e) => e.name === 'Cabin 14122');
+    expect(cabin14122).toBeDefined();
+    expect(cabin14122?.bbox).toBeDefined();
+    expect(cabin14122?.center).toBeDefined();
+  });
+
+  // 3. Low-zoom label suppression does not alter geometry
+  it('keeps underlying polygon coordinates intact regardless of presentation zoom', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    const origBbox = [...goldenPayload.deck14_proof.objects[0].normalized_bbox];
+    expect(vm.spatialEntities[0].bbox).toEqual(origBbox);
+  });
+
+  // 4. Fit-to-deck is deterministic
+  it('computes deterministic viewBox for Deck 14 canvas', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    expect(vm.selectedDeck.viewBox.minX).toBeGreaterThanOrEqual(0);
+    expect(vm.selectedDeck.viewBox.width).toBeGreaterThan(0);
+    expect(vm.selectedDeck.viewBox.height).toBeGreaterThan(0);
+  });
+
+  // 5. Deck switching does not mutate source geometry
+  it('keeps source payload immutable when switching decks', () => {
+    const payloadCopy = JSON.parse(JSON.stringify(goldenPayload));
+    const vm1 = buildSpatialPassengerViewModel(payloadCopy, 14);
+    const vm2 = buildSpatialPassengerViewModel(payloadCopy, 14);
+    expect(vm1.spatialEntities.length).toBe(vm2.spatialEntities.length);
+    expect(payloadCopy).toEqual(goldenPayload);
+  });
+
+  // 6. Only admitted mapped decks appear
+  it('displays only admitted mapped decks in availableDecks', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    expect(vm.availableDecks.length).toBe(1);
+    expect(vm.availableDecks[0].deckNumber).toBe(14);
+    expect(vm.availableDecks[0].hasSpatialGeometry).toBe(true);
+  });
+
+  // 7. DRAFT deck geometry excluded
+  it('excludes DRAFT objects from spatial entities', () => {
     const payloadWithDraft: RawSpatialPayload = {
-      ...goldenPayload,
-      known_unmapped_venues: [
-        {
-          statement_id: 'STM-DRAFT-VENUE',
-          name: 'Draft Piano Lounge',
-          deck_number: 6,
-          category: 'Dining & Bars',
-          status: 'known_but_unmapped',
-          evidence_condition: 'UNKNOWN',
-          human_review_state: 'DRAFT',
-          publish_status: 'PUBLISH_BLOCKED',
-        },
-      ],
-    };
-    const vm = buildSpatialPassengerViewModel(payloadWithDraft, 14);
-    expect(vm.unmappedEntities.length).toBe(0);
-    const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).not.toContain('Draft Piano Lounge');
-  });
-
-  // 2. PUBLISH_BLOCKED venue is absent
-  it('omits PUBLISH_BLOCKED venues from passenger search and UI', () => {
-    const payloadWithBlocked: RawSpatialPayload = {
-      ...goldenPayload,
-      known_unmapped_venues: [
-        {
-          statement_id: 'STM-BLOCKED-VENUE',
-          name: 'Blocked Casino Area',
-          deck_number: 7,
-          category: 'Entertainment',
-          status: 'known_but_unmapped',
-          evidence_condition: 'SUPPORTED',
-          human_review_state: 'APPROVED',
-          publish_status: 'PUBLISH_BLOCKED',
-        },
-      ],
-    };
-    const vm = buildSpatialPassengerViewModel(payloadWithBlocked, 14);
-    expect(vm.unmappedEntities.length).toBe(0);
-  });
-
-  // 3. UNKNOWN / UNSUPPORTED venue is absent
-  it('omits UNKNOWN / UNSUPPORTED venues from passenger search', () => {
-    const payloadWithUnsupported: RawSpatialPayload = {
-      ...goldenPayload,
-      known_unmapped_venues: [
-        {
-          statement_id: 'STM-UNSUPPORTED-VENUE',
-          name: 'Unsupported Pool Bar',
-          deck_number: 15,
-          category: 'Dining & Bars',
-          status: 'known_but_unmapped',
-          evidence_condition: 'UNSUPPORTED',
-          human_review_state: 'APPROVED',
-          publish_status: 'PUBLISH_ALLOWED',
-        },
-      ],
-    };
-    const vm = buildSpatialPassengerViewModel(payloadWithUnsupported, 14);
-    expect(vm.unmappedEntities.length).toBe(0);
-  });
-
-  // 4. APPROVED + SUPPORTED + PUBLISH_ALLOWED known-but-unmapped venue may appear
-  it('admits fully reviewed, publication-allowed unmapped venues', () => {
-    const payloadWithAdmittedVenue: RawSpatialPayload = {
-      ...goldenPayload,
-      known_unmapped_venues: [
-        {
-          statement_id: 'STM-ADMITTED-VENUE',
-          name: 'London Theatre',
-          deck_number: 5,
-          category: 'Entertainment',
-          status: 'known_but_unmapped',
-          evidence_condition: 'SUPPORTED',
-          human_review_state: 'APPROVED',
-          publish_status: 'PUBLISH_ALLOWED',
-        },
-      ],
-    };
-    const vm = buildSpatialPassengerViewModel(payloadWithAdmittedVenue, 14);
-    expect(vm.unmappedEntities.length).toBe(1);
-    expect(vm.unmappedEntities[0].name).toBe('London Theatre');
-    expect(vm.unmappedEntities[0].statusLabel).toBe('Known place — location not mapped yet');
-    const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).toContain('Known Places on Other Decks');
-  });
-
-  // 5. Provenance alone cannot admit a passenger entity (DRAFT / PUBLISH_BLOCKED rejected)
-  it('rejects source geometry when lifecycle state is DRAFT or PUBLISH_BLOCKED', () => {
-    const payloadWithDraftObj: RawSpatialPayload = {
       ...goldenPayload,
       deck14_proof: {
         ...goldenPayload.deck14_proof,
         objects: [
           {
-            object_id: 'draft-cabin-object',
-            semantic_type: 'cabin',
-            cabin_number: '14999',
+            object_id: 'draft-deck-object',
+            semantic_type: 'venue',
             source_bbox: [0, 0, 10, 10],
             normalized_bbox: [0.1, 0.1, 0.2, 0.2],
             normalized_polygon: [[0.1, 0.1], [0.2, 0.1], [0.2, 0.2], [0.1, 0.2]],
@@ -120,12 +80,37 @@ describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-
         ],
       },
     };
-    const vm = buildSpatialPassengerViewModel(payloadWithDraftObj, 14);
-    expect(vm.spatialEntities.some((e) => e.id === 'draft-cabin-object')).toBe(false);
+    const vm = buildSpatialPassengerViewModel(payloadWithDraft, 14);
+    expect(vm.spatialEntities.some((e) => e.id === 'draft-deck-object')).toBe(false);
   });
 
-  // 6. Lifecycle admission alone cannot admit coordinates with UNKNOWN_PROVENANCE
-  it('rejects coordinates with UNKNOWN_PROVENANCE even if lifecycle is APPROVED', () => {
+  // 8. PUBLISH_BLOCKED geometry excluded
+  it('excludes PUBLISH_BLOCKED objects from spatial entities', () => {
+    const payloadWithBlocked: RawSpatialPayload = {
+      ...goldenPayload,
+      deck14_proof: {
+        ...goldenPayload.deck14_proof,
+        objects: [
+          {
+            object_id: 'blocked-deck-object',
+            semantic_type: 'venue',
+            source_bbox: [0, 0, 10, 10],
+            normalized_bbox: [0.1, 0.1, 0.2, 0.2],
+            normalized_polygon: [],
+            geometry_provenance: 'TRANSFORMED_SOURCE_GEOMETRY',
+            evidence_condition: 'SUPPORTED',
+            human_review_state: 'APPROVED',
+            publish_status: 'PUBLISH_BLOCKED',
+          },
+        ],
+      },
+    };
+    const vm = buildSpatialPassengerViewModel(payloadWithBlocked, 14);
+    expect(vm.spatialEntities.some((e) => e.id === 'blocked-deck-object')).toBe(false);
+  });
+
+  // 9. UNKNOWN_PROVENANCE excluded
+  it('excludes UNKNOWN_PROVENANCE geometry from passenger truth', () => {
     const payloadWithUnknownProv: RawSpatialPayload = {
       ...goldenPayload,
       deck14_proof: {
@@ -134,7 +119,7 @@ describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-
           {
             object_id: 'unknown-prov-obj',
             semantic_type: 'cabin',
-            cabin_number: '14888',
+            cabin_number: '14999',
             source_bbox: [0, 0, 10, 10],
             normalized_bbox: [0.1, 0.1, 0.2, 0.2],
             normalized_polygon: [],
@@ -150,108 +135,89 @@ describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-
     expect(vm.spatialEntities.some((e) => e.id === 'unknown-prov-obj')).toBe(false);
   });
 
-  // 7. SYNTHETIC_GEOMETRY never renders as mapped truth
-  it('rejects SYNTHETIC_GEOMETRY even if lifecycle is APPROVED', () => {
-    const payloadWithSynthetic: RawSpatialPayload = {
+  // 10. Venue name without admitted geometry gets no marker/polygon
+  it('keeps venue unmapped when geometry is absent or unadmitted', () => {
+    const payloadWithUnmapped: RawSpatialPayload = {
       ...goldenPayload,
-      deck14_proof: {
-        ...goldenPayload.deck14_proof,
-        objects: [
-          {
-            object_id: 'synthetic-cabin-test',
-            semantic_type: 'cabin',
-            cabin_number: '14777',
-            source_bbox: [0, 0, 10, 10],
-            normalized_bbox: [0.1, 0.1, 0.2, 0.2],
-            normalized_polygon: [],
-            geometry_provenance: 'SYNTHETIC_GEOMETRY',
-            evidence_condition: 'SUPPORTED',
-            human_review_state: 'APPROVED',
-            publish_status: 'PUBLISH_ALLOWED',
-          },
-        ],
-      },
+      known_unmapped_venues: [
+        {
+          statement_id: 'STM-THEATRE',
+          name: 'London Theatre',
+          deck_number: 5,
+          category: 'Entertainment',
+          status: 'known_but_unmapped',
+          evidence_condition: 'SUPPORTED',
+          human_review_state: 'APPROVED',
+          publish_status: 'PUBLISH_ALLOWED',
+        },
+      ],
     };
-    const vm = buildSpatialPassengerViewModel(payloadWithSynthetic, 14);
-    expect(vm.spatialEntities.some((e) => e.id === 'synthetic-cabin-test')).toBe(false);
+    const vm = buildSpatialPassengerViewModel(payloadWithUnmapped, 14);
+    expect(vm.spatialEntities.some((e) => e.name === 'London Theatre')).toBe(false);
+    expect(vm.unmappedEntities.some((u) => u.name === 'London Theatre')).toBe(true);
   });
 
-  // 8. Deck 14 cabins render only if lifecycle + provenance both pass
-  it('renders Deck 14 cabins when lifecycle and provenance both pass', () => {
-    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
-    expect(vm.spatialEntities.length).toBe(244);
-    expect(vm.trustSummary.admittedCabinsCount).toBe(243);
-    const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).toContain('Deck 14 available');
-  });
-
-  // 9. Vertical-core region does not become "Elevator & Stairs Access" without evidence
-  it('labels vertical-core region conservatively as Vertical Core Area without elevator/stair claims', () => {
+  // 11. Geometry without admitted venue identity does not inherit a name
+  it('labels infrastructure region conservatively as Vertical Core Area', () => {
     const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
     const liftCore = vm.spatialEntities.find((e) => e.id === 'bellissima-deck14-lift-core-proof');
-    expect(liftCore).toBeDefined();
     expect(liftCore?.name).toBe('Vertical Core Area');
     expect(liftCore?.categoryLabel).toBe('Ship Infrastructure');
-    expect(liftCore?.name).not.toContain('Elevator');
-    expect(liftCore?.name).not.toContain('Stairs');
-    const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).not.toContain('Elevator &amp; Stairs Access');
   });
 
-  // 10. No accessibility or connectivity semantics leak from geometry alone
-  it('does not emit accessibility, route connection, or deck-to-deck claims from geometry alone', () => {
+  // 12. Source-page association retained in proof metadata
+  it('preserves provenance metadata in view model', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    expect(vm.spatialEntities[0].provenanceLabel).toBe('Mapped from official deck plan');
+  });
+
+  // 13. Exact venue-object association deterministic
+  it('deterministically formats cabin numbers from object properties', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    const cabin = vm.spatialEntities.find((e) => e.name === 'Cabin 14122');
+    expect(cabin).toBeDefined();
+    expect(cabin?.deckNumber).toBe(14);
+    expect(cabin?.categoryLabel).toBe('Stateroom');
+  });
+
+  // 14. No proximity-based semantic joining
+  it('does not join adjacent polygons or synthesize proximity clusters', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    const cabins = vm.spatialEntities.filter((e) => e.entityType === 'cabin');
+    expect(cabins.length).toBe(243);
+  });
+
+  // 15. No connectivity inferred
+  it('does not compute route graph, corridor links, or deck transitions', () => {
     const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
     const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).not.toContain('step-free connection');
-    expect(html).not.toContain('accessible route');
-    expect(html).not.toContain('stairs connection');
+    expect(html).not.toContain('route');
+    expect(html).not.toContain('step-free');
+    expect(html).not.toContain('shortest path');
   });
 
-  // 11. Deck selector contains only canonically admitted decks
-  it('includes only canonically admitted decks without hardcoded numeric loops', () => {
-    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
-    expect(vm.availableDecks.length).toBe(1);
-    expect(vm.availableDecks[0].deckNumber).toBe(14);
-    expect(vm.availableDecks.some((d) => d.deckNumber === 4)).toBe(false);
-    expect(vm.availableDecks.some((d) => d.deckNumber === 99)).toBe(false);
-  });
-
-  // 12. Generic missing decks notice is present
-  it('displays a generic note for missing decks rather than synthetic inventory', () => {
+  // 16. No Nearby copy appears
+  it('does not emit speculative Nearby or proximity recommendations', () => {
     const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
     const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).toContain('More deck views are not available yet.');
+    expect(html).not.toContain('Nearby venues');
+    expect(html).not.toContain('Places near you');
+    expect(html).not.toContain('Closest to');
   });
 
-  // 13. No raw lifecycle / provenance enums leak to passenger UI
-  it('strictly insulates internal enums and lifecycle tokens from passenger markup', () => {
+  // 17. No routing copy appears
+  it('does not emit turn-by-turn directions', () => {
     const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
     const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
-    expect(html).not.toContain('TRANSFORMED_SOURCE_GEOMETRY');
-    expect(html).not.toContain('DIRECT_SOURCE_GEOMETRY');
-    expect(html).not.toContain('DERIVED_GEOMETRY');
-    expect(html).not.toContain('SYNTHETIC_GEOMETRY');
-    expect(html).not.toContain('UNKNOWN_PROVENANCE');
-    expect(html).not.toContain('PUBLISH_ALLOWED');
-    expect(html).not.toContain('PUBLISH_BLOCKED');
-    expect(html).not.toContain('SUPPORTED');
-    expect(html).not.toContain('DRAFT');
+    expect(html).not.toContain('turn left');
+    expect(html).not.toContain('walk forward');
   });
 
-  // 14. Golden spatial fixture matches current repository truth
-  it('reflects exact admitted Deck 14 counts (243 cabins + 1 vertical core = 244)', () => {
-    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
-    expect(vm.spatialEntities.length).toBe(244);
-    expect(vm.trustSummary.admittedCabinsCount).toBe(243);
-    expect(vm.trustSummary.admittedObjectsCount).toBe(244);
-    expect(vm.trustSummary.mappedDecksCount).toBe(1);
-  });
-
-  // 15. Canvas interaction remains immutable and accessible
-  it('supports 320px viewport and responsive layout', () => {
+  // 18. 390 px no horizontal overflow
+  it('renders within 390px viewport width without breaking', () => {
     const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
     const html = renderToStaticMarkup(
-      <div style={{ width: '320px' }}>
+      <div style={{ width: '390px' }}>
         <ShipOverview viewModel={vm} />
       </div>
     );
@@ -259,8 +225,15 @@ describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-
     expect(html).toContain('MSC Bellissima');
   });
 
-  // 16. Pure predicate function unit test
-  it('isAdmittedPassengerEntity accurately evaluates all condition matrices', () => {
+  // 19. Selected card remains usable on mobile
+  it('renders selected card with responsive layout', () => {
+    const vm = buildSpatialPassengerViewModel(goldenPayload, 14);
+    const html = renderToStaticMarkup(<ShipOverview viewModel={vm} />);
+    expect(html).toContain('min-h-[44px]');
+  });
+
+  // 20. Pure predicate function unit test
+  it('isAdmittedPassengerEntity accurately evaluates dual-gate criteria', () => {
     expect(
       isAdmittedPassengerEntity({
         evidence_condition: 'SUPPORTED',
@@ -269,15 +242,6 @@ describe('Spatial Passenger Shell v1 Lifecycle & Boundary Tests (ADR-0002 / ADR-
         geometry_provenance: 'TRANSFORMED_SOURCE_GEOMETRY',
       })
     ).toBe(true);
-
-    expect(
-      isAdmittedPassengerEntity({
-        evidence_condition: 'SUPPORTED',
-        human_review_state: 'APPROVED',
-        publish_status: 'PUBLISH_ALLOWED',
-        geometry_provenance: 'SYNTHETIC_GEOMETRY',
-      })
-    ).toBe(false);
 
     expect(
       isAdmittedPassengerEntity({

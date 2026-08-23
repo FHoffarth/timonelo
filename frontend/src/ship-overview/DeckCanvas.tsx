@@ -1,12 +1,12 @@
-import { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ZoomIn, ZoomOut, Maximize2 } from 'lucide-react';
-import { SpatialEntityViewModel, DeckSpatialViewModel } from './types';
+import { DeckSpatialViewModel, SpatialEntityViewModel } from './types';
 
 interface DeckCanvasProps {
   deck: DeckSpatialViewModel;
   entities: SpatialEntityViewModel[];
   selectedEntityId: string | null;
-  onSelectEntity: (entity: SpatialEntityViewModel | null) => void;
+  onSelectEntity: (entity: SpatialEntityViewModel) => void;
   className?: string;
 }
 
@@ -17,22 +17,28 @@ export default function DeckCanvas({
   onSelectEntity,
   className = '',
 }: DeckCanvasProps) {
-  const [zoom, setZoom] = useState(1);
-  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = useState(1.0);
+  const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const svgRef = useRef<SVGSVGElement | null>(null);
+  const [dragStart, setDragStart] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
-  const handleZoomIn = () => {
-    setZoom((prev) => Math.min(prev * 1.3, 5));
-  };
+  // Reset zoom and pan when deck changes
+  useEffect(() => {
+    setZoom(1.0);
+    setPan({ x: 0, y: 0 });
+  }, [deck.deckNumber]);
 
-  const handleZoomOut = () => {
-    setZoom((prev) => Math.max(prev / 1.3, 0.6));
-  };
+  const handleZoomIn = useCallback(() => {
+    setZoom((prev) => Math.min(prev * 1.35, 5.0));
+  }, []);
+
+  const handleZoomOut = useCallback(() => {
+    setZoom((prev) => Math.max(prev / 1.35, 0.7));
+  }, []);
 
   const handleFitToDeck = useCallback(() => {
-    setZoom(1);
+    setZoom(1.0);
     setPan({ x: 0, y: 0 });
   }, []);
 
@@ -54,118 +60,95 @@ export default function DeckCanvas({
     setIsDragging(false);
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (e.touches.length === 1) {
-      const touch = e.touches[0];
-      setIsDragging(true);
-      setDragStart({ x: touch.clientX - pan.x, y: touch.clientY - pan.y });
-    }
+  // Wheel zoom (presentation viewport transform only)
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const zoomFactor = e.deltaY < 0 ? 1.15 : 0.88;
+    setZoom((prev) => Math.min(Math.max(prev * zoomFactor, 0.7), 5.0));
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || e.touches.length !== 1) return;
-    const touch = e.touches[0];
-    setPan({
-      x: touch.clientX - dragStart.x,
-      y: touch.clientY - dragStart.y,
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  // Convert polygon coordinates to SVG points string
-  const getPointsString = (polygon: Array<[number, number]>) => {
-    return polygon.map(([x, y]) => `${x},${y}`).join(' ');
-  };
-
-  const { minX, minY, width, height } = deck.viewBox;
+  const { viewBox } = deck;
+  const showLabels = zoom >= 1.75;
 
   return (
-    <div className={`relative bg-slate-900 rounded-3xl overflow-hidden border border-[#0C1B2A]/20 shadow-inner flex flex-col items-center justify-center min-h-[380px] sm:min-h-[460px] select-none touch-none ${className}`}>
-      {/* Floating Canvas Controls */}
-      <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 bg-white/90 backdrop-blur-md p-1.5 rounded-2xl shadow-md border border-slate-200/50">
-        <button
-          onClick={handleZoomIn}
-          aria-label="Zoom in"
-          title="Zoom in"
-          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl hover:bg-slate-100 text-slate-700 transition-colors cursor-pointer"
-        >
-          <ZoomIn className="w-4 h-4" />
-        </button>
-        <button
-          onClick={handleZoomOut}
-          aria-label="Zoom out"
-          title="Zoom out"
-          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl hover:bg-slate-100 text-slate-700 transition-colors cursor-pointer"
-        >
-          <ZoomOut className="w-4 h-4" />
-        </button>
-        <button
-          onClick={handleFitToDeck}
-          aria-label="Fit to deck"
-          title="Fit to deck"
-          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl hover:bg-slate-100 text-slate-700 transition-colors cursor-pointer"
-        >
-          <Maximize2 className="w-4 h-4" />
-        </button>
-      </div>
-
-      {/* Canvas Viewport Badge */}
-      <div className="absolute top-4 left-4 z-10 bg-slate-800/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-700/50 text-[11px] font-mono text-slate-300 pointer-events-none">
-        <span>{deck.deckName}</span>
-        <span className="text-slate-500 mx-1.5">•</span>
-        <span className="text-[#C58A46]">{entities.length} mapped spaces</span>
-      </div>
+    <div
+      ref={containerRef}
+      className={`relative w-full bg-[#111C28] rounded-3xl overflow-hidden shadow-inner border border-[#0C1B2A]/20 select-none ${className}`}
+      style={{ height: '520px', minHeight: '380px' }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      onWheel={handleWheel}
+    >
+      {/* Background Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(#C58A46 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
 
       {/* SVG Canvas */}
       <svg
-        ref={svgRef}
-        viewBox={`${minX} ${minY} ${width} ${height}`}
-        className="w-full h-full max-h-[480px] sm:max-h-[560px] cursor-grab active:cursor-grabbing transition-transform duration-75"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{
-          transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
-          transformOrigin: 'center center',
-        }}
+        className={`w-full h-full cursor-${isDragging ? 'grabbing' : 'grab'}`}
+        viewBox={`${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}`}
+        preserveAspectRatio="xMidYMid meet"
+        role="region"
+        aria-label={`Interactive map of ${deck.deckName}`}
       >
-        <g id="deck-geometry-layer">
-          {/* Deck Silhouette Hull Background */}
-          <rect
-            x={minX}
-            y={minY}
-            width={width}
-            height={height}
-            fill="#0F1E2E"
-            rx={0.01}
-            stroke="#1E3246"
-            strokeWidth={0.001}
-          />
+        <g
+          transform={`translate(${pan.x / 500}, ${pan.y / 500}) scale(${zoom})`}
+          style={{
+            transformOrigin: `${viewBox.minX + viewBox.width / 2}px ${viewBox.minY + viewBox.height / 2}px`,
+            transition: isDragging ? 'none' : 'transform 0.15s ease-out',
+          }}
+        >
+          {/* Deck Silhouette Hull Outline */}
+          {deck.deckBounds && (
+            <rect
+              x={deck.deckBounds[0] - (deck.deckBounds[2] - deck.deckBounds[0]) * 0.02}
+              y={deck.deckBounds[1] - (deck.deckBounds[3] - deck.deckBounds[1]) * 0.04}
+              width={(deck.deckBounds[2] - deck.deckBounds[0]) * 1.04}
+              height={(deck.deckBounds[3] - deck.deckBounds[1]) * 1.08}
+              rx={0.015}
+              fill="#182736"
+              stroke="#2A3B4D"
+              strokeWidth={0.0015}
+            />
+          )}
 
-          {/* Admitted Mapped Objects */}
+          {/* Render Spatial Entities */}
           {entities.map((entity) => {
             const isSelected = entity.id === selectedEntityId;
-            const isCabin = entity.entityType === 'cabin';
             const isVerticalCore = entity.entityType === 'vertical_core';
+            const isVenue = entity.entityType === 'venue';
 
-            let fillColor = isCabin ? '#22384D' : '#C58A46';
-            let strokeColor = isCabin ? '#385570' : '#E8B67C';
-            let strokeWidth = 0.0003;
+            const pointsString =
+              entity.polygon.length > 0
+                ? entity.polygon.map((p) => `${p[0]},${p[1]}`).join(' ')
+                : `${entity.bbox[0]},${entity.bbox[1]} ${entity.bbox[2]},${entity.bbox[1]} ${entity.bbox[2]},${entity.bbox[3]} ${entity.bbox[0]},${entity.bbox[3]}`;
+
+            // Colors based on admitted semantics
+            let fillColor = '#FFFFFF';
+            let strokeColor = '#CBD5E1';
+            let strokeWidth = zoom < 1.5 ? 0.0006 : 0.001;
+
+            if (isVerticalCore) {
+              fillColor = '#334155';
+              strokeColor = '#64748B';
+              strokeWidth = 0.0015;
+            } else if (isVenue) {
+              fillColor = '#FDE68A';
+              strokeColor = '#D97706';
+              strokeWidth = 0.0012;
+            }
 
             if (isSelected) {
-              fillColor = '#C58A46';
-              strokeColor = '#FFFFFF';
-              strokeWidth = 0.0015;
-            } else if (isVerticalCore) {
-              fillColor = '#8A6D3B';
+              fillColor = '#FDE68A';
               strokeColor = '#C58A46';
+              strokeWidth = 0.003;
             }
 
             return (
@@ -173,38 +156,54 @@ export default function DeckCanvas({
                 key={entity.id}
                 onClick={(e) => {
                   e.stopPropagation();
-                  onSelectEntity(isSelected ? null : entity);
+                  onSelectEntity(entity);
                 }}
-                className="cursor-pointer transition-colors group"
-                role="button"
+                className="cursor-pointer transition-all duration-150"
                 tabIndex={0}
-                aria-label={entity.name}
+                role="button"
+                aria-label={`${entity.name}, ${entity.categoryLabel}`}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    onSelectEntity(isSelected ? null : entity);
+                    onSelectEntity(entity);
                   }
                 }}
               >
-                {entity.polygon.length > 0 ? (
+                <polygon
+                  points={pointsString}
+                  fill={fillColor}
+                  stroke={strokeColor}
+                  strokeWidth={strokeWidth}
+                  className="hover:opacity-90 transition-opacity"
+                />
+
+                {/* Selected glow ring */}
+                {isSelected && (
                   <polygon
-                    points={getPointsString(entity.polygon)}
-                    fill={fillColor}
-                    stroke={strokeColor}
-                    strokeWidth={strokeWidth}
-                    className="hover:opacity-90 transition-opacity"
+                    points={pointsString}
+                    fill="none"
+                    stroke="#C58A46"
+                    strokeWidth={0.005}
+                    strokeDasharray="0.004 0.002"
+                    opacity={0.8}
                   />
-                ) : (
-                  <rect
-                    x={entity.bbox[0]}
-                    y={entity.bbox[1]}
-                    width={entity.bbox[2] - entity.bbox[0]}
-                    height={entity.bbox[3] - entity.bbox[1]}
-                    fill={fillColor}
-                    stroke={strokeColor}
-                    strokeWidth={strokeWidth}
-                    className="hover:opacity-90 transition-opacity"
-                  />
+                )}
+
+                {/* Text Label on High Zoom or Selection */}
+                {(showLabels || isSelected) && !isVerticalCore && (
+                  <text
+                    x={entity.center[0]}
+                    y={entity.center[1]}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize={zoom < 2.5 ? '0.0035px' : '0.0045px'}
+                    fill={isSelected ? '#78350F' : '#0F172A'}
+                    fontWeight={isSelected ? 'bold' : '600'}
+                    fontFamily="monospace"
+                    pointerEvents="none"
+                  >
+                    {entity.name.replace(/^Cabin\s*/i, '')}
+                  </text>
                 )}
               </g>
             );
@@ -212,11 +211,50 @@ export default function DeckCanvas({
         </g>
       </svg>
 
-      {/* Canvas Usage Hint for Mobile */}
-      <div className="absolute bottom-3 left-0 right-0 text-center pointer-events-none px-4">
-        <span className="text-[10px] text-slate-400/80 font-mono bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700/40">
-          Drag to pan • Pinch / buttons to zoom • Tap cabin to inspect
+      {/* Floating Canvas Controls */}
+      <div className="absolute bottom-4 right-4 flex flex-col gap-2 z-10">
+        <button
+          onClick={handleZoomIn}
+          aria-label="Zoom in"
+          className="min-h-[44px] min-w-[44px] p-2.5 rounded-2xl bg-white/90 hover:bg-white text-[#0C1B2A] shadow-lg backdrop-blur-md border border-white/40 flex items-center justify-center transition-all hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          <ZoomIn className="w-5 h-5" />
+        </button>
+
+        <button
+          onClick={handleZoomOut}
+          aria-label="Zoom out"
+          className="min-h-[44px] min-w-[44px] p-2.5 rounded-2xl bg-white/90 hover:bg-white text-[#0C1B2A] shadow-lg backdrop-blur-md border border-white/40 flex items-center justify-center transition-all hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          <ZoomOut className="w-5 h-5" />
+        </button>
+
+        <button
+          onClick={handleFitToDeck}
+          aria-label="Fit to deck"
+          className="min-h-[44px] min-w-[44px] p-2.5 rounded-2xl bg-white/90 hover:bg-white text-[#0C1B2A] shadow-lg backdrop-blur-md border border-white/40 flex items-center justify-center transition-all hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          <Maximize2 className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Legend & Density Note */}
+      <div className="absolute bottom-4 left-4 hidden sm:flex items-center gap-3 bg-[#0C1B2A]/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-[11px] text-slate-300 font-mono">
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-white border border-slate-400" />
+          <span>Stateroom</span>
         </span>
+        {entities.some((e) => e.entityType === 'venue') && (
+          <span className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-sm bg-amber-300 border border-amber-500" />
+            <span>Public Venue</span>
+          </span>
+        )}
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-slate-600 border border-slate-500" />
+          <span>Infrastructure</span>
+        </span>
+        <span className="text-slate-400">| Zoom: {Math.round(zoom * 100)}%</span>
       </div>
     </div>
   );
