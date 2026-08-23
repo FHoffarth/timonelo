@@ -18,6 +18,7 @@ from typing import Any, Dict, List, Optional
 from timonelo.evidence import authority
 from timonelo.evidence.editor import StatementEditor
 from timonelo.evidence.models import Statement
+from timonelo.evidence.events import EvidenceEventLog
 from timonelo.evidence.importer import import_pdf
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.evidence.registry import Artifact, ArtifactRegistry
@@ -46,6 +47,8 @@ class Workspace:
             self.registry, self.reviews, self.conflicts)
         self.questions = QuestionRegistry.load(
             os.path.join(root, "registry", "questions.json"))
+        events_path = os.path.join(root, "events", "events.json")
+        self.events = EvidenceEventLog(events_path, self.registry, self.questions)
         self.engine = TruthEngine(self.questions, self.editor, self.registry,
                                   self.conflicts)
 

@@ -183,16 +183,18 @@ class ArtifactRegistry:
 
     # -- lookup ---------------------------------------------------------------
 
-    def get(self, artifact_id: str) -> Artifact:
-        if artifact_id not in self._by_id:
-            raise RegistryError(
-                f"No artifact {artifact_id!r}. Evidence may only reference "
-                "documents actually held and registered."
-            )
-        return self._by_id[artifact_id]
+    def get(self, identifier: str) -> Artifact:
+        if identifier in self._by_id:
+            return self._by_id[identifier]
+        if identifier in self._id_by_sha:
+            return self._by_id[self._id_by_sha[identifier]]
+        raise RegistryError(
+            f"No artifact {identifier!r}. Evidence may only reference "
+            "documents actually held and registered."
+        )
 
-    def has(self, artifact_id: str) -> bool:
-        return artifact_id in self._by_id
+    def has(self, identifier: str) -> bool:
+        return identifier in self._by_id or identifier in self._id_by_sha
 
     def blob_path(self, artifact_id: str) -> str:
         """Return the legacy extensionless blob path used by registration."""
