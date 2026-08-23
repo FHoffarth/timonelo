@@ -300,9 +300,13 @@ AUTHORITY: Dict[str, Tuple[str, ...]] = {
     "voyage.departure_date":      ("official_cruise_operator_booking_confirmation",),
     "voyage.departure_location":  ("official_cruise_operator_booking_confirmation",),
     "voyage.departure_port":      ("official_cruise_operator_booking_confirmation", "un_locode_registry"),
+    "voyage.departure_terminal":  ("port_authority_official_directory", "terminal_operator_specification", "official_cruise_operator_booking_confirmation"),
+    "voyage.departure_berth":     ("port_authority_berth_directory",),
     "voyage.arrival_date":        ("official_cruise_operator_booking_confirmation",),
     "voyage.arrival_location":    ("official_cruise_operator_booking_confirmation",),
     "voyage.arrival_port":        ("official_cruise_operator_booking_confirmation", "un_locode_registry"),
+    "voyage.arrival_terminal":    ("port_authority_official_directory", "terminal_operator_specification", "official_cruise_operator_booking_confirmation"),
+    "voyage.arrival_berth":       ("port_authority_berth_directory",),
     "voyage.check_in_time":       ("official_cruise_operator_booking_confirmation",),
 }
 
