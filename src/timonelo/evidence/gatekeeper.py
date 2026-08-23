@@ -223,6 +223,34 @@ class EvidenceGatekeeper:
         """Derive detector status from canonical log provenance."""
         self._conflict_result = ConflictGateResult.from_conflict_log(conflict_log)
 
+    @classmethod
+    def from_workspace(cls, workspace: Any) -> EvidenceGatekeeper:
+        """Construct an EvidenceGatekeeper populated from a canonical Workspace."""
+        gatekeeper = cls(question_registry=workspace.questions)
+        if hasattr(workspace, "registry") and workspace.registry is not None:
+            for artifact in workspace.registry.list_all():
+                vault_path = workspace.registry.resolve_path(artifact.artifact_id)
+                if not vault_path:
+                    candidates = workspace.registry._vault_candidates(artifact)
+                    vault_path = candidates[0] if candidates else workspace.registry.blob_path(artifact.artifact_id)
+                gatekeeper.register_source(
+                    SourceArtifactRecord(
+                        source_id=artifact.artifact_id,
+                        title=artifact.filename,
+                        expected_sha256=artifact.sha256,
+                        file_path=vault_path,
+                        document_class=artifact.document_class,
+                        publisher=artifact.publisher,
+                        edition=artifact.version,
+                    )
+                )
+        if hasattr(workspace, "events") and workspace.events is not None:
+            for event in workspace.events.all():
+                gatekeeper.register_event(event)
+        if hasattr(workspace, "conflicts") and workspace.conflicts is not None:
+            gatekeeper.use_conflict_log(workspace.conflicts)
+        return gatekeeper
+
     def evaluate_publish_gate(self) -> GateResult:
         reasons: List[str] = []
         warnings: List[str] = []
