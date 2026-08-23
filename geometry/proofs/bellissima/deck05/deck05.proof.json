@@ -1,0 +1,1350 @@
+{
+  "schema": "timonelo.one-deck-geometry-proof.v1",
+  "source": {
+    "artifact_id": "ART-0001",
+    "sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "page_number": 3,
+    "page_width_points": 589.606,
+    "page_height_points": 807.874
+  },
+  "deck": {
+    "number": 5,
+    "name": "Deck 5 (Opera)"
+  },
+  "review_viewport": {
+    "bbox": [
+      130.0,
+      200.0,
+      235.0,
+      750.0
+    ],
+    "normalized_bbox": [
+      0.220486223,
+      0.247563358,
+      0.398571249,
+      0.928362591
+    ]
+  },
+  "objects": [
+    {
+      "object_id": "bellissima-deck05-venue-5115-5113-5111-5107-5103-5099-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5115 5113 5111 5107 5103 5099 5095 5091 5087 5083",
+      "source_bbox": [
+        146.965607,
+        414.53714,
+        153.416779,
+        464.667877
+      ],
+      "normalized_bbox": [
+        0.249260704,
+        0.513121031,
+        0.2602022,
+        0.575173699
+      ],
+      "normalized_polygon": [
+        [
+          0.249260704,
+          0.513121031
+        ],
+        [
+          0.2602022,
+          0.513121031
+        ],
+        [
+          0.2602022,
+          0.575173699
+        ],
+        [
+          0.249260704,
+          0.575173699
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-0"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5109-5105-5101-5097-5093-5089-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5109 5105 5101 5097 5093 5089 5085",
+      "source_bbox": [
+        162.865128,
+        414.53714,
+        169.316299,
+        449.585327
+      ],
+      "normalized_bbox": [
+        0.276227053,
+        0.513121031,
+        0.287168549,
+        0.556504266
+      ],
+      "normalized_polygon": [
+        [
+          0.276227053,
+          0.513121031
+        ],
+        [
+          0.287168549,
+          0.513121031
+        ],
+        [
+          0.287168549,
+          0.556504266
+        ],
+        [
+          0.276227053,
+          0.556504266
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-1"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5119-5121-5123-5125-5127-5129-51",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5119 5121 5123 5125 5127 5129 5131 5133 5135 5081 5079 5077 5075",
+      "source_bbox": [
+        146.965607,
+        394.549011,
+        185.303177,
+        449.585327
+      ],
+      "normalized_bbox": [
+        0.249260704,
+        0.48837939,
+        0.314283058,
+        0.556504266
+      ],
+      "normalized_polygon": [
+        [
+          0.249260704,
+          0.48837939
+        ],
+        [
+          0.314283058,
+          0.48837939
+        ],
+        [
+          0.314283058,
+          0.556504266
+        ],
+        [
+          0.249260704,
+          0.556504266
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-2"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5063",
+      "semantic_type": "cabin",
+      "cabin_number": "5063",
+      "label": "5063",
+      "source_bbox": [
+        146.965607,
+        388.661591,
+        153.416779,
+        394.078583
+      ],
+      "normalized_bbox": [
+        0.249260704,
+        0.481091842,
+        0.2602022,
+        0.487797086
+      ],
+      "normalized_polygon": [
+        [
+          0.249260704,
+          0.481091842
+        ],
+        [
+          0.2602022,
+          0.481091842
+        ],
+        [
+          0.2602022,
+          0.487797086
+        ],
+        [
+          0.249260704,
+          0.487797086
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-3"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5061-5057-5053-5049-5045-5041-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5061 5057 5053 5049 5045 5041 5037 5033 5029 5025 5021 5015 5013",
+      "source_bbox": [
+        146.965607,
+        323.418427,
+        153.416779,
+        388.66156
+      ],
+      "normalized_bbox": [
+        0.249260704,
+        0.400332758,
+        0.2602022,
+        0.481091804
+      ],
+      "normalized_polygon": [
+        [
+          0.249260704,
+          0.400332758
+        ],
+        [
+          0.2602022,
+          0.400332758
+        ],
+        [
+          0.2602022,
+          0.481091804
+        ],
+        [
+          0.249260704,
+          0.481091804
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-4"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5011-5009-5007-5005-5003-5001",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5011 5009 5007 5005 5003 5001",
+      "source_bbox": [
+        146.965607,
+        293.010651,
+        153.416779,
+        323.388519
+      ],
+      "normalized_bbox": [
+        0.249260704,
+        0.362693502,
+        0.2602022,
+        0.400295738
+      ],
+      "normalized_polygon": [
+        [
+          0.249260704,
+          0.362693502
+        ],
+        [
+          0.2602022,
+          0.362693502
+        ],
+        [
+          0.2602022,
+          0.400295738
+        ],
+        [
+          0.249260704,
+          0.400295738
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-5"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5094-5092-5090-5088-5086-5084-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5094 5092 5090 5088 5086 5084 5082 5080 5078 5076 5074 5072 5070 5068",
+      "source_bbox": [
+        211.840485,
+        394.54892,
+        218.291656,
+        464.664032
+      ],
+      "normalized_bbox": [
+        0.359291603,
+        0.488379277,
+        0.370233099,
+        0.57516894
+      ],
+      "normalized_polygon": [
+        [
+          0.359291603,
+          0.488379277
+        ],
+        [
+          0.370233099,
+          0.488379277
+        ],
+        [
+          0.370233099,
+          0.57516894
+        ],
+        [
+          0.359291603,
+          0.57516894
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-6"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5066",
+      "semantic_type": "cabin",
+      "cabin_number": "5066",
+      "label": "5066",
+      "source_bbox": [
+        211.840485,
+        388.661499,
+        218.291656,
+        394.078491
+      ],
+      "normalized_bbox": [
+        0.359291603,
+        0.481091728,
+        0.370233099,
+        0.487796972
+      ],
+      "normalized_polygon": [
+        [
+          0.359291603,
+          0.481091728
+        ],
+        [
+          0.370233099,
+          0.481091728
+        ],
+        [
+          0.370233099,
+          0.487796972
+        ],
+        [
+          0.359291603,
+          0.487796972
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-7"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5062-5058-5054-5050-5046-5042-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5062 5058 5054 5050 5046 5042 5038 5034 5030 5026 5022 5018",
+      "source_bbox": [
+        211.840485,
+        328.544159,
+        218.291656,
+        388.661469
+      ],
+      "normalized_bbox": [
+        0.359291603,
+        0.406677476,
+        0.370233099,
+        0.481091691
+      ],
+      "normalized_polygon": [
+        [
+          0.359291603,
+          0.406677476
+        ],
+        [
+          0.370233099,
+          0.406677476
+        ],
+        [
+          0.370233099,
+          0.481091691
+        ],
+        [
+          0.359291603,
+          0.481091691
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-8"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5059",
+      "semantic_type": "cabin",
+      "cabin_number": "5059",
+      "label": "5059",
+      "source_bbox": [
+        162.865128,
+        378.424774,
+        169.316299,
+        383.841766
+      ],
+      "normalized_bbox": [
+        0.276227053,
+        0.468420539,
+        0.287168549,
+        0.475125782
+      ],
+      "normalized_polygon": [
+        [
+          0.276227053,
+          0.468420539
+        ],
+        [
+          0.287168549,
+          0.468420539
+        ],
+        [
+          0.287168549,
+          0.475125782
+        ],
+        [
+          0.276227053,
+          0.475125782
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-9"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5073-5071",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5073 5071",
+      "source_bbox": [
+        175.23143,
+        370.008148,
+        180.648453,
+        387.144135
+      ],
+      "normalized_bbox": [
+        0.297200894,
+        0.458002298,
+        0.306388423,
+        0.479213509
+      ],
+      "normalized_polygon": [
+        [
+          0.297200894,
+          0.458002298
+        ],
+        [
+          0.306388423,
+          0.458002298
+        ],
+        [
+          0.306388423,
+          0.479213509
+        ],
+        [
+          0.297200894,
+          0.479213509
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-10"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5055-5051-5047-5043-5039-5035-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5055 5051 5047 5043 5039 5035 5031 5027 5023 5019",
+      "source_bbox": [
+        162.863602,
+        328.548035,
+        169.314774,
+        378.611572
+      ],
+      "normalized_bbox": [
+        0.276224465,
+        0.406682273,
+        0.287165961,
+        0.46865176
+      ],
+      "normalized_polygon": [
+        [
+          0.276224465,
+          0.406682273
+        ],
+        [
+          0.287165961,
+          0.406682273
+        ],
+        [
+          0.287165961,
+          0.46865176
+        ],
+        [
+          0.276224465,
+          0.46865176
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-11"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5014",
+      "semantic_type": "cabin",
+      "cabin_number": "5014",
+      "label": "5014",
+      "source_bbox": [
+        198.550171,
+        318.397186,
+        205.001343,
+        323.814178
+      ],
+      "normalized_bbox": [
+        0.336750594,
+        0.394117383,
+        0.347692091,
+        0.400822626
+      ],
+      "normalized_polygon": [
+        [
+          0.336750594,
+          0.394117383
+        ],
+        [
+          0.347692091,
+          0.394117383
+        ],
+        [
+          0.347692091,
+          0.400822626
+        ],
+        [
+          0.336750594,
+          0.400822626
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-12"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5016",
+      "semantic_type": "cabin",
+      "cabin_number": "5016",
+      "label": "5016",
+      "source_bbox": [
+        211.838974,
+        323.422211,
+        218.290146,
+        328.839203
+      ],
+      "normalized_bbox": [
+        0.35928904,
+        0.400337442,
+        0.370230537,
+        0.407042686
+      ],
+      "normalized_polygon": [
+        [
+          0.35928904,
+          0.400337442
+        ],
+        [
+          0.370230537,
+          0.400337442
+        ],
+        [
+          0.370230537,
+          0.407042686
+        ],
+        [
+          0.35928904,
+          0.407042686
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-13"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5012-5010-5008-5006-5004-5002",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5012 5010 5008 5006 5004 5002",
+      "source_bbox": [
+        211.838974,
+        293.014435,
+        218.290146,
+        323.392303
+      ],
+      "normalized_bbox": [
+        0.35928904,
+        0.362698187,
+        0.370230537,
+        0.400300422
+      ],
+      "normalized_polygon": [
+        [
+          0.35928904,
+          0.362698187
+        ],
+        [
+          0.370230537,
+          0.362698187
+        ],
+        [
+          0.370230537,
+          0.400300422
+        ],
+        [
+          0.35928904,
+          0.400300422
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-14"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-cabin-5137",
+      "semantic_type": "cabin",
+      "cabin_number": "5137",
+      "label": "5137",
+      "source_bbox": [
+        180.658173,
+        394.79538,
+        187.109344,
+        400.212372
+      ],
+      "normalized_bbox": [
+        0.306404909,
+        0.488684349,
+        0.317346405,
+        0.495389593
+      ],
+      "normalized_polygon": [
+        [
+          0.306404909,
+          0.488684349
+        ],
+        [
+          0.317346405,
+          0.488684349
+        ],
+        [
+          0.317346405,
+          0.495389593
+        ],
+        [
+          0.306404909,
+          0.495389593
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-15"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5064-5060-5056-5052-5048-5044-50",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5064 5060 5056 5052 5048 5044 5040 5036 5032 5028 5024 5020",
+      "source_bbox": [
+        195.949539,
+        328.581543,
+        202.400711,
+        388.792206
+      ],
+      "normalized_bbox": [
+        0.332339798,
+        0.40672375,
+        0.343281295,
+        0.481253519
+      ],
+      "normalized_polygon": [
+        [
+          0.332339798,
+          0.40672375
+        ],
+        [
+          0.343281295,
+          0.40672375
+        ],
+        [
+          0.343281295,
+          0.481253519
+        ],
+        [
+          0.332339798,
+          0.481253519
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-16"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-5069-5067-5065",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "5069 5067 5065",
+      "source_bbox": [
+        175.23143,
+        329.721863,
+        180.648453,
+        361.584717
+      ],
+      "normalized_bbox": [
+        0.297200894,
+        0.408135257,
+        0.306388423,
+        0.447575633
+      ],
+      "normalized_polygon": [
+        [
+          0.297200894,
+          0.408135257
+        ],
+        [
+          0.306388423,
+          0.408135257
+        ],
+        [
+          0.306388423,
+          0.447575633
+        ],
+        [
+          0.297200894,
+          0.447575633
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-17"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-vertical-core-18",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        180.094238,
+        313.183228,
+        185.511261,
+        317.433624
+      ],
+      "normalized_bbox": [
+        0.305448449,
+        0.387663457,
+        0.314635979,
+        0.392924669
+      ],
+      "normalized_polygon": [
+        [
+          0.305448449,
+          0.387663457
+        ],
+        [
+          0.314635979,
+          0.387663457
+        ],
+        [
+          0.314635979,
+          0.392924669
+        ],
+        [
+          0.305448449,
+          0.392924669
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-18"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-vertical-core-19",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Panoramic Lift",
+      "source_bbox": [
+        217.382339,
+        469.574097,
+        222.799362,
+        488.729523
+      ],
+      "normalized_bbox": [
+        0.368690854,
+        0.5812467,
+        0.377878384,
+        0.604957608
+      ],
+      "normalized_polygon": [
+        [
+          0.368690854,
+          0.5812467
+        ],
+        [
+          0.377878384,
+          0.5812467
+        ],
+        [
+          0.377878384,
+          0.604957608
+        ],
+        [
+          0.368690854,
+          0.604957608
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-19"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-london-theatre",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "London Theatre",
+      "source_bbox": [
+        172.371902,
+        265.634491,
+        193.294617,
+        271.051483
+      ],
+      "normalized_bbox": [
+        0.292350998,
+        0.328806832,
+        0.327836923,
+        0.335512076
+      ],
+      "normalized_polygon": [
+        [
+          0.292350998,
+          0.328806832
+        ],
+        [
+          0.327836923,
+          0.328806832
+        ],
+        [
+          0.327836923,
+          0.335512076
+        ],
+        [
+          0.292350998,
+          0.335512076
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-20"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-vertical-core-21",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Panoramic Lift",
+      "source_bbox": [
+        143.221725,
+        469.574097,
+        148.638748,
+        488.729523
+      ],
+      "normalized_bbox": [
+        0.242910902,
+        0.5812467,
+        0.252098432,
+        0.604957608
+      ],
+      "normalized_polygon": [
+        [
+          0.242910902,
+          0.5812467
+        ],
+        [
+          0.252098432,
+          0.5812467
+        ],
+        [
+          0.252098432,
+          0.604957608
+        ],
+        [
+          0.242910902,
+          0.604957608
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-21"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-vertical-core-22",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        168.455093,
+        515.649841,
+        173.872116,
+        519.900269
+      ],
+      "normalized_bbox": [
+        0.285707902,
+        0.63828003,
+        0.294895432,
+        0.643541281
+      ],
+      "normalized_polygon": [
+        [
+          0.285707902,
+          0.63828003
+        ],
+        [
+          0.294895432,
+          0.63828003
+        ],
+        [
+          0.294895432,
+          0.643541281
+        ],
+        [
+          0.285707902,
+          0.643541281
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-22"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-posidonia-restaurant",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Posidonia Restaurant",
+      "source_bbox": [
+        168.728607,
+        595.767517,
+        196.999619,
+        601.18457
+      ],
+      "normalized_bbox": [
+        0.286171795,
+        0.737451035,
+        0.334120783,
+        0.744156354
+      ],
+      "normalized_polygon": [
+        [
+          0.286171795,
+          0.737451035
+        ],
+        [
+          0.334120783,
+          0.737451035
+        ],
+        [
+          0.334120783,
+          0.744156354
+        ],
+        [
+          0.286171795,
+          0.744156354
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-23"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-business-centre",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Business Centre",
+      "source_bbox": [
+        164.794052,
+        452.442474,
+        176.396118,
+        461.219421
+      ],
+      "normalized_bbox": [
+        0.279498601,
+        0.56004089,
+        0.29917626,
+        0.570905143
+      ],
+      "normalized_polygon": [
+        [
+          0.279498601,
+          0.56004089
+        ],
+        [
+          0.29917626,
+          0.56004089
+        ],
+        [
+          0.29917626,
+          0.570905143
+        ],
+        [
+          0.279498601,
+          0.570905143
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-24"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-msc-excursions",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "MSC Excursions",
+      "source_bbox": [
+        150.478333,
+        468.807129,
+        155.895355,
+        489.498016
+      ],
+      "normalized_bbox": [
+        0.255218455,
+        0.580297335,
+        0.264405985,
+        0.605908862
+      ],
+      "normalized_polygon": [
+        [
+          0.255218455,
+          0.580297335
+        ],
+        [
+          0.264405985,
+          0.580297335
+        ],
+        [
+          0.264405985,
+          0.605908862
+        ],
+        [
+          0.255218455,
+          0.605908862
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-25"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-infinity-bar",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Infinity Bar",
+      "source_bbox": [
+        206.974365,
+        467.479919,
+        212.391388,
+        482.33786
+      ],
+      "normalized_bbox": [
+        0.351038431,
+        0.578654492,
+        0.360225961,
+        0.597045901
+      ],
+      "normalized_polygon": [
+        [
+          0.351038431,
+          0.578654492
+        ],
+        [
+          0.360225961,
+          0.578654492
+        ],
+        [
+          0.360225961,
+          0.597045901
+        ],
+        [
+          0.351038431,
+          0.597045901
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-26"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-infinity-atrium",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Infinity Atrium",
+      "source_bbox": [
+        172.930496,
+        503.379974,
+        192.321045,
+        508.796967
+      ],
+      "normalized_bbox": [
+        0.2932984,
+        0.623092183,
+        0.326185698,
+        0.629797427
+      ],
+      "normalized_polygon": [
+        [
+          0.2932984,
+          0.623092183
+        ],
+        [
+          0.326185698,
+          0.623092183
+        ],
+        [
+          0.326185698,
+          0.629797427
+        ],
+        [
+          0.2932984,
+          0.629797427
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-27"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-vertical-core-28",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        191.769638,
+        515.650269,
+        197.186661,
+        519.900635
+      ],
+      "normalized_bbox": [
+        0.325250486,
+        0.638280559,
+        0.334438016,
+        0.643541734
+      ],
+      "normalized_polygon": [
+        [
+          0.325250486,
+          0.638280559
+        ],
+        [
+          0.334438016,
+          0.638280559
+        ],
+        [
+          0.334438016,
+          0.643541734
+        ],
+        [
+          0.325250486,
+          0.643541734
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-28"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck05-venue-infinity-reception-guest-service",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Infinity Reception-Guest Service",
+      "source_bbox": [
+        166.269608,
+        475.691284,
+        198.404648,
+        484.468231
+      ],
+      "normalized_bbox": [
+        0.282001214,
+        0.588818658,
+        0.33650378,
+        0.59968291
+      ],
+      "normalized_polygon": [
+        [
+          0.282001214,
+          0.588818658
+        ],
+        [
+          0.33650378,
+          0.588818658
+        ],
+        [
+          0.33650378,
+          0.59968291
+        ],
+        [
+          0.282001214,
+          0.59968291
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-29"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    }
+  ]
+}

@@ -1,0 +1,1174 @@
+{
+  "schema": "timonelo.one-deck-geometry-proof.v1",
+  "source": {
+    "artifact_id": "ART-0001",
+    "sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "page_number": 3,
+    "page_width_points": 589.606,
+    "page_height_points": 807.874
+  },
+  "deck": {
+    "number": 6,
+    "name": "Deck 6 (Musica)"
+  },
+  "review_viewport": {
+    "bbox": [
+      240.0,
+      200.0,
+      350.0,
+      750.0
+    ],
+    "normalized_bbox": [
+      0.407051489,
+      0.247563358,
+      0.593616754,
+      0.928362591
+    ]
+  },
+  "objects": [
+    {
+      "object_id": "bellissima-deck06-venue-hola--tapas-bar",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "HOLA! Tapas Bar",
+      "source_bbox": [
+        263.571411,
+        367.127869,
+        276.369354,
+        375.904816
+      ],
+      "normalized_bbox": [
+        0.44702973,
+        0.454437039,
+        0.468735654,
+        0.465301292
+      ],
+      "normalized_polygon": [
+        [
+          0.44702973,
+          0.454437039
+        ],
+        [
+          0.468735654,
+          0.454437039
+        ],
+        [
+          0.468735654,
+          0.465301292
+        ],
+        [
+          0.44702973,
+          0.465301292
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-0"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-vertical-core-1",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        292.097534,
+        313.183929,
+        297.514526,
+        317.434326
+      ],
+      "normalized_bbox": [
+        0.4954114,
+        0.387664326,
+        0.504598879,
+        0.392925538
+      ],
+      "normalized_polygon": [
+        [
+          0.4954114,
+          0.387664326
+        ],
+        [
+          0.504598879,
+          0.387664326
+        ],
+        [
+          0.504598879,
+          0.392925538
+        ],
+        [
+          0.4954114,
+          0.392925538
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-1"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-vertical-core-2",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        280.367493,
+        516.349731,
+        285.784485,
+        520.600098
+      ],
+      "normalized_bbox": [
+        0.475516689,
+        0.639146366,
+        0.484704167,
+        0.644407541
+      ],
+      "normalized_polygon": [
+        [
+          0.475516689,
+          0.639146366
+        ],
+        [
+          0.484704167,
+          0.639146366
+        ],
+        [
+          0.484704167,
+          0.644407541
+        ],
+        [
+          0.475516689,
+          0.644407541
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-2"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-lighthouse-restaurant",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Lighthouse Restaurant",
+      "source_bbox": [
+        279.835693,
+        698.922729,
+        309.830475,
+        704.339783
+      ],
+      "normalized_bbox": [
+        0.474614731,
+        0.865138288,
+        0.525487317,
+        0.871843608
+      ],
+      "normalized_polygon": [
+        [
+          0.474614731,
+          0.865138288
+        ],
+        [
+          0.525487317,
+          0.865138288
+        ],
+        [
+          0.525487317,
+          0.871843608
+        ],
+        [
+          0.474614731,
+          0.871843608
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-3"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-il-ciliegio",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Il Ciliegio",
+      "source_bbox": [
+        257.381836,
+        609.971741,
+        262.798828,
+        622.40033
+      ],
+      "normalized_bbox": [
+        0.436531914,
+        0.755033261,
+        0.445719392,
+        0.770417577
+      ],
+      "normalized_polygon": [
+        [
+          0.436531914,
+          0.755033261
+        ],
+        [
+          0.445719392,
+          0.755033261
+        ],
+        [
+          0.445719392,
+          0.770417577
+        ],
+        [
+          0.436531914,
+          0.770417577
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-4"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-emotions-immersive-gallery",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Emotions-Immersive Gallery",
+      "source_bbox": [
+        291.556458,
+        545.362244,
+        296.97345,
+        583.00769
+      ],
+      "normalized_bbox": [
+        0.494493709,
+        0.675058541,
+        0.503681187,
+        0.721656707
+      ],
+      "normalized_polygon": [
+        [
+          0.494493709,
+          0.675058541
+        ],
+        [
+          0.503681187,
+          0.675058541
+        ],
+        [
+          0.503681187,
+          0.721656707
+        ],
+        [
+          0.494493709,
+          0.721656707
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-5"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-jean-philippe-crêpes---gelato",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Jean-Philippe Crêpes & Gelato",
+      "source_bbox": [
+        275.427338,
+        400.781097,
+        284.204285,
+        421.884949
+      ],
+      "normalized_bbox": [
+        0.467137949,
+        0.496093571,
+        0.482024071,
+        0.522216272
+      ],
+      "normalized_polygon": [
+        [
+          0.467137949,
+          0.496093571
+        ],
+        [
+          0.482024071,
+          0.496093571
+        ],
+        [
+          0.482024071,
+          0.522216272
+        ],
+        [
+          0.467137949,
+          0.522216272
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-6"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-plaza-bellissima",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Plaza Bellissima",
+      "source_bbox": [
+        308.201965,
+        422.456116,
+        316.978912,
+        435.83902
+      ],
+      "normalized_bbox": [
+        0.522725287,
+        0.522923272,
+        0.537611409,
+        0.539488856
+      ],
+      "normalized_polygon": [
+        [
+          0.522725287,
+          0.522923272
+        ],
+        [
+          0.537611409,
+          0.522923272
+        ],
+        [
+          0.537611409,
+          0.539488856
+        ],
+        [
+          0.522725287,
+          0.539488856
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-7"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-galleria-bellissima-msc-excursio",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Galleria Bellissima MSC Excursions",
+      "source_bbox": [
+        292.298096,
+        385.492706,
+        302.243591,
+        428.483978
+      ],
+      "normalized_bbox": [
+        0.495751562,
+        0.477169344,
+        0.512619599,
+        0.530384662
+      ],
+      "normalized_polygon": [
+        [
+          0.495751562,
+          0.477169344
+        ],
+        [
+          0.512619599,
+          0.477169344
+        ],
+        [
+          0.512619599,
+          0.530384662
+        ],
+        [
+          0.495751562,
+          0.530384662
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-8"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-mini-mall",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Mini Mall",
+      "source_bbox": [
+        323.657837,
+        404.634674,
+        332.434784,
+        410.608765
+      ],
+      "normalized_bbox": [
+        0.548939185,
+        0.500863593,
+        0.563825307,
+        0.508258422
+      ],
+      "normalized_polygon": [
+        [
+          0.548939185,
+          0.500863593
+        ],
+        [
+          0.563825307,
+          0.500863593
+        ],
+        [
+          0.563825307,
+          0.508258422
+        ],
+        [
+          0.548939185,
+          0.508258422
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-9"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-bellissima-bar---lounge",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Bellissima Bar & Lounge",
+      "source_bbox": [
+        316.844543,
+        333.20105,
+        325.62149,
+        351.025879
+      ],
+      "normalized_bbox": [
+        0.537383513,
+        0.412441853,
+        0.552269635,
+        0.434505726
+      ],
+      "normalized_polygon": [
+        [
+          0.537383513,
+          0.412441853
+        ],
+        [
+          0.552269635,
+          0.412441853
+        ],
+        [
+          0.552269635,
+          0.434505726
+        ],
+        [
+          0.537383513,
+          0.434505726
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-10"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-jean-philippe-chocolat---café",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Jean-Philippe Chocolat & Café",
+      "source_bbox": [
+        299.040436,
+        354.886475,
+        307.817383,
+        375.671478
+      ],
+      "normalized_bbox": [
+        0.507186894,
+        0.439284436,
+        0.522073016,
+        0.465012463
+      ],
+      "normalized_polygon": [
+        [
+          0.507186894,
+          0.439284436
+        ],
+        [
+          0.522073016,
+          0.439284436
+        ],
+        [
+          0.522073016,
+          0.465012463
+        ],
+        [
+          0.507186894,
+          0.465012463
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-11"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-boutique-luxury-plaza",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Boutique Luxury Plaza",
+      "source_bbox": [
+        257.018372,
+        325.795624,
+        264.664154,
+        436.991455
+      ],
+      "normalized_bbox": [
+        0.435915461,
+        0.403275293,
+        0.448883075,
+        0.540915359
+      ],
+      "normalized_polygon": [
+        [
+          0.435915461,
+          0.403275293
+        ],
+        [
+          0.448883075,
+          0.403275293
+        ],
+        [
+          0.448883075,
+          0.540915359
+        ],
+        [
+          0.435915461,
+          0.540915359
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-12"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-perfumes---cosmetics",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Perfumes & Cosmetics",
+      "source_bbox": [
+        325.718567,
+        421.13562,
+        334.495514,
+        437.15274
+      ],
+      "normalized_bbox": [
+        0.552434281,
+        0.521288741,
+        0.567320404,
+        0.541115001
+      ],
+      "normalized_polygon": [
+        [
+          0.552434281,
+          0.521288741
+        ],
+        [
+          0.567320404,
+          0.521288741
+        ],
+        [
+          0.567320404,
+          0.541115001
+        ],
+        [
+          0.552434281,
+          0.541115001
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-13"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-luxury-vetrina-watches---sunglas",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Luxury Vetrina Watches & Sunglasses",
+      "source_bbox": [
+        273.704468,
+        444.606964,
+        316.302551,
+        453.675079
+      ],
+      "normalized_bbox": [
+        0.464215879,
+        0.550341964,
+        0.536464268,
+        0.56156663
+      ],
+      "normalized_polygon": [
+        [
+          0.464215879,
+          0.550341964
+        ],
+        [
+          0.536464268,
+          0.550341964
+        ],
+        [
+          0.536464268,
+          0.56156663
+        ],
+        [
+          0.464215879,
+          0.56156663
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-14"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-london-theatre",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "London Theatre",
+      "source_bbox": [
+        285.081421,
+        245.752701,
+        305.957153,
+        251.169724
+      ],
+      "normalized_bbox": [
+        0.483511736,
+        0.304196819,
+        0.518917978,
+        0.3109021
+      ],
+      "normalized_polygon": [
+        [
+          0.483511736,
+          0.304196819
+        ],
+        [
+          0.518917978,
+          0.304196819
+        ],
+        [
+          0.518917978,
+          0.3109021
+        ],
+        [
+          0.483511736,
+          0.3109021
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-15"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-msc-shop",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "MSC Shop",
+      "source_bbox": [
+        275.581848,
+        469.299194,
+        284.358795,
+        476.005768
+      ],
+      "normalized_bbox": [
+        0.467400006,
+        0.580906421,
+        0.482286129,
+        0.589207931
+      ],
+      "normalized_polygon": [
+        [
+          0.467400006,
+          0.580906421
+        ],
+        [
+          0.482286129,
+          0.580906421
+        ],
+        [
+          0.482286129,
+          0.589207931
+        ],
+        [
+          0.467400006,
+          0.589207931
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-16"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-edge-cocktail-bar",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Edge Cocktail Bar",
+      "source_bbox": [
+        311.048187,
+        482.003326,
+        316.465179,
+        505.063049
+      ],
+      "normalized_bbox": [
+        0.527552615,
+        0.596631809,
+        0.536740093,
+        0.625175522
+      ],
+      "normalized_polygon": [
+        [
+          0.527552615,
+          0.596631809
+        ],
+        [
+          0.536740093,
+          0.596631809
+        ],
+        [
+          0.536740093,
+          0.625175522
+        ],
+        [
+          0.527552615,
+          0.625175522
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-17"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-le-cerisier",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Le Cerisier",
+      "source_bbox": [
+        326.209106,
+        609.263367,
+        331.626099,
+        623.106567
+      ],
+      "normalized_bbox": [
+        0.55326626,
+        0.754156424,
+        0.562453738,
+        0.77129177
+      ],
+      "normalized_polygon": [
+        [
+          0.55326626,
+          0.754156424
+        ],
+        [
+          0.562453738,
+          0.754156424
+        ],
+        [
+          0.562453738,
+          0.77129177
+        ],
+        [
+          0.55326626,
+          0.77129177
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-18"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-vertical-core-19",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Lift",
+      "source_bbox": [
+        303.70105,
+        516.349304,
+        309.118042,
+        520.599731
+      ],
+      "normalized_bbox": [
+        0.515091518,
+        0.639145837,
+        0.524278996,
+        0.644407088
+      ],
+      "normalized_polygon": [
+        [
+          0.515091518,
+          0.639145837
+        ],
+        [
+          0.524278996,
+          0.639145837
+        ],
+        [
+          0.524278996,
+          0.644407088
+        ],
+        [
+          0.515091518,
+          0.644407088
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-19"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-vertical-core-20",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Panoramic Lift",
+      "source_bbox": [
+        255.190018,
+        469.598053,
+        260.607025,
+        488.706116
+      ],
+      "normalized_bbox": [
+        0.432814486,
+        0.581276354,
+        0.44200199,
+        0.604928635
+      ],
+      "normalized_polygon": [
+        [
+          0.432814486,
+          0.581276354
+        ],
+        [
+          0.44200199,
+          0.581276354
+        ],
+        [
+          0.44200199,
+          0.604928635
+        ],
+        [
+          0.432814486,
+          0.604928635
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-20"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-vertical-core-21",
+      "semantic_type": "vertical_core_region",
+      "cabin_number": null,
+      "label": "Panoramic Lift",
+      "source_bbox": [
+        330.060852,
+        469.598053,
+        335.477844,
+        488.706116
+      ],
+      "normalized_bbox": [
+        0.559799005,
+        0.581276354,
+        0.568986483,
+        0.604928635
+      ],
+      "normalized_polygon": [
+        [
+          0.559799005,
+          0.581276354
+        ],
+        [
+          0.568986483,
+          0.581276354
+        ],
+        [
+          0.568986483,
+          0.604928635
+        ],
+        [
+          0.559799005,
+          0.604928635
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-21"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-msc-photo",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "MSC Photo",
+      "source_bbox": [
+        255.111221,
+        501.329315,
+        260.528229,
+        515.77063
+      ],
+      "normalized_bbox": [
+        0.432680843,
+        0.620553843,
+        0.441868347,
+        0.638429545
+      ],
+      "normalized_polygon": [
+        [
+          0.432680843,
+          0.620553843
+        ],
+        [
+          0.441868347,
+          0.620553843
+        ],
+        [
+          0.441868347,
+          0.638429545
+        ],
+        [
+          0.432680843,
+          0.638429545
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-22"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-photo-gallery",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Photo Gallery",
+      "source_bbox": [
+        261.996033,
+        510.276245,
+        267.413025,
+        528.228821
+      ],
+      "normalized_bbox": [
+        0.444357813,
+        0.631628503,
+        0.453545291,
+        0.653850502
+      ],
+      "normalized_polygon": [
+        [
+          0.444357813,
+          0.631628503
+        ],
+        [
+          0.453545291,
+          0.631628503
+        ],
+        [
+          0.453545291,
+          0.653850502
+        ],
+        [
+          0.444357813,
+          0.653850502
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-23"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-fashion-jewellery",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Fashion Jewellery",
+      "source_bbox": [
+        304.932892,
+        468.172882,
+        316.988586,
+        476.949829
+      ],
+      "normalized_bbox": [
+        0.517180781,
+        0.579512253,
+        0.537627817,
+        0.590376506
+      ],
+      "normalized_polygon": [
+        [
+          0.517180781,
+          0.579512253
+        ],
+        [
+          0.537627817,
+          0.579512253
+        ],
+        [
+          0.537627817,
+          0.590376506
+        ],
+        [
+          0.517180781,
+          0.590376506
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-24"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    },
+    {
+      "object_id": "bellissima-deck06-venue-fine-watches---jewellery",
+      "semantic_type": "venue",
+      "cabin_number": null,
+      "label": "Fine Watches & Jewellery",
+      "source_bbox": [
+        259.830994,
+        353.945282,
+        277.323151,
+        362.722229
+      ],
+      "normalized_bbox": [
+        0.440685803,
+        0.438119412,
+        0.470353339,
+        0.448983665
+      ],
+      "normalized_polygon": [
+        [
+          0.440685803,
+          0.438119412
+        ],
+        [
+          0.470353339,
+          0.438119412
+        ],
+        [
+          0.470353339,
+          0.448983665
+        ],
+        [
+          0.440685803,
+          0.448983665
+        ]
+      ],
+      "geometry_provenance": "TRANSFORMED_SOURCE_GEOMETRY",
+      "evidence_condition": "UNKNOWN",
+      "human_review_state": "DRAFT",
+      "publish_status": "PUBLISH_BLOCKED",
+      "source_references": [
+        "page3:text-block-25"
+      ],
+      "transform_id": "pdf-page3-mediabox-to-unit-v1"
+    }
+  ]
+}
