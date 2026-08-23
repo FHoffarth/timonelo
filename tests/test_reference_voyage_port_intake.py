@@ -1,4 +1,4 @@
-"""
+﻿"""
 Tests for Port Factory — Shanghai and Tokyo Generic Port Intake & MSC Reference Voyage Gating.
 Governed by ADR-0002 §1, §6, §7, §8, §9 and Internal Agent Ruleset v0.1.
 """
@@ -240,6 +240,7 @@ def test_inferred_statement_closure_and_rule_hash(workspace):
     - input_statement_ids non-empty
     - deterministic rule_hash matching unlocode_linkage rule definition
     - non-empty derivation_note explaining the exact resolution
+    - TruthEngine resolves them cleanly without attempting registry.get("")
     """
     expected_rule_def = "timonelo.rules.ports.unlocode_linkage:v1:normalize_operator_location_label_and_country_to_unece_unlocode"
     expected_rule_hash = hashlib.sha256(expected_rule_def.encode("utf-8")).hexdigest()
@@ -257,6 +258,17 @@ def test_inferred_statement_closure_and_rule_hash(workspace):
     assert stm_arr.rule_hash == expected_rule_hash
     assert "timonelo.rules.ports.unlocode_linkage:v1" in stm_arr.derivation_note
     assert "JPTYO" in stm_arr.derivation_note
+
+    # TruthEngine resolves both with inferred provenance
+    ans_dep = workspace.engine.answer(VOYAGE_ENTITY, "Q-0033")
+    assert ans_dep.known is True
+    assert ans_dep.value == "port:unlocode:CNSGH"
+    assert ans_dep.provenance.statement_id == "STM-0406"
+
+    ans_arr = workspace.engine.answer(VOYAGE_ENTITY, "Q-0036")
+    assert ans_arr.known is True
+    assert ans_arr.value == "port:unlocode:JPTYO"
+    assert ans_arr.provenance.statement_id == "STM-0409"
 
 
 def test_msc_booking_reference_voyage_intake(workspace):
@@ -313,19 +325,39 @@ def test_msc_booking_reference_voyage_intake(workspace):
     assert stm_checkin.value == "14:00"
 
 
-def test_all_newly_ingested_statements_fail_closed(workspace):
+def test_approved_port_and_reference_voyage_statements_lifecycle_and_truth(workspace):
     """
-    Every newly ingested statement (STM-0395..STM-0410) is unpromoted
-    and strictly fails closed in TruthEngine and PortIntelligenceEvaluator.
+    Approved scoped statements (STM-0395..STM-0410) are in SUPPORTED / APPROVED / PUBLISH_ALLOWED,
+    and resolve factually through TruthEngine.
     """
     for sid in [f"STM-{i:04d}" for i in range(395, 411)]:
         stm = workspace.editor.get(sid)
-        assert stm.evidence_condition == EvidenceCondition.UNKNOWN
-        assert stm.human_review_state == HumanReviewState.DRAFT
-        assert stm.publish_status == PublishStatus.PUBLISH_BLOCKED
+        assert stm.evidence_condition == EvidenceCondition.SUPPORTED
+        assert stm.human_review_state == HumanReviewState.APPROVED
+        assert stm.publish_status == PublishStatus.PUBLISH_ALLOWED
+
+        ans = workspace.engine.answer(stm.entity_id, stm.question_id)
+        assert ans.known is True
+        assert ans.value == stm.value
+        assert ans.provenance.statement_id == sid
+
+
+def test_generic_port_and_inferred_statements_resolve_through_port_evaluator(workspace):
+    """
+    Public generic port facts (STM-0395..STM-0402) and inferred linkages (STM-0406, STM-0409)
+    resolve with is_known = True and complete provenance in PortIntelligenceEvaluator.
+    """
+    for sid in [
+        "STM-0395", "STM-0396", "STM-0397", "STM-0398",
+        "STM-0399", "STM-0400", "STM-0401", "STM-0402",
+        "STM-0406", "STM-0409",
+    ]:
+        stm = workspace.editor.get(sid)
         eval_res = PortIntelligenceEvaluator.evaluate_fact(workspace, stm.entity_id, stm.question_id)
-        assert eval_res.is_known is False
-        assert eval_res.value is None
+        assert eval_res.is_known is True
+        assert eval_res.value == stm.value
+        assert eval_res.provenance is not None
+        assert eval_res.provenance.statement_id == sid
 
 
 def test_voyage_statements_strict_allowlist_domain_boundary(workspace):
@@ -391,15 +423,27 @@ def test_generic_terminal_existence_does_not_infer_voyage_assignment(workspace):
     Generic Tokyo terminal existence from ART-0005 / ART-0006 proves terminal entity existence,
     but does NOT assign Tokyo International Cruise Terminal to the Bellissima voyage.
     """
-    # Generic terminal entity facts exist in store
+    # Generic terminal entity facts exist in store and are approved
     term_entity = "terminal:JPTYO:tokyo-international-cruise-terminal"
     stm_name = workspace.editor.get("STM-0399")
     assert stm_name.entity_id == term_entity
+    assert stm_name.human_review_state == HumanReviewState.APPROVED
 
     # Voyage terminal question remains strictly UNKNOWN
     ans = workspace.engine.answer(VOYAGE_ENTITY, "Q-0039")
     assert ans.known is False
     assert ans.value is None
+
+
+def test_unrelated_statements_remain_unpromoted(workspace):
+    """
+    Cabin feature statements (STM-0201..STM-0390) remain in UNKNOWN / DRAFT / PUBLISH_BLOCKED.
+    """
+    for sid in [f"STM-{i:04d}" for i in range(201, 391)]:
+        stm = workspace.editor.get(sid)
+        assert stm.evidence_condition == EvidenceCondition.UNKNOWN
+        assert stm.human_review_state == HumanReviewState.DRAFT
+        assert stm.publish_status == PublishStatus.PUBLISH_BLOCKED
 
 
 def test_no_guessed_coordinates_or_routes(workspace):

@@ -2790,5 +2790,389 @@
     "occurred_on": "2026-08-23",
     "statement_id": "STM-0394",
     "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified UN/LOCODE CNSGH from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0395",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0395",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified UN/LOCODE CNSGH from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0395",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Shanghai port official name from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0396",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0396",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Shanghai port official name from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0396",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified UN/LOCODE JPTYO from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0397",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0397",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified UN/LOCODE JPTYO from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0397",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Tokyo port official name from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0398",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0398",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Tokyo port official name from official UNECE release package ART-0003.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0398",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Tokyo International Cruise Terminal official name from official TPTC directory ART-0005.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0399",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0399",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Tokyo International Cruise Terminal official name from official TPTC directory ART-0005.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0399",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Tokyo International Cruise Terminal official address from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0400",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0400",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Tokyo International Cruise Terminal official address from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0400",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Tokyo International Cruise Terminal Station name from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0401",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0401",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Tokyo International Cruise Terminal Station name from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0401",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Yurikamome transit operator from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0402",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0402",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Yurikamome transit operator from official TPTC guide ART-0006.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0402",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified MSC Bellissima vessel name from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0403",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0403",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified MSC Bellissima vessel name from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0403",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified 2026-10-04 departure date from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0404",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0404",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified 2026-10-04 departure date from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0404",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Shanghai, China departure label from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0405",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0405",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Shanghai, China departure label from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0405",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified canonical departure port linkage port:unlocode:CNSGH (INFERRED with rule hash closure).",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0406",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0406",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified canonical departure port linkage port:unlocode:CNSGH (INFERRED with rule hash closure).",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0406",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified 2026-10-07 arrival date from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0407",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0407",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified 2026-10-07 arrival date from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0407",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified Tokyo, Japan arrival label from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0408",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0408",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified Tokyo, Japan arrival label from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0408",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified canonical arrival port linkage port:unlocode:JPTYO (INFERRED with rule hash closure).",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0409",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0409",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified canonical arrival port linkage port:unlocode:JPTYO (INFERRED with rule hash closure).",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0409",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Verified 14:00 check-in time from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0410",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "port-intake-verifier",
+    "from_state": "DRAFT",
+    "note": "Submitted for project-owner review with verified source evidence.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0410",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "project-owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "Explicit project-owner human approval received in sprint session on 2026-08-23: Verified 14:00 check-in time from official MSC booking confirmation ART-0007.",
+    "occurred_on": "2026-08-23",
+    "statement_id": "STM-0410",
+    "to_state": "APPROVED"
   }
 ]

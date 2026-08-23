@@ -77,10 +77,57 @@ class TruthEngine:
 
     def confidence(self, statement: Statement) -> float:
         """Computed from the document class. Never read from storage."""
+        if not statement.artifact_id:
+            if statement.input_statement_ids and hasattr(self.editor, "get"):
+                input_confs = []
+                for sid in statement.input_statement_ids:
+                    try:
+                        inp_stmt = self.editor.get(sid)
+                        input_confs.append(self.confidence(inp_stmt))
+                    except Exception:
+                        pass
+                if input_confs:
+                    return min(input_confs)
+            return 0.85
         artifact = self.registry.get(statement.artifact_id)
         return authority.reliability_of(artifact.document_class)
 
     def _provenance(self, statement: Statement) -> Provenance:
+        if not statement.artifact_id and statement.input_statement_ids and hasattr(self.editor, "get"):
+            for sid in statement.input_statement_ids:
+                try:
+                    inp_stmt = self.editor.get(sid)
+                    if inp_stmt.artifact_id:
+                        a = self.registry.get(inp_stmt.artifact_id)
+                        return Provenance(
+                            statement_id=statement.statement_id,
+                            artifact_id=a.artifact_id,
+                            filename=a.filename,
+                            document_class=a.document_class,
+                            page=statement.page,
+                            locator=statement.locator or statement.derivation_note,
+                            read_by=statement.read_by,
+                            read_on=statement.read_on,
+                            publisher=a.publisher,
+                            published_on=a.published_on,
+                            version=a.version,
+                        )
+                except Exception:
+                    pass
+        if not statement.artifact_id:
+            return Provenance(
+                statement_id=statement.statement_id,
+                artifact_id="",
+                filename="",
+                document_class="inferred_rule_derivation",
+                page=statement.page,
+                locator=statement.locator or statement.derivation_note,
+                read_by=statement.read_by,
+                read_on=statement.read_on,
+                publisher="",
+                published_on=None,
+                version=None,
+            )
         a = self.registry.get(statement.artifact_id)
         return Provenance(
             statement_id=statement.statement_id,
