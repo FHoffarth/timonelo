@@ -80,9 +80,13 @@ class StatementEditor:
                     self._by_id[sid] = Statement(**raw)
 
     def _next_id(self) -> str:
-        n = 1 + max(
-            (int(k[len(self.ID_PREFIX):]) for k in self._by_id), default=0
-        )
+        nums = []
+        for k in self._by_id:
+            if k.startswith(self.ID_PREFIX):
+                suffix = k[len(self.ID_PREFIX):]
+                if suffix.isdigit():
+                    nums.append(int(suffix))
+        n = 1 + max(nums, default=0)
         return f"{self.ID_PREFIX}{n:04d}"
 
     def create(
@@ -102,31 +106,39 @@ class StatementEditor:
         valid_until: Optional[str] = None,
         note: str = "",
         evidence_event_ids: Tuple[str, ...] = (),
+        input_statement_ids: Tuple[str, ...] = (),
+        rule_hash: Optional[str] = None,
     ) -> Statement:
         """Author one statement in DRAFT with UNKNOWN evidence condition."""
-        artifact = self.registry.get(artifact_id)  # raises if not held
-
-        if not locator:
-            raise EditorError(
-                "A statement requires a locator: WHERE in the artifact the "
-                "value was read."
-            )
         try:
             canonical_method = Method(method)
         except ValueError:
             raise EditorError(f"Unknown method {method!r}.")
-        if canonical_method is not Method.DIRECT and not derivation_note:
-            raise EditorError(
-                f"A {method} statement must record its derivation_note: which "
-                "printed facts were combined, and how."
-            )
+
+        if canonical_method == Method.INFERRED:
+            if not derivation_note:
+                raise EditorError("An INFERRED statement must record its derivation_note.")
+            if not input_statement_ids:
+                raise EditorError("An INFERRED statement requires input_statement_ids.")
+        else:
+            artifact = self.registry.get(artifact_id)  # raises if not held
+            if not locator:
+                raise EditorError(
+                    "A statement requires a locator: WHERE in the artifact the "
+                    "value was read."
+                )
+            if canonical_method is not Method.DIRECT and not derivation_note:
+                raise EditorError(
+                    f"A {method} statement must record its derivation_note: which "
+                    "printed facts were combined, and how."
+                )
+            # Statement Authority Matrix: does this class have authority here?
+            authority.check(statement_type, artifact.document_class)
+
         if not read_by or not read_on:
             raise EditorError(
                 "A statement requires the reader's name and the date read."
             )
-
-        # Statement Authority Matrix: does this class have authority here?
-        authority.check(statement_type, artifact.document_class)
 
         statement = Statement(
             statement_id=self._next_id(),
@@ -142,6 +154,8 @@ class StatementEditor:
             method=canonical_method,
             derivation_note=derivation_note,
             evidence_event_ids=evidence_event_ids,
+            input_statement_ids=input_statement_ids,
+            rule_hash=rule_hash,
             evidence_condition=EvidenceCondition.UNKNOWN,
             human_review_state=HumanReviewState.DRAFT,
             publish_status=PublishStatus.PUBLISH_BLOCKED,
