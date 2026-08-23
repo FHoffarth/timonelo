@@ -11,6 +11,7 @@ import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
 import KnowledgeDashboardPage from "./components/pages/KnowledgeDashboardPage";
 import { ReferenceTripShellPreview } from "./components/pages/TripShellPage";
+import { ReferenceShipOverviewPreview } from "./components/pages/ShipOverviewPage";
 import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
 import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
@@ -90,10 +91,7 @@ export default function App() {
         )}
 
         {currentRoute === "ships" && (
-          <ShipProfilePage
-            shipSlug={selectedShipSlug}
-            onNavigateCabin={(id) => handleNavigate("cabin", id)}
-          />
+          <ReferenceShipOverviewPreview />
         )}
 
         {currentRoute === "cabin" && (
