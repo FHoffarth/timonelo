@@ -10,19 +10,53 @@ That matters beyond tidiness. Those artifacts are already known to be stale on
 — so a test suite that silently rewrites them destroys the evidence of that
 drift and makes `git status` after a test run meaningless.
 
-`sandbox_root()` returns a temporary directory whose `knowledge` is a symlink
-to the real corpus. The compiler reads the real data and writes its artifacts
-into the sandbox. Nothing is restored afterwards, because nothing is modified:
-restoring tracked files after mutating them is still mutation, and would mask
-exactly the drift this helper protects.
+`sandbox_root()` returns a temporary directory that exposes the real corpus at
+`knowledge`. The compiler reads the real data and writes its artifacts into the
+sandbox. Nothing is restored afterwards, because nothing is modified: restoring
+tracked files after mutating them is still mutation, and would mask exactly the
+drift this helper protects.
+
+A symlink is the cheap way to expose the corpus, but it is not portable: on
+Windows `os.symlink` needs SeCreateSymbolicLinkPrivilege, which an ordinary
+account without Developer Mode does not hold, and the call fails with
+WinError 1314. Copying is the fallback rather than a skip, because the point of
+these tests is to exercise the real corpus — skipping them on the platform this
+repository is developed on would remove the coverage exactly where a regression
+would land first. The corpus is ~2 MB across ~450 files, so the copy is cheap.
+
+Either way the compiler only reads the corpus, so the repository copy is
+untouched in both modes.
 """
 
 from __future__ import annotations
 
 import pathlib
+import shutil
 import tempfile
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+
+def expose_knowledge(root: pathlib.Path) -> str:
+    """Make the real corpus readable at ``<root>/knowledge``.
+
+    Returns the mechanism used, ``"symlink"`` or ``"copy"``, so a caller can
+    assert on it if it cares. `FileExistsError` is deliberately not caught: it
+    means the caller passed a root that is already populated, which is a bug in
+    the test rather than a platform limitation, and copying over it would hide
+    that.
+    """
+    target = root / "knowledge"
+    source = REPO_ROOT / "knowledge"
+    try:
+        target.symlink_to(source, target_is_directory=True)
+        return "symlink"
+    except FileExistsError:
+        raise
+    except (OSError, NotImplementedError):
+        # No symlink privilege (or no symlink support at all). Copy instead.
+        shutil.copytree(source, target)
+        return "copy"
 
 
 def sandbox_root(cleanup_registry=None) -> str:
@@ -36,7 +70,7 @@ def sandbox_root(cleanup_registry=None) -> str:
     """
     handle = tempfile.TemporaryDirectory(prefix="timonelo-compile-")
     root = pathlib.Path(handle.name)
-    (root / "knowledge").symlink_to(REPO_ROOT / "knowledge")
+    expose_knowledge(root)
     if cleanup_registry is not None:
         cleanup_registry.append(handle)
     else:

@@ -424,19 +424,24 @@ def test_compiler_tolerates_unknown_values(tmp_path):
     `compile()` writes `cruise_intelligence_db.json` and
     `cruise_knowledge_graph.json` into `<root_dir>/data` unconditionally, and
     the compiler exposes no output-path option. So the test runs against a
-    temporary root whose `knowledge` is a symlink to the real corpus: the real
-    data is exercised, and the writes land in `tmp_path`. A test that mutated
-    tracked files and then restored them would still be a test that rewrites
-    the working tree, and would mask genuine drift.
+    temporary root that exposes the real corpus at `knowledge`: the real data is
+    exercised, and the writes land in `tmp_path`. A test that mutated tracked
+    files and then restored them would still be a test that rewrites the working
+    tree, and would mask genuine drift.
+
+    `expose_knowledge` links where it can and copies where it cannot, so this
+    runs on platforms without symlink privilege instead of being skipped there.
     """
     from timonelo.database.compiler import KnowledgeDBCompiler
+
+    from tests.compiler_sandbox import expose_knowledge
 
     real_data = REPO_ROOT / "data"
     before = {
         p.name: p.read_bytes() for p in sorted(real_data.glob("*.json"))
     }
 
-    (tmp_path / "knowledge").symlink_to(REPO_ROOT / "knowledge")
+    expose_knowledge(tmp_path)
     compiler = KnowledgeDBCompiler(root_dir=str(tmp_path))
     compiler.compile()
 
