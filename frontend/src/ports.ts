@@ -7,9 +7,9 @@ export interface CuratedPort {
   slug: string;
   name: string;
   shortName: string;
-  unLocode: string;
-  country: string;
-  region: string;
+  unLocode: string | null;
+  country: string | null;
+  region: string | null;
   headlineEn: string;
   headlineDe: string;
   storyEn: string;
@@ -18,13 +18,13 @@ export interface CuratedPort {
   gangwayDeck: number | null;
   distanceToCenterKm: number | null;
   walkingTimeMin: number | null;
-  stepFreeAccess: boolean;
+  stepFreeAccess: boolean | null;
   transitNoteEn: string;
   transitNoteDe: string;
   airportTransitEn: string;
   airportTransitDe: string;
-  currency: string;
-  cardAcceptancePct: number;
+  currency: string | null;
+  cardAcceptancePct: number | null;
   emergencyPhone: string;
   policePhone: string;
   callingShips: { slug: string; name: string }[];
@@ -247,13 +247,18 @@ export const PORTS_REGISTRY: CuratedPort[] = [
   ];
   const raw = RAW_PORTS.find((p) => p.slug === slug);
 
+  // Entity fields come from the knowledge layer or not at all. The previous
+  // fallbacks invented data for any port the knowledge layer did not know:
+  // `slug.toUpperCase()` rendered "YOKOHAMA" in the UN/LOCODE field, and
+  // 'Europe / Global' / 'Mediterranean & River' / 'EUR (€)' / 98 were
+  // presentation defaults dressed as facts. Null renders as unavailable.
   return {
     slug,
-    name: raw ? raw.name : custom.shortName,
+    name: raw?.name ?? custom.shortName,
     shortName: custom.shortName,
-    unLocode: raw ? raw.unLocode : slug.toUpperCase(),
-    country: raw ? raw.country : 'Europe / Global',
-    region: raw ? raw.region : 'Mediterranean & River',
+    unLocode: raw?.unLocode ?? null,
+    country: raw?.country ?? null,
+    region: raw?.region ?? null,
     headlineDe: custom.headlineDe,
     headlineEn: custom.headlineEn,
     storyDe: custom.storyDe,
@@ -262,13 +267,13 @@ export const PORTS_REGISTRY: CuratedPort[] = [
     gangwayDeck: custom.gangwayDeck,
     distanceToCenterKm: custom.distanceKm,
     walkingTimeMin: custom.walkingMin,
-    stepFreeAccess: true,
+    stepFreeAccess: null,
     transitNoteDe: custom.transitDe,
     transitNoteEn: custom.transitEn,
     airportTransitDe: custom.airportDe,
     airportTransitEn: custom.airportEn,
-    currency: raw ? raw.currency : 'EUR (€)',
-    cardAcceptancePct: raw ? raw.cardAcceptancePct : 98,
+    currency: raw?.currency ?? null,
+    cardAcceptancePct: raw?.cardAcceptancePct ?? null,
     emergencyPhone: custom.emergency,
     policePhone: custom.police,
     callingShips,
@@ -277,7 +282,8 @@ export const PORTS_REGISTRY: CuratedPort[] = [
   };
 });
 
-export function getPortBySlug(slug: string): CuratedPort {
-  const found = PORTS_REGISTRY.find((p) => p.slug === slug);
-  return found || PORTS_REGISTRY[0];
+// Returns undefined for an unknown slug rather than silently presenting the
+// first port's data under the requested name.
+export function getPortBySlug(slug: string): CuratedPort | undefined {
+  return PORTS_REGISTRY.find((p) => p.slug === slug);
 }

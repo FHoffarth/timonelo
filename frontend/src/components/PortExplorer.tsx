@@ -55,7 +55,9 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
             >
               <MapPin className="w-3.5 h-3.5 text-gold" />
               <span>{port.shortName}</span>
-              <span className="text-[10px] font-mono opacity-60">({port.unLocode})</span>
+              {port.unLocode && (
+                <span className="text-[10px] font-mono opacity-60">({port.unLocode})</span>
+              )}
             </button>
           ))}
         </div>
@@ -96,8 +98,8 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                   </h2>
                 </div>
                 <div className="text-right font-mono text-xs text-muted">
-                  <span className="block font-semibold text-ink">UN/LOCODE: {selectedPort.unLocode}</span>
-                  <span>{selectedPort.country}</span>
+                  <span className="block font-semibold text-ink">UN/LOCODE: {selectedPort.unLocode ?? (isGerman ? 'unbekannt' : 'unknown')}</span>
+                  <span>{selectedPort.country ?? (isGerman ? 'unbekannt' : 'unknown')}</span>
                 </div>
               </div>
 
@@ -135,7 +137,7 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     </p>
                     <p className="text-xs text-muted mt-1">
                       {(selectedPort.walkingTimeMin ?? 0) > 0
-                        ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit (stufenlos)` : `approx. ${selectedPort.walkingTimeMin} min walk (step-free)`)
+                        ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit` : `approx. ${selectedPort.walkingTimeMin} min walk`)
                         : (isGerman ? 'Shuttle-Transfer oder Taxi empfohlen' : 'Shuttle transfer or taxi recommended')}
                     </p>
                   </div>

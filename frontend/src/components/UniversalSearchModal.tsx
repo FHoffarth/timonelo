@@ -65,7 +65,9 @@ export function UniversalSearchModal({
 
     // 2. Ports
     PORTS_REGISTRY.forEach((p) => {
-      if (p.name.toLowerCase().includes(q) || p.slug.includes(q) || p.unLocode.toLowerCase().includes(q) || p.country.toLowerCase().includes(q)) {
+      // Optional-chained: a port with no sourced LOCODE or country is still
+      // searchable by name and slug, and simply does not match on those fields.
+      if (p.name.toLowerCase().includes(q) || p.slug.includes(q) || p.unLocode?.toLowerCase().includes(q) || p.country?.toLowerCase().includes(q)) {
         results.push({
           id: `port:${p.slug}`,
           type: 'port',
