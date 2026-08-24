@@ -222,16 +222,235 @@ def test_unsourced_identity_publishes_no_facts(corpus):
     )
 
 
-def test_compiler_tolerates_unknown_values():
+def test_accessibility_claims_are_not_a_corpus_wide_constant(corpus):
+    """`step_free_access` may not be uniformly asserted without evidence.
+
+    Separated from the numeric checks because the harm differs in kind. A wrong
+    walking time costs a passenger ten minutes; a wrong step-free claim sends a
+    wheelchair user to a gangway they cannot board. The generators asserted
+    `true` for all 119 ports without a single observation.
+
+    Diversity is not the standard here — a corpus where every *sourced* port
+    happens to be step-free is legitimate. The standard is that an unsourced
+    uniform assertion is template output.
+    """
+    if len(corpus) < MIN_CORPUS_FOR_DISTRIBUTION_CHECK:
+        pytest.skip("corpus too small for a distribution check")
+    values = collections.Counter()
+    for slug, doc in corpus:
+        if "step_free_access" in _sourced_fields(doc):
+            continue
+        for term in doc.get("terminals", []):
+            if term.get("step_free_access") is not None:
+                values[term["step_free_access"]] += 1
+    assert len(values) != 1, (
+        f"unsourced step_free_access is uniformly {list(values)[0]!r} across "
+        f"{sum(values.values())} terminals. Accessibility claims fail closed: "
+        "null until observed per terminal (ADR-0006 D5)."
+    )
+
+
+def test_accessibility_never_claimed_without_evidence(corpus):
+    """A positive step-free claim requires field-scoped provenance.
+
+    Stricter than the distribution check and deliberately so. `false` and
+    `null` need no source — neither sends anyone to an unusable gangway — but
+    `true` is the claim a passenger acts on, so it carries the burden.
+    """
+    offenders = [
+        slug
+        for slug, doc in corpus
+        if "step_free_access" not in _sourced_fields(doc)
+        for term in doc.get("terminals", [])
+        if term.get("step_free_access") is True
+    ]
+    assert not offenders, (
+        f"{len(offenders)} terminal(s) claim step_free_access=true with no "
+        f"field-scoped source: {offenders[:10]} (ADR-0006 D5)."
+    )
+
+
+def test_berth_lists_are_not_template_derived(corpus):
+    """Berth names may not be derived from the port slug.
+
+    Both generators built berths by interpolation — `f"{slug.title()} Berth 1"`
+    and `f"{slug.title()} Pier 1"`. The tell is that the berth name contains
+    the slug, which a real berth designation ("Ponte dei Mille", "Berths
+    91-93") generally does not. Checked structurally rather than against the
+    two known templates, so renaming the suffix does not evade it.
+    """
+    offenders = []
+    for slug, doc in corpus:
+        if "berths" in _sourced_fields(doc):
+            continue
+        slug_words = slug.replace("-", " ").lower()
+        for term in doc.get("terminals", []):
+            for berth in term.get("berths") or []:
+                if isinstance(berth, str) and slug_words in berth.lower():
+                    offenders.append((slug, berth))
+    assert not offenders, (
+        f"{len(offenders)} berth name(s) are interpolated from the port slug: "
+        f"{offenders[:8]}. Berth designations come from the port authority, "
+        "not from string formatting (ADR-0006)."
+    )
+
+
+def test_berth_counts_are_not_a_corpus_wide_constant(corpus):
+    """Unsourced ports may not all declare the same number of berths.
+
+    Guards the shape as well as the names: a generator emitting
+    `["Berth 1", "Berth 2"]` for every port defeats the name check above while
+    reproducing the same false uniformity.
+    """
+    if len(corpus) < MIN_CORPUS_FOR_DISTRIBUTION_CHECK:
+        pytest.skip("corpus too small for a distribution check")
+    counts = collections.Counter(
+        len(term.get("berths") or [])
+        for slug, doc in corpus
+        if "berths" not in _sourced_fields(doc)
+        for term in doc.get("terminals", [])
+        if term.get("berths")
+    )
+    assert len(counts) != 1, (
+        f"every unsourced terminal declares exactly {list(counts)[0]} berth(s) "
+        f"across {sum(counts.values())} terminals. Real ports differ "
+        "(ADR-0006)."
+    )
+
+
+def test_terminal_structure_is_not_a_corpus_wide_constant(corpus):
+    """Unsourced ports may not all declare an identical terminal shape.
+
+    The original corpus gave all 119 ports exactly one terminal — including
+    Barcelona, whose own `port.json` lists eight — so the terminal *array* is
+    generator output, not merely the fields inside it.
+
+    KNOWN RESIDUE: quarantine did not remove that. Every port still declares
+    one name-only terminal, because emptying the array would drop 119
+    `Terminal` nodes and their `LOCATED_ON` edges from the knowledge graph.
+    Terminal cardinality is logged as an open item (audit K5) and needs a
+    referential-integrity decision, not a bulk edit.
+
+    So this test guards the forward direction, which is what it is for: a
+    future generator must not re-populate terminals with uniform *content*.
+    The name-only shape is the accepted quarantined baseline; any additional
+    key appearing uniformly across the unsourced corpus is re-population.
+    """
+    if len(corpus) < MIN_CORPUS_FOR_DISTRIBUTION_CHECK:
+        pytest.skip("corpus too small for a distribution check")
+    unsourced = [
+        (slug, doc) for slug, doc in corpus if not _sourced_fields(doc)
+    ]
+    if len(unsourced) < MIN_CORPUS_FOR_DISTRIBUTION_CHECK:
+        pytest.skip("too few unsourced ports to judge uniformity")
+
+    #: Entity identity, retained by ADR-0006 and not a passenger-facing claim.
+    BASELINE_KEYS = {"name"}
+
+    shapes = collections.Counter(
+        (
+            len(doc.get("terminals", [])),
+            tuple(
+                sorted(
+                    k
+                    for term in doc.get("terminals", [])
+                    for k, v in term.items()
+                    if v is not None and v != [] and k not in BASELINE_KEYS
+                )
+            ),
+        )
+        for _, doc in unsourced
+    )
+    populated = {shape: n for shape, n in shapes.items() if shape[1]}
+    assert len(populated) != 1, (
+        f"all {sum(populated.values())} unsourced ports share one populated "
+        f"terminal shape {list(populated)[0]!r}. A uniform terminal structure "
+        "across a global corpus is generator output (ADR-0006)."
+    )
+
+
+def test_synthetic_generators_cannot_repopulate_ports():
+    """The two proven generators must fail closed on the port path.
+
+    Asserts behaviour, not text: the module is imported and its refusal
+    invoked. A generator that silently succeeded would restore every
+    quarantined value, so the guard is load-bearing and is tested as such.
+    """
+    import importlib
+
+    for module_name in ("tools.mass_populate_knowledge",
+                        "tools.populate_classes_and_ports"):
+        module = importlib.import_module(module_name)
+        assert hasattr(module, "refuse_port_population"), (
+            f"{module_name} lost its fail-closed port guard"
+        )
+        with pytest.raises(RuntimeError, match="Refusing to populate"):
+            module.refuse_port_population(1)
+
+
+@pytest.mark.parametrize(
+    "literal",
+    ["walking_time_min", "card_acceptance_pct", "distance_to_city_center_m",
+     "gangway_deck_default", "step_free_access", "negative_intelligence",
+     BANNED_SOURCE_ID],
+)
+def test_generator_source_contains_no_port_templates(literal):
+    """Belt and braces: the templates are gone, not merely unreachable.
+
+    The runtime guard above could be deleted by someone who reads it as
+    obstruction. Removing the literals means that even then, the generators
+    cannot reproduce the quarantined fields — the code to do it no longer
+    exists. Comments are stripped before matching so the explanatory notes
+    naming these fields do not trip the check.
+    """
+    for name in ("mass_populate_knowledge.py", "populate_classes_and_ports.py"):
+        path = REPO_ROOT / "tools" / name
+        code = "\n".join(
+            line for line in path.read_text(encoding="utf-8").splitlines()
+            if not line.lstrip().startswith("#")
+        )
+        assert literal not in code, (
+            f"{name} still contains the port template literal {literal!r} "
+            "outside a comment (ADR-0006)."
+        )
+
+
+def test_compiler_tolerates_unknown_values(tmp_path):
     """The compiler must load a fully-quarantined corpus without raising.
 
     Restoring a synthetic value to satisfy a consumer is the failure this
     guards against; the consumer handles UNKNOWN instead.
+
+    `compile()` writes `cruise_intelligence_db.json` and
+    `cruise_knowledge_graph.json` into `<root_dir>/data` unconditionally, and
+    the compiler exposes no output-path option. So the test runs against a
+    temporary root whose `knowledge` is a symlink to the real corpus: the real
+    data is exercised, and the writes land in `tmp_path`. A test that mutated
+    tracked files and then restored them would still be a test that rewrites
+    the working tree, and would mask genuine drift.
     """
     from timonelo.database.compiler import KnowledgeDBCompiler
 
-    compiler = KnowledgeDBCompiler(root_dir=str(REPO_ROOT))
+    real_data = REPO_ROOT / "data"
+    before = {
+        p.name: p.read_bytes() for p in sorted(real_data.glob("*.json"))
+    }
+
+    (tmp_path / "knowledge").symlink_to(REPO_ROOT / "knowledge")
+    compiler = KnowledgeDBCompiler(root_dir=str(tmp_path))
     compiler.compile()
+
     assert compiler.ports, "compiler produced no ports"
     for slug, port in compiler.ports.items():
         assert "slug" in port, f"{slug}: compiled port lost its slug"
+
+    # The writes must have gone to the temporary root, not the repository.
+    assert (tmp_path / "data" / "cruise_intelligence_db.json").exists(), (
+        "compile() did not write to the temporary root; the redirection "
+        "assumption in this test no longer holds"
+    )
+    after = {p.name: p.read_bytes() for p in sorted(real_data.glob("*.json"))}
+    assert before == after, (
+        "compile() mutated tracked files under data/ despite the temporary "
+        f"root: {sorted(k for k in before if before[k] != after.get(k))}"
+    )

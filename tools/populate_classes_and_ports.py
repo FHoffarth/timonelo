@@ -35,7 +35,41 @@ ADDITIONAL_PORTS = [
 ]
 
 
+
+def refuse_port_population(port_count: int) -> None:
+    """Fail closed rather than regenerate the synthetic port identity layer.
+
+    An error is the correct output here. The alternative -- emitting the
+    fields with null values instead of literals -- would still overwrite 119
+    tracked files, discarding the explicit nulls that record which claims were
+    asserted and withdrawn, and would leave a bulk writer pointed at the
+    knowledge layer for a job that no longer exists.
+
+    Port identity now requires field-scoped evidence per port. There is no
+    bulk path to that, so there is no safe way to run this.
+    """
+    raise RuntimeError(
+        f"Refusing to populate {port_count} port identity packs.\n"
+        "\n"
+        "This generator wrote template constants into every "
+        "knowledge/ports/<slug>/identity.json and attested them as OFFICIAL "
+        "with a field:'all' source record. Those values were quarantined by "
+        "ADR-0006 and the templates have been removed.\n"
+        "\n"
+        "Port identity facts now require field-scoped evidence per port. To "
+        "add a port, create its identity.json with entity fields only "
+        "(slug, name, un_locode, country, region, coordinates) and leave "
+        "every passenger-facing field absent until sourced.\n"
+        "\n"
+        "See docs/adr/ADR-0006.md and "
+        "docs/PORT_IDENTITY_CORPUS_AUDIT_2026-08-24.md"
+    )
+
+
 def populate_classes_and_extra_ports():
+    # Fail closed before ANY write; see the note in mass_populate_knowledge.py.
+    refuse_port_population(len(ADDITIONAL_PORTS))
+
     # 1. Ship Classes (25 Classes)
     classes_dir = os.path.join(KNOWLEDGE_DIR, "ship-classes")
     os.makedirs(classes_dir, exist_ok=True)
@@ -47,45 +81,20 @@ def populate_classes_and_extra_ports():
     print(f"[OK] Populated {len(SHIP_CLASSES_DATA)} Canonical Ship Classes.")
 
     # 2. Additional Strategic Ports
-    ports_dir = os.path.join(KNOWLEDGE_DIR, "ports")
-    for p in ADDITIONAL_PORTS:
-        slug = p["slug"]
-        port_pack_dir = os.path.join(ports_dir, slug)
-        os.makedirs(port_pack_dir, exist_ok=True)
-        identity = {
-            "slug": slug,
-            "name": p["name"],
-            "un_locode": p["un_locode"],
-            "country": p["country"],
-            "region": p["region"],
-            "coordinates": {"latitude": p["lat"], "longitude": p["lon"]},
-            "timezone": "UTC",
-            "terminals": [
-                {
-                    "name": p["terminal"],
-                    "berths": [f"{slug.title()} Pier 1"],
-                    "gangway_deck_default": 5,
-                    "distance_to_city_center_m": 800,
-                    "walking_time_min": 10,
-                    "step_free_access": True,
-                }
-            ],
-            "logistics": {
-                "currency": "USD" if p["country"] in ["United States", "Puerto Rico", "Jamaica"] else "EUR" if p["country"] in ["Italy", "Germany"] else "AUD" if p["country"] == "Australia" else "SGD" if p["country"] == "Singapore" else "MXN" if p["country"] == "Mexico" else "Local",
-                "card_acceptance_pct": 98,
-                "emergency_phone": "911" if p["country"] in ["United States", "Canada", "Mexico", "Argentina"] else "112" if p["country"] in ["Italy", "Germany", "United Kingdom"] else "999",
-            },
-            "negative_intelligence": [
-                f"Verify pier location in {p['name'].split('(')[0].strip()}.",
-                "Keep ship ID card securely zipped."
-            ],
-            "sources": [
-                {"field": "all", "source_id": "src:official-port-authority", "trust_level": "OFFICIAL", "retrieved_at": "2026-08-16T12:00:00Z"}
-            ],
-        }
-        with open(os.path.join(port_pack_dir, "identity.json"), "w", encoding="utf-8") as f:
-            json.dump(identity, f, indent=2, sort_keys=True, ensure_ascii=False)
-    print(f"[OK] Populated {len(ADDITIONAL_PORTS)} Additional Global Strategic Ports.")
+    #
+    # RETIRED. This block previously synthesised every passenger-facing field
+    # of knowledge/ports/<slug>/identity.json from hardcoded literals --
+    # gangway_deck_default=5, distance_to_city_center_m=800,
+    # walking_time_min=10, card_acceptance_pct=98, step_free_access=True,
+    # berths named from the slug, negative_intelligence from an f-string
+    # template -- and stamped the result with a blanket source record
+    # (field:"all", source_id:"src:official-port-authority",
+    # trust_level:"OFFICIAL"). None of it had evidence. See ADR-0006.
+    #
+    # ADDITIONAL_PORTS is kept above because it records where the port slugs,
+    # names, coordinates and UN/LOCODEs entered the repository. That data is
+    # unvalidated candidate identity, not canon, and nothing here may write it
+    # back as fact.
 
 
 if __name__ == "__main__":
