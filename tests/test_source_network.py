@@ -6,6 +6,8 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO_ROOT)
 
 from src.timonelo.database.compiler import KnowledgeDBCompiler
+
+from tests.compiler_sandbox import sandbox_root
 from src.timonelo.database.sources_schema import SourceCategory, AccessMethod, SourceEntity
 from src.timonelo.database.sources_dashboard import SourcesDashboard
 
@@ -13,7 +15,8 @@ from src.timonelo.database.sources_dashboard import SourcesDashboard
 class TestSourceNetwork(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        compiler = KnowledgeDBCompiler(REPO_ROOT)
+        # Sandboxed root: see tests/compiler_sandbox.py.
+        compiler = KnowledgeDBCompiler(sandbox_root())
         cls.db = compiler.compile()
 
     def test_sources_network_ingestion(self):

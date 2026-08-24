@@ -55,7 +55,9 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
             >
               <MapPin className="w-3.5 h-3.5 text-gold" />
               <span>{port.shortName}</span>
-              <span className="text-[10px] font-mono opacity-60">({port.unLocode})</span>
+              {port.unLocode && (
+                <span className="text-[10px] font-mono opacity-60">({port.unLocode})</span>
+              )}
             </button>
           ))}
         </div>
@@ -68,7 +70,10 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               {isGerman ? 'Heute auf der Brücke wichtig' : "Today's Bridge Essentials"}
             </span>
             <span className="text-slate-500 text-xs">·</span>
-            <span className="text-xs text-slate-400 font-medium">{selectedPort.shortName} ({selectedPort.unLocode})</span>
+            <span className="text-xs text-slate-400 font-medium">
+              {selectedPort.shortName}
+              {selectedPort.unLocode ? ` (${selectedPort.unLocode})` : ''}
+            </span>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-4 text-sm font-light leading-relaxed">
@@ -96,8 +101,8 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                   </h2>
                 </div>
                 <div className="text-right font-mono text-xs text-muted">
-                  <span className="block font-semibold text-ink">UN/LOCODE: {selectedPort.unLocode}</span>
-                  <span>{selectedPort.country}</span>
+                  <span className="block font-semibold text-ink">UN/LOCODE: {selectedPort.unLocode ?? (isGerman ? 'unbekannt' : 'unknown')}</span>
+                  <span>{selectedPort.country ?? (isGerman ? 'unbekannt' : 'unknown')}</span>
                 </div>
               </div>
 
@@ -120,7 +125,9 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     <p className="text-sm font-medium text-ink">
                       {isGerman ? `Deck ${selectedPort.gangwayDeck} regulär` : `Deck ${selectedPort.gangwayDeck} (Regular)`}
                     </p>
-                    <p className="text-xs text-muted mt-1">{selectedPort.terminalPier}</p>
+                    {selectedPort.terminalPier && (
+                      <p className="text-xs text-muted mt-1">{selectedPort.terminalPier}</p>
+                    )}
                   </div>
                 )}
 
@@ -133,10 +140,24 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                     <p className="text-sm font-medium text-ink">
                       {selectedPort.distanceToCenterKm} km
                     </p>
+                    {/*
+                      Three states, not two. `?? 0` previously collapsed null
+                      into the same branch as 0 and answered both with
+                      "Shuttle transfer or taxi recommended" -- turning "we do
+                      not know how long the walk is" into operational advice.
+                      An unknown walking time does not imply that walking is
+                      impractical, that a shuttle exists, or that a taxi is
+                      warranted.
+
+                      0 is treated as unknown as well: it appears in the data
+                      as an informal sentinel for "too far to walk", but that
+                      meaning is documented nowhere and is indistinguishable
+                      here from a missing value.
+                    */}
                     <p className="text-xs text-muted mt-1">
-                      {(selectedPort.walkingTimeMin ?? 0) > 0
-                        ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit (stufenlos)` : `approx. ${selectedPort.walkingTimeMin} min walk (step-free)`)
-                        : (isGerman ? 'Shuttle-Transfer oder Taxi empfohlen' : 'Shuttle transfer or taxi recommended')}
+                      {typeof selectedPort.walkingTimeMin === 'number' && selectedPort.walkingTimeMin > 0
+                        ? (isGerman ? `ca. ${selectedPort.walkingTimeMin} Min. Gehzeit` : `approx. ${selectedPort.walkingTimeMin} min walk`)
+                        : (isGerman ? 'Gehzeit unbekannt' : 'Walking time unknown')}
                     </p>
                   </div>
                 )}
@@ -148,25 +169,40 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
               <h3 className="font-display text-2xl text-ink font-normal">{t.ports.localTransit}</h3>
               
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
-                  <Footprints className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">
-                      {isGerman ? 'Öffentlicher Nahverkehr & Fußweg' : 'Local Transit & Walking Path'}
-                    </span>
-                    <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{transit}</p>
+                {transit && (
+                  <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
+                    <Footprints className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-mono uppercase tracking-wider text-muted block">
+                        {isGerman ? 'Öffentlicher Nahverkehr & Fußweg' : 'Local Transit & Walking Path'}
+                      </span>
+                      <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{transit}</p>
+                    </div>
                   </div>
-                </div>
+                )}
 
-                <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
-                  <Plane className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-muted block">
-                      {isGerman ? 'Flughafen-Transfer' : 'Airport Connection'}
-                    </span>
-                    <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{airport}</p>
+                {airport && (
+                  <div className="flex items-start gap-4 p-4 bg-paper rounded-xs border border-ink/6">
+                    <Plane className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-mono uppercase tracking-wider text-muted block">
+                        {isGerman ? 'Flughafen-Transfer' : 'Airport Connection'}
+                      </span>
+                      <p className="text-sm text-ink mt-0.5 font-light leading-relaxed">{airport}</p>
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {/* No transit guidance without evidence. The heading promises
+                    a recommendation, so say plainly that there isn't one
+                    rather than leaving an empty panel that reads as a bug. */}
+                {!transit && !airport && (
+                  <p className="text-sm text-muted font-light leading-relaxed">
+                    {isGerman
+                      ? 'Keine gesicherten Transferinformationen für diesen Hafen hinterlegt.'
+                      : 'No verified transit information on file for this port.'}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -207,8 +243,19 @@ export function PortExplorer({ initialPortSlug, onSelectShip }: PortExplorerProp
                   : 'Local port authority dispatch and emergency channels:'}
               </p>
               <div className="p-3 bg-white/10 rounded-xs border border-white/15 text-xs font-mono text-white space-y-1">
-                <p>{isGerman ? 'Hafen / Polizei:' : 'Port / Police:'} {selectedPort.policePhone}</p>
-                <p>{isGerman ? 'Notarzt & Rettung:' : 'Medical & Emergency:'} {selectedPort.emergencyPhone}</p>
+                {selectedPort.policePhone && (
+                  <p>{isGerman ? 'Hafen / Polizei:' : 'Port / Police:'} {selectedPort.policePhone}</p>
+                )}
+                {selectedPort.emergencyPhone && (
+                  <p>{isGerman ? 'Notarzt & Rettung:' : 'Medical & Emergency:'} {selectedPort.emergencyPhone}</p>
+                )}
+                {!selectedPort.policePhone && !selectedPort.emergencyPhone && (
+                  <p className="text-white/60">
+                    {isGerman
+                      ? 'Keine gesicherten Notrufnummern hinterlegt.'
+                      : 'No verified emergency numbers on file.'}
+                  </p>
+                )}
               </div>
             </div>
           </div>

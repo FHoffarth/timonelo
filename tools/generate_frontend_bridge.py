@@ -127,83 +127,106 @@ export function getVesselBySlug(slug: string): FleetVessel {{
     print(f" [OK] Generated frontend/src/generated/fleet.ts with {len(fleet_vessels)} ships.")
 
     # 3. Generate TypeScript Port Registry
+    #
+    # TRUST BOUNDARY. This bridge propagates canonical knowledge to the
+    # frontend. It may not originate evidence authority, and it may not
+    # substitute a plausible value for a missing one -- a default that looks
+    # like data is worse on a passenger surface than a visible gap, because a
+    # gap invites checking and a confident wrong value suppresses it.
+    #
+    # Removed here (see ADR-0006 and audit U-1): hardcoded berths,
+    # gangwayDeckDefault=5, distanceToCenterM=500, walkingTimeMin=10,
+    # stepFreeAccess=True, cardAcceptancePct=98, a currency and emergencyPhone
+    # derived from a country allow-list, blanket transitNote/airportTransit
+    # accessibility claims, a two-entry negativeIntelligence template, a
+    # callingShips list naming three MSC vessels for every port on earth, and
+    # an officialSource naming Timonelo's own domain as the port authority
+    # under trustLevel OFFICIAL.
+    #
+    # `un_locode` previously fell back to "ITGOA", silently relabelling any
+    # port without a code as Genoa. There is no fallback now.
     port_records = []
     for slug, p in ports.items():
-        name = p.get("name", slug.title())
-        locode = p.get("un_locode", "ITGOA")
-        country = p.get("country", "Italy")
-        region = p.get("region", "Mediterranean")
-        term = p.get("terminal_name", p.get("terminal", "Cruise Terminal"))
+        terminals = p.get("terminals") or []
+        first_terminal = terminals[0] if terminals else {}
+        logistics = p.get("logistics") or {}
+
+        # Provenance is propagated, never minted. A source record survives to
+        # the frontend only if the knowledge layer carries one scoped to a
+        # named field; `field: "all"` is not provenance (ADR-0006 D2) and
+        # OFFICIAL is a property of evidence, not a presentation default.
+        official_source = None
+        for src in p.get("sources") or []:
+            if src.get("field") in (None, "all"):
+                continue
+            if not src.get("source_id"):
+                continue
+            official_source = {
+                "authority": src.get("authority"),
+                "url": src.get("url"),
+                "sourceId": src["source_id"],
+                "field": src["field"],
+                "trustLevel": src.get("trust_level"),
+            }
+            break
 
         port_records.append({
             "slug": slug,
-            "name": name,
-            "unLocode": locode,
-            "country": country,
-            "region": region,
-            "headline": f"Strategic maritime cruise port gateway for {region}.",
-            "terminalName": term,
-            "berths": ["Berth 1", "Berth 2"],
-            "gangwayDeckDefault": 5,
-            "distanceToCenterM": 500,
-            "walkingTimeMin": 10,
-            "stepFreeAccess": True,
-            "transitNote": "Official shuttle, public transit, or level pedestrian walkways available.",
-            "airportTransit": "Regional airport connection available via express bus or taxi.",
-            "currency": "Euro (€ / EUR)" if country in ["Italy", "Spain", "France", "Malta", "Germany", "Portugal"] else "USD ($)",
-            "cardAcceptancePct": 98,
-            "emergencyPhone": "112" if country in ["Italy", "Spain", "France", "Malta", "Germany", "Portugal"] else "911",
-            "negativeIntelligence": [
-                "Turn on Airplane Mode beyond port breakwaters to avoid satellite cellular roaming.",
-                "Always use official port taxi stands with metered or fixed city fares."
-            ],
-            "officialSource": {
-                "authority": f"{name} Port Authority",
-                "url": "https://www.timonelo.com",
-                "trustLevel": "OFFICIAL",
-            },
-            "callingShips": [
-                {"slug": "msc-bellissima", "name": "MSC Bellissima"},
-                {"slug": "msc-world-europa", "name": "MSC World Europa"},
-                {"slug": "msc-meraviglia", "name": "MSC Meraviglia"}
-            ],
+            "name": p.get("name"),
+            "unLocode": p.get("un_locode"),
+            "country": p.get("country"),
+            "region": p.get("region"),
+            "terminalName": first_terminal.get("name"),
+            "berths": first_terminal.get("berths") or [],
+            "gangwayDeckDefault": first_terminal.get("gangway_deck_default"),
+            "distanceToCenterM": first_terminal.get("distance_to_city_center_m"),
+            "walkingTimeMin": first_terminal.get("walking_time_min"),
+            "stepFreeAccess": first_terminal.get("step_free_access"),
+            "currency": logistics.get("currency"),
+            "cardAcceptancePct": logistics.get("card_acceptance_pct"),
+            "emergencyPhone": logistics.get("emergency_phone"),
+            "negativeIntelligence": p.get("negative_intelligence") or [],
+            "officialSource": official_source,
+            "callingShips": [],
         })
 
     ports_ts_content = f"""// AUTO-GENERATED BY tools/generate_frontend_bridge.py
 // DO NOT EDIT MANUALLY. SOURCE: data/cruise_intelligence_db.json
 
+// Nullable by design. `null` means the knowledge layer holds no evidence for
+// this field; it must render as unavailable, never as a substituted default.
 export interface PortData {{
   slug: string;
-  name: string;
-  unLocode: string;
-  country: string;
-  region: string;
-  headline: string;
-  terminalName: string;
+  name: string | null;
+  unLocode: string | null;
+  country: string | null;
+  region: string | null;
+  terminalName: string | null;
   berths: string[];
-  gangwayDeckDefault: number;
-  distanceToCenterM: number;
-  walkingTimeMin: number;
-  stepFreeAccess: boolean;
-  transitNote: string;
-  airportTransit: string;
-  currency: string;
-  cardAcceptancePct: number;
-  emergencyPhone: string;
+  gangwayDeckDefault: number | null;
+  distanceToCenterM: number | null;
+  walkingTimeMin: number | null;
+  stepFreeAccess: boolean | null;
+  currency: string | null;
+  cardAcceptancePct: number | null;
+  emergencyPhone: string | null;
   negativeIntelligence: string[];
   officialSource: {{
-    authority: string;
-    url: string;
-    trustLevel: 'OFFICIAL' | 'VERIFIED';
-  }};
+    authority: string | null;
+    url: string | null;
+    sourceId: string;
+    field: string;
+    trustLevel: string | null;
+  }} | null;
   callingShips: {{ slug: string; name: string }}[];
 }}
 
 export const PORTS_REGISTRY: PortData[] = {json.dumps(port_records, indent=2, sort_keys=True, ensure_ascii=False)};
 
-export function getPortBySlug(slug: string): PortData {{
-  const found = PORTS_REGISTRY.find((p) => p.slug === slug);
-  return found || PORTS_REGISTRY[0];
+// Returns undefined for an unknown slug. Returning PORTS_REGISTRY[0] would
+// silently present one port's data under another port's name.
+export function getPortBySlug(slug: string): PortData | undefined {{
+  return PORTS_REGISTRY.find((p) => p.slug === slug);
 }}
 """
     with open(os.path.join(FRONTEND_GEN_DIR, "ports.ts"), "w", encoding="utf-8") as f:

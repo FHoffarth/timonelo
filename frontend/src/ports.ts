@@ -7,26 +7,28 @@ export interface CuratedPort {
   slug: string;
   name: string;
   shortName: string;
-  unLocode: string;
-  country: string;
-  region: string;
+  unLocode: string | null;
+  country: string | null;
+  region: string | null;
   headlineEn: string;
   headlineDe: string;
   storyEn: string;
   storyDe: string;
-  terminalPier: string;
+  // Operational passenger facts. Null until the knowledge layer carries
+  // field-scoped evidence; see the wiring note below.
+  terminalPier: string | null;
   gangwayDeck: number | null;
   distanceToCenterKm: number | null;
   walkingTimeMin: number | null;
-  stepFreeAccess: boolean;
-  transitNoteEn: string;
-  transitNoteDe: string;
-  airportTransitEn: string;
-  airportTransitDe: string;
-  currency: string;
-  cardAcceptancePct: number;
-  emergencyPhone: string;
-  policePhone: string;
+  stepFreeAccess: boolean | null;
+  transitNoteEn: string | null;
+  transitNoteDe: string | null;
+  airportTransitEn: string | null;
+  airportTransitDe: string | null;
+  currency: string | null;
+  cardAcceptancePct: number | null;
+  emergencyPhone: string | null;
+  policePhone: string | null;
   callingShips: { slug: string; name: string }[];
   timEssentialsDe: string[];
   timEssentialsEn: string[];
@@ -55,8 +57,8 @@ const CURATED_PORT_STORIES: Record<string, {
     shortName: 'Genua',
     headlineDe: 'Historischer Kreuzfahrthafen am ligurischen Mittelmeer.',
     headlineEn: 'Historic Mediterranean turnaround gateway at Ponte dei Mille.',
-    storyDe: 'Der historische Kreuzfahrthafen Ponte dei Mille liegt direkt am Porto Antico. Von Gangway Deck 5 erreichen Sie das Herz von Genua in ca. 15 Gehminuten ohne Umwege.',
-    storyEn: 'The historic Ponte dei Mille terminal is situated right at Porto Antico. From Gangway Deck 5, the city centre of Genoa is accessible in a 15-minute walk.',
+    storyDe: 'Der historische Kreuzfahrthafen Ponte dei Mille liegt direkt am Porto Antico, am Rand der Altstadt von Genua.',
+    storyEn: 'The historic Ponte dei Mille terminal is situated right at Porto Antico, on the edge of the old town.',
     terminalPier: 'Ponte dei Mille · Terminal Ovest',
     gangwayDeck: 5,
     distanceKm: 1.2,
@@ -109,8 +111,8 @@ const CURATED_PORT_STORIES: Record<string, {
     shortName: 'Yokohama',
     headlineDe: 'Architektonisch preisgekröntes Passagierterminal der Bucht von Tokio.',
     headlineEn: 'Award-winning passenger terminal overlooking Tokyo Bay.',
-    storyDe: 'Das futuristische Osanbashi Pier bietet einen komplett stufenlosen Zugang über sein hölzernes Wellendeck. Die Red Brick Warehouses und der Yamashita-Park liegen in bequemer Gehweite.',
-    storyEn: 'The futuristic Osanbashi Pier offers completely step-free access across its undulating wooden deck. The Red Brick Warehouses and Yamashita Park are within easy walking distance.',
+    storyDe: 'Das futuristische Osanbashi Pier ist für sein hölzernes Wellendeck bekannt. In der Umgebung liegen die Red Brick Warehouses und der Yamashita-Park.',
+    storyEn: 'The futuristic Osanbashi Pier is known for its undulating wooden deck. The Red Brick Warehouses and Yamashita Park lie nearby.',
     terminalPier: 'Osanbashi International Passenger Terminal · Berth A/B',
     gangwayDeck: 5,
     distanceKm: 1.4,
@@ -136,7 +138,7 @@ const CURATED_PORT_STORIES: Record<string, {
     shortName: 'Shanghai',
     headlineDe: 'Asiens modernstes Kreuzfahrt-Drehkreuz am Zusammenfluss von Jangtsekiang und Huangpu.',
     headlineEn: "Asia's premier cruise gateway at the Yangtze & Huangpu confluence.",
-    storyDe: 'Das Wusongkou International Cruise Terminal im Distrikt Baoshan fertigt Megaliner wie MSC Bellissima an Liegeplatz 3 ab. Geräumige Hallen und moderne Zollkontrollen sorgen für zügige Einschiffung.',
+    storyDe: 'Das Wusongkou International Cruise Terminal im Distrikt Baoshan fertigt Megaliner wie MSC Bellissima ab. Geräumige Hallen und moderne Zollkontrollen prägen die Anlage.',
     storyEn: 'Wusongkou International Cruise Terminal in Baoshan district berths mega-liners including MSC Bellissima. Spacious terminals and digital customs enable efficient embarkation.',
     terminalPier: 'Wusongkou International Cruise Terminal · Terminal 2 · Liegeplatz 3',
     gangwayDeck: 5,
@@ -247,37 +249,50 @@ export const PORTS_REGISTRY: CuratedPort[] = [
   ];
   const raw = RAW_PORTS.find((p) => p.slug === slug);
 
+  // Entity fields come from the knowledge layer or not at all. The previous
+  // fallbacks invented data for any port the knowledge layer did not know:
+  // `slug.toUpperCase()` rendered "YOKOHAMA" in the UN/LOCODE field, and
+  // 'Europe / Global' / 'Mediterranean & River' / 'EUR (€)' / 98 were
+  // presentation defaults dressed as facts. Null renders as unavailable.
   return {
     slug,
-    name: raw ? raw.name : custom.shortName,
+    name: raw?.name ?? custom.shortName,
     shortName: custom.shortName,
-    unLocode: raw ? raw.unLocode : slug.toUpperCase(),
-    country: raw ? raw.country : 'Europe / Global',
-    region: raw ? raw.region : 'Mediterranean & River',
+    unLocode: raw?.unLocode ?? null,
+    country: raw?.country ?? null,
+    region: raw?.region ?? null,
     headlineDe: custom.headlineDe,
     headlineEn: custom.headlineEn,
     storyDe: custom.storyDe,
     storyEn: custom.storyEn,
-    terminalPier: custom.terminalPier,
-    gangwayDeck: custom.gangwayDeck,
-    distanceToCenterKm: custom.distanceKm,
-    walkingTimeMin: custom.walkingMin,
-    stepFreeAccess: true,
-    transitNoteDe: custom.transitDe,
-    transitNoteEn: custom.transitEn,
-    airportTransitDe: custom.airportDe,
-    airportTransitEn: custom.airportEn,
-    currency: raw ? raw.currency : 'EUR (€)',
-    cardAcceptancePct: raw ? raw.cardAcceptancePct : 98,
-    emergencyPhone: custom.emergency,
-    policePhone: custom.police,
+    // CURATED_PORT_STORIES holds hand-written values with no provenance model.
+    // Descriptive copy (shortName, headline, story) is editorial framing and
+    // stays. The operational facts below do not: a gangway deck, a walking
+    // time, a terminal assignment or an emergency number changes what a
+    // passenger does, so each needs evidence and none has any. They are wired
+    // to null rather than deleted from the source block, so the values remain
+    // available as candidates when a sourced port pipeline exists.
+    terminalPier: null,
+    gangwayDeck: null,
+    distanceToCenterKm: null,
+    walkingTimeMin: null,
+    stepFreeAccess: null,
+    transitNoteDe: null,
+    transitNoteEn: null,
+    airportTransitDe: null,
+    airportTransitEn: null,
+    currency: raw?.currency ?? null,
+    cardAcceptancePct: raw?.cardAcceptancePct ?? null,
+    emergencyPhone: null,
+    policePhone: null,
     callingShips,
-    timEssentialsDe: custom.essentialsDe,
-    timEssentialsEn: custom.essentialsEn,
+    timEssentialsDe: [],
+    timEssentialsEn: [],
   };
 });
 
-export function getPortBySlug(slug: string): CuratedPort {
-  const found = PORTS_REGISTRY.find((p) => p.slug === slug);
-  return found || PORTS_REGISTRY[0];
+// Returns undefined for an unknown slug rather than silently presenting the
+// first port's data under the requested name.
+export function getPortBySlug(slug: string): CuratedPort | undefined {
+  return PORTS_REGISTRY.find((p) => p.slug === slug);
 }

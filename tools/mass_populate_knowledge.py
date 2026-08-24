@@ -150,7 +150,43 @@ PORTS_EXPANSION = [
 ]
 
 # 3. POPULATE EXECUTION SCRIPT
+
+def refuse_port_population(port_count: int) -> None:
+    """Fail closed rather than regenerate the synthetic port identity layer.
+
+    An error is the correct output here. The alternative -- emitting the
+    fields with null values instead of literals -- would still overwrite 119
+    tracked files, discarding the explicit nulls that record which claims were
+    asserted and withdrawn, and would leave a bulk writer pointed at the
+    knowledge layer for a job that no longer exists.
+
+    Port identity now requires field-scoped evidence per port. There is no
+    bulk path to that, so there is no safe way to run this.
+    """
+    raise RuntimeError(
+        f"Refusing to populate {port_count} port identity packs.\n"
+        "\n"
+        "This generator wrote template constants into every "
+        "knowledge/ports/<slug>/identity.json and attested them as OFFICIAL "
+        "with a field:'all' source record. Those values were quarantined by "
+        "ADR-0006 and the templates have been removed.\n"
+        "\n"
+        "Port identity facts now require field-scoped evidence per port. To "
+        "add a port, create its identity.json with entity fields only "
+        "(slug, name, un_locode, country, region, coordinates) and leave "
+        "every passenger-facing field absent until sourced.\n"
+        "\n"
+        "See docs/adr/ADR-0006.md and "
+        "docs/PORT_IDENTITY_CORPUS_AUDIT_2026-08-24.md"
+    )
+
+
 def populate_knowledge_base():
+    # Fail closed before ANY write. The port guard alone left cruise-lines
+    # rewritten by the time it fired, which is a partial mutation of tracked
+    # knowledge from a script that cannot complete. Refuse up front instead.
+    refuse_port_population(len(PORTS_EXPANSION))
+
     print("=" * 60)
     print("      TIMONELO MASTER KNOWLEDGE POPULATION ENGINE")
     print("=" * 60)
@@ -165,46 +201,24 @@ def populate_knowledge_base():
     print(f"[OK] Populated {len(CRUISE_LINES)} Cruise Lines.")
 
     # 2. Ports
-    ports_dir = os.path.join(KNOWLEDGE_DIR, "ports")
-    os.makedirs(ports_dir, exist_ok=True)
-    for p in PORTS_EXPANSION:
-        slug = p["slug"]
-        port_pack_dir = os.path.join(ports_dir, slug)
-        os.makedirs(port_pack_dir, exist_ok=True)
-        identity = {
-            "slug": slug,
-            "name": p["name"],
-            "un_locode": p["un_locode"],
-            "country": p["country"],
-            "region": p["region"],
-            "coordinates": {"latitude": p["lat"], "longitude": p["lon"]},
-            "timezone": "UTC",
-            "terminals": [
-                {
-                    "name": p["terminal"],
-                    "berths": [f"{slug.title()} Berth 1", f"{slug.title()} Berth 2"],
-                    "gangway_deck_default": 5 if "River" not in p["region"] else 2,
-                    "distance_to_city_center_m": 500,
-                    "walking_time_min": 10,
-                    "step_free_access": True,
-                }
-            ],
-            "logistics": {
-                "currency": "EUR" if p["country"] in ["Italy", "Spain", "France", "Germany", "Portugal", "Greece", "Malta", "Cyprus", "Netherlands", "Belgium", "Austria", "Slovakia", "Finland", "Estonia", "Latvia"] else "USD" if p["country"] in ["United States", "Puerto Rico"] else "GBP" if p["country"] == "United Kingdom" else "NOK" if p["country"] == "Norway" else "Local",
-                "card_acceptance_pct": 98,
-                "emergency_phone": "112" if p["country"] not in ["United States", "Puerto Rico"] else "911",
-            },
-            "negative_intelligence": [
-                f"Check terminal berth assignment upon morning arrival in {p['name'].split('(')[0].strip()}.",
-                "Keep ship ID card and government passport securely zipped during shore transit."
-            ],
-            "sources": [
-                {"field": "all", "source_id": "src:official-port-authority", "trust_level": "OFFICIAL", "retrieved_at": "2026-08-16T12:00:00Z"}
-            ],
-        }
-        with open(os.path.join(port_pack_dir, "identity.json"), "w", encoding="utf-8") as f:
-            json.dump(identity, f, indent=2, sort_keys=True, ensure_ascii=False)
-    print(f"[OK] Populated {len(PORTS_EXPANSION)} Strategic Cruise Ports.")
+    #
+    # RETIRED. This block previously synthesised every passenger-facing field
+    # of knowledge/ports/<slug>/identity.json from hardcoded literals --
+    # timezone="UTC", gangway_deck_default=5 (2 for river ports),
+    # distance_to_city_center_m=500, walking_time_min=10,
+    # card_acceptance_pct=98, step_free_access=True, berths named from the
+    # slug, negative_intelligence from an f-string template -- and stamped the
+    # result with a blanket source record (field:"all",
+    # source_id:"src:official-port-authority", trust_level:"OFFICIAL").
+    #
+    # It also derived logistics.emergency_phone from a country allow-list with
+    # an else-branch, which published 112 for Mexico, Barbados, the Cayman
+    # Islands and Israel. All incorrect, all under OFFICIAL. See ADR-0006.
+    #
+    # PORTS_EXPANSION is kept above because it records where the port slugs,
+    # names, coordinates and UN/LOCODEs entered the repository. That data is
+    # unvalidated candidate identity, not canon, and nothing here may write it
+    # back as fact.
 
     print("=" * 60)
     print("Knowledge population complete. Ready for compiler & graph build.")

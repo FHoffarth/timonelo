@@ -7,12 +7,16 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO_ROOT)
 
 from src.timonelo.database.compiler import KnowledgeDBCompiler
+
+from tests.compiler_sandbox import sandbox_root
 from src.timonelo.database.graph import RelationType
 
 
 class TestCruiseIntelligenceDatabase(unittest.TestCase):
     def setUp(self):
-        self.compiler = KnowledgeDBCompiler(REPO_ROOT)
+        # Sandboxed root: compile() writes generated artifacts, and a test
+        # must not rewrite tracked files under data/. See tests/compiler_sandbox.py.
+        self.compiler = KnowledgeDBCompiler(sandbox_root())
         self.db = self.compiler.compile()
         self.graph = self.compiler.knowledge_graph
 

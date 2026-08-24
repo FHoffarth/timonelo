@@ -6,6 +6,8 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO_ROOT)
 
 from src.timonelo.database.compiler import KnowledgeDBCompiler
+
+from tests.compiler_sandbox import sandbox_root
 from src.timonelo.database.operations_schema import (
     SeasonalPeriod,
     PortCallType,
@@ -19,7 +21,8 @@ from src.timonelo.database.operations_schema import (
 class TestLiveFleetOperations(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        compiler = KnowledgeDBCompiler(REPO_ROOT)
+        # Sandboxed root: see tests/compiler_sandbox.py.
+        compiler = KnowledgeDBCompiler(sandbox_root())
         cls.db = compiler.compile()
 
     def test_operations_layer_compiled_entities(self):

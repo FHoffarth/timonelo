@@ -8,35 +8,22 @@
     "latitude": 48.14,
     "longitude": 17.11
   },
-  "timezone": "UTC",
+  "timezone": null,
   "terminals": [
     {
       "name": "Fajnorovo Nábrežie (Old Town Promenade)",
-      "berths": [
-        "Bratislava Berth 1",
-        "Bratislava Berth 2"
-      ],
-      "gangway_deck_default": 2,
-      "distance_to_city_center_m": 500,
-      "walking_time_min": 10,
-      "step_free_access": true
+      "berths": [],
+      "gangway_deck_default": null,
+      "distance_to_city_center_m": null,
+      "walking_time_min": null,
+      "step_free_access": null
     }
   ],
   "logistics": {
-    "currency": "EUR",
-    "card_acceptance_pct": 98,
-    "emergency_phone": "112"
+    "currency": null,
+    "card_acceptance_pct": null,
+    "emergency_phone": null
   },
-  "negative_intelligence": [
-    "Check terminal berth assignment upon morning arrival in Port of Bratislava.",
-    "Keep ship ID card and government passport securely zipped during shore transit."
-  ],
-  "sources": [
-    {
-      "field": "all",
-      "source_id": "src:official-port-authority",
-      "trust_level": "OFFICIAL",
-      "retrieved_at": "2026-08-16T12:00:00Z"
-    }
-  ]
+  "negative_intelligence": [],
+  "sources": []
 }
