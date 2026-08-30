@@ -42,6 +42,8 @@ export type SpatialClassification =
 
 export type SpatialSide = "PORT" | "STARBOARD" | "CENTER";
 
+import type { PassengerAdmission } from "./passengerAdmission";
+
 // P0-H1: provenance fields are nullable — absent source data fails closed
 // rather than being substituted with a fabricated value.
 export interface EvidenceReference {
@@ -69,7 +71,7 @@ export interface SpatialRelations {
   [key: string]: string | null | undefined;
 }
 
-export interface SemanticEntity {
+export interface SemanticEntity extends PassengerAdmission {
   id: string;
   iri: string; // W3C Linked Data IRI (e.g., timonelo:vessel/bel/space/14122)
   label: string;
@@ -124,7 +126,7 @@ export interface VesselKnowledgeGraph {
     derived_count: number;
     unknown_count: number;
     conflict_count: number;
-    mean_confidence: number;
+    mean_confidence: number | null;
   };
   levels: SemanticLevel[];
 }

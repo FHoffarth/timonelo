@@ -2,9 +2,6 @@ import { ShipProfile, CabinAnalysis, TravelInfoItem } from "../types";
 import { knowledgeRepository } from "../knowledge";
 
 const bellissimaSpecs = knowledgeRepository.getShip("msc-bellissima");
-const bellissimaDeck14 = knowledgeRepository.getDeck("msc-bellissima", 14);
-const bellissimaCabins = knowledgeRepository.getCabins("msc-bellissima");
-const deluxeInside = bellissimaCabins?.cabin_categories?.find((c: any) => c.id === "CAT-DELUXE-INSIDE");
 
 export const CANONICAL_SHIPS: Record<string, ShipProfile> = {
   "msc-virtuosa": {
@@ -70,26 +67,6 @@ export const CANONICAL_CABINS: Record<string, CabinAnalysis> = {
     epistemicStatus: "KNOWN",
     statements: ["STM-VIR-12142-CAT", "STM-VIR-12142-LOC", "STM-VIR-12142-DIM"],
     evidenceArtifactId: "MSC-VIR-GA-2021-P12",
-  },
-  "14122": {
-    id: "14122",
-    shipSlug: bellissimaSpecs.vessel_id,
-    deckNumber: 14,
-    deckName: bellissimaDeck14 ? bellissimaDeck14.name : "Deck 14",
-    category: deluxeInside ? `${deluxeInside.name} (IR2)` : "Deluxe Interior (IR2)",
-    tier: "Fantastica Tier",
-    side: "STARBOARD",
-    zone: "MIDSHIP_FORWARD",
-    sqmInterior: deluxeInside?.metrics?.sqm_approx || 16,
-    sqmBalcony: 0,
-    bedConfig: bellissimaCabins?.summary?.standard_amenities?.[0] || "Twin beds convertible to double (king size)",
-    accessible: true,
-    heroImageUrl: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80",
-    locationAnalysis:
-      "Cabin 14122 is a PRM-accessible Deluxe Interior stateroom situated on Deck 14 Starboard. It is positioned adjacent to the central vertical service core with convenient, step-free access to Midship Lift Core A. It sits directly beneath the forward quiet seating zone of the Marketplace Buffet on Deck 15.",
-    epistemicStatus: "VERIFIED",
-    statements: ["STM-BEL-14122-PRM", "STM-BEL-14122-LOC"],
-    evidenceArtifactId: bellissimaCabins?.provenance?.source_artifact || "MSC_BELLISSIMA_STATEROOM_CATALOG_2026",
   },
 };
 

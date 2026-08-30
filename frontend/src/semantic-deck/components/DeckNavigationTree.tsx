@@ -1,14 +1,8 @@
-import React from "react";
 import { VesselKnowledgeGraph } from "../types";
 import { useTheme } from "../themeContext";
 import {
-  Ship,
   ChevronDown,
-  Layers,
-  ShieldCheck,
   FileText,
-  Workflow,
-  Sparkles,
 } from "lucide-react";
 
 interface DeckNavigationTreeProps {
@@ -124,7 +118,7 @@ export default function DeckNavigationTree({
                         {level.level_name}
                       </span>
                       <span className="text-[10px] text-slate-400 font-mono">
-                        {level.spaces_count} Verified Spaces
+                        {level.spaces_count} schematic items
                       </span>
                     </div>
                   </div>
@@ -146,21 +140,19 @@ export default function DeckNavigationTree({
         }`}
       >
         <div className="flex items-center justify-between text-[10px] uppercase font-bold text-slate-400">
-          <span>Truth Grounding</span>
-          <span className="text-emerald-400 font-semibold">
-            {(currentVessel.epistemic_summary.mean_confidence * 100).toFixed(0)}% Verified
-          </span>
+          <span>Passenger Admission</span>
+          <span className="text-slate-400 font-semibold">BLOCKED / UNKNOWN</span>
         </div>
 
         <div className="grid grid-cols-2 gap-1.5 text-[10px]">
           <div className={`p-1.5 rounded-lg ${isNight ? "bg-slate-900" : "bg-white border border-slate-200"}`}>
-            <span className="text-slate-500 block text-[9px]">Direct</span>
+            <span className="text-slate-500 block text-[9px]">Legacy direct labels</span>
             <span className="font-bold text-emerald-400 text-xs">
               {currentVessel.epistemic_summary.direct_evidence_count}
             </span>
           </div>
           <div className={`p-1.5 rounded-lg ${isNight ? "bg-slate-900" : "bg-white border border-slate-200"}`}>
-            <span className="text-slate-500 block text-[9px]">Derived</span>
+            <span className="text-slate-500 block text-[9px]">Legacy derived labels</span>
             <span className="font-bold text-sky-400 text-xs">
               {currentVessel.epistemic_summary.derived_count}
             </span>

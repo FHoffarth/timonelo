@@ -61,9 +61,9 @@ export interface ReasonStep {
 export interface ExplainableScore {
   key: string;
   name: string;
-  baseline_score: number;
-  final_score: number;
-  grade: "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION";
+  baseline_score: number | null;
+  final_score: number | null;
+  grade: "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION" | "UNAVAILABLE";
   // P0-H2: null when no triggered rule carried a backed confidence value.
   confidence: number | null;
   steps: ReasonStep[];

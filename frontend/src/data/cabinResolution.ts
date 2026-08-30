@@ -32,7 +32,7 @@ export interface GraphEntityLike {
   side: string;
   zone: string;
   accessible: boolean;
-  evidence_links?: Array<{ artifact_id?: string }>;
+  evidence_links?: Array<{ artifact_id?: string | null }>;
 }
 
 // Resolved cabin metadata for the deep-dive render. Canonical fields the graph

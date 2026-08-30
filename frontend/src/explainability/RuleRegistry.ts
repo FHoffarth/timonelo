@@ -207,7 +207,7 @@ export const RULE_REGISTRY: Record<string, RuleDefinition> = {
     id: "RULE-ACC-001",
     category: "accessibility",
     title: "Official PRM Certified Accessible Stateroom (H)",
-    description: "Official PRM stateroom certified with 85cm wide doors, zero threshold step-free entry, and roll-in shower with grab bars.",
+    description: "An admitted mobility designation contributes to the accessibility result; detailed physical features require separate evidence.",
     weight: 28,
     polarity: "POSITIVE",
     required_graph_relations: ["accessible"],

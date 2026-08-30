@@ -1,6 +1,5 @@
-import React from "react";
 import { VesselKnowledgeGraph } from "../types";
-import { Ship, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { knowledgeRepository } from "../../knowledge";
 
@@ -91,7 +90,7 @@ export default function DeckNavigationStack({
                         {level.level_name}
                       </span>
                       <span className="text-[10px] text-slate-400 font-mono">
-                        {level.spaces_count} Verified Spaces
+                        {level.spaces_count} schematic items
                       </span>
                     </div>
                   </div>
@@ -111,7 +110,7 @@ export default function DeckNavigationStack({
         <div className="flex items-center justify-between text-slate-400 text-[10px] uppercase font-bold">
           <span>Truth Grounding</span>
           <span className="text-emerald-400 font-semibold">
-            {(currentVessel.epistemic_summary.mean_confidence * 100).toFixed(0)}% Verified
+            Confidence unavailable
           </span>
         </div>
         <div className="grid grid-cols-2 gap-1.5 text-[10px]">

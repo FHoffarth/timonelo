@@ -8,6 +8,24 @@
 import { ExplainableScore, ReasonStep, TriggeredRule, EvidenceProvenance } from "./types";
 
 export class ReasonTreeBuilder {
+  public static buildUnavailableScore(key: string, name: string): ExplainableScore {
+    return {
+      key,
+      name,
+      baseline_score: null,
+      final_score: null,
+      grade: "UNAVAILABLE",
+      confidence: null,
+      steps: [],
+      rules_triggered: [],
+      positive_evidence: [],
+      negative_evidence: [],
+      conflicting_evidence: [],
+      unknown_evidence: [],
+      sources: [],
+    };
+  }
+
   public static buildExplainableScore(
     key: string,
     name: string,

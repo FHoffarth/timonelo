@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExplainableCabinIntelligence, ExplainableScore, ReasonStep, EvidenceProvenance } from "./types";
+import { ExplainableCabinIntelligence, ExplainableScore } from "./types";
 import { ExplainabilityEngine } from "./ExplainabilityEngine";
 import { SemanticEntity } from "../semantic-deck/types";
 import {
@@ -9,15 +9,9 @@ import {
   Footprints,
   EyeOff,
   Accessibility,
-  ArrowRight,
-  Layers,
   FileText,
-  AlertTriangle,
-  HelpCircle,
   CheckCircle2,
   XCircle,
-  ChevronDown,
-  ChevronUp,
   Workflow,
   Sparkles,
 } from "lucide-react";
@@ -41,7 +35,8 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
 
   const currentScore: ExplainableScore = intel.scores[activeKey] || intel.scores.quiet;
 
-  const getScoreBadge = (score: number) => {
+  const getScoreBadge = (score: number | null) => {
+    if (score === null) return "bg-slate-50 text-slate-500 border-slate-300 dark:bg-slate-800 dark:text-slate-400";
     if (score >= 88) return "bg-emerald-50 text-emerald-700 border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-400";
     if (score >= 75) return "bg-blue-50 text-blue-700 border-blue-300 dark:bg-blue-950/60 dark:text-blue-400";
     if (score >= 60) return "bg-amber-50 text-amber-700 border-amber-300 dark:bg-amber-950/60 dark:text-amber-400";
@@ -76,7 +71,7 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
             Cabin {intel.cabin_id} Decision Trace
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            {intel.deck_name} • Every score is broken down step by step into the rules that produced it.
+            {intel.deck_name} • Scores remain unavailable until every required fact is admitted.
           </p>
         </div>
 
@@ -87,7 +82,7 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
             <div>
               <div className="text-[10px] uppercase font-mono text-slate-400 font-bold">Source Confidence</div>
               <div className="font-mono text-sm font-bold text-slate-800 dark:text-white">
-                {(intel.global_epistemic_confidence * 100).toFixed(0)}%
+                {intel.global_epistemic_confidence === null ? "Unavailable" : "Computed confidence available"}
               </div>
             </div>
           </div>
@@ -113,7 +108,7 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
               <span className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold ${
                 isActive ? "bg-white/20 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
               }`}>
-                {sc.final_score}
+                {sc.final_score ?? "—"}
               </span>
             </button>
           );
@@ -131,7 +126,9 @@ export const ExplainabilityCard: React.FC<ExplainabilityCardProps> = ({
 
         <div className="flex items-center gap-3">
           <span className={`px-3 py-1 rounded-xl text-sm font-mono font-bold border ${getScoreBadge(currentScore.final_score)}`}>
-            Score: {currentScore.final_score} / 100 ({currentScore.grade})
+            {currentScore.final_score === null
+              ? "Score unavailable"
+              : `Score: ${currentScore.final_score} / 100 (${currentScore.grade})`}
           </span>
         </div>
       </div>

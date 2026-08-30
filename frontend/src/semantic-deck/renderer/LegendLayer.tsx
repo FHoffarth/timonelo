@@ -18,7 +18,7 @@ export const LegendLayer: React.FC<LegendLayerProps> = ({
     }`}>
       {/* Categories & Legend Keys */}
       <div className="flex items-center gap-3">
-        <span className="text-[10px] font-mono uppercase font-bold text-slate-400">LEGEND:</span>
+        <span className="text-[10px] font-mono uppercase font-bold text-slate-400">SCHEMATIC LABELS:</span>
         <div className="flex items-center gap-1.5">
           <span className="w-3 h-3 rounded-xs bg-[#C58A46]" />
           <span className="text-[11px]">Suite</span>
@@ -46,7 +46,7 @@ export const LegendLayer: React.FC<LegendLayerProps> = ({
       {/* Overlay Mode Switcher */}
       <div className="hidden sm:flex items-center gap-1">
         <span className="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">OVERLAY:</span>
-        {(["none", "epistemic", "acoustic"] as RenderOverlayMode[]).map((mode) => (
+        {(["none", "epistemic"] as RenderOverlayMode[]).map((mode) => (
           <button
             key={mode}
             onClick={() => onSelectOverlayMode(mode)}

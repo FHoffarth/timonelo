@@ -1,5 +1,6 @@
 import React from "react";
 import { LayerProps } from "./types";
+import { isPassengerFactAdmitted } from "../passengerAdmission";
 
 interface LiftCoreDefinition {
   id: string;
@@ -12,12 +13,12 @@ interface LiftCoreDefinition {
 
 export const LiftLayer: React.FC<LayerProps & { onSelectLevel?: (lvl: number) => void }> = ({
   level,
-  allLevels = [],
   selectedEntity,
   onSelectLevel,
   isNight = false,
 }) => {
-  // Verified vertical cores geometry
+  // Schematic landmarks only. These rectangles carry no source geometry,
+  // connectivity, nearest-core, or distance semantics.
   const liftCores: LiftCoreDefinition[] = [
     { id: "LIFT_CORE_A_FWD", name: "Lift Core A (Forward)", x: 740, y: 130, shaftHeight: 40 },
     { id: "LIFT_CORE_B_MID", name: "Lift Core B (Midship)", x: 490, y: 130, shaftHeight: 40 },
@@ -25,7 +26,10 @@ export const LiftLayer: React.FC<LayerProps & { onSelectLevel?: (lvl: number) =>
     { id: "LIFT_CORE_PANORAMIC", name: "Panoramic Atrium Lifts", x: 440, y: 52, shaftHeight: 28, isPanoramic: true },
   ];
 
-  const connectedLiftId = selectedEntity?.relations?.connected_vertical_core;
+  const connectedLiftId = selectedEntity &&
+    isPassengerFactAdmitted(selectedEntity, "connected_vertical_core")
+    ? selectedEntity.relations?.connected_vertical_core
+    : null;
 
   return (
     <g id="lift-layer">

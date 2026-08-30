@@ -6,10 +6,16 @@ import {
   SemanticEntity,
   SpatialClassification,
   LegacySemanticDeckState,
+  EpistemicState,
   Method,
   EvidenceCondition,
   StandardsExportPayload,
 } from "./types";
+import {
+  LEGACY_SCHEMATIC_ADMISSION,
+  isPassengerEntityAdmitted,
+  isPassengerFactAdmitted,
+} from "./passengerAdmission";
 
 export function parseLegacySemanticState(val: unknown): LegacySemanticDeckState {
   if (typeof val === "string") {
@@ -70,6 +76,10 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
       }));
 
       return {
+        // This dataset is retained for the schematic Living Deck only. Its
+        // legacy DIRECT/review/confidence fields are not canonical admission
+        // axes and can never authorize passenger intelligence.
+        ...LEGACY_SCHEMATIC_ADMISSION,
         id: String(o.id),
         iri: `https://timonelo.io/spatial/${raw.vessel_id}/spaces/${o.id}`,
         label: o.label || `Space ${o.id}`,
@@ -133,7 +143,9 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
       derived_count: raw.epistemic_summary?.derived_count || 0,
       unknown_count: raw.epistemic_summary?.unknown_count || 0,
       conflict_count: raw.epistemic_summary?.conflict_count || 0,
-      mean_confidence: raw.epistemic_summary?.confidence_avg || 0.99,
+      // Legacy corpus averages are stored confidence, not a computed canonical
+      // metric. They are unavailable at the passenger boundary.
+      mean_confidence: null,
     },
     levels,
   };
@@ -213,9 +225,19 @@ export class TimoneloSpatialApiClient {
   }
 
   public exportStandardsPayload(entity: SemanticEntity): StandardsExportPayload {
-    const fore = entity.relations.adjacent_fore;
-    const aft = entity.relations.adjacent_aft;
-    const across = entity.relations.adjacent_across;
+    const admitted = isPassengerEntityAdmitted(entity);
+    const identityAdmitted = isPassengerFactAdmitted(entity, "identity");
+    const deckAdmitted = isPassengerFactAdmitted(entity, "deck");
+    const sourceAdmitted = isPassengerFactAdmitted(entity, "source_artifact");
+    const fore = isPassengerFactAdmitted(entity, "adjacent_fore")
+      ? entity.relations.adjacent_fore
+      : null;
+    const aft = isPassengerFactAdmitted(entity, "adjacent_aft")
+      ? entity.relations.adjacent_aft
+      : null;
+    const across = isPassengerFactAdmitted(entity, "adjacent_across")
+      ? entity.relations.adjacent_across
+      : null;
 
     const jsonLd = {
       "@context": {
@@ -225,33 +247,52 @@ export class TimoneloSpatialApiClient {
         rdfs: "http://www.w3.org/2000/01/rdf-schema#",
       },
       "@id": entity.iri,
-      "@type": ["bot:Space", "tim:VesselStateroom"],
-      "rdfs:label": entity.label,
-      "bot:hasBuildingStorey": `https://timonelo.io/spatial/${this.activeGraph.vessel_id}/levels/${entity.level}`,
       "bot:adjacentElement": [
         fore ? `https://timonelo.io/spatial/${this.activeGraph.vessel_id}/spaces/${fore}` : null,
         aft ? `https://timonelo.io/spatial/${this.activeGraph.vessel_id}/spaces/${aft}` : null,
         across ? `https://timonelo.io/spatial/${this.activeGraph.vessel_id}/spaces/${across}` : null,
       ].filter(Boolean),
-      "tim:epistemicState": entity.epistemic_state,
-      "tim:confidenceScore": entity.confidence,
-      "prov:wasDerivedFrom": entity.evidence_links.map((e) => `urn:artifact:${e.artifact_id}`),
+      "tim:dataOrigin": entity.data_origin,
+      ...(identityAdmitted ? {
+        "@type": ["bot:Space", "tim:VesselStateroom"],
+        "rdfs:label": entity.label,
+      } : {}),
+      ...(deckAdmitted ? {
+        "bot:hasBuildingStorey": `https://timonelo.io/spatial/${this.activeGraph.vessel_id}/levels/${entity.level}`,
+      } : {}),
+      ...(admitted ? {
+        "tim:evidenceCondition": entity.evidence_condition,
+        "tim:reviewState": entity.human_review_state,
+        "tim:publishStatus": entity.publish_status,
+        ...(sourceAdmitted ? { "prov:wasDerivedFrom": entity.evidence_links
+          .filter((e) => e.artifact_id)
+          .map((e) => `urn:artifact:${e.artifact_id}`) } : {}),
+      } : {}),
     };
 
-    const botTurtle = `@prefix bot: <https://w3id.org/bot#> .\n@prefix tim: <https://timonelo.io/spatial/ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<${entity.iri}>\n    a bot:Space, tim:Stateroom ;\n    rdfs:label "${entity.label}" ;\n    bot:hasBuildingStorey <https://timonelo.io/spatial/${this.activeGraph.vessel_id}/levels/${entity.level}> ;\n    tim:side "${entity.side}" ;\n    tim:zone "${entity.zone}" ;\n    tim:epistemicState "${entity.epistemic_state}" .\n`;
+    const botDeckLine = deckAdmitted
+      ? ` ;\n    bot:hasBuildingStorey <https://timonelo.io/spatial/${this.activeGraph.vessel_id}/levels/${entity.level}>`
+      : "";
+    const botTurtle = identityAdmitted
+      ? `@prefix bot: <https://w3id.org/bot#> .\n@prefix tim: <https://timonelo.io/spatial/ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<${entity.iri}>\n    a bot:Space, tim:Stateroom ;\n    rdfs:label "${entity.label}"${botDeckLine} .\n`
+      : `# BOT topology unavailable: ${entity.data_origin} is schematic-only.\n`;
 
     // P0-H1: emit provenance triples only for values the entity actually has.
     // A missing artifact or confidence is omitted, never back-filled.
-    const provArtifactId = entity.evidence_links[0]?.artifact_id ?? null;
+    const provArtifactId = sourceAdmitted ? entity.evidence_links[0]?.artifact_id ?? null : null;
     const derivedFromLine = provArtifactId
       ? `    prov:wasDerivedFrom <urn:artifact:${provArtifactId}> ;\n`
       : "";
-    const confidenceLine = typeof entity.confidence === "number"
+    const confidenceLine = admitted && typeof entity.confidence === "number"
       ? ` ;\n        tim:confidence "${entity.confidence}"^^xsd:decimal`
       : "";
-    const provTurtle = `@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix tim: <https://timonelo.io/ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<${entity.iri}>\n    a prov:Entity ;\n${derivedFromLine}    prov:wasGeneratedBy <urn:activity:TimoneloTruthEngineExtraction> ;\n    prov:qualifiedAttribution [\n        a prov:Attribution ;\n        prov:agent <urn:agent:TimoneloScientificExtractor>${confidenceLine}\n    ] .\n`;
+    const provTurtle = sourceAdmitted
+      ? `@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix tim: <https://timonelo.io/ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<${entity.iri}>\n    a prov:Entity ;\n${derivedFromLine}    prov:wasGeneratedBy <urn:activity:TimoneloTruthEngineExtraction> ;\n    prov:qualifiedAttribution [\n        a prov:Attribution ;\n        prov:agent <urn:agent:TimoneloScientificExtractor>${confidenceLine}\n    ] .\n`
+      : `# Provenance unavailable: entity is ${entity.data_origin} and has not crossed the passenger evidence gate.\n`;
 
-    const indoorGml = `<?xml version="1.0" encoding="UTF-8"?>\n<IndoorFeatures xmlns="http://www.opengis.net/indoorgml/1.0/core"\n                xmlns:gml="http://www.opengis.net/gml/3.2"\n                xmlns:xlink="http://www.w3.org/1999/xlink">\n  <primalSpaceFeatures>\n    <CellSpace gml:id="CS_${entity.id}">\n      <gml:name>${entity.label}</gml:name>\n      <duality xlink:href="#State_${entity.id}"/>\n      ${fore ? `<connects xlink:href="#CS_${fore}"/>\n` : ""}\n      ${aft ? `<connects xlink:href="#CS_${aft}"/>\n` : ""}\n    </CellSpace>\n  </primalSpaceFeatures>\n</IndoorFeatures>`;
+    const indoorGml = identityAdmitted
+      ? `<?xml version="1.0" encoding="UTF-8"?>\n<IndoorFeatures xmlns="http://www.opengis.net/indoorgml/1.0/core"\n                xmlns:gml="http://www.opengis.net/gml/3.2"\n                xmlns:xlink="http://www.w3.org/1999/xlink">\n  <primalSpaceFeatures>\n    <CellSpace gml:id="CS_${entity.id}">\n      <gml:name>${entity.label}</gml:name>\n      <duality xlink:href="#State_${entity.id}"/>\n      ${fore ? `<connects xlink:href="#CS_${fore}"/>\n` : ""}\n      ${aft ? `<connects xlink:href="#CS_${aft}"/>\n` : ""}\n    </CellSpace>\n  </primalSpaceFeatures>\n</IndoorFeatures>`
+      : `<!-- IndoorGML unavailable: ${entity.data_origin} is schematic-only. -->`;
 
     return {
       entity_id: entity.id,
@@ -342,7 +383,7 @@ export function getEpistemicPatternToken(state: EpistemicState): {
       return {
         borderClass: "border-slate-700/80 hover:border-sky-400",
         badgeClass: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-        label: "DIRECT EVIDENTIARY",
+        label: "LEGACY DIRECT LABEL",
         statusIcon: "ShieldCheck",
       };
     case "DERIVED":
