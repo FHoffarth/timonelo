@@ -9,6 +9,7 @@ import SemanticObjectInspector from "../../semantic-deck/components/SemanticObje
 import StandardsInspectorModal from "../../semantic-deck/components/StandardsInspectorModal";
 import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
 import { SemanticEntity } from "../../semantic-deck/types";
+import { UnknownVesselError } from "../../semantic-deck/vesselIdentity";
 
 interface ShipProfilePageProps {
   shipSlug?: string;
@@ -19,7 +20,8 @@ export default function ShipProfilePage({
   shipSlug = "msc-bellissima",
   onNavigateCabin,
 }: ShipProfilePageProps) {
-  const fallbackShip: ShipProfile = CANONICAL_SHIPS[shipSlug] || CANONICAL_SHIPS["msc-bellissima"];
+  const fallbackShip: ShipProfile | undefined = CANONICAL_SHIPS[shipSlug];
+  if (!fallbackShip) throw new UnknownVesselError(shipSlug);
   const [activeTab, setActiveTab] = useState<string>("overview");
 
   // 1. Technical specifications & metadata (technical.json)

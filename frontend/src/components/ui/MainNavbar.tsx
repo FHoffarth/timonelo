@@ -1,7 +1,7 @@
 import React from "react";
-import { Search, Workflow } from "lucide-react";
+import { Search } from "lucide-react";
 
-export type NavRoute = "home" | "ships" | "ports" | "routes" | "cruise-math" | "travel-info" | "my-cruise" | "knowledge-factory";
+export type NavRoute = "home" | "ships" | "ports" | "routes" | "cruise-math" | "travel-info" | "my-cruise";
 
 interface MainNavbarProps {
   currentRoute: NavRoute;
@@ -20,7 +20,6 @@ export default function MainNavbar({
     { id: "routes", label: "Routes" },
     { id: "cruise-math", label: "Cruise Math" },
     { id: "travel-info", label: "Travel Info" },
-    { id: "knowledge-factory", label: "Knowledge Factory" },
   ];
 
   return (

@@ -3,7 +3,10 @@ import { LegacyEpistemicBadge } from "../ui/EpistemicBadge";
 import { CANONICAL_CABINS } from "../../data/canonicalPlatformData";
 import { isKnownCabin, resolveCabinMeta } from "../../data/cabinResolution";
 import { knowledgeRepository } from "../../knowledge";
-import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
+import {
+  isSpatialVesselRegistered,
+  TimoneloSpatialApiClient,
+} from "../../semantic-deck/apiClient";
 import { SemanticEntity } from "../../semantic-deck/types";
 import {
   isPassengerEntityAdmitted,
@@ -14,23 +17,39 @@ import ExplainabilityCard from "../../explainability/ExplainabilityCard";
 import { ArrowLeft, MapPin, HelpCircle } from "lucide-react";
 
 interface CabinDeepDivePageProps {
+  vesselId?: string;
   cabinId?: string;
   onBack: () => void;
 }
 
 export default function CabinDeepDivePage({
-  cabinId = "14122",
+  vesselId,
+  cabinId,
   onBack,
 }: CabinDeepDivePageProps) {
-  // Spatial Client Entity Lookup (constructed first so resolution can consult it)
-  const apiClient = useMemo(() => new TimoneloSpatialApiClient("msc-bellissima"), []);
+  const apiClient = useMemo(
+    () =>
+      isSpatialVesselRegistered(vesselId)
+        ? new TimoneloSpatialApiClient(vesselId!)
+        : null,
+    [vesselId],
+  );
 
   // P0-D FAIL-CLOSED: only treat this cabin as known if it is backed by real
   // data — a canonical record OR a real spatial-graph entity. Unknown IDs must
   // never be substituted with cabin 14122, nor have facts fabricated for them.
-  const canonicalCabin = CANONICAL_CABINS[cabinId];
-  const knownEntity = apiClient.getEntity(cabinId);
-  const cabinIsKnown = isKnownCabin(cabinId, CANONICAL_CABINS, (id) => apiClient.getEntity(id));
+  const canonicalCandidate = cabinId ? CANONICAL_CABINS[cabinId] : undefined;
+  const canonicalCabin =
+    canonicalCandidate?.shipSlug === vesselId ? canonicalCandidate : undefined;
+  const knownEntity =
+    vesselId && cabinId ? apiClient?.getEntityForVessel(vesselId, cabinId) : undefined;
+  const vesselCanonicalCabins =
+    cabinId && canonicalCabin ? { [cabinId]: canonicalCabin } : {};
+  const cabinIsKnown = isKnownCabin(
+    cabinId,
+    vesselCanonicalCabins,
+    (id) => (vesselId ? apiClient?.getEntityForVessel(vesselId, id) : undefined),
+  );
   const cabinIsPassengerAdmitted = Boolean(
     knownEntity &&
       isPassengerEntityAdmitted(knownEntity) &&
@@ -43,7 +62,10 @@ export default function CabinDeepDivePage({
   // image / deck name / PRM flag. Fields the graph does not carry stay null and
   // render as "Unavailable" below (null, never another cabin's value). The
   // No cross-cabin fallback: absence stays absent.
-  const fallbackCabin: any = resolveCabinMeta(cabinId, canonicalCabin, knownEntity);
+  const fallbackCabin: any =
+    vesselId && cabinId
+      ? resolveCabinMeta(vesselId, cabinId, canonicalCabin, knownEntity)
+      : null;
 
   // Query knowledge layer for Bellissima stateroom
   const isBellissima = fallbackCabin?.shipSlug === "msc-bellissima";
@@ -51,7 +73,7 @@ export default function CabinDeepDivePage({
   const bellissimaDeck = isBellissima && fallbackCabin
     ? knowledgeRepository.getDeck("msc-bellissima", fallbackCabin.deckNumber)
     : null;
-  const shipName = bellissimaShip ? bellissimaShip.vessel_name : "MSC Bellissima";
+  const shipName = bellissimaShip ? bellissimaShip.vessel_name : "Unavailable";
   const deckName = bellissimaDeck ? bellissimaDeck.name : fallbackCabin?.deckName || "Unavailable";
 
   // The passenger surface consumes an admitted spatial entity or nothing.
@@ -86,7 +108,7 @@ export default function CabinDeepDivePage({
               <LegacyEpistemicBadge status="UNKNOWN" />
             </div>
             <h1 className="font-display text-2xl sm:text-3xl font-bold text-[#0C1B2A] tracking-tight">
-              Cabin {cabinId} has no admitted passenger briefing
+              Cabin {cabinId || "unknown"} has no admitted passenger briefing
             </h1>
             <p className="text-sm text-[#5B6570] leading-relaxed">
               A schematic or unreviewed record may exist, but it has not crossed

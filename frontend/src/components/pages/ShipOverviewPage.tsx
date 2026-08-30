@@ -46,3 +46,23 @@ export function ReferenceShipOverviewPreview() {
     />
   );
 }
+
+export function hasAdmittedSpatialOverview(vesselId: string | undefined | null): boolean {
+  return vesselId === 'msc-bellissima';
+}
+
+export function PassengerShipOverview({ vesselId }: { vesselId?: string }) {
+  if (!hasAdmittedSpatialOverview(vesselId)) {
+    return (
+      <div className="w-full flex-1 bg-[#FBF8F3] px-6 py-16">
+        <div className="max-w-2xl mx-auto rounded-3xl border border-[#0C1B2A]/10 bg-white p-8 text-center">
+          <p className="font-mono text-xs text-[#5B6570]">UNKNOWN</p>
+          <h1 className="mt-3 font-display text-2xl font-bold text-[#0C1B2A]">
+            No admitted spatial overview is available for this vessel
+          </h1>
+        </div>
+      </div>
+    );
+  }
+  return <ReferenceShipOverviewPreview />;
+}

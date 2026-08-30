@@ -5,7 +5,7 @@ Tests CruiseBriefingSynthesizer, NegativeIntelligence, Embarkation, Ports, Weath
 
 import unittest
 from timonelo.ontology.bellissima import create_bellissima_ontology
-from timonelo.factory.patch_engine import ShipPatchEngine
+from timonelo.factory.patch_engine import HypothesisPublicationBlocked, ShipPatchEngine
 from timonelo.intelligence import (
     CruiseBriefingSynthesizer,
     CruiseBriefing,
@@ -108,7 +108,7 @@ class TestCruiseIntelligenceRuntime(unittest.TestCase):
         briefing = CruiseBriefingSynthesizer.generate_briefing(self.bellissima, "99999")
         self.assertIsNone(briefing)
 
-    def test_multi_vessel_briefing_inheritance(self):
+    def test_sister_ship_hypothesis_cannot_generate_passenger_briefing(self):
         patch_meraviglia = {
             "target_imo": "IMO9647710",
             "target_name": "MSC Meraviglia",
@@ -122,10 +122,8 @@ class TestCruiseIntelligenceRuntime(unittest.TestCase):
             ],
         }
         meraviglia = ShipPatchEngine.apply_patch(self.bellissima, patch_meraviglia)
-        briefing = CruiseBriefingSynthesizer.generate_briefing(meraviglia, "12122")
-        self.assertIsNotNone(briefing)
-        self.assertEqual(briefing.ship_name, "MSC Meraviglia")
-        self.assertEqual(briefing.ship_imo, "IMO9647710")
+        with self.assertRaises(HypothesisPublicationBlocked):
+            CruiseBriefingSynthesizer.generate_briefing(meraviglia, "12122")
 
 
 if __name__ == "__main__":

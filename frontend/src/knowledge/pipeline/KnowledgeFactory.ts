@@ -5,9 +5,9 @@
  * Manages the transition from raw artifact evidence to canonical graph & geometry.
  */
 
-import { ArtifactQueueManager, QueuedArtifact } from "./ArtifactQueue";
-import { ConflictResolver, ConflictDecision } from "./ConflictResolver";
-import { KnowledgePublisher, PublishReleaseReport } from "./KnowledgePublisher";
+import { ArtifactQueueManager } from "./ArtifactQueue";
+import { ConflictResolver } from "./ConflictResolver";
+import type { PublishReleaseReport } from "./KnowledgePublisher";
 
 export interface ShipProductionStatus {
   vessel_id: string;
@@ -124,7 +124,7 @@ export class KnowledgeFactory {
 
   public static executeIngestionPipeline(
     queueId: string,
-    officerName: string = "Bridge Officer Tim"
+    _officerName: string = "Bridge Officer Tim"
   ): { success: boolean; release?: PublishReleaseReport; message: string } {
     const queue = ArtifactQueueManager.getQueue();
     const item = queue.find((q) => q.queue_id === queueId);
@@ -133,29 +133,9 @@ export class KnowledgeFactory {
       return { success: false, message: `Artifact ${queueId} not found in pipeline queue.` };
     }
 
-    // Advance to Schema Validating
-    ArtifactQueueManager.advanceStage(queueId, "SCHEMA_VALIDATING");
-
-    // Advance to Diff Ready
-    ArtifactQueueManager.advanceStage(queueId, "DIFF_READY");
-
-    // Execute Release via Publisher
-    const release = KnowledgePublisher.validateAndPublish(item.evidence.target_vessel_id, "2026.11.0", officerName);
-
-    if (release.all_gates_passed) {
-      ArtifactQueueManager.advanceStage(queueId, "PUBLISHED");
-      return {
-        success: true,
-        release,
-        message: `Successfully validated and published canonical knowledge for ${item.evidence.target_vessel_id}!`,
-      };
-    } else {
-      ArtifactQueueManager.advanceStage(queueId, "REJECTED");
-      return {
-        success: false,
-        release,
-        message: `Publication failed due to validation gate errors.`,
-      };
-    }
+    return {
+      success: false,
+      message: `Legacy ingestion for ${item.evidence.target_vessel_id} is quarantined; no publication was attempted.`,
+    };
   }
 }

@@ -7,6 +7,7 @@ import {
   SemanticCategory,
   EpistemicState,
 } from "./types";
+import { UnknownVesselError, vesselScopedEntityKey } from "./vesselIdentity";
 
 export const REGISTERED_VESSELS: Record<string, VesselSemanticModel> = {
   "msc-bellissima": bellissimaData as unknown as VesselSemanticModel,
@@ -14,20 +15,25 @@ export const REGISTERED_VESSELS: Record<string, VesselSemanticModel> = {
 };
 
 export class SemanticDeckEngine {
+  private currentVesselId: string;
   private currentVessel: VesselSemanticModel;
   private objectMap = new Map<string, SemanticObject>();
   private deckMap = new Map<number, SemanticDeck>();
 
-  constructor(vesselId: string = "msc-bellissima") {
-    this.currentVessel = REGISTERED_VESSELS[vesselId] || REGISTERED_VESSELS["msc-bellissima"];
+  constructor(vesselId: string) {
+    const vessel = REGISTERED_VESSELS[vesselId];
+    if (!vessel) throw new UnknownVesselError(vesselId);
+    this.currentVesselId = vesselId;
+    this.currentVessel = vessel;
     this.reindex();
   }
 
   public setVessel(vesselId: string): void {
-    if (REGISTERED_VESSELS[vesselId]) {
-      this.currentVessel = REGISTERED_VESSELS[vesselId];
-      this.reindex();
-    }
+    const vessel = REGISTERED_VESSELS[vesselId];
+    if (!vessel) throw new UnknownVesselError(vesselId);
+    this.currentVesselId = vesselId;
+    this.currentVessel = vessel;
+    this.reindex();
   }
 
   private reindex(): void {
@@ -37,8 +43,8 @@ export class SemanticDeckEngine {
     this.currentVessel.decks.forEach((deck) => {
       this.deckMap.set(deck.deck_level, deck);
       deck.objects.forEach((obj) => {
-        this.objectMap.set(obj.id.toLowerCase(), obj);
-        this.objectMap.set(obj.id, obj);
+        const key = vesselScopedEntityKey(this.currentVesselId, obj.id);
+        if (key) this.objectMap.set(key, obj);
       });
     });
   }
@@ -56,7 +62,14 @@ export class SemanticDeckEngine {
   }
 
   public getObject(id: string): SemanticObject | undefined {
-    return this.objectMap.get(id.toLowerCase()) || this.objectMap.get(id);
+    const key = vesselScopedEntityKey(this.currentVesselId, id);
+    return key ? this.objectMap.get(key) : undefined;
+  }
+
+  public getObjectForVessel(vesselId: string, id: string): SemanticObject | undefined {
+    if (vesselId !== this.currentVesselId) return undefined;
+    const key = vesselScopedEntityKey(vesselId, id);
+    return key ? this.objectMap.get(key) : undefined;
   }
 
   public search(query: string): SemanticObject[] {
@@ -64,7 +77,8 @@ export class SemanticDeckEngine {
     if (!q) return [];
 
     const results: SemanticObject[] = [];
-    const exact = this.objectMap.get(q);
+    const exactKey = vesselScopedEntityKey(this.currentVesselId, q);
+    const exact = exactKey ? this.objectMap.get(exactKey) : undefined;
     if (exact) results.push(exact);
 
     for (const deck of this.currentVessel.decks) {

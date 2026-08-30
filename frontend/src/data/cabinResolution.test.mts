@@ -101,12 +101,12 @@ const GRAPH_18001 = {
 console.log("\nP0-D metadata resolution (no 14122 leakage):");
 
 check("canonical-known cabin returns its own record verbatim (unchanged)", () => {
-  const meta = resolveCabinMeta("14122", CANONICAL_14122, undefined);
+  const meta = resolveCabinMeta("msc-bellissima", "14122", CANONICAL_14122, undefined);
   assert.equal(meta, CANONICAL_14122); // same reference -> behavior unchanged
 });
 
 check("graph-only cabin uses ONLY its own available data", () => {
-  const meta: any = resolveCabinMeta("18001", undefined, GRAPH_18001);
+  const meta: any = resolveCabinMeta("msc-bellissima", "18001", undefined, GRAPH_18001);
   assert.equal(meta.id, "18001");
   assert.equal(meta.deckNumber, 18);
   assert.equal(meta.deckName, "Pyramids / Divina");
@@ -117,7 +117,7 @@ check("graph-only cabin uses ONLY its own available data", () => {
 });
 
 check("graph-only missing metadata stays null (renders Unavailable)", () => {
-  const meta: any = resolveCabinMeta("18001", undefined, GRAPH_18001);
+  const meta: any = resolveCabinMeta("msc-bellissima", "18001", undefined, GRAPH_18001);
   assert.equal(meta.tier, null);
   assert.equal(meta.sqmInterior, null);
   assert.equal(meta.sqmBalcony, null);
@@ -126,7 +126,7 @@ check("graph-only missing metadata stays null (renders Unavailable)", () => {
 });
 
 check("NO 14122 metadata leaks into a graph-only cabin", () => {
-  const meta: any = resolveCabinMeta("18001", undefined, GRAPH_18001);
+  const meta: any = resolveCabinMeta("msc-bellissima", "18001", undefined, GRAPH_18001);
   // None of 14122's distinctive values may appear on a different cabin.
   assert.notEqual(meta.deckNumber, CANONICAL_14122.deckNumber);
   assert.notEqual(meta.deckName, CANONICAL_14122.deckName);
@@ -140,8 +140,8 @@ check("NO 14122 metadata leaks into a graph-only cabin", () => {
 });
 
 check("neither canonical nor graph -> null (caller fails closed)", () => {
-  assert.equal(resolveCabinMeta("49999", undefined, undefined), null);
-  assert.equal(resolveCabinMeta("49999", undefined, null), null);
+  assert.equal(resolveCabinMeta("msc-bellissima", "49999", undefined, undefined), null);
+  assert.equal(resolveCabinMeta("msc-bellissima", "49999", undefined, null), null);
 });
 
 if (failures > 0) {

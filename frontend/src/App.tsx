@@ -3,15 +3,13 @@ import MainNavbar, { NavRoute } from "./components/ui/MainNavbar";
 import SpatialProofViewer from "./spatial-proof/SpatialProofViewer";
 import Footer from "./components/ui/Footer";
 import HomePage from "./components/pages/HomePage";
-import ShipProfilePage from "./components/pages/ShipProfilePage";
 import CabinDeepDivePage from "./components/pages/CabinDeepDivePage";
 import PortGuidePage from "./components/pages/PortGuidePage";
 import RouteIntelligencePage from "./components/pages/RouteIntelligencePage";
 import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
-import KnowledgeDashboardPage from "./components/pages/KnowledgeDashboardPage";
 import { ReferenceTripShellPreview } from "./components/pages/TripShellPage";
-import { ReferenceShipOverviewPreview } from "./components/pages/ShipOverviewPage";
+import { PassengerShipOverview } from "./components/pages/ShipOverviewPage";
 import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
 import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
@@ -82,8 +80,6 @@ export default function App() {
       handleNavigate("cruise-math");
     } else if (q.includes("visa") || q.includes("travel") || q.includes("passport")) {
       handleNavigate("travel-info");
-    } else if (q.includes("factory") || q.includes("pipeline") || q.includes("conflict")) {
-      handleNavigate("knowledge-factory");
     } else {
       handleNavigate("ships", "msc-bellissima");
     }
@@ -108,11 +104,12 @@ export default function App() {
         )}
 
         {currentRoute === "ships" && (
-          <ReferenceShipOverviewPreview />
+          <PassengerShipOverview vesselId={selectedShipSlug} />
         )}
 
         {currentRoute === "cabin" && (
           <CabinDeepDivePage
+            vesselId={selectedShipSlug}
             cabinId={selectedCabinId}
             onBack={() => handleNavigate("ships", selectedShipSlug)}
           />
@@ -138,10 +135,6 @@ export default function App() {
 
         {currentRoute === "travel-info" && (
           <TravelInfoPage />
-        )}
-
-        {currentRoute === "knowledge-factory" && (
-          <KnowledgeDashboardPage />
         )}
 
         {currentRoute === "my-cruise" && (

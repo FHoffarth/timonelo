@@ -115,7 +115,9 @@ class TestKnowledgeFactory(unittest.TestCase):
                 },
             ],
         }
-        derivative = ShipPatchEngine.apply_patch(self.ontology, patch_data)
+        hypothesis = ShipPatchEngine.apply_patch(self.ontology, patch_data)
+        derivative = hypothesis.ontology
+        self.assertEqual(hypothesis.origin, "QUARANTINED_SISTER_SHIP_HYPOTHESIS")
         self.assertEqual(derivative.name, "MSC Meraviglia")
         self.assertEqual(derivative.imo_number, "IMO9647710")
         self.assertEqual(derivative.decks[6].venues["VENUE_THEATER"].name, "Broadway Theatre (Lower Level)")
@@ -128,5 +130,4 @@ class TestKnowledgeFactory(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
 
