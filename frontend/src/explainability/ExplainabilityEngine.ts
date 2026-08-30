@@ -10,6 +10,10 @@ import { RULE_REGISTRY } from "./RuleRegistry";
 import { EvidenceResolver } from "./EvidenceResolver";
 import { ReasonTreeBuilder } from "./ReasonTree";
 import { SemanticEntity } from "../semantic-deck/types";
+import {
+  isPassengerEntityAdmitted,
+  isPassengerFactAdmitted,
+} from "../semantic-deck/passengerAdmission";
 
 /**
  * P0-H2: mean of backed confidence values only.
@@ -34,7 +38,7 @@ export class ExplainabilityEngine {
     const relations = entity.relations || {};
     const overhead = relations.adjacent_overhead || "";
     const underfoot = relations.adjacent_underfoot || "";
-    const isForward = entity.zone.includes("FORWARD") || cid.endsWith("01") || cid.endsWith("02") || cid.endsWith("03");
+    const isForward = entity.zone.includes("FORWARD");
 
     const allTriggeredRules: TriggeredRule[] = [];
 
@@ -46,7 +50,13 @@ export class ExplainabilityEngine {
       }
 
       const weight = weightOverride !== undefined ? weightOverride : rule.weight;
-      const provenance = EvidenceResolver.resolveRuleEvidence(rule, entity, vesselId);
+      const admittedFactKeys = new Set(
+        entity.admitted_fact_keys.filter((fact) => isPassengerFactAdmitted(entity, fact)),
+      );
+      const provenance = EvidenceResolver.resolveRuleEvidence(rule, entity, vesselId, {
+        entityAdmitted: isPassengerEntityAdmitted(entity),
+        admittedFactKeys,
+      });
 
       const triggered: TriggeredRule = {
         rule,
@@ -63,91 +73,103 @@ export class ExplainabilityEngine {
     // 1. QUIET EXPLAINABILITY
     // =========================================================================
     const quietRules: TriggeredRule[] = [];
-    if (overhead.toLowerCase().includes("buffet") || overhead.toLowerCase().includes("marketplace")) {
+    const quietAdmitted = isPassengerFactAdmitted(entity, "quiet_intelligence");
+    const overheadAdmitted = isPassengerFactAdmitted(entity, "adjacent_overhead");
+    const underfootAdmitted = isPassengerFactAdmitted(entity, "adjacent_underfoot");
+    if (quietAdmitted && overheadAdmitted && (overhead.toLowerCase().includes("buffet") || overhead.toLowerCase().includes("marketplace"))) {
       quietRules.push(trigger("RULE-QUIET-004", "Marketplace Buffet directly overhead on Deck 15"));
-    } else if (overhead.toLowerCase().includes("pool") || overhead.toLowerCase().includes("aquapark")) {
+    } else if (quietAdmitted && overheadAdmitted && (overhead.toLowerCase().includes("pool") || overhead.toLowerCase().includes("aquapark"))) {
       quietRules.push(trigger("RULE-QUIET-005", "Open pool deck overhead"));
-    } else if (level >= 9 && level <= 13) {
-      quietRules.push(trigger("RULE-QUIET-001", "Sandwiched between purely residential stateroom decks above & below"));
     }
 
-    if (!underfoot.toLowerCase().includes("theatre") && !underfoot.toLowerCase().includes("casino")) {
+    if (quietAdmitted && underfootAdmitted &&
+        !underfoot.toLowerCase().includes("theatre") && !underfoot.toLowerCase().includes("casino")) {
       quietRules.push(trigger("RULE-QUIET-002", "No high-energy entertainment venue directly below"));
     }
 
-    const quietExplainable: ExplainableScore = ReasonTreeBuilder.buildExplainableScore(
+    const quietExplainable: ExplainableScore = quietAdmitted ? ReasonTreeBuilder.buildExplainableScore(
       "quiet",
       "Tranquility & Quietness",
       90, // Baseline
       quietRules
-    );
+    ) : ReasonTreeBuilder.buildUnavailableScore("quiet", "Tranquility & Quietness");
 
     // =========================================================================
     // 2. MOTION EXPLAINABILITY
     // =========================================================================
     const motionRules: TriggeredRule[] = [];
-    if (isForward) {
+    const motionAdmitted = isPassengerFactAdmitted(entity, "motion_intelligence");
+    const zoneAdmitted = isPassengerFactAdmitted(entity, "zone");
+    const deckAdmitted = isPassengerFactAdmitted(entity, "deck");
+    if (motionAdmitted && zoneAdmitted && isForward) {
       motionRules.push(trigger("RULE-MOTION-002", "Positioned in forward bow zone; experiences high vertical pitch heave in swell"));
-    } else {
+    } else if (motionAdmitted && zoneAdmitted) {
       motionRules.push(trigger("RULE-MOTION-001", "Located near midship neutral flotation axis (lowest sea motion)"));
     }
 
-    if (level <= 8) {
+    if (motionAdmitted && deckAdmitted && level <= 8) {
       motionRules.push(trigger("RULE-MOTION-003", "Low deck elevation minimizes roll pendulum moment"));
-    } else if (level >= 14) {
+    } else if (motionAdmitted && deckAdmitted && level >= 14) {
       motionRules.push(trigger("RULE-MOTION-004", "Upper deck elevation increases angular roll amplitude"));
     }
 
-    const motionExplainable: ExplainableScore = ReasonTreeBuilder.buildExplainableScore(
+    const motionExplainable: ExplainableScore = motionAdmitted ? ReasonTreeBuilder.buildExplainableScore(
       "motion",
       "Vessel Stability & Motion",
       85, // Baseline
       motionRules
-    );
+    ) : ReasonTreeBuilder.buildUnavailableScore("motion", "Vessel Stability & Motion");
 
     // =========================================================================
     // 3. WALKING EXPLAINABILITY
     // =========================================================================
-    const walkingRules: TriggeredRule[] = [
-      trigger("RULE-WALK-001", `Direct corridor link to ${relations.connected_vertical_core || "Midship Lift Bank"}`),
-    ];
+    const walkingAdmitted =
+      isPassengerFactAdmitted(entity, "walking_intelligence") &&
+      isPassengerFactAdmitted(entity, "corridor_connectivity") &&
+      isPassengerFactAdmitted(entity, "connected_vertical_core") &&
+      Boolean(relations.connected_vertical_core);
+    const walkingRules: TriggeredRule[] = walkingAdmitted ? [
+      trigger("RULE-WALK-001", `Direct corridor link to ${relations.connected_vertical_core}`),
+    ] : [];
 
-    const walkingExplainable: ExplainableScore = ReasonTreeBuilder.buildExplainableScore(
+    const walkingExplainable: ExplainableScore = walkingAdmitted ? ReasonTreeBuilder.buildExplainableScore(
       "walking",
       "Transit & Lift Convenience",
       80, // Baseline
       walkingRules
-    );
+    ) : ReasonTreeBuilder.buildUnavailableScore("walking", "Transit & Lift Convenience");
 
     // =========================================================================
     // 4. PRIVACY EXPLAINABILITY
     // =========================================================================
     const privacyRules: TriggeredRule[] = [];
-    if (entity.has_balcony) {
+    const privacyAdmitted = isPassengerFactAdmitted(entity, "privacy_intelligence");
+    if (privacyAdmitted && isPassengerFactAdmitted(entity, "balcony") && entity.has_balcony) {
       privacyRules.push(trigger("RULE-PRIV-001", "Private step-out ocean veranda with unobstructed sea views"));
     }
 
-    const privacyExplainable: ExplainableScore = ReasonTreeBuilder.buildExplainableScore(
+    const privacyExplainable: ExplainableScore = privacyAdmitted ? ReasonTreeBuilder.buildExplainableScore(
       "privacy",
       "Privacy & Solitude",
       85, // Baseline
       privacyRules
-    );
+    ) : ReasonTreeBuilder.buildUnavailableScore("privacy", "Privacy & Solitude");
 
     // =========================================================================
     // 5. ACCESSIBILITY EXPLAINABILITY
     // =========================================================================
     const accessRules: TriggeredRule[] = [];
-    if (entity.accessible) {
-      accessRules.push(trigger("RULE-ACC-001", "Certified PRM stateroom with 85cm wide door and step-free roll-in shower"));
+    const accessibilityAdmitted = isPassengerFactAdmitted(entity, "accessibility_intelligence");
+    if (accessibilityAdmitted && isPassengerFactAdmitted(entity, "accessible_designation") && entity.accessible) {
+      accessRules.push(trigger("RULE-ACC-001", "Canonical accessibility designation is admitted for passenger use"));
     }
 
-    const accessExplainable: ExplainableScore = ReasonTreeBuilder.buildExplainableScore(
+    const accessExplainable: ExplainableScore = accessibilityAdmitted ? ReasonTreeBuilder.buildExplainableScore(
       "accessibility",
       "Physical Accessibility (PRM)",
       70, // Baseline
       accessRules
-    );
+    ) : ReasonTreeBuilder.buildUnavailableScore("accessibility", "Physical Accessibility (PRM)");
 
     const scores: Record<string, ExplainableScore> = {
       quiet: quietExplainable,

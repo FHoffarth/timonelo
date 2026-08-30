@@ -10,12 +10,9 @@ import {
   Accessibility,
   Users,
   Heart,
-  ChevronDown,
-  ChevronUp,
   Sparkles,
   Info,
   Layers,
-  ArrowRight,
 } from "lucide-react";
 
 interface CabinIntelligenceCardProps {
@@ -42,7 +39,8 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
     intel.couple_score,
   ];
 
-  const getScoreColor = (score: number) => {
+  const getScoreColor = (score: number | null) => {
+    if (score === null) return "text-slate-500 bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700";
     if (score >= 88) return "text-emerald-600 bg-emerald-50 border-emerald-200 dark:bg-emerald-950/50 dark:border-emerald-800 dark:text-emerald-400";
     if (score >= 75) return "text-blue-600 bg-blue-50 border-blue-200 dark:bg-blue-950/50 dark:border-blue-800 dark:text-blue-400";
     if (score >= 60) return "text-amber-600 bg-amber-50 border-amber-200 dark:bg-amber-950/50 dark:border-amber-800 dark:text-amber-400";
@@ -72,14 +70,16 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
               CABIN INTELLIGENCE V1
             </span>
             <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400 border border-emerald-300">
-              DETERMINISTIC
+              EVIDENCE-GATED
             </span>
           </div>
           <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
             Cabin {intel.cabin_id} Intelligence Dossier
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            {intel.deck_name} (Deck {intel.deck_number}) • {intel.classification} • {intel.side} Side
+            {intel.deck_number == null
+              ? "Cabin location and classification unavailable"
+              : `${intel.deck_name} (Deck ${intel.deck_number}) • ${intel.classification ?? "Unavailable"} • ${intel.side ?? "Unknown side"}`}
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
           <div>
             <div className="text-[10px] uppercase font-mono text-slate-400 font-bold">Epistemic Confidence</div>
             <div className="font-mono text-sm font-bold text-slate-800 dark:text-white">
-              {(intel.epistemic_confidence * 100).toFixed(0)}% Verified
+              {intel.epistemic_confidence == null ? "Unavailable" : "Computed confidence available"}
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
                   </span>
                 </div>
                 <span className={`px-2 py-0.5 rounded-lg text-xs font-mono font-bold border ${colorClass}`}>
-                  {item.score}
+                  {item.score ?? "—"}
                 </span>
               </div>
 
@@ -133,7 +133,7 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
               {isExpanded && (
                 <div className="mt-3 pt-3 border-t border-slate-200 dark:border-white/10 space-y-1.5">
                   <div className="text-[10px] font-mono uppercase font-bold text-slate-400">
-                    Graph-Derived Factors:
+                    Admitted rule factors:
                   </div>
                   {item.factors.map((f, fIdx) => (
                     <div key={fIdx} className="flex items-start gap-1.5 text-[11px] text-slate-700 dark:text-slate-300 leading-snug">
@@ -174,9 +174,11 @@ export const CabinIntelligenceCard: React.FC<CabinIntelligenceCardProps> = ({
       <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-slate-400 font-mono border-t border-slate-100 dark:border-white/5">
         <div className="flex items-center gap-2">
           <Layers className="w-3.5 h-3.5 text-slate-400" />
-          <span>Provenanced via: {intel.provenance_sources.join(" • ")}</span>
+          <span>{intel.provenance_sources.length > 0
+            ? `Sources: ${intel.provenance_sources.join(" • ")}`
+            : "No admitted source chain available"}</span>
         </div>
-        <span className="text-emerald-500 font-bold">100% Deterministic Rules (Zero AI hallucination)</span>
+        <span className="text-slate-500 font-bold">Rules run only on admitted inputs</span>
       </div>
     </div>
   );

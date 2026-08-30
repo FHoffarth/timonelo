@@ -13,6 +13,12 @@
 
 import type { EvidenceProvenance, RuleDefinition } from "./types";
 import type { SemanticEntity } from "../semantic-deck/types";
+import type { PassengerFactKey } from "../semantic-deck/passengerAdmission";
+
+export interface ResolvedPassengerAdmission {
+  entityAdmitted: boolean;
+  admittedFactKeys: ReadonlySet<PassengerFactKey>;
+}
 
 // Keys in required_graph_relations that are entity attributes rather than
 // entries in entity.relations.
@@ -25,11 +31,32 @@ const ENTITY_ATTRIBUTE_KEYS = new Set([
   "connecting",
 ]);
 
+const REQUIRED_KEY_FACTS: Record<string, PassengerFactKey> = {
+  level: "deck",
+  zone: "zone",
+  side: "side",
+  accessible: "accessible_designation",
+  has_balcony: "balcony",
+  connecting: "connecting_cabin",
+  adjacent_fore: "adjacent_fore",
+  adjacent_aft: "adjacent_aft",
+  adjacent_across: "adjacent_across",
+  adjacent_overhead: "adjacent_overhead",
+  adjacent_underfoot: "adjacent_underfoot",
+  connected_vertical_core: "connected_vertical_core",
+};
+
 /**
  * Resolve one required key to a real value on the entity, or null.
  * Never invents a fallback.
  */
-function resolveRequiredKey(entity: SemanticEntity, key: string): string | null {
+function resolveRequiredKey(
+  entity: SemanticEntity,
+  key: string,
+  admittedFactKeys: ReadonlySet<PassengerFactKey>,
+): string | null {
+  const fact = REQUIRED_KEY_FACTS[key];
+  if (!fact || !admittedFactKeys.has(fact)) return null;
   if (ENTITY_ATTRIBUTE_KEYS.has(key)) {
     const val = (entity as unknown as Record<string, unknown>)[key];
     if (val === undefined || val === null || val === "") return null;
@@ -44,12 +71,29 @@ export class EvidenceResolver {
   public static resolveRuleEvidence(
     rule: RuleDefinition,
     entity: SemanticEntity,
-    _vesselId: string = "msc-bellissima"
+    _vesselId: string = "msc-bellissima",
+    admission?: ResolvedPassengerAdmission,
   ): EvidenceProvenance {
     const cid = entity.id;
 
+    if (!admission?.entityAdmitted) {
+      return {
+        evidence_id: null,
+        source_title: null,
+        artifact_id: null,
+        graph_edge: null,
+        geometry_file: null,
+        knowledge_entity_id: rule.required_knowledge_entities?.[0],
+        statement_id: null,
+        confidence: null,
+        status: "UNKNOWN",
+        raw_finding: rule.description,
+      };
+    }
+
     // Canonical evidence for this entity. Absent -> everything fails closed.
-    const link = (entity.evidence_links || [])[0];
+    const sourceAdmitted = admission.admittedFactKeys.has("source_artifact");
+    const link = sourceAdmitted ? (entity.evidence_links || [])[0] : undefined;
 
     // graph_edge is emitted only when every relation/attribute the rule
     // requires resolves to a real value on the entity. The edge text restates
@@ -60,7 +104,7 @@ export class EvidenceResolver {
       const bindings: string[] = [];
       let allResolved = true;
       for (const key of requiredKeys) {
-        const value = resolveRequiredKey(entity, key);
+        const value = resolveRequiredKey(entity, key, admission.admittedFactKeys);
         if (value === null) {
           allResolved = false;
           break;
@@ -81,9 +125,11 @@ export class EvidenceResolver {
       // Geometry files are not verified from the frontend.
       geometry_file: null,
       knowledge_entity_id: rule.required_knowledge_entities?.[0],
-      statement_id: entity.statements?.[0] ?? null,
+      statement_id: sourceAdmitted ? entity.statements?.[0] ?? null : null,
       confidence: typeof entity.confidence === "number" ? entity.confidence : null,
-      status: entity.epistemic_state ?? "UNKNOWN",
+      status: entity.epistemic_state === "DIRECT" || entity.epistemic_state === "DERIVED"
+        ? entity.epistemic_state
+        : "UNKNOWN",
       // Neutral rule description only — never an entity-specific invented claim.
       raw_finding: rule.description,
     };

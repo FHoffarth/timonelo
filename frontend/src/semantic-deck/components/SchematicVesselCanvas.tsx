@@ -243,7 +243,9 @@ export default function SchematicVesselCanvas({
         {/* Bottom: Epistemic State & Confidence */}
         <div className="flex items-center justify-between text-[7.5px] font-mono text-slate-400 pt-0.5 border-t border-white/5">
           <span className="truncate">{space.epistemic_state}</span>
-          <span className="text-slate-500 font-mono">#{(space.confidence * 100).toFixed(0)}</span>
+          <span className="text-slate-500 font-mono">
+            {typeof space.confidence === "number" ? `#${(space.confidence * 100).toFixed(0)}` : "#—"}
+          </span>
         </div>
       </div>
     );

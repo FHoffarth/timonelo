@@ -7,24 +7,21 @@ import { LiftLayer } from "./LiftLayer";
 import { SelectionLayer } from "./SelectionLayer";
 import { LegendLayer } from "./LegendLayer";
 import { useTheme } from "../themeContext";
+import { isPassengerFactAdmitted } from "../passengerAdmission";
 import {
   ZoomIn,
   ZoomOut,
   Maximize2,
   ChevronUp,
   ChevronDown,
-  Layers,
-  Sparkles,
 } from "lucide-react";
 
 export const DeckRenderer: React.FC<DeckRendererProps> = ({
   level,
   allLevels = [],
-  vesselGraph,
   selectedEntity,
   hoveredEntity,
   overlayMode: initialOverlayMode = "none",
-  layersConfig = {},
   onSelectEntity,
   onHoverEntity,
   onSelectLevel,
@@ -102,10 +99,10 @@ export const DeckRenderer: React.FC<DeckRendererProps> = ({
         const prevLevel = level.level_index > 4 ? level.level_index - (level.level_index === 18 ? 2 : 1) : 4;
         onSelectLevel(prevLevel);
       } else if (selectedEntity && onNavigateAdjacent) {
-        if (e.key === "ArrowLeft") onNavigateAdjacent("aft");
-        if (e.key === "ArrowRight") onNavigateAdjacent("fore");
-        if (e.key === "ArrowUp") onNavigateAdjacent("across");
-        if (e.key === "ArrowDown") onNavigateAdjacent("across");
+        if (e.key === "ArrowLeft" && isPassengerFactAdmitted(selectedEntity, "adjacent_aft")) onNavigateAdjacent("aft");
+        if (e.key === "ArrowRight" && isPassengerFactAdmitted(selectedEntity, "adjacent_fore")) onNavigateAdjacent("fore");
+        if ((e.key === "ArrowUp" || e.key === "ArrowDown") &&
+            isPassengerFactAdmitted(selectedEntity, "adjacent_across")) onNavigateAdjacent("across");
       }
     };
 
@@ -136,6 +133,10 @@ export const DeckRenderer: React.FC<DeckRendererProps> = ({
         isNight ? "bg-slate-950" : "bg-[#F7F4EE]"
       } ${className}`}
     >
+      <div className="absolute top-4 left-6 z-20 max-w-md rounded-xl border border-amber-400/40 bg-amber-50/95 px-3 py-2 text-[11px] text-amber-900 shadow-sm dark:bg-amber-950/90 dark:text-amber-200">
+        Schematic layout only. Position, size, orientation, distance, adjacency,
+        and lift connectivity are not established by this drawing.
+      </div>
       {/* 1. Interactive SVG Canvas Viewport */}
       <svg
         viewBox="0 0 1020 300"

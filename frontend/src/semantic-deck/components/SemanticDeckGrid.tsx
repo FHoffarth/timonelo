@@ -126,7 +126,7 @@ export default function SemanticDeckGrid({
           <span>Seq #{space.sequence_order}</span>
           {space.evidence_links && space.evidence_links.length > 0 && (
             <span className="text-slate-400">
-              {space.evidence_links[0].artifact_id.split("-")[0]}
+              {space.evidence_links[0].artifact_id?.split("-")[0] || "NO-ARTIFACT"}
             </span>
           )}
         </div>

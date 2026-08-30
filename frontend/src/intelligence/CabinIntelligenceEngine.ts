@@ -11,13 +11,18 @@
  */
 
 import { SemanticEntity } from "../semantic-deck/types";
-import { knowledgeRepository } from "../knowledge";
+import {
+  getPassengerFact,
+  isPassengerEntityAdmitted,
+  isPassengerFactAdmitted,
+  type PassengerFactKey,
+} from "../semantic-deck/passengerAdmission";
 
 export interface ScoreItem {
   name: string;
   key: string;
-  score: number; // 0 to 100
-  grade: "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION";
+  score: number | null; // null means the required evidence was not admitted
+  grade: "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION" | "UNAVAILABLE";
   summary: string;
   factors: string[];
 }
@@ -25,12 +30,12 @@ export interface ScoreItem {
 export interface CabinIntelligence {
   cabin_id: string;
   vessel_id: string;
-  deck_number: number;
+  deck_number: number | null;
   deck_name: string;
-  classification: string;
-  side: "PORT" | "STARBOARD" | "CENTER";
-  is_accessible: boolean;
-  has_balcony: boolean;
+  classification: string | null;
+  side: "PORT" | "STARBOARD" | "CENTER" | null;
+  is_accessible: boolean | null;
+  has_balcony: boolean | null;
   
   // Deterministic Core Scores (0 - 100)
   quiet_score: ScoreItem;
@@ -43,7 +48,8 @@ export interface CabinIntelligence {
 
   // Key explainable findings
   all_reasoning: string[];
-  epistemic_confidence: number;
+  scores: Record<string, ScoreItem>;
+  epistemic_confidence: number | null;
   provenance_sources: string[];
 }
 
@@ -61,16 +67,12 @@ export class CabinIntelligenceEngine {
     const side = entity.side;
     const cid = entity.id;
 
-    // Load negative intelligence & technical specifications
-    const negAudits = knowledgeRepository.getNegativeIntelligence(vesselId);
-    const techData = knowledgeRepository.getShip(vesselId);
-
     const reasoning: string[] = [];
-    const provSources: string[] = [
-      "Official MSC Bellissima Deck Plan (11.2025 DEU)",
-      "W3C Building Topology Ontology (BOT) Graph",
-      "Field Acoustic & Vibration Audits (negative_intelligence.json)"
-    ];
+    const provSources: string[] = isPassengerFactAdmitted(entity, "source_artifact")
+      ? entity.evidence_links
+          .map((link) => link.source_title || link.artifact_id)
+          .filter((source): source is string => Boolean(source))
+      : [];
 
     // ==========================================
     // 1. QUIET SCORE (Acoustic & Tranquility)
@@ -87,10 +89,6 @@ export class CabinIntelligenceEngine {
     } else if (overhead.toLowerCase().includes("pool") || overhead.toLowerCase().includes("aquapark")) {
       quietScoreVal -= 18;
       quietFactors.push("Open pool deck / sundeck overhead (lounger scraping during morning setup)");
-    } else if (deck >= 9 && deck <= 13) {
-      quietScoreVal += 6;
-      quietFactors.push("Sandwiched between purely residential stateroom decks above and below (optimal acoustic insulation)");
-      reasoning.push("Residential isolation: Deck is isolated from public lounges and dining venues.");
     }
 
     // Underfoot analysis
@@ -100,13 +98,6 @@ export class CabinIntelligenceEngine {
       quietFactors.push("High-energy entertainment venue directly below on lower deck");
     }
 
-    // Lift lobby proximity
-    const liftCore = relations.connected_vertical_core || "";
-    if (liftCore) {
-      quietScoreVal += 2;
-      quietFactors.push(`Direct access corridor to ${liftCore}`);
-    }
-
     quietScoreVal = Math.min(99, Math.max(40, quietScoreVal));
 
     const quietScore: ScoreItem = {
@@ -114,7 +105,7 @@ export class CabinIntelligenceEngine {
       key: "quiet",
       score: quietScoreVal,
       grade: getGrade(quietScoreVal),
-      summary: quietScoreVal >= 85 ? "Serene residential sanctuary with zero active venue noise." : "Moderate acoustic awareness recommended due to adjacent venues.",
+      summary: "Evidence-gated acoustic rule result based only on admitted vertical relations.",
       factors: quietFactors
     };
 
@@ -125,8 +116,8 @@ export class CabinIntelligenceEngine {
     const motionFactors: string[] = [];
 
     // Longitudinal position (Bow, Midship, Stern)
-    const isForward = entity.zone.includes("FORWARD") || cid.endsWith("01") || cid.endsWith("02") || cid.endsWith("03");
-    const isAft = entity.zone.includes("AFT") || parseInt(cid.slice(-3) || "0") > 200;
+    const isForward = entity.zone.includes("FORWARD");
+    const isAft = entity.zone.includes("AFT");
 
     if (isForward) {
       motionScoreVal -= 18;
@@ -167,19 +158,14 @@ export class CabinIntelligenceEngine {
     let walkingScoreVal = 88;
     const walkingFactors: string[] = [];
 
-    walkingFactors.push("Direct corridor connection to high-speed elevator bank");
-    if (deck === 14 || deck === 15) {
-      walkingFactors.push("Short flight of stairs directly to Atmosphere Pool and Marketplace Buffet");
-    } else if (deck === 6 || deck === 7) {
-      walkingFactors.push("Steps away from Galleria Bellissima promenade and specialty dining");
-    }
+    walkingFactors.push(`Admitted corridor connection to ${relations.connected_vertical_core}`);
 
     const walkingScore: ScoreItem = {
       name: "Transit & Lift Convenience",
       key: "walking",
       score: walkingScoreVal,
       grade: getGrade(walkingScoreVal),
-      summary: "Convenient corridor transit to vertical cores and key onboard amenities.",
+      summary: "An admitted corridor-to-core relation supports this transit score.",
       factors: walkingFactors
     };
 
@@ -191,9 +177,7 @@ export class CabinIntelligenceEngine {
 
     if (entity.has_balcony) {
       privacyScoreVal += 5;
-      privacyFactors.push("Private glass-railing step-out veranda facing open sea");
-    } else {
-      privacyFactors.push("Enclosed interior stateroom layout providing complete light and sightline isolation");
+      privacyFactors.push("Admitted balcony classification contributes to this analysis");
     }
 
     const privacyScore: ScoreItem = {
@@ -201,7 +185,7 @@ export class CabinIntelligenceEngine {
       key: "privacy",
       score: Math.min(99, privacyScoreVal),
       grade: getGrade(privacyScoreVal),
-      summary: "High visual solitude with no public overlooking promenade pathways.",
+      summary: "Privacy analysis is limited to explicitly admitted cabin facts.",
       factors: privacyFactors
     };
 
@@ -212,11 +196,7 @@ export class CabinIntelligenceEngine {
     const accessFactors: string[] = [];
 
     if (entity.accessible) {
-      accessFactors.push("Official PRM designated cabin with 85cm wide door and zero-threshold step-free entry");
-      accessFactors.push("Roll-in wheel-in shower with safety grab rails and fold-down seat");
-      reasoning.push("Full PRM compliance: Verified accessible stateroom per MSC Fleet Guidelines.");
-    } else {
-      accessFactors.push("Standard stateroom with step-up bathroom sill threshold");
+      accessFactors.push("Mobility-designated stateroom status is admitted");
     }
 
     const accessibilityScore: ScoreItem = {
@@ -224,7 +204,9 @@ export class CabinIntelligenceEngine {
       key: "accessibility",
       score: accessScoreVal,
       grade: getGrade(accessScoreVal),
-      summary: entity.accessible ? "Fully certified accessible stateroom for guests with reduced mobility." : "Standard passenger layout with step-over thresholds.",
+      summary: entity.accessible
+        ? "Mobility designation is admitted; detailed accessibility features require separate evidence."
+        : "No positive mobility designation is admitted for this evaluation.",
       factors: accessFactors
     };
 
@@ -234,16 +216,17 @@ export class CabinIntelligenceEngine {
     let familyScoreVal = entity.connecting ? 95 : 78;
     const familyFactors: string[] = [];
     if (entity.connecting) {
-      familyFactors.push("Internal connecting door available to expand into multi-room family suite");
+      familyFactors.push("Admitted connecting-cabin designation contributes to this analysis");
     }
-    familyFactors.push(`Located on Deck ${deck} within easy reach of kid club elevators`);
 
     const familyScore: ScoreItem = {
       name: "Family Suitability",
       key: "family",
       score: familyScoreVal,
       grade: getGrade(familyScoreVal),
-      summary: entity.connecting ? "Exceptional multi-room family configuration." : "Standard stateroom accommodating twin or double setup.",
+      summary: entity.connecting
+        ? "An admitted connecting-cabin relation supports this family analysis."
+        : "Family suitability analysis is admitted without a connecting-cabin boost.",
       factors: familyFactors
     };
 
@@ -252,36 +235,86 @@ export class CabinIntelligenceEngine {
     // ==========================================
     let coupleScoreVal = entity.has_balcony ? 94 : 80;
     const coupleFactors: string[] = [];
-    if (entity.has_balcony) coupleFactors.push("Private balcony for private sunrise & sunset champagne moments");
-    coupleFactors.push("King-size double bed configuration with premium bedding");
+    if (entity.has_balcony) coupleFactors.push("Admitted balcony classification contributes to this analysis");
 
     const coupleScore: ScoreItem = {
       name: "Couples & Romance Index",
       key: "couple",
       score: coupleScoreVal,
       grade: getGrade(coupleScoreVal),
-      summary: "Comfortable stateroom atmosphere with dedicated vanity area and minibar.",
+      summary: "Couples suitability is available only as an admitted rule result.",
       factors: coupleFactors
     };
+
+    const unavailableScore = (name: string, key: string): ScoreItem => ({
+      name,
+      key,
+      score: null,
+      grade: "UNAVAILABLE",
+      summary: "Unavailable — the required facts have not crossed the passenger evidence gate.",
+      factors: [],
+    });
+    const admitScore = (
+      fact: PassengerFactKey,
+      item: ScoreItem,
+      requiredFacts: PassengerFactKey[] = [],
+    ): ScoreItem => isPassengerFactAdmitted(entity, fact) &&
+      requiredFacts.every((required) => isPassengerFactAdmitted(entity, required))
+      ? item
+      : unavailableScore(item.name, item.key);
+
+    const admittedQuiet = admitScore("quiet_intelligence", quietScore, ["adjacent_overhead", "adjacent_underfoot"]);
+    const admittedMotion = admitScore("motion_intelligence", motionScore, ["zone", "deck"]);
+    const walkingFactsAdmitted =
+      isPassengerFactAdmitted(entity, "walking_intelligence") &&
+      isPassengerFactAdmitted(entity, "corridor_connectivity") &&
+      isPassengerFactAdmitted(entity, "connected_vertical_core") &&
+      Boolean(relations.connected_vertical_core);
+    const admittedWalking = walkingFactsAdmitted
+      ? walkingScore
+      : unavailableScore(walkingScore.name, walkingScore.key);
+    const admittedPrivacy = admitScore("privacy_intelligence", privacyScore, ["balcony"]);
+    const admittedAccessibility = admitScore("accessibility_intelligence", accessibilityScore, ["accessible_designation"]);
+    const admittedFamily = admitScore("family_intelligence", familyScore, ["connecting_cabin"]);
+    const admittedCouple = admitScore("couple_intelligence", coupleScore, ["balcony"]);
+    const scores: Record<string, ScoreItem> = {
+      quiet: admittedQuiet,
+      motion: admittedMotion,
+      walking: admittedWalking,
+      privacy: admittedPrivacy,
+      accessibility: admittedAccessibility,
+      family: admittedFamily,
+      couple: admittedCouple,
+    };
+
+    const confidence = isPassengerEntityAdmitted(entity) &&
+      typeof entity.confidence === "number"
+      ? entity.confidence
+      : null;
 
     return {
       cabin_id: cid,
       vessel_id: vesselId,
-      deck_number: deck,
-      deck_name: entity.level_name || `Deck ${deck}`,
-      classification: entity.classification_label || entity.classification,
-      side: side,
-      is_accessible: entity.accessible,
-      has_balcony: entity.has_balcony,
-      quiet_score: quietScore,
-      motion_score: motionScore,
-      walking_score: walkingScore,
-      privacy_score: privacyScore,
-      accessibility_score: accessibilityScore,
-      family_score: familyScore,
-      couple_score: coupleScore,
-      all_reasoning: reasoning,
-      epistemic_confidence: entity.confidence || 0.92,
+      deck_number: getPassengerFact(entity, "deck", deck),
+      deck_name: getPassengerFact(entity, "deck", entity.level_name || `Deck ${deck}`) || "Deck unavailable",
+      classification: getPassengerFact(
+        entity,
+        "classification",
+        entity.classification_label || entity.classification,
+      ),
+      side: getPassengerFact(entity, "side", side),
+      is_accessible: getPassengerFact(entity, "accessible_designation", entity.accessible),
+      has_balcony: getPassengerFact(entity, "balcony", entity.has_balcony),
+      quiet_score: admittedQuiet,
+      motion_score: admittedMotion,
+      walking_score: admittedWalking,
+      privacy_score: admittedPrivacy,
+      accessibility_score: admittedAccessibility,
+      family_score: admittedFamily,
+      couple_score: admittedCouple,
+      scores,
+      all_reasoning: Object.values(scores).flatMap((item) => item.factors),
+      epistemic_confidence: confidence,
       provenance_sources: provSources
     };
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { LayerProps } from "./types";
 import { SemanticEntity } from "../types";
+import { isPassengerEntityAdmitted, isPassengerFactAdmitted } from "../passengerAdmission";
 
 export const CabinLayer: React.FC<LayerProps> = ({
   level,
@@ -16,6 +17,7 @@ export const CabinLayer: React.FC<LayerProps> = ({
   // Helper for dynamic coloring based on category or overlay mode
   const getCabinColor = (cabin: SemanticEntity) => {
     if (overlayMode === "epistemic") {
+      if (!isPassengerEntityAdmitted(cabin)) return isNight ? "#475569" : "#94A3B8";
       switch (cabin.epistemic_state) {
         case "DIRECT": return isNight ? "#10B981" : "#059669";
         case "DERIVED": return isNight ? "#3B82F6" : "#2563EB";
@@ -25,8 +27,9 @@ export const CabinLayer: React.FC<LayerProps> = ({
     }
 
     if (overlayMode === "acoustic") {
-      // Under buffet (Deck 15) or engine zone
-      if (level.level_index === 14) return isNight ? "#F59E0B" : "#D97706";
+      if (!isPassengerFactAdmitted(cabin, "quiet_intelligence")) {
+        return isNight ? "#475569" : "#94A3B8";
+      }
       return isNight ? "#10B981" : "#16A34A";
     }
 
@@ -46,7 +49,7 @@ export const CabinLayer: React.FC<LayerProps> = ({
 
   return (
     <g id="cabin-layer" className="cursor-pointer">
-      {cabins.map((cabin, idx) => {
+      {cabins.map((cabin) => {
         const isSelected = selectedEntity?.id === cabin.id;
         const isHovered = hoveredEntity?.id === cabin.id;
 
@@ -109,7 +112,7 @@ export const CabinLayer: React.FC<LayerProps> = ({
             />
 
             {/* 3. Accessible (PRM) Indicator Symbol 'H' */}
-            {cabin.accessible && (
+            {isPassengerFactAdmitted(cabin, "accessible_designation") && cabin.accessible && (
               <circle
                 cx={xPos + width / 2}
                 cy={yPos + height / 2}

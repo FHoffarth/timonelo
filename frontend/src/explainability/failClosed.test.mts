@@ -47,6 +47,14 @@ const RULE_QUIET: any = {
 };
 
 const backedEntity: any = {
+  data_origin: "CANONICAL_TRUTH_ENGINE",
+  evidence_condition: "SUPPORTED",
+  human_review_state: "APPROVED",
+  publish_status: "PUBLISH_ALLOWED",
+  geometry_provenance: "DIRECT_SOURCE_GEOMETRY",
+  method: "DIRECT",
+  derivation: "LOCAL",
+  admitted_fact_keys: ["connected_vertical_core", "walking_intelligence", "source_artifact"],
   id: "14122",
   level: 14,
   zone: "MIDSHIP",
@@ -63,6 +71,14 @@ const backedEntity: any = {
 };
 
 const unbackedEntity: any = {
+  data_origin: "LEGACY_SCHEMATIC",
+  evidence_condition: "UNKNOWN",
+  human_review_state: "DRAFT",
+  publish_status: "PUBLISH_BLOCKED",
+  geometry_provenance: "UNKNOWN_PROVENANCE",
+  method: null,
+  derivation: null,
+  admitted_fact_keys: [],
   id: "49999",
   level: 9,
   zone: "MIDSHIP",
@@ -76,11 +92,16 @@ const unbackedEntity: any = {
   relations: {},
 };
 
+const backedAdmission: any = {
+  entityAdmitted: true,
+  admittedFactKeys: new Set(["connected_vertical_core", "walking_intelligence", "source_artifact"]),
+};
+
 console.log("P0-H2 explainability fail-closed:");
 
 // --- EvidenceResolver (real execution) ------------------------------------
 check("backed entity uses actual artifact_id / page / statement_id / status / confidence", () => {
-  const p = EvidenceResolver.resolveRuleEvidence(RULE_WALK, backedEntity);
+  const p = EvidenceResolver.resolveRuleEvidence(RULE_WALK, backedEntity, "msc-bellissima", backedAdmission);
   assert.equal(p.artifact_id, "MSC-BEL-ART-007");
   assert.equal(p.page, 5);
   assert.equal(p.locator, "Deck 14 plan");
@@ -117,14 +138,14 @@ check("unbacked confidence is null (never a hardcoded 0.9-1.0)", () => {
 
 check("graph_edge is null when the required relation is absent", () => {
   // adjacent_overhead is null on the backed entity -> no edge may be claimed.
-  const p = EvidenceResolver.resolveRuleEvidence(RULE_QUIET, backedEntity);
+  const p = EvidenceResolver.resolveRuleEvidence(RULE_QUIET, backedEntity, "msc-bellissima", backedAdmission);
   assert.equal(p.graph_edge, null);
   const u = EvidenceResolver.resolveRuleEvidence(RULE_WALK, unbackedEntity);
   assert.equal(u.graph_edge, null);
 });
 
 check("graph_edge is emitted only from a real relation value", () => {
-  const p = EvidenceResolver.resolveRuleEvidence(RULE_WALK, backedEntity);
+  const p = EvidenceResolver.resolveRuleEvidence(RULE_WALK, backedEntity, "msc-bellissima", backedAdmission);
   assert.equal(typeof p.graph_edge, "string");
   assert.match(p.graph_edge as string, /Lift Core A/);
 });
@@ -137,7 +158,12 @@ check("no synthetic Marketplace_Buffet / Lift_Core_B fallbacks", () => {
   assert.equal(src.includes(".geometry.json"), false);
   for (const e of [backedEntity, unbackedEntity]) {
     for (const rule of [RULE_WALK, RULE_QUIET]) {
-      const p: any = EvidenceResolver.resolveRuleEvidence(rule, e);
+      const p: any = EvidenceResolver.resolveRuleEvidence(
+        rule,
+        e,
+        "msc-bellissima",
+        e === backedEntity ? backedAdmission : undefined,
+      );
       const blob = JSON.stringify(p);
       assert.equal(blob.includes("Marketplace_Buffet"), false);
       assert.equal(blob.includes("Lift_Core_B"), false);

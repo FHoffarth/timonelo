@@ -1,30 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SemanticEntity } from "../types";
 import { getClassificationColorToken, getEpistemicPatternToken } from "../apiClient";
 import { CabinIntelligenceEngine } from "../../intelligence/CabinIntelligenceEngine";
 import ExplainabilityCard from "../../explainability/ExplainabilityCard";
 import {
+  isPassengerEntityAdmitted,
+  isPassengerFactAdmitted,
+} from "../passengerAdmission";
+import {
   X,
-  ShieldCheck,
   Accessibility,
-  Footprints,
-  Compass,
   ArrowUp,
   ArrowDown,
   ArrowLeft,
   ArrowRight,
-  FileText,
-  AlertCircle,
   HelpCircle,
-  Link,
-  Layers,
   Sparkles,
   Code2,
-  ExternalLink,
-  Volume2,
   Info,
-  ChevronDown,
-  ChevronUp,
   Workflow,
 } from "lucide-react";
 
@@ -51,6 +44,7 @@ export default function SemanticObjectInspector({
 
   const isCabin = entity.classification.startsWith("STATEROOM");
   const cabinIntel = isCabin ? CabinIntelligenceEngine.evaluateCabin(entity) : null;
+  const passengerAdmitted = isPassengerEntityAdmitted(entity);
 
   return (
     <div className="w-96 h-full bg-slate-900/95 backdrop-blur-2xl border-l border-white/10 flex flex-col justify-between p-6 select-none z-30 overflow-y-auto no-scrollbar text-slate-300">
@@ -65,7 +59,7 @@ export default function SemanticObjectInspector({
               <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${colorToken.badge}`}>
                 {entity.classification_label}
               </span>
-              {entity.accessible && (
+              {isPassengerFactAdmitted(entity, "accessible_designation") && entity.accessible && (
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 flex items-center gap-1">
                   <Accessibility className="w-3 h-3" /> PRM (H)
                 </span>
@@ -75,7 +69,9 @@ export default function SemanticObjectInspector({
               {entity.label}
             </h2>
             <p className="text-xs text-slate-400 font-mono">
-              Deck {entity.level} ({entity.level_name}) • {entity.side} Side • {entity.zone.replace("_", " ")}
+              {passengerAdmitted
+                ? `Deck ${entity.level} (${entity.level_name})`
+                : "Schematic arrangement only — physical position and topology unavailable"}
             </p>
           </div>
 
@@ -129,7 +125,7 @@ export default function SemanticObjectInspector({
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-mono text-slate-400">{sc.name.split(" ")[0]}</span>
                       <span className="font-mono text-xs font-bold text-white bg-slate-800 px-1.5 py-0.5 rounded">
-                        {sc.score}
+                        {sc.score ?? "—"}
                       </span>
                     </div>
                     <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">{sc.grade}</div>
@@ -177,19 +173,21 @@ export default function SemanticObjectInspector({
         <div className="p-4 bg-slate-950/60 rounded-2xl border border-white/5 space-y-2.5">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
             <span>Epistemic Grounding</span>
-            <span className="text-emerald-400 font-mono">
-              {(entity.confidence * 100).toFixed(0)}% Confidence
+            <span className="text-slate-400 font-mono">
+              {passengerAdmitted && typeof entity.confidence === "number"
+                ? "Computed confidence available"
+                : "Unavailable"}
             </span>
           </div>
 
-          <div className="space-y-1.5 text-xs font-mono">
+          {passengerAdmitted ? <div className="space-y-1.5 text-xs font-mono">
             <div className="flex items-center justify-between">
               <span className="text-slate-500">Statements:</span>
               <span className="text-sky-300 font-bold">{entity.statements.join(", ")}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-slate-500">Statement Count:</span>
-              <span className="text-slate-200">{entity.statement_count} Verified</span>
+              <span className="text-slate-200">{entity.statement_count} admitted</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-slate-500">Artifact Count:</span>
@@ -199,12 +197,16 @@ export default function SemanticObjectInspector({
               <span className="text-slate-500">Review State:</span>
               <span className="text-emerald-400">{entity.review_state}</span>
             </div>
-          </div>
+          </div> : (
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Legacy trust labels and stored confidence do not cross the passenger evidence gate.
+            </p>
+          )}
 
-          {entity.evidence_links.length > 0 && (
+          {passengerAdmitted && entity.evidence_links.length > 0 && (
             <div className="pt-2 border-t border-white/5 space-y-1">
               <span className="text-[10px] uppercase font-mono text-slate-500 font-bold">
-                Primary Ground Truth Artifact
+                Admitted source artifact
               </span>
               <div className="p-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs">
                 <div className="flex items-center justify-between font-bold text-white">
@@ -219,15 +221,15 @@ export default function SemanticObjectInspector({
           )}
         </div>
 
-        {/* Known Topological Relations */}
+        {/* Admitted Topological Relations */}
         <div className="p-4 bg-slate-950/60 rounded-2xl border border-white/5 space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
-            <span>Known Topological Relations</span>
+            <span>Admitted Topological Relations</span>
             <span className="text-sky-400 font-mono text-[10px]">W3C BOT Edges</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {entity.relations.adjacent_fore && (
+            {isPassengerFactAdmitted(entity, "adjacent_fore") && entity.relations.adjacent_fore && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_fore!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors cursor-pointer"
@@ -241,7 +243,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {entity.relations.adjacent_aft && (
+            {isPassengerFactAdmitted(entity, "adjacent_aft") && entity.relations.adjacent_aft && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_aft!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors cursor-pointer"
@@ -255,7 +257,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {entity.relations.adjacent_across && (
+            {isPassengerFactAdmitted(entity, "adjacent_across") && entity.relations.adjacent_across && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_across!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors col-span-2 cursor-pointer"
@@ -267,7 +269,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {entity.relations.adjacent_overhead && (
+            {isPassengerFactAdmitted(entity, "adjacent_overhead") && entity.relations.adjacent_overhead && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowUp className="w-3 h-3 text-emerald-400" /> Ceiling Overhead (Level {entity.level + 1})
@@ -278,7 +280,7 @@ export default function SemanticObjectInspector({
               </div>
             )}
 
-            {entity.relations.adjacent_underfoot && (
+            {isPassengerFactAdmitted(entity, "adjacent_underfoot") && entity.relations.adjacent_underfoot && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowDown className="w-3 h-3 text-blue-400" /> Floor Underfoot (Level {entity.level - 1})
@@ -286,6 +288,11 @@ export default function SemanticObjectInspector({
                 <div className="font-medium text-slate-200 mt-0.5">
                   {entity.relations.adjacent_underfoot}
                 </div>
+              </div>
+            )}
+            {!passengerAdmitted && (
+              <div className="col-span-2 text-xs text-slate-400 italic">
+                No topology has been admitted for passenger use.
               </div>
             )}
           </div>
@@ -321,7 +328,9 @@ export default function SemanticObjectInspector({
         <div className="p-3 bg-slate-950/80 rounded-2xl border border-white/5 flex items-center justify-between text-xs">
           <span className="text-slate-500 font-mono">Vertical Core Link:</span>
           <span className="font-semibold text-sky-300 font-mono">
-            {entity.relations.connected_vertical_core || "Midship Core"}
+            {isPassengerFactAdmitted(entity, "connected_vertical_core")
+              ? entity.relations.connected_vertical_core || "No connected core"
+              : "Unavailable"}
           </span>
         </div>
       </div>

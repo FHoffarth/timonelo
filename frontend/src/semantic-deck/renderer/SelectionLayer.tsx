@@ -1,9 +1,8 @@
 import React from "react";
 import { LayerProps } from "./types";
-import { SemanticEntity } from "../types";
+import { isPassengerFactAdmitted } from "../passengerAdmission";
 
 export const SelectionLayer: React.FC<LayerProps> = ({
-  level,
   selectedEntity,
   hoveredEntity,
   isNight = false,
@@ -38,7 +37,7 @@ export const SelectionLayer: React.FC<LayerProps> = ({
       {selectedEntity && (
         <g id="adjacency-vectors">
           {/* Fore Neighbor */}
-          {relations.adjacent_fore && (
+          {isPassengerFactAdmitted(target, "adjacent_fore") && relations.adjacent_fore && (
             <g transform="translate(680, 20)">
               <rect width="90" height="20" rx="6" fill={isNight ? "#0C1B2A" : "#FFFFFF"} stroke="#C58A46" strokeWidth="1" />
               <text x="45" y="14" fill={isNight ? "#F8FAFC" : "#0C1B2A"} fontSize="8" fontFamily="monospace" textAnchor="middle">
@@ -48,7 +47,7 @@ export const SelectionLayer: React.FC<LayerProps> = ({
           )}
 
           {/* Aft Neighbor */}
-          {relations.adjacent_aft && (
+          {isPassengerFactAdmitted(target, "adjacent_aft") && relations.adjacent_aft && (
             <g transform="translate(230, 20)">
               <rect width="90" height="20" rx="6" fill={isNight ? "#0C1B2A" : "#FFFFFF"} stroke="#C58A46" strokeWidth="1" />
               <text x="45" y="14" fill={isNight ? "#F8FAFC" : "#0C1B2A"} fontSize="8" fontFamily="monospace" textAnchor="middle">
@@ -58,7 +57,7 @@ export const SelectionLayer: React.FC<LayerProps> = ({
           )}
 
           {/* Across Corridor */}
-          {relations.adjacent_across && (
+          {isPassengerFactAdmitted(target, "adjacent_across") && relations.adjacent_across && (
             <g transform="translate(455, 20)">
               <rect width="100" height="20" rx="6" fill={isNight ? "#0C1B2A" : "#FFFFFF"} stroke="#38BDF8" strokeWidth="1" />
               <text x="50" y="14" fill={isNight ? "#F8FAFC" : "#0C1B2A"} fontSize="8" fontFamily="monospace" textAnchor="middle">
@@ -68,7 +67,7 @@ export const SelectionLayer: React.FC<LayerProps> = ({
           )}
 
           {/* Overhead Buffer Zone */}
-          {relations.adjacent_overhead && (
+          {isPassengerFactAdmitted(target, "adjacent_overhead") && relations.adjacent_overhead && (
             <g transform="translate(410, 268)">
               <rect width="180" height="20" rx="6" fill={isNight ? "#1E293B" : "#F1F5F9"} stroke="#94A3B8" strokeWidth="1" />
               <text x="90" y="14" fill={isNight ? "#94A3B8" : "#475569"} fontSize="8" fontFamily="monospace" textAnchor="middle">

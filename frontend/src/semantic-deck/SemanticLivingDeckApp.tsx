@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { TimoneloSpatialApiClient } from "./apiClient";
-import { SemanticLevel, SemanticEntity } from "./types";
+import { SemanticEntity } from "./types";
 import { ThemeProvider, useTheme } from "./themeContext";
 import DeckNavigationTree from "./components/DeckNavigationTree";
 import SpatialGrammarCanvas from "./components/SpatialGrammarCanvas";
@@ -9,13 +9,7 @@ import EpistemicLegendBar from "./components/EpistemicLegendBar";
 import SemanticSearchBar from "./components/SemanticSearchBar";
 import StandardsInspectorModal from "./components/StandardsInspectorModal";
 import {
-  Compass,
-  Sparkles,
-  ShieldCheck,
-  Code2,
-  Layers,
   History,
-  AlertTriangle,
   Workflow,
   Sun,
   Moon,
@@ -75,9 +69,9 @@ function LivingDeckInner() {
     setActiveLevelIndex(levelIndex);
   };
 
-  const handleSelectEntity = (entity: SemanticEntity) => {
+  const handleSelectEntity = (entity: SemanticEntity | null) => {
     setSelectedEntity(entity);
-    setActiveLevelIndex(entity.level);
+    if (entity) setActiveLevelIndex(entity.level);
   };
 
   const handleSelectEntityId = (id: string) => {
@@ -101,7 +95,7 @@ function LivingDeckInner() {
                 Timonelo Living Deck
               </h1>
               <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
-                W3C BOT & PROV-O READY
+                LEGACY SCHEMATIC DATASET
               </span>
             </div>
             <p className="text-[11px] text-slate-400 font-mono">
@@ -201,14 +195,15 @@ function LivingDeckInner() {
             <div className="w-16 h-16 rounded-3xl bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400">
               <Workflow className="w-8 h-8" />
             </div>
-            <h2 className="text-lg font-bold text-white">Canonical Topology Inspector (W3C BOT)</h2>
+            <h2 className="text-lg font-bold text-white">Topology unavailable for passenger use</h2>
             <p className="text-xs text-slate-400 max-w-md text-center leading-relaxed">
-              Exposing topological graph edges, vertical elevator transit shafts, and adjacent boundary spaces generated from the Truth Engine without geometric assumptions.
+              This view is backed by a legacy schematic dataset. No adjacency,
+              corridor, or vertical connectivity has crossed the canonical gate.
             </p>
             <div className="p-4 bg-slate-900/60 rounded-2xl border border-white/10 text-xs font-mono text-slate-300 space-y-1">
-              <div>bot:Storey Count: {vesselGraph.levels.length} Levels</div>
-              <div>bot:Space Count: {vesselGraph.epistemic_summary.total_entities} Verified Entities</div>
-              <div>Mean Confidence: {(vesselGraph.epistemic_summary.mean_confidence * 100).toFixed(0)}%</div>
+              <div>Admission state: PUBLISH_BLOCKED</div>
+              <div>Admitted topology edges: 0</div>
+              <div>Computed confidence: unavailable</div>
             </div>
           </div>
         )}
@@ -219,14 +214,15 @@ function LivingDeckInner() {
             <div className="w-16 h-16 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
               <History className="w-8 h-8" />
             </div>
-            <h2 className="text-lg font-bold text-white">W3C PROV-O Lineage Viewer</h2>
+            <h2 className="text-lg font-bold text-white">Canonical lineage unavailable</h2>
             <p className="text-xs text-slate-400 max-w-md text-center leading-relaxed">
-              Every spatial statement is formally linked to its originating artifact with SHA-256 integrity pinning, extraction activity, and reviewer attribution.
+              Legacy source links do not prove how each attached value came into
+              existence. They are not presented as Ground Truth provenance.
             </p>
             <div className="p-4 bg-slate-900/60 rounded-2xl border border-white/10 text-xs font-mono text-emerald-300 space-y-1">
-              <div>Direct Provenance Count: {vesselGraph.epistemic_summary.direct_evidence_count}</div>
-              <div>Derived Formula Count: {vesselGraph.epistemic_summary.derived_count}</div>
-              <div>Uncertainty Count: {vesselGraph.epistemic_summary.unknown_count}</div>
+              <div>Data origin: LEGACY_SCHEMATIC</div>
+              <div>Admitted provenance records: 0</div>
+              <div>Passenger state: UNKNOWN</div>
             </div>
           </div>
         )}

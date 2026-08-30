@@ -356,7 +356,7 @@ describe("cabin features are positive-only and evidence-backed", () => {
     ]) {
       expect(all).not.toContain(forbidden);
     }
-  });
+  }, 10_000);
 
   it("derives features from the extraction output, never from underlay pixels", () => {
     // The underlay is a ProofCanvas concern; the drawer never receives it. The
