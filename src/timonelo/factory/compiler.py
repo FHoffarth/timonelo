@@ -24,8 +24,8 @@ from timonelo.lenses.family import FamilyLens
 from timonelo.lenses.quiet import QuietCabinLens
 from timonelo.factory.validator import SpatialIntegrityValidator
 from timonelo.factory.patch_engine import (
-    HypothesisPublicationBlocked,
     HypothesisVesselSpatialOntology,
+    require_publishable_spatial_ontology,
 )
 
 
@@ -38,10 +38,7 @@ class KnowledgeFactoryCompiler:
         output_data_dir: Path,
         output_frontend_dir: Optional[Path] = None,
     ) -> bool:
-        if isinstance(ontology, HypothesisVesselSpatialOntology):
-            raise HypothesisPublicationBlocked(
-                "Quarantined sister-ship hypotheses cannot write canonical or passenger assets"
-            )
+        ontology = require_publishable_spatial_ontology(ontology)
 
         print(f"============================================================")
         print(f"KNOWLEDGE FACTORY COMPILER — {ontology.name} ({ontology.imo_number})")

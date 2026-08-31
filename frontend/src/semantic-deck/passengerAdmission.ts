@@ -51,6 +51,8 @@ export type PassengerFactKey =
   | "couple_intelligence";
 
 export interface PassengerAdmission {
+  vessel_id: string | null;
+  provenance_vessel_id: string | null;
   data_origin: PassengerDataOrigin;
   evidence_condition: EvidenceCondition;
   human_review_state: HumanReviewState;
@@ -86,16 +88,27 @@ const GEOMETRY_QUALIFIED = new Set<GeometryProvenance>([
 
 export function isPassengerEntityAdmitted(
   admission: Partial<PassengerAdmission>,
+  expectedVesselId: string | undefined | null,
 ): boolean {
+  const vesselId = admission.vessel_id?.trim().toLowerCase();
+  const provenanceVesselId = admission.provenance_vessel_id?.trim().toLowerCase();
+  const expected = expectedVesselId?.trim().toLowerCase();
+  const hasMatchingVesselOwnership = Boolean(
+    vesselId &&
+    provenanceVesselId &&
+    expected &&
+    vesselId === provenanceVesselId &&
+    vesselId === expected,
+  );
   const hasAdmissibleMethod =
     admission.method === "DIRECT" ||
     admission.method === "CALCULATED" ||
     admission.method === "INFERRED";
   const hasAdmissibleDerivation =
     admission.derivation === "LOCAL" ||
-    admission.derivation === "SISTER_SHIP" ||
     admission.derivation === "REFERENCE_MODEL";
   return (
+    hasMatchingVesselOwnership &&
     admission.data_origin === "CANONICAL_TRUTH_ENGINE" &&
     admission.evidence_condition === "SUPPORTED" &&
     admission.human_review_state === "APPROVED" &&
@@ -109,8 +122,9 @@ export function isPassengerEntityAdmitted(
 export function isPassengerFactAdmitted(
   admission: Partial<PassengerAdmission>,
   fact: PassengerFactKey,
+  expectedVesselId: string | undefined | null,
 ): boolean {
-  if (!isPassengerEntityAdmitted(admission)) return false;
+  if (!isPassengerEntityAdmitted(admission, expectedVesselId)) return false;
   if (!(admission.admitted_fact_keys || []).includes(fact)) return false;
   if (GEOMETRY_FACTS.has(fact)) {
     return (
@@ -126,11 +140,14 @@ export function getPassengerFact<T>(
   admission: Partial<PassengerAdmission>,
   fact: PassengerFactKey,
   value: T,
+  expectedVesselId: string | undefined | null,
 ): T | null {
-  return isPassengerFactAdmitted(admission, fact) ? value : null;
+  return isPassengerFactAdmitted(admission, fact, expectedVesselId) ? value : null;
 }
 
 export const LEGACY_SCHEMATIC_ADMISSION: PassengerAdmission = {
+  vessel_id: null,
+  provenance_vessel_id: null,
   data_origin: "LEGACY_SCHEMATIC",
   evidence_condition: "UNKNOWN",
   human_review_state: "DRAFT",

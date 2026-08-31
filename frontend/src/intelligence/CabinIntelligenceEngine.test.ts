@@ -5,6 +5,8 @@ import type { SemanticEntity } from "../semantic-deck/types";
 
 function legacyCabin(overrides: Partial<SemanticEntity> = {}): SemanticEntity {
   return {
+    vessel_id: "msc-bellissima",
+    provenance_vessel_id: "msc-bellissima",
     data_origin: "LEGACY_SCHEMATIC",
     evidence_condition: "UNKNOWN",
     human_review_state: "DRAFT",
@@ -41,7 +43,7 @@ function legacyCabin(overrides: Partial<SemanticEntity> = {}): SemanticEntity {
 
 describe("CabinIntelligenceEngine passenger boundary", () => {
   it("does not turn legacy DIRECT into scores or confidence", () => {
-    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin());
+    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin(), "msc-bellissima");
 
     expect(intel.epistemic_confidence).toBeNull();
     expect(intel.side).toBeNull();
@@ -55,7 +57,7 @@ describe("CabinIntelligenceEngine passenger boundary", () => {
   });
 
   it("does not invent lift, corridor, or walking claims when relations are missing", () => {
-    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin({ relations: {} }));
+    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin({ relations: {} }), "msc-bellissima");
     const serialized = JSON.stringify(intel);
 
     expect(intel.walking_score.score).toBeNull();
@@ -63,7 +65,7 @@ describe("CabinIntelligenceEngine passenger boundary", () => {
   });
 
   it("does not expose a numeric confidence when the source value is missing", () => {
-    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin({ confidence: null }));
+    const intel = CabinIntelligenceEngine.evaluateCabin(legacyCabin({ confidence: null }), "msc-bellissima");
     expect(intel.epistemic_confidence).toBeNull();
   });
 });

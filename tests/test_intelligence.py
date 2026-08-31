@@ -122,8 +122,10 @@ class TestCruiseIntelligenceRuntime(unittest.TestCase):
             ],
         }
         meraviglia = ShipPatchEngine.apply_patch(self.bellissima, patch_meraviglia)
-        with self.assertRaises(HypothesisPublicationBlocked):
-            CruiseBriefingSynthesizer.generate_briefing(meraviglia, "12122")
+        for candidate in (meraviglia, meraviglia.ontology):
+            with self.subTest(candidate_type=type(candidate).__name__):
+                with self.assertRaises(HypothesisPublicationBlocked):
+                    CruiseBriefingSynthesizer.generate_briefing(candidate, "12122")
 
 
 if __name__ == "__main__":

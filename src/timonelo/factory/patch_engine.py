@@ -26,6 +26,7 @@ from timonelo.ontology.models import (
     EvidenceLink,
     Derivation,
     Method,
+    QuarantinedVesselSpatialOntology,
 )
 
 
@@ -33,12 +34,26 @@ from timonelo.ontology.models import (
 class HypothesisVesselSpatialOntology:
     """Physically separate wrapper for sister-ship/generated hypotheses."""
 
-    ontology: VesselSpatialOntology
+    ontology: QuarantinedVesselSpatialOntology
     origin: str = "QUARANTINED_SISTER_SHIP_HYPOTHESIS"
 
 
 class HypothesisPublicationBlocked(RuntimeError):
     """Raised when a hypothesis is presented to a canonical/runtime writer."""
+
+
+def require_publishable_spatial_ontology(
+    ontology: VesselSpatialOntology | HypothesisVesselSpatialOntology,
+) -> VesselSpatialOntology:
+    """Return only vessel-owned canonical knowledge; reject every hypothesis form."""
+    if isinstance(
+        ontology,
+        (HypothesisVesselSpatialOntology, QuarantinedVesselSpatialOntology),
+    ):
+        raise HypothesisPublicationBlocked(
+            "Quarantined sister-ship hypotheses cannot enter trusted vessel output"
+        )
+    return ontology
 
 
 class ShipPatchEngine:
@@ -178,7 +193,7 @@ class ShipPatchEngine:
         target_total_decks = patch_data.get("total_decks", base_ontology.total_decks)
 
         return HypothesisVesselSpatialOntology(
-            ontology=VesselSpatialOntology(
+            ontology=QuarantinedVesselSpatialOntology(
                 imo_number=target_imo,
                 name=target_name,
                 ship_class=target_class,
@@ -186,5 +201,6 @@ class ShipPatchEngine:
                 beam_meters=target_beam,
                 total_decks=target_total_decks,
                 decks=new_decks,
+                source_vessel_imo=base_ontology.imo_number,
             )
         )

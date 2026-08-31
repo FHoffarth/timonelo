@@ -16,7 +16,12 @@ import {
   isPassengerEntityAdmitted,
   isPassengerFactAdmitted,
 } from "./passengerAdmission";
-import { UnknownVesselError, vesselScopedEntityKey } from "./vesselIdentity";
+import {
+  UnknownVesselError,
+  VesselOwnershipError,
+  assertVesselOwnership,
+  vesselScopedEntityKey,
+} from "./vesselIdentity";
 
 export function parseLegacySemanticState(val: unknown): LegacySemanticDeckState {
   if (typeof val === "string") {
@@ -81,6 +86,8 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
         // legacy DIRECT/review/confidence fields are not canonical admission
         // axes and can never authorize passenger intelligence.
         ...LEGACY_SCHEMATIC_ADMISSION,
+        vessel_id: raw.vessel_id,
+        provenance_vessel_id: raw.vessel_id,
         id: String(o.id),
         iri: `https://timonelo.io/spatial/${raw.vessel_id}/spaces/${o.id}`,
         label: o.label || `Space ${o.id}`,
@@ -242,18 +249,32 @@ export class TimoneloSpatialApiClient {
     return matches;
   }
 
-  public exportStandardsPayload(entity: SemanticEntity): StandardsExportPayload {
-    const admitted = isPassengerEntityAdmitted(entity);
-    const identityAdmitted = isPassengerFactAdmitted(entity, "identity");
-    const deckAdmitted = isPassengerFactAdmitted(entity, "deck");
-    const sourceAdmitted = isPassengerFactAdmitted(entity, "source_artifact");
-    const fore = isPassengerFactAdmitted(entity, "adjacent_fore")
+  public exportStandardsPayload(
+    entity: SemanticEntity,
+    requestedVesselId: string,
+  ): StandardsExportPayload {
+    assertVesselOwnership(
+      entity.vessel_id,
+      entity.provenance_vessel_id,
+      this.activeGraph.vessel_id,
+      requestedVesselId,
+    );
+    const key = vesselScopedEntityKey(this.activeVesselId, entity.id);
+    if (!key || this.entityIndex.get(key) !== entity) {
+      throw new VesselOwnershipError();
+    }
+
+    const admitted = isPassengerEntityAdmitted(entity, this.activeVesselId);
+    const identityAdmitted = isPassengerFactAdmitted(entity, "identity", this.activeVesselId);
+    const deckAdmitted = isPassengerFactAdmitted(entity, "deck", this.activeVesselId);
+    const sourceAdmitted = isPassengerFactAdmitted(entity, "source_artifact", this.activeVesselId);
+    const fore = isPassengerFactAdmitted(entity, "adjacent_fore", this.activeVesselId)
       ? entity.relations.adjacent_fore
       : null;
-    const aft = isPassengerFactAdmitted(entity, "adjacent_aft")
+    const aft = isPassengerFactAdmitted(entity, "adjacent_aft", this.activeVesselId)
       ? entity.relations.adjacent_aft
       : null;
-    const across = isPassengerFactAdmitted(entity, "adjacent_across")
+    const across = isPassengerFactAdmitted(entity, "adjacent_across", this.activeVesselId)
       ? entity.relations.adjacent_across
       : null;
 

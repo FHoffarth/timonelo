@@ -44,6 +44,9 @@ function LivingDeckInner() {
 
   // Focus Cabin 14122 by default on Deck 14
   useEffect(() => {
+    setSelectedEntity(null);
+    setHoveredEntity(null);
+    setInspectingStandardsEntity(null);
     if (selectedVesselId === "msc-bellissima") {
       const defaultSpace = apiClient.getEntity("14122") || apiClient.getEntity("10012") || levels[0]?.spaces[0];
       if (defaultSpace) {
@@ -62,6 +65,12 @@ function LivingDeckInner() {
   const activeLevel = apiClient.getLevel(activeLevelIndex) || levels[0];
 
   const handleSelectVessel = (vesselId: string) => {
+    // Clear vessel-scoped objects in the same event as the identity change.
+    // Waiting for the effect would render the old standards entity once with
+    // the new client, causing the fail-closed export check to throw in render.
+    setSelectedEntity(null);
+    setHoveredEntity(null);
+    setInspectingStandardsEntity(null);
     setSelectedVesselId(vesselId);
   };
 
@@ -178,8 +187,9 @@ function LivingDeckInner() {
 
         {/* Center: Living Deck Spatial Grammar Canvas */}
         {activePlatformView === "LIVING_DECK" && activeLevel && (
-          <SpatialGrammarCanvas
-            level={activeLevel}
+        <SpatialGrammarCanvas
+          vesselId={selectedVesselId}
+          level={activeLevel}
             selectedEntity={selectedEntity}
             hoveredEntity={hoveredEntity}
             allLevels={levels}
@@ -229,6 +239,7 @@ function LivingDeckInner() {
 
         {/* Right: Semantic Object Inspector */}
         <SemanticObjectInspector
+          vesselId={selectedVesselId}
           entity={selectedEntity}
           onClose={() => setSelectedEntity(null)}
           onSelectEntityId={handleSelectEntityId}
@@ -241,6 +252,7 @@ function LivingDeckInner() {
         <StandardsInspectorModal
           entity={inspectingStandardsEntity}
           client={apiClient}
+          requestedVesselId={selectedVesselId}
           onClose={() => setInspectingStandardsEntity(null)}
         />
       )}

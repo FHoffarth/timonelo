@@ -4,6 +4,8 @@ import { ExplainabilityEngine } from "./ExplainabilityEngine";
 import type { SemanticEntity } from "../semantic-deck/types";
 
 const base: SemanticEntity = {
+  vessel_id: "msc-bellissima",
+  provenance_vessel_id: "msc-bellissima",
   data_origin: "LEGACY_SCHEMATIC",
   evidence_condition: "UNKNOWN",
   human_review_state: "DRAFT",
@@ -38,7 +40,7 @@ const base: SemanticEntity = {
 
 describe("ExplainabilityEngine admission", () => {
   it("keeps legacy and UNKNOWN entities unavailable through scoring", () => {
-    const result = ExplainabilityEngine.explainCabin(base);
+    const result = ExplainabilityEngine.explainCabin(base, "msc-bellissima");
 
     expect(result.global_epistemic_confidence).toBeNull();
     expect(result.all_triggered_rules).toEqual([]);
@@ -76,7 +78,7 @@ describe("ExplainabilityEngine admission", () => {
       }],
     };
 
-    const result = ExplainabilityEngine.explainCabin(admitted);
+    const result = ExplainabilityEngine.explainCabin(admitted, "msc-bellissima");
     expect(result.scores.walking.final_score).toBe(88);
     expect(result.scores.walking.rules_triggered).toHaveLength(1);
     expect(result.scores.quiet.final_score).toBeNull();
@@ -96,7 +98,7 @@ describe("ExplainabilityEngine admission", () => {
       relations: { adjacent_overhead: "Marketplace Buffet" },
     };
 
-    const result = ExplainabilityEngine.explainCabin(admittedScoreOnly);
+    const result = ExplainabilityEngine.explainCabin(admittedScoreOnly, "msc-bellissima");
     expect(result.scores.quiet.rules_triggered).toEqual([]);
     expect(JSON.stringify(result)).not.toMatch(/Marketplace Buffet directly overhead/);
   });

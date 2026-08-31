@@ -12,6 +12,7 @@ interface LiftCoreDefinition {
 }
 
 export const LiftLayer: React.FC<LayerProps & { onSelectLevel?: (lvl: number) => void }> = ({
+  vesselId,
   level,
   selectedEntity,
   onSelectLevel,
@@ -27,7 +28,7 @@ export const LiftLayer: React.FC<LayerProps & { onSelectLevel?: (lvl: number) =>
   ];
 
   const connectedLiftId = selectedEntity &&
-    isPassengerFactAdmitted(selectedEntity, "connected_vertical_core")
+    isPassengerFactAdmitted(selectedEntity, "connected_vertical_core", vesselId)
     ? selectedEntity.relations?.connected_vertical_core
     : null;
 

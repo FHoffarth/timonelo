@@ -11,6 +11,7 @@ import { SemanticEntity } from "../../semantic-deck/types";
 import {
   isPassengerEntityAdmitted,
   isPassengerFactAdmitted,
+  type PassengerFactKey,
 } from "../../semantic-deck/passengerAdmission";
 import CabinIntelligenceCard from "../../intelligence/CabinIntelligenceCard";
 import ExplainabilityCard from "../../explainability/ExplainabilityCard";
@@ -52,8 +53,8 @@ export default function CabinDeepDivePage({
   );
   const cabinIsPassengerAdmitted = Boolean(
     knownEntity &&
-      isPassengerEntityAdmitted(knownEntity) &&
-      isPassengerFactAdmitted(knownEntity, "identity"),
+      isPassengerEntityAdmitted(knownEntity, vesselId) &&
+      isPassengerFactAdmitted(knownEntity, "identity", vesselId),
   );
 
   // Metadata resolution (P0-D follow-up): a graph-only cabin (present in the
@@ -128,6 +129,9 @@ export default function CabinDeepDivePage({
     );
   }
 
+  const passengerFactIsAdmitted = (fact: PassengerFactKey): boolean =>
+    isPassengerFactAdmitted(stateroomEntity, fact, vesselId);
+
   return (
     <div className="flex-1 flex flex-col bg-[#FBF8F3] select-none pb-20">
       {/* 1. Breadcrumbs & Title */}
@@ -169,21 +173,21 @@ export default function CabinDeepDivePage({
           <div className="absolute bottom-6 left-6 flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-white/40 text-xs sm:text-sm font-sans font-medium text-[#0C1B2A]">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
             <span className="font-bold">
-              {isPassengerFactAdmitted(stateroomEntity, "classification")
+              {passengerFactIsAdmitted("classification")
                 ? fallbackCabin.category
                 : "Category unavailable"}
             </span>
             <span>•</span>
-            <span>{isPassengerFactAdmitted(stateroomEntity, "deck")
+            <span>{passengerFactIsAdmitted("deck")
               ? `Deck ${fallbackCabin.deckNumber}`
               : "Deck unavailable"}</span>
             <span>•</span>
             <span className="text-[#5B6570]">
-              {isPassengerFactAdmitted(stateroomEntity, "side")
+              {passengerFactIsAdmitted("side")
                 ? `${fallbackCabin.side} Side`
                 : "Side unavailable"}
             </span>
-            {isPassengerFactAdmitted(stateroomEntity, "accessible_designation") && fallbackCabin.isPRM && (
+            {passengerFactIsAdmitted("accessible_designation") && fallbackCabin.isPRM && (
               <>
                 <span>•</span>
                 <span className="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">
@@ -197,12 +201,12 @@ export default function CabinDeepDivePage({
 
       {/* 3. Cabin Intelligence Summary Card */}
       <div className="max-w-7xl mx-auto w-full px-6 pb-8">
-        <CabinIntelligenceCard entity={stateroomEntity} vesselId="msc-bellissima" />
+        <CabinIntelligenceCard entity={stateroomEntity} vesselId={vesselId!} />
       </div>
 
       {/* 4. Explainability Engine Trace Card (Evidence -> Rule -> Score) */}
       <div className="max-w-7xl mx-auto w-full px-6 pb-12">
-        <ExplainabilityCard entity={stateroomEntity} vesselId="msc-bellissima" />
+        <ExplainabilityCard entity={stateroomEntity} vesselId={vesselId!} />
       </div>
 
       {/* 5. Spatial Geometry & Quick Facts Layout */}
@@ -220,7 +224,7 @@ export default function CabinDeepDivePage({
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
                 <span className="text-slate-500">DECK {fallbackCabin.deckNumber + 1} OVERHEAD</span>
                 <span className="text-slate-700 font-semibold">
-                  {isPassengerFactAdmitted(stateroomEntity, "adjacent_overhead")
+                  {passengerFactIsAdmitted("adjacent_overhead")
                     ? stateroomEntity.relations.adjacent_overhead || "None established"
                     : "Unavailable"}
                 </span>
@@ -235,7 +239,7 @@ export default function CabinDeepDivePage({
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
                 <span className="text-slate-500">DECK {fallbackCabin.deckNumber - 1} UNDERFOOT</span>
                 <span className="text-slate-700 font-semibold">
-                  {isPassengerFactAdmitted(stateroomEntity, "adjacent_underfoot")
+                  {passengerFactIsAdmitted("adjacent_underfoot")
                     ? stateroomEntity.relations.adjacent_underfoot || "None established"
                     : "Unavailable"}
                 </span>
@@ -256,10 +260,10 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Category</span>
-                <LegacyEpistemicBadge status={isPassengerFactAdmitted(stateroomEntity, "classification") ? "KNOWN" : "UNKNOWN"} />
+                <LegacyEpistemicBadge status={passengerFactIsAdmitted("classification") ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {isPassengerFactAdmitted(stateroomEntity, "classification")
+                {passengerFactIsAdmitted("classification")
                   ? `${fallbackCabin.category}${fallbackCabin.tier ? ` (${fallbackCabin.tier})` : ""}`
                   : "Unavailable"}
               </div>
@@ -269,11 +273,11 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Size</span>
-                <LegacyEpistemicBadge status={isPassengerFactAdmitted(stateroomEntity, "interior_area") && fallbackCabin.sqmInterior != null ? "KNOWN" : "UNKNOWN"} />
+                <LegacyEpistemicBadge status={passengerFactIsAdmitted("interior_area") && fallbackCabin.sqmInterior != null ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {isPassengerFactAdmitted(stateroomEntity, "interior_area") && fallbackCabin.sqmInterior != null
-                  ? `Approx. ${fallbackCabin.sqmInterior}m² ${isPassengerFactAdmitted(stateroomEntity, "balcony_area") && fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}`
+                {passengerFactIsAdmitted("interior_area") && fallbackCabin.sqmInterior != null
+                  ? `Approx. ${fallbackCabin.sqmInterior}m² ${passengerFactIsAdmitted("balcony_area") && fallbackCabin.sqmBalcony > 0 ? `+ ${fallbackCabin.sqmBalcony}m² balcony` : ""}`
                   : "Unavailable"}
               </div>
             </div>
@@ -282,17 +286,17 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Bed Config</span>
-                <LegacyEpistemicBadge status={isPassengerFactAdmitted(stateroomEntity, "bed_configuration") && fallbackCabin.bedConfig ? "KNOWN" : "UNKNOWN"} />
+                <LegacyEpistemicBadge status={passengerFactIsAdmitted("bed_configuration") && fallbackCabin.bedConfig ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-bold text-[#0C1B2A] text-sm">
-                {isPassengerFactAdmitted(stateroomEntity, "bed_configuration")
+                {passengerFactIsAdmitted("bed_configuration")
                   ? fallbackCabin.bedConfig || "Unavailable"
                   : "Unavailable"}
               </div>
             </div>
 
             {/* Connecting */}
-            {isPassengerFactAdmitted(stateroomEntity, "connecting_cabin") && fallbackCabin.connectingCabinId && (
+            {passengerFactIsAdmitted("connecting_cabin") && fallbackCabin.connectingCabinId && (
               <div className="space-y-1 pb-3 border-b border-[#0C1B2A]/5">
                 <div className="flex items-center justify-between text-slate-500">
                   <span>Connecting Door</span>
@@ -308,10 +312,10 @@ export default function CabinDeepDivePage({
             <div className="space-y-1 pt-1">
               <div className="flex items-center justify-between text-slate-500">
                 <span>Originating Artifact</span>
-                <LegacyEpistemicBadge status={isPassengerFactAdmitted(stateroomEntity, "source_artifact") && fallbackCabin.evidenceArtifactId ? "KNOWN" : "UNKNOWN"} />
+                <LegacyEpistemicBadge status={passengerFactIsAdmitted("source_artifact") && fallbackCabin.evidenceArtifactId ? "KNOWN" : "UNKNOWN"} />
               </div>
               <div className="font-mono font-bold text-[#C58A46] text-xs">
-                {isPassengerFactAdmitted(stateroomEntity, "source_artifact")
+                {passengerFactIsAdmitted("source_artifact")
                   ? fallbackCabin.evidenceArtifactId || "Unavailable"
                   : "Unavailable"}
               </div>

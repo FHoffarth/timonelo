@@ -263,3 +263,15 @@ class VesselSpatialOntology:
     beam_meters: float
     total_decks: int
     decks: Dict[int, Deck] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class QuarantinedVesselSpatialOntology(VesselSpatialOntology):
+    """A non-publishable ontology whose vessel knowledge came from another vessel."""
+
+    source_vessel_imo: str = ""
+    quarantine_origin: str = "QUARANTINED_SISTER_SHIP_HYPOTHESIS"
+
+    def __post_init__(self) -> None:
+        if not self.source_vessel_imo.strip():
+            raise ValueError("Quarantined ontology requires its source vessel IMO")

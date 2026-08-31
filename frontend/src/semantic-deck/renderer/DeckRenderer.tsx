@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 export const DeckRenderer: React.FC<DeckRendererProps> = ({
+  vesselId,
   level,
   allLevels = [],
   selectedEntity,
@@ -99,18 +100,19 @@ export const DeckRenderer: React.FC<DeckRendererProps> = ({
         const prevLevel = level.level_index > 4 ? level.level_index - (level.level_index === 18 ? 2 : 1) : 4;
         onSelectLevel(prevLevel);
       } else if (selectedEntity && onNavigateAdjacent) {
-        if (e.key === "ArrowLeft" && isPassengerFactAdmitted(selectedEntity, "adjacent_aft")) onNavigateAdjacent("aft");
-        if (e.key === "ArrowRight" && isPassengerFactAdmitted(selectedEntity, "adjacent_fore")) onNavigateAdjacent("fore");
+        if (e.key === "ArrowLeft" && isPassengerFactAdmitted(selectedEntity, "adjacent_aft", vesselId)) onNavigateAdjacent("aft");
+        if (e.key === "ArrowRight" && isPassengerFactAdmitted(selectedEntity, "adjacent_fore", vesselId)) onNavigateAdjacent("fore");
         if ((e.key === "ArrowUp" || e.key === "ArrowDown") &&
-            isPassengerFactAdmitted(selectedEntity, "adjacent_across")) onNavigateAdjacent("across");
+            isPassengerFactAdmitted(selectedEntity, "adjacent_across", vesselId)) onNavigateAdjacent("across");
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [level.level_index, selectedEntity, onSelectLevel, onNavigateAdjacent]);
+  }, [level.level_index, selectedEntity, vesselId, onSelectLevel, onNavigateAdjacent]);
 
   const layerProps = {
+    vesselId,
     level,
     allLevels,
     selectedEntity,

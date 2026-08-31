@@ -6,8 +6,8 @@ Assembles the complete, unified CruiseBriefing container from all underlying pla
 from typing import Optional, Dict, Any
 from timonelo.ontology.models import VesselSpatialOntology, Cabin
 from timonelo.factory.patch_engine import (
-    HypothesisPublicationBlocked,
     HypothesisVesselSpatialOntology,
+    require_publishable_spatial_ontology,
 )
 from timonelo.calculus.router import DeterministicSpatialRouter
 from timonelo.calculus.sandwich import DeterministicSandwichResolver
@@ -43,10 +43,7 @@ class CruiseBriefingSynthesizer:
         visa_override: Optional[Dict[str, Any]] = None,
         travel_override: Optional[Dict[str, Any]] = None,
     ) -> Optional[CruiseBriefing]:
-        if isinstance(ontology, HypothesisVesselSpatialOntology):
-            raise HypothesisPublicationBlocked(
-                "Quarantined sister-ship hypotheses cannot produce passenger intelligence"
-            )
+        ontology = require_publishable_spatial_ontology(ontology)
 
         # 1. Locate Cabin across ontology decks
         target_cabin: Optional[Cabin] = None
