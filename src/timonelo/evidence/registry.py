@@ -67,10 +67,18 @@ def normalize_vessel_imo(value: str) -> str:
     candidate = value.strip().upper().replace(" ", "")
     if candidate.startswith("IMO"):
         candidate = candidate[3:]
-    if len(candidate) != 7 or not candidate.isdigit():
+    # `isascii()` before `isdigit()`, deliberately. `str.isdigit()` alone is
+    # true for characters `int()` then refuses -- superscripts such as "²" --
+    # and true for characters `int()` accepts but which are not the digits an
+    # IMO number is made of, such as Arabic-Indic "٩". The first leaks a
+    # ValueError out of what must be a total gate; the second would persist a
+    # non-ASCII identity into the canonical registry that can never match a
+    # lookup. Restricting to ASCII rules out both, and makes the int()
+    # conversion below unconditionally safe.
+    if len(candidate) != 7 or not (candidate.isascii() and candidate.isdigit()):
         raise RegistryError(
             f"Invalid IMO identity {value!r}. Expected 'IMO' followed by seven "
-            "digits."
+            "ASCII digits."
         )
     if not _imo_check_digit_holds(candidate):
         raise RegistryError(
@@ -128,12 +136,19 @@ class Artifact:
         )
 
     def establishes_vessel(self, vessel_imo: str) -> bool:
-        """True only if this artifact is explicitly attributed to that vessel."""
+        """True only if this artifact is explicitly attributed to that vessel.
+
+        Total by construction: any malformed identity answers False rather than
+        raising. `RegistryError` subclasses `ValueError`, so catching the latter
+        covers both the validator's own refusals and any parsing error it might
+        let through. That breadth is deliberate — this is a trust gate, and its
+        totality should not depend on the validator upstream staying correct.
+        """
         if not self.subject_vessels:
             return False
         try:
             wanted = normalize_vessel_imo(vessel_imo)
-        except RegistryError:
+        except ValueError:
             return False
         return wanted in self.subject_vessels
 

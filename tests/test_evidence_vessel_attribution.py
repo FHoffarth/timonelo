@@ -218,6 +218,93 @@ def test_a_malformed_query_answers_false_rather_than_raising(registry):
         assert registry.artifact_establishes_vessel("ART-0001", bad) is False
 
 
+# -- 7b. non-ASCII digit-like identities ------------------------------------
+#
+# `str.isdigit()` is true for characters an IMO number is not made of. Some,
+# like the superscripts, make `int()` raise; others, like Arabic-Indic digits,
+# convert fine and would have been persisted into the canonical registry as an
+# identity that can never match a lookup. Both are refused on the same rule:
+# canonical IMO identity is ASCII digits only.
+
+NON_ASCII_DIGIT_IDENTITIES = (
+    "IMO" + "²" * 7,          # superscript two   -> int() raises
+    "IMO" + "⁵" * 7,          # superscript five  -> int() raises
+    "IMO٩٧٦٦٢٠٥",  # Arabic-Indic 9766205
+)
+
+
+@pytest.mark.parametrize("identity", NON_ASCII_DIGIT_IDENTITIES)
+def test_non_ascii_digit_identities_are_refused(identity):
+    assert not identity.isascii()
+    assert identity[3:].isdigit()  # the trap: isdigit() alone would pass this
+    with pytest.raises(RegistryError):
+        normalize_vessel_imo(identity)
+
+
+@pytest.mark.parametrize("identity", NON_ASCII_DIGIT_IDENTITIES)
+def test_non_ascii_identities_answer_false_without_leaking(registry, identity):
+    """The gate is total: malformed in, False out, no exception escaping."""
+    assert registry.artifact_establishes_vessel("ART-0001", identity) is False
+    assert registry.get("ART-0001").establishes_vessel(identity) is False
+
+
+@pytest.mark.parametrize("identity", NON_ASCII_DIGIT_IDENTITIES)
+def test_non_ascii_identity_cannot_be_persisted(identity, tmp_path):
+    """Rejected before any blob copy or index write, as with any bad identity."""
+    from timonelo.evidence.registry import sha256_of_file  # noqa: F401
+
+    root = tmp_path / "artifacts"
+    fixture = tmp_path / "doc.pdf"
+    fixture.write_bytes(b"%PDF-1.4 fixture bytes")
+    registry = ArtifactRegistry(str(root))
+
+    with pytest.raises(RegistryError):
+        registry.register(
+            str(fixture),
+            document_class="cruise_line_deck_plan",
+            acquired_on="2026-08-25",
+            acquisition_method="fixture",
+            subject_vessels=[identity],
+        )
+    assert list((root / "blobs").iterdir()) == []
+    assert not (root / "index.json").exists()
+    assert len(registry) == 0
+
+
+@pytest.mark.parametrize("identity", NON_ASCII_DIGIT_IDENTITIES)
+def test_registry_load_refuses_non_ascii_attribution(identity, tmp_path):
+    """A hand-edited index cannot smuggle one past the load path either.
+
+    Governed bad data is rejected, not silently normalized into UNKNOWN: a
+    registry that quietly drops an attribution it cannot parse would turn a
+    corrupted record into a plausible-looking unattributed one.
+    """
+    root = tmp_path / "artifacts"
+    (root / "blobs").mkdir(parents=True)
+    (root / "index.json").write_text(
+        json.dumps({
+            "ART-0001": {
+                "artifact_id": "ART-0001",
+                "sha256": "a" * 64,
+                "filename": "doc.pdf",
+                "document_class": "cruise_line_deck_plan",
+                "acquired_on": "2026-08-25",
+                "acquisition_method": "fixture",
+                "subject_vessels": [identity],
+            }
+        }),
+        encoding="utf-8",
+    )
+    with pytest.raises(RegistryError):
+        ArtifactRegistry(str(root))
+
+
+def test_ascii_canonical_forms_are_still_accepted():
+    """The fix must not narrow the forms the primitive already supported."""
+    for accepted in ("IMO9766205", "9766205", "imo 9766205", " IMO9766205 "):
+        assert normalize_vessel_imo(accepted) == BELLISSIMA_IMO
+
+
 # -- 8. duplicates handled deterministically --------------------------------
 
 def test_duplicate_and_unordered_attribution_normalizes_deterministically():
