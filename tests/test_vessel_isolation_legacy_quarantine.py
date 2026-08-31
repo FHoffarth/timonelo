@@ -68,16 +68,31 @@ def test_sister_ship_derivatives_are_outside_canonical_namespace():
 
 
 def test_grandiosa_legacy_derivative_is_not_public():
+    """Grandiosa is now quarantined on both sides, not merely kept non-public.
+
+    This test previously asserted that the derivative was *retained* at
+    `data/ships/msc-grandiosa/knowledge-pack.json` and byte-matched its
+    quarantine runtime copy. Positive spatial admission replaced that premise:
+    the pack cannot be admitted (its evidence cites Bellissima identifiers that
+    establish nothing for IMO9803613), so the canonical namespace no longer
+    holds it at all. There is no retained canonical copy left to compare
+    against, which is why the byte-equality assertion is gone rather than
+    repointed.
+    """
     public_asset = REPO_ROOT / "frontend/public/data/msc-grandiosa.json"
-    quarantine_asset = (
-        REPO_ROOT / "data/hypotheses/legacy-runtime/msc-grandiosa.json"
+    runtime_quarantine = REPO_ROOT / "data/hypotheses/legacy-runtime/msc-grandiosa.json"
+    derivative_quarantine = (
+        REPO_ROOT / "data/hypotheses/legacy-derivatives/msc-grandiosa"
     )
-    retained_hypothesis = (
-        REPO_ROOT / "data/ships/msc-grandiosa/knowledge-pack.json"
-    )
+    canonical = REPO_ROOT / "data/ships/msc-grandiosa"
+
     assert not public_asset.exists()
-    assert quarantine_asset.exists()
-    assert quarantine_asset.read_bytes() == retained_hypothesis.read_bytes()
+    assert not canonical.exists(), "a non-admitted pack remains in the canonical namespace"
+    assert runtime_quarantine.exists()
+    # Retained, not destroyed.
+    assert {
+        path.name for path in derivative_quarantine.iterdir() if path.is_file()
+    } == {"deltas.json", "knowledge-pack.json", "manifest.json"}
 
 
 def test_legacy_publisher_is_not_reachable_from_production_navigation():

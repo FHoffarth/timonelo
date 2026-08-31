@@ -22,29 +22,64 @@ from timonelo.calculus.sightlines import DeterministicSightlineCalculator
 from timonelo.lenses.accessibility import AccessibilityLens
 from timonelo.lenses.family import FamilyLens
 from timonelo.lenses.quiet import QuietCabinLens
+from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.factory.validator import SpatialIntegrityValidator
 from timonelo.factory.patch_engine import (
     HypothesisVesselSpatialOntology,
     require_publishable_spatial_ontology,
 )
+from timonelo.spatial.admission import SpatialAdmissionError, require_admission
+
+
+def _default_evidence_root() -> Path:
+    """The repository's canonical evidence store."""
+    return Path(__file__).resolve().parents[3] / "evidence" / "artifacts"
 
 
 class KnowledgeFactoryCompiler:
-    """Master compilation pipeline executing Stages 01 through 08."""
+    """Master compilation pipeline executing Stages 01 through 08.
+
+    This is the only sanctioned writer of canonical and public spatial output.
+    Publication authority comes from `timonelo.spatial.admission`, not from
+    this class: any other writer must route through the same boundary rather
+    than define its own idea of publishable.
+    """
 
     @staticmethod
     def compile_vessel(
         ontology: VesselSpatialOntology | HypothesisVesselSpatialOntology,
         output_data_dir: Path,
         output_frontend_dir: Optional[Path] = None,
+        evidence_root: Optional[Path] = None,
     ) -> bool:
+        # The wrapper check stays as a cheap early refusal, but it is no longer
+        # what authorises publication: a caller can copy a quarantined
+        # ontology's fields into a plain one and defeat it. Admission below is
+        # computed from the evidence itself, which copying cannot launder.
         ontology = require_publishable_spatial_ontology(ontology)
 
         print(f"============================================================")
         print(f"KNOWLEDGE FACTORY COMPILER — {ontology.name} ({ontology.imo_number})")
         print(f"============================================================")
 
-        # 1. Run Automated Quality Gate Audit (Stage 06 & 07)
+        # 1. Positive admission FIRST, before the structural audit and before
+        # any directory is created or byte written. Structural coherence is not
+        # authority: an ontology can route, resolve and have non-empty evidence
+        # lists while none of that evidence is registered, held, classified or
+        # attributed to this vessel.
+        root = Path(evidence_root) if evidence_root else _default_evidence_root()
+        try:
+            admission = require_admission(
+                ontology, registry=ArtifactRegistry(str(root))
+            )
+        except SpatialAdmissionError as exc:
+            print("\n[FAIL] Spatial canonical admission REFUSED:")
+            print(f"  {exc}")
+            print("  No canonical or public output was written.")
+            return False
+        print(f"Spatial Canonical Admission: [PASS] {admission.summary()}")
+
+        # 2. Run Automated Quality Gate Audit (Stage 06 & 07)
         report = SpatialIntegrityValidator.audit_vessel(ontology)
         print("Stage 06/07 Quality Gates Audit:")
         for gate in report.quality_gates_passed:
