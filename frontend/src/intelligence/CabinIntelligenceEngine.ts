@@ -61,14 +61,14 @@ function getGrade(score: number): "EXCELLENT" | "GOOD" | "MODERATE" | "ATTENTION
 }
 
 export class CabinIntelligenceEngine {
-  public static evaluateCabin(entity: SemanticEntity, vesselId: string = "msc-bellissima"): CabinIntelligence {
+  public static evaluateCabin(entity: SemanticEntity, vesselId: string): CabinIntelligence {
     const relations = entity.relations || {};
     const deck = entity.level;
     const side = entity.side;
     const cid = entity.id;
 
     const reasoning: string[] = [];
-    const provSources: string[] = isPassengerFactAdmitted(entity, "source_artifact")
+    const provSources: string[] = isPassengerFactAdmitted(entity, "source_artifact", vesselId)
       ? entity.evidence_links
           .map((link) => link.source_title || link.artifact_id)
           .filter((source): source is string => Boolean(source))
@@ -258,17 +258,17 @@ export class CabinIntelligenceEngine {
       fact: PassengerFactKey,
       item: ScoreItem,
       requiredFacts: PassengerFactKey[] = [],
-    ): ScoreItem => isPassengerFactAdmitted(entity, fact) &&
-      requiredFacts.every((required) => isPassengerFactAdmitted(entity, required))
+    ): ScoreItem => isPassengerFactAdmitted(entity, fact, vesselId) &&
+      requiredFacts.every((required) => isPassengerFactAdmitted(entity, required, vesselId))
       ? item
       : unavailableScore(item.name, item.key);
 
     const admittedQuiet = admitScore("quiet_intelligence", quietScore, ["adjacent_overhead", "adjacent_underfoot"]);
     const admittedMotion = admitScore("motion_intelligence", motionScore, ["zone", "deck"]);
     const walkingFactsAdmitted =
-      isPassengerFactAdmitted(entity, "walking_intelligence") &&
-      isPassengerFactAdmitted(entity, "corridor_connectivity") &&
-      isPassengerFactAdmitted(entity, "connected_vertical_core") &&
+      isPassengerFactAdmitted(entity, "walking_intelligence", vesselId) &&
+      isPassengerFactAdmitted(entity, "corridor_connectivity", vesselId) &&
+      isPassengerFactAdmitted(entity, "connected_vertical_core", vesselId) &&
       Boolean(relations.connected_vertical_core);
     const admittedWalking = walkingFactsAdmitted
       ? walkingScore
@@ -287,7 +287,7 @@ export class CabinIntelligenceEngine {
       couple: admittedCouple,
     };
 
-    const confidence = isPassengerEntityAdmitted(entity) &&
+    const confidence = isPassengerEntityAdmitted(entity, vesselId) &&
       typeof entity.confidence === "number"
       ? entity.confidence
       : null;
@@ -295,16 +295,17 @@ export class CabinIntelligenceEngine {
     return {
       cabin_id: cid,
       vessel_id: vesselId,
-      deck_number: getPassengerFact(entity, "deck", deck),
-      deck_name: getPassengerFact(entity, "deck", entity.level_name || `Deck ${deck}`) || "Deck unavailable",
+      deck_number: getPassengerFact(entity, "deck", deck, vesselId),
+      deck_name: getPassengerFact(entity, "deck", entity.level_name || `Deck ${deck}`, vesselId) || "Deck unavailable",
       classification: getPassengerFact(
         entity,
         "classification",
         entity.classification_label || entity.classification,
+        vesselId,
       ),
-      side: getPassengerFact(entity, "side", side),
-      is_accessible: getPassengerFact(entity, "accessible_designation", entity.accessible),
-      has_balcony: getPassengerFact(entity, "balcony", entity.has_balcony),
+      side: getPassengerFact(entity, "side", side, vesselId),
+      is_accessible: getPassengerFact(entity, "accessible_designation", entity.accessible, vesselId),
+      has_balcony: getPassengerFact(entity, "balcony", entity.has_balcony, vesselId),
       quiet_score: admittedQuiet,
       motion_score: admittedMotion,
       walking_score: admittedWalking,

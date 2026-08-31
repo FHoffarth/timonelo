@@ -76,6 +76,9 @@ def test_cabin_14122_proof_remains_source_derived_but_unadmitted_and_unroutable(
 
 def test_legacy_direct_label_cannot_become_prov_or_bot_truth_export():
     client = read("frontend/src/semantic-deck/apiClient.ts")
-    assert "const admitted = isPassengerEntityAdmitted(entity)" in client
+    assert (
+        "const admitted = isPassengerEntityAdmitted(entity, this.activeVesselId)"
+        in client
+    )
     assert "BOT topology unavailable" in client
     assert "Provenance unavailable" in client

@@ -41,22 +41,20 @@ def test_conflict_resolver_specifications():
     assert "evidence_page" in content
     assert "statement_id" in content
 
-def test_knowledge_publisher_four_gates():
-    """Verify KnowledgePublisher validates Schema, Graph, Geometry, and Integrity."""
+def test_legacy_knowledge_publisher_is_quarantined():
+    """Legacy publisher retains no hard-coded successful validation path."""
     publisher_file = os.path.join(REPO_ROOT, "frontend", "src", "knowledge", "pipeline", "KnowledgePublisher.ts")
     with open(publisher_file, "r", encoding="utf-8") as f:
         content = f.read()
         
-    assert "JSON Schema Validation" in content
-    assert "Building Topology Ontology" in content
-    assert "Spatial Geometry" in content
-    assert "Referential Integrity" in content
+    assert "LegacyPublisherQuarantinedError" in content
+    assert "passed: true" not in content
 
-def test_knowledge_dashboard_mounted():
-    """Verify KnowledgeDashboardPage is accessible in App.tsx."""
+def test_knowledge_dashboard_not_mounted_in_production_app():
+    """Legacy publisher UI is excluded from the production application graph."""
     app_file = os.path.join(REPO_ROOT, "frontend", "src", "App.tsx")
     with open(app_file, "r", encoding="utf-8") as f:
         content = f.read()
         
-    assert "KnowledgeDashboardPage" in content
-    assert "knowledge-factory" in content
+    assert "KnowledgeDashboardPage" not in content
+    assert "knowledge-factory" not in content

@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 interface SemanticObjectInspectorProps {
+  vesselId: string;
   entity: SemanticEntity | null;
   onClose: () => void;
   onSelectEntityId: (id: string) => void;
@@ -29,6 +30,7 @@ interface SemanticObjectInspectorProps {
 }
 
 export default function SemanticObjectInspector({
+  vesselId,
   entity,
   onClose,
   onSelectEntityId,
@@ -43,8 +45,8 @@ export default function SemanticObjectInspector({
   const patternToken = getEpistemicPatternToken(entity.epistemic_state);
 
   const isCabin = entity.classification.startsWith("STATEROOM");
-  const cabinIntel = isCabin ? CabinIntelligenceEngine.evaluateCabin(entity) : null;
-  const passengerAdmitted = isPassengerEntityAdmitted(entity);
+  const cabinIntel = isCabin ? CabinIntelligenceEngine.evaluateCabin(entity, vesselId) : null;
+  const passengerAdmitted = isPassengerEntityAdmitted(entity, vesselId);
 
   return (
     <div className="w-96 h-full bg-slate-900/95 backdrop-blur-2xl border-l border-white/10 flex flex-col justify-between p-6 select-none z-30 overflow-y-auto no-scrollbar text-slate-300">
@@ -59,7 +61,7 @@ export default function SemanticObjectInspector({
               <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${colorToken.badge}`}>
                 {entity.classification_label}
               </span>
-              {isPassengerFactAdmitted(entity, "accessible_designation") && entity.accessible && (
+              {isPassengerFactAdmitted(entity, "accessible_designation", vesselId) && entity.accessible && (
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 flex items-center gap-1">
                   <Accessibility className="w-3 h-3" /> PRM (H)
                 </span>
@@ -160,7 +162,7 @@ export default function SemanticObjectInspector({
               <div className="pt-2">
                 <ExplainabilityCard
                   entity={entity}
-                  vesselId="msc-bellissima"
+                  vesselId={vesselId}
                   defaultCategory={expandedScoreKey || "quiet"}
                   className="!p-4 !rounded-2xl border-gold/40"
                 />
@@ -229,7 +231,7 @@ export default function SemanticObjectInspector({
           </div>
 
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {isPassengerFactAdmitted(entity, "adjacent_fore") && entity.relations.adjacent_fore && (
+            {isPassengerFactAdmitted(entity, "adjacent_fore", vesselId) && entity.relations.adjacent_fore && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_fore!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors cursor-pointer"
@@ -243,7 +245,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {isPassengerFactAdmitted(entity, "adjacent_aft") && entity.relations.adjacent_aft && (
+            {isPassengerFactAdmitted(entity, "adjacent_aft", vesselId) && entity.relations.adjacent_aft && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_aft!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors cursor-pointer"
@@ -257,7 +259,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {isPassengerFactAdmitted(entity, "adjacent_across") && entity.relations.adjacent_across && (
+            {isPassengerFactAdmitted(entity, "adjacent_across", vesselId) && entity.relations.adjacent_across && (
               <button
                 onClick={() => onSelectEntityId(entity.relations.adjacent_across!)}
                 className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-white/5 border border-white/5 text-left transition-colors col-span-2 cursor-pointer"
@@ -269,7 +271,7 @@ export default function SemanticObjectInspector({
               </button>
             )}
 
-            {isPassengerFactAdmitted(entity, "adjacent_overhead") && entity.relations.adjacent_overhead && (
+            {isPassengerFactAdmitted(entity, "adjacent_overhead", vesselId) && entity.relations.adjacent_overhead && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowUp className="w-3 h-3 text-emerald-400" /> Ceiling Overhead (Level {entity.level + 1})
@@ -280,7 +282,7 @@ export default function SemanticObjectInspector({
               </div>
             )}
 
-            {isPassengerFactAdmitted(entity, "adjacent_underfoot") && entity.relations.adjacent_underfoot && (
+            {isPassengerFactAdmitted(entity, "adjacent_underfoot", vesselId) && entity.relations.adjacent_underfoot && (
               <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 col-span-2">
                 <div className="flex items-center gap-1 text-slate-500 text-[10px]">
                   <ArrowDown className="w-3 h-3 text-blue-400" /> Floor Underfoot (Level {entity.level - 1})
@@ -328,7 +330,7 @@ export default function SemanticObjectInspector({
         <div className="p-3 bg-slate-950/80 rounded-2xl border border-white/5 flex items-center justify-between text-xs">
           <span className="text-slate-500 font-mono">Vertical Core Link:</span>
           <span className="font-semibold text-sky-300 font-mono">
-            {isPassengerFactAdmitted(entity, "connected_vertical_core")
+            {isPassengerFactAdmitted(entity, "connected_vertical_core", vesselId)
               ? entity.relations.connected_vertical_core || "No connected core"
               : "Unavailable"}
           </span>

@@ -11,7 +11,12 @@ from timonelo.factory.validator import SpatialIntegrityValidator
 from timonelo.factory.compiler import KnowledgeFactoryCompiler
 from timonelo.factory.patch_engine import ShipPatchEngine
 from timonelo.ontology.bellissima import create_bellissima_ontology
-from timonelo.ontology.models import HullSide, BalconyType, EvidenceLink
+from timonelo.ontology.models import (
+    BalconyType,
+    EvidenceLink,
+    HullSide,
+    QuarantinedVesselSpatialOntology,
+)
 
 
 class TestKnowledgeFactory(unittest.TestCase):
@@ -115,7 +120,11 @@ class TestKnowledgeFactory(unittest.TestCase):
                 },
             ],
         }
-        derivative = ShipPatchEngine.apply_patch(self.ontology, patch_data)
+        hypothesis = ShipPatchEngine.apply_patch(self.ontology, patch_data)
+        derivative = hypothesis.ontology
+        self.assertEqual(hypothesis.origin, "QUARANTINED_SISTER_SHIP_HYPOTHESIS")
+        self.assertIsInstance(derivative, QuarantinedVesselSpatialOntology)
+        self.assertEqual(derivative.source_vessel_imo, self.ontology.imo_number)
         self.assertEqual(derivative.name, "MSC Meraviglia")
         self.assertEqual(derivative.imo_number, "IMO9647710")
         self.assertEqual(derivative.decks[6].venues["VENUE_THEATER"].name, "Broadway Theatre (Lower Level)")
@@ -128,5 +137,3 @@ class TestKnowledgeFactory(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-

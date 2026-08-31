@@ -16,6 +16,12 @@ import {
   isPassengerEntityAdmitted,
   isPassengerFactAdmitted,
 } from "./passengerAdmission";
+import {
+  UnknownVesselError,
+  VesselOwnershipError,
+  assertVesselOwnership,
+  vesselScopedEntityKey,
+} from "./vesselIdentity";
 
 export function parseLegacySemanticState(val: unknown): LegacySemanticDeckState {
   if (typeof val === "string") {
@@ -80,6 +86,8 @@ function transformRawToCanonical(raw: any): VesselKnowledgeGraph {
         // legacy DIRECT/review/confidence fields are not canonical admission
         // axes and can never authorize passenger intelligence.
         ...LEGACY_SCHEMATIC_ADMISSION,
+        vessel_id: raw.vessel_id,
+        provenance_vessel_id: raw.vessel_id,
         id: String(o.id),
         iri: `https://timonelo.io/spatial/${raw.vessel_id}/spaces/${o.id}`,
         label: o.label || `Space ${o.id}`,
@@ -156,21 +164,30 @@ const GRAPH_REGISTRY: Record<string, VesselKnowledgeGraph> = {
   "ms-andorinha": transformRawToCanonical(andorinhaData),
 };
 
+export function isSpatialVesselRegistered(vesselId: string | undefined | null): boolean {
+  return Boolean(vesselId && GRAPH_REGISTRY[vesselId]);
+}
+
 export class TimoneloSpatialApiClient {
+  private activeVesselId: string;
   private activeGraph: VesselKnowledgeGraph;
   private entityIndex = new Map<string, SemanticEntity>();
   private levelIndex = new Map<number, SemanticLevel>();
 
-  constructor(vesselId: string = "msc-bellissima") {
-    this.activeGraph = GRAPH_REGISTRY[vesselId] || GRAPH_REGISTRY["msc-bellissima"];
+  constructor(vesselId: string) {
+    const graph = GRAPH_REGISTRY[vesselId];
+    if (!graph) throw new UnknownVesselError(vesselId);
+    this.activeVesselId = vesselId;
+    this.activeGraph = graph;
     this.rebuildIndex();
   }
 
   public switchVessel(vesselId: string): void {
-    if (GRAPH_REGISTRY[vesselId]) {
-      this.activeGraph = GRAPH_REGISTRY[vesselId];
-      this.rebuildIndex();
-    }
+    const graph = GRAPH_REGISTRY[vesselId];
+    if (!graph) throw new UnknownVesselError(vesselId);
+    this.activeVesselId = vesselId;
+    this.activeGraph = graph;
+    this.rebuildIndex();
   }
 
   private rebuildIndex(): void {
@@ -180,8 +197,8 @@ export class TimoneloSpatialApiClient {
     this.activeGraph.levels.forEach((lvl) => {
       this.levelIndex.set(lvl.level_index, lvl);
       lvl.spaces.forEach((sp) => {
-        this.entityIndex.set(sp.id.toLowerCase(), sp);
-        this.entityIndex.set(sp.id, sp);
+        const key = vesselScopedEntityKey(this.activeVesselId, sp.id);
+        if (key) this.entityIndex.set(key, sp);
       });
     });
   }
@@ -195,7 +212,14 @@ export class TimoneloSpatialApiClient {
   }
 
   public getEntity(id: string): SemanticEntity | undefined {
-    return this.entityIndex.get(id.toLowerCase()) || this.entityIndex.get(id);
+    const key = vesselScopedEntityKey(this.activeVesselId, id);
+    return key ? this.entityIndex.get(key) : undefined;
+  }
+
+  public getEntityForVessel(vesselId: string, id: string): SemanticEntity | undefined {
+    if (vesselId !== this.activeVesselId) return undefined;
+    const key = vesselScopedEntityKey(vesselId, id);
+    return key ? this.entityIndex.get(key) : undefined;
   }
 
   public searchEntities(query: string): SemanticEntity[] {
@@ -203,7 +227,8 @@ export class TimoneloSpatialApiClient {
     if (!q) return [];
 
     const matches: SemanticEntity[] = [];
-    const exact = this.entityIndex.get(q);
+    const exactKey = vesselScopedEntityKey(this.activeVesselId, q);
+    const exact = exactKey ? this.entityIndex.get(exactKey) : undefined;
     if (exact) matches.push(exact);
 
     for (const lvl of this.activeGraph.levels) {
@@ -224,18 +249,32 @@ export class TimoneloSpatialApiClient {
     return matches;
   }
 
-  public exportStandardsPayload(entity: SemanticEntity): StandardsExportPayload {
-    const admitted = isPassengerEntityAdmitted(entity);
-    const identityAdmitted = isPassengerFactAdmitted(entity, "identity");
-    const deckAdmitted = isPassengerFactAdmitted(entity, "deck");
-    const sourceAdmitted = isPassengerFactAdmitted(entity, "source_artifact");
-    const fore = isPassengerFactAdmitted(entity, "adjacent_fore")
+  public exportStandardsPayload(
+    entity: SemanticEntity,
+    requestedVesselId: string,
+  ): StandardsExportPayload {
+    assertVesselOwnership(
+      entity.vessel_id,
+      entity.provenance_vessel_id,
+      this.activeGraph.vessel_id,
+      requestedVesselId,
+    );
+    const key = vesselScopedEntityKey(this.activeVesselId, entity.id);
+    if (!key || this.entityIndex.get(key) !== entity) {
+      throw new VesselOwnershipError();
+    }
+
+    const admitted = isPassengerEntityAdmitted(entity, this.activeVesselId);
+    const identityAdmitted = isPassengerFactAdmitted(entity, "identity", this.activeVesselId);
+    const deckAdmitted = isPassengerFactAdmitted(entity, "deck", this.activeVesselId);
+    const sourceAdmitted = isPassengerFactAdmitted(entity, "source_artifact", this.activeVesselId);
+    const fore = isPassengerFactAdmitted(entity, "adjacent_fore", this.activeVesselId)
       ? entity.relations.adjacent_fore
       : null;
-    const aft = isPassengerFactAdmitted(entity, "adjacent_aft")
+    const aft = isPassengerFactAdmitted(entity, "adjacent_aft", this.activeVesselId)
       ? entity.relations.adjacent_aft
       : null;
-    const across = isPassengerFactAdmitted(entity, "adjacent_across")
+    const across = isPassengerFactAdmitted(entity, "adjacent_across", this.activeVesselId)
       ? entity.relations.adjacent_across
       : null;
 

@@ -23,6 +23,10 @@ from timonelo.lenses.accessibility import AccessibilityLens
 from timonelo.lenses.family import FamilyLens
 from timonelo.lenses.quiet import QuietCabinLens
 from timonelo.factory.validator import SpatialIntegrityValidator
+from timonelo.factory.patch_engine import (
+    HypothesisVesselSpatialOntology,
+    require_publishable_spatial_ontology,
+)
 
 
 class KnowledgeFactoryCompiler:
@@ -30,10 +34,12 @@ class KnowledgeFactoryCompiler:
 
     @staticmethod
     def compile_vessel(
-        ontology: VesselSpatialOntology,
+        ontology: VesselSpatialOntology | HypothesisVesselSpatialOntology,
         output_data_dir: Path,
         output_frontend_dir: Optional[Path] = None,
     ) -> bool:
+        ontology = require_publishable_spatial_ontology(ontology)
+
         print(f"============================================================")
         print(f"KNOWLEDGE FACTORY COMPILER — {ontology.name} ({ontology.imo_number})")
         print(f"============================================================")
@@ -233,11 +239,12 @@ class KnowledgeFactoryCompiler:
         return True
 
 
-from timonelo.factory.patch_engine import ShipPatchEngine
-
-
 def compile_fleet(root_dir: Path) -> bool:
-    """Compiles the complete fleet: Reference Baselines and all derivative patch ships."""
+    """Compile only evidence-bearing reference vessels.
+
+    Historical sister-ship patches remain available to the hypothesis tool but
+    are deliberately absent from this canonical/runtime writer.
+    """
     compiler = KnowledgeFactoryCompiler()
 
     # 1. Compile Primary Ocean Baseline: MSC Bellissima
@@ -262,28 +269,6 @@ def compile_fleet(root_dir: Path) -> bool:
     if not ok_andorinha:
         return False
 
-    # 3. Automatically discover and compile all derivative patch vessels in data/ships/*/deltas.json
-    ships_dir = root_dir / "data/ships"
-    derivative_dirs = sorted([d for d in ships_dir.iterdir() if d.is_dir() and (d / "deltas.json").exists()])
-
-    for idx, ship_dir in enumerate(derivative_dirs, start=3):
-        deltas_file = ship_dir / "deltas.json"
-        with open(deltas_file, "r", encoding="utf-8") as f:
-            patch_data = json.load(f)
-
-        target_name = patch_data.get("target_name", ship_dir.name)
-        target_imo = patch_data.get("target_imo", "UNKNOWN")
-        print(f"\n>>> [{idx}/FLEET] COMPILING SHIP: {target_name} ({target_imo}) VIA SPEC-008 SHIP PATCH")
-
-        derivative_ontology = ShipPatchEngine.apply_patch(bellissima_ontology, patch_data)
-        ok_derivative = compiler.compile_vessel(
-            ontology=derivative_ontology,
-            output_data_dir=root_dir,
-            output_frontend_dir=root_dir / "frontend",
-        )
-        if not ok_derivative:
-            return False
-
     return True
 
 
@@ -295,4 +280,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

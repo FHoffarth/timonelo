@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import SubTabBar, { TabOption } from "../ui/SubTabBar";
 import { ShipProfile } from "../../types";
 import { CANONICAL_SHIPS } from "../../data/canonicalPlatformData";
@@ -9,6 +9,7 @@ import SemanticObjectInspector from "../../semantic-deck/components/SemanticObje
 import StandardsInspectorModal from "../../semantic-deck/components/StandardsInspectorModal";
 import { TimoneloSpatialApiClient } from "../../semantic-deck/apiClient";
 import { SemanticEntity } from "../../semantic-deck/types";
+import { UnknownVesselError } from "../../semantic-deck/vesselIdentity";
 
 interface ShipProfilePageProps {
   shipSlug?: string;
@@ -19,7 +20,8 @@ export default function ShipProfilePage({
   shipSlug = "msc-bellissima",
   onNavigateCabin,
 }: ShipProfilePageProps) {
-  const fallbackShip: ShipProfile = CANONICAL_SHIPS[shipSlug] || CANONICAL_SHIPS["msc-bellissima"];
+  const fallbackShip: ShipProfile | undefined = CANONICAL_SHIPS[shipSlug];
+  if (!fallbackShip) throw new UnknownVesselError(shipSlug);
   const [activeTab, setActiveTab] = useState<string>("overview");
 
   // 1. Technical specifications & metadata (technical.json)
@@ -61,15 +63,24 @@ export default function ShipProfilePage({
   const negativeReports = isBellissima ? knowledgeRepository.getNegativeIntelligence("msc-bellissima") : [];
 
   // Living deck sub-state
-  const [apiClient] = useState(() => new TimoneloSpatialApiClient("msc-bellissima"));
-  const vesselGraph = apiClient.getVesselGraph();
-  const levels = vesselGraph.levels || [];
+  // This embedded surface currently has admitted spatial data only for the
+  // Bellissima profile. Never substitute that graph for another page vessel.
+  const apiClient = useMemo(
+    () => shipSlug === "msc-bellissima"
+      ? new TimoneloSpatialApiClient(shipSlug)
+      : null,
+    [shipSlug],
+  );
+  const vesselGraph = apiClient?.getVesselGraph() ?? null;
+  const levels = vesselGraph?.levels || [];
   const [activeLevelIndex, setActiveLevelIndex] = useState<number>(14);
-  const [selectedEntity, setSelectedEntity] = useState<SemanticEntity | null>(() => apiClient.getEntity("14122") || null);
+  const [selectedEntity, setSelectedEntity] = useState<SemanticEntity | null>(
+    () => apiClient?.getEntity("14122") || null,
+  );
   const [hoveredEntity, setHoveredEntity] = useState<SemanticEntity | null>(null);
   const [inspectingStandardsEntity, setInspectingStandardsEntity] = useState<SemanticEntity | null>(null);
 
-  const activeLevel = apiClient.getLevel(activeLevelIndex) || levels[0];
+  const activeLevel = apiClient?.getLevel(activeLevelIndex) || levels[0];
 
   const tabs: TabOption[] = [
     { id: "overview", label: "Overview" },
@@ -220,7 +231,7 @@ export default function ShipProfilePage({
         )}
 
         {/* LIVING DECK INTERACTIVE EXPLORER TAB */}
-        {activeTab === "living-deck" && activeLevel && (
+        {activeTab === "living-deck" && apiClient && vesselGraph && activeLevel && (
           <div className="h-[760px] rounded-3xl border border-[#0C1B2A]/10 bg-white overflow-hidden shadow-xl flex relative">
             <DeckNavigationTree
               currentVessel={vesselGraph}
@@ -230,6 +241,7 @@ export default function ShipProfilePage({
             />
 
             <SpatialGrammarCanvas
+              vesselId={shipSlug}
               level={activeLevel}
               selectedEntity={selectedEntity}
               hoveredEntity={hoveredEntity}
@@ -240,6 +252,7 @@ export default function ShipProfilePage({
             />
 
             <SemanticObjectInspector
+              vesselId={shipSlug}
               entity={selectedEntity}
               onClose={() => setSelectedEntity(null)}
               onSelectEntityId={(id) => {
@@ -253,6 +266,7 @@ export default function ShipProfilePage({
               <StandardsInspectorModal
                 entity={inspectingStandardsEntity}
                 client={apiClient}
+                requestedVesselId={shipSlug}
                 onClose={() => setInspectingStandardsEntity(null)}
               />
             )}

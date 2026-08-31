@@ -66,6 +66,7 @@ export interface ResolvedCabinMeta {
  * - Neither -> null (caller handles the unknown / fail-closed path).
  */
 export function resolveCabinMeta<T>(
+  vesselId: string,
   cabinId: string,
   canonicalCabin: T | undefined,
   knownEntity: GraphEntityLike | undefined | null,
@@ -74,7 +75,7 @@ export function resolveCabinMeta<T>(
   if (knownEntity != null) {
     return {
       id: cabinId,
-      shipSlug: "msc-bellissima",
+      shipSlug: vesselId,
       deckNumber: knownEntity.level,
       deckName: knownEntity.level_name,
       category: knownEntity.classification_label,

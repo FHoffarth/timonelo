@@ -32,7 +32,7 @@ export function meanBackedConfidence(values: Array<number | null | undefined>): 
 }
 
 export class ExplainabilityEngine {
-  public static explainCabin(entity: SemanticEntity, vesselId: string = "msc-bellissima"): ExplainableCabinIntelligence {
+  public static explainCabin(entity: SemanticEntity, vesselId: string): ExplainableCabinIntelligence {
     const cid = entity.id;
     const level = entity.level;
     const relations = entity.relations || {};
@@ -51,10 +51,10 @@ export class ExplainabilityEngine {
 
       const weight = weightOverride !== undefined ? weightOverride : rule.weight;
       const admittedFactKeys = new Set(
-        entity.admitted_fact_keys.filter((fact) => isPassengerFactAdmitted(entity, fact)),
+        entity.admitted_fact_keys.filter((fact) => isPassengerFactAdmitted(entity, fact, vesselId)),
       );
       const provenance = EvidenceResolver.resolveRuleEvidence(rule, entity, vesselId, {
-        entityAdmitted: isPassengerEntityAdmitted(entity),
+        entityAdmitted: isPassengerEntityAdmitted(entity, vesselId),
         admittedFactKeys,
       });
 
@@ -73,9 +73,9 @@ export class ExplainabilityEngine {
     // 1. QUIET EXPLAINABILITY
     // =========================================================================
     const quietRules: TriggeredRule[] = [];
-    const quietAdmitted = isPassengerFactAdmitted(entity, "quiet_intelligence");
-    const overheadAdmitted = isPassengerFactAdmitted(entity, "adjacent_overhead");
-    const underfootAdmitted = isPassengerFactAdmitted(entity, "adjacent_underfoot");
+    const quietAdmitted = isPassengerFactAdmitted(entity, "quiet_intelligence", vesselId);
+    const overheadAdmitted = isPassengerFactAdmitted(entity, "adjacent_overhead", vesselId);
+    const underfootAdmitted = isPassengerFactAdmitted(entity, "adjacent_underfoot", vesselId);
     if (quietAdmitted && overheadAdmitted && (overhead.toLowerCase().includes("buffet") || overhead.toLowerCase().includes("marketplace"))) {
       quietRules.push(trigger("RULE-QUIET-004", "Marketplace Buffet directly overhead on Deck 15"));
     } else if (quietAdmitted && overheadAdmitted && (overhead.toLowerCase().includes("pool") || overhead.toLowerCase().includes("aquapark"))) {
@@ -98,9 +98,9 @@ export class ExplainabilityEngine {
     // 2. MOTION EXPLAINABILITY
     // =========================================================================
     const motionRules: TriggeredRule[] = [];
-    const motionAdmitted = isPassengerFactAdmitted(entity, "motion_intelligence");
-    const zoneAdmitted = isPassengerFactAdmitted(entity, "zone");
-    const deckAdmitted = isPassengerFactAdmitted(entity, "deck");
+    const motionAdmitted = isPassengerFactAdmitted(entity, "motion_intelligence", vesselId);
+    const zoneAdmitted = isPassengerFactAdmitted(entity, "zone", vesselId);
+    const deckAdmitted = isPassengerFactAdmitted(entity, "deck", vesselId);
     if (motionAdmitted && zoneAdmitted && isForward) {
       motionRules.push(trigger("RULE-MOTION-002", "Positioned in forward bow zone; experiences high vertical pitch heave in swell"));
     } else if (motionAdmitted && zoneAdmitted) {
@@ -124,9 +124,9 @@ export class ExplainabilityEngine {
     // 3. WALKING EXPLAINABILITY
     // =========================================================================
     const walkingAdmitted =
-      isPassengerFactAdmitted(entity, "walking_intelligence") &&
-      isPassengerFactAdmitted(entity, "corridor_connectivity") &&
-      isPassengerFactAdmitted(entity, "connected_vertical_core") &&
+      isPassengerFactAdmitted(entity, "walking_intelligence", vesselId) &&
+      isPassengerFactAdmitted(entity, "corridor_connectivity", vesselId) &&
+      isPassengerFactAdmitted(entity, "connected_vertical_core", vesselId) &&
       Boolean(relations.connected_vertical_core);
     const walkingRules: TriggeredRule[] = walkingAdmitted ? [
       trigger("RULE-WALK-001", `Direct corridor link to ${relations.connected_vertical_core}`),
@@ -143,8 +143,8 @@ export class ExplainabilityEngine {
     // 4. PRIVACY EXPLAINABILITY
     // =========================================================================
     const privacyRules: TriggeredRule[] = [];
-    const privacyAdmitted = isPassengerFactAdmitted(entity, "privacy_intelligence");
-    if (privacyAdmitted && isPassengerFactAdmitted(entity, "balcony") && entity.has_balcony) {
+    const privacyAdmitted = isPassengerFactAdmitted(entity, "privacy_intelligence", vesselId);
+    if (privacyAdmitted && isPassengerFactAdmitted(entity, "balcony", vesselId) && entity.has_balcony) {
       privacyRules.push(trigger("RULE-PRIV-001", "Private step-out ocean veranda with unobstructed sea views"));
     }
 
@@ -159,8 +159,8 @@ export class ExplainabilityEngine {
     // 5. ACCESSIBILITY EXPLAINABILITY
     // =========================================================================
     const accessRules: TriggeredRule[] = [];
-    const accessibilityAdmitted = isPassengerFactAdmitted(entity, "accessibility_intelligence");
-    if (accessibilityAdmitted && isPassengerFactAdmitted(entity, "accessible_designation") && entity.accessible) {
+    const accessibilityAdmitted = isPassengerFactAdmitted(entity, "accessibility_intelligence", vesselId);
+    if (accessibilityAdmitted && isPassengerFactAdmitted(entity, "accessible_designation", vesselId) && entity.accessible) {
       accessRules.push(trigger("RULE-ACC-001", "Canonical accessibility designation is admitted for passenger use"));
     }
 

@@ -7,6 +7,7 @@ This engine operates strictly on the Hypothesis Store and test fixtures.
 Outputs are synthetic/derivative hypotheses and CANNOT write to canonical Ground Truth.
 """
 
+from dataclasses import dataclass
 from typing import Dict, Any, List, Optional
 from timonelo.ontology.models import (
     VesselSpatialOntology,
@@ -25,7 +26,34 @@ from timonelo.ontology.models import (
     EvidenceLink,
     Derivation,
     Method,
+    QuarantinedVesselSpatialOntology,
 )
+
+
+@dataclass(frozen=True)
+class HypothesisVesselSpatialOntology:
+    """Physically separate wrapper for sister-ship/generated hypotheses."""
+
+    ontology: QuarantinedVesselSpatialOntology
+    origin: str = "QUARANTINED_SISTER_SHIP_HYPOTHESIS"
+
+
+class HypothesisPublicationBlocked(RuntimeError):
+    """Raised when a hypothesis is presented to a canonical/runtime writer."""
+
+
+def require_publishable_spatial_ontology(
+    ontology: VesselSpatialOntology | HypothesisVesselSpatialOntology,
+) -> VesselSpatialOntology:
+    """Return only vessel-owned canonical knowledge; reject every hypothesis form."""
+    if isinstance(
+        ontology,
+        (HypothesisVesselSpatialOntology, QuarantinedVesselSpatialOntology),
+    ):
+        raise HypothesisPublicationBlocked(
+            "Quarantined sister-ship hypotheses cannot enter trusted vessel output"
+        )
+    return ontology
 
 
 class ShipPatchEngine:
@@ -37,7 +65,10 @@ class ShipPatchEngine:
         return True
 
     @staticmethod
-    def apply_patch(base_ontology: VesselSpatialOntology, patch_data: Dict[str, Any]) -> VesselSpatialOntology:
+    def apply_patch(
+        base_ontology: VesselSpatialOntology,
+        patch_data: Dict[str, Any],
+    ) -> HypothesisVesselSpatialOntology:
         """
         Creates a new derivative vessel ontology by applying patch operations
         onto the immutable base ontology without mutating the baseline.
@@ -161,12 +192,15 @@ class ShipPatchEngine:
         target_beam = patch_data.get("beam_meters", base_ontology.beam_meters)
         target_total_decks = patch_data.get("total_decks", base_ontology.total_decks)
 
-        return VesselSpatialOntology(
-            imo_number=target_imo,
-            name=target_name,
-            ship_class=target_class,
-            length_overall_meters=target_loa,
-            beam_meters=target_beam,
-            total_decks=target_total_decks,
-            decks=new_decks,
+        return HypothesisVesselSpatialOntology(
+            ontology=QuarantinedVesselSpatialOntology(
+                imo_number=target_imo,
+                name=target_name,
+                ship_class=target_class,
+                length_overall_meters=target_loa,
+                beam_meters=target_beam,
+                total_decks=target_total_decks,
+                decks=new_decks,
+                source_vessel_imo=base_ontology.imo_number,
+            )
         )

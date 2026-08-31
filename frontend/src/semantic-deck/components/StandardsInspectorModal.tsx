@@ -6,18 +6,23 @@ import { X, Code2, Layers, History, Globe2, Copy, Check } from "lucide-react";
 interface StandardsInspectorModalProps {
   entity: SemanticEntity;
   client: TimoneloSpatialApiClient;
+  requestedVesselId: string;
   onClose: () => void;
 }
 
 export default function StandardsInspectorModal({
   entity,
   client,
+  requestedVesselId,
   onClose,
 }: StandardsInspectorModalProps) {
   const [activeFormat, setActiveFormat] = useState<"json_ld" | "bot" | "prov_o" | "indoor_gml">("json_ld");
   const [copied, setCopied] = useState(false);
 
-  const payload: StandardsExportPayload = client.exportStandardsPayload(entity);
+  const payload: StandardsExportPayload = client.exportStandardsPayload(
+    entity,
+    requestedVesselId,
+  );
 
   const getActiveContent = (): string => {
     switch (activeFormat) {

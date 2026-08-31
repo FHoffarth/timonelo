@@ -26,6 +26,7 @@ export interface RenderLayersConfig {
 }
 
 export interface DeckRendererProps {
+  vesselId: string;
   level: SemanticLevel;
   allLevels: SemanticLevel[];
   vesselGraph?: VesselKnowledgeGraph;
@@ -41,6 +42,7 @@ export interface DeckRendererProps {
 }
 
 export interface LayerProps {
+  vesselId: string;
   level: SemanticLevel;
   allLevels?: SemanticLevel[];
   selectedEntity: SemanticEntity | null;

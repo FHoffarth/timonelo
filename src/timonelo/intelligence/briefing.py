@@ -5,6 +5,10 @@ Assembles the complete, unified CruiseBriefing container from all underlying pla
 
 from typing import Optional, Dict, Any
 from timonelo.ontology.models import VesselSpatialOntology, Cabin
+from timonelo.factory.patch_engine import (
+    HypothesisVesselSpatialOntology,
+    require_publishable_spatial_ontology,
+)
 from timonelo.calculus.router import DeterministicSpatialRouter
 from timonelo.calculus.sandwich import DeterministicSandwichResolver
 from timonelo.calculus.sightlines import DeterministicSightlineCalculator
@@ -30,7 +34,7 @@ class CruiseBriefingSynthesizer:
 
     @staticmethod
     def generate_briefing(
-        ontology: VesselSpatialOntology,
+        ontology: VesselSpatialOntology | HypothesisVesselSpatialOntology,
         cabin_number: str,
         itinerary_override: Optional[Dict[str, Any]] = None,
         port_override: Optional[Dict[str, Any]] = None,
@@ -39,6 +43,8 @@ class CruiseBriefingSynthesizer:
         visa_override: Optional[Dict[str, Any]] = None,
         travel_override: Optional[Dict[str, Any]] = None,
     ) -> Optional[CruiseBriefing]:
+        ontology = require_publishable_spatial_ontology(ontology)
+
         # 1. Locate Cabin across ontology decks
         target_cabin: Optional[Cabin] = None
         for deck in ontology.decks.values():

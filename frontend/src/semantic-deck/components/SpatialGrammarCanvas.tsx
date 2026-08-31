@@ -3,6 +3,7 @@ import { SemanticLevel, SemanticEntity } from "../types";
 import DeckRenderer from "../renderer/DeckRenderer";
 
 interface SpatialGrammarCanvasProps {
+  vesselId: string;
   level: SemanticLevel;
   selectedEntity: SemanticEntity | null;
   hoveredEntity: SemanticEntity | null;
@@ -13,6 +14,7 @@ interface SpatialGrammarCanvasProps {
 }
 
 export default function SpatialGrammarCanvas({
+  vesselId,
   level,
   selectedEntity,
   hoveredEntity,
@@ -24,6 +26,7 @@ export default function SpatialGrammarCanvas({
   return (
     <div className="flex-1 w-full h-full relative overflow-hidden flex flex-col">
       <DeckRenderer
+        vesselId={vesselId}
         level={level}
         allLevels={allLevels}
         selectedEntity={selectedEntity}
