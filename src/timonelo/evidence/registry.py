@@ -20,8 +20,8 @@ from __future__ import annotations
 import hashlib
 import os
 import shutil
-from dataclasses import dataclass, replace
-from typing import Dict, List, Optional
+from dataclasses import dataclass, field, replace
+from typing import Dict, Iterable, List, Optional, Tuple
 
 from timonelo.canonical import canonical_dump
 
@@ -35,6 +35,60 @@ def sha256_of_file(path: str) -> str:
         while chunk := f.read(CHUNK):
             h.update(chunk)
     return h.hexdigest()
+
+
+def _imo_check_digit_holds(seven_digits: str) -> bool:
+    """IMO ship numbers carry a check digit; verify it rather than trust shape.
+
+    The first six digits are weighted 7..2 and summed; the units digit of that
+    sum is the seventh digit. A transposed or invented number fails this, so a
+    typo cannot silently become a vessel identity.
+    """
+    total = sum(int(seven_digits[i]) * (7 - i) for i in range(6))
+    return total % 10 == int(seven_digits[6])
+
+
+def normalize_vessel_imo(value: str) -> str:
+    """Return the canonical `IMO#######` form, or raise.
+
+    Attribution is keyed on IMO because it is the one vessel identity that is
+    stable across renames, reflags and operator changes, and the only one this
+    registry can check arithmetically. Display names, slugs and filenames are
+    deliberately not accepted: they are what the sister-ship confusion is made
+    of.
+
+    ENI numbers (inland/river vessels, e.g. MS Andorinha) are NOT accepted.
+    They carry no check digit, and admitting a weaker identity scheme beside a
+    verifiable one would let an unverifiable value ride the same code path.
+    Extending to ENI is a deliberate future decision, not an oversight.
+    """
+    if not isinstance(value, str):
+        raise RegistryError(f"Vessel identity must be a string, got {type(value).__name__}.")
+    candidate = value.strip().upper().replace(" ", "")
+    if candidate.startswith("IMO"):
+        candidate = candidate[3:]
+    if len(candidate) != 7 or not candidate.isdigit():
+        raise RegistryError(
+            f"Invalid IMO identity {value!r}. Expected 'IMO' followed by seven "
+            "digits."
+        )
+    if not _imo_check_digit_holds(candidate):
+        raise RegistryError(
+            f"IMO identity {value!r} fails its check digit and is not a real "
+            "IMO number."
+        )
+    return f"IMO{candidate}"
+
+
+def normalize_subject_vessels(values: Optional[Iterable[str]]) -> Tuple[str, ...]:
+    """Validate, de-duplicate and order an attribution set deterministically."""
+    if not values:
+        return ()
+    if isinstance(values, str):
+        raise RegistryError(
+            "subject_vessels must be a sequence of IMO identities, not a string."
+        )
+    return tuple(sorted({normalize_vessel_imo(v) for v in values}))
 
 
 @dataclass(frozen=True)
@@ -60,6 +114,29 @@ class Artifact:
     notes: str = ""
     private_source: bool = False
 
+    #: Vessels whose facts this document is curated as establishing, by IMO.
+    #:
+    #: Registry-side on purpose. A caller assembling an EvidenceLink or a
+    #: VesselSpatialOntology references an artifact by ID; it cannot alter what
+    #: that artifact is attributed to. Empty means UNKNOWN, never "any vessel" —
+    #: consumers must fail closed on it.
+    subject_vessels: Tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self, "subject_vessels", normalize_subject_vessels(self.subject_vessels)
+        )
+
+    def establishes_vessel(self, vessel_imo: str) -> bool:
+        """True only if this artifact is explicitly attributed to that vessel."""
+        if not self.subject_vessels:
+            return False
+        try:
+            wanted = normalize_vessel_imo(vessel_imo)
+        except RegistryError:
+            return False
+        return wanted in self.subject_vessels
+
     def to_dict(self) -> Dict[str, object]:
         d: Dict[str, object] = {
             "artifact_id": self.artifact_id,
@@ -77,6 +154,11 @@ class Artifact:
         }
         if self.private_source:
             d["private_source"] = True
+        if self.subject_vessels:
+            # Omitted when empty so an unattributed artifact stays byte-identical
+            # to its pre-attribution record. UNKNOWN is the absence of a claim,
+            # and it should not appear in the index as an empty assertion.
+            d["subject_vessels"] = list(self.subject_vessels)
         return d
 
     @staticmethod
@@ -134,6 +216,7 @@ class ArtifactRegistry:
         version: Optional[str] = None,
         language: Optional[str] = None,
         notes: str = "",
+        subject_vessels: Optional[Iterable[str]] = None,
     ) -> Artifact:
         """Register a held document. Digest and size are computed, never given."""
         if not os.path.isfile(path):
@@ -159,6 +242,10 @@ class ArtifactRegistry:
             if not value:
                 raise RegistryError(f"{field_name} is required at registration.")
 
+        # Validate before the digest work so a malformed identity cannot leave
+        # a blob copied with no index entry.
+        attributed = normalize_subject_vessels(subject_vessels)
+
         digest = sha256_of_file(path)
         if digest in self._id_by_sha:
             # Same bytes already held. Return the existing entry rather than
@@ -178,6 +265,7 @@ class ArtifactRegistry:
             language=language,
             byte_size=size,
             notes=notes,
+            subject_vessels=attributed,
         )
         shutil.copy2(path, os.path.join(self.blobs, digest))
         self._by_id[artifact.artifact_id] = artifact
@@ -199,6 +287,39 @@ class ArtifactRegistry:
 
     def has(self, identifier: str) -> bool:
         return identifier in self._by_id or identifier in self._id_by_sha
+
+    # -- subject attribution --------------------------------------------------
+
+    def artifact_establishes_vessel(self, artifact_id: str, vessel_imo: str) -> bool:
+        """Does this registered artifact establish facts for this vessel?
+
+        The only sanctioned answer to "may this document speak for that ship?".
+        It is deliberately the narrow, boring end of the trust chain:
+
+            EvidenceLink -> artifact_id -> registry record -> held bytes
+                         -> curated subject attribution
+
+        True requires all of: the artifact is registered, it carries an explicit
+        attribution, and the requested IMO is in it. Everything else is False —
+        an unknown artifact, an unattributed one, a malformed identity, or a
+        sister vessel. Nothing is inferred from filename, slug, source_id,
+        publisher, notes, or from the ontology asking the question.
+        """
+        try:
+            artifact = self.get(artifact_id)
+        except RegistryError:
+            # An unheld document cannot vouch for a vessel. Fail closed rather
+            # than propagate: callers are trust gates, and a gate that must
+            # catch an exception to stay closed eventually forgets to.
+            return False
+        return artifact.establishes_vessel(vessel_imo)
+
+    def vessels_established_by(self, artifact_id: str) -> Tuple[str, ...]:
+        """Attributed vessels for one artifact; empty for unknown/unattributed."""
+        try:
+            return self.get(artifact_id).subject_vessels
+        except RegistryError:
+            return ()
 
     def blob_path(self, artifact_id: str) -> str:
         """Return the legacy extensionless blob path used by registration."""
