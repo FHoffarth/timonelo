@@ -29,7 +29,10 @@ from dataclasses import replace
 
 from timonelo.evidence.editor import StatementEditor
 from timonelo.evidence.events import EvidenceEvent
-from timonelo.evidence.gatekeeper import is_canonical_statement_admitted
+from timonelo.evidence.gatekeeper import (
+    is_canonical_statement_admitted,
+    lifecycle_axes_pass,
+)
 from timonelo.evidence.models import Method, PublishStatus
 from timonelo.evidence.publication import (
     NO_AUTHORITY,
@@ -279,8 +282,11 @@ def test_canonical_predicate_separates_axes_from_authority(workspace):
     """The shared predicate must not present a lifecycle pass as a verdict."""
     stmt = _backed(workspace, event_id="EVT-R3-CANON")
 
+    # The axes question and the admission question are separate, and only one
+    # of them may say yes without checking anything.
+    assert lifecycle_axes_pass(stmt)[0] is True
     admitted, reason = is_canonical_statement_admitted(stmt)
-    assert admitted is True
+    assert admitted is False
     assert "current publication authority was not checked" in reason
 
     admitted, reason = is_canonical_statement_admitted(
@@ -373,7 +379,7 @@ def test_venue_association_will_not_promote_on_decoded_axes_alone(workspace):
     assert assoc.state is VenueAssociationState.MATCHED
     assert assoc.lifecycle_axes_pass is True
     assert assoc.is_canonical_admitted is False
-    assert "current publication authority cannot be established" in assoc.reason
+    assert "current publication authority was not checked" in assoc.reason
 
     # An authority is supplied, and a decoded record still cannot prove itself.
     assoc = match_venue_statement(

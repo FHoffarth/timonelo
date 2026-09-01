@@ -797,10 +797,15 @@ class VoyageKnowledgeFactory:
             as_of=as_of,
         )
 
+        # An aggregate is only as publishable as its constituents are now.
+        # Reading each statement's stored `publish_status` let a voyage present
+        # itself as publishable on the strength of grants made when its
+        # statements were authored -- the same defect as a single statement
+        # coasting, multiplied by six.
         publishability = (
             PublishStatus.PUBLISH_ALLOWED
             if all(
-                s.publish_status == PublishStatus.PUBLISH_ALLOWED
+                is_admitted_truth(s, authority=self._authority)
                 for s in existing_by_question.values()
             ) and len(existing_by_question) >= 6
             else PublishStatus.PUBLISH_BLOCKED

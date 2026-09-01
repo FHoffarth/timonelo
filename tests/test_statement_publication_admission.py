@@ -355,8 +355,12 @@ def test_genuinely_supported_statement_still_publishes(workspace):
     persisted = json.loads(pathlib.Path(workspace.editor.path).read_text(encoding="utf-8"))
     assert persisted[stmt.statement_id]["publish_status"] == "PUBLISH_ALLOWED"
 
-    # And the downstream reader agrees it is truth.
-    assert is_canonical_statement_admitted(published)[0] is True
+    # And the downstream reader agrees it is truth -- when it is given the
+    # means to check. Without an authority the same call refuses, which is the
+    # point: the reader must not confirm what it has not verified.
+    assert is_canonical_statement_admitted(
+        published, authority=workspace.editor.authority)[0] is True
+    assert is_canonical_statement_admitted(published)[0] is False
 
 
 def test_the_positive_fixture_is_not_a_stub(workspace):

@@ -19,6 +19,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog
 from timonelo.evidence.publication import (
+    PublicationAuthority,
     StatementPublicationError,
     evaluate_statement_publication_admission,
     require_statement_publication_admission,
@@ -86,6 +87,19 @@ class TruthEngine:
         self.store = store
         self.rules = rules or {}
         self._statements: Dict[str, Statement] = {}
+        #: The same contract `StatementEditor` uses, constructed the same way,
+        #: over this engine's own statements. Nothing here is engine-specific:
+        #: the only difference is that `store` is an `ArtifactStore`, which
+        #: proves possession with `verify(sha256)` rather than a resolvable
+        #: vault path, and `publication` already addresses both shapes. Reading
+        #: `self._statements` through a callable keeps the closure looking at
+        #: the present rather than a snapshot taken at construction.
+        self.authority = PublicationAuthority(
+            events=log,
+            registry=store,
+            questions=registry,
+            statements=lambda: self._statements,
+        )
 
     # -- statement management -------------------------------------------------
 
@@ -299,6 +313,10 @@ class TruthEngine:
             and s.human_review_state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
             and s.evidence_condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
             and s.is_valid_at(as_of)
+            # The axes above are a prefilter over stored state. This is the
+            # decision: a grant recorded when the statement was added says
+            # nothing about the evidence as it stands at the moment of asking.
+            and self.authority.is_currently_authoritative(s)
         ]
         if not candidates:
             return Answer(

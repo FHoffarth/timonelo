@@ -12,6 +12,7 @@ from timonelo.ontology.models import (
     HumanReviewState,
     PublishStatus,
 )
+from timonelo.evidence.gatekeeper import lifecycle_axes_pass
 from timonelo.spatial.review import (
     ReviewDecisionState,
     VenueAssociationState,
@@ -39,15 +40,20 @@ def sample_deck05_proof():
 
 
 def test_canonical_statement_admitted_predicate_exact_behavior():
-    # 1. Fully admitted statement
+    # 1. Axes agree -- and that alone is no longer admission. A decoded record
+    #    with no link to current evidence cannot establish that its stored
+    #    grant still holds, so the predicate refuses and says why. The axes
+    #    question still has an honest answer; it is just a different question.
     valid_stmt = {
         "statement_id": "stmt-001",
         "evidence_condition": "SUPPORTED",
         "human_review_state": "APPROVED",
         "publish_status": "PUBLISH_ALLOWED",
     }
+    assert lifecycle_axes_pass(valid_stmt)[0] is True
     admitted, msg = is_canonical_statement_admitted(valid_stmt)
-    assert admitted is True
+    assert admitted is False
+    assert "current publication authority was not checked" in msg
 
     # 2. Superficially plausible statement (SUPPORTED + APPROVED, but PUBLISH_BLOCKED)
     plausible_blocked_stmt = {

@@ -22,6 +22,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from timonelo.evidence.gatekeeper import (
     GeometryProvenanceRecord,
     is_canonical_statement_admitted,
+    lifecycle_axes_pass,
 )
 from timonelo.ontology.models import (
     EvidenceCondition,
@@ -173,16 +174,12 @@ def match_venue_statement(
     if len(matches) == 1:
         sid, stmt = matches[0]
         name = stmt.get("target_entity") or clean_label.title()
-        axes_pass, gate_reason = is_canonical_statement_admitted(stmt)
-        if authority is None:
-            is_admitted = False
-            gate_reason = (
-                f"{gate_reason}; no evidence context was supplied, so current "
-                "publication authority cannot be established"
-            )
-        else:
-            is_admitted, gate_reason = is_canonical_statement_admitted(
-                stmt, authority=authority)
+        # Two separate questions, kept separate. The axes result is what the
+        # record says and is reported for the reviewer; admission is what may
+        # actually promote geometry, and it needs an authority.
+        axes_pass, _ = lifecycle_axes_pass(stmt)
+        is_admitted, gate_reason = is_canonical_statement_admitted(
+            stmt, authority=authority)
         return VenueAssociationResult(
             state=VenueAssociationState.MATCHED,
             statement_id=sid,

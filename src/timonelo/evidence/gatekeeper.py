@@ -445,30 +445,21 @@ def sanitize_report_content(report_text: str, gate_result: GateResult) -> str:
     return report_text
 
 
-def is_canonical_statement_admitted(
+def lifecycle_axes_pass(
     statement: Union[Statement, Dict[str, Any]],
-    *,
-    authority=None,
 ) -> Tuple[bool, str]:
-    """
-    Shared canonical predicate for statement publication admission (ADR-0002 §8, ADR-0003 §7).
+    """Whether the three stored lifecycle axes agree (ADR-0002 section 8).
 
-    Three lifecycle axes must pass:
       1. evidence_condition == EvidenceCondition.SUPPORTED
       2. human_review_state == HumanReviewState.APPROVED
-      3. publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+      3. publish_status in (PUBLISH_ALLOWED, PUBLISH_ALLOWED_WITH_WARNINGS)
 
-    Passing them is necessary and not sufficient. All three are stored values,
-    and stored values describe the past: they say this statement was admitted,
-    not that it would be admitted against the evidence held today. Pass
-    `authority` to ask the second question -- callers deciding what to publish,
-    serve or present as known must.
-
-    Without `authority` the answer is lifecycle-only, and says so in its reason
-    string rather than presenting itself as a canonical verdict. That is the
-    honest result for a caller holding a decoded record with no evidence
-    context to check it against, such as a statement dict read back out of a
-    compiled pack.
+    This is a question about the record, and it has an honest answer: the axes
+    say publication was granted. It is deliberately not named "admitted", and
+    deliberately answers nothing about whether that grant still holds. Use it
+    to show a reviewer what the file says. Never use it to decide what to
+    publish, serve, or present as known -- that is
+    `is_canonical_statement_admitted`, which requires an authority.
     """
     if isinstance(statement, Statement):
         cond = statement.evidence_condition
@@ -496,10 +487,42 @@ def is_canonical_statement_admitted(
     if pub not in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
         return False, f"Statement {sid} publish_status is {pub.value if hasattr(pub, 'value') else pub} (must be PUBLISH_ALLOWED)"
 
+    return True, f"Statement {sid} satisfies the lifecycle axes"
+
+
+def is_canonical_statement_admitted(
+    statement: Union[Statement, Dict[str, Any]],
+    *,
+    authority=None,
+) -> Tuple[bool, str]:
+    """
+    Shared canonical predicate for statement publication admission (ADR-0002
+    section 8, ADR-0003 section 7).
+
+    The lifecycle axes must agree AND the grant they record must still hold
+    against the evidence the repository has now. The axes are stored values and
+    stored values describe the past: they say this statement was admitted, not
+    that it would be admitted today.
+
+    `authority` is therefore required in substance even though it is keyword-
+    optional in signature. Omitting it used to return True on the axes alone,
+    with a caveat in the reason string that nothing read -- and a caveat is not
+    a gate. It now returns False, because "nobody checked" is not a form of
+    yes. Callers that only want to display what the file says should call
+    `lifecycle_axes_pass` and say so.
+    """
+    axes_ok, reason = lifecycle_axes_pass(statement)
+    if not axes_ok:
+        return False, reason
+
+    sid = (statement.statement_id if isinstance(statement, Statement)
+           else statement.get("statement_id", "dict_statement"))
+
     if authority is None:
-        return True, (
-            f"Statement {sid} satisfies the lifecycle axes; current publication "
-            "authority was not checked (no evidence context supplied)"
+        return False, (
+            f"Statement {sid} satisfies the lifecycle axes, but current "
+            "publication authority was not checked, so admission cannot be "
+            "established"
         )
     if isinstance(statement, dict):
         return False, (

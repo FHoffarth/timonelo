@@ -65,12 +65,17 @@ class ArtifactInspection:
         return d
 
 
-def _summarise(s: Statement) -> StatementSummary:
-    answerable = (
-        s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-        and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
-        and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
-    )
+def _summarise(s: Statement, authority) -> StatementSummary:
+    """Project one statement, with `answerable` meaning answerable *now*.
+
+    This used to read the three stored axes, which say publication was granted
+    at some past moment and cannot notice that the evidence has since moved.
+    Every structured consumer in this module projects through here, so a stale
+    answer told once was repeated by `get`, `query`, `pending_review` and every
+    artifact summary. `authority` is positional and required: a summary that
+    could be built without one would be built without one.
+    """
+    answerable = authority.is_currently_authoritative(s)
     return StatementSummary(
         statement_id=s.statement_id,
         entity_id=s.entity_id,
@@ -120,7 +125,8 @@ class ArtifactInspectionAPI:
             notes=a.notes,
             supported_statement_types=supported,
             statements=[
-                _summarise(s) for s in self.ws.statements_for_artifact(artifact_id)
+                _summarise(s, self.ws.editor.authority)
+                for s in self.ws.statements_for_artifact(artifact_id)
             ],
             coverage=self.ws.document_coverage(artifact_id),
         )
@@ -147,8 +153,13 @@ class StatementRegistryAPI:
     def __init__(self, workspace):
         self.ws = workspace
 
+    @property
+    def _authority(self):
+        """Borrowed from the editor holding the statements, never rebuilt."""
+        return self.ws.editor.authority
+
     def get(self, statement_id: str) -> StatementSummary:
-        return _summarise(self.ws.editor.get(statement_id))
+        return _summarise(self.ws.editor.get(statement_id), self._authority)
 
     def query(
         self,
@@ -171,14 +182,14 @@ class StatementRegistryAPI:
                 continue
             if review_state and s.review_state != review_state:
                 continue
-            is_answerable = (
-                s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-                and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
-                and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
-            )
-            if answerable_only and not is_answerable:
+            summary = _summarise(s, self._authority)
+            # `answerable_only` filters on the same verdict the summary
+            # reports, rather than a second copy of the rule that could drift
+            # from it -- and the verdict is current authority, so a statement
+            # whose evidence has gone will not be returned as answerable.
+            if answerable_only and not summary.answerable:
                 continue
-            out.append(_summarise(s))
+            out.append(summary)
         return out
 
     def history(self, statement_id: str) -> List[Dict[str, str]]:
@@ -191,8 +202,14 @@ class StatementRegistryAPI:
         return counts
 
     def pending_review(self) -> List[StatementSummary]:
-        """Statements waiting on a human. The curator's work queue."""
+        """Statements waiting on a human. The curator's work queue.
+
+        Membership stays a question about review state, which is what a work
+        queue is for: a DRAFT statement belongs here precisely because nobody
+        has judged it yet. Only the projected `answerable` field changed, and
+        it was never what put a statement in this queue.
+        """
         return [
-            _summarise(s) for s in self.ws.editor.all()
+            _summarise(s, self._authority) for s in self.ws.editor.all()
             if s.state in (HumanReviewState.DRAFT, HumanReviewState.UNDER_REVIEW)
         ]
