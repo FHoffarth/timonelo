@@ -81,6 +81,31 @@ class PortIntelligenceEvaluator:
       - Open conflict detection ➔ ConflictLog
     """
 
+    @staticmethod
+    def _refusal_reason(workspace: Workspace, entity_id: str, question_id: str) -> str:
+        """Why the truth engine would not answer, in the words of the boundary that refused.
+
+        Publication admission now runs ahead of the gatekeeper checks below, so
+        a statement with a broken digest or an unrecorded event never reaches
+        them and every refusal arrived here as a bare TRUTH_NOT_ADMISSIBLE.
+        That is accurate and useless: a curator needs to know which artifact
+        moved, not that something somewhere is wrong.
+
+        The verdict is re-asked for the statements that claim to answer this
+        question, so the specific reason survives the reordering.
+        """
+        authority = getattr(workspace.editor, "authority", None)
+        if authority is None:
+            return "TRUTH_NOT_ADMISSIBLE"
+        for statement in workspace.editor.all():
+            if statement.entity_id != entity_id or statement.question_id != question_id:
+                continue
+            reasons = authority.evaluate(statement).reasons
+            if reasons:
+                code, detail = reasons[0]
+                return f"{code.value}: {detail}"
+        return "TRUTH_NOT_ADMISSIBLE"
+
     @classmethod
     def evaluate_fact(
         cls,
@@ -109,7 +134,10 @@ class PortIntelligenceEvaluator:
 
         # 3. If TruthEngine determines unknown or contested, fail closed with canonical refusal
         if not answer.known or answer.contested:
-            refusal = "ACTIVE_CONFLICT_UNRESOLVED" if answer.contested else "TRUTH_NOT_ADMISSIBLE"
+            refusal = (
+                "ACTIVE_CONFLICT_UNRESOLVED" if answer.contested
+                else cls._refusal_reason(workspace, entity_id, question_id)
+            )
             return PortFactEvaluation(
                 entity_id=entity_id,
                 question_id=question_id,

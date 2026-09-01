@@ -99,7 +99,9 @@ class WorkspaceCase(unittest.TestCase):
         statement = ws.editor.get("STM-0001")
         back_with_evidence(
             ws, statement,
-            observed_value=statement.value,
+            # The literal the fixture document carries, not a copy of the
+            # claim under test.
+            observed_value=14,
             locator="fixture document, page 1",
         )
         self.run_cli("verify-evidence", "STM-0001", "--condition", "SUPPORTED", "--actor", "reviewer.two", "--on", "2026-08-17")

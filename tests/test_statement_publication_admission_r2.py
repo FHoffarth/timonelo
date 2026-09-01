@@ -257,7 +257,15 @@ def test_invalid_rule_hashes_are_refused(workspace, bad):
     assert PublicationRejection.INFERRED_INVALID_RULE_HASH in _admission(workspace, child).reason_codes
 
 
-def test_valid_rule_hash_is_accepted(workspace):
+def test_well_formed_rule_hash_is_not_provenance(workspace):
+    """Shape passes; provenance does not, and provenance is what admits.
+
+    R2 stopped at `is_valid_rule_hash` and called the result accepted. But 64
+    hex characters is what a rule citation *looks* like, and this repository
+    holds no rules, so every well-formed hash points at nothing and all of them
+    point at nothing identically. ADR-0003 §3 names that exact costume: a hash
+    that cannot be resolved is a fake hash wearing a real one's clothes.
+    """
     real = hashlib.sha256(b"timonelo.rules.test:v1").hexdigest()
     assert is_valid_rule_hash(real) is True
     assert is_valid_rule_hash(real.upper()) is True
@@ -267,14 +275,58 @@ def test_valid_rule_hash_is_accepted(workspace):
         parent, statement_id="S-RH-OK", method=Method.INFERRED,
         input_statement_ids=(parent.statement_id,), rule_hash=real,
         evidence_event_ids=()))
+    result = _admission(workspace, child)
+    assert result.admitted is False
+    assert (PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE
+            in result.reason_codes)
+    assert PublicationRejection.INFERRED_INVALID_RULE_HASH not in result.reason_codes
+
+
+def test_a_resolvable_rule_hash_admits(workspace, rule_store):
+    """The gate is closed for want of a rule store, not by choice.
+
+    Installing a resolver is the whole remedy, and this proves the seam is real
+    rather than a place to hang an apology: the same statement that was refused
+    above is admitted once its rule can actually be found. It also fixes what
+    the refusal is about -- resolvability, not INFERRED.
+    """
+    real = rule_store.add(b"timonelo.rules.test:v1")
+    parent = workspace.editor.get("STM-0392")
+    child = _supported(replace(
+        parent, statement_id="S-RH-RESOLVABLE", method=Method.INFERRED,
+        input_statement_ids=(parent.statement_id,), rule_hash=real,
+        evidence_event_ids=()))
     assert _admission(workspace, child).admitted is True
+
+
+def test_an_edited_rule_invalidates_its_closure(workspace, rule_store):
+    """ADR-0003 §3: editing a rule produces a new hash and breaks the closure."""
+    original = rule_store.add(b"rule:v1")
+    parent = workspace.editor.get("STM-0392")
+    child = _supported(replace(
+        parent, statement_id="S-RH-EDITED", method=Method.INFERRED,
+        input_statement_ids=(parent.statement_id,), rule_hash=original,
+        evidence_event_ids=()))
+    assert _admission(workspace, child).admitted is True
+
+    rule_store.remove(original)          # the rule was edited; v1 is gone
+    rule_store.add(b"rule:v2")
+    result = _admission(workspace, child)
+    assert result.admitted is False
+    assert (PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE
+            in result.reason_codes)
 
 
 # -- inference depth ---------------------------------------------------------
 
-def test_deep_inference_chain_fails_with_a_verdict_not_a_crash(workspace):
-    """2000 levels used to raise RecursionError instead of answering."""
-    rule = hashlib.sha256(b"deep").hexdigest()
+def test_deep_inference_chain_fails_with_a_verdict_not_a_crash(workspace, rule_store):
+    """2000 levels used to raise RecursionError instead of answering.
+
+    The rule is resolvable on purpose: depth must be what fails here, not
+    provenance, or the test would pass without ever reaching the recursion it
+    exists to guard.
+    """
+    rule = rule_store.add(b"deep")
     base = workspace.editor.get("STM-0392")
     chain = {}
     previous = base.statement_id
@@ -309,8 +361,15 @@ def test_self_referential_inference_terminates(workspace):
     assert PublicationRejection.INFERRED_CIRCULAR_CLOSURE in result.reason_codes
 
 
-def test_real_inferred_statements_in_the_store_remain_admitted(workspace):
-    """The repository's own INFERRED voyage statements must survive."""
+def test_real_inferred_statements_lose_authority_without_a_rule_store(workspace):
+    """The repository's own INFERRED voyage statements fail closed.
+
+    R2 asserted these stayed admitted, which was true only because it checked
+    the shape of their `rule_hash` and never asked what it pointed at. Nothing
+    in this repository can say. Until a rule store exists, an inference whose
+    rule cannot be produced is not publishable truth, and recording that here
+    keeps the limitation visible instead of letting it pass as working.
+    """
     by_id = dict(workspace.editor._by_id)
     for sid in ("STM-0406", "STM-0409"):
         statement = by_id[sid]
@@ -318,22 +377,47 @@ def test_real_inferred_statements_in_the_store_remain_admitted(workspace):
         result = evaluate_statement_publication_admission(
             statement, events=workspace.events, registry=workspace.registry,
             questions=workspace.questions, statements_by_id=by_id)
-        assert result.admitted is True, result.summary()
+        assert result.admitted is False
+        assert (PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE
+                in result.reason_codes)
 
 
 # -- private-source convergence ---------------------------------------------
 
 def test_private_source_policy_matches_the_gatekeeper(workspace):
-    """Both boundaries must reach the same verdict on the same statement."""
-    statement = workspace.editor.get("STM-0403")
+    """Both boundaries must reach the same verdict on the same statement.
+
+    R2's version of this test compared against an empty set:
+    `EvidenceGatekeeper.from_workspace` registers sources and events but never
+    statements, so `evaluate_publish_gate` was asked about nothing and returned
+    no private-source reasons. Reading that as agreement is how the divergence
+    survived review. The statement is added explicitly here, so the two
+    boundaries are actually asked the same question.
+    """
+    # As stored, before load-time demotion withdrew the grant: that is the
+    # record whose publishability the two boundaries disagreed about.
+    statement = replace(
+        workspace.editor.get("STM-0403"),
+        publish_status=PublishStatus.PUBLISH_ALLOWED,
+    )
     admission = evaluate_statement_publication_admission(
         statement, events=workspace.events, registry=workspace.registry,
         questions=workspace.questions,
         statements_by_id=dict(workspace.editor._by_id))
 
-    gate = EvidenceGatekeeper.from_workspace(workspace).evaluate_publish_gate()
-    assert admission.admitted is True
-    assert [r for r in gate.reasons if "PRIVATE" in r] == []
+    gatekeeper = EvidenceGatekeeper.from_workspace(workspace)
+    gatekeeper.add_statement(statement)
+    gate = gatekeeper.evaluate_publish_gate()
+    assert gate.evaluated_statement_count == 1, (
+        "the gate must actually have judged the statement: R2's version of "
+        "this comparison passed because it judged none"
+    )
+
+    private_reasons = [r for r in gate.reasons if "PRIVATE" in r]
+    assert private_reasons, "the gatekeeper refuses this statement"
+    assert admission.admitted is False
+    assert (PublicationRejection.EVENT_PRIVATE_SOURCE_NOT_REVERIFIABLE
+            in admission.reason_codes)
 
 
 # -- the SUPPORTED axis and fixture integrity -------------------------------

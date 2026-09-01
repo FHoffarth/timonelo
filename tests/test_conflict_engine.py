@@ -84,9 +84,15 @@ class ConflictCase(unittest.TestCase):
     def _publish(self, s, actor="reviewer.two"):
         # Publication requires evidence, so the fixture records a real event
         # against the artifact this statement already cites.
+        #
+        # Stated as a literal rather than copied from `s.value`. Only deck 14
+        # statements are ever published here -- the disagreeing 15s stay drafts,
+        # which is what makes them conflicts -- so there is a real number to
+        # write down, and writing it down is the difference between evidence
+        # and an echo.
         back_with_evidence(
             self.ws, s,
-            observed_value=s.value,
+            observed_value=14,
             locator="fixture document, deck value",
         )
         self.ws.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED, actor, "2026-08-17")

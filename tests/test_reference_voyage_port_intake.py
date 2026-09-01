@@ -259,16 +259,53 @@ def test_inferred_statement_closure_and_rule_hash(workspace):
     assert "timonelo.rules.ports.unlocode_linkage:v1" in stm_arr.derivation_note
     assert "JPTYO" in stm_arr.derivation_note
 
-    # TruthEngine resolves both with inferred provenance
-    ans_dep = workspace.engine.answer(VOYAGE_ENTITY, "Q-0033")
-    assert ans_dep.known is True
-    assert ans_dep.value == "port:unlocode:CNSGH"
-    assert ans_dep.provenance.statement_id == "STM-0406"
+    # The closure is well formed and still does not resolve. Both statements
+    # cite `timonelo.rules.ports.unlocode_linkage:v1` by a correctly shaped
+    # hash, and no rule of that name exists anywhere in this repository -- there
+    # is no rule store to hold one. A citation nothing can resolve is not
+    # provenance, so neither inference is currently authoritative.
+    #
+    # Their inputs would refuse them anyway: STM-0405 and STM-0408 rest on the
+    # private booking confirmation ART-0007, whose bytes are not held.
+    assert workspace.engine.answer(VOYAGE_ENTITY, "Q-0033").known is False
+    assert workspace.engine.answer(VOYAGE_ENTITY, "Q-0036").known is False
 
-    ans_arr = workspace.engine.answer(VOYAGE_ENTITY, "Q-0036")
-    assert ans_arr.known is True
-    assert ans_arr.value == "port:unlocode:JPTYO"
-    assert ans_arr.provenance.statement_id == "STM-0409"
+
+def test_rule_provenance_and_private_evidence_are_separate_refusals(workspace, rule_store):
+    """Two independent reasons, and resolving one does not resolve the other.
+
+    Registering the cited rule removes the provenance objection, which pins
+    that refusal on unresolvability rather than on INFERRED being distrusted.
+    The linkages still fail: both close over an input read from the private
+    booking confirmation, and a rule store repairs nothing about evidence
+    nobody holds. Worth stating separately, because a single verdict hides that
+    fixing the rule store would not make this voyage publishable.
+    """
+    from timonelo.evidence.publication import (
+        PublicationRejection,
+        evaluate_statement_publication_admission,
+    )
+
+    by_id = dict(workspace.editor._by_id)
+
+    def verdict(sid):
+        return evaluate_statement_publication_admission(
+            by_id[sid], events=workspace.events, registry=workspace.registry,
+            questions=workspace.questions, statements_by_id=by_id)
+
+    for sid in ("STM-0406", "STM-0409"):
+        before = verdict(sid)
+        assert (PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE
+                in before.reason_codes)
+
+    rule_store.trust(by_id["STM-0406"].rule_hash, by_id["STM-0409"].rule_hash)
+
+    for sid in ("STM-0406", "STM-0409"):
+        after = verdict(sid)
+        assert (PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE
+                not in after.reason_codes)
+        assert after.admitted is False
+        assert PublicationRejection.INFERRED_INPUT_NOT_ADMITTED in after.reason_codes
 
 
 def test_msc_booking_reference_voyage_intake(workspace):
@@ -330,7 +367,9 @@ def test_approved_port_and_reference_voyage_statements_lifecycle_and_truth(works
     Approved scoped statements (STM-0395..STM-0410) are in SUPPORTED / APPROVED / PUBLISH_ALLOWED,
     and resolve factually through TruthEngine.
     """
-    for sid in [f"STM-{i:04d}" for i in range(395, 411)]:
+    # STM-0395..STM-0402 are the public port and terminal facts, read from
+    # artifacts the repository holds and can re-hash. They resolve.
+    for sid in [f"STM-{i:04d}" for i in range(395, 403)]:
         stm = workspace.editor.get(sid)
         assert stm.evidence_condition == EvidenceCondition.SUPPORTED
         assert stm.human_review_state == HumanReviewState.APPROVED
@@ -341,6 +380,22 @@ def test_approved_port_and_reference_voyage_statements_lifecycle_and_truth(works
         assert ans.value == stm.value
         assert ans.provenance.statement_id == sid
 
+    # STM-0403..STM-0410 are the reference voyage, and they do not. Their
+    # evidence is a private booking confirmation whose bytes are deliberately
+    # not stored, so no reader can check the claims against the source; the two
+    # inferred linkages additionally cite a rule this repository cannot
+    # resolve. Approval survives -- a curator did read the document -- but
+    # publication does not, because publication is a promise that someone else
+    # could read it too.
+    for sid in [f"STM-{i:04d}" for i in range(403, 411)]:
+        stm = workspace.editor.get(sid)
+        assert stm.evidence_condition == EvidenceCondition.SUPPORTED
+        assert stm.human_review_state == HumanReviewState.APPROVED
+        assert stm.publish_status == PublishStatus.PUBLISH_BLOCKED
+        assert sid in workspace.editor.demoted_on_load
+
+        assert workspace.engine.answer(stm.entity_id, stm.question_id).known is False
+
 
 def test_generic_port_and_inferred_statements_resolve_through_port_evaluator(workspace):
     """
@@ -350,7 +405,6 @@ def test_generic_port_and_inferred_statements_resolve_through_port_evaluator(wor
     for sid in [
         "STM-0395", "STM-0396", "STM-0397", "STM-0398",
         "STM-0399", "STM-0400", "STM-0401", "STM-0402",
-        "STM-0406", "STM-0409",
     ]:
         stm = workspace.editor.get(sid)
         eval_res = PortIntelligenceEvaluator.evaluate_fact(workspace, stm.entity_id, stm.question_id)
@@ -358,6 +412,16 @@ def test_generic_port_and_inferred_statements_resolve_through_port_evaluator(wor
         assert eval_res.value == stm.value
         assert eval_res.provenance is not None
         assert eval_res.provenance.statement_id == sid
+
+    # The inferred linkages refuse, and the evaluator refuses with them rather
+    # than reaching past the truth engine for a stored PUBLISH_ALLOWED.
+    for sid in ("STM-0406", "STM-0409"):
+        stm = workspace.editor.get(sid)
+        eval_res = PortIntelligenceEvaluator.evaluate_fact(workspace, stm.entity_id, stm.question_id)
+        assert eval_res.is_known is False
+        assert eval_res.value is None
+        assert eval_res.refusal_reason.startswith(
+            "INFERRED_RULE_PROVENANCE_UNRESOLVABLE")
 
 
 def test_voyage_statements_strict_allowlist_domain_boundary(workspace):

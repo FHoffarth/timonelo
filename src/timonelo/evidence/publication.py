@@ -63,6 +63,7 @@ from timonelo.evidence.models import (
     EvidenceCondition,
     HumanReviewState,
     Method,
+    PublishStatus,
     Statement,
 )
 from timonelo.evidence import authority
@@ -123,6 +124,9 @@ class PublicationRejection(str, Enum):
     EVIDENCE_DOES_NOT_SUPPORT_CLAIM = "EVIDENCE_DOES_NOT_SUPPORT_CLAIM"
     NOT_PUBLISHABLE_BY_PERMISSION = "NOT_PUBLISHABLE_BY_PERMISSION"
     INFERRED_INVALID_RULE_HASH = "INFERRED_INVALID_RULE_HASH"
+    INFERRED_RULE_PROVENANCE_UNRESOLVABLE = "INFERRED_RULE_PROVENANCE_UNRESOLVABLE"
+    QUESTION_METADATA_UNRESOLVABLE = "QUESTION_METADATA_UNRESOLVABLE"
+    NO_VALIDATION_CONTEXT = "NO_VALIDATION_CONTEXT"
     INFERRED_CLOSURE_TOO_DEEP = "INFERRED_CLOSURE_TOO_DEEP"
     INFERRED_INCOMPLETE_CLOSURE = "INFERRED_INCOMPLETE_CLOSURE"
     INFERRED_INPUT_NOT_ADMITTED = "INFERRED_INPUT_NOT_ADMITTED"
@@ -157,6 +161,34 @@ class StatementPublicationError(RuntimeError):
     """Raised when an unbacked statement is offered to a publication writer."""
 
 
+#: Resolving a rule hash to the rule it names.
+#:
+#: ADR-0003 §3 makes rules content-addressed: a derived statement cites the hash
+#: of the rule version it consumed. Honouring that needs somewhere to look the
+#: hash up, and this repository has none -- no rule store, no registry, no
+#: resolver. `TruthEngine.rules` is a confidence-weight lookup, not rule
+#: content.
+#:
+#: This seam exists so the limitation is visible and has one obvious place to be
+#: fixed. Until something is wired in, it returns None for every hash and
+#: authoritative INFERRED publication fails closed. Inventing a resolver inside
+#: this boundary would be inventing provenance.
+_RULE_RESOLVER = None
+
+
+def set_rule_resolver(resolver) -> None:
+    """Install a callable mapping a rule hash to its rule content, or None."""
+    global _RULE_RESOLVER
+    _RULE_RESOLVER = resolver
+
+
+def resolve_rule(rule_hash: str):
+    """The rule a hash identifies, or None when it cannot be established."""
+    if _RULE_RESOLVER is None:
+        return None
+    return _RULE_RESOLVER(rule_hash)
+
+
 def _index_events(events: Any) -> Dict[str, Any]:
     """Event id -> event, with superseded entries already folded out."""
     if events is None:
@@ -176,6 +208,12 @@ def _values_agree(observed: Any, claimed: Any) -> bool:
     path and `"14"` from another; treating those as disagreement would reject
     honest evidence for a serialization detail.
     """
+    # Booleans first, because Python would otherwise settle this wrongly:
+    # `1 == True`, so an observation of the number 1 would back a claim of
+    # "yes", and `str(1) != str(True)` would not catch it either. A cabin
+    # counted once is not a cabin confirmed to exist.
+    if isinstance(observed, bool) != isinstance(claimed, bool):
+        return False
     if observed == claimed:
         return True
     if observed is None or claimed is None:
@@ -193,13 +231,27 @@ def _check_class_and_permission(
     document_class = getattr(artifact, "document_class", None)
     if document_class is None:
         return
-    if questions is not None:
-        question = None
+    # Question metadata is what establishes whether this document class may
+    # answer this question. If it cannot be resolved, that capability is
+    # unknown -- and unknown must never read as permitted.
+    if questions is None:
+        result.reasons.append((
+            PublicationRejection.QUESTION_METADATA_UNRESOLVABLE,
+            "no question registry was supplied, so document class capability "
+            "cannot be established",
+        ))
+    else:
         try:
             question = questions.get(statement.question_id)
         except Exception:
             question = None
-        if question is not None and not question.can_be_supported_by(document_class):
+        if question is None:
+            result.reasons.append((
+                PublicationRejection.QUESTION_METADATA_UNRESOLVABLE,
+                f"{statement.question_id} is not a registered question, so its "
+                "document class capability cannot be established",
+            ))
+        elif not question.can_be_supported_by(document_class):
             result.reasons.append((
                 PublicationRejection.INELIGIBLE_DOCUMENT_CLASS,
                 f"{document_class} cannot support {statement.question_id}",
@@ -328,15 +380,20 @@ def _verify_event(
         # (PRIVATE_SOURCE_UNVERIFIED_FOR_PUBLICATION). Citing it may be honest;
         # publishing from it is not.
         if getattr(artifact, "private_source", False):
-            # Registered by reference on purpose: the artifact is known and
-            # digest-recorded, but its bytes are deliberately not held. Whether
-            # that may back publication is an existing policy question, and the
-            # repository's answer today is yes -- EvidenceGatekeeper passes the
-            # voyage statements resting on ART-0007. Refusing here would be a
-            # private-source policy change, which this boundary was not asked
-            # to make. P1 is about claims backed by nothing, not about claims
-            # backed by something we chose not to store.
-            pass
+            # R2 recorded these as publishable on the strength of a comparison
+            # that was not actually made: `EvidenceGatekeeper.from_workspace`
+            # registers sources and events but never statements, so the gate was
+            # asked about an empty set and unsurprisingly found nothing wrong.
+            # Adding the statement, the Gatekeeper refuses it outright with
+            # PRIVATE_SOURCE_UNVERIFIED_FOR_PUBLICATION. That is the
+            # repository's policy, and this boundary converges on it: bytes
+            # nobody holds cannot be re-verified, and a claim that cannot be
+            # re-verified cannot be published.
+            result.reasons.append((
+                PublicationRejection.EVENT_PRIVATE_SOURCE_NOT_REVERIFIABLE,
+                f"{event_id} cites private source {artifact_ref}, whose bytes "
+                "are not held for re-verification",
+            ))
         else:
             result.reasons.append((
                 PublicationRejection.EVENT_ARTIFACT_NOT_HELD,
@@ -460,6 +517,20 @@ def _check_inference_shape(
             PublicationRejection.INFERRED_INVALID_RULE_HASH,
             f"rule_hash {statement.rule_hash!r} is not a SHA-256 content address",
         ))
+    elif resolve_rule(statement.rule_hash) is None:
+        # ADR-0003 §3 requires a derived statement to cite the hash of the rule
+        # version it consumed, so that editing a rule invalidates its closure.
+        # The repository stores no rules and offers no resolver, so a hash
+        # cannot be shown to identify anything: any 64 hex characters look
+        # exactly like a real citation. Shape is not provenance, and a
+        # well-formed pointer to nothing is precisely the "fake hash in a new
+        # costume" that ADR names. Authoritative inference therefore fails
+        # closed until a rule store exists.
+        result.reasons.append((
+            PublicationRejection.INFERRED_RULE_PROVENANCE_UNRESOLVABLE,
+            f"rule_hash {statement.rule_hash} cannot be resolved to any rule "
+            "content: this repository holds no rule store (ADR-0003 §3)",
+        ))
 
 
 def _check_events(
@@ -538,14 +609,106 @@ def require_statement_publication_admission(
     return result
 
 
-def has_structural_backing(statement: Statement) -> bool:
-    """Cheap shape check used where full verification would be I/O per load.
+class PublicationAuthority:
+    """Whether a statement is authoritative *now*.
 
-    Answers only "does this claim to rest on something", never "is that
-    something real". Writers must use the full predicate; this exists so a
-    deserialized PUBLISH_ALLOWED resting on nothing at all can be demoted
-    without re-hashing every artifact on every workspace open.
+    P1 and its first remediation both established that a statement must earn
+    PUBLISH_ALLOWED against real evidence. Neither established that it keeps
+    it. `PublishStatus` is written to disk, evidence is not frozen when it is
+    written, and nothing re-asked the question afterwards: an event could be
+    superseded, an artifact replaced, a question retired, and the persisted
+    axes would go on reading as truth. Lifecycle state is a record that
+    publication was once granted -- audit, not authority.
+
+    So authority is computed, never loaded. Every truth-bearing consumer asks
+    this object, and this object re-derives the verdict from the evidence as it
+    stands at the moment of the question. There is deliberately no cache: a
+    cached admission is a smaller version of the same defect, and the check is
+    dict lookups over an already-cached digest.
+
+    Being unable to check is not permission to skip the check. An authority
+    missing any part of its validation context refuses everything, and says so.
     """
-    if statement.method is Method.INFERRED:
-        return bool(statement.input_statement_ids and statement.rule_hash)
-    return bool(statement.evidence_event_ids)
+
+    def __init__(
+        self,
+        *,
+        events: Any = None,
+        registry: Any = None,
+        questions: Any = None,
+        statements: Any = None,
+    ) -> None:
+        self.events = events
+        self.registry = registry
+        self.questions = questions
+        self._statements = statements
+
+    @property
+    def has_context(self) -> bool:
+        """True only if every input the verdict depends on is present."""
+        return not self.missing_context
+
+    @property
+    def missing_context(self) -> Tuple[str, ...]:
+        missing = []
+        if self.events is None:
+            missing.append("events")
+        if self.registry is None:
+            missing.append("registry")
+        if self.questions is None:
+            missing.append("questions")
+        if self._statements is None:
+            missing.append("statements")
+        return tuple(missing)
+
+    def statements_by_id(self) -> Optional[Dict[str, Statement]]:
+        """The live statement set, re-read per call so closures see the present."""
+        src = self._statements
+        if src is None:
+            return None
+        if callable(src):
+            return src()
+        if hasattr(src, "all"):
+            return {s.statement_id: s for s in src.all()}
+        return dict(src)
+
+    def evaluate(self, statement: Statement) -> PublicationAdmissionResult:
+        """The current admission verdict for one statement."""
+        missing = self.missing_context
+        if missing:
+            result = PublicationAdmissionResult(statement_id=statement.statement_id)
+            result.reasons.append((
+                PublicationRejection.NO_VALIDATION_CONTEXT,
+                "current publication admission cannot be established without "
+                + ", ".join(missing),
+            ))
+            result.admitted = False
+            return result
+        return evaluate_statement_publication_admission(
+            statement,
+            events=self.events,
+            registry=self.registry,
+            questions=self.questions,
+            statements_by_id=self.statements_by_id(),
+        )
+
+    def is_currently_authoritative(self, statement: Statement) -> bool:
+        """The single question every truth-bearing consumer must ask.
+
+        Persisted lifecycle state is necessary and not sufficient: the axes say
+        publication was granted, this says it still holds.
+        """
+        if statement.publishing not in (
+            PublishStatus.PUBLISH_ALLOWED,
+            PublishStatus.PUBLISH_ALLOWED.value,
+            PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS,
+            PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS.value,
+        ):
+            return False
+        return self.evaluate(statement).admitted
+
+
+#: The authority used when a consumer was given none. It has no validation
+#: context, so it refuses everything -- which is the right answer to "is this
+#: authoritative?" asked by something that cannot check.
+NO_AUTHORITY = PublicationAuthority()

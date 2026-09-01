@@ -40,7 +40,7 @@ from timonelo.evidence.publication import (
     PublicationRejection,
     StatementPublicationError,
     evaluate_statement_publication_admission,
-    has_structural_backing,
+    PublicationAuthority,
     require_statement_publication_admission,
 )
 from timonelo.evidence.workspace import Workspace
@@ -224,14 +224,20 @@ def test_malformed_evidence_reference_rejects(workspace, bad):
     assert result.reason_codes  # never an exception, always a verdict
 
 
-def test_private_source_remains_publishable_under_existing_policy(workspace):
-    """A registered private source still backs publication.
+def test_private_source_cannot_back_publication(workspace):
+    """A registered private source does not back publication.
 
-    Its bytes are deliberately not held, but it is a known, digest-recorded
-    artifact and `EvidenceGatekeeper` passes the voyage statements that rest on
-    it. Refusing it here would be a private-source policy change, which this
-    boundary was not asked to make: P1 is about claims backed by nothing, not
-    claims backed by something the repository chose not to store.
+    R2 recorded the opposite, on the strength of a comparison it never made:
+    it asked `EvidenceGatekeeper.from_workspace` for its private-source
+    reasons, but `from_workspace` registers sources and events and no
+    statements, so the gate had nothing to object to and its silence was read
+    as agreement. Asked about the statement itself, the gate refuses it with
+    PRIVATE_SOURCE_UNVERIFIED_FOR_PUBLICATION.
+
+    The artifact is known and digest-recorded, which is enough to cite it and
+    not enough to publish on it: nobody holds the bytes, so the claim can never
+    be checked against its source again. Evidence that cannot be re-read is a
+    promise, and this boundary does not publish promises.
     """
     assert workspace.registry.resolve_path(PRIVATE_ARTIFACT) is None
     artifact = workspace.registry.get(PRIVATE_ARTIFACT)
@@ -252,12 +258,14 @@ def test_private_source_remains_publishable_under_existing_policy(workspace):
             question_id=PRIVATE_QUESTION,
             statement_type=PRIVATE_TYPE,
             artifact_id=PRIVATE_ARTIFACT,
-            value="MSC Bellissima",   # must match what the event observed
+            value="MSC Bellissima",   # matches what the event observed
         ),
         evidence_event_ids=("EVT-PRIVATE-0001",),
     )
     result = _admission(workspace, stmt)
-    assert result.admitted is True, result.summary()
+    assert result.admitted is False
+    assert (PublicationRejection.EVENT_PRIVATE_SOURCE_NOT_REVERIFIABLE
+            in result.reason_codes)
 
 
 def test_condition_not_supported_rejects(workspace):
@@ -473,16 +481,12 @@ def test_legacy_published_string_no_longer_confers_publication(workspace, tmp_pa
 
 
 # -- structural backing helper ----------------------------------------------
-
-def test_structural_backing_distinguishes_the_two_shapes(workspace):
-    read_stmt = _draft(workspace)
-    assert has_structural_backing(read_stmt) is False
-    from dataclasses import replace
-    assert has_structural_backing(replace(read_stmt, evidence_event_ids=("E",))) is True
-    inferred = replace(read_stmt, method=Method.INFERRED,
-                       input_statement_ids=("X",), rule_hash="a" * 64)
-    assert has_structural_backing(inferred) is True
-    assert has_structural_backing(replace(inferred, rule_hash=None)) is False
+#
+# `has_structural_backing` and its test are gone. It answered "does this claim
+# to rest on something", which a claim-mismatched statement answers correctly
+# while resting on nothing, and R2 used it to keep publication alive on loads
+# that could not check. A predicate whose only role was to approve what could
+# not be verified had no honest caller left once authority became computed.
 
 
 def test_require_form_raises_with_a_reason(workspace):

@@ -112,7 +112,10 @@ class PipelineCase(unittest.TestCase):
     def _publish(self, s):
         back_with_evidence(
             self, s,
-            observed_value=s.value,
+            # Stated as a literal, not copied from `s.value`: the fixture
+            # document says 14, and the statement is right because it agrees
+            # with the document rather than the other way round.
+            observed_value=14,
             locator="fixture document, page 1",
         )
         self.editor.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED,

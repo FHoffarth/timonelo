@@ -35,6 +35,7 @@ SOURCE_RELIABILITY.setdefault(FIXTURE_CLASS, 0.80)
 # permission and is refused -- correctly, but it would refuse this fixture for
 # a registration gap rather than for anything the tests are about.
 from timonelo.evidence import authority as _authority
+from tests.evidence_fixtures import RuleStore
 _authority.DOCUMENT_CLASSES.setdefault(FIXTURE_CLASS, _authority.DocumentClass(
     FIXTURE_CLASS, "Pipeline fixture", 0.80,
     _authority.ValidityScope.STRUCTURAL, _authority.Acquisition.PUBLIC,
@@ -292,6 +293,12 @@ class TestLanguageLayer(PipelineTestCase):
         self.assertNotIn("%", out)
 
     def test_low_confidence_claim_is_hedged(self):
+        # S2 is INFERRED, and publication admission refuses an inference whose
+        # rule cannot be resolved. Hedging is the subject here, so the rule is
+        # made resolvable rather than letting provenance fail the test for it.
+        store = RuleStore().install()
+        self.addCleanup(store.uninstall)
+        store.trust(NOISE_RULE_HASH)
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="page 1",

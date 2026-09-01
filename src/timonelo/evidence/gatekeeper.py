@@ -253,6 +253,18 @@ class EvidenceGatekeeper:
         if hasattr(workspace, "events") and workspace.events is not None:
             for event in workspace.events.all():
                 gatekeeper.register_event(event)
+        # Statements are deliberately not loaded here. Callers scope this gate
+        # to the statement they are asking about -- `evaluate_fact` adds the
+        # one winning statement and reads the first refusal -- so populating it
+        # with the whole store would answer a different question and refuse on
+        # some unrelated draft's behalf.
+        #
+        # The cost is that a caller who adds none gets a clean pass over an
+        # empty set, and R2 read exactly that vacuous pass as this gate
+        # agreeing that private sources are publishable. `GateResult` reports
+        # `evaluated_statements` for this reason: a pass with zero evaluated
+        # statements is not agreement, and anything comparing verdicts across
+        # boundaries must check it.
         if hasattr(workspace, "conflicts") and workspace.conflicts is not None:
             gatekeeper.use_conflict_log(workspace.conflicts)
         return gatekeeper
@@ -433,13 +445,30 @@ def sanitize_report_content(report_text: str, gate_result: GateResult) -> str:
     return report_text
 
 
-def is_canonical_statement_admitted(statement: Union[Statement, Dict[str, Any]]) -> Tuple[bool, str]:
+def is_canonical_statement_admitted(
+    statement: Union[Statement, Dict[str, Any]],
+    *,
+    authority=None,
+) -> Tuple[bool, str]:
     """
     Shared canonical predicate for statement publication admission (ADR-0002 §8, ADR-0003 §7).
-    A statement participates in published truth if and only if all three lifecycle axes pass:
+
+    Three lifecycle axes must pass:
       1. evidence_condition == EvidenceCondition.SUPPORTED
       2. human_review_state == HumanReviewState.APPROVED
       3. publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+
+    Passing them is necessary and not sufficient. All three are stored values,
+    and stored values describe the past: they say this statement was admitted,
+    not that it would be admitted against the evidence held today. Pass
+    `authority` to ask the second question -- callers deciding what to publish,
+    serve or present as known must.
+
+    Without `authority` the answer is lifecycle-only, and says so in its reason
+    string rather than presenting itself as a canonical verdict. That is the
+    honest result for a caller holding a decoded record with no evidence
+    context to check it against, such as a statement dict read back out of a
+    compiled pack.
     """
     if isinstance(statement, Statement):
         cond = statement.evidence_condition
@@ -467,4 +496,17 @@ def is_canonical_statement_admitted(statement: Union[Statement, Dict[str, Any]])
     if pub not in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
         return False, f"Statement {sid} publish_status is {pub.value if hasattr(pub, 'value') else pub} (must be PUBLISH_ALLOWED)"
 
-    return True, "Canonical publication criteria satisfied"
+    if authority is None:
+        return True, (
+            f"Statement {sid} satisfies the lifecycle axes; current publication "
+            "authority was not checked (no evidence context supplied)"
+        )
+    if isinstance(statement, dict):
+        return False, (
+            f"Statement {sid} was supplied as a decoded record, which carries no "
+            "link to current evidence; current publication authority cannot be established"
+        )
+    verdict = authority.evaluate(statement)
+    if not verdict.admitted:
+        return False, f"Statement {sid} is no longer admissible: {verdict.summary()}"
+    return True, "Canonical publication criteria satisfied against current evidence"

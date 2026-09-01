@@ -27,7 +27,7 @@ from timonelo.evidence import authority
 from timonelo.evidence.publication import (
     StatementPublicationError,
     evaluate_statement_publication_admission,
-    has_structural_backing,
+    PublicationAuthority,
     require_statement_publication_admission,
 )
 from timonelo.evidence.registry import ArtifactRegistry
@@ -73,6 +73,15 @@ class StatementEditor:
         #: were demoted while loading. Recorded rather than silently dropped.
         self.demoted_on_load: List[str] = []
         self._by_id: Dict[str, Statement] = {}
+        #: The one place current publication authority is decided. It reads
+        #: `self._by_id` live rather than a snapshot, so a closure evaluated
+        #: after an input is demoted sees the demotion.
+        self.authority = PublicationAuthority(
+            events=events,
+            registry=registry,
+            questions=questions,
+            statements=lambda: self._by_id,
+        )
         if os.path.exists(path):
             import json
             with open(path, encoding="utf-8") as f:
@@ -109,36 +118,42 @@ class StatementEditor:
         self._revalidate_published()
 
     def _revalidate_published(self) -> None:
-        """Demote any loaded statement whose publication is not currently valid.
+        """Withdraw persisted publication that the current evidence refuses.
 
-        Full admission where the evidence log and question registry are
-        available, and the cheap structural check where they are not -- an
-        editor constructed without them cannot resolve events, and demoting
-        every published statement on that basis would be wrong rather than
-        safe. Digest work is cached, so repeat loads are inexpensive.
+        This keeps the stored file honest; it is not what makes consumption
+        safe. R2 leaned on it as though a clean load meant a trustworthy
+        statement, but a load happens once and evidence keeps moving, so
+        anything decided here is already historical by the time it is read.
+        `PublicationAuthority` is what consumers ask; this only spares readers
+        a file that advertises authority it has lost.
+
+        The structural fallback that used to stand in when events and questions
+        were absent is gone. It asked whether a statement *claimed* backing, and
+        a claim-mismatched statement claims backing perfectly well -- so an
+        editor opened without context confirmed exactly the statements it was
+        least able to check. An editor that cannot resolve evidence now changes
+        nothing at all: it neither restores authority nor destroys a record it
+        is not equipped to judge, and its authority refuses on the grounds that
+        it cannot check.
 
         Only `publish_status` is touched. The record's content, its evidence
         condition and its review history are left exactly as stored: the claim
         is preserved, only its unsupported authority is withdrawn.
         """
+        if not self.authority.has_context:
+            return
         for sid, statement in list(self._by_id.items()):
             if statement.publish_status is PublishStatus.PUBLISH_BLOCKED:
                 continue
-            if self.events is not None and self.questions is not None:
-                admitted = evaluate_statement_publication_admission(
-                    statement,
-                    events=self.events,
-                    registry=self.registry,
-                    questions=self.questions,
-                    statements_by_id=self._by_id,
-                ).admitted
-            else:
-                admitted = has_structural_backing(statement)
-            if not admitted:
+            if not self.authority.evaluate(statement).admitted:
                 self._by_id[sid] = replace(
                     statement, publish_status=PublishStatus.PUBLISH_BLOCKED
                 )
                 self.demoted_on_load.append(sid)
+
+    def is_currently_authoritative(self, statement) -> bool:
+        """Whether this statement may be consumed as truth right now."""
+        return self.authority.is_currently_authoritative(statement)
 
     def _next_id(self) -> str:
         nums = []
