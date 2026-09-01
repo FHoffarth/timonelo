@@ -252,6 +252,7 @@ def test_private_source_remains_publishable_under_existing_policy(workspace):
             question_id=PRIVATE_QUESTION,
             statement_type=PRIVATE_TYPE,
             artifact_id=PRIVATE_ARTIFACT,
+            value="MSC Bellissima",   # must match what the event observed
         ),
         evidence_event_ids=("EVT-PRIVATE-0001",),
     )

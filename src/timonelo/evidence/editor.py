@@ -26,6 +26,7 @@ from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
 from timonelo.evidence.publication import (
     StatementPublicationError,
+    evaluate_statement_publication_admission,
     has_structural_backing,
     require_statement_publication_admission,
 )
@@ -97,23 +98,47 @@ class StatementEditor:
                         raw["evidence_condition"] = EvidenceCondition.UNKNOWN.value
                     if "publish_status" not in raw:
                         raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
-                    statement = Statement(**raw)
-                    # A deserialized statement may claim PUBLISH_ALLOWED. If it
-                    # rests on nothing -- no evidence events, no derivation
-                    # closure -- the claim is unbacked on its face and is
-                    # demoted here, so an edited or imported file cannot
-                    # re-enter as canonical truth. Full verification stays at
-                    # the write gate; this is the cheap shape check that runs
-                    # on every open.
-                    if (
-                        statement.publish_status is not PublishStatus.PUBLISH_BLOCKED
-                        and not has_structural_backing(statement)
-                    ):
-                        statement = replace(
-                            statement, publish_status=PublishStatus.PUBLISH_BLOCKED
-                        )
-                        self.demoted_on_load.append(sid)
-                    self._by_id[sid] = statement
+                    self._by_id[sid] = Statement(**raw)
+        # Restoration is a publication boundary too. A persisted statement can
+        # claim PUBLISH_ALLOWED while citing an event that does not exist, and
+        # R1 only checked that it cited *something* -- so the claim survived
+        # load and every reader downstream served it as truth. Readers must not
+        # each re-derive admission, so the invariant is established here
+        # instead: after load, no statement in memory holds authoritative state
+        # its evidence cannot currently support.
+        self._revalidate_published()
+
+    def _revalidate_published(self) -> None:
+        """Demote any loaded statement whose publication is not currently valid.
+
+        Full admission where the evidence log and question registry are
+        available, and the cheap structural check where they are not -- an
+        editor constructed without them cannot resolve events, and demoting
+        every published statement on that basis would be wrong rather than
+        safe. Digest work is cached, so repeat loads are inexpensive.
+
+        Only `publish_status` is touched. The record's content, its evidence
+        condition and its review history are left exactly as stored: the claim
+        is preserved, only its unsupported authority is withdrawn.
+        """
+        for sid, statement in list(self._by_id.items()):
+            if statement.publish_status is PublishStatus.PUBLISH_BLOCKED:
+                continue
+            if self.events is not None and self.questions is not None:
+                admitted = evaluate_statement_publication_admission(
+                    statement,
+                    events=self.events,
+                    registry=self.registry,
+                    questions=self.questions,
+                    statements_by_id=self._by_id,
+                ).admitted
+            else:
+                admitted = has_structural_backing(statement)
+            if not admitted:
+                self._by_id[sid] = replace(
+                    statement, publish_status=PublishStatus.PUBLISH_BLOCKED
+                )
+                self.demoted_on_load.append(sid)
 
     def _next_id(self) -> str:
         nums = []

@@ -20,6 +20,7 @@ from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog
 from timonelo.evidence.publication import (
     StatementPublicationError,
+    evaluate_statement_publication_admission,
     require_statement_publication_admission,
 )
 from timonelo.evidence.models import Statement
@@ -111,6 +112,30 @@ class TruthEngine:
         for sid in statement.input_statement_ids:
             if sid not in self._statements:
                 raise ValueError(f"Unknown input statement {sid!r}")
+
+        # A caller can hand in a fully-formed statement that already claims
+        # SUPPORTED / APPROVED / PUBLISH_ALLOWED. The checks above validate its
+        # shape, not its authority, so without this a forged publication state
+        # could be injected straight into the engine and served as truth.
+        # Admitting into a non-authoritative state is fine; arriving
+        # pre-published is not.
+        if statement.publish_status is not PublishStatus.PUBLISH_BLOCKED:
+            candidates = dict(self._statements)
+            candidates[statement.statement_id] = statement
+            admission = evaluate_statement_publication_admission(
+                statement,
+                events=self.log,
+                registry=self.store,
+                questions=self.registry,
+                statements_by_id=candidates,
+            )
+            if not admission.admitted:
+                raise ValueError(
+                    f"Statement {statement.statement_id!r} arrives claiming "
+                    f"{statement.publish_status.value} but is not admitted: "
+                    f"{admission.summary()}"
+                )
+
         self._statements[statement.statement_id] = statement
         return statement
 

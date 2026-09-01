@@ -1,21 +1,25 @@
 """Shared helper for tests that need a genuinely publishable statement.
 
-Publication now requires evidence: a statement must cite at least one recorded
-evidence event, resolving to an artifact the workspace holds. Before that gate
-existed, fixtures could publish a statement that cited an artifact_id and
-nothing else, because `publish()` never looked.
+Publication requires evidence that supports the claim: an `EvidenceEvent` whose
+entity, question and observed value match the statement's, citing an artifact
+the workspace holds.
 
-Most suites that call `publish()` are not testing publication -- they are
-testing conflict detection, truth traversal, or the curator CLI, and simply
-need a published statement to exist. `back_with_evidence` gives those fixtures
-real backing rather than weakening the gate for them: it records an actual
-`EvidenceEvent` against the artifact the statement already cites, and attaches
-the event id to the statement.
+The first version of this helper manufactured that correspondence. It copied
+`statement.value` into `observed_value` and `statement.locator` into `locator`,
+so the "evidence" was the claim wearing a different hat, and every fixture
+passed by construction whatever the cited artifact actually said. A test that
+manufactures its own support demonstrates nothing.
 
-The event goes through `EvidenceEventLog.append`, so it is validated exactly
-like production evidence -- the artifact must be held, the locator real, and
-the document class must be able to support the question. A fixture that cannot
-satisfy that is telling you something true about the fixture.
+`back_with_evidence` now requires the caller to state the observation
+explicitly, and the artifact must genuinely be one that can answer the
+question -- `EvidenceEventLog.append` enforces document class eligibility, so a
+fixture citing an artifact that cannot support the claim fails loudly.
+
+For suites that only need *a* published statement to exist -- conflict
+detection, truth traversal, the curator CLI -- passing the value they already
+asserted is legitimate: their artifact is a purpose-built fixture document
+written for exactly that claim. What is no longer possible is doing it
+silently, or doing it against an artifact that says something else.
 """
 
 from __future__ import annotations
@@ -37,25 +41,29 @@ def back_with_evidence(
     workspace: Any,
     statement: Any,
     *,
+    observed_value: Any,
+    locator: str,
     event_id: Optional[str] = None,
     observed_by: str = "fixture.observer",
     observed_on: str = "2026-08-17",
-    locator: Optional[str] = None,
 ) -> Any:
-    """Record a real evidence event for `statement` and attach it.
+    """Record an evidence event supporting `statement` and attach it.
 
-    Returns the updated statement. Safe to call more than once for the same
-    statement; each call adds a further event.
+    `observed_value` and `locator` are required and have no defaults on
+    purpose: the caller must say what was observed and where, rather than the
+    helper inferring it from the claim being supported.
+
+    Returns the updated statement.
     """
     artifact = workspace.registry.get(statement.artifact_id)
     event_id = event_id or _next_event_id()
     workspace.events.append(EvidenceEvent(
         event_id=event_id,
         artifact_sha256=artifact.sha256,
-        locator=locator or (statement.locator or "fixture locator"),
+        locator=locator,
         entity_id=statement.entity_id,
         question_id=statement.question_id,
-        observed_value=statement.value,
+        observed_value=observed_value,
         observed_by=observed_by,
         observed_on=observed_on,
     ))

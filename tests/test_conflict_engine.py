@@ -84,7 +84,11 @@ class ConflictCase(unittest.TestCase):
     def _publish(self, s, actor="reviewer.two"):
         # Publication requires evidence, so the fixture records a real event
         # against the artifact this statement already cites.
-        back_with_evidence(self.ws, s)
+        back_with_evidence(
+            self.ws, s,
+            observed_value=s.value,
+            locator="fixture document, deck value",
+        )
         self.ws.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED, actor, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.UNDER_REVIEW, s.read_by, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.APPROVED, actor, "2026-08-17")

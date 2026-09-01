@@ -65,7 +65,41 @@ from timonelo.evidence.models import (
     Method,
     Statement,
 )
+from timonelo.evidence import authority
 from timonelo.evidence.registry import RegistryError, sha256_of_file
+
+#: A rule hash is content-addressed, exactly like `EvidenceLink.sha256`: a
+#: SHA-256 of the rule that produced the inference. Mirroring that model's
+#: existing rule (64 hex, never the all-zero placeholder) keeps the two from
+#: drifting. Truthiness is not a contract -- "x" is truthy and proves nothing.
+_HEX = set("0123456789abcdef")
+
+
+def is_valid_rule_hash(value: Any) -> bool:
+    if not isinstance(value, str):
+        return False
+    v = value.strip().lower()
+    return len(v) == 64 and all(c in _HEX for c in v) and v != "0" * 64
+
+
+#: Inference closure is walked iteratively, but a graph can still be absurdly
+#: deep. Beyond this the answer is an explicit verdict, never a RecursionError.
+MAX_INFERENCE_DEPTH = 64
+
+#: Re-hashing an artifact is the expensive part of admission and the bytes do
+#: not change between reads. Keyed on (path, size, mtime) so a replaced file is
+#: re-hashed rather than trusted.
+_DIGEST_CACHE: Dict[Tuple[str, int, float], str] = {}
+
+
+def _cached_digest(path: str) -> str:
+    import os
+
+    stat = os.stat(path)
+    key = (path, stat.st_size, stat.st_mtime)
+    if key not in _DIGEST_CACHE:
+        _DIGEST_CACHE[key] = sha256_of_file(path)
+    return _DIGEST_CACHE[key]
 
 #: Locator values that name nothing. Mirrors the Gatekeeper's own list so the
 #: two boundaries cannot drift on what "says where it was read" means.
@@ -86,6 +120,10 @@ class PublicationRejection(str, Enum):
     EVENT_PRIVATE_SOURCE_NOT_REVERIFIABLE = "EVENT_PRIVATE_SOURCE_NOT_REVERIFIABLE"
     EVENT_ARTIFACT_DIGEST_MISMATCH = "EVENT_ARTIFACT_DIGEST_MISMATCH"
     INELIGIBLE_DOCUMENT_CLASS = "INELIGIBLE_DOCUMENT_CLASS"
+    EVIDENCE_DOES_NOT_SUPPORT_CLAIM = "EVIDENCE_DOES_NOT_SUPPORT_CLAIM"
+    NOT_PUBLISHABLE_BY_PERMISSION = "NOT_PUBLISHABLE_BY_PERMISSION"
+    INFERRED_INVALID_RULE_HASH = "INFERRED_INVALID_RULE_HASH"
+    INFERRED_CLOSURE_TOO_DEEP = "INFERRED_CLOSURE_TOO_DEEP"
     INFERRED_INCOMPLETE_CLOSURE = "INFERRED_INCOMPLETE_CLOSURE"
     INFERRED_INPUT_NOT_ADMITTED = "INFERRED_INPUT_NOT_ADMITTED"
     INFERRED_CIRCULAR_CLOSURE = "INFERRED_CIRCULAR_CLOSURE"
@@ -130,6 +168,21 @@ def _index_events(events: Any) -> Dict[str, Any]:
     return {e.event_id: e for e in events}
 
 
+def _values_agree(observed: Any, claimed: Any) -> bool:
+    """Whether an observation records the value the statement asserts.
+
+    Compared as stored first, then as text. The store round-trips values
+    through JSON, so an integer deck number can come back as `14` from one
+    path and `"14"` from another; treating those as disagreement would reject
+    honest evidence for a serialization detail.
+    """
+    if observed == claimed:
+        return True
+    if observed is None or claimed is None:
+        return False
+    return str(observed).strip() == str(claimed).strip()
+
+
 def _check_class_and_permission(
     artifact: Any,
     statement: Statement,
@@ -151,12 +204,20 @@ def _check_class_and_permission(
                 PublicationRejection.INELIGIBLE_DOCUMENT_CLASS,
                 f"{document_class} cannot support {statement.question_id}",
             ))
-    # Permission to be SEEN is deliberately not re-checked here. It is an
-    # orthogonal axis with its own existing owners -- `StatementEditor.publish`
-    # and `TruthEngine._publication_block` both call
-    # `authority.is_publishable` -- and duplicating it would tighten a concern
-    # this boundary was not asked to change. This gate answers only whether the
-    # claim is backed.
+    # Permission to be SEEN. R1 removed this from `StatementEditor.publish`
+    # and left no owner on that path, which was a regression: a statement type
+    # that may not be shown could be published. This module is now the single
+    # owner, and the writers delegate rather than each keeping a copy.
+    try:
+        ok, why = authority.is_publishable(statement.statement_type, document_class)
+    except Exception as exc:
+        # An unregistered document class cannot be shown to be publishable.
+        ok, why = False, f"permission for {document_class!r} could not be determined: {exc}"
+    if not ok:
+        result.reasons.append((
+            PublicationRejection.NOT_PUBLISHABLE_BY_PERMISSION,
+            why or "not publishable",
+        ))
 
 
 def _verify_event(
@@ -182,6 +243,31 @@ def _verify_event(
             f"{event_id} is not a recorded (or is a superseded) evidence event",
         ))
         return
+
+    # The event must support THIS claim, not merely exist. `EvidenceEvent`
+    # defines the correspondence itself -- entity_id, question_id and
+    # observed_value are its own fields, and they mean the same things as the
+    # statement's entity_id, question_id and value. Without this, the Barcelona
+    # observation of "Port de Barcelona" would support a Tokyo statement
+    # asserting something else entirely, which is exactly what R1 allowed.
+    mismatches = []
+    if getattr(event, "entity_id", None) != statement.entity_id:
+        mismatches.append(
+            f"entity {getattr(event, 'entity_id', None)!r} != {statement.entity_id!r}"
+        )
+    if getattr(event, "question_id", None) != statement.question_id:
+        mismatches.append(
+            f"question {getattr(event, 'question_id', None)!r} != {statement.question_id!r}"
+        )
+    if not _values_agree(getattr(event, "observed_value", None), statement.value):
+        mismatches.append(
+            f"observed {getattr(event, 'observed_value', None)!r} != claimed {statement.value!r}"
+        )
+    if mismatches:
+        result.reasons.append((
+            PublicationRejection.EVIDENCE_DOES_NOT_SUPPORT_CLAIM,
+            f"{event_id} does not support this claim: " + "; ".join(mismatches),
+        ))
 
     locator = (getattr(event, "locator", "") or "").strip()
     if locator.lower() in PLACEHOLDER_LOCATORS:
@@ -256,7 +342,7 @@ def _verify_event(
                 PublicationRejection.EVENT_ARTIFACT_NOT_HELD,
                 f"{event_id} cites {artifact_ref}, whose bytes are not held",
             ))
-    elif sha256_of_file(held_path) != artifact.sha256:
+    elif _cached_digest(held_path) != artifact.sha256:
         # Recomputed from the bytes, not trusted from the index: a digest that
         # only matches a record proves the record, not the document.
         result.reasons.append((
@@ -275,17 +361,42 @@ def _verify_closure(
     registry: Any,
     questions: Any,
     statements_by_id: Dict[str, Statement],
-    in_progress: Set[str],
 ) -> None:
-    """Every input of an inference must itself be admitted, transitively."""
-    in_progress = in_progress | {statement.statement_id}
-    for input_id in statement.input_statement_ids:
-        if input_id in in_progress:
+    """Walk the inference's dependency graph iteratively.
+
+    Recursion here was unbounded: a 2000-deep chain raised RecursionError
+    instead of returning a verdict, and a trust gate that crashes is a gate
+    that stops answering. The walk is now an explicit stack with a depth
+    bound, so malformed or absurd graphs fail with a reason.
+
+    Every reachable input must itself be admitted. Cycles are reported rather
+    than followed, and each statement is evaluated once however many paths
+    reach it.
+    """
+    pending: List[Tuple[str, int, Tuple[str, ...]]] = [
+        (input_id, 1, (statement.statement_id,))
+        for input_id in statement.input_statement_ids
+    ]
+    settled: Set[str] = set()
+
+    while pending:
+        input_id, depth, path = pending.pop()
+        if depth > MAX_INFERENCE_DEPTH:
+            result.reasons.append((
+                PublicationRejection.INFERRED_CLOSURE_TOO_DEEP,
+                f"closure exceeds {MAX_INFERENCE_DEPTH} levels at {input_id}",
+            ))
+            return
+        if input_id in path:
             result.reasons.append((
                 PublicationRejection.INFERRED_CIRCULAR_CLOSURE,
                 f"{input_id} participates in a derivation cycle",
             ))
             continue
+        if input_id in settled:
+            continue
+        settled.add(input_id)
+
         parent = statements_by_id.get(input_id)
         if parent is None:
             result.reasons.append((
@@ -293,42 +404,36 @@ def _verify_closure(
                 f"input {input_id} does not exist",
             ))
             continue
-        parent_result = evaluate_statement_publication_admission(
-            parent,
-            events=events,
-            registry=registry,
-            questions=questions,
-            statements_by_id=statements_by_id,
-            _in_progress=in_progress,
-        )
-        if parent_result.admitted:
-            result.inputs_verified += 1
+
+        # Each input is judged on its own terms: its own lifecycle axes, and
+        # its own evidence or its own closure. Only its direct requirements are
+        # checked here; its inputs are pushed onto the stack rather than
+        # recursed into.
+        parent_result = PublicationAdmissionResult(statement_id=parent.statement_id)
+        _check_axes(parent, parent_result)
+        if parent.method is Method.INFERRED:
+            _check_inference_shape(parent, parent_result)
+            if parent_result.admitted or not parent_result.reasons:
+                pending.extend(
+                    (next_id, depth + 1, path + (input_id,))
+                    for next_id in parent.input_statement_ids
+                )
         else:
+            _check_events(parent, parent_result, events, registry, questions)
+
+        if parent_result.reasons:
             codes = ", ".join(c.value for c in parent_result.reason_codes)
             result.reasons.append((
                 PublicationRejection.INFERRED_INPUT_NOT_ADMITTED,
                 f"input {input_id} is not itself admitted ({codes})",
             ))
+        else:
+            result.inputs_verified += 1
+            result.events_verified += parent_result.events_verified
 
 
-def evaluate_statement_publication_admission(
-    statement: Statement,
-    *,
-    events: Any = None,
-    registry: Any = None,
-    questions: Any = None,
-    statements_by_id: Optional[Dict[str, Statement]] = None,
-    _in_progress: Optional[Set[str]] = None,
-) -> PublicationAdmissionResult:
-    """Decide whether this statement may hold PUBLISH_ALLOWED.
-
-    Never raises for inadmissible input: an unbacked statement is a verdict,
-    not an error. `require_statement_publication_admission` is the raising form
-    for call sites that are gates.
-    """
-    result = PublicationAdmissionResult(statement_id=statement.statement_id)
-    in_progress = set() if _in_progress is None else _in_progress
-
+def _check_axes(statement: Statement, result: PublicationAdmissionResult) -> None:
+    """The lifecycle axes. Necessary, never sufficient."""
     if statement.evidence_condition is not EvidenceCondition.SUPPORTED:
         result.reasons.append((
             PublicationRejection.CONDITION_NOT_SUPPORTED,
@@ -340,33 +445,73 @@ def evaluate_statement_publication_admission(
             f"human_review_state is {statement.human_review_state.value}",
         ))
 
+
+def _check_inference_shape(
+    statement: Statement, result: PublicationAdmissionResult
+) -> None:
+    """An inference's own requirements, before its inputs are walked."""
+    if not statement.input_statement_ids:
+        result.reasons.append((
+            PublicationRejection.INFERRED_INCOMPLETE_CLOSURE,
+            "INFERRED statement cites no input statements",
+        ))
+    if not is_valid_rule_hash(statement.rule_hash):
+        result.reasons.append((
+            PublicationRejection.INFERRED_INVALID_RULE_HASH,
+            f"rule_hash {statement.rule_hash!r} is not a SHA-256 content address",
+        ))
+
+
+def _check_events(
+    statement: Statement,
+    result: PublicationAdmissionResult,
+    events: Any,
+    registry: Any,
+    questions: Any,
+) -> None:
+    """A read statement's own evidence requirements."""
+    if not statement.evidence_event_ids:
+        result.reasons.append((
+            PublicationRejection.ZERO_EVIDENCE_EVENTS,
+            "statement cites no evidence events",
+        ))
+        return
+    index = _index_events(events)
+    for event_id in statement.evidence_event_ids:
+        _verify_event(event_id, index, registry, questions, statement, result)
+
+
+def evaluate_statement_publication_admission(
+    statement: Statement,
+    *,
+    events: Any = None,
+    registry: Any = None,
+    questions: Any = None,
+    statements_by_id: Optional[Dict[str, Statement]] = None,
+) -> PublicationAdmissionResult:
+    """Decide whether this statement may hold PUBLISH_ALLOWED.
+
+    Never raises for inadmissible input, and never recurses: an unbacked or
+    malformed statement is a verdict, not an error.
+    `require_statement_publication_admission` is the raising form for call
+    sites that are gates.
+    """
+    result = PublicationAdmissionResult(statement_id=statement.statement_id)
+    _check_axes(statement, result)
+
     if statement.method is Method.INFERRED:
-        # An inference cites no artifact of its own; its backing is closure.
-        if not statement.input_statement_ids or not statement.rule_hash:
-            result.reasons.append((
-                PublicationRejection.INFERRED_INCOMPLETE_CLOSURE,
-                "INFERRED statement needs both input_statement_ids and rule_hash",
-            ))
-        elif statements_by_id is None:
+        _check_inference_shape(statement, result)
+        if statements_by_id is None:
             result.reasons.append((
                 PublicationRejection.INFERRED_INPUT_NOT_ADMITTED,
                 "input statements were not supplied, so closure cannot be verified",
             ))
-        else:
+        elif statement.input_statement_ids:
             _verify_closure(
-                statement, result, events, registry, questions,
-                statements_by_id, in_progress,
+                statement, result, events, registry, questions, statements_by_id
             )
     else:
-        if not statement.evidence_event_ids:
-            result.reasons.append((
-                PublicationRejection.ZERO_EVIDENCE_EVENTS,
-                "statement cites no evidence events",
-            ))
-        else:
-            index = _index_events(events)
-            for event_id in statement.evidence_event_ids:
-                _verify_event(event_id, index, registry, questions, statement, result)
+        _check_events(statement, result, events, registry, questions)
 
     result.admitted = not result.reasons
     return result

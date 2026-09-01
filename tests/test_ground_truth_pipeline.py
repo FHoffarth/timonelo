@@ -110,7 +110,11 @@ class PipelineCase(unittest.TestCase):
             read_by="reader.one", read_on="2026-08-17")
 
     def _publish(self, s):
-        back_with_evidence(self, s)
+        back_with_evidence(
+            self, s,
+            observed_value=s.value,
+            locator="fixture document, page 1",
+        )
         self.editor.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED,
                                            "reviewer.two", "2026-08-17")
         s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,

@@ -316,7 +316,19 @@ def test_fail_closed_regression_6_supported_approved_allowed_answerable(tmp_path
 
 
 def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
-    """7. Direct/manual construction of an inconsistent state must NOT cause TruthEngine.answer() to return known=True."""
+    """7. Inconsistent state must never be answerable.
+
+    Two guarantees now, not one. `add_statement` refuses to accept a statement
+    that arrives claiming PUBLISH_ALLOWED without admission, so the state
+    cannot be injected through the API at all. And if it exists anyway --
+    written straight into the engine's map, as `_force` does here -- the reader
+    still refuses to serve it. The write boundary is new; the read guarantee is
+    the one this test always protected, and both are asserted.
+    """
+    def _force(engine, statement):
+        """Bypass the write gate to recreate state the API now refuses."""
+        engine._statements[statement.statement_id] = statement
+
     doc = tmp_path / "doc.txt"
     doc.write_text("dummy", encoding="utf-8")
     store = ArtifactStore(str(tmp_path / "artifacts"))
@@ -328,8 +340,18 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     engine = TruthEngine(registry, log, store)
 
+    # The write boundary refuses the injection outright.
+    with pytest.raises(ValueError, match="not admitted"):
+        engine.add_statement(Statement(
+            "S_REFUSED", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
+            evidence_event_ids=("E1",),
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.APPROVED,
+            publish_status=PublishStatus.PUBLISH_ALLOWED,
+        ))
+
     # Inconsistent 1: PUBLISH_ALLOWED + APPROVED, but UNKNOWN evidence condition
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_UNK", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.UNKNOWN,
@@ -340,7 +362,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 2: PUBLISH_ALLOWED + APPROVED, but UNSUPPORTED evidence condition
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_UNSUP", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.UNSUPPORTED,
@@ -351,7 +373,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 3: PUBLISH_ALLOWED + APPROVED, but CONFLICTED evidence condition
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_CONF", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.CONFLICTED,
@@ -362,7 +384,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 4: PUBLISH_ALLOWED + SUPPORTED, but DRAFT review state
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_DRAFT", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.SUPPORTED,
