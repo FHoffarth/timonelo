@@ -19,6 +19,9 @@ from timonelo.evidence.editor import EditorError, StatementEditor
 from timonelo.evidence.importer import ImportError_, import_pdf
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry, RegistryError
+from timonelo.evidence.events import EvidenceEventLog
+
+from tests.evidence_fixtures import back_with_evidence
 from timonelo.evidence.review import ReviewError, ReviewLog
 from timonelo.evidence.truth import TruthEngine
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
@@ -72,13 +75,18 @@ class PipelineCase(unittest.TestCase):
         self.pdf = _write_pdf(os.path.join(self.tmp, "fixture.pdf"))
         self.registry = ArtifactRegistry(os.path.join(self.tmp, "artifacts"))
         self.reviews = ReviewLog(os.path.join(self.tmp, "reviews.json"))
-        self.editor = StatementEditor(
-            os.path.join(self.tmp, "statements.json"), self.registry, self.reviews)
         self.questions = QuestionRegistry("test")
         self.questions.register(Question(
             "Q-0001", "fixture", statement_type=FIXTURE_TYPE,
             labels={"en": "Which deck?"},
             unknown_guidance="Timonelo holds no source for this yet."))
+        # Publication admission needs the evidence log and question registry;
+        # an editor without them cannot prove backing and so cannot publish.
+        self.events = EvidenceEventLog(
+            os.path.join(self.tmp, "events.json"), self.registry, self.questions)
+        self.editor = StatementEditor(
+            os.path.join(self.tmp, "statements.json"), self.registry, self.reviews,
+            events=self.events, questions=self.questions)
         self.engine = TruthEngine(self.questions, self.editor, self.registry)
 
     def tearDown(self):
@@ -102,6 +110,7 @@ class PipelineCase(unittest.TestCase):
             read_by="reader.one", read_on="2026-08-17")
 
     def _publish(self, s):
+        back_with_evidence(self, s)
         self.editor.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED,
                                            "reviewer.two", "2026-08-17")
         s = self.editor.transition(s.statement_id, HumanReviewState.UNDER_REVIEW,

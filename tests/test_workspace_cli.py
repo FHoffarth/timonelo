@@ -18,6 +18,8 @@ from timonelo.evidence import authority
 from timonelo.evidence.cli import main
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
+
+from tests.evidence_fixtures import back_with_evidence
 from tests.test_ground_truth_pipeline import _write_pdf
 
 CLASS = "workspace_fixture"
@@ -89,6 +91,11 @@ class WorkspaceCase(unittest.TestCase):
             "--read-by", "curator.one", "--read-on", "2026-08-17")
 
     def _publish(self):
+        # Publication requires evidence. The CLI has no command to record an
+        # observation, so the fixture records a real one directly against the
+        # artifact the statement already cites.
+        ws = Workspace(self.root)
+        back_with_evidence(ws, ws.editor.get("STM-0001"))
         self.run_cli("verify-evidence", "STM-0001", "--condition", "SUPPORTED", "--actor", "reviewer.two", "--on", "2026-08-17")
         self.run_cli("submit", "STM-0001", "--actor", "curator.one", "--on", "2026-08-17")
         self.run_cli("approve", "STM-0001", "--actor", "reviewer.two", "--on", "2026-08-18")

@@ -43,6 +43,7 @@ from timonelo.evidence.conflicts import ConflictLog
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog, EvidenceEvent
+from dataclasses import replace as _replace
 from timonelo.ingestion.normalizer import DataNormalizer
 from tests.test_ground_truth_pipeline import _write_pdf
 
@@ -520,10 +521,21 @@ def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
     art_b = reg.register(pdf_b, "cruise_line_deck_plan", "2026-08-17", "test")
     rlog = ReviewLog(str(tmp_path / "reviews.json"))
     clog = ConflictLog(str(tmp_path / "conflicts.json"))
-    editor = StatementEditor(str(tmp_path / "statements.json"), reg, rlog, clog)
+    qreg = QuestionRegistry("test")
+    qreg.register(Question("Q-1", "cabin", statement_type="cabin.deck"))
+    elog = EvidenceEventLog(str(tmp_path / "events.json"), reg, qreg)
+    editor = StatementEditor(str(tmp_path / "statements.json"), reg, rlog, clog,
+                             events=elog, questions=qreg)
 
-    # Statement 1 published
+    # Statement 1 published. Publication needs evidence, so the fixture records
+    # a real observation against the artifact the statement already cites.
     s1 = editor.create("c:1", "Q-1", "cabin.deck", 14, art_a.artifact_id, "p1", "reader.1", "2026-08-17")
+    elog.append(EvidenceEvent(
+        event_id="E-G10", artifact_sha256=art_a.sha256, locator="p1",
+        entity_id="c:1", question_id="Q-1", observed_value=14,
+        observed_by="reader.1", observed_on="2026-08-17"))
+    editor._by_id[s1.statement_id] = _replace(
+        editor.get(s1.statement_id), evidence_event_ids=("E-G10",))
     editor.set_evidence_condition(s1.statement_id, EvidenceCondition.SUPPORTED, "curator", "2026-08-17")
     editor.transition(s1.statement_id, HumanReviewState.UNDER_REVIEW, "reader.1", "2026-08-17")
     editor.transition(s1.statement_id, HumanReviewState.APPROVED, "reviewer.1", "2026-08-17")

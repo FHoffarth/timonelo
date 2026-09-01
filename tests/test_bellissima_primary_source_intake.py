@@ -172,13 +172,27 @@ def test_art_0001_inventory_and_historical_states_remain_auditable():
 
 
 def test_all_active_art_0001_claims_are_gated_pending_reextraction():
+    """These claims are now gated on two axes rather than one.
+
+    They are stored in the legacy shape, with `review_state: "PUBLISHED"` and
+    no evidence events. The loader used to translate that string straight to
+    PUBLISH_ALLOWED, so 112 zero-evidence claims re-entered as publishable on
+    every open and were held back only by their UNKNOWN evidence condition.
+
+    A stored string is not evidence. The loader now remembers the human
+    approval and refuses the publication, so the claims are PUBLISH_BLOCKED as
+    well as UNKNOWN. Nothing about their visibility changed -- they were never
+    answerable, as the next test asserts -- but the unbacked publication claim
+    is gone.
+    """
     statements = _art_0001_statements(_workspace())
     active = [s for s in statements if s.state is not HumanReviewState.SUPERSEDED]
 
     assert len(active) == 112
     assert all(s.state is HumanReviewState.APPROVED for s in active)
-    assert all(s.publishing is PublishStatus.PUBLISH_ALLOWED for s in active)
+    assert all(s.publishing is PublishStatus.PUBLISH_BLOCKED for s in active)
     assert all(s.condition is EvidenceCondition.UNKNOWN for s in active)
+    assert all(not s.evidence_event_ids for s in active)
 
 
 def test_gated_art_0001_claims_cannot_answer_through_truth_engine():

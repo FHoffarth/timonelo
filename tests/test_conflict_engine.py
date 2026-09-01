@@ -16,6 +16,8 @@ from timonelo.evidence.conflicts import (
 from timonelo.evidence.gatekeeper import EvidenceGatekeeper
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
+
+from tests.evidence_fixtures import back_with_evidence
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState, PublishStatus
 from tests.test_ground_truth_pipeline import _write_pdf
 
@@ -80,6 +82,9 @@ class ConflictCase(unittest.TestCase):
             valid_from=valid_from, valid_until=valid_until)
 
     def _publish(self, s, actor="reviewer.two"):
+        # Publication requires evidence, so the fixture records a real event
+        # against the artifact this statement already cites.
+        back_with_evidence(self.ws, s)
         self.ws.set_evidence_condition(s.statement_id, EvidenceCondition.SUPPORTED, actor, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.UNDER_REVIEW, s.read_by, "2026-08-17")
         self.ws.transition(s.statement_id, HumanReviewState.APPROVED, actor, "2026-08-17")

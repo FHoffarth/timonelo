@@ -18,6 +18,10 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog
+from timonelo.evidence.publication import (
+    StatementPublicationError,
+    require_statement_publication_admission,
+)
 from timonelo.evidence.models import Statement
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.ontology.models import (
@@ -146,6 +150,25 @@ class TruthEngine:
                 raise ValueError(
                     f"Statement {statement_id!r} may not be published: {blocked}"
                 )
+            # The axes above are caller-set and prove only that somebody said
+            # SUPPORTED. Evidence admission is the same boundary the editor
+            # uses, so the two publication routes cannot disagree about what
+            # counts as backed.
+            try:
+                # This engine names things differently: `log` is the evidence
+                # event log, `store` holds artifacts, and `registry` is the
+                # question registry.
+                require_statement_publication_admission(
+                    s,
+                    events=self.log,
+                    registry=self.store,
+                    questions=self.registry,
+                    statements_by_id=self._statements,
+                )
+            except StatementPublicationError as exc:
+                raise ValueError(
+                    f"Statement {statement_id!r} may not be published: {exc}"
+                ) from exc
         updated = replace(s, publish_status=status)
         self._statements[statement_id] = updated
         return updated

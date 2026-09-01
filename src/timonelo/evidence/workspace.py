@@ -42,13 +42,17 @@ class Workspace:
         self.registry = ArtifactRegistry(os.path.join(root, "artifacts"))
         self.reviews = ReviewLog(os.path.join(root, "reviews", "log.json"))
         self.conflicts = ConflictLog(os.path.join(root, "reviews", "conflicts.json"))
-        self.editor = StatementEditor(
-            os.path.join(root, "statements", "statements.json"),
-            self.registry, self.reviews, self.conflicts)
         self.questions = QuestionRegistry.load(
             os.path.join(root, "registry", "questions.json"))
         events_path = os.path.join(root, "events", "events.json")
         self.events = EvidenceEventLog(events_path, self.registry, self.questions)
+        # The editor is constructed after the question registry and the event
+        # log because publication admission needs both; an editor without them
+        # cannot prove backing and so cannot publish.
+        self.editor = StatementEditor(
+            os.path.join(root, "statements", "statements.json"),
+            self.registry, self.reviews, self.conflicts,
+            events=self.events, questions=self.questions)
         self.engine = TruthEngine(self.questions, self.editor, self.registry,
                                   self.conflicts)
 

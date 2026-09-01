@@ -24,6 +24,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
+from timonelo.evidence.publication import (
+    StatementPublicationError,
+    has_structural_backing,
+    require_statement_publication_admission,
+)
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.conflicts import (
     ConflictError,
@@ -51,11 +56,21 @@ class StatementEditor:
     ID_PREFIX = "STM-"
 
     def __init__(self, path: str, registry: ArtifactRegistry, review_log: ReviewLog,
-                 conflict_log: Optional[ConflictLog] = None):
+                 conflict_log: Optional[ConflictLog] = None,
+                 events=None, questions=None):
         self.path = path
         self.registry = registry
         self.review_log = review_log
         self.conflict_log = conflict_log
+        # Publication admission needs the evidence log and the question
+        # registry. Both default to None and the gate fails closed without
+        # them: an editor that cannot resolve an event cannot prove backing,
+        # so it must not publish. `Workspace` wires the real ones.
+        self.events = events
+        self.questions = questions
+        #: Statements whose stored PUBLISH_ALLOWED rested on nothing at all and
+        #: were demoted while loading. Recorded rather than silently dropped.
+        self.demoted_on_load: List[str] = []
         self._by_id: Dict[str, Statement] = {}
         if os.path.exists(path):
             import json
@@ -65,8 +80,13 @@ class StatementEditor:
                     if "review_state" in raw and "human_review_state" not in raw:
                         old_s = raw.pop("review_state")
                         if old_s == "PUBLISHED":
+                            # A stored string is not evidence. The legacy value
+                            # records that a human once approved the record; it
+                            # cannot re-confer publication, because nothing in
+                            # the file proves the claim is backed. Re-publishing
+                            # goes through `publish()`, which checks.
                             raw["human_review_state"] = HumanReviewState.APPROVED.value
-                            raw["publish_status"] = PublishStatus.PUBLISH_ALLOWED.value
+                            raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                         elif old_s in HumanReviewState._value2member_map_:
                             raw["human_review_state"] = old_s
                             raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
@@ -77,7 +97,23 @@ class StatementEditor:
                         raw["evidence_condition"] = EvidenceCondition.UNKNOWN.value
                     if "publish_status" not in raw:
                         raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
-                    self._by_id[sid] = Statement(**raw)
+                    statement = Statement(**raw)
+                    # A deserialized statement may claim PUBLISH_ALLOWED. If it
+                    # rests on nothing -- no evidence events, no derivation
+                    # closure -- the claim is unbacked on its face and is
+                    # demoted here, so an edited or imported file cannot
+                    # re-enter as canonical truth. Full verification stays at
+                    # the write gate; this is the cheap shape check that runs
+                    # on every open.
+                    if (
+                        statement.publish_status is not PublishStatus.PUBLISH_BLOCKED
+                        and not has_structural_backing(statement)
+                    ):
+                        statement = replace(
+                            statement, publish_status=PublishStatus.PUBLISH_BLOCKED
+                        )
+                        self.demoted_on_load.append(sid)
+                    self._by_id[sid] = statement
 
     def _next_id(self) -> str:
         nums = []
@@ -281,14 +317,21 @@ class StatementEditor:
                 "Review is only meaningful with a second pair of eyes."
             )
 
-        artifact = self.registry.get(current.artifact_id)
-        ok, reason = authority.is_publishable(
-            current.statement_type, artifact.document_class
-        )
-        if not ok:
-            raise EditorError(
-                f"{statement_id} may not be published: {reason}"
+        # Evidence admission. The axes checked above are caller-set:
+        # `set_evidence_condition` accepts SUPPORTED as a bare assertion, so
+        # SUPPORTED + APPROVED proves only that somebody said so. This is where
+        # the claim is checked against evidence actually held, converging with
+        # EvidenceGatekeeper rather than disagreeing with it.
+        try:
+            require_statement_publication_admission(
+                current,
+                events=self.events,
+                registry=self.registry,
+                questions=self.questions,
+                statements_by_id=self._by_id,
             )
+        except StatementPublicationError as exc:
+            raise EditorError(str(exc)) from exc
 
         updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED)
         self._by_id[statement_id] = updated
