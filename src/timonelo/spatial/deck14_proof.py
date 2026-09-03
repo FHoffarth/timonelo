@@ -244,15 +244,14 @@ def build_deck14_nodes(
 def evidence_verifier(evidence_root: Optional[str] = None) -> SpatialEvidenceVerifier:
     """The verification context for Deck 14, over the canonical artifact root.
 
-    The registry is passed as a factory rather than an instance, which
-    `SpatialEvidenceVerifier` now requires. `ArtifactRegistry` reads its index
-    once at construction, so a verifier holding one instance would keep
-    answering from the index it was built with -- an artifact deregistered
-    afterwards would still look registered. Re-reading per question is what
-    makes deregistration visible to a graph that already exists.
+    Only the root is handed over. The verifier builds its own registry on every
+    verification, so an artifact registered or deregistered after this call is
+    visible to a graph that already exists. Passing a registry -- or a callable
+    returning one -- is refused by the verifier: both retain the index they
+    were built with.
     """
     root = evidence_root or os.path.join(repo_root(), "evidence", "artifacts")
-    return SpatialEvidenceVerifier(registry_factory=lambda: ArtifactRegistry(root))
+    return SpatialEvidenceVerifier(root)
 
 
 def build_deck14_graph(
