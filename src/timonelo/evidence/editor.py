@@ -24,6 +24,12 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.canonical import canonical_dump
 from timonelo.evidence import authority
+from timonelo.evidence.publication import (
+    StatementPublicationError,
+    evaluate_statement_publication_admission,
+    PublicationAuthority,
+    require_statement_publication_admission,
+)
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.evidence.conflicts import (
     ConflictError,
@@ -51,12 +57,31 @@ class StatementEditor:
     ID_PREFIX = "STM-"
 
     def __init__(self, path: str, registry: ArtifactRegistry, review_log: ReviewLog,
-                 conflict_log: Optional[ConflictLog] = None):
+                 conflict_log: Optional[ConflictLog] = None,
+                 events=None, questions=None):
         self.path = path
         self.registry = registry
         self.review_log = review_log
         self.conflict_log = conflict_log
+        # Publication admission needs the evidence log and the question
+        # registry. Both default to None and the gate fails closed without
+        # them: an editor that cannot resolve an event cannot prove backing,
+        # so it must not publish. `Workspace` wires the real ones.
+        self.events = events
+        self.questions = questions
+        #: Statements whose stored PUBLISH_ALLOWED rested on nothing at all and
+        #: were demoted while loading. Recorded rather than silently dropped.
+        self.demoted_on_load: List[str] = []
         self._by_id: Dict[str, Statement] = {}
+        #: The one place current publication authority is decided. It reads
+        #: `self._by_id` live rather than a snapshot, so a closure evaluated
+        #: after an input is demoted sees the demotion.
+        self.authority = PublicationAuthority(
+            events=events,
+            registry=registry,
+            questions=questions,
+            statements=lambda: self._by_id,
+        )
         if os.path.exists(path):
             import json
             with open(path, encoding="utf-8") as f:
@@ -65,8 +90,13 @@ class StatementEditor:
                     if "review_state" in raw and "human_review_state" not in raw:
                         old_s = raw.pop("review_state")
                         if old_s == "PUBLISHED":
+                            # A stored string is not evidence. The legacy value
+                            # records that a human once approved the record; it
+                            # cannot re-confer publication, because nothing in
+                            # the file proves the claim is backed. Re-publishing
+                            # goes through `publish()`, which checks.
                             raw["human_review_state"] = HumanReviewState.APPROVED.value
-                            raw["publish_status"] = PublishStatus.PUBLISH_ALLOWED.value
+                            raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                         elif old_s in HumanReviewState._value2member_map_:
                             raw["human_review_state"] = old_s
                             raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
@@ -78,6 +108,52 @@ class StatementEditor:
                     if "publish_status" not in raw:
                         raw["publish_status"] = PublishStatus.PUBLISH_BLOCKED.value
                     self._by_id[sid] = Statement(**raw)
+        # Restoration is a publication boundary too. A persisted statement can
+        # claim PUBLISH_ALLOWED while citing an event that does not exist, and
+        # R1 only checked that it cited *something* -- so the claim survived
+        # load and every reader downstream served it as truth. Readers must not
+        # each re-derive admission, so the invariant is established here
+        # instead: after load, no statement in memory holds authoritative state
+        # its evidence cannot currently support.
+        self._revalidate_published()
+
+    def _revalidate_published(self) -> None:
+        """Withdraw persisted publication that the current evidence refuses.
+
+        This keeps the stored file honest; it is not what makes consumption
+        safe. R2 leaned on it as though a clean load meant a trustworthy
+        statement, but a load happens once and evidence keeps moving, so
+        anything decided here is already historical by the time it is read.
+        `PublicationAuthority` is what consumers ask; this only spares readers
+        a file that advertises authority it has lost.
+
+        The structural fallback that used to stand in when events and questions
+        were absent is gone. It asked whether a statement *claimed* backing, and
+        a claim-mismatched statement claims backing perfectly well -- so an
+        editor opened without context confirmed exactly the statements it was
+        least able to check. An editor that cannot resolve evidence now changes
+        nothing at all: it neither restores authority nor destroys a record it
+        is not equipped to judge, and its authority refuses on the grounds that
+        it cannot check.
+
+        Only `publish_status` is touched. The record's content, its evidence
+        condition and its review history are left exactly as stored: the claim
+        is preserved, only its unsupported authority is withdrawn.
+        """
+        if not self.authority.has_context:
+            return
+        for sid, statement in list(self._by_id.items()):
+            if statement.publish_status is PublishStatus.PUBLISH_BLOCKED:
+                continue
+            if not self.authority.evaluate(statement).admitted:
+                self._by_id[sid] = replace(
+                    statement, publish_status=PublishStatus.PUBLISH_BLOCKED
+                )
+                self.demoted_on_load.append(sid)
+
+    def is_currently_authoritative(self, statement) -> bool:
+        """Whether this statement may be consumed as truth right now."""
+        return self.authority.is_currently_authoritative(statement)
 
     def _next_id(self) -> str:
         nums = []
@@ -281,14 +357,21 @@ class StatementEditor:
                 "Review is only meaningful with a second pair of eyes."
             )
 
-        artifact = self.registry.get(current.artifact_id)
-        ok, reason = authority.is_publishable(
-            current.statement_type, artifact.document_class
-        )
-        if not ok:
-            raise EditorError(
-                f"{statement_id} may not be published: {reason}"
+        # Evidence admission. The axes checked above are caller-set:
+        # `set_evidence_condition` accepts SUPPORTED as a bare assertion, so
+        # SUPPORTED + APPROVED proves only that somebody said so. This is where
+        # the claim is checked against evidence actually held, converging with
+        # EvidenceGatekeeper rather than disagreeing with it.
+        try:
+            require_statement_publication_admission(
+                current,
+                events=self.events,
+                registry=self.registry,
+                questions=self.questions,
+                statements_by_id=self._by_id,
             )
+        except StatementPublicationError as exc:
+            raise EditorError(str(exc)) from exc
 
         updated = replace(current, publish_status=PublishStatus.PUBLISH_ALLOWED)
         self._by_id[statement_id] = updated

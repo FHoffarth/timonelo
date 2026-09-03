@@ -42,13 +42,17 @@ class Workspace:
         self.registry = ArtifactRegistry(os.path.join(root, "artifacts"))
         self.reviews = ReviewLog(os.path.join(root, "reviews", "log.json"))
         self.conflicts = ConflictLog(os.path.join(root, "reviews", "conflicts.json"))
-        self.editor = StatementEditor(
-            os.path.join(root, "statements", "statements.json"),
-            self.registry, self.reviews, self.conflicts)
         self.questions = QuestionRegistry.load(
             os.path.join(root, "registry", "questions.json"))
         events_path = os.path.join(root, "events", "events.json")
         self.events = EvidenceEventLog(events_path, self.registry, self.questions)
+        # The editor is constructed after the question registry and the event
+        # log because publication admission needs both; an editor without them
+        # cannot prove backing and so cannot publish.
+        self.editor = StatementEditor(
+            os.path.join(root, "statements", "statements.json"),
+            self.registry, self.reviews, self.conflicts,
+            events=self.events, questions=self.questions)
         self.engine = TruthEngine(self.questions, self.editor, self.registry,
                                   self.conflicts)
 
@@ -93,11 +97,16 @@ class Workspace:
             and cls in authority.AUTHORITY.get(q.statement_type, ())
         ]
         mine = self.statements_for_artifact(artifact_id)
+        # "Answered" has to mean answerable now. Read off stored axes, this
+        # number kept counting questions whose supporting evidence had been
+        # superseded, and it is inherited wholesale by every artifact summary
+        # -- so one stale statement quietly inflated the coverage of the
+        # document it came from. `questions_supported` is unaffected: which
+        # questions a document class *could* answer is a fact about the class,
+        # not about any statement, and stays structural.
         answered_ids = {
             s.question_id for s in mine
-            if s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-            and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
-            and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
+            if self.editor.is_currently_authoritative(s)
         }
         answered = [q for q in supported if q.question_id in answered_ids]
         unknown = [q for q in supported if q.question_id not in answered_ids]
@@ -188,11 +197,12 @@ class Workspace:
         a = self.registry.get(s.artifact_id)
         q = self.questions.get(s.question_id)
         cls = authority.DOCUMENT_CLASSES.get(a.document_class)
-        answerable = (
-            s.publishing in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
-            and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
-            and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
-        )
+        # "passenger sees" is a claim about what the system will show a real
+        # person, so it must be the current verdict and not the stored one.
+        # `workflow state` below is deliberately still the stored axis: that
+        # line is reporting review history, which is exactly what it should
+        # report.
+        answerable = self.editor.is_currently_authoritative(s)
 
         lines = [
             f"STATEMENT {s.statement_id}",

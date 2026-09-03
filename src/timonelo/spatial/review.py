@@ -22,6 +22,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from timonelo.evidence.gatekeeper import (
     GeometryProvenanceRecord,
     is_canonical_statement_admitted,
+    lifecycle_axes_pass,
 )
 from timonelo.ontology.models import (
     EvidenceCondition,
@@ -88,6 +89,11 @@ class VenueAssociationResult:
     statement_name: Optional[str] = None
     statement_deck: Optional[int] = None
     statement_data: Optional[Dict[str, Any]] = None
+    #: The three lifecycle axes agree. Necessary, and on its own worth nothing:
+    #: these are stored values describing a grant made at some past moment.
+    lifecycle_axes_pass: bool = False
+    #: The grant still holds against the evidence as it stands now. Only this
+    #: may promote geometry to passenger publication.
     is_canonical_admitted: bool = False
     reason: str = ""
 
@@ -124,9 +130,17 @@ def match_venue_statement(
     candidate_label: str,
     deck_number: int,
     statements: Dict[str, Dict[str, Any]],
+    authority=None,
 ) -> VenueAssociationResult:
     """Deterministically associates a candidate extracted label with a canonical statement.
-    Evaluates statement publishability directly through canonical is_canonical_statement_admitted().
+
+    `statements` are decoded records, which carry the lifecycle axes and no link
+    to the evidence behind them. Those axes were enough to set
+    `is_canonical_admitted` and promote a venue to passenger publication, which
+    is the same mistake in spatial clothing: a stored PUBLISH_ALLOWED being read
+    as present authority. Pass `authority` to establish it. Without one, the
+    axes result is reported as `lifecycle_axes_pass` and admission stays False,
+    because a caller holding only a decoded record cannot know.
     """
     clean_label = candidate_label.strip().lower()
     canonical_target = KNOWN_VENUE_ALIASES.get(clean_label)
@@ -160,13 +174,19 @@ def match_venue_statement(
     if len(matches) == 1:
         sid, stmt = matches[0]
         name = stmt.get("target_entity") or clean_label.title()
-        is_admitted, gate_reason = is_canonical_statement_admitted(stmt)
+        # Two separate questions, kept separate. The axes result is what the
+        # record says and is reported for the reviewer; admission is what may
+        # actually promote geometry, and it needs an authority.
+        axes_pass, _ = lifecycle_axes_pass(stmt)
+        is_admitted, gate_reason = is_canonical_statement_admitted(
+            stmt, authority=authority)
         return VenueAssociationResult(
             state=VenueAssociationState.MATCHED,
             statement_id=sid,
             statement_name=name,
             statement_deck=deck_number,
             statement_data=stmt,
+            lifecycle_axes_pass=axes_pass,
             is_canonical_admitted=is_admitted,
             reason=f"Matched statement {sid} on Deck {deck_number}: {gate_reason}",
         )
@@ -186,6 +206,7 @@ def adjudicate_spatial_objects(
     proof_data: Dict[str, Any],
     decisions: Dict[str, SpatialReviewDecision],
     statements: Dict[str, Dict[str, Any]],
+    authority=None,
 ) -> Tuple[Dict[str, Any], List[LifecycleDelta], List[Dict[str, Any]]]:
     """Applies surgical adjudication mutations to proof objects based on human decisions
     gated by canonical Gatekeeper rules and requiring explicit reviewer identity.
@@ -243,7 +264,8 @@ def adjudicate_spatial_objects(
             to_rev = HumanReviewState.APPROVED.value
             
             # 2. Evaluate Venue Association and Canonical Statement Gate
-            assoc = match_venue_statement(obj.get("label", ""), deck_num, statements)
+            assoc = match_venue_statement(
+            obj.get("label", ""), deck_num, statements, authority=authority)
             
             if valid_prov and assoc.state == VenueAssociationState.MATCHED:
                 if assoc.is_canonical_admitted:
@@ -251,7 +273,9 @@ def adjudicate_spatial_objects(
                     to_pub = PublishStatus.PUBLISH_ALLOWED.value
                     outcome = "PROMOTED_TO_PASSENGER_PUBLISH"
                 else:
-                    # Statement exists but canonical gate rejected publication -> keep publish blocked!
+                    # The statement exists and is not currently admissible --
+                    # either its axes refuse, or nothing here can establish that
+                    # its grant still holds. Both keep publication blocked.
                     to_cond = EvidenceCondition.SUPPORTED.value
                     to_pub = PublishStatus.PUBLISH_BLOCKED.value
                     outcome = "GEOMETRY_APPROVED_IDENTITY_STATEMENT_BLOCKED"

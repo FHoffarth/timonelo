@@ -178,34 +178,84 @@ def _governed_facts(ontology: Any) -> List[Tuple[str, Sequence[Any]]]:
     return facts
 
 
+def _held_digest(registry: ArtifactRegistry, artifact: Any) -> Optional[str]:
+    """The SHA-256 of the bytes the repository holds for this artifact, or None.
+
+    None means nothing resolves: no candidate in the vault, an ambiguous one,
+    or bytes that no longer match the identity the registry records.
+
+    The bytes are re-read every time, deliberately. A digest cache keyed on the
+    file's size and mtime -- the obvious optimisation, and the one the
+    statement publication path uses -- was measured against this boundary and
+    rejected: on Windows no `stat` field survives a same-size replacement whose
+    mtime is restored, so `os.utime` after a write makes tampering invisible.
+    That is a small version of the defect this boundary exists to close, and a
+    boundary with a documented way through it is not a boundary. Callers that
+    need speed get it from `_stance_rejections`, which does not ask this
+    question at all when the declared axes have already refused.
+    """
+    held_path = registry.resolve_path(artifact.artifact_id)
+    if held_path is None:
+        return None
+    # Recomputed from the bytes, not read from the index. A digest that only
+    # matches a record proves the record, not the document.
+    return sha256_of_file(held_path)
+
+
+def verify_link_artifact(
+    link: Any,
+    registry: ArtifactRegistry,
+) -> Tuple[AdmissionRejection, ...]:
+    """Whether the artifact this link cites resolves against bytes held *now*.
+
+    Requirements 1-3 of the admission predicate, and only those: the link names
+    a registered artifact, it is content-addressed, and its digest re-verifies
+    against the bytes the repository holds at the moment of the question.
+
+    Split out from `_link_rejections` because it is the part that is not
+    specific to canonical persistence. The routable-graph boundary needs
+    exactly this and must not re-derive it: two implementations of "is this
+    evidence real" is how the boundaries drift apart. What stays behind in
+    `_link_rejections` -- the canonical derivation allowlist and registry-side
+    vessel attribution -- is canonical-sink policy, not evidence resolution.
+
+    Returns an empty tuple when the cited artifact currently resolves. Nothing
+    is cached: `_held_digest` re-reads and re-hashes the held bytes on every
+    call, so a replacement is visible the moment it lands.
+    """
+    source_id = getattr(link, "source_id", "") or ""
+    try:
+        artifact = registry.get(source_id)
+    except (RegistryError, KeyError):
+        # Not a registered artifact. Nothing further can be established about
+        # it -- possession and digest are both registry facts -- so report that
+        # alone rather than inferring more from the string.
+        return (AdmissionRejection.ARTIFACT_NOT_REGISTERED,)
+
+    digest = getattr(link, "sha256", None)
+    if not digest:
+        return (AdmissionRejection.NOT_CONTENT_ADDRESSED,)
+
+    held = _held_digest(registry, artifact)
+    if held is None:
+        return (AdmissionRejection.ARTIFACT_NOT_HELD,)
+    if held != digest:
+        return (AdmissionRejection.DIGEST_MISMATCH,)
+    return ()
+
+
 def _link_rejections(
     link: Any,
     vessel_imo: str,
     registry: ArtifactRegistry,
 ) -> Tuple[AdmissionRejection, ...]:
     """Every reason this one link cannot support admitted state for this vessel."""
-    reasons: List[AdmissionRejection] = []
-
-    source_id = getattr(link, "source_id", "") or ""
-    try:
-        artifact = registry.get(source_id)
-    except RegistryError:
-        # Not a registered artifact. Nothing further can be established about
-        # it -- possession, digest and attribution are all registry facts -- so
-        # report that alone rather than inferring more from the string.
+    reasons: List[AdmissionRejection] = list(verify_link_artifact(link, registry))
+    if AdmissionRejection.ARTIFACT_NOT_REGISTERED in reasons:
+        # Unchanged from the original single-reason return: an unregistered
+        # source_id leaves nothing else to establish.
         return (AdmissionRejection.ARTIFACT_NOT_REGISTERED,)
-
-    digest = getattr(link, "sha256", None)
-    if not digest:
-        reasons.append(AdmissionRejection.NOT_CONTENT_ADDRESSED)
-    else:
-        held_path = registry.resolve_path(artifact.artifact_id)
-        if held_path is None:
-            reasons.append(AdmissionRejection.ARTIFACT_NOT_HELD)
-        elif sha256_of_file(held_path) != digest:
-            # Recomputed from the bytes, not compared to the index. A digest
-            # that only matches a record proves the record, not the document.
-            reasons.append(AdmissionRejection.DIGEST_MISMATCH)
+    artifact = registry.get(getattr(link, "source_id", "") or "")
 
     method = getattr(link, "method", None)
     derivation = getattr(link, "derivation", None)

@@ -58,32 +58,122 @@ def bellissima_input():
     )
 
 
-def test_bellissima_golden_fixture_compiles_canonical_truth(factory, bellissima_input):
+
+def seed_backed_statements(ws_dir: Path, statements: dict) -> None:
+    """Write seed statements together with the evidence that supports them.
+
+    These fixtures used to write `evidence_event_ids: ["EVT-001"]` against
+    `artifact_id: "TEST-ART-01"` -- an event that was never recorded, citing an
+    artifact that was never registered. Publication admission is now checked on
+    load, so fabricated backing no longer survives, and it should not: a
+    fixture asserting published truth from a phantom event proves nothing.
+
+    Each statement gets its own event observing that statement's own entity,
+    question and value, against a real registered artifact whose document class
+    may answer the question.
     """
-    Golden Fixture: MSC Bellissima Shanghai -> Tokyo produces exact canonical voyage facts.
+    from timonelo.evidence import authority
+    from timonelo.evidence.registry import ArtifactRegistry
+
+    for sub in ("artifacts", "statements", "events", "reviews", "registry"):
+        (ws_dir / sub).mkdir(parents=True, exist_ok=True)
+
+    registry = ArtifactRegistry(str(ws_dir / "artifacts"))
+    events = []
+    seeded = {}
+
+    for index, (sid, raw) in enumerate(statements.items(), start=1):
+        record = dict(raw)
+        # Only statements that claim publication need backing. The negative
+        # fixtures deliberately seed DRAFT, PUBLISH_BLOCKED or CONFLICTED
+        # records to prove they cannot resolve; giving those evidence would
+        # change what they are testing, and registering an artifact for each
+        # would make the suite slow for no gain.
+        if record.get("publish_status") != "PUBLISH_ALLOWED":
+            seeded[sid] = record
+            continue
+        statement_type = record["statement_type"]
+        classes = authority.AUTHORITY.get(statement_type)
+        if not classes:
+            # No declared authority for this type, so no document class can
+            # honestly back it. Left as seeded; admission will judge it.
+            seeded[sid] = record
+            continue
+        document_class = classes[0]
+
+        source = ws_dir / f"seed_source_{index}.txt"
+        source.write_text(
+            f"{record['entity_id']} {record['question_id']} {record['value']}",
+            encoding="utf-8",
+        )
+        artifact = registry.register(
+            path=str(source),
+            document_class=document_class,
+            acquired_on="2026-08-23",
+            acquisition_method="test fixture",
+        )
+
+        event_id = f"EVT-SEED-{index:03d}"
+        events.append({
+            "event_id": event_id,
+            "artifact_sha256": artifact.sha256,
+            "locator": record.get("locator") or f"seed source {index}",
+            "entity_id": record["entity_id"],
+            "question_id": record["question_id"],
+            "observed_value": record["value"],
+            "observed_by": "fixture.observer",
+            "observed_on": "2026-08-23",
+            "supersedes": None,
+            "notes": "",
+        })
+        record["artifact_id"] = artifact.artifact_id
+        record["evidence_event_ids"] = [event_id]
+        seeded[sid] = record
+
+    (ws_dir / "events" / "events.json").write_text(
+        json.dumps(events, indent=2), encoding="utf-8")
+    (ws_dir / "statements" / "statements.json").write_text(
+        json.dumps(seeded, indent=2), encoding="utf-8")
+
+
+def test_bellissima_golden_fixture_no_longer_compiles_canonical_truth(factory, bellissima_input):
+    """
+    Golden Fixture: the MSC Bellissima reference voyage stops resolving.
+
+    Every one of its facts was read from ART-0007, a private booking
+    confirmation the repository registers by digest and deliberately does not
+    store. Nobody can open it, so no reader can check a single one of these
+    claims against its source, and the two port linkages additionally cite a
+    rule no rule store holds. The statements were published anyway because
+    PUBLISH_ALLOWED was written down once and never questioned again.
+
+    This is the sprint's cost, stated rather than hidden: the repository's only
+    voyage is not publishable truth. What it demonstrates is that the boundary
+    binds the evidence the project actually cares about, not just fixtures
+    built to fail. Restoring it means public evidence for these facts, or a
+    policy decision that private sources may back publication -- not a change
+    to what PUBLISH_ALLOWED means.
     """
     res = factory.create_or_get_voyage(bellissima_input)
 
     assert res.voyage_entity == "voyage:msc-bellissima:20261004-shanghai-tokyo"
-    assert res.vessel == "MSC BELLISSIMA"
-    assert res.departure_port == "port:unlocode:CNSGH"
-    assert res.arrival_port == "port:unlocode:JPTYO"
-    assert res.departure_date == "2026-10-04"
-    assert res.departure_location == "Shanghai, China"
-    assert res.arrival_date == "2026-10-07"
-    assert res.arrival_location == "Tokyo, Japan"
-    assert res.check_in_time == "14:00"
+    assert res.vessel is None
+    assert res.departure_port is None
+    assert res.arrival_port is None
+    assert res.departure_date is None
+    assert res.arrival_date is None
+    assert res.check_in_time is None
 
-    # Terminal & berth remain strictly UNKNOWN
+    # Terminal & berth remain strictly UNKNOWN, as they always did
     assert res.departure_terminal is None
     assert res.departure_berth is None
     assert res.arrival_terminal is None
     assert res.arrival_berth is None
 
-    # Overall admission and publishability
-    assert res.admission_decision.status == AdmissionStatus.AUTO_ADMISSIBLE
-    assert res.publishability == PublishStatus.PUBLISH_ALLOWED
-    assert len(res.known_facts) == 8
+    # Nothing is published, and the refusal is visible rather than silent.
+    assert res.publishability != PublishStatus.PUBLISH_ALLOWED
+    assert res.known_facts == []
+    assert res.gaps
 
 
 def test_new_voyage_intake_in_isolated_workspace_with_parsed_claims(tmp_path):
@@ -189,7 +279,7 @@ def test_new_voyage_intake_in_isolated_workspace_with_parsed_claims(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(seed_statements, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, seed_statements)
 
     isolated_ws = Workspace(str(ws_dir))
 
@@ -570,7 +660,7 @@ def test_draft_port_official_name_cannot_resolve_port(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -627,7 +717,7 @@ def test_publish_blocked_port_unlocode_cannot_resolve_port(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -684,7 +774,7 @@ def test_conflicted_reusable_port_evidence_cannot_resolve_port(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -741,7 +831,7 @@ def test_draft_cabin_venue_existence_cannot_establish_ship_identity(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -783,7 +873,7 @@ def test_blocked_vessel_identity_cannot_establish_ship_identity(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -800,10 +890,15 @@ def test_approved_supported_publish_allowed_reusable_facts_resolve_normally(fact
     assert unlocode == "CNSGH"
     assert stmt_id == "STM-0395"
 
+    # Ship identity does not resolve, and for a different reason than the ports
+    # above: the only statement naming this vessel is STM-0403, read from the
+    # private booking confirmation. The public UN/LOCODE facts are unaffected,
+    # which is the point -- authority is withdrawn from the claims whose
+    # evidence cannot be re-read, not from the workspace.
     ship_ent, vessel_name, is_unique_ship = factory.resolve_ship_identity("MSC Cruises", "MSC Bellissima")
-    assert is_unique_ship is True
-    assert ship_ent == "ship:MSC-BELLISSIMA"
-    assert vessel_name == "MSC BELLISSIMA"
+    assert is_unique_ship is False
+    assert ship_ent is None
+    assert vessel_name is None
 
 
 def test_blocked_terminal_infrastructure_never_reaches_passenger_pack(tmp_path):
@@ -839,7 +934,7 @@ def test_blocked_terminal_infrastructure_never_reaches_passenger_pack(tmp_path):
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)
@@ -884,7 +979,7 @@ def test_approved_but_unsupported_terminal_infrastructure_never_reaches_passenge
             "method": "DIRECT",
         },
     }
-    (ws_dir / "statements" / "statements.json").write_text(json.dumps(stmts, indent=2), encoding="utf-8")
+    seed_backed_statements(ws_dir, stmts)
 
     ws = Workspace(str(ws_dir))
     f = VoyageKnowledgeFactory(ws)

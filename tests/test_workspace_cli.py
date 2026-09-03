@@ -18,6 +18,9 @@ from timonelo.evidence import authority
 from timonelo.evidence.cli import main
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.workspace import Workspace
+from timonelo.evidence.models import PublishStatus
+
+from tests.evidence_fixtures import back_with_evidence
 from tests.test_ground_truth_pipeline import _write_pdf
 
 CLASS = "workspace_fixture"
@@ -89,6 +92,18 @@ class WorkspaceCase(unittest.TestCase):
             "--read-by", "curator.one", "--read-on", "2026-08-17")
 
     def _publish(self):
+        # Publication requires evidence. The CLI has no command to record an
+        # observation, so the fixture records a real one directly against the
+        # artifact the statement already cites.
+        ws = Workspace(self.root)
+        statement = ws.editor.get("STM-0001")
+        back_with_evidence(
+            ws, statement,
+            # The literal the fixture document carries, not a copy of the
+            # claim under test.
+            observed_value=14,
+            locator="fixture document, page 1",
+        )
         self.run_cli("verify-evidence", "STM-0001", "--condition", "SUPPORTED", "--actor", "reviewer.two", "--on", "2026-08-17")
         self.run_cli("submit", "STM-0001", "--actor", "curator.one", "--on", "2026-08-17")
         self.run_cli("approve", "STM-0001", "--actor", "reviewer.two", "--on", "2026-08-18")
@@ -223,15 +238,32 @@ class TestProvenanceTrace(WorkspaceCase):
             self.assertIn(section, out)
         self.assertIn("integrity INTACT", out)
 
-    def test_trace_detects_tampering(self):
+    def test_tampering_withdraws_the_published_answer(self):
+        """Substituted bytes must stop the claim being served.
+
+        This previously asserted that `trace` printed FAILED while the
+        statement stayed published. Publication admission is now re-checked on
+        load, so a statement whose artifact no longer matches its digest is
+        demoted before any reader sees it: the tampering is caught earlier and
+        the claim is withdrawn rather than reported-but-still-served.
+        """
         self._import()
         self._statement()
         self._publish()
         ws = Workspace(self.root)
+        self.assertEqual(ws.editor.demoted_on_load, [])
+
         with open(ws.registry.blob_path("ART-0001"), "w") as f:
             f.write("substituted")
-        self.assertIn("FAILED", self.run_cli(
-            "trace", "--entity", "fixture:1", "--question", "Q-0001"))
+
+        tampered = Workspace(self.root)
+        self.assertIn("STM-0001", tampered.editor.demoted_on_load)
+        self.assertIs(
+            tampered.editor.get("STM-0001").publish_status,
+            PublishStatus.PUBLISH_BLOCKED,
+        )
+        out = self.run_cli("trace", "--entity", "fixture:1", "--question", "Q-0001")
+        self.assertIn("UNKNOWN", out)
 
     def test_unknown_trace_says_there_is_nothing_to_trace(self):
         out = self.run_cli("trace", "--entity", "fixture:1", "--question", "Q-0002")

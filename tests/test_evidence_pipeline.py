@@ -21,10 +21,25 @@ from timonelo.ontology.models import EvidenceCondition, HumanReviewState, Publis
 
 FIXTURE_CLASS = "test_fixture"
 
+# Rules are content-addressed (ADR-0003 §3), so the fixture rule carries the
+# SHA-256 of its identifier rather than the identifier itself.
+NOISE_RULE_HASH = "4f34af8d0e399df78d8c4f9df482f018e623f2be24a365bc243ac7ff313ef59c"
+
 # Declared so the fixture class can carry weight. Deliberately mid-range: the
 # fixture is not a real document and must not read as authoritative.
 from timonelo.evidence.engine import SOURCE_RELIABILITY
 SOURCE_RELIABILITY.setdefault(FIXTURE_CLASS, 0.80)
+
+# Publication permission is read from the document class matrix, so the fixture
+# class must be declared there too. An undeclared class has no known use
+# permission and is refused -- correctly, but it would refuse this fixture for
+# a registration gap rather than for anything the tests are about.
+from timonelo.evidence import authority as _authority
+from tests.evidence_fixtures import RuleStore
+_authority.DOCUMENT_CLASSES.setdefault(FIXTURE_CLASS, _authority.DocumentClass(
+    FIXTURE_CLASS, "Pipeline fixture", 0.80,
+    _authority.ValidityScope.STRUCTURAL, _authority.Acquisition.PUBLIC,
+    _authority.UsePermission.CITE_AND_STORE))
 
 
 def build_registry() -> QuestionRegistry:
@@ -65,7 +80,7 @@ class PipelineTestCase(unittest.TestCase):
             os.path.join(self.tmp, "events.json"), self.store, self.registry
         )
         self.engine = TruthEngine(self.registry, self.log, self.store,
-                                  rules={"rule:noise:v1": 0.7})
+                                  rules={NOISE_RULE_HASH: 0.7})
 
     def tearDown(self):
         shutil.rmtree(self.tmp, ignore_errors=True)
@@ -205,7 +220,7 @@ class TestTruthEngine(PipelineTestCase):
         self.engine.add_statement(Statement(
             statement_id="S2", entity_id="cabin:X:1", question_id="Q-0003",
             value=True, method=Method.INFERRED, derivation=Derivation.LOCAL,
-            input_statement_ids=("S1",), rule_hash="rule:noise:v1",
+            input_statement_ids=("S1",), rule_hash=NOISE_RULE_HASH,
         ))
         base = self.engine.confidence("S1")
         derived = self.engine.confidence("S2")
@@ -229,13 +244,20 @@ class TestTruthEngine(PipelineTestCase):
     def test_unregistered_document_class_raises(self):
         """An undeclared class must not silently score zero."""
         from timonelo.evidence.engine import SOURCE_RELIABILITY
+        # "Undeclared" means declared in neither map: `confidence` raises only
+        # when the class is absent from SOURCE_RELIABILITY *and* from the
+        # document class matrix. The fixture class is now declared in both so
+        # it can carry publication permission, so both are removed here.
         saved = SOURCE_RELIABILITY.pop(FIXTURE_CLASS)
+        saved_class = _authority.DOCUMENT_CLASSES.pop(FIXTURE_CLASS, None)
         try:
             self.seed_direct()
             with self.assertRaises(ValueError):
                 self.engine.confidence("S1")
         finally:
             SOURCE_RELIABILITY[FIXTURE_CLASS] = saved
+            if saved_class is not None:
+                _authority.DOCUMENT_CLASSES[FIXTURE_CLASS] = saved_class
 
     def test_derivation_chain_names_the_real_source(self):
         self.seed_direct()
@@ -271,11 +293,19 @@ class TestLanguageLayer(PipelineTestCase):
         self.assertNotIn("%", out)
 
     def test_low_confidence_claim_is_hedged(self):
+        # S2 is INFERRED, and publication admission refuses an inference whose
+        # rule cannot be resolved. Hedging is the subject here, so the rule is
+        # made resolvable rather than letting provenance fail the test for it.
+        store = RuleStore().install()
+        self.addCleanup(store.uninstall)
+        store.trust(NOISE_RULE_HASH)
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="page 1",
             entity_id="cabin:X:1", question_id="Q-0003",
-            observed_value=True, observed_by="t", observed_on="2026-08-17",
+            # The observation must record what the statement claims; an event
+            # reading True cannot support a claim of "buffet overhead".
+            observed_value="buffet overhead", observed_by="t", observed_on="2026-08-17",
         ))
         self.engine.add_statement(Statement(
             statement_id="S1", entity_id="cabin:X:1", question_id="Q-0003",
@@ -286,7 +316,7 @@ class TestLanguageLayer(PipelineTestCase):
             statement_id="S2", entity_id="cabin:X:1", question_id="Q-0003",
             value="morning noise likely", method=Method.INFERRED,
             derivation=Derivation.LOCAL, input_statement_ids=("S1",),
-            rule_hash="rule:noise:v1",
+            rule_hash=NOISE_RULE_HASH,
         ))
         for sid in ("S1", "S2"):
             self.engine.set_evidence_condition(sid, EvidenceCondition.SUPPORTED)

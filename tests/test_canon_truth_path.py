@@ -43,6 +43,7 @@ from timonelo.evidence.conflicts import ConflictLog
 from timonelo.evidence.questions import Question, QuestionRegistry
 from timonelo.evidence.artifacts import ArtifactStore
 from timonelo.evidence.events import EvidenceEventLog, EvidenceEvent
+from dataclasses import replace as _replace
 from timonelo.ingestion.normalizer import DataNormalizer
 from tests.test_ground_truth_pipeline import _write_pdf
 
@@ -315,7 +316,19 @@ def test_fail_closed_regression_6_supported_approved_allowed_answerable(tmp_path
 
 
 def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
-    """7. Direct/manual construction of an inconsistent state must NOT cause TruthEngine.answer() to return known=True."""
+    """7. Inconsistent state must never be answerable.
+
+    Two guarantees now, not one. `add_statement` refuses to accept a statement
+    that arrives claiming PUBLISH_ALLOWED without admission, so the state
+    cannot be injected through the API at all. And if it exists anyway --
+    written straight into the engine's map, as `_force` does here -- the reader
+    still refuses to serve it. The write boundary is new; the read guarantee is
+    the one this test always protected, and both are asserted.
+    """
+    def _force(engine, statement):
+        """Bypass the write gate to recreate state the API now refuses."""
+        engine._statements[statement.statement_id] = statement
+
     doc = tmp_path / "doc.txt"
     doc.write_text("dummy", encoding="utf-8")
     store = ArtifactStore(str(tmp_path / "artifacts"))
@@ -327,8 +340,18 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     engine = TruthEngine(registry, log, store)
 
+    # The write boundary refuses the injection outright.
+    with pytest.raises(ValueError, match="not admitted"):
+        engine.add_statement(Statement(
+            "S_REFUSED", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
+            evidence_event_ids=("E1",),
+            evidence_condition=EvidenceCondition.UNKNOWN,
+            human_review_state=HumanReviewState.APPROVED,
+            publish_status=PublishStatus.PUBLISH_ALLOWED,
+        ))
+
     # Inconsistent 1: PUBLISH_ALLOWED + APPROVED, but UNKNOWN evidence condition
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_UNK", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.UNKNOWN,
@@ -339,7 +362,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 2: PUBLISH_ALLOWED + APPROVED, but UNSUPPORTED evidence condition
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_UNSUP", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.UNSUPPORTED,
@@ -350,7 +373,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 3: PUBLISH_ALLOWED + APPROVED, but CONFLICTED evidence condition
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_CONF", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.CONFLICTED,
@@ -361,7 +384,7 @@ def test_fail_closed_regression_7_inconsistent_state_not_answerable(tmp_path):
 
     # Inconsistent 4: PUBLISH_ALLOWED + SUPPORTED, but DRAFT review state
     engine._statements.clear()
-    engine.add_statement(Statement(
+    _force(engine, Statement(
         "S_DRAFT", "c:1", "Q-1", 14, Method.DIRECT, Derivation.LOCAL,
         evidence_event_ids=("E1",),
         evidence_condition=EvidenceCondition.SUPPORTED,
@@ -520,10 +543,21 @@ def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
     art_b = reg.register(pdf_b, "cruise_line_deck_plan", "2026-08-17", "test")
     rlog = ReviewLog(str(tmp_path / "reviews.json"))
     clog = ConflictLog(str(tmp_path / "conflicts.json"))
-    editor = StatementEditor(str(tmp_path / "statements.json"), reg, rlog, clog)
+    qreg = QuestionRegistry("test")
+    qreg.register(Question("Q-1", "cabin", statement_type="cabin.deck"))
+    elog = EvidenceEventLog(str(tmp_path / "events.json"), reg, qreg)
+    editor = StatementEditor(str(tmp_path / "statements.json"), reg, rlog, clog,
+                             events=elog, questions=qreg)
 
-    # Statement 1 published
+    # Statement 1 published. Publication needs evidence, so the fixture records
+    # a real observation against the artifact the statement already cites.
     s1 = editor.create("c:1", "Q-1", "cabin.deck", 14, art_a.artifact_id, "p1", "reader.1", "2026-08-17")
+    elog.append(EvidenceEvent(
+        event_id="E-G10", artifact_sha256=art_a.sha256, locator="p1",
+        entity_id="c:1", question_id="Q-1", observed_value=14,
+        observed_by="reader.1", observed_on="2026-08-17"))
+    editor._by_id[s1.statement_id] = _replace(
+        editor.get(s1.statement_id), evidence_event_ids=("E-G10",))
     editor.set_evidence_condition(s1.statement_id, EvidenceCondition.SUPPORTED, "curator", "2026-08-17")
     editor.transition(s1.statement_id, HumanReviewState.UNDER_REVIEW, "reader.1", "2026-08-17")
     editor.transition(s1.statement_id, HumanReviewState.APPROVED, "reviewer.1", "2026-08-17")

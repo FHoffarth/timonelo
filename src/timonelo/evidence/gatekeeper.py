@@ -253,6 +253,18 @@ class EvidenceGatekeeper:
         if hasattr(workspace, "events") and workspace.events is not None:
             for event in workspace.events.all():
                 gatekeeper.register_event(event)
+        # Statements are deliberately not loaded here. Callers scope this gate
+        # to the statement they are asking about -- `evaluate_fact` adds the
+        # one winning statement and reads the first refusal -- so populating it
+        # with the whole store would answer a different question and refuse on
+        # some unrelated draft's behalf.
+        #
+        # The cost is that a caller who adds none gets a clean pass over an
+        # empty set, and R2 read exactly that vacuous pass as this gate
+        # agreeing that private sources are publishable. `GateResult` reports
+        # `evaluated_statements` for this reason: a pass with zero evaluated
+        # statements is not agreement, and anything comparing verdicts across
+        # boundaries must check it.
         if hasattr(workspace, "conflicts") and workspace.conflicts is not None:
             gatekeeper.use_conflict_log(workspace.conflicts)
         return gatekeeper
@@ -433,13 +445,21 @@ def sanitize_report_content(report_text: str, gate_result: GateResult) -> str:
     return report_text
 
 
-def is_canonical_statement_admitted(statement: Union[Statement, Dict[str, Any]]) -> Tuple[bool, str]:
-    """
-    Shared canonical predicate for statement publication admission (ADR-0002 §8, ADR-0003 §7).
-    A statement participates in published truth if and only if all three lifecycle axes pass:
+def lifecycle_axes_pass(
+    statement: Union[Statement, Dict[str, Any]],
+) -> Tuple[bool, str]:
+    """Whether the three stored lifecycle axes agree (ADR-0002 section 8).
+
       1. evidence_condition == EvidenceCondition.SUPPORTED
       2. human_review_state == HumanReviewState.APPROVED
-      3. publish_status in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS)
+      3. publish_status in (PUBLISH_ALLOWED, PUBLISH_ALLOWED_WITH_WARNINGS)
+
+    This is a question about the record, and it has an honest answer: the axes
+    say publication was granted. It is deliberately not named "admitted", and
+    deliberately answers nothing about whether that grant still holds. Use it
+    to show a reviewer what the file says. Never use it to decide what to
+    publish, serve, or present as known -- that is
+    `is_canonical_statement_admitted`, which requires an authority.
     """
     if isinstance(statement, Statement):
         cond = statement.evidence_condition
@@ -467,4 +487,49 @@ def is_canonical_statement_admitted(statement: Union[Statement, Dict[str, Any]])
     if pub not in (PublishStatus.PUBLISH_ALLOWED, PublishStatus.PUBLISH_ALLOWED_WITH_WARNINGS):
         return False, f"Statement {sid} publish_status is {pub.value if hasattr(pub, 'value') else pub} (must be PUBLISH_ALLOWED)"
 
-    return True, "Canonical publication criteria satisfied"
+    return True, f"Statement {sid} satisfies the lifecycle axes"
+
+
+def is_canonical_statement_admitted(
+    statement: Union[Statement, Dict[str, Any]],
+    *,
+    authority=None,
+) -> Tuple[bool, str]:
+    """
+    Shared canonical predicate for statement publication admission (ADR-0002
+    section 8, ADR-0003 section 7).
+
+    The lifecycle axes must agree AND the grant they record must still hold
+    against the evidence the repository has now. The axes are stored values and
+    stored values describe the past: they say this statement was admitted, not
+    that it would be admitted today.
+
+    `authority` is therefore required in substance even though it is keyword-
+    optional in signature. Omitting it used to return True on the axes alone,
+    with a caveat in the reason string that nothing read -- and a caveat is not
+    a gate. It now returns False, because "nobody checked" is not a form of
+    yes. Callers that only want to display what the file says should call
+    `lifecycle_axes_pass` and say so.
+    """
+    axes_ok, reason = lifecycle_axes_pass(statement)
+    if not axes_ok:
+        return False, reason
+
+    sid = (statement.statement_id if isinstance(statement, Statement)
+           else statement.get("statement_id", "dict_statement"))
+
+    if authority is None:
+        return False, (
+            f"Statement {sid} satisfies the lifecycle axes, but current "
+            "publication authority was not checked, so admission cannot be "
+            "established"
+        )
+    if isinstance(statement, dict):
+        return False, (
+            f"Statement {sid} was supplied as a decoded record, which carries no "
+            "link to current evidence; current publication authority cannot be established"
+        )
+    verdict = authority.evaluate(statement)
+    if not verdict.admitted:
+        return False, f"Statement {sid} is no longer admissible: {verdict.summary()}"
+    return True, "Canonical publication criteria satisfied against current evidence"

@@ -26,6 +26,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 from timonelo.evidence import authority
 from timonelo.evidence.events import EvidenceEvent
+from timonelo.evidence.publication import NO_AUTHORITY
 from timonelo.evidence.models import Statement
 from timonelo.evidence.registry import Artifact
 from timonelo.evidence.workspace import Workspace
@@ -208,12 +209,24 @@ DEFAULT_APPROVED_VOYAGE_PARSERS = frozenset({
 })
 
 
-def is_admitted_truth(stmt: Statement) -> bool:
+def is_admitted_truth(stmt: Statement, *, authority=NO_AUTHORITY) -> bool:
     """Evaluates whether a statement satisfies canonical admitted truth criteria.
-    
-    A statement may participate in automated resolution or passenger presentation
-    only if it is SUPPORTED, APPROVED, and PUBLISH_ALLOWED.
+
+    A statement may participate in automated resolution or passenger
+    presentation only if it is SUPPORTED, APPROVED, PUBLISH_ALLOWED **and**
+    still admissible against the evidence as it stands now. The first three are
+    persisted lifecycle state: they record that publication was granted at some
+    past moment, under evidence that may since have been superseded. Ship
+    identity and port resolution both resolve through this predicate, so a
+    statement coasting on a stale grant would put an unverified vessel or
+    locode in front of a passenger.
+
+    `authority` therefore defaults to the refusing authority rather than to a
+    permissive one. A caller that does not supply the evidence context gets
+    False, not a shrug: not being able to check is not the same as passing.
     """
+    if not authority.is_currently_authoritative(stmt):
+        return False
     return (
         stmt.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
         and stmt.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
@@ -240,6 +253,12 @@ class VoyageKnowledgeFactory:
             if approved_parsers is not None
             else set(DEFAULT_APPROVED_VOYAGE_PARSERS)
         )
+
+    @property
+    def _authority(self):
+        """The workspace's publication authority, or the refusing one."""
+        editor = getattr(self.workspace, "editor", None)
+        return getattr(editor, "authority", None) or NO_AUTHORITY
 
     @classmethod
     def derive_voyage_entity_id(cls, intake: VoyageIntakeInput) -> str:
@@ -273,7 +292,7 @@ class VoyageKnowledgeFactory:
 
         matches: List[Tuple[str, str]] = []
         for stmt in self.workspace.editor.all():
-            if not is_admitted_truth(stmt):
+            if not is_admitted_truth(stmt, authority=self._authority):
                 continue
             if stmt.statement_type in ("ship.official_name", "vessel.official_name", "voyage.vessel"):
                 if str(stmt.value).upper() == normalized_name or stmt.entity_id == f"ship:{ship_slug}":
@@ -304,7 +323,7 @@ class VoyageKnowledgeFactory:
         locode_stmts_by_entity: Dict[str, Statement] = {}
 
         for stmt in self.workspace.editor.all():
-            if not is_admitted_truth(stmt):
+            if not is_admitted_truth(stmt, authority=self._authority):
                 continue
             if stmt.statement_type == "port.official_name":
                 name_stmts_by_entity[stmt.entity_id] = stmt
@@ -561,7 +580,7 @@ class VoyageKnowledgeFactory:
                 if (
                     stmt.statement_type == "cruise_terminal.official_name"
                     and stmt.entity_id.startswith(f"terminal:{unlocode}:")
-                    and is_admitted_truth(stmt)
+                    and is_admitted_truth(stmt, authority=self._authority)
                 ):
                     generic_infrastructure.append({
                         "entity_id": stmt.entity_id,
@@ -778,10 +797,15 @@ class VoyageKnowledgeFactory:
             as_of=as_of,
         )
 
+        # An aggregate is only as publishable as its constituents are now.
+        # Reading each statement's stored `publish_status` let a voyage present
+        # itself as publishable on the strength of grants made when its
+        # statements were authored -- the same defect as a single statement
+        # coasting, multiplied by six.
         publishability = (
             PublishStatus.PUBLISH_ALLOWED
             if all(
-                s.publish_status == PublishStatus.PUBLISH_ALLOWED
+                is_admitted_truth(s, authority=self._authority)
                 for s in existing_by_question.values()
             ) and len(existing_by_question) >= 6
             else PublishStatus.PUBLISH_BLOCKED

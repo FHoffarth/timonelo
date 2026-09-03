@@ -21,6 +21,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence import authority
 from timonelo.evidence.editor import StatementEditor
+from timonelo.evidence.publication import NO_AUTHORITY
 from timonelo.evidence.models import Statement
 from timonelo.evidence.questions import QuestionRegistry
 from timonelo.evidence.registry import ArtifactRegistry
@@ -74,6 +75,18 @@ class TruthEngine:
         self.editor = editor
         self.registry = registry
         self.conflict_log = conflict_log
+
+    @property
+    def authority(self):
+        """Current publication authority, owned by the editor holding the statements.
+
+        Deliberately borrowed rather than rebuilt. A reader that assembled its
+        own authority from its own idea of the evidence would be a second
+        publication policy, and the whole failure being repaired here is
+        several places each deciding publishability their own way.
+        """
+        authority = getattr(self.editor, "authority", None)
+        return authority if authority is not None else NO_AUTHORITY
 
     def confidence(self, statement: Statement) -> float:
         """Computed from the document class. Never read from storage."""
@@ -156,6 +169,11 @@ class TruthEngine:
         self, entity_id: str, question_id: str, as_of: Optional[str] = None
     ) -> Answer:
         question = self.questions.get(question_id)
+        # The axes filter is a cheap prefilter, not the decision. `answer` is
+        # the most consumed truth surface in the system, so it is exactly where
+        # a stale PUBLISH_ALLOWED would do the most damage: every reader of
+        # this method treats `known=True` as settled. Authority is therefore
+        # re-derived from present evidence for each surviving candidate.
         candidates = [
             s for s in self.editor.all()
             if s.entity_id == entity_id
@@ -164,6 +182,7 @@ class TruthEngine:
             and s.state in (HumanReviewState.APPROVED, HumanReviewState.APPROVED.value)
             and s.condition in (EvidenceCondition.SUPPORTED, EvidenceCondition.SUPPORTED.value)
             and self._valid_at(s, as_of)
+            and self.authority.is_currently_authoritative(s)
         ]
         open_conflicts = ()
         if self.conflict_log is not None:

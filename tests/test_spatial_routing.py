@@ -14,6 +14,8 @@ importantly, what it refuses to.
 import copy
 import json
 import os
+import pathlib
+import shutil
 
 import pytest
 
@@ -26,7 +28,9 @@ from timonelo.ontology.models import (
     Method,
     PublishStatus,
 )
+from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.spatial import (
+    NO_VERIFICATION,
     AdmissionRejection,
     CostBasis,
     EvidenceGatedRouter,
@@ -35,12 +39,14 @@ from timonelo.spatial import (
     RouteUnknown,
     SpatialEdge,
     SpatialEdgeType,
+    SpatialEvidenceVerifier,
     SpatialGraph,
     SpatialNode,
     SpatialNodeType,
 )
 from timonelo.spatial.deck14_proof import (
     ARTIFACT_ID,
+    evidence_verifier,
     DECK_NUMBER,
     VESSEL_ID,
     build_deck14_graph,
@@ -52,7 +58,39 @@ from timonelo.spatial.deck14_proof import (
     resolve_artifact,
 )
 
-LINK = EvidenceLink(source_id="ART-0001", locator="Page 5, Deck 14 plan", sha256=None)
+#: The registry these tests verify against: the repository's real artifact
+#: root, read-only. Passed as a factory rather than an instance so a test that
+#: mutates its own copy of the evidence tree sees the change (see the mutation
+#: tests at the end of this file).
+ARTIFACTS_ROOT = os.path.join(repo_root(), "evidence", "artifacts")
+VERIFIER = SpatialEvidenceVerifier(ARTIFACTS_ROOT)
+
+#: ART-0001's real digest, recomputed from the bytes in the SHA vault.
+HELD_DIGEST = resolve_artifact()[1]
+
+#: The baseline evidence link for every fixture below.
+#:
+#: This used to be `EvidenceLink(source_id="ART-0001", ..., sha256=None)` -- a
+#: link to a real artifact that was never content-addressed and so could never
+#: be resolved. It qualified anyway, because admission counted links instead of
+#: resolving them. It now names a registered artifact, carries a digest
+#: recomputed from held bytes, and states the axes it is being trusted for. The
+#: fixture was strengthened to meet the boundary; the boundary was not weakened
+#: to meet the fixture.
+LINK = EvidenceLink(
+    source_id="ART-0001",
+    locator="Page 5, Deck 14 plan",
+    sha256=HELD_DIGEST,
+    method=Method.DIRECT,
+    derivation=Derivation.LOCAL,
+    evidence_condition=EvidenceCondition.SUPPORTED,
+    human_review_state=HumanReviewState.APPROVED,
+)
+
+
+def make_graph(nodes=(), edges=(), *, verifier=VERIFIER):
+    """A graph over the real artifact registry, unless a test says otherwise."""
+    return SpatialGraph(nodes=nodes, edges=edges, verifier=verifier)
 
 
 def stance(
@@ -102,7 +140,7 @@ def edge(edge_id, a, b, length_meters=None, step_free=None, **kwargs):
 
 
 def test_supported_graph_produces_deterministic_metric_route():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B"), node("C")],
         edges=[
             edge("E-AB", "A", "B", length_meters=4.0, step_free=True),
@@ -121,7 +159,7 @@ def test_supported_graph_produces_deterministic_metric_route():
     assert result.total_distance_meters == 10.5
 
     # Same inputs in a different insertion order must yield the same answer.
-    reversed_graph = SpatialGraph(
+    reversed_graph = make_graph(
         nodes=[node("C"), node("B"), node("A")],
         edges=[
             edge("E-BC", "C", "B", length_meters=6.5, step_free=True),
@@ -135,7 +173,7 @@ def test_supported_graph_produces_deterministic_metric_route():
 
 
 def test_shortest_metric_path_wins_over_fewer_hops():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B"), node("C")],
         edges=[
             edge("E-AB", "A", "B", length_meters=1.0, step_free=True),
@@ -153,7 +191,7 @@ def test_shortest_metric_path_wins_over_fewer_hops():
 
 
 def test_disconnected_evidence_is_not_routable():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B"), node("X"), node("Y")],
         edges=[edge("E-AB", "A", "B", length_meters=3.0, step_free=True)],
     )
@@ -167,7 +205,7 @@ def test_disconnected_evidence_is_not_routable():
 
 
 def test_unknown_endpoint_is_insufficient_evidence_not_not_routable():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-AB", "A", "B", length_meters=3.0, step_free=True)],
     )
@@ -181,7 +219,7 @@ def test_unknown_endpoint_is_insufficient_evidence_not_not_routable():
 
 
 def test_synthetic_geometry_node_is_refused_admission():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[
             node("A"),
             node("SYNTH", geometry_provenance=GeometryProvenance.SYNTHETIC_GEOMETRY),
@@ -192,7 +230,7 @@ def test_synthetic_geometry_node_is_refused_admission():
 
 
 def test_synthetic_edge_cannot_connect_two_evidenced_nodes():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[
             edge(
@@ -233,7 +271,7 @@ def test_legacy_deck14_geometry_file_is_not_a_route_source():
     with open(geometry_path, "r", encoding="utf-8") as handle:
         deck = json.load(handle)
 
-    graph = SpatialGraph()
+    graph = make_graph()
     for obj in deck["objects"]:
         admitted = graph.add_node(
             SpatialNode(
@@ -262,7 +300,7 @@ def test_canonical_proof_classifies_nothing_as_synthetic():
 
 
 def test_route_over_lengthless_edges_reports_unknown_distance():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[
             node("A", geometry_provenance=GeometryProvenance.UNKNOWN_PROVENANCE),
             node("B", geometry_provenance=GeometryProvenance.UNKNOWN_PROVENANCE),
@@ -288,7 +326,7 @@ def test_route_over_lengthless_edges_reports_unknown_distance():
 
 def test_one_lengthless_edge_collapses_the_whole_distance():
     """A partial sum would understate the walk, so none is reported."""
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B"), node("C")],
         edges=[
             edge("E-AB", "A", "B", length_meters=4.0, step_free=True),
@@ -310,7 +348,7 @@ def test_one_lengthless_edge_collapses_the_whole_distance():
 
 
 def test_walking_time_is_never_asserted():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-AB", "A", "B", length_meters=4.0, step_free=True)],
     )
@@ -325,7 +363,7 @@ def test_walking_time_is_never_asserted():
 
 
 def test_unknown_step_free_stays_unknown():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-AB", "A", "B", length_meters=4.0, step_free=None)],
     )
@@ -337,7 +375,7 @@ def test_unknown_step_free_stays_unknown():
 
 
 def test_step_free_only_when_every_edge_says_so():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B"), node("C")],
         edges=[
             edge("E-AB", "A", "B", length_meters=1.0, step_free=True),
@@ -349,7 +387,7 @@ def test_step_free_only_when_every_edge_says_so():
 
 
 def test_step_free_request_excludes_unknown_edges_rather_than_assuming_them():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-AB", "A", "B", length_meters=1.0, step_free=None)],
     )
@@ -363,7 +401,7 @@ def test_step_free_request_excludes_unknown_edges_rather_than_assuming_them():
 
 
 def test_route_carries_provenance_for_every_component():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-AB", "A", "B", length_meters=4.0, step_free=True)],
     )
@@ -382,7 +420,7 @@ def test_route_carries_provenance_for_every_component():
 
 
 def test_generated_derivation_is_refused():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-GEN", "A", "B", derivation=Derivation.GENERATED)],
     )
@@ -391,7 +429,7 @@ def test_generated_derivation_is_refused():
 
 
 def test_inferred_method_is_refused():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[edge("E-INF", "A", "B", method=Method.INFERRED)],
     )
@@ -399,7 +437,7 @@ def test_inferred_method_is_refused():
 
 
 def test_publish_blocked_edge_stays_blocked_even_with_a_generated_duplicate():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("B")],
         edges=[
             edge("E-BLOCKED", "A", "B", publish_status=PublishStatus.PUBLISH_BLOCKED),
@@ -422,7 +460,7 @@ def test_publish_blocked_edge_stays_blocked_even_with_a_generated_duplicate():
 
 
 def test_unsupported_and_unreviewed_elements_are_refused():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[
             node("A"),
             node("UNSUPPORTED", evidence_condition=EvidenceCondition.UNKNOWN),
@@ -437,7 +475,7 @@ def test_unsupported_and_unreviewed_elements_are_refused():
 
 
 def test_edge_to_a_refused_node_is_itself_refused():
-    graph = SpatialGraph(
+    graph = make_graph(
         nodes=[node("A"), node("SYNTH", geometry_provenance=GeometryProvenance.SYNTHETIC_GEOMETRY)],
         edges=[edge("E-AS", "A", "SYNTH", length_meters=2.0, step_free=True)],
     )
@@ -512,7 +550,7 @@ def _hypothetically_adjudicated_nodes():
 
 def test_genuine_cabin_geometry_does_not_establish_traversability():
     _, nodes = _hypothetically_adjudicated_nodes()
-    graph = SpatialGraph(nodes=nodes, edges=())
+    graph = make_graph(nodes=nodes, edges=())
 
     # Every cabin plus the lift region becomes a place...
     assert len(graph.node_ids) == 244
@@ -537,7 +575,7 @@ def test_inferred_corridor_negative_space_is_never_promoted_to_connectivity():
 
     # No corridor node or edge reaches the graph, adjudicated or not.
     _, nodes = _hypothetically_adjudicated_nodes()
-    graph = SpatialGraph(nodes=nodes, edges=())
+    graph = make_graph(nodes=nodes, edges=())
     for node_id in graph.node_ids:
         assert graph.node(node_id).node_type != SpatialNodeType.CORRIDOR_POINT
     assert graph.edge_ids == ()
@@ -563,7 +601,7 @@ def test_ambiguous_lift_region_is_a_place_not_a_transfer():
     assert len(lift) == 1
     assert lift[0].stance.geometry_provenance == GeometryProvenance.DERIVED_GEOMETRY
 
-    graph = SpatialGraph(nodes=nodes, edges=())
+    graph = make_graph(nodes=nodes, edges=())
     result = EvidenceGatedRouter(graph).route(
         "bellissima-deck14-cabin-14001", lift[0].node_id
     )
@@ -581,7 +619,7 @@ def test_page_fraction_coordinates_never_become_metres():
     assert deck14_connectivity_findings(proof)["metric_scale"].startswith("ABSENT")
 
     _, nodes = _hypothetically_adjudicated_nodes()
-    graph = SpatialGraph(nodes=nodes, edges=())
+    graph = make_graph(nodes=nodes, edges=())
     assert graph.all_admitted_edges_have_metric_length is False
 
     result = EvidenceGatedRouter(graph).route(
@@ -654,3 +692,482 @@ def test_proof_path_is_the_locked_deck14_proof():
         load_proof(
             os.path.join(repo_root(), "evidence", "artifacts", "index.json")
         )
+
+
+# --- 8. current evidence resolution ---------------------------------------
+#
+# The graph used to count evidence links instead of resolving them. A stance
+# asserting SUPPORTED / APPROVED / PUBLISH_ALLOWED over a link naming an
+# artifact the repository had never held was admitted, and routed, with a
+# metric distance. These tests hold that boundary shut from both directions:
+# unresolvable evidence must refuse, and real held evidence must still route.
+
+
+def link(**overrides) -> EvidenceLink:
+    """A fully qualifying link to the real held ART-0001, before any override."""
+    base = dict(
+        source_id="ART-0001",
+        locator="Page 5, Deck 14 plan",
+        sha256=HELD_DIGEST,
+        method=Method.DIRECT,
+        derivation=Derivation.LOCAL,
+        evidence_condition=EvidenceCondition.SUPPORTED,
+        human_review_state=HumanReviewState.APPROVED,
+    )
+    base.update(overrides)
+    return EvidenceLink(**base)
+
+
+def two_node_graph(node_stance, *, verifier=VERIFIER, length_meters=10.0):
+    """The smallest graph that can produce a metric ROUTABLE result."""
+    nodes = [
+        SpatialNode("A", SpatialNodeType.CABIN, VESSEL_ID, DECK_NUMBER, node_stance),
+        SpatialNode("B", SpatialNodeType.CABIN, VESSEL_ID, DECK_NUMBER, node_stance),
+    ]
+    edges = [
+        SpatialEdge(
+            "E-AB", SpatialEdgeType.WALKABLE, "A", "B", node_stance,
+            length_meters=length_meters, step_free=True,
+        )
+    ]
+    return SpatialGraph(nodes=nodes, edges=edges, verifier=verifier)
+
+
+def test_publish_allowed_over_an_unheld_artifact_is_not_routable():
+    """The exact reported reproduction, closed.
+
+    Four asserted axes over a direct geometry used to produce ROUTABLE at 10.0
+    metres. The artifact was never registered, so there is nothing to route on.
+    """
+    graph = two_node_graph(
+        stance(evidence_links=(link(source_id="ART-NOT-HELD", sha256=None),))
+    )
+
+    assert graph.node_ids == ()
+    assert graph.edge_ids == ()
+    assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in graph.node_rejection("A")
+
+    result = EvidenceGatedRouter(graph).route("A", "B")
+    assert result.status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert result.total_distance_meters is None
+    assert result.step_free is None
+
+
+@pytest.mark.parametrize(
+    "overrides, expected",
+    [
+        ({"source_id": "ART-DOES-NOT-EXIST"}, AdmissionRejection.ARTIFACT_NOT_REGISTERED),
+        ({"source_id": ""}, AdmissionRejection.ARTIFACT_NOT_REGISTERED),
+        ({"sha256": None}, AdmissionRejection.NOT_CONTENT_ADDRESSED),
+        ({"sha256": "de" * 32}, AdmissionRejection.DIGEST_MISMATCH),
+        (
+            {"evidence_condition": EvidenceCondition.CONFLICTED},
+            AdmissionRejection.STANCE_CONTRADICTS_LINK,
+        ),
+        (
+            {"human_review_state": HumanReviewState.REJECTED},
+            AdmissionRejection.STANCE_CONTRADICTS_LINK,
+        ),
+        (
+            {"human_review_state": HumanReviewState.SUPERSEDED},
+            AdmissionRejection.STANCE_CONTRADICTS_LINK,
+        ),
+    ],
+)
+def test_every_unresolvable_link_variant_is_refused(overrides, expected):
+    """Each of these declared the same qualifying axes and used to route."""
+    graph = two_node_graph(stance(evidence_links=(link(**overrides),)))
+
+    assert expected in graph.node_rejection("A")
+    assert graph.node_ids == ()
+    assert EvidenceGatedRouter(graph).route("A", "B").status == (
+        RouteStatus.INSUFFICIENT_EVIDENCE
+    )
+
+
+def test_a_link_at_its_default_axes_does_not_support_an_asserted_stance():
+    """`EvidenceLink` defaults to UNKNOWN/DRAFT. A stance may not overrule that."""
+    bare = EvidenceLink(source_id="ART-0001", locator="Page 5", sha256=HELD_DIGEST)
+    assert bare.evidence_condition == EvidenceCondition.UNKNOWN
+    assert bare.human_review_state == HumanReviewState.DRAFT
+
+    graph = two_node_graph(stance(evidence_links=(bare,)))
+    assert AdmissionRejection.STANCE_CONTRADICTS_LINK in graph.node_rejection("A")
+    assert graph.node_ids == ()
+
+
+def test_a_non_evidence_link_object_is_not_evidence():
+    """Counting a container's members never asked what they were."""
+    graph = two_node_graph(stance(evidence_links=("just a string",)))
+
+    assert AdmissionRejection.MALFORMED_EVIDENCE_LINK in graph.node_rejection("A")
+    assert graph.node_ids == ()
+    assert EvidenceGatedRouter(graph).route("A", "B").status == (
+        RouteStatus.INSUFFICIENT_EVIDENCE
+    )
+
+
+def test_a_graph_without_a_verification_context_admits_nothing():
+    """Being unable to check is not permission to skip the check."""
+    graph = two_node_graph(stance(), verifier=None)
+
+    assert graph.node_ids == ()
+    assert graph.edge_ids == ()
+    assert AdmissionRejection.NO_VERIFICATION_CONTEXT in graph.node_rejection("A")
+    assert EvidenceGatedRouter(graph).route("A", "B").status == (
+        RouteStatus.INSUFFICIENT_EVIDENCE
+    )
+
+
+def test_one_resolvable_link_cannot_launder_an_unresolvable_one():
+    """Universal quantification: adding evidence never subtracts scrutiny."""
+    graph = two_node_graph(
+        stance(evidence_links=(LINK, link(source_id="ART-NOT-HELD", sha256=None)))
+    )
+
+    assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in graph.node_rejection("A")
+    assert graph.node_ids == ()
+
+
+def test_a_node_cannot_reach_even_itself_without_resolvable_evidence():
+    """The self-route short circuit is a route, and needs the same admission."""
+    unheld = stance(evidence_links=(link(source_id="ART-NOT-HELD", sha256=None),))
+    graph = SpatialGraph(
+        nodes=[SpatialNode("A", SpatialNodeType.CABIN, VESSEL_ID, DECK_NUMBER, unheld)],
+        edges=(),
+        verifier=VERIFIER,
+    )
+    result = EvidenceGatedRouter(graph).route("A", "A")
+
+    assert result.status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert result.node_ids == ()
+
+
+def test_held_and_verified_evidence_still_routes():
+    """The positive control. A boundary that refuses everything proves nothing."""
+    graph = two_node_graph(stance())
+    result = EvidenceGatedRouter(graph).route("A", "B")
+
+    assert graph.node_ids == ("A", "B")
+    assert graph.edge_ids == ("E-AB",)
+    assert result.status == RouteStatus.ROUTABLE
+    assert result.total_distance_meters == 10.0
+    assert result.step_free is True
+    assert result.cost_basis == CostBasis.METRIC_METERS
+
+
+# --- 9. live evidence mutation invalidates a graph already built ----------
+
+
+@pytest.fixture
+def private_evidence(tmp_path):
+    """A registry holding one real artifact, outside production `evidence/`.
+
+    These tests need bytes they are allowed to break. Production evidence is
+    read-only to this suite, so they register their own.
+    """
+    source = tmp_path / "deckplan.txt"
+    source.write_text("deck 14 plan, page 5\n", encoding="utf-8")
+    root = tmp_path / "evidence" / "artifacts"
+    root.mkdir(parents=True)
+
+    registry = ArtifactRegistry(str(root))
+    artifact = registry.register(
+        str(source),
+        document_class="official_ship_map",
+        acquired_on="2026-09-03",
+        acquisition_method="local_fixture",
+        publisher="test",
+        subject_vessels=["IMO9766205"],
+    )
+    return {
+        "root": root,
+        "artifact": artifact,
+        "verifier": SpatialEvidenceVerifier(str(root)),
+        "held_path": pathlib.Path(registry.resolve_path(artifact.artifact_id)),
+    }
+
+
+def private_graph(private_evidence):
+    artifact = private_evidence["artifact"]
+    return two_node_graph(
+        stance(evidence_links=(link(
+            source_id=artifact.artifact_id, sha256=artifact.sha256
+        ),)),
+        verifier=private_evidence["verifier"],
+    )
+
+
+def test_replacing_artifact_bytes_unroutes_the_same_graph(private_evidence):
+    """No reconstruction. The graph that answered ROUTABLE stops, in place."""
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    private_evidence["held_path"].write_text(
+        "these are not the bytes that were verified\n", encoding="utf-8"
+    )
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert graph.node_ids == ()
+    assert graph.node_rejection("A")
+
+
+def test_deregistering_the_artifact_unroutes_the_same_graph(private_evidence):
+    """The registry is re-read per question, so deregistration is visible."""
+    artifact = private_evidence["artifact"]
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    index_path = private_evidence["root"] / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    del index[artifact.artifact_id]
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in graph.node_rejection("A")
+
+
+def test_adjudicated_deck14_geometry_still_needs_its_artifact(tmp_path):
+    """Lifting the review axes is not enough if the evidence stops resolving.
+
+    The counterfactual above shows adjudicated Deck 14 geometry becoming
+    places. It becomes places because ART-0001 genuinely resolves. Point the
+    same nodes at an empty registry and every one of them is refused.
+    """
+    _, nodes = _hypothetically_adjudicated_nodes()
+    empty_root = tmp_path / "artifacts"
+    empty_root.mkdir(parents=True)
+    graph = SpatialGraph(
+        nodes=nodes,
+        edges=(),
+        verifier=SpatialEvidenceVerifier(str(empty_root)),
+    )
+
+    assert graph.node_ids == ()
+    report = graph.admission_report()
+    assert len(report.rejected_nodes) == 244
+    for reasons in report.rejected_nodes.values():
+        assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in reasons
+
+
+# --- 10. the verification context must be current, or refuse --------------
+#
+# Two earlier contracts leaked staleness. The first accepted either a registry
+# factory or a retained `ArtifactRegistry` and only recommended the factory.
+# The second rejected the instance and required a callable -- which closed the
+# obvious path and left the real one open, because `lambda: retained_registry`
+# is a perfectly good callable returning the same snapshot every time, and
+# reproduced the identical ROUTABLE -> deregister -> ROUTABLE defect.
+#
+# An arbitrary callable is not evidence of freshness and cannot be inspected
+# for it, so the delegation is gone. The caller supplies a root; the verifier
+# builds its own registry on every evaluation.
+
+
+def test_a_retained_registry_cannot_become_a_verification_context():
+    registry = ArtifactRegistry(ARTIFACTS_ROOT)
+    with pytest.raises(TypeError, match="artifact root directory"):
+        SpatialEvidenceVerifier(registry)
+
+
+def test_a_registry_factory_cannot_become_a_verification_context():
+    """The former bypass. `lambda: registry` returned a stale snapshot forever."""
+    registry = ArtifactRegistry(ARTIFACTS_ROOT)
+    with pytest.raises(TypeError, match="artifact root directory"):
+        SpatialEvidenceVerifier(lambda: registry)
+
+
+@pytest.mark.parametrize("context", [
+    lambda: None,
+    object(),
+    42,
+    [],
+    {"root": ARTIFACTS_ROOT},
+])
+def test_only_a_path_is_accepted_as_a_verification_context(context):
+    with pytest.raises(TypeError, match="artifact root directory"):
+        SpatialEvidenceVerifier(context)
+
+
+def test_there_is_no_callable_injection_path_left():
+    """No keyword, alias or attribute restores caller-supplied construction."""
+    import inspect
+
+    params = inspect.signature(SpatialEvidenceVerifier.__init__).parameters
+    assert list(params) == ["self", "registry_root"]
+    assert not hasattr(SpatialEvidenceVerifier, "registry_factory")
+
+    verifier = SpatialEvidenceVerifier(ARTIFACTS_ROOT)
+    assert not any(
+        callable(v) for v in vars(verifier).values()
+    ), "the verifier retains no caller-supplied callable"
+    assert not any(
+        isinstance(v, ArtifactRegistry) for v in vars(verifier).values()
+    ), "the verifier retains no registry between evaluations"
+
+
+def test_a_pathlike_root_is_accepted():
+    verifier = SpatialEvidenceVerifier(pathlib.Path(ARTIFACTS_ROOT))
+    assert isinstance(verifier.registry_root, str)
+    assert isinstance(verifier.current_registry(), ArtifactRegistry)
+
+
+def test_the_verifier_builds_a_new_registry_every_time():
+    """The mechanism itself: no instance survives between evaluations."""
+    verifier = SpatialEvidenceVerifier(ARTIFACTS_ROOT)
+    first = verifier.current_registry()
+    second = verifier.current_registry()
+
+    assert isinstance(first, ArtifactRegistry)
+    assert isinstance(second, ArtifactRegistry)
+    assert first is not second
+
+
+def test_deregistration_is_observed_by_the_same_verifier_graph_and_router(
+    private_evidence,
+):
+    """ROUTABLE -> deregister -> INSUFFICIENT_EVIDENCE. No reconstruction."""
+    artifact = private_evidence["artifact"]
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    verifier = graph.verifier
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    index_path = private_evidence["root"] / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    del index[artifact.artifact_id]
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    # Same objects throughout.
+    assert graph.verifier is verifier
+    result = router.route("A", "B")
+    assert result.status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in graph.node_rejection("A")
+    assert graph.node_ids == ()
+    assert graph.edge_ids == ()
+
+
+def test_registry_index_mutation_is_observed_without_reconstruction(
+    private_evidence,
+):
+    """Deregistration and re-registration are both seen by the live objects."""
+    artifact = private_evidence["artifact"]
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    index_path = private_evidence["root"] / "index.json"
+    original = index_path.read_text(encoding="utf-8")
+
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    index = json.loads(original)
+    del index[artifact.artifact_id]
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+
+    # Restoring the registration restores routability, on the same objects.
+    index_path.write_text(original, encoding="utf-8")
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+
+def test_same_size_timestamp_preserved_byte_mutation_is_still_detected(
+    private_evidence,
+):
+    """The adversarial case the digest cache would have hidden."""
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    held = private_evidence["held_path"]
+    before = os.stat(held)
+    original = held.read_bytes()
+    tampered = bytes(b ^ 0xFF for b in original)
+    assert len(tampered) == len(original)
+    held.write_bytes(tampered)
+    os.utime(held, ns=(before.st_atime_ns, before.st_mtime_ns))
+    after = os.stat(held)
+    assert after.st_size == before.st_size
+    assert after.st_mtime_ns == before.st_mtime_ns
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert graph.node_rejection("A")
+
+
+def test_a_root_that_is_not_a_directory_refuses(tmp_path):
+    """Including a path that does not exist. Never an admission, never a crash."""
+    missing = tmp_path / "nowhere" / "artifacts"
+    a_file = tmp_path / "a-file.txt"
+    a_file.write_text("not a registry root\n", encoding="utf-8")
+
+    for root in (missing, a_file):
+        verifier = SpatialEvidenceVerifier(root)
+        assert verifier.has_context is True        # a root *was* configured...
+        assert verifier.current_registry() is None  # ...and it is not usable
+
+        graph = two_node_graph(stance(), verifier=verifier)
+        assert graph.node_ids == ()
+        assert graph.edge_ids == ()
+        assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in (
+            graph.node_rejection("A")
+        )
+        assert EvidenceGatedRouter(graph).route("A", "B").status == (
+            RouteStatus.INSUFFICIENT_EVIDENCE
+        )
+    # A mistyped root must not be quietly turned into an empty evidence store.
+    assert not missing.exists()
+
+
+def test_an_unreadable_registry_index_refuses(private_evidence):
+    """A corrupt index is a refusal, on the same live objects."""
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    (private_evidence["root"] / "index.json").write_text(
+        "{ this is not json", encoding="utf-8")
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in (
+        graph.node_rejection("A")
+    )
+
+
+def test_a_vanished_root_unroutes_a_live_graph(private_evidence):
+    """Losing the context mid-life is a refusal, not a retained fallback."""
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    shutil.rmtree(private_evidence["root"])
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in (
+        graph.node_rejection("A")
+    )
+
+
+def test_no_root_is_a_different_refusal_from_an_unusable_one(tmp_path):
+    """"You gave me nothing" and "yours does not work" are separate facts."""
+    assert NO_VERIFICATION.has_context is False
+    assert NO_VERIFICATION.current_registry() is None
+
+    absent = two_node_graph(stance(), verifier=None)
+    unusable = two_node_graph(
+        stance(), verifier=SpatialEvidenceVerifier(tmp_path / "nowhere"))
+
+    assert AdmissionRejection.NO_VERIFICATION_CONTEXT in absent.node_rejection("A")
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in (
+        unusable.node_rejection("A")
+    )
+    assert absent.node_ids == () and unusable.node_ids == ()
+
+
+def test_the_production_deck14_verifier_owns_its_registry():
+    """The one production context must satisfy the contract it documents."""
+    verifier = evidence_verifier()
+
+    assert verifier.registry_root == os.path.join(
+        repo_root(), "evidence", "artifacts")
+    assert not any(callable(v) for v in vars(verifier).values())
+    assert verifier.current_registry() is not verifier.current_registry()

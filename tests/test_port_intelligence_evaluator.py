@@ -98,9 +98,17 @@ def test_workspace(tmp_path):
             self.registry = ArtifactRegistry(str(reg_dir))
             self.reviews = ReviewLog(str(rev_file))
             self.conflicts = ConflictLog(str(conf_file))
-            self.editor = StatementEditor(str(stmt_file), self.registry, self.reviews, self.conflicts)
             self.questions = QuestionRegistry.load(str(q_file))
             self.events = EvidenceEventLog(str(evt_file), self.registry, self.questions)
+            # The editor is built last and given the event log and the question
+            # registry on purpose. Publication authority is decided against
+            # current evidence, so an editor holding neither cannot establish
+            # it and refuses everything -- correctly, but it would make this
+            # fixture test the absence of its own wiring rather than the
+            # evaluator.
+            self.editor = StatementEditor(
+                str(stmt_file), self.registry, self.reviews, self.conflicts,
+                events=self.events, questions=self.questions)
             self.engine = TruthEngine(self.questions, self.editor, self.registry, self.conflicts)
 
     ws = HermeticWorkspace()
@@ -179,7 +187,7 @@ def test_evaluator_rejects_draft_state(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
+    assert res.refusal_reason.startswith("REVIEW_NOT_APPROVED")
 
 
 def test_evaluator_rejects_unknown_condition(test_workspace):
@@ -196,7 +204,7 @@ def test_evaluator_rejects_unknown_condition(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert res.refusal_reason == "TRUTH_NOT_ADMISSIBLE"
+    assert res.refusal_reason.startswith("CONDITION_NOT_SUPPORTED")
 
 
 def test_evaluator_rejects_blocked_publish_status(test_workspace):
@@ -231,7 +239,7 @@ def test_evaluator_rejects_missing_evidence_events(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "STATEMENT_ZERO_EVIDENCE_EVENTS" in (res.refusal_reason or "")
+    assert "ZERO_EVIDENCE_EVENTS" in (res.refusal_reason or "")
 
 
 def test_evaluator_rejects_missing_referenced_event(test_workspace):
@@ -271,7 +279,7 @@ def test_evaluator_rejects_hash_mismatch(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "SOURCE_HASH_MISMATCH" in (res.refusal_reason or "") or "PRIMARY_SOURCE_MISSING" in (res.refusal_reason or "")
+    assert "EVENT_ARTIFACT_NOT_HELD" in (res.refusal_reason or "")
 
 
 def test_evaluator_rejects_authority_class_mismatch(test_workspace, tmp_path):
@@ -290,7 +298,10 @@ def test_evaluator_rejects_authority_class_mismatch(test_workspace, tmp_path):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0001")
     assert res.is_known is False
-    assert "INELIGIBLE_DOCUMENT_CLASS" in (res.refusal_reason or "")
+    # The event on file was recorded against Q-0024, so it cannot support a
+    # Q-0001 claim: the mismatch is caught as the claim binding it is, before
+    # document class is ever consulted.
+    assert "EVIDENCE_DOES_NOT_SUPPORT_CLAIM" in (res.refusal_reason or "")
 
 
 def test_evaluator_rejects_unresolved_conflicts(test_workspace):
@@ -341,7 +352,7 @@ def test_evaluator_rejects_missing_physical_artifact(test_workspace):
 
     res = PortIntelligenceEvaluator.evaluate_fact(ws, "port:unlocode:FRMRS", "Q-0024")
     assert res.is_known is False
-    assert "PRIMARY_SOURCE_MISSING" in (res.refusal_reason or "")
+    assert "EVENT_ARTIFACT_NOT_HELD" in (res.refusal_reason or "")
 
 
 def test_evaluator_rejects_expired_validity(test_workspace):
@@ -375,6 +386,20 @@ def test_evaluator_works_for_generic_arbitrary_port_entities(test_workspace):
         human_review_state=HumanReviewState.APPROVED,
         publish_status=PublishStatus.PUBLISH_ALLOWED,
     )
+    # The Marseille event cannot back a Valletta claim, however convenient the
+    # copy is: it records an observation about a different entity, and evidence
+    # that was never about this claim does not become about it by being cited.
+    ws.events.append(EvidenceEvent(
+        event_id="EVT-PORT-VALLETTA",
+        artifact_sha256=art.sha256,
+        locator="HTML meta: og:site_name",
+        entity_id="port:unlocode:MTMLA",
+        question_id="Q-0024",
+        observed_value="Grand Harbour Valletta",
+        observed_by="test-curator",
+        observed_on="2026-08-23",
+    ))
+    valletta_stmt = replace(valletta_stmt, evidence_event_ids=("EVT-PORT-VALLETTA",))
     ws.editor._by_id["STM-VALLETTA"] = valletta_stmt
     ws.editor._flush()
 
