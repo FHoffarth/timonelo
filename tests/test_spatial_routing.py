@@ -29,6 +29,7 @@ from timonelo.ontology.models import (
 )
 from timonelo.evidence.registry import ArtifactRegistry
 from timonelo.spatial import (
+    NO_VERIFICATION,
     AdmissionRejection,
     CostBasis,
     EvidenceGatedRouter,
@@ -44,6 +45,7 @@ from timonelo.spatial import (
 )
 from timonelo.spatial.deck14_proof import (
     ARTIFACT_ID,
+    evidence_verifier,
     DECK_NUMBER,
     VESSEL_ID,
     build_deck14_graph,
@@ -60,7 +62,7 @@ from timonelo.spatial.deck14_proof import (
 #: mutates its own copy of the evidence tree sees the change (see the mutation
 #: tests at the end of this file).
 ARTIFACTS_ROOT = os.path.join(repo_root(), "evidence", "artifacts")
-VERIFIER = SpatialEvidenceVerifier(lambda: ArtifactRegistry(ARTIFACTS_ROOT))
+VERIFIER = SpatialEvidenceVerifier(registry_factory=lambda: ArtifactRegistry(ARTIFACTS_ROOT))
 
 #: ART-0001's real digest, recomputed from the bytes in the SHA vault.
 HELD_DIGEST = resolve_artifact()[1]
@@ -880,7 +882,7 @@ def private_evidence(tmp_path):
     return {
         "root": root,
         "artifact": artifact,
-        "verifier": SpatialEvidenceVerifier(lambda: ArtifactRegistry(str(root))),
+        "verifier": SpatialEvidenceVerifier(registry_factory=lambda: ArtifactRegistry(str(root))),
         "held_path": pathlib.Path(registry.resolve_path(artifact.artifact_id)),
     }
 
@@ -939,7 +941,7 @@ def test_adjudicated_deck14_geometry_still_needs_its_artifact(tmp_path):
     graph = SpatialGraph(
         nodes=nodes,
         edges=(),
-        verifier=SpatialEvidenceVerifier(lambda: ArtifactRegistry(str(empty_root))),
+        verifier=SpatialEvidenceVerifier(registry_factory=lambda: ArtifactRegistry(str(empty_root))),
     )
 
     assert graph.node_ids == ()
@@ -947,3 +949,126 @@ def test_adjudicated_deck14_geometry_still_needs_its_artifact(tmp_path):
     assert len(report.rejected_nodes) == 244
     for reasons in report.rejected_nodes.values():
         assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in reasons
+
+
+# --- 10. the verification context must be current, or refuse --------------
+#
+# The first version of `SpatialEvidenceVerifier` accepted either a registry
+# factory or a retained `ArtifactRegistry`, and only recommended the factory.
+# `ArtifactRegistry` reads `index.json` once in `__init__`, so the retained form
+# produced ROUTABLE -> deregister -> ROUTABLE: currentness was a convention the
+# caller could opt out of by accident. The factory is now the contract, and a
+# context that cannot produce a current registry refuses instead of crashing.
+
+
+def test_a_retained_registry_cannot_become_a_verification_context():
+    """The unsafe shape is refused at construction, not adapted."""
+    registry = ArtifactRegistry(ARTIFACTS_ROOT)
+    with pytest.raises(TypeError, match="zero-argument callable"):
+        SpatialEvidenceVerifier(registry)
+
+
+@pytest.mark.parametrize("context", [object(), "evidence/artifacts", 42, []])
+def test_a_non_callable_context_is_refused_at_construction(context):
+    with pytest.raises(TypeError, match="zero-argument callable"):
+        SpatialEvidenceVerifier(context)
+
+
+def test_deregistration_is_visible_through_a_fresh_factory(private_evidence):
+    """Same verifier, same graph, same router: the grant does not survive."""
+    artifact = private_evidence["artifact"]
+    graph = private_graph(private_evidence)
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    index_path = private_evidence["root"] / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    del index[artifact.artifact_id]
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    result = router.route("A", "B")
+    assert result.status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.ARTIFACT_NOT_REGISTERED in graph.node_rejection("A")
+    assert graph.node_ids == ()
+    assert graph.edge_ids == ()
+
+
+def _raises():
+    raise RuntimeError("registry could not be opened")
+
+
+@pytest.mark.parametrize(
+    "factory, label",
+    [
+        (lambda: None, "returns None"),
+        (lambda: object(), "returns a non-registry"),
+        (lambda: "not a registry", "returns a string"),
+        (_raises, "raises"),
+    ],
+)
+def test_a_factory_that_cannot_produce_a_registry_refuses(factory, label):
+    """Refusal, never an AttributeError and never an admission."""
+    verifier = SpatialEvidenceVerifier(registry_factory=factory)
+    assert verifier.has_context is True       # a factory *was* supplied...
+    assert verifier.current_registry() is None  # ...but it yields nothing usable
+
+    graph = two_node_graph(stance(), verifier=verifier)
+    assert graph.node_ids == ()
+    assert graph.edge_ids == ()
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in graph.node_rejection("A")
+    assert EvidenceGatedRouter(graph).route("A", "B").status == (
+        RouteStatus.INSUFFICIENT_EVIDENCE
+    )
+
+
+def test_a_factory_that_starts_failing_unroutes_a_live_graph(private_evidence):
+    """Losing the context mid-life is a refusal, not a retained fallback."""
+    artifact = private_evidence["artifact"]
+    root = private_evidence["root"]
+    broken = {"fail": False}
+
+    def factory():
+        if broken["fail"]:
+            raise RuntimeError("registry became unreadable")
+        return ArtifactRegistry(str(root))
+
+    graph = two_node_graph(
+        stance(evidence_links=(link(
+            source_id=artifact.artifact_id, sha256=artifact.sha256
+        ),)),
+        verifier=SpatialEvidenceVerifier(registry_factory=factory),
+    )
+    router = EvidenceGatedRouter(graph)
+    assert router.route("A", "B").status == RouteStatus.ROUTABLE
+
+    broken["fail"] = True
+
+    assert router.route("A", "B").status == RouteStatus.INSUFFICIENT_EVIDENCE
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in graph.node_rejection("A")
+
+
+def test_no_factory_is_a_different_refusal_from_a_broken_one():
+    """"You gave me nothing" and "yours does not work" are separate operator facts."""
+    assert NO_VERIFICATION.has_context is False
+    assert NO_VERIFICATION.current_registry() is None
+
+    absent = two_node_graph(stance(), verifier=None)
+    broken = two_node_graph(
+        stance(), verifier=SpatialEvidenceVerifier(registry_factory=lambda: None)
+    )
+
+    assert AdmissionRejection.NO_VERIFICATION_CONTEXT in absent.node_rejection("A")
+    assert AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE in broken.node_rejection("A")
+    assert absent.node_ids == () and broken.node_ids == ()
+
+
+def test_the_production_deck14_verifier_is_factory_backed():
+    """The one production context must satisfy the contract it documents."""
+    verifier = evidence_verifier()
+    assert callable(verifier._registry_factory)
+
+    first = verifier.current_registry()
+    second = verifier.current_registry()
+    assert isinstance(first, ArtifactRegistry)
+    # A distinct object per call: the index is re-read, never reused.
+    assert first is not second

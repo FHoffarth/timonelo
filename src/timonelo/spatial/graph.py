@@ -36,8 +36,10 @@ Admission is therefore two questions, not one, and both must be answered:
   1. do the declared axes permit routing?  -- `EvidenceStance.reject_reasons`
   2. does the cited evidence currently resolve?  -- `SpatialEvidenceVerifier`
 
-The second is asked of *every* link, on every read, against the registry as it
-stands at that moment. Universal quantification is inherited from the canonical
+The second is asked of *every* link, on every read, against a registry built
+fresh at that moment -- the verification context is a registry *factory*, never
+a retained `ArtifactRegistry`, which answers from the index it was constructed
+with and would keep confirming deregistered artifacts. Universal quantification is inherited from the canonical
 admission boundary for the same reason it holds there: "some link resolves"
 would let one real citation launder an unheld one beside it, so adding evidence
 can never subtract scrutiny.
@@ -114,6 +116,7 @@ class AdmissionRejection(str, Enum):
     ENDPOINT_NOT_ADMITTED = "ENDPOINT_NOT_ADMITTED"
     # --- current evidence resolution -------------------------------------
     NO_VERIFICATION_CONTEXT = "NO_VERIFICATION_CONTEXT"
+    VERIFICATION_CONTEXT_UNAVAILABLE = "VERIFICATION_CONTEXT_UNAVAILABLE"
     MALFORMED_EVIDENCE_LINK = "MALFORMED_EVIDENCE_LINK"
     ARTIFACT_NOT_REGISTERED = "ARTIFACT_NOT_REGISTERED"
     NOT_CONTENT_ADDRESSED = "NOT_CONTENT_ADDRESSED"
@@ -152,24 +155,77 @@ class SpatialEvidenceVerifier:
     across evidence the repository no longer has.
 
     Being unable to check is not permission to skip the check. A verifier with
-    no registry refuses every link and says why, so a caller who forgets the
-    context gets an empty graph rather than an unguarded one.
+    no registry factory refuses every link and says why, so a caller who
+    forgets the context gets an empty graph rather than an unguarded one.
+
+    Why a factory and not a registry
+    --------------------------------
+    The context is a zero-argument callable returning an `ArtifactRegistry`,
+    and an already-constructed registry is refused at construction rather than
+    accepted for convenience. `ArtifactRegistry` reads `index.json` once in
+    `__init__` and answers every later `get` from that snapshot, so a verifier
+    holding one instance keeps confirming artifacts that have since been
+    deregistered: ROUTABLE, deregister, ROUTABLE. The first version of this
+    class accepted either form and merely recommended the factory, which made
+    currentness a convention a caller could opt out of by accident. A boundary
+    whose guarantee depends on which of two accepted shapes the caller picked
+    is not a boundary, so the unsafe shape is no longer accepted at all.
+
+    Refusing an unsupported context is preferable to accepting stale state.
     """
 
-    def __init__(self, registry: Any = None) -> None:
-        #: An `ArtifactRegistry`, or a zero-argument callable returning one.
-        #: The callable form is what makes deregistration visible: the registry
-        #: reads its index once at construction, so a graph holding an instance
-        #: would keep answering from the index it was built with.
-        self._registry = registry
+    def __init__(self, registry_factory: Any = None) -> None:
+        """`registry_factory` is a zero-argument callable returning a registry.
+
+        Passing an `ArtifactRegistry` -- or anything else non-callable -- raises
+        rather than being quietly adapted. Silently wrapping an instance in a
+        factory would preserve the snapshot it was built from and reintroduce
+        exactly the staleness this contract exists to prevent, and there is no
+        way to refresh an instance the caller already holds.
+        """
+        if registry_factory is not None and not callable(registry_factory):
+            raise TypeError(
+                "SpatialEvidenceVerifier needs a zero-argument callable "
+                f"returning an ArtifactRegistry, not {type(registry_factory).__name__}. "
+                "A retained registry answers from the index it was constructed "
+                "with, so an artifact deregistered afterwards would still verify. "
+                "Pass `lambda: ArtifactRegistry(root)`."
+            )
+        self._registry_factory = registry_factory
 
     @property
     def has_context(self) -> bool:
-        return self._registry is not None
+        """Whether a factory was supplied. Not whether it currently works."""
+        return self._registry_factory is not None
 
-    def registry(self) -> Any:
-        src = self._registry
-        return src() if callable(src) else src
+    def current_registry(self) -> Optional[Any]:
+        """A registry reflecting the index as it stands now, or None.
+
+        None means current registry state could not be established: the factory
+        failed, returned nothing, or returned something that is not a registry.
+        Every one of those is a refusal, never a fallback -- there is no
+        retained instance to fall back to, by construction.
+        """
+        if self._registry_factory is None:
+            return None
+        try:
+            registry = self._registry_factory()
+        except Exception:
+            # Only the acquisition is guarded, and only here. A factory is
+            # caller-supplied code whose failure means "current registry state
+            # cannot be established", which is a verdict this boundary must be
+            # able to return. Verification itself stays unguarded, so a genuine
+            # defect inside admission still surfaces as a crash rather than
+            # being laundered into a refusal.
+            return None
+        # Duck-typed against what `verify_link_artifact` actually consumes, so
+        # a stub that really can answer these is usable and an `object()` is
+        # not. `None` is excluded by the same check.
+        if not callable(getattr(registry, "get", None)):
+            return None
+        if not callable(getattr(registry, "resolve_path", None)):
+            return None
+        return registry
 
     def verify(self, link: Any) -> Tuple[AdmissionRejection, ...]:
         """Every reason this one link does not currently resolve."""
@@ -178,11 +234,17 @@ class SpatialEvidenceVerifier:
         if not isinstance(link, EvidenceLink):
             # Counting a container's members never asked what they were. A
             # bare string is a truthy member and used to qualify a route.
+            # Checked before the registry is built: a malformed link is refused
+            # on its own account and does not need one.
             return (AdmissionRejection.MALFORMED_EVIDENCE_LINK,)
+
+        registry = self.current_registry()
+        if registry is None:
+            return (AdmissionRejection.VERIFICATION_CONTEXT_UNAVAILABLE,)
 
         reasons: List[AdmissionRejection] = [
             _ARTIFACT_REJECTION_BY_VALUE[r.value]
-            for r in verify_link_artifact(link, self.registry())
+            for r in verify_link_artifact(link, registry)
         ]
 
         # The link's own axes bind the stance that carries it. A stance
@@ -197,8 +259,8 @@ class SpatialEvidenceVerifier:
         return tuple(reasons)
 
 
-#: The verifier used when a graph was given none. It has no registry, so it
-#: refuses everything -- which is the right answer to "does this evidence
+#: The verifier used when a graph was given none. It has no registry factory,
+#: so it refuses everything -- which is the right answer to "does this evidence
 #: resolve?" asked by something that cannot look.
 NO_VERIFICATION = SpatialEvidenceVerifier()
 
