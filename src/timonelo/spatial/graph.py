@@ -21,16 +21,47 @@ The types here are deliberately *narrower* than the canonical ontology models:
 - every node and edge must carry provenance, evidence condition, review state
   and publish status explicitly. There are no fail-open defaults.
 
+Declared axes are not evidence
+------------------------------
+The six axes on `EvidenceStance` are caller-supplied, and for one release the
+seventh field was only counted: `len(evidence_links) > 0` was the whole of
+"this is evidenced". A stance asserting SUPPORTED / APPROVED / PUBLISH_ALLOWED
+over a link naming an artifact that was never registered admitted its nodes,
+admitted its edge, and returned ROUTABLE with a metric distance. So did a
+stance whose links were themselves CONFLICTED and REJECTED, and so did one
+whose "link" was a bare string.
+
+Admission is therefore two questions, not one, and both must be answered:
+
+  1. do the declared axes permit routing?  -- `EvidenceStance.reject_reasons`
+  2. does the cited evidence currently resolve?  -- `SpatialEvidenceVerifier`
+
+The second is asked of *every* link, on every read, against the registry as it
+stands at that moment. Universal quantification is inherited from the canonical
+admission boundary for the same reason it holds there: "some link resolves"
+would let one real citation launder an unheld one beside it, so adding evidence
+can never subtract scrutiny.
+
+Verification is not cached in the graph. An artifact can be replaced or
+deregistered after a graph is built, and a stored verdict would go on routing
+across evidence the repository no longer has -- the same defect as a persisted
+PUBLISH_ALLOWED, one layer down. `SpatialGraph` holds submitted elements and
+re-derives their admission on every read, so the graph that was routable a
+moment ago answers INSUFFICIENT_EVIDENCE the moment its evidence stops
+resolving, with no reconstruction.
+
 Canonical enums (`Method`, `Derivation`, `EvidenceCondition`,
 `HumanReviewState`, `PublishStatus`, `GeometryProvenance`, `EvidenceLink`) are
-imported from `timonelo.ontology.models` and are NOT redefined here.
+imported from `timonelo.ontology.models` and are NOT redefined here. Artifact
+resolution is imported from `timonelo.spatial.admission` and is not reimplemented
+here either.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from timonelo.ontology.models import (
     Derivation,
@@ -41,6 +72,7 @@ from timonelo.ontology.models import (
     Method,
     PublishStatus,
 )
+from timonelo.spatial.admission import verify_link_artifact
 
 
 class SpatialNodeType(str, Enum):
@@ -80,6 +112,95 @@ class AdmissionRejection(str, Enum):
     INFERRED_METHOD = "INFERRED_METHOD"
     NO_EVIDENCE_LINK = "NO_EVIDENCE_LINK"
     ENDPOINT_NOT_ADMITTED = "ENDPOINT_NOT_ADMITTED"
+    # --- current evidence resolution -------------------------------------
+    NO_VERIFICATION_CONTEXT = "NO_VERIFICATION_CONTEXT"
+    MALFORMED_EVIDENCE_LINK = "MALFORMED_EVIDENCE_LINK"
+    ARTIFACT_NOT_REGISTERED = "ARTIFACT_NOT_REGISTERED"
+    NOT_CONTENT_ADDRESSED = "NOT_CONTENT_ADDRESSED"
+    ARTIFACT_NOT_HELD = "ARTIFACT_NOT_HELD"
+    DIGEST_MISMATCH = "DIGEST_MISMATCH"
+    STANCE_CONTRADICTS_LINK = "STANCE_CONTRADICTS_LINK"
+
+
+#: P0's artifact-resolution codes, carried across into this enum by value. The
+#: two enums are deliberately separate -- a canonical-sink rejection and a
+#: routing rejection are different verdicts -- but the shared predicate must
+#: report the same reason on both sides of the boundary.
+_ARTIFACT_REJECTION_BY_VALUE: Dict[str, "AdmissionRejection"] = {
+    r.value: r for r in (
+        AdmissionRejection.ARTIFACT_NOT_REGISTERED,
+        AdmissionRejection.NOT_CONTENT_ADDRESSED,
+        AdmissionRejection.ARTIFACT_NOT_HELD,
+        AdmissionRejection.DIGEST_MISMATCH,
+    )
+}
+
+
+class SpatialEvidenceVerifier:
+    """Resolves the evidence a stance cites, as the repository holds it *now*.
+
+    `EvidenceStance` states six axes and carries evidence links. The axes are a
+    caller's declaration and the links were, until this boundary existed, only
+    counted: `len(evidence_links) > 0` was the whole of "this is evidenced". A
+    stance naming an artifact that was never registered, or one whose bytes
+    have since been replaced, routed a passenger exactly as well as a real one.
+
+    So the links are resolved rather than counted, and resolved per question
+    rather than once at construction. A cached admission is the same defect in
+    smaller form: an artifact can be replaced or deregistered after a graph is
+    built, and a graph that answered from a stored verdict would go on routing
+    across evidence the repository no longer has.
+
+    Being unable to check is not permission to skip the check. A verifier with
+    no registry refuses every link and says why, so a caller who forgets the
+    context gets an empty graph rather than an unguarded one.
+    """
+
+    def __init__(self, registry: Any = None) -> None:
+        #: An `ArtifactRegistry`, or a zero-argument callable returning one.
+        #: The callable form is what makes deregistration visible: the registry
+        #: reads its index once at construction, so a graph holding an instance
+        #: would keep answering from the index it was built with.
+        self._registry = registry
+
+    @property
+    def has_context(self) -> bool:
+        return self._registry is not None
+
+    def registry(self) -> Any:
+        src = self._registry
+        return src() if callable(src) else src
+
+    def verify(self, link: Any) -> Tuple[AdmissionRejection, ...]:
+        """Every reason this one link does not currently resolve."""
+        if not self.has_context:
+            return (AdmissionRejection.NO_VERIFICATION_CONTEXT,)
+        if not isinstance(link, EvidenceLink):
+            # Counting a container's members never asked what they were. A
+            # bare string is a truthy member and used to qualify a route.
+            return (AdmissionRejection.MALFORMED_EVIDENCE_LINK,)
+
+        reasons: List[AdmissionRejection] = [
+            _ARTIFACT_REJECTION_BY_VALUE[r.value]
+            for r in verify_link_artifact(link, self.registry())
+        ]
+
+        # The link's own axes bind the stance that carries it. A stance
+        # declaring SUPPORTED/APPROVED over a link that is itself CONFLICTED,
+        # REJECTED or merely DRAFT is a caller overruling its own evidence,
+        # which is the one thing a declaration must never be able to do.
+        if (
+            link.evidence_condition is not EvidenceCondition.SUPPORTED
+            or link.human_review_state is not HumanReviewState.APPROVED
+        ):
+            reasons.append(AdmissionRejection.STANCE_CONTRADICTS_LINK)
+        return tuple(reasons)
+
+
+#: The verifier used when a graph was given none. It has no registry, so it
+#: refuses everything -- which is the right answer to "does this evidence
+#: resolve?" asked by something that cannot look.
+NO_VERIFICATION = SpatialEvidenceVerifier()
 
 
 #: Geometry provenance values that may carry a metric claim. Synthetic and
@@ -111,7 +232,13 @@ class EvidenceStance:
     evidence_links: Tuple[EvidenceLink, ...] = ()
 
     def reject_reasons(self) -> Tuple[AdmissionRejection, ...]:
-        """Returns every reason this stance is unfit for routing (may be empty).
+        """Every reason the *declared axes* are unfit for routing (may be empty).
+
+        Declared axes only. An empty tuple here means the caller has asserted
+        nothing disqualifying; it does not mean the cited evidence resolves,
+        and it is not an admission verdict. `SpatialGraph` pairs this with
+        `SpatialEvidenceVerifier` and admits on both. Nothing else should treat
+        an empty result as permission to route.
 
         UNKNOWN_PROVENANCE is deliberately absent from this list. An entity
         whose existence is evidenced but whose geometry has never been
@@ -140,6 +267,13 @@ class EvidenceStance:
 
     @property
     def is_route_qualified(self) -> bool:
+        """Whether the declared axes permit routing. NOT an admission verdict.
+
+        Kept because the axes are worth asking about on their own -- a reviewer
+        wants to know what a record says. It answers that and nothing more: it
+        has no registry and so cannot know whether the cited evidence exists.
+        Ask `SpatialGraph` whether something may be routed.
+        """
         return not self.reject_reasons()
 
     def metric_reject_reasons(self) -> Tuple[AdmissionRejection, ...]:
@@ -168,6 +302,7 @@ class SpatialNode:
 
     @property
     def is_route_qualified(self) -> bool:
+        """Declared axes only -- see `EvidenceStance.is_route_qualified`."""
         return self.stance.is_route_qualified
 
 
@@ -201,6 +336,7 @@ class SpatialEdge:
 
     @property
     def is_route_qualified(self) -> bool:
+        """Declared axes only -- see `EvidenceStance.is_route_qualified`."""
         return self.stance.is_route_qualified
 
     @property
@@ -218,87 +354,171 @@ class AdmissionReport:
 
 
 class SpatialGraph:
-    """Holds every submitted node/edge, but exposes only the route-qualified ones.
+    """Holds every submitted node/edge, but exposes only the admitted ones.
+
+    Admission is re-derived on every read, never stored. Two questions decide
+    it: whether the declared axes permit routing, and whether every link the
+    stance cites currently resolves against evidence the repository holds. The
+    second is the reason nothing is cached -- an artifact can be replaced or
+    deregistered at any time, and a graph answering from a stored verdict would
+    keep routing across evidence that is gone.
 
     Nothing is dropped: rejected elements stay queryable through
-    `admission_report()` so that an unroutable answer can explain itself.
+    `node_rejection`, `edge_rejection` and `admission_report()` so that an
+    unroutable answer can explain itself.
+
+    A graph built without a `verifier` refuses every element with
+    NO_VERIFICATION_CONTEXT. That is deliberate and is the reason the parameter
+    is keyword-optional rather than absent: a caller who cannot supply evidence
+    context gets an empty graph, not an unguarded one.
     """
 
     def __init__(
         self,
         nodes: Iterable[SpatialNode] = (),
         edges: Iterable[SpatialEdge] = (),
+        *,
+        verifier: Optional[SpatialEvidenceVerifier] = None,
     ) -> None:
-        self._nodes: Dict[str, SpatialNode] = {}
-        self._edges: Dict[str, SpatialEdge] = {}
-        self._rejected_nodes: Dict[str, Tuple[AdmissionRejection, ...]] = {}
-        self._rejected_edges: Dict[str, Tuple[AdmissionRejection, ...]] = {}
-        self._adjacency: Dict[str, List[Tuple[str, str]]] = {}
+        self.verifier = verifier if verifier is not None else NO_VERIFICATION
+        self._submitted_nodes: Dict[str, SpatialNode] = {}
+        self._submitted_edges: Dict[str, SpatialEdge] = {}
         for node in nodes:
             self.add_node(node)
         for edge in edges:
             self.add_edge(edge)
 
-    def add_node(self, node: SpatialNode) -> bool:
-        if node.node_id in self._nodes or node.node_id in self._rejected_nodes:
-            raise ValueError(f"Duplicate spatial node id {node.node_id}")
-        reasons = node.stance.reject_reasons()
+    # --- admission (re-derived, never stored) ----------------------------
+
+    def _stance_rejections(self, stance: EvidenceStance) -> Tuple[AdmissionRejection, ...]:
+        """Declared axes, then current evidence resolution, for one stance.
+
+        Every link is resolved, not merely the first that fails: a refusal that
+        named one bad citation while others were equally unresolvable would
+        under-report what is wrong. Universal quantification, as at the
+        canonical admission boundary.
+        """
+        reasons: List[AdmissionRejection] = list(stance.reject_reasons())
         if reasons:
-            self._rejected_nodes[node.node_id] = reasons
-            return False
-        self._nodes[node.node_id] = node
-        self._adjacency.setdefault(node.node_id, [])
-        return True
+            # Already refused on what it declares about itself. Resolving its
+            # evidence could only add reasons to a refusal, and resolution
+            # re-hashes held bytes -- so a deck whose every object is
+            # PUBLISH_BLOCKED is not paid for in megabytes of hashing to
+            # confirm a verdict that cannot change.
+            return tuple(reasons)
+
+        seen = set()
+        for link in stance.evidence_links:
+            for reason in self.verifier.verify(link):
+                if reason not in seen:
+                    seen.add(reason)
+                    reasons.append(reason)
+        return tuple(reasons)
+
+    def _node_rejections(self, node: SpatialNode) -> Tuple[AdmissionRejection, ...]:
+        return self._stance_rejections(node.stance)
+
+    def _edge_rejections(self, edge: SpatialEdge) -> Tuple[AdmissionRejection, ...]:
+        reasons = list(self._stance_rejections(edge.stance))
+        if not self._is_node_admitted(edge.from_node_id) or not self._is_node_admitted(
+            edge.to_node_id
+        ):
+            reasons.append(AdmissionRejection.ENDPOINT_NOT_ADMITTED)
+        return tuple(reasons)
+
+    def _is_node_admitted(self, node_id: str) -> bool:
+        node = self._submitted_nodes.get(node_id)
+        return node is not None and not self._node_rejections(node)
+
+    def _admitted_edges(self) -> Dict[str, SpatialEdge]:
+        return {
+            eid: e
+            for eid, e in self._submitted_edges.items()
+            if not self._edge_rejections(e)
+        }
+
+    # --- write side ------------------------------------------------------
+
+    def add_node(self, node: SpatialNode) -> bool:
+        """Submits a node. Returns whether it is admitted *at this moment*."""
+        if node.node_id in self._submitted_nodes:
+            raise ValueError(f"Duplicate spatial node id {node.node_id}")
+        self._submitted_nodes[node.node_id] = node
+        return not self._node_rejections(node)
 
     def add_edge(self, edge: SpatialEdge) -> bool:
-        if edge.edge_id in self._edges or edge.edge_id in self._rejected_edges:
+        """Submits an edge. Returns whether it is admitted *at this moment*."""
+        if edge.edge_id in self._submitted_edges:
             raise ValueError(f"Duplicate spatial edge id {edge.edge_id}")
-        reasons = list(edge.stance.reject_reasons())
-        if edge.from_node_id not in self._nodes or edge.to_node_id not in self._nodes:
-            reasons.append(AdmissionRejection.ENDPOINT_NOT_ADMITTED)
-        if reasons:
-            self._rejected_edges[edge.edge_id] = tuple(reasons)
-            return False
-        self._edges[edge.edge_id] = edge
-        self._adjacency[edge.from_node_id].append((edge.to_node_id, edge.edge_id))
-        if edge.bidirectional:
-            self._adjacency[edge.to_node_id].append((edge.from_node_id, edge.edge_id))
-        return True
+        self._submitted_edges[edge.edge_id] = edge
+        return not self._edge_rejections(edge)
 
     # --- read side -------------------------------------------------------
 
     def node(self, node_id: str) -> Optional[SpatialNode]:
-        return self._nodes.get(node_id)
+        node = self._submitted_nodes.get(node_id)
+        if node is None or self._node_rejections(node):
+            return None
+        return node
 
     def edge(self, edge_id: str) -> Optional[SpatialEdge]:
-        return self._edges.get(edge_id)
+        edge = self._submitted_edges.get(edge_id)
+        if edge is None or self._edge_rejections(edge):
+            return None
+        return edge
 
     @property
     def node_ids(self) -> Tuple[str, ...]:
-        return tuple(sorted(self._nodes))
+        return tuple(sorted(
+            nid for nid, n in self._submitted_nodes.items()
+            if not self._node_rejections(n)
+        ))
 
     @property
     def edge_ids(self) -> Tuple[str, ...]:
-        return tuple(sorted(self._edges))
+        return tuple(sorted(self._admitted_edges()))
 
     def neighbours(self, node_id: str) -> Sequence[Tuple[str, str]]:
-        """Deterministically ordered (neighbour_node_id, edge_id) pairs."""
-        return tuple(sorted(self._adjacency.get(node_id, [])))
+        """Deterministically ordered (neighbour_node_id, edge_id) pairs.
+
+        Built from the currently admitted edges, so a connection whose evidence
+        has stopped resolving is not offered to the router at all.
+        """
+        if not self._is_node_admitted(node_id):
+            return ()
+        adjacency: List[Tuple[str, str]] = []
+        for eid, edge in self._admitted_edges().items():
+            if edge.from_node_id == node_id:
+                adjacency.append((edge.to_node_id, eid))
+            if edge.bidirectional and edge.to_node_id == node_id:
+                adjacency.append((edge.from_node_id, eid))
+        return tuple(sorted(adjacency))
 
     def node_rejection(self, node_id: str) -> Tuple[AdmissionRejection, ...]:
-        return self._rejected_nodes.get(node_id, ())
+        node = self._submitted_nodes.get(node_id)
+        return self._node_rejections(node) if node is not None else ()
 
     def edge_rejection(self, edge_id: str) -> Tuple[AdmissionRejection, ...]:
-        return self._rejected_edges.get(edge_id, ())
+        edge = self._submitted_edges.get(edge_id)
+        return self._edge_rejections(edge) if edge is not None else ()
 
     @property
     def all_admitted_edges_have_metric_length(self) -> bool:
-        return bool(self._edges) and all(e.has_metric_length for e in self._edges.values())
+        admitted = self._admitted_edges()
+        return bool(admitted) and all(e.has_metric_length for e in admitted.values())
 
     def admission_report(self) -> AdmissionReport:
         return AdmissionReport(
             admitted_node_ids=self.node_ids,
             admitted_edge_ids=self.edge_ids,
-            rejected_nodes=dict(self._rejected_nodes),
-            rejected_edges=dict(self._rejected_edges),
+            rejected_nodes={
+                nid: reasons
+                for nid, n in self._submitted_nodes.items()
+                if (reasons := self._node_rejections(n))
+            },
+            rejected_edges={
+                eid: reasons
+                for eid, e in self._submitted_edges.items()
+                if (reasons := self._edge_rejections(e))
+            },
         )

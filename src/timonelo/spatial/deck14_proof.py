@@ -79,6 +79,7 @@ from timonelo.ontology.models import (
 )
 from timonelo.spatial.graph import (
     EvidenceStance,
+    SpatialEvidenceVerifier,
     SpatialGraph,
     SpatialNode,
     SpatialNodeType,
@@ -240,15 +241,40 @@ def build_deck14_nodes(
     return nodes
 
 
-def build_deck14_graph(proof_path: Optional[str] = None) -> SpatialGraph:
+def evidence_verifier(evidence_root: Optional[str] = None) -> SpatialEvidenceVerifier:
+    """The verification context for Deck 14, over the canonical artifact root.
+
+    The registry is passed as a factory rather than an instance. `ArtifactRegistry`
+    reads its index once at construction, so a verifier holding one instance
+    would keep answering from the index it was built with -- an artifact
+    deregistered afterwards would still look registered. Re-reading per question
+    is what makes deregistration visible to a graph that already exists.
+    """
+    root = evidence_root or os.path.join(repo_root(), "evidence", "artifacts")
+    return SpatialEvidenceVerifier(lambda: ArtifactRegistry(root))
+
+
+def build_deck14_graph(
+    proof_path: Optional[str] = None,
+    *,
+    evidence_root: Optional[str] = None,
+) -> SpatialGraph:
     """Builds the Deck 14 spatial graph from the canonical proof.
 
     No edges are produced. The proof's `navigation_graph` is null, its
     corridor observation is rejected negative space, and its lift region
     disclaims connectivity. There is nothing to connect.
+
+    The graph is given a verifier over the canonical artifact root, so its
+    nodes are judged against ART-0001 as the repository holds it now, not
+    against the digest that was recomputed when the nodes were built.
     """
     proof = load_proof(proof_path)
-    return SpatialGraph(nodes=build_deck14_nodes(proof), edges=())
+    return SpatialGraph(
+        nodes=build_deck14_nodes(proof),
+        edges=(),
+        verifier=evidence_verifier(evidence_root),
+    )
 
 
 def deck14_connectivity_findings(proof: Optional[dict] = None) -> Dict[str, str]:
