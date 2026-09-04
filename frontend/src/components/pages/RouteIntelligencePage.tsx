@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { knowledgeRepository } from "../../knowledge";
+import { LIVE_TEST_TRIP } from "../../trip-shell/liveTestContext";
 import {
   Compass,
   Anchor,
@@ -21,18 +22,35 @@ interface RouteIntelligencePageProps {
 }
 
 export default function RouteIntelligencePage({
-  routeSlug = "ROUTE_MSC_BELLISSIMA_WMED_7N",
+  routeSlug,
   onSelectPort,
 }: RouteIntelligencePageProps) {
-  // Load canonical relational route from Knowledge Layer
-  const routeData = knowledgeRepository.getRoute(routeSlug) || knowledgeRepository.getRoute("ROUTE_MSC_BELLISSIMA_WMED_7N");
+  // No default and no fallback. Both used to be
+  // "ROUTE_MSC_BELLISSIMA_WMED_7N", so opening Routes -- or searching
+  // "adriatic", which resolved to a slug this repository does not have --
+  // presented a 7-night Western Mediterranean loop as the passenger's own
+  // itinerary. Right ship, wrong ocean, stated with day-by-day timings.
+  //
+  // There is no Shanghai to Tokyo route dataset here, and inventing one is not
+  // this package's job. So the surface says so.
+  const routeData = routeSlug ? knowledgeRepository.getRoute(routeSlug) : null;
 
   const [selectedLegIndex, setSelectedLegIndex] = useState<number>(0);
 
   if (!routeData) {
     return (
-      <div className="p-12 text-center text-slate-500">
-        Route intelligence profile not found.
+      <div className="w-full flex-1 bg-[#FBF8F3] px-6 py-16">
+        <div className="max-w-2xl mx-auto rounded-3xl border border-[#0C1B2A]/10 bg-white p-8 text-center space-y-3">
+          <h1 className="font-display text-2xl font-bold text-[#0C1B2A]">
+            We have not mapped this route yet
+          </h1>
+          <p className="text-sm text-[#5B6570] leading-relaxed">
+            Timonelo does not yet hold a day-by-day itinerary for{" "}
+            {LIVE_TEST_TRIP.departure.city} to {LIVE_TEST_TRIP.arrival.city}.
+            Rather than show you a different voyage&apos;s route, we are showing
+            you nothing until we have this one.
+          </p>
+        </div>
       </div>
     );
   }
@@ -80,7 +98,13 @@ export default function RouteIntelligencePage({
           <span>•</span>
           <span>Total Distance: ~{routeData.total_nautical_miles_approx} NM</span>
           <span>•</span>
-          <span>Confidence: <strong className="text-[#C58A46]">{routeData.provenance?.confidence_score || "5/5 Verified"}</strong></span>
+          {/* The fallback here was "5/5 Verified", and since `provenance` carries
+              no confidence_score it was not a fallback at all -- it was the only
+              value this line ever rendered. A confidence rating nothing computes
+              is not a rating. It is shown when a route actually carries one. */}
+          {routeData.provenance?.confidence_score && (
+            <span>Confidence: <strong className="text-[#C58A46]">{routeData.provenance.confidence_score}</strong></span>
+          )}
         </div>
       </div>
 

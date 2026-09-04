@@ -6,8 +6,10 @@ import { Calculator, Wine, Coffee, DollarSign, Check, Info } from "lucide-react"
 export default function CruiseMathPage() {
   const { defaultConfig, drinkPackages, tripSummaryDefaults } = CANONICAL_CRUISE_MATH;
 
-  const [selectedShip, setSelectedShip] = useState(defaultConfig.shipName);
-  const [destination, setDestination] = useState(defaultConfig.destination);
+  // Ship and destination are gone from the configuration card. They were not
+  // inputs to any calculation -- nothing below reads them -- they were only a
+  // label, and the label said MSC Virtuosa in the Mediterranean to a tester
+  // sailing Bellissima to Tokyo. The numbers that do drive the maths stay.
   const [durationNights, setDurationNights] = useState(defaultConfig.durationNights);
   const [travelers, setTravelers] = useState(defaultConfig.travelers);
   const [selectedDrinkPkg, setSelectedDrinkPkg] = useState<string>("easy");
@@ -28,21 +30,16 @@ export default function CruiseMathPage() {
         <p className="text-base text-[#5B6570]">
           Independent calculations based on published pricing. No affiliate links. No upselling.
         </p>
+        <p className="text-xs font-mono text-[#5B6570]">
+          A worked example, not your booking — Timonelo holds no pricing for your voyage.
+        </p>
       </div>
 
       {/* 2. Horizontal Trip Configuration Card */}
       <div className="max-w-7xl mx-auto w-full px-6 pb-10">
-        <div className="p-6 rounded-3xl bg-white border border-[#0C1B2A]/10 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
+        <div className="p-6 rounded-3xl bg-white border border-[#0C1B2A]/10 shadow-sm grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs">
           <div className="space-y-1">
-            <span className="text-[#5B6570]">Selected Ship</span>
-            <div className="font-bold text-[#0C1B2A] text-sm">{selectedShip}</div>
-          </div>
-          <div className="space-y-1">
-            <span className="text-[#5B6570]">Destination</span>
-            <div className="font-bold text-[#0C1B2A] text-sm">{destination}</div>
-          </div>
-          <div className="space-y-1">
-            <span className="text-[#5B6570]">Duration</span>
+            <span className="text-[#5B6570]">Example duration</span>
             <div className="font-bold text-[#0C1B2A] text-sm">{durationNights} Nights</div>
           </div>
           <div className="space-y-1">
@@ -102,12 +99,16 @@ export default function CruiseMathPage() {
         {/* Right Col: Trip Summary Dark Navy Card */}
         <div className="p-8 rounded-3xl bg-[#0C1B2A] text-white shadow-xl space-y-6 self-start">
           <h3 className="font-display text-2xl font-bold text-white">
-            Trip Summary
+            Example Trip Summary
           </h3>
+          <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+            Illustrative figures for a typical sailing. These are not quoted prices
+            and not your fare.
+          </p>
 
           <div className="space-y-4 text-xs font-mono">
             <div className="flex items-center justify-between pb-2 border-b border-white/10">
-              <span className="text-[#94A3B8]">Base Cruise Fare<br/><span className="text-[10px] text-slate-400">For 2 guests (User input)</span></span>
+              <span className="text-[#94A3B8]">Base Cruise Fare<br/><span className="text-[10px] text-slate-400">For 2 guests — example figure</span></span>
               <span className="font-bold text-white text-sm">€{tripSummaryDefaults.baseFare.toLocaleString('de-DE', {minimumFractionDigits: 2})}</span>
             </div>
 

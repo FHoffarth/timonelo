@@ -3,6 +3,7 @@ import TripShell from '../../trip-shell/TripShell';
 import { buildPassengerTripViewModel } from '../../trip-shell/adapter';
 import { PassengerTripKnowledgePack, VoyageKnowledgeResult } from '../../trip-shell/types';
 import referenceVoyageFixture from '../../fixtures/reference_voyage_bellissima.json';
+import { LIVE_TEST_TRIP } from '../../trip-shell/liveTestContext';
 
 export interface TripShellPageProps {
   pack: PassengerTripKnowledgePack;
@@ -33,8 +34,15 @@ export default function TripShellPage({ pack, result, onBack, previewNotice }: T
 }
 
 /**
- * Explicit Reference Voyage Preview Wrapper.
- * Clearly demarcated as demo/test fixture preview for development and golden testing.
+ * The live-test trip.
+ *
+ * This used to announce itself as a "Reference Voyage Preview", which told the
+ * one person actually sailing this itinerary that their own trip was a demo.
+ * The framing is now calm and accurate: it is the trip, and it is a live test.
+ *
+ * The fact-level confirmed / pending / unknown language stays the primary trust
+ * signal -- it is already honest, already per-fact, and a banner-sized
+ * disclaimer would only drown it.
  */
 export function ReferenceTripShellPreview({ onBack }: { onBack?: () => void }) {
   const pack = referenceVoyageFixture.passenger_pack as unknown as PassengerTripKnowledgePack;
@@ -45,7 +53,7 @@ export function ReferenceTripShellPreview({ onBack }: { onBack?: () => void }) {
       pack={pack}
       result={result}
       onBack={onBack}
-      previewNotice="Reference Voyage Preview • MSC Bellissima (Shanghai → Tokyo)"
+      previewNotice={`Live-test trip • ${LIVE_TEST_TRIP.shortLabel}`}
     />
   );
 }

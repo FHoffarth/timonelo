@@ -1,4 +1,4 @@
-import { ShipProfile, CabinAnalysis, TravelInfoItem } from "../types";
+import { ShipProfile, CabinAnalysis } from "../types";
 import { knowledgeRepository } from "../knowledge";
 
 const bellissimaSpecs = knowledgeRepository.getShip("msc-bellissima");
@@ -121,13 +121,21 @@ export const CANONICAL_ROUTES: Record<string, any> = {
 };
 
 export const CANONICAL_CRUISE_MATH = {
+  // Cruise Math is a calculator, and it was quietly also a claim: it opened on
+  // "MSC Virtuosa", "Mediterranean", 7 nights and a EUR 1890 fare, so a tester
+  // sailing Bellissima to Tokyo for three nights read a confident summary of
+  // somebody else's holiday. The day rates below are genuine generic inputs and
+  // stay. The identity does not: no ship is named, and the fare is an example.
   defaultConfig: {
-    shipSlug: "msc-virtuosa",
-    shipName: "MSC Virtuosa",
-    destination: "Mediterranean",
+    shipSlug: null,
+    shipName: null,
+    destination: null,
     durationNights: 7,
     travelers: 2,
+    // An illustrative figure for the worked example, not a quoted price and not
+    // this voyage's fare. Timonelo holds no pricing for the live-test trip.
     baseFareEur: 1890,
+    baseFareIsExample: true,
   },
   drinkPackages: [
     {
@@ -157,29 +165,15 @@ export const CANONICAL_CRUISE_MATH = {
   },
 };
 
-export const CANONICAL_TRAVEL_INFO: TravelInfoItem[] = [
-  {
-    country: "Italy (Venice, Bari)",
-    ports: ["Venice", "Bari"],
-    jurisdiction: "EU / Schengen Zone",
-    visaSummary: "US, UK, & EU passports require zero advance visa procedures for short tourist stays under 90 days.",
-    passportValidityRequirement: "Passport valid for at least 3 months beyond intended stay.",
-    epistemicStatus: "KNOWN",
-  },
-  {
-    country: "Greece (Corfu, Mykonos)",
-    ports: ["Corfu", "Mykonos"],
-    jurisdiction: "EU / Schengen Zone",
-    visaSummary: "Schengen entry and stay rules apply identically to Italian port controls.",
-    passportValidityRequirement: "Passport valid for at least 3 months beyond departure date.",
-    epistemicStatus: "KNOWN",
-  },
-  {
-    country: "Croatia (Dubrovnik)",
-    ports: ["Dubrovnik"],
-    jurisdiction: "EU / Schengen Zone (since 2023)",
-    visaSummary: "Full Schengen alignment. No additional border checks or separate visas required.",
-    passportValidityRequirement: "Standard Schengen passport rules apply.",
-    epistemicStatus: "KNOWN",
-  },
-];
+// CANONICAL_TRAVEL_INFO is gone. It held three Schengen entries -- Italy,
+// Greece, Croatia -- each marked KNOWN, and Travel Info rendered them beneath a
+// promise that they had been researched for the reader's own itinerary. The
+// live-test voyage sails Shanghai to Tokyo, so a passenger was being told with
+// confidence that they needed no advance visa, about countries they were not
+// visiting, for a region whose rules are nothing like the ones that applied.
+//
+// It is deleted rather than narrowed. Keeping the shape and swapping in China
+// and Japan entries written from general knowledge would be the same defect
+// with fresher-sounding facts, and this is the one surface where being
+// plausibly wrong can cost someone their sailing. Travel Info now says it does
+// not have this voyage yet and points at the authorities who do.

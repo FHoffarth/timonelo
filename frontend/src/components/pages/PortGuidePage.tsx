@@ -17,6 +17,7 @@ import {
   AlertTriangle,
   ExternalLink,
 } from "lucide-react";
+import { LIVE_TEST_TRIP } from "../../trip-shell/liveTestContext";
 
 interface PortGuidePageProps {
   portSlug?: string;
@@ -24,11 +25,15 @@ interface PortGuidePageProps {
 }
 
 export default function PortGuidePage({
-  portSlug = "genoa",
+  portSlug,
   onSelectPort,
 }: PortGuidePageProps) {
-  // Normalize slug and load directly from the canonical Knowledge Layer
-  const canonicalPortSlug = knowledgeRepository.getPort(portSlug) ? portSlug : "genoa";
+  // Opening on a port -- Genoa by default, Santorini from the landing pillar --
+  // read as "here is where you are going". None of the six ports Timonelo holds
+  // is on the Shanghai to Tokyo voyage, so the first one shown was always
+  // someone else's itinerary presented as yours. Browsing is fine; the framing
+  // below says it is browsing, and nothing is preselected as the passenger's.
+  const canonicalPortSlug = portSlug && knowledgeRepository.getPort(portSlug) ? portSlug : "genoa";
   const portData = knowledgeRepository.getPort(canonicalPortSlug);
   const transportData = knowledgeRepository.getPortDomain(canonicalPortSlug, "transport");
   const emergencyData = knowledgeRepository.getPortDomain(canonicalPortSlug, "emergency");
@@ -62,16 +67,21 @@ export default function PortGuidePage({
       <div className="max-w-7xl mx-auto w-full px-6 pt-10 pb-6 space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="eyebrow-tag block">CANONICAL PORT INTELLIGENCE</span>
+            <span className="eyebrow-tag block">PORT REFERENCE LIBRARY</span>
             <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#0C1B2A] tracking-tight">
               {portData.name}
             </h1>
+            <p className="text-sm text-[#5B6570] pt-1 max-w-2xl">
+              Reference material for ports we have researched. This is not a stop on
+              your voyage — we have not yet researched {LIVE_TEST_TRIP.departure.city}{" "}
+              or {LIVE_TEST_TRIP.arrival.city}.
+            </p>
           </div>
 
           {/* Quick Port Switcher */}
           {onSelectPort && (
             <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold mr-1">Switch Port:</span>
+              <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold mr-1">Browse Port:</span>
               {allAvailablePorts.map((slug) => {
                 const p = knowledgeRepository.getPort(slug);
                 return (

@@ -2,6 +2,7 @@ import React from "react";
 import SearchPill from "../ui/SearchPill";
 import { NavRoute } from "../ui/MainNavbar";
 import { Ship, Compass, Calculator } from "lucide-react";
+import { LIVE_TEST_TRIP } from "../../trip-shell/liveTestContext";
 
 interface HomePageProps {
   onNavigate: (route: NavRoute, param?: string) => void;
@@ -33,7 +34,7 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Pillar 1: Ship Intelligence */}
           <div
-            onClick={() => onNavigate("ships", "msc-virtuosa")}
+            onClick={() => onNavigate("ships", LIVE_TEST_TRIP.vesselSlug)}
             className="space-y-3 cursor-pointer group p-6 rounded-2xl hover:bg-white transition-all hover:shadow-md border border-transparent hover:border-[#0C1B2A]/10"
           >
             <h3 className="font-display text-2xl font-bold text-[#0C1B2A] group-hover:text-[#C58A46] transition-colors">
@@ -47,7 +48,7 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
 
           {/* Pillar 2: Port Guides */}
           <div
-            onClick={() => onNavigate("ports", "santorini")}
+            onClick={() => onNavigate("ports")}
             className="space-y-3 cursor-pointer group p-6 rounded-2xl hover:bg-white transition-all hover:shadow-md border border-transparent hover:border-[#0C1B2A]/10"
           >
             <h3 className="font-display text-2xl font-bold text-[#0C1B2A] group-hover:text-[#C58A46] transition-colors">
@@ -55,7 +56,8 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
             </h3>
             <p className="text-sm text-[#5B6570] leading-relaxed">
               Where you dock, how to get around, and what to prioritise ashore — for the
-              ports we have researched so far.
+              ports we have researched so far. Browse them freely; none of them is
+              assumed to be a stop on your voyage.
             </p>
           </div>
 
