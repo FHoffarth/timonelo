@@ -40,7 +40,8 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
               Ship Intelligence
             </h3>
             <p className="text-sm text-[#5B6570] leading-relaxed">
-              Every deck, every venue, every quiet corner mapped from blueprints and 50,000+ verified passenger reports.
+              Decks, venues and staterooms read from the operator's own drawings — and
+              plainly marked when we have not finished checking them.
             </p>
           </div>
 
@@ -53,7 +54,8 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
               Port Guides
             </h3>
             <p className="text-sm text-[#5B6570] leading-relaxed">
-              Where you dock, how to get around, what to prioritize — for 340+ cruise ports worldwide.
+              Where you dock, how to get around, and what to prioritise ashore — for the
+              ports we have researched so far.
             </p>
           </div>
 

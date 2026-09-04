@@ -220,10 +220,19 @@ export function buildSpatialPassengerViewModel(
   const totalDecksCount = availableDecks.length;
   const mappedDecksCount = availableDecks.filter((d) => d.hasSpatialGeometry).length;
 
+  // The notices describe what was actually admitted, rather than asserting a
+  // standard the payload may not meet. Nothing here is a second admission
+  // decision: `admittedObjectsCount` is the count the gate above produced.
+  const anythingAdmitted = admittedObjectsCount > 0;
+
   const trustSummary: SpatialTrustSummaryViewModel = {
-    statusBadge: 'Deck 14 Mapped',
-    sourceNotice: 'Only reviewed, publication-approved spatial data derived from official source material is shown here.',
-    coverageNotice: 'Deck 14 mapped • More deck views are not available yet.',
+    statusBadge: anythingAdmitted ? 'Deck 14 Mapped' : 'Deck 14 — checks in progress',
+    sourceNotice: anythingAdmitted
+      ? "Everything shown here was read from the operator's own deck plan and checked by a person before publication."
+      : "We have the operator's deck plan for this deck, but its locations have not finished being checked, so we are not showing them yet.",
+    coverageNotice: anythingAdmitted
+      ? 'Deck 14 mapped • More deck views are not available yet.'
+      : 'No deck locations are published for this ship yet.',
     governanceNotice: payload.trust_metadata?.governance || 'Governed by Timonelo Evidence Architecture',
     admittedCabinsCount,
     admittedObjectsCount,
