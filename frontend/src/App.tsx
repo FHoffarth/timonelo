@@ -13,6 +13,7 @@ import { PassengerShipOverview } from "./components/pages/ShipOverviewPage";
 import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
 import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
 import { SemanticEntity } from "./semantic-deck/types";
+import { LIVE_TEST_TRIP } from "./trip-shell/liveTestContext";
 import { X } from "lucide-react";
 
 // Internal review tool (dev-only lazy import, completely stripped from production build)
@@ -41,10 +42,18 @@ export default function App() {
     }
   }
   const [currentRoute, setCurrentRoute] = useState<NavRoute | "cabin">("home");
-  const [selectedShipSlug, setSelectedShipSlug] = useState<string>("msc-bellissima");
+  // Defaults are the trip the tester is actually on. They used to be four
+  // different voyages -- Bellissima, Santorini, an Adriatic route -- so which
+  // voyage the product thought you were on depended on which tab you opened.
+  const [selectedShipSlug, setSelectedShipSlug] = useState<string>(LIVE_TEST_TRIP.vesselSlug);
   const [selectedCabinId, setSelectedCabinId] = useState<string>("14122");
-  const [selectedPortSlug, setSelectedPortSlug] = useState<string>("santorini");
-  const [selectedRouteSlug, setSelectedRouteSlug] = useState<string>("7-night-adriatic-aegean");
+  // No port guide exists for either end of this voyage, so there is no port to
+  // default to. Undefined means the Ports surface opens as reference browsing
+  // rather than opening on some other voyage's port as though it were yours.
+  const [selectedPortSlug, setSelectedPortSlug] = useState<string | undefined>(undefined);
+  // Likewise no route dataset exists for Shanghai -> Tokyo. Defaulting to one
+  // that does exist is how the Western Mediterranean became "your route".
+  const [selectedRouteSlug, setSelectedRouteSlug] = useState<string | undefined>(undefined);
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const apiClient = new TimoneloSpatialApiClient("msc-bellissima");
@@ -62,7 +71,7 @@ export default function App() {
   const handleGlobalSearchSelect = (entity: SemanticEntity) => {
     setIsSearchOpen(false);
     setSelectedCabinId(entity.id);
-    setSelectedShipSlug("msc-bellissima");
+    setSelectedShipSlug(LIVE_TEST_TRIP.vesselSlug);
     setCurrentRoute("cabin");
   };
 
@@ -73,15 +82,21 @@ export default function App() {
       const cabinId = match ? match[0] : "14122";
       handleNavigate("cabin", cabinId);
     } else if (q.includes("port") || q.includes("santorini") || q.includes("genoa")) {
-      handleNavigate("ports", q.includes("genoa") ? "genoa" : "santorini");
+      // Searching a port name opens the Ports surface, which frames itself as
+      // reference browsing. Naming a port must not make it a stop on this
+      // voyage, so nothing is preselected as "yours".
+      handleNavigate("ports");
     } else if (q.includes("route") || q.includes("adriatic") || q.includes("aegean")) {
-      handleNavigate("routes", "7-night-adriatic-aegean");
+      // No route dataset exists for this voyage. Search used to hand the
+      // Adriatic keyword straight to a Western Mediterranean itinerary and
+      // present it as the passenger's; the surface now says it has nothing.
+      handleNavigate("routes");
     } else if (q.includes("math") || q.includes("drink") || q.includes("price") || q.includes("cost")) {
       handleNavigate("cruise-math");
     } else if (q.includes("visa") || q.includes("travel") || q.includes("passport")) {
       handleNavigate("travel-info");
     } else {
-      handleNavigate("ships", "msc-bellissima");
+      handleNavigate("ships", LIVE_TEST_TRIP.vesselSlug);
     }
   };
 
