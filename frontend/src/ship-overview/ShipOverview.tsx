@@ -70,6 +70,11 @@ export default function ShipOverview({
     return viewModel.spatialEntities.filter((e) => e.deckNumber === selectedDeckNumber);
   }, [viewModel.spatialEntities, selectedDeckNumber]);
 
+  // Whether anything on this deck actually cleared the adapter's admission gate.
+  // Every confidence-bearing phrase on this page hangs off this one value, so
+  // the page cannot claim more than it is showing.
+  const hasPublishedSpaces = currentDeckEntities.length > 0;
+
   return (
     <div className={`w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 ${className}`}>
       {/* 1. Ship Header & Status */}
@@ -95,15 +100,25 @@ export default function ShipOverview({
             Ship Deck Overview
           </h1>
           <p className="text-sm text-[#5B6570] font-medium">
-            Explore verified deck layouts and stateroom locations.
+            {hasPublishedSpaces
+              ? "Deck layouts and stateroom locations, read from the operator's own deck plan."
+              : "We are still checking this ship's deck plan. Nothing is published yet."}
           </p>
         </div>
 
         {/* Deck Availability Status Bar */}
         <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-emerald-800 bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200/50">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span className="font-semibold">Deck 14 available</span>
+          <div
+            className={
+              hasPublishedSpaces
+                ? 'flex items-center gap-2 text-emerald-800 bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200/50'
+                : 'flex items-center gap-2 text-amber-900 bg-amber-50 px-3 py-1 rounded-xl border border-amber-200/60'
+            }
+          >
+            <span className={hasPublishedSpaces ? 'w-2 h-2 rounded-full bg-emerald-500' : 'w-2 h-2 rounded-full bg-amber-500'} />
+            <span className="font-semibold">
+              {hasPublishedSpaces ? 'Deck 14 available' : 'Deck 14 — being checked'}
+            </span>
           </div>
           <div className="text-slate-500 text-xs">
             <span>More deck views are not available yet.</span>
@@ -118,7 +133,9 @@ export default function ShipOverview({
             SELECT DECK
           </h2>
           <span className="text-[11px] text-slate-400 font-mono">
-            {viewModel.trustSummary.mappedDecksCount} of {viewModel.trustSummary.totalDecksCount} deck mapped
+            {hasPublishedSpaces
+              ? `${viewModel.trustSummary.mappedDecksCount} of ${viewModel.trustSummary.totalDecksCount} deck mapped`
+              : `${viewModel.trustSummary.totalDecksCount} deck being checked`}
           </span>
         </div>
 
@@ -288,16 +305,44 @@ export default function ShipOverview({
             DECK VIEW
           </h2>
           <span className="text-[11px] text-slate-400 font-mono">
-            {currentDeckEntities.length} verified spaces
+            {hasPublishedSpaces
+              ? `${currentDeckEntities.length} published spaces`
+              : 'Nothing published yet'}
           </span>
         </div>
 
-        <DeckCanvas
-          deck={viewModel.selectedDeck}
-          entities={currentDeckEntities}
-          selectedEntityId={selectedEntity?.id || null}
-          onSelectEntity={(entity) => setSelectedEntity(entity)}
-        />
+        {hasPublishedSpaces ? (
+          <DeckCanvas
+            deck={viewModel.selectedDeck}
+            entities={currentDeckEntities}
+            selectedEntityId={selectedEntity?.id || null}
+            onSelectEntity={(entity) => setSelectedEntity(entity)}
+          />
+        ) : (
+          <div
+            data-testid="spatial-pending-state"
+            className="rounded-3xl border border-[#0C1B2A]/10 bg-white p-6 sm:p-8 space-y-3"
+          >
+            <h3 className="font-display text-lg font-bold text-[#0C1B2A]">
+              We are still checking this deck
+            </h3>
+            <p className="text-sm text-[#5B6570] leading-relaxed">
+              We have the operator&apos;s deck plan for Deck 14 and we can see where the
+              staterooms and public areas sit on it. A person has not finished checking
+              those locations yet, so we are not showing them to you as fact — and we
+              will not guess.
+            </p>
+            <p className="text-sm text-[#5B6570] leading-relaxed">
+              This is deliberate, not a fault with the app. Nothing has gone wrong with
+              your booking.
+            </p>
+            <p className="text-sm text-[#5B6570] leading-relaxed">
+              In the meantime, <strong className="text-[#0C1B2A]">My Cruise</strong> shows
+              what is already confirmed about your sailing, and the port guides cover
+              where you dock and how to get around ashore.
+            </p>
+          </div>
+        )}
       </section>
 
       {/* 6. Unmapped Known Venues List (Only rendered if publication-admitted unmapped venues exist) */}
@@ -377,7 +422,9 @@ export default function ShipOverview({
               <div className="bg-white rounded-xl p-3.5 border border-slate-200/40">
                 <span className="font-semibold text-[#0C1B2A] block mb-1">Spatial Truth Policy</span>
                 <p className="leading-relaxed">
-                  Only reviewed, publication-approved spatial data derived from official source material is shown here. We never manufacture speculative shapes or infer walking paths.
+                  We only show a location once it has been read from the operator&apos;s own
+                  deck plan and checked by a person. We never invent a shape, and we never
+                  guess a walking route.
                 </p>
               </div>
 
@@ -391,7 +438,11 @@ export default function ShipOverview({
 
             <div className="flex flex-wrap items-center justify-between gap-2 pt-2 text-[11px] text-slate-400 font-mono">
               <span>{viewModel.trustSummary.governanceNotice}</span>
-              <span>{viewModel.trustSummary.admittedCabinsCount} verified staterooms on Deck 14</span>
+              <span>
+                {hasPublishedSpaces
+                  ? `${viewModel.trustSummary.admittedCabinsCount} published staterooms on Deck 14`
+                  : 'No staterooms published on Deck 14 yet'}
+              </span>
             </div>
           </div>
         )}
