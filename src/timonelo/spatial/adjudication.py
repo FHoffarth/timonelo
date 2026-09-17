@@ -95,6 +95,7 @@ ALLOWED_GEOMETRY_TRANSITIONS: Dict[HumanReviewState, frozenset] = {
 }
 
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
+_REVIEW_STATE_VALUES = frozenset(st.value for st in HumanReviewState)
 
 
 class ApplyRefusal(str, Enum):
@@ -200,9 +201,16 @@ class SpatialAdjudicationLog:
         return list(self._entries)
 
     def for_object(self, object_id: str, proof_sha256: Optional[str] = None) -> List[Dict[str, Any]]:
+        """Entries for one object, optionally bound to one proof.
+
+        Non-object rows are skipped rather than raising. A log that somebody
+        hand-edited into nonsense should make the projection fall back to the
+        proof, not take the process down.
+        """
         return [
             e for e in self._entries
-            if e.get("object_id") == object_id
+            if isinstance(e, dict)
+            and e.get("object_id") == object_id
             and (proof_sha256 is None or e.get("proof_sha256") == proof_sha256)
         ]
 
@@ -232,15 +240,88 @@ def current_geometry_review_state(
 ) -> str:
     """The review state of a proof object now: extracted state plus adjudications.
 
-    Computed rather than read off the object, because the object is an
-    extraction record and the decision lives in the log. The latest entry for
-    this object against this exact proof wins; entries against a different proof
-    digest are history about different geometry and are ignored.
+    THE canonical projection. Computed rather than read off the object, because
+    the object is an extraction record and the decision lives in the log. Every
+    governed consumer of a proof object's review state goes through here; a
+    second implementation somewhere else is how a review log becomes a log
+    nothing reads.
+
+    Only the review axis is projected. An APPROVED entry never becomes SUPPORTED
+    evidence, PUBLISH_ALLOWED, or an admitted identity, because none of those is
+    a thing a human looking at a drawing established.
+
+    Binding is on `(object_id, proof_sha256)` together. Matching on object id
+    alone would let a decision taken against one geometry vouch for whatever
+    later took the same id, which is exactly the fake-provenance shape this
+    repository keeps removing. A decision against a superseded proof is history;
+    the new proof's own governed state stands until somebody reviews it again.
+
+    No entry means no change: the proof's stored state is returned untouched, so
+    a repository with no adjudication log behaves exactly as it did before this
+    mechanism existed.
     """
-    entries = log.for_object(obj.get("object_id", ""), proof_sha256)
+    object_id = str(obj.get("object_id") or "")
+    stored = str(obj.get("human_review_state", HumanReviewState.DRAFT.value))
+    if not object_id or not _SHA256.match(str(proof_sha256 or "")):
+        # Nothing to bind to. Fail closed onto the extraction record.
+        return stored
+
+    entries = [e for e in log.for_object(object_id, str(proof_sha256))
+               if isinstance(e, dict) and e.get("to_review_state")]
     if not entries:
-        return str(obj.get("human_review_state", HumanReviewState.DRAFT.value))
-    return str(entries[-1].get("to_review_state"))
+        return stored
+
+    projected = str(entries[-1].get("to_review_state"))
+    if projected not in _REVIEW_STATE_VALUES:
+        # A log entry naming a state that does not exist projects nothing.
+        return stored
+    return projected
+
+
+def duplicate_object_ids(proof: Dict[str, Any]) -> frozenset:
+    """Object ids that appear more than once in one proof.
+
+    Not hypothetical: `deck07.proof.json` carries
+    `bellissima-deck07-venue-champagne-bar` twice. An id that names two objects
+    cannot carry a decision about one of them, so the projection refuses to
+    project onto any of them.
+    """
+    seen: Dict[str, int] = {}
+    for o in proof.get("objects", []):
+        if isinstance(o, dict):
+            oid = str(o.get("object_id") or "")
+            seen[oid] = seen.get(oid, 0) + 1
+    return frozenset(oid for oid, n in seen.items() if n > 1)
+
+
+def project_proof_review_states(
+    proof: Dict[str, Any],
+    proof_sha256: str,
+    log: Optional[SpatialAdjudicationLog] = None,
+    *,
+    repo_root: str = ".",
+) -> Dict[str, str]:
+    """Effective review state for every object in one proof, keyed by object id.
+
+    An id that appears twice in the proof is returned at its stored state and
+    never projected: a decision recorded against that id cannot be attributed to
+    one of the two objects wearing it, and projecting onto both would let one
+    human review vouch for geometry nobody looked at.
+    """
+    log = log if log is not None else SpatialAdjudicationLog(
+        os.path.join(repo_root, "evidence", "reviews", "spatial_adjudications.json")
+    )
+    ambiguous = duplicate_object_ids(proof)
+    projected: Dict[str, str] = {}
+    for o in proof.get("objects", []):
+        if not isinstance(o, dict):
+            continue
+        oid = str(o.get("object_id") or "")
+        if oid in ambiguous:
+            projected[oid] = str(o.get("human_review_state", HumanReviewState.DRAFT.value))
+            continue
+        projected[oid] = current_geometry_review_state(o, proof_sha256, log)
+    return projected
 
 
 def _entry_fingerprint(record: Dict[str, Any], entry: Dict[str, Any]) -> str:

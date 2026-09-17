@@ -105,6 +105,11 @@ _SEMANTIC_TYPE_MAP: Dict[str, SpatialNodeType] = {
 
 _GEOMETRY_PROVENANCE_MAP = {p.value: p for p in GeometryProvenance}
 _EVIDENCE_CONDITION_MAP = {c.value: c for c in EvidenceCondition}
+from timonelo.spatial.adjudication import (
+    SpatialAdjudicationLog,
+    project_proof_review_states,
+)
+
 _REVIEW_STATE_MAP = {s.value: s for s in HumanReviewState}
 _PUBLISH_STATUS_MAP = {s.value: s for s in PublishStatus}
 
@@ -152,9 +157,23 @@ def resolve_artifact(
 
 
 def _stance_from_proof_object(
-    obj: dict, sha256: Optional[str], proof: dict
+    obj: dict,
+    sha256: Optional[str],
+    proof: dict,
+    review_states: Optional[dict] = None,
 ) -> EvidenceStance:
-    """Reads the four axes off the proof object. Nothing is upgraded."""
+    """Reads the four axes off the proof object, review state projected.
+
+    Nothing is upgraded. `review_states` carries the effective human review
+    state from `spatial.adjudication.current_geometry_review_state` -- the proof
+    object plus whatever a human durably decided about it. Absent that, or
+    absent any adjudication, the proof's own stored value is used and this
+    behaves exactly as it did before.
+
+    The projection reaches the review axis and stops there. `evidence_condition`
+    and `publish_status` are still read straight off the object, because a human
+    review act establishes neither.
+    """
     source = proof.get("source", {})
     locator = (
         f"page{source.get('pdf_page_number')}:"
@@ -174,9 +193,10 @@ def _stance_from_proof_object(
     evidence_condition = _EVIDENCE_CONDITION_MAP.get(
         obj.get("evidence_condition", ""), EvidenceCondition.UNKNOWN
     )
-    human_review_state = _REVIEW_STATE_MAP.get(
-        obj.get("human_review_state", ""), HumanReviewState.DRAFT
+    effective_review = (review_states or {}).get(
+        obj.get("object_id"), obj.get("human_review_state", "")
     )
+    human_review_state = _REVIEW_STATE_MAP.get(effective_review, HumanReviewState.DRAFT)
 
     # The link restates the same axes rather than leaving them at their
     # defaults, so a link read in isolation cannot look more settled than the
@@ -211,15 +231,33 @@ def _stance_from_proof_object(
 def build_deck14_nodes(
     proof: Optional[dict] = None,
     sha256: Optional[str] = None,
+    *,
+    proof_path: Optional[str] = None,
+    adjudication_log: Optional[SpatialAdjudicationLog] = None,
 ) -> List[SpatialNode]:
     """Builds one candidate node per proof object, carrying its declared axes.
 
-    "Candidate" is the operative word: whether a node is admitted is decided
-    by `SpatialGraph`, not here. This function never rewrites a review state.
+    "Candidate" is the operative word: whether a node is admitted is decided by
+    `SpatialGraph`, not here. This function still never rewrites a review state
+    -- it asks the canonical projection what the current one is, which is the
+    extracted value unless a human durably adjudicated this object against this
+    exact proof.
     """
-    proof = proof if proof is not None else load_proof()
+    proof = proof if proof is not None else load_proof(proof_path)
     if sha256 is None:
         _, sha256 = resolve_artifact()
+
+    # Bound to the bytes actually loaded, so an adjudication taken against a
+    # superseded proof cannot project onto a regenerated one.
+    resolved_proof_path = proof_path or default_proof_path()
+    proof_digest = (
+        sha256_of_file(resolved_proof_path)
+        if os.path.isfile(resolved_proof_path) else ""
+    )
+    log = adjudication_log if adjudication_log is not None else SpatialAdjudicationLog(
+        os.path.join(repo_root(), "evidence", "reviews", "spatial_adjudications.json")
+    )
+    review_states = project_proof_review_states(proof, proof_digest, log)
 
     nodes: List[SpatialNode] = []
     for obj in proof.get("objects", []):
@@ -235,7 +273,7 @@ def build_deck14_nodes(
                 vessel_id=VESSEL_ID,
                 deck_number=DECK_NUMBER,
                 label=label,
-                stance=_stance_from_proof_object(obj, sha256, proof),
+                stance=_stance_from_proof_object(obj, sha256, proof, review_states),
             )
         )
     return nodes
