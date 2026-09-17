@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {
+      "decision": "ACCEPT",
+      "deck_number": 14,
+      "evidence_condition_unchanged": "UNKNOWN",
+      "from_review_state": "DRAFT",
+      "geometry_judgement": "ACCEPTED",
+      "note": "",
+      "object_id": "bellissima-deck14-cabin-14216",
+      "proof_path": "geometry/proofs/bellissima/deck14/deck14.proof.json",
+      "proof_sha256": "f9038f979d1df96de66edef746830fd4d7cf044c3e03fbf4fa70357151ddd2c4",
+      "publish_status_unchanged": "PUBLISH_BLOCKED",
+      "review_image_sha256": "ea218d18464f9223c28680028e09c87c76bec3f84f962f86834e279e1c6e97ff",
+      "reviewed_at": "2026-09-17T16:03:53.572Z",
+      "reviewer": "Flo",
+      "source_artifact_id": "ART-0001",
+      "source_artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "staged_entry_fingerprint": "cb6df62cb38d7d6f02aaf57129eb9d75aa4ba86a98c968d680ce339e6a2d4820",
+      "staged_record_generated_at": "2026-09-17T16:03:53.572Z",
+      "to_review_state": "APPROVED"
+    }
+  ],
+  "note": "Append-only. Each entry is one applied human geometry adjudication. Corrections are new entries, never edits. No entry here establishes evidence or publication.",
+  "record_type": "timonelo.spatial.adjudication-log.v1"
+}
