@@ -1,0 +1,44 @@
+{
+  "application_status": "STAGED_NOT_APPLIED",
+  "applied_to_repository": false,
+  "deck_number": 14,
+  "entries": [
+    {
+      "decision": "ACCEPT",
+      "deckNumber": 14,
+      "geometryJudgement": "ACCEPTED",
+      "identityPath": "CABIN",
+      "identityReason": "No cabin identity statement registered for cabin:MSC-BELLISSIMA:14216",
+      "note": "",
+      "objectId": "bellissima-deck14-cabin-14216",
+      "outcome": "GEOMETRY_APPROVED_IDENTITY_BLOCKED",
+      "postReviewState": {
+        "evidenceCondition": "UNKNOWN",
+        "humanReviewState": "APPROVED",
+        "publishStatus": "PUBLISH_BLOCKED"
+      },
+      "preReviewState": {
+        "evidenceCondition": "UNKNOWN",
+        "humanReviewState": "DRAFT",
+        "publishStatus": "PUBLISH_BLOCKED"
+      },
+      "reviewer": "Flo",
+      "timestamp": "2026-09-17T16:03:53.572Z"
+    }
+  ],
+  "generated_at": "2026-09-17T16:03:53.572Z",
+  "proof_path": "geometry/proofs/bellissima/deck14/deck14.proof.json",
+  "proof_schema": "timonelo.one-deck-geometry-proof.v1",
+  "proof_sha256": "f9038f979d1df96de66edef746830fd4d7cf044c3e03fbf4fa70357151ddd2c4",
+  "record_type": "timonelo.deck-review.staged-record.v1",
+  "reviewer": "Flo",
+  "source": {
+    "artifact_id": "ART-0001",
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "pdf_page_number": 5,
+    "review_image_provenance_record": "frontend/public/data/deck14.page5.provenance.json",
+    "review_image_sha256": "ea218d18464f9223c28680028e09c87c76bec3f84f962f86834e279e1c6e97ff",
+    "review_image_uri": "/data/deck14.page5.png",
+    "review_image_verification": "REPRODUCED"
+  }
+}
