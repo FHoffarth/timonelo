@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import {
   Shield,
   CheckCircle,
@@ -11,16 +11,19 @@ import {
   Eye,
   Info,
   UserCheck,
+  Download,
 } from 'lucide-react';
 import {
   DeckReviewWorkspaceViewModel,
   ReviewDecisionState,
-  ReviewAuditLogEntry,
+  FinalizeReviewResult,
 } from './types';
 import {
+  SUPPORTED_REVIEW_DECKS,
   buildDeckReviewWorkspaceViewModel,
   finalizeReviewedDecisions,
 } from './adapter';
+import { isAdmittedPassengerEntity } from '../ship-overview/adapter';
 
 interface DeckReviewWorkspaceProps {
   initialDeckNumber?: number;
@@ -42,27 +45,31 @@ export default function DeckReviewWorkspace({
   const [zoom, setZoom] = useState<number>(1.0);
   const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isFinalizeModalOpen, setIsFinalizeModalOpen] = useState<boolean>(false);
-  const [finalizeResult, setFinalizeResult] = useState<{
-    adjudicatedObjectsCount: number;
-    promotedToPassengerCount: number;
-    blockedCount: number;
-    auditEntries: ReviewAuditLogEntry[];
-  } | null>(null);
+  const [finalizeResult, setFinalizeResult] = useState<FinalizeReviewResult | null>(null);
   const [previewMode, setPreviewMode] = useState<'REVIEW' | 'PASSENGER_PREVIEW'>('REVIEW');
+  const [searchText, setSearchText] = useState<string>('');
 
-  const viewModel: DeckReviewWorkspaceViewModel = useMemo(() => {
-    return buildDeckReviewWorkspaceViewModel(selectedDeckNumber, stagedDecisions);
+  // Fail closed: an unsupported deck yields an explicit refusal, never another deck's proof.
+  const loaded = useMemo((): { viewModel: DeckReviewWorkspaceViewModel | null; error: string | null } => {
+    try {
+      return { viewModel: buildDeckReviewWorkspaceViewModel(selectedDeckNumber, stagedDecisions), error: null };
+    } catch (err: any) {
+      return { viewModel: null, error: err?.message || `Deck ${selectedDeckNumber} is not available for review.` };
+    }
   }, [selectedDeckNumber, stagedDecisions]);
+  const candidates = loaded.viewModel?.candidates ?? [];
 
   const selectedCandidate = useMemo(() => {
-    if (!selectedObjectId) return viewModel.candidates[0] || null;
-    return viewModel.candidates.find((c) => c.objectId === selectedObjectId) || viewModel.candidates[0] || null;
-  }, [selectedObjectId, viewModel.candidates]);
+    if (!selectedObjectId) return candidates[0] || null;
+    return candidates.find((c) => c.objectId === selectedObjectId) || candidates[0] || null;
+  }, [selectedObjectId, candidates]);
 
   const filteredCandidates = useMemo(() => {
-    if (filterState === 'ALL') return viewModel.candidates;
-    return viewModel.candidates.filter((c) => c.decision.state === filterState);
-  }, [viewModel.candidates, filterState]);
+    const byState = filterState === 'ALL' ? candidates : candidates.filter((c) => c.decision.state === filterState);
+    const q = searchText.trim().toLowerCase();
+    if (!q) return byState;
+    return byState.filter((c) => c.extractedLabel.toLowerCase().includes(q) || c.objectId.toLowerCase().includes(q));
+  }, [candidates, filterState, searchText]);
 
   const handleDecision = (objectId: string, decision: ReviewDecisionState) => {
     const actor = reviewerName.trim();
@@ -90,6 +97,18 @@ export default function DeckReviewWorkspace({
     }));
   };
 
+  const handleDownloadStagedRecord = () => {
+    if (!finalizeResult) return;
+    const rec = finalizeResult.stagedRecord;
+    const blob = new Blob([JSON.stringify(rec, null, 2) + '\n'], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `deck${String(rec.deck_number).padStart(2, '0')}.review.staged.${rec.generated_at.replace(/[:.]/g, '-')}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const handleFinalize = () => {
     const actor = reviewerName.trim();
     if (!actor) {
@@ -99,11 +118,69 @@ export default function DeckReviewWorkspace({
     setReviewerError(null);
     try {
       const result = finalizeReviewedDecisions(selectedDeckNumber, stagedDecisions, actor);
+      if (result.applicationStatus !== 'STAGED_NOT_APPLIED' || result.stagedRecord.applied_to_repository !== false) {
+        throw new Error('Unexpected review application status; refusing to display result.');
+      }
       setFinalizeResult(result);
     } catch (err: any) {
       setReviewerError(err?.message || 'Reviewer name is required before finalizing decisions.');
     }
   };
+
+  if (!loaded.viewModel) {
+    return (
+      <div className={`w-full max-w-7xl mx-auto px-4 py-6 space-y-6 ${className}`}>
+        <div role="alert" className="bg-white rounded-3xl p-6 border border-red-200 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-red-700">
+            <AlertTriangle className="w-4 h-4" />
+            <span className="text-xs font-mono font-bold uppercase tracking-widest">Review unavailable</span>
+          </div>
+          <h1 className="text-xl font-bold text-[#0C1B2A]">Deck {String(selectedDeckNumber)} is not available for review</h1>
+          <p className="text-xs text-[#5B6570]">{loaded.error}</p>
+          <p className="text-xs text-[#5B6570]">No other deck&apos;s proof is shown in its place.</p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {SUPPORTED_REVIEW_DECKS.map((n) => (
+              <button
+                key={n}
+                onClick={() => {
+                  setSelectedDeckNumber(n);
+                  setSelectedObjectId(null);
+                  setStagedDecisions({});
+                }}
+                className="px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-200 bg-white text-[#0C1B2A] hover:bg-slate-50 cursor-pointer"
+              >
+                Open Deck {n}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  const viewModel: DeckReviewWorkspaceViewModel = loaded.viewModel;
+  const currentlyAdmittedCount = viewModel.candidates.filter((c) =>
+    isAdmittedPassengerEntity({
+      evidence_condition: c.evidenceCondition,
+      human_review_state: c.humanReviewState,
+      publish_status: c.publishStatus,
+      geometry_provenance: c.geometryProvenance,
+    }),
+  ).length;
+
+  // Display-only zoom, centred on the selected candidate so a human can read a
+  // single cabin cell against the source raster. Never changes geometry.
+  const baseViewBox = viewModel.sourceInfo.viewBox;
+  const effectiveViewBox = (() => {
+    if (zoom <= 1 || !selectedCandidate) return baseViewBox;
+    const width = baseViewBox.width / zoom;
+    const height = baseViewBox.height / zoom;
+    return {
+      minX: selectedCandidate.center[0] - width / 2,
+      minY: selectedCandidate.center[1] - height / 2,
+      width,
+      height,
+    };
+  })();
 
   return (
     <div className={`w-full max-w-7xl mx-auto px-4 py-6 space-y-6 ${className}`}>
@@ -233,13 +310,20 @@ export default function DeckReviewWorkspace({
             <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl text-[11px] text-slate-300 font-mono flex items-center gap-2 border border-white/10">
               <FileText className="w-3.5 h-3.5 text-[#C58A46]" />
               <span>Source: {viewModel.sourceInfo.artifactId} (Page {viewModel.sourceInfo.pageNumber})</span>
+              {viewModel.sourceInfo.sourceImageSha256 ? (
+                <span className="text-slate-500" title={viewModel.sourceInfo.sourceImageProvenanceRecord || undefined}>
+                  raster sha256 {viewModel.sourceInfo.sourceImageSha256.slice(0, 12)}…
+                </span>
+              ) : (
+                <span className="text-amber-400">raster provenance not recorded</span>
+              )}
             </div>
 
             {/* SVG Canvas Overlaying Source Background */}
             <div className="w-full h-full relative flex items-center justify-center">
               <svg
                 className="w-full h-auto max-h-[600px] select-none"
-                viewBox={`${viewModel.sourceInfo.viewBox.minX} ${viewModel.sourceInfo.viewBox.minY} ${viewModel.sourceInfo.viewBox.width} ${viewModel.sourceInfo.viewBox.height}`}
+                viewBox={`${effectiveViewBox.minX} ${effectiveViewBox.minY} ${effectiveViewBox.width} ${effectiveViewBox.height}`}
                 preserveAspectRatio="xMidYMid meet"
               >
                 {/* Source raster drawing crop underlay */}
@@ -273,7 +357,7 @@ export default function DeckReviewWorkspace({
                   }
 
                   if (isSelected) {
-                    fill = 'rgba(197, 138, 70, 0.4)';
+                    fill = zoom > 1 ? 'rgba(197, 138, 70, 0.12)' : 'rgba(197, 138, 70, 0.4)';
                     stroke = '#C58A46';
                   }
 
@@ -283,15 +367,15 @@ export default function DeckReviewWorkspace({
                         points={pts}
                         fill={fill}
                         stroke={stroke}
-                        strokeWidth={isSelected ? 0.003 : 0.0012}
+                        strokeWidth={(isSelected ? 0.003 : 0.0012) / zoom}
                       />
                       {isSelected && (
                         <polygon
                           points={pts}
                           fill="none"
                           stroke="#FFFFFF"
-                          strokeWidth={0.004}
-                          strokeDasharray="0.003 0.002"
+                          strokeWidth={0.004 / zoom}
+                          strokeDasharray={`${0.003 / zoom} ${0.002 / zoom}`}
                         />
                       )}
                     </g>
@@ -303,14 +387,14 @@ export default function DeckReviewWorkspace({
             {/* Canvas Zoom Controls */}
             <div className="absolute bottom-4 right-4 flex gap-2 z-10">
               <button
-                onClick={() => setZoom((z) => Math.min(z * 1.3, 4.0))}
+                onClick={() => setZoom((z) => Math.min(z * 1.5, 12.0))}
                 aria-label="Zoom in"
                 className="p-2 rounded-xl bg-white/90 text-[#0C1B2A] hover:bg-white cursor-pointer shadow-md"
               >
                 <ZoomIn className="w-4 h-4" />
               </button>
               <button
-                onClick={() => setZoom((z) => Math.max(z / 1.3, 0.8))}
+                onClick={() => setZoom((z) => Math.max(z / 1.5, 1.0))}
                 aria-label="Zoom out"
                 className="p-2 rounded-xl bg-white/90 text-[#0C1B2A] hover:bg-white cursor-pointer shadow-md"
               >
@@ -337,6 +421,15 @@ export default function DeckReviewWorkspace({
                 <span className="font-bold text-[#0C1B2A] uppercase tracking-wider">CANDIDATE OBJECTS</span>
                 <span className="text-slate-400 font-mono">{filteredCandidates.length} of {viewModel.candidates.length}</span>
               </div>
+
+              <input
+                type="search"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                placeholder="Find candidate (e.g. 14122)"
+                aria-label="Find candidate"
+                className="w-full text-xs p-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-1 focus:ring-[#C58A46]"
+              />
 
               <div className="flex gap-1.5 overflow-x-auto pb-1 text-[11px] font-semibold">
                 {['ALL', 'UNREVIEWED', 'ACCEPT', 'REJECT', 'NEEDS_CORRECTION'].map((st) => (
@@ -414,7 +507,42 @@ export default function DeckReviewWorkspace({
                   Acceptance confirms this polygon corresponds to the labeled region on official drawings. It does not establish entrance location, passenger access, connectivity, or accessibility.
                 </div>
 
+                {selectedCandidate.identityPath === 'CABIN' && (
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-slate-700">Cabin Identity Statement Association:</span>
+                      <span className="font-mono text-[10px] px-2 py-0.5 rounded border font-bold bg-slate-200 text-slate-700 border-slate-300">
+                        {selectedCandidate.cabinIdentity?.state}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-500 leading-relaxed">{selectedCandidate.cabinIdentity?.reason}</p>
+                    <div className="text-[11px] font-mono text-slate-500 space-y-0.5">
+                      <div>Entity: {selectedCandidate.cabinIdentity?.expectedEntityId || '—'}</div>
+                      <div>cabin.exists: {selectedCandidate.cabinIdentity?.existsStatementId || '—'}</div>
+                      <div>cabin.deck: {selectedCandidate.cabinIdentity?.deckStatementId || '—'}</div>
+                      <div>Vessel ownership consistent: {selectedCandidate.cabinIdentity?.vesselOwnershipConsistent ? 'yes' : 'no'}</div>
+                    </div>
+                    {(selectedCandidate.cabinIdentity?.blockers.length ?? 0) > 0 && (
+                      <ul className="list-disc pl-4 text-[11px] text-amber-800 space-y-0.5">
+                        {selectedCandidate.cabinIdentity!.blockers.map((b) => (
+                          <li key={b}>{b}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <p className="text-[11px] text-slate-500">
+                      Accepting geometry confirms the envelope only. It does not admit the cabin&apos;s identity.
+                    </p>
+                    <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px]">
+                      <span className="text-slate-500">Admitted Passenger Identity:</span>
+                      <span className={`font-semibold ${selectedCandidate.isAdmittedIdentity ? 'text-emerald-700' : 'text-amber-700'}`}>
+                        {selectedCandidate.isAdmittedIdentity ? 'ADMITTED (Verified)' : 'UNADMITTED (Draft/Blocked)'}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Evidence & Identity Admissibility Box */}
+                {selectedCandidate.identityPath !== 'CABIN' && (
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-slate-700">Venue Statement Association:</span>
@@ -446,11 +574,16 @@ export default function DeckReviewWorkspace({
                     </span>
                   </div>
                 </div>
+                )}
 
                 {/* Technical Coordinates */}
                 <div className="text-[11px] font-mono text-slate-500 space-y-1 bg-slate-100/50 p-2.5 rounded-xl">
                   <div>ID: {selectedCandidate.objectId}</div>
+                  <div>Source: PDF page {selectedCandidate.sourcePage}</div>
                   <div>Locator: {selectedCandidate.sourceLocator}</div>
+                  <div>
+                    Lifecycle: {selectedCandidate.evidenceCondition} / {selectedCandidate.humanReviewState} / {selectedCandidate.publishStatus}
+                  </div>
                   <div>
                     BBox: [{selectedCandidate.normalizedBbox.map((n) => n.toFixed(4)).join(', ')}]
                   </div>
@@ -516,7 +649,7 @@ export default function DeckReviewWorkspace({
                     type="text"
                     value={selectedCandidate.decision.note || ''}
                     onChange={(e) => handleNoteChange(selectedCandidate.objectId, e.target.value)}
-                    placeholder="Extracted region aligns with the labeled London Theatre area on the source drawing."
+                    placeholder="What did you compare on the source drawing?"
                     className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-1 focus:ring-[#C58A46]"
                   />
                 </div>
@@ -542,10 +675,10 @@ export default function DeckReviewWorkspace({
           <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
             <Info className="w-6 h-6 text-slate-400 mx-auto" />
             <p className="text-xs text-slate-600 font-medium max-w-lg mx-auto leading-relaxed">
-              In repository truth, 0 public venues on Decks 5, 6, 7 are currently admitted for passenger publication (statements remain DRAFT). Accepted visual geometries are stored safely in review records without bypassing publication gates.
+              In repository truth, {currentlyAdmittedCount} of {viewModel.summary.total} Deck {viewModel.selectedDeckNumber} objects are currently admitted for passenger publication. Decisions made in this workspace are staged only and do not change this count.
             </p>
-            <div className="inline-block px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-800 font-bold">
-              Admitted Deck 14: 243 Cabins + 1 Vertical Core Visible
+            <div className="inline-block px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700 font-bold">
+              Admitted on Deck {viewModel.selectedDeckNumber}: {currentlyAdmittedCount}
             </div>
           </div>
         </div>
@@ -557,9 +690,9 @@ export default function DeckReviewWorkspace({
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 space-y-6 animate-fadeIn">
             <div className="space-y-1">
               <span className="text-xs font-mono text-[#C58A46] font-bold uppercase">FINALIZATION SUMMARY</span>
-              <h2 className="text-xl font-bold text-[#0C1B2A]">Finalize Reviewed Geometry</h2>
+              <h2 className="text-xl font-bold text-[#0C1B2A]">Generate Staged Review Record</h2>
               <p className="text-xs text-[#5B6570]">
-                Surgically record human review decisions. Approved visual geometries will still pass through Gatekeeper publication rules.
+                Produces a review record of your explicit decisions for Deck {selectedDeckNumber}. It is not saved to the repository and changes no proof or lifecycle state until applied through the governed repository path.
               </p>
             </div>
 
@@ -607,12 +740,21 @@ export default function DeckReviewWorkspace({
             </div>
 
             {finalizeResult && (
-              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 space-y-1">
-                <span className="font-bold block">Adjudication Complete:</span>
-                <div>Adjudicated: {finalizeResult.adjudicatedObjectsCount} objects</div>
-                <div>Reviewer: {finalizeResult.auditEntries[0]?.reviewer}</div>
-                <div>Promoted to Publish: {finalizeResult.promotedToPassengerCount} (0 unadmitted statements bypassed)</div>
-                <div>Blocked/Retained in Proofs: {finalizeResult.blockedCount}</div>
+              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-1">
+                <span className="font-bold block">Review record STAGED — not applied to the repository</span>
+                <div>Decisions in record: {finalizeResult.adjudicatedObjectsCount} objects</div>
+                <div>Reviewer: {finalizeResult.stagedRecord.reviewer}</div>
+                <div>Source: {finalizeResult.stagedRecord.source.artifact_id} PDF page {finalizeResult.stagedRecord.source.pdf_page_number}</div>
+                <div>Would pass identity gate if applied: {finalizeResult.promotedToPassengerCount}</div>
+                <div>Would remain publication-blocked: {finalizeResult.blockedCount}</div>
+                <div>Nothing has been persisted. Download the record and apply it through the repository to make it durable.</div>
+                <button
+                  onClick={handleDownloadStagedRecord}
+                  className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-amber-300 bg-white text-amber-900 font-semibold cursor-pointer"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download staged review record (JSON)</span>
+                </button>
               </div>
             )}
 
@@ -631,7 +773,7 @@ export default function DeckReviewWorkspace({
                 onClick={handleFinalize}
                 className="px-5 py-2.5 rounded-xl bg-[#0C1B2A] text-white text-xs font-semibold hover:bg-[#1e344d] transition-colors shadow-md cursor-pointer"
               >
-                Apply Surgical Finalization
+                Generate Staged Record
               </button>
             </div>
           </div>

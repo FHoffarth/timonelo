@@ -5,6 +5,35 @@
 export type ReviewDecisionState = 'UNREVIEWED' | 'ACCEPT' | 'REJECT' | 'NEEDS_CORRECTION';
 export type VenueAssociationState = 'MATCHED' | 'AMBIGUOUS' | 'NO_MATCH';
 
+/**
+ * Which identity admission path a candidate is evaluated on. Cabins and venues
+ * are different kinds of entity with different canonical statement types, so
+ * neither may borrow the other's admission.
+ */
+export type IdentityPath = 'VENUE' | 'CABIN' | 'NONE';
+
+export type CabinIdentityState =
+  | 'ADMITTED'
+  | 'FOUND_UNADMITTED'
+  | 'AMBIGUOUS'
+  | 'NO_STATEMENT';
+
+export interface CabinIdentityViewModel {
+  state: CabinIdentityState;
+  cabinNumber: string;
+  expectedEntityId: string;
+  existsStatementId?: string;
+  deckStatementId?: string;
+  /** Artifact behind the statements names the expected vessel, and the entity id is scoped to it. */
+  vesselOwnershipConsistent: boolean;
+  isAdmittedIdentity: boolean;
+  /** Every reason admission is refused. Empty only when admitted. */
+  blockers: string[];
+  reason: string;
+}
+
+export type ReviewApplicationStatus = 'STAGED_NOT_APPLIED';
+
 export interface BBox {
   x0: number;
   y0: number;
@@ -45,6 +74,8 @@ export interface SpatialReviewCandidateViewModel {
   humanReviewState: string;
   publishStatus: string;
   venueAssociation: VenueAssociationViewModel;
+  identityPath: IdentityPath;
+  cabinIdentity?: CabinIdentityViewModel;
   decision: ReviewDecisionViewModel;
   isAdmittedIdentity: boolean;
 }
@@ -67,8 +98,12 @@ export interface DeckReviewWorkspaceViewModel {
   }>;
   sourceInfo: {
     artifactId: string;
+    artifactSha256: string;
     pageNumber: number;
     sourceImageUri: string;
+    /** SHA-256 of the review raster when a provenance record exists for it, else null. */
+    sourceImageSha256: string | null;
+    sourceImageProvenanceRecord: string | null;
     deckBounds: [number, number, number, number];
     viewBox: { minX: number; minY: number; width: number; height: number };
   };
@@ -94,4 +129,42 @@ export interface ReviewAuditLogEntry {
     evidenceCondition: string;
   };
   outcome: string;
+  /** Identity admission path the outcome was computed on. */
+  identityPath?: IdentityPath;
+  /** Why identity was or was not admitted, as evaluated at staging time. */
+  identityReason?: string;
+}
+
+/**
+ * A generated review record. It is NOT applied to the repository: no proof,
+ * statement or lifecycle axis changes until a human applies it through the
+ * governed repository path. `applied_to_repository` is always false here.
+ */
+export interface StagedDeckReviewRecord {
+  record_type: 'timonelo.deck-review.staged-record.v1';
+  application_status: ReviewApplicationStatus;
+  applied_to_repository: false;
+  deck_number: number;
+  proof_path: string;
+  proof_schema: string;
+  source: {
+    artifact_id: string;
+    artifact_sha256: string;
+    pdf_page_number: number;
+    review_image_uri: string;
+    review_image_sha256: string | null;
+    review_image_provenance_record: string | null;
+  };
+  reviewer: string;
+  generated_at: string;
+  entries: ReviewAuditLogEntry[];
+}
+
+export interface FinalizeReviewResult {
+  adjudicatedObjectsCount: number;
+  promotedToPassengerCount: number;
+  blockedCount: number;
+  auditEntries: ReviewAuditLogEntry[];
+  applicationStatus: ReviewApplicationStatus;
+  stagedRecord: StagedDeckReviewRecord;
 }
