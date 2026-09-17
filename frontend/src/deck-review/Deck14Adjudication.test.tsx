@@ -28,7 +28,10 @@ import {
 import page3Raster from './assets/art0001_page3.png';
 import deck14Proof from '../../../geometry/proofs/bellissima/deck14/deck14.proof.json';
 import deck14UnderlayProvenance from '../../public/data/deck14.page5.provenance.json';
+import deck14ProofProvenance from '../../../geometry/proofs/bellissima/deck14/deck14.proof.provenance.json';
+import page3Provenance from './assets/art0001_page3.provenance.json';
 import { isAdmittedPassengerEntity } from '../ship-overview/adapter';
+import { UNDERLAY_HREF } from '../spatial-proof/ProofCanvas';
 import { isPassengerEntityAdmitted } from '../semantic-deck/passengerAdmission';
 
 const CABIN_14122 = 'bellissima-deck14-cabin-14122';
@@ -39,6 +42,7 @@ const canonicalCabinExists = (overrides: Record<string, unknown> = {}) => ({
   artifact_id: 'ART-0001',
   entity_id: 'cabin:MSC-BELLISSIMA:14122',
   statement_type: 'cabin.exists',
+  question_id: 'Q-CABIN-EXISTS',
   value: 'true',
   method: 'DIRECT',
   derivation: 'LOCAL',
@@ -49,7 +53,48 @@ const canonicalCabinExists = (overrides: Record<string, unknown> = {}) => ({
   ...overrides,
 });
 const canonicalCabinDeck = (overrides: Record<string, unknown> = {}) =>
-  canonicalCabinExists({ statement_type: 'cabin.deck', value: '14', ...overrides });
+  canonicalCabinExists({
+    statement_type: 'cabin.deck',
+    question_id: 'Q-CABIN-DECK',
+    value: '14',
+    evidence_event_ids: ['EVT-SYNTHETIC-0002'],
+    ...overrides,
+  });
+
+/** Events that genuinely observe what the canonical fixtures claim. */
+const syntheticEvents = (overrides: Array<Record<string, unknown>> = []) => [
+  {
+    event_id: 'EVT-SYNTHETIC-0001',
+    entity_id: 'cabin:MSC-BELLISSIMA:14122',
+    question_id: 'Q-CABIN-EXISTS',
+    observed_value: 'true',
+    artifact_sha256: ART_0001_SHA,
+    locator: 'page5:text-block-46',
+    supersedes: null,
+  },
+  {
+    event_id: 'EVT-SYNTHETIC-0002',
+    entity_id: 'cabin:MSC-BELLISSIMA:14122',
+    question_id: 'Q-CABIN-DECK',
+    observed_value: '14',
+    artifact_sha256: ART_0001_SHA,
+    locator: 'page5:text-block-46',
+    supersedes: null,
+  },
+  ...overrides,
+];
+
+const BELLISSIMA_ARTIFACTS = {
+  'ART-0001': { artifact_id: 'ART-0001', subject_vessels: ['IMO9766205'] },
+  'ART-FOREIGN': { artifact_id: 'ART-FOREIGN', subject_vessels: ['IMO9999999'] },
+  'ART-NO-VESSEL': { artifact_id: 'ART-NO-VESSEL' },
+};
+
+const admits = (
+  statements: Record<string, any>,
+  artifacts: Record<string, any> = BELLISSIMA_ARTIFACTS,
+  events: any[] = syntheticEvents(),
+) => matchCabinIdentityStatement('14122', 14, statements, artifacts, events);
 
 describe('P0: unsupported decks fail closed', () => {
   it('throws for an unsupported deck instead of falling back to Deck 5', () => {
@@ -117,6 +162,69 @@ describe('P0: Deck 14 resolves its own governed proof and source raster', () => 
     expect(deck14UnderlayProvenance.output_sha256).toBe(PAGE5_RASTER_SHA);
   });
 
+  // P2-1. Every wired deck is described by the same mechanism.
+  it('describes every reviewable deck raster with a provenance record', () => {
+    for (const deck of [5, 6, 7, 14]) {
+      const src = resolveDeckReviewSource(deck);
+      expect(src.image.provenanceRecord).toBeTruthy();
+      expect(src.image.sha256).toMatch(/^[0-9a-f]{64}$/);
+      expect(src.image.pdfPageNumber).toBe(src.pdfPageNumber);
+      expect(src.proofSha256).toMatch(/^[0-9a-f]{64}$/);
+    }
+  });
+
+  it('marks the page-3 raster DECLARED because its bytes were not reproduced', () => {
+    // Re-rendering ART-0001 page 3 does not yield these bytes, and the asset
+    // matches no page of ART-0001 at the recorded settings. The record says so
+    // rather than asserting a page binding nobody proved. Deck 14 is unaffected.
+    expect(page3Provenance.verification.render_reproduced).toBe(false);
+    expect(page3Provenance.source.binding).toBe('DECLARED');
+    for (const deck of [5, 6, 7]) {
+      expect(resolveDeckReviewSource(deck).image.verification).toBe('DECLARED');
+    }
+    expect(resolveDeckReviewSource(14).image.verification).toBe('REPRODUCED');
+  });
+
+  // P2-4. The cabin path also routes six Deck 5 objects. No admission delta.
+  it('leaves the six Deck 5 cabin candidates unadmitted with no identity statement', () => {
+    const vm = buildDeckReviewWorkspaceViewModel(5, {});
+    const cabins = vm.candidates.filter((c) => c.semanticType === 'cabin');
+    expect(cabins.map((c) => c.objectId).sort()).toEqual([
+      'bellissima-deck05-cabin-5014',
+      'bellissima-deck05-cabin-5016',
+      'bellissima-deck05-cabin-5059',
+      'bellissima-deck05-cabin-5063',
+      'bellissima-deck05-cabin-5066',
+      'bellissima-deck05-cabin-5137',
+    ]);
+    for (const c of cabins) {
+      expect(c.identityPath).toBe('CABIN');
+      expect(c.cabinIdentity?.state).toBe('NO_STATEMENT');
+      expect(c.isAdmittedIdentity).toBe(false);
+      expect(c.publishStatus).toBe('PUBLISH_BLOCKED');
+    }
+    // The venue candidates on the same deck keep the venue path.
+    expect(vm.candidates.filter((c) => c.identityPath === 'VENUE').length).toBe(19);
+  });
+
+  // P2-3. The count reflects staged state rather than the object total.
+  it('counts unreviewed objects from the staged decisions', () => {
+    const none = buildDeckReviewWorkspaceViewModel(14, {});
+    expect(none.availableDecks.find((d) => d.deckNumber === 14)?.unreviewedCount).toBe(244);
+    const one = buildDeckReviewWorkspaceViewModel(14, { [CABIN_14122]: { state: 'ACCEPT' } });
+    expect(one.availableDecks.find((d) => d.deckNumber === 14)?.unreviewedCount).toBe(243);
+  });
+
+  // P2-5. One declaration of the raster path, and it is source context only.
+  it('reuses the canonical underlay href and never makes the raster pickable', () => {
+    expect(resolveDeckReviewSource(14).image.uri).toBe(UNDERLAY_HREF);
+    const workspace = readFileSync(new URL('./DeckReviewWorkspace.tsx', import.meta.url), 'utf-8');
+    expect(workspace).toContain('data-layer="source-context"');
+    expect(workspace).toContain('pointerEvents: "none"');
+    const adapter = readFileSync(new URL('./adapter.ts', import.meta.url), 'utf-8');
+    expect(adapter).not.toContain('/data/deck14.page5.png');
+  });
+
   it('keeps Decks 5/6/7 on page 3 with the page-3 raster', () => {
     for (const [deck, count] of [[5, 30], [6, 26], [7, 15]] as const) {
       const vm = buildDeckReviewWorkspaceViewModel(deck, {});
@@ -170,41 +278,124 @@ describe('P0: cabin 14122 review candidate and identity admission', () => {
     expect(r.vesselOwnershipConsistent).toBe(true);
     expect(r.blockers.join(' ')).toMatch(/legacy review_state/i);
     expect(r.blockers.join(' ')).toMatch(/no evidence events/i);
+    // The limitation is stated rather than papered over: this check cannot
+    // re-verify artifact digests and is not sufficient for backend admission.
+    const adapterSource = readFileSync(new URL('./adapter.ts', import.meta.url), 'utf-8');
+    expect(adapterSource).toContain('is not sufficient for backend admission');
+    expect(adapterSource).not.toContain('only ever be stricter');
   });
 
   it('only admits a cabin identity when canonical axes, evidence events, deck and vessel all hold', () => {
     const ok = { A: canonicalCabinExists(), B: canonicalCabinDeck() };
-    expect(matchCabinIdentityStatement('14122', 14, ok).isAdmittedIdentity).toBe(true);
+    expect(admits(ok).isAdmittedIdentity).toBe(true);
 
     const legacy = {
       A: { artifact_id: 'ART-0001', entity_id: 'cabin:MSC-BELLISSIMA:14122', statement_type: 'cabin.exists', value: 'true', method: 'DIRECT', review_state: 'PUBLISHED' },
       B: canonicalCabinDeck(),
     };
-    expect(matchCabinIdentityStatement('14122', 14, legacy).isAdmittedIdentity).toBe(false);
+    expect(admits(legacy).isAdmittedIdentity).toBe(false);
 
     const noEvents = { A: canonicalCabinExists({ evidence_event_ids: [] }), B: canonicalCabinDeck() };
-    expect(matchCabinIdentityStatement('14122', 14, noEvents).isAdmittedIdentity).toBe(false);
+    expect(admits(noEvents).isAdmittedIdentity).toBe(false);
 
     const wrongDeck = { A: canonicalCabinExists(), B: canonicalCabinDeck({ value: '15' }) };
-    expect(matchCabinIdentityStatement('14122', 14, wrongDeck).isAdmittedIdentity).toBe(false);
+    expect(admits(wrongDeck).isAdmittedIdentity).toBe(false);
 
     const noDeck = { A: canonicalCabinExists() };
-    expect(matchCabinIdentityStatement('14122', 14, noDeck).isAdmittedIdentity).toBe(false);
-
-    const foreignVesselArtifact = { A: canonicalCabinExists({ artifact_id: 'ART-0003' }), B: canonicalCabinDeck() };
-    const foreign = matchCabinIdentityStatement('14122', 14, foreignVesselArtifact);
-    expect(foreign.isAdmittedIdentity).toBe(false);
-    expect(foreign.vesselOwnershipConsistent).toBe(false);
+    expect(admits(noDeck).isAdmittedIdentity).toBe(false);
 
     const blocked = { A: canonicalCabinExists({ publish_status: 'PUBLISH_BLOCKED' }), B: canonicalCabinDeck() };
-    expect(matchCabinIdentityStatement('14122', 14, blocked).isAdmittedIdentity).toBe(false);
+    expect(admits(blocked).isAdmittedIdentity).toBe(false);
 
     const competing = { A: canonicalCabinExists(), A2: canonicalCabinExists(), B: canonicalCabinDeck() };
-    const amb = matchCabinIdentityStatement('14122', 14, competing);
+    const amb = admits(competing);
     expect(amb.state).toBe('AMBIGUOUS');
     expect(amb.isAdmittedIdentity).toBe(false);
 
-    expect(matchCabinIdentityStatement('14999', 14, ok).state).toBe('NO_STATEMENT');
+    expect(matchCabinIdentityStatement('14999', 14, ok, BELLISSIMA_ARTIFACTS, syntheticEvents()).state).toBe('NO_STATEMENT');
+  });
+
+  // P1-3. The previous version of this used ART-0003, which has no
+  // `subject_vessels` field at all, so it passed on the absent-field branch and
+  // never exercised a genuinely foreign vessel. No artifact in the repository
+  // names a vessel other than IMO9766205, so the case needs a synthetic one.
+  it('refuses a cabin whose source artifact names a different vessel', () => {
+    const foreign = admits({
+      A: canonicalCabinExists({ artifact_id: 'ART-FOREIGN' }),
+      B: canonicalCabinDeck({ artifact_id: 'ART-FOREIGN' }),
+    });
+    expect(foreign.vesselOwnershipConsistent).toBe(false);
+    expect(foreign.isAdmittedIdentity).toBe(false);
+    expect(foreign.blockers.join(' ')).toMatch(/does not name vessel IMO9766205/);
+
+    const absent = admits({
+      A: canonicalCabinExists({ artifact_id: 'ART-NO-VESSEL' }),
+      B: canonicalCabinDeck({ artifact_id: 'ART-NO-VESSEL' }),
+    });
+    expect(absent.vesselOwnershipConsistent).toBe(false);
+
+    // Positive control: the same shape with the right vessel is admitted, so
+    // this matrix cannot pass by being false in every direction.
+    const owned = admits({ A: canonicalCabinExists(), B: canonicalCabinDeck() });
+    expect(owned.vesselOwnershipConsistent).toBe(true);
+    expect(owned.isAdmittedIdentity).toBe(true);
+  });
+
+  // P1-1. Citing an event id is not the same as being backed by one.
+  it('refuses cited evidence events that do not exist, are superseded, or are not bound to the claim', () => {
+    const cite = (id: string) => ({
+      A: canonicalCabinExists({ evidence_event_ids: [id] }),
+      B: canonicalCabinDeck(),
+    });
+
+    const missing = admits(cite('EVT-DOES-NOT-EXIST'));
+    expect(missing.isAdmittedIdentity).toBe(false);
+    expect(missing.blockers.join(' ')).toMatch(/is not a recorded event/);
+
+    const superseded = admits(
+      cite('EVT-SYNTHETIC-0001'),
+      BELLISSIMA_ARTIFACTS,
+      syntheticEvents([
+        { event_id: 'EVT-SYNTHETIC-0003', entity_id: 'cabin:MSC-BELLISSIMA:14122', question_id: 'Q-CABIN-EXISTS', observed_value: 'true', supersedes: 'EVT-SYNTHETIC-0001' },
+      ]),
+    );
+    expect(superseded.isAdmittedIdentity).toBe(false);
+    expect(superseded.blockers.join(' ')).toMatch(/has been superseded/);
+
+    const wrongEntity = admits(
+      { A: canonicalCabinExists(), B: canonicalCabinDeck() },
+      BELLISSIMA_ARTIFACTS,
+      [{ ...syntheticEvents()[0], entity_id: 'cabin:MSC-BELLISSIMA:99999' }, syntheticEvents()[1]],
+    );
+    expect(wrongEntity.isAdmittedIdentity).toBe(false);
+    expect(wrongEntity.blockers.join(' ')).toMatch(/observed entity cabin:MSC-BELLISSIMA:99999/);
+
+    const wrongQuestion = admits(
+      { A: canonicalCabinExists(), B: canonicalCabinDeck() },
+      BELLISSIMA_ARTIFACTS,
+      [{ ...syntheticEvents()[0], question_id: 'Q-SOMETHING-ELSE' }, syntheticEvents()[1]],
+    );
+    expect(wrongQuestion.isAdmittedIdentity).toBe(false);
+    expect(wrongQuestion.blockers.join(' ')).toMatch(/answered question Q-SOMETHING-ELSE/);
+
+    const wrongValue = admits(
+      { A: canonicalCabinExists(), B: canonicalCabinDeck() },
+      BELLISSIMA_ARTIFACTS,
+      [{ ...syntheticEvents()[0], observed_value: 'false' }, syntheticEvents()[1]],
+    );
+    expect(wrongValue.isAdmittedIdentity).toBe(false);
+    expect(wrongValue.blockers.join(' ')).toMatch(/observed 'false'/);
+
+    // Positive control: correctly bound events admit.
+    expect(admits({ A: canonicalCabinExists(), B: canonicalCabinDeck() }).isAdmittedIdentity).toBe(true);
+  });
+
+  // P2-2. The field reports vessel ownership and nothing else.
+  it('does not report a missing cabin.deck statement as a vessel ownership failure', () => {
+    const noDeck = admits({ A: canonicalCabinExists() });
+    expect(noDeck.isAdmittedIdentity).toBe(false);
+    expect(noDeck.vesselOwnershipConsistent).toBe(true);
+    expect(noDeck.blockers.join(' ')).toMatch(/No active cabin.deck statement/);
   });
 
   it('never auto-accepts 14122', () => {
@@ -226,6 +417,67 @@ describe('P0: Deck 14 finalization stays staged and publication-blocked', () => 
     expect(e.preReviewState).toEqual({ humanReviewState: 'DRAFT', publishStatus: 'PUBLISH_BLOCKED', evidenceCondition: 'UNKNOWN' });
     expect(e.postReviewState.publishStatus).toBe('PUBLISH_BLOCKED');
     expect(e.outcome).toBe('GEOMETRY_APPROVED_IDENTITY_BLOCKED');
+  });
+
+  // P1-4. The correction that matters: a review act is not an evidence act.
+  it('ACCEPT records a geometry judgement and leaves the evidence condition alone', () => {
+    const result = finalizeReviewedDecisions(14, { [CABIN_14122]: { state: 'ACCEPT' } }, 'synthetic_test_reviewer');
+    const e = result.auditEntries[0];
+
+    expect(e.geometryJudgement).toBe('ACCEPTED');
+    expect(e.postReviewState.humanReviewState).toBe('APPROVED');
+    // The governed evidence condition is carried through untouched. Accepting a
+    // polygon against a drawing observes nothing about the artifact.
+    expect(e.preReviewState.evidenceCondition).toBe('UNKNOWN');
+    expect(e.postReviewState.evidenceCondition).toBe('UNKNOWN');
+    expect(e.postReviewState.publishStatus).toBe('PUBLISH_BLOCKED');
+
+    // The staged post-state must not satisfy passenger admission.
+    expect(
+      isAdmittedPassengerEntity({
+        evidence_condition: e.postReviewState.evidenceCondition,
+        human_review_state: e.postReviewState.humanReviewState,
+        publish_status: e.postReviewState.publishStatus,
+        geometry_provenance: 'TRANSFORMED_SOURCE_GEOMETRY',
+      }),
+    ).toBe(false);
+  });
+
+  it('ACCEPT cannot promote even when the cabin identity is admitted', () => {
+    // Identity admitted is not evidence for the envelope, so the ceiling on a
+    // review act is the same either way: approved geometry, blocked publication.
+    const admitted = admits({ A: canonicalCabinExists(), B: canonicalCabinDeck() });
+    expect(admitted.isAdmittedIdentity).toBe(true);
+
+    const result = finalizeReviewedDecisions(14, { [CABIN_14122]: { state: 'ACCEPT' } }, 'synthetic_test_reviewer');
+    expect(result.promotedToPassengerCount).toBe(0);
+    expect(result.auditEntries.every((x) => x.postReviewState.publishStatus === 'PUBLISH_BLOCKED')).toBe(true);
+    expect(result.auditEntries.every((x) => x.postReviewState.evidenceCondition !== 'SUPPORTED')).toBe(true);
+
+    // No decision of any kind may write an evidence condition.
+    for (const state of ['ACCEPT', 'REJECT', 'NEEDS_CORRECTION'] as const) {
+      const r = finalizeReviewedDecisions(14, { [CABIN_14122]: { state } }, 'synthetic_test_reviewer');
+      expect(r.auditEntries[0].postReviewState.evidenceCondition).toBe('UNKNOWN');
+      expect(r.auditEntries[0].postReviewState.publishStatus).toBe('PUBLISH_BLOCKED');
+      expect(r.promotedToPassengerCount).toBe(0);
+    }
+  });
+
+  // P1-2. The proof being adjudicated is identified by digest.
+  it('binds the staged record to the exact proof bytes reviewed', () => {
+    const result = finalizeReviewedDecisions(14, { [CABIN_14122]: { state: 'ACCEPT' } }, 'synthetic_test_reviewer');
+    const rec = result.stagedRecord;
+
+    expect(rec.proof_sha256).toBe(deck14ProofProvenance.output_sha256);
+    expect(rec.proof_sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(deck14ProofProvenance.proof.deck_number).toBe(14);
+    expect(deck14ProofProvenance.proof.object_count).toBe(deck14Proof.objects.length);
+
+    // Three independent bindings, none standing in for another.
+    expect(rec.proof_sha256).not.toBe(rec.source.review_image_sha256);
+    expect(rec.proof_sha256).not.toBe(rec.source.artifact_sha256);
+    expect(rec.source.review_image_sha256).not.toBe(rec.source.artifact_sha256);
+    expect(resolveDeckReviewSource(14).proofSha256).toBe(rec.proof_sha256);
   });
 
   it('empty or phantom reviewer still fails on Deck 14', () => {

@@ -34,6 +34,15 @@ export interface CabinIdentityViewModel {
 
 export type ReviewApplicationStatus = 'STAGED_NOT_APPLIED';
 
+/**
+ * What a human decided about a geometry envelope.
+ *
+ * Deliberately separate from `evidence_condition`. Looking at a polygon against
+ * a drawing is a review act; SUPPORTED is what an evidence event earns. Folding
+ * one into the other is how a visual check became publication eligibility.
+ */
+export type GeometryJudgement = 'NOT_JUDGED' | 'ACCEPTED' | 'REJECTED' | 'NEEDS_CORRECTION';
+
 export interface BBox {
   x0: number;
   y0: number;
@@ -104,6 +113,10 @@ export interface DeckReviewWorkspaceViewModel {
     /** SHA-256 of the review raster when a provenance record exists for it, else null. */
     sourceImageSha256: string | null;
     sourceImageProvenanceRecord: string | null;
+    /** REPRODUCED when the raster was re-rendered from the artifact; DECLARED when its page binding rests on the record alone. */
+    sourceImageVerification: 'REPRODUCED' | 'DECLARED';
+    /** SHA-256 of the exact proof bytes being reviewed. */
+    proofSha256: string;
     deckBounds: [number, number, number, number];
     viewBox: { minX: number; minY: number; width: number; height: number };
   };
@@ -129,6 +142,8 @@ export interface ReviewAuditLogEntry {
     evidenceCondition: string;
   };
   outcome: string;
+  /** The human judgement on the envelope. Never an evidence condition. */
+  geometryJudgement: GeometryJudgement;
   /** Identity admission path the outcome was computed on. */
   identityPath?: IdentityPath;
   /** Why identity was or was not admitted, as evaluated at staging time. */
@@ -146,6 +161,8 @@ export interface StagedDeckReviewRecord {
   applied_to_repository: false;
   deck_number: number;
   proof_path: string;
+  /** Digest of the proof bytes the decisions were made against. An apply path must refuse a mismatch. */
+  proof_sha256: string;
   proof_schema: string;
   source: {
     artifact_id: string;
@@ -154,6 +171,7 @@ export interface StagedDeckReviewRecord {
     review_image_uri: string;
     review_image_sha256: string | null;
     review_image_provenance_record: string | null;
+    review_image_verification: 'REPRODUCED' | 'DECLARED';
   };
   reviewer: string;
   generated_at: string;

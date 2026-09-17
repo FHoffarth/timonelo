@@ -88,7 +88,12 @@ describe('Public Deck Geometry Review Adjudication Boundary Tests (ADR-0002 / AD
     const result = finalizeReviewedDecisions(5, decisions, 'synthetic_test_reviewer');
     expect(result.auditEntries[0].postReviewState.humanReviewState).toBe('REJECTED');
     expect(result.auditEntries[0].postReviewState.publishStatus).toBe('PUBLISH_BLOCKED');
-    expect(result.auditEntries[0].postReviewState.evidenceCondition).toBe('UNSUPPORTED');
+    // REJECT no longer writes UNSUPPORTED. The same principle that stops ACCEPT
+    // writing SUPPORTED applies here: a reviewer saying a polygon does not match
+    // the drawing has performed a review act, and UNSUPPORTED is an evidence
+    // condition. The judgement is recorded in its own field.
+    expect(result.auditEntries[0].postReviewState.evidenceCondition).toBe('UNKNOWN');
+    expect(result.auditEntries[0].geometryJudgement).toBe('REJECTED');
   });
 
   // 9. NEEDS_CORRECTION remains blocked and transitions to UNDER_REVIEW

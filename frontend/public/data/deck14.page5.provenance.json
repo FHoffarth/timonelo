@@ -35,7 +35,7 @@
     "implies_connectivity": false,
     "implies_metric_scale": false,
     "is_canonical_geometry": false,
-    "note": "Full-MediaBox raster of the source deck plan. It is visual context beneath the accepted proof geometry and is never evidence. Page 5 shows 243 Deck-14 cabin labels; the proof accepts 10. The remaining content is unproven and must never appear accepted, selectable, or connected."
+    "note": "Full-MediaBox raster of the source deck plan. It is visual context beneath the proof geometry and is never evidence. It carries no lifecycle state: which objects are admitted is a property of the proof and its governed axes, never of this image. Nothing in it is accepted, selectable or connected by virtue of being drawn."
   },
   "source": {
     "artifact_id": "ART-0001",

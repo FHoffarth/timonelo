@@ -127,3 +127,34 @@ def test_underlay_is_never_treated_as_proof_geometry():
     assert "deck14.page5.png" not in source.replace(
         'export const UNDERLAY_HREF = "/data/deck14.page5.png";', ""
     ), "the raster path should be declared once, not scattered"
+
+
+def test_deck_review_draws_the_same_raster_under_the_same_invariant():
+    """The review workspace draws this raster too, so it is held to the same rule.
+
+    The guard above policed only `spatial-proof/`. When a second surface started
+    drawing the same image it inherited none of the invariant: no
+    `data-layer`, no `pointerEvents: none`, and its own copy of the path. Two
+    surfaces drawing one raster under one rule is the point; policing one of them
+    is how the rule quietly stops applying.
+    """
+    review = REPO_ROOT / "frontend" / "src" / "deck-review"
+    source = "\n".join(
+        p.read_text(encoding="utf-8")
+        for p in review.glob("*.ts*")
+        if not p.name.endswith(".test.tsx")
+    )
+
+    # Source context, never proof geometry and never hit-test authority.
+    assert 'data-layer="source-context"' in source
+    assert 'pointerEvents: "none"' in source
+
+    # The path is declared once, in the spatial-proof viewer, and imported here.
+    assert "deck14.page5.png" not in source, (
+        "the review workspace must reuse UNDERLAY_HREF, not re-declare the raster path"
+    )
+    assert "UNDERLAY_HREF" in source
+
+    # Nothing semantic is derived from raster pixels: geometry comes from the
+    # proof's own normalized bboxes and polygons.
+    assert "normalized_bbox" in source

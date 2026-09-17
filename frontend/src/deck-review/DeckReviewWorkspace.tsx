@@ -105,8 +105,12 @@ export default function DeckReviewWorkspace({
     const a = document.createElement('a');
     a.href = url;
     a.download = `deck${String(rec.deck_number).padStart(2, '0')}.review.staged.${rec.generated_at.replace(/[:.]/g, '-')}.json`;
+    // Attached before clicking and revoked out of band: a detached anchor plus a
+    // synchronous revoke cancels the download in some browsers.
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
   };
 
   const handleFinalize = () => {
@@ -311,12 +315,19 @@ export default function DeckReviewWorkspace({
               <FileText className="w-3.5 h-3.5 text-[#C58A46]" />
               <span>Source: {viewModel.sourceInfo.artifactId} (Page {viewModel.sourceInfo.pageNumber})</span>
               {viewModel.sourceInfo.sourceImageSha256 ? (
-                <span className="text-slate-500" title={viewModel.sourceInfo.sourceImageProvenanceRecord || undefined}>
-                  raster sha256 {viewModel.sourceInfo.sourceImageSha256.slice(0, 12)}…
+                <span
+                  className={viewModel.sourceInfo.sourceImageVerification === 'REPRODUCED' ? 'text-slate-500' : 'text-amber-400'}
+                  title={viewModel.sourceInfo.sourceImageProvenanceRecord || undefined}
+                >
+                  raster sha256 {viewModel.sourceInfo.sourceImageSha256.slice(0, 12)}…{' '}
+                  {viewModel.sourceInfo.sourceImageVerification === 'REPRODUCED'
+                    ? '(re-rendered from source)'
+                    : '(page binding declared, not reproduced)'}
                 </span>
               ) : (
                 <span className="text-amber-400">raster provenance not recorded</span>
               )}
+              <span className="text-slate-500">proof sha256 {viewModel.sourceInfo.proofSha256.slice(0, 12)}…</span>
             </div>
 
             {/* SVG Canvas Overlaying Source Background */}
@@ -327,8 +338,15 @@ export default function DeckReviewWorkspace({
                 preserveAspectRatio="xMidYMid meet"
               >
                 {/* Source raster drawing crop underlay */}
+                {/* Source context only. Not proof geometry, not hit-test
+                    authority, and nothing semantic is derived from its pixels.
+                    Marked and made unpickable the same way the spatial-proof
+                    viewer marks it, so the same invariant holds on both
+                    surfaces that draw this raster. */}
                 <image
                   href={viewModel.sourceInfo.sourceImageUri}
+                  data-layer="source-context"
+                  style={{ pointerEvents: "none" }}
                   x="0"
                   y="0"
                   width="1"
@@ -505,6 +523,9 @@ export default function DeckReviewWorkspace({
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-500 leading-relaxed">
                   <strong className="text-slate-700 block">Geometry Review Scope:</strong>
                   Acceptance confirms this polygon corresponds to the labeled region on official drawings. It does not establish entrance location, passenger access, connectivity, or accessibility.
+                  <span className="block mt-1 font-semibold">
+                    Accepting is a review act, not evidence. It does not change this object&apos;s evidence condition and cannot make it publishable.
+                  </span>
                 </div>
 
                 {selectedCandidate.identityPath === 'CABIN' && (
@@ -745,8 +766,9 @@ export default function DeckReviewWorkspace({
                 <div>Decisions in record: {finalizeResult.adjudicatedObjectsCount} objects</div>
                 <div>Reviewer: {finalizeResult.stagedRecord.reviewer}</div>
                 <div>Source: {finalizeResult.stagedRecord.source.artifact_id} PDF page {finalizeResult.stagedRecord.source.pdf_page_number}</div>
-                <div>Would pass identity gate if applied: {finalizeResult.promotedToPassengerCount}</div>
+                <div>Would become publishable if applied: {finalizeResult.promotedToPassengerCount} (a review decision never creates evidence)</div>
                 <div>Would remain publication-blocked: {finalizeResult.blockedCount}</div>
+                <div>Proof reviewed: {finalizeResult.stagedRecord.proof_sha256.slice(0, 12)}…</div>
                 <div>Nothing has been persisted. Download the record and apply it through the repository to make it durable.</div>
                 <button
                   onClick={handleDownloadStagedRecord}

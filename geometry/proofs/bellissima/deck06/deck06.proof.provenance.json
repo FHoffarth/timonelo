@@ -1,0 +1,16 @@
+{
+  "asset": "deck06.proof.json",
+  "asset_path": "geometry/proofs/bellissima/deck06/deck06.proof.json",
+  "output_sha256": "18dbdfeafb62157cc8361d0fd6ade0e5d83fe1bd04e1a92183d20cfa84b99f86",
+  "proof": {
+    "deck_number": 6,
+    "object_count": 26,
+    "schema": "timonelo.one-deck-geometry-proof.v1"
+  },
+  "purpose": "identifies the exact proof bytes a human adjudication was made against",
+  "source": {
+    "artifact_id": "ART-0001",
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "pdf_page_number": 3
+  }
+}

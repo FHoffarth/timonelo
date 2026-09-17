@@ -1,0 +1,49 @@
+{
+  "asset": "art0001_page3.png",
+  "asset_path": "frontend/src/deck-review/assets/art0001_page3.png",
+  "frame": {
+    "cropped": null,
+    "dimensions_match_full_mediabox_render": true,
+    "full_mediabox": null,
+    "mediabox_points": [
+      0.0,
+      0.0,
+      589.6060180664,
+      807.8740234375
+    ],
+    "review_viewport_used": null,
+    "rotation_degrees": 0
+  },
+  "output_sha256": "e0888ca606e246c215234edc61ff4f3a9608021ec446e18a501b45b1e93ecba8",
+  "purpose": "visual context only; not canonical geometry",
+  "render": {
+    "dpi": 150,
+    "height_px": 1684,
+    "width_px": 1229,
+    "zoom": 2.083333
+  },
+  "semantics": {
+    "carries_geometry_provenance": false,
+    "hit_testable": false,
+    "implies_connectivity": false,
+    "implies_metric_scale": false,
+    "is_canonical_geometry": false
+  },
+  "source": {
+    "artifact_id": "ART-0001",
+    "binding": "DECLARED",
+    "filename": "MSC_BELLISSIMA_DECKPLAN_GER.pdf",
+    "pdf_page_number": 3,
+    "sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0"
+  },
+  "verification": {
+    "attempted_command": "page.get_pixmap(matrix=fitz.Matrix(2.083333, 2.083333), alpha=False)",
+    "attempted_with": {
+      "mupdf_version": "1.26.7",
+      "pymupdf_version": "1.26.4"
+    },
+    "level": "DECLARED_UNVERIFIED",
+    "note": "This raster could NOT be reproduced from the governed artifact. Rendering ART-0001 page 3 with the command below, on the tool versions recorded here, yields a different digest, and the asset matches no page of ART-0001 at these settings. Its page binding is therefore declared, not proven. It is retained because it is visual context beneath the proof geometry and carries no geometry authority; it must never be treated as evidence. Replacing it with a reproducible render is tracked as follow-up work.",
+    "render_reproduced": false
+  }
+}
