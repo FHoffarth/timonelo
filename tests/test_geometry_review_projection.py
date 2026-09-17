@@ -103,12 +103,27 @@ def test_without_a_log_every_object_keeps_its_stored_state(proof, tmp_path):
         assert projected[o["object_id"]] == o["human_review_state"]
 
 
-def test_the_real_repository_projects_exactly_its_stored_state(proof):
-    """Before Flo's record is applied, the projection is a no-op."""
+def test_the_real_repository_projects_flos_decision_and_nothing_else(proof):
+    """One object moved, because one human decided about one object.
+
+    Before the apply this asserted the projection was a no-op on the real
+    repository. It is no longer, and the thing worth pinning is that the
+    difference is exactly one object wide.
+    """
     projected = project_proof_review_states(proof, PROOF_SHA, repo_root=str(REPO_ROOT))
-    for o in proof["objects"]:
-        assert projected[o["object_id"]] == o["human_review_state"]
-    assert set(projected.values()) == {"DRAFT"}
+    stored = {o["object_id"]: o["human_review_state"] for o in proof["objects"]}
+    moved = {oid: state for oid, state in projected.items() if state != stored[oid]}
+
+    assert moved == {REVIEWED: "APPROVED"}
+    assert projected[UNREVIEWED] == "DRAFT"
+    assert set(projected.values()) == {"DRAFT", "APPROVED"}
+
+    # And it buys nothing: the proof still says UNKNOWN / PUBLISH_BLOCKED, so
+    # passenger admission is false for the object its reviewer approved.
+    reviewed = _obj(proof, REVIEWED)
+    assert reviewed["evidence_condition"] == "UNKNOWN"
+    assert reviewed["publish_status"] == "PUBLISH_BLOCKED"
+    assert _admitted(reviewed["evidence_condition"], "APPROVED", reviewed["publish_status"]) is False
 
 
 def test_deck14_nodes_are_unchanged_without_an_adjudication(tmp_path):

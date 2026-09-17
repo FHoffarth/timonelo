@@ -367,9 +367,29 @@ def test_cabin_14122_is_untouched_and_unreviewed(record, repo):
     assert current_geometry_review_state(obj, record["proof_sha256"], log) == "DRAFT"
 
 
-def test_the_real_repository_has_no_adjudication_log_yet(record):
-    """Nothing in this sprint applies Flo's decision to the real store."""
-    assert not (REPO_ROOT / "evidence" / "reviews" / "spatial_adjudications.json").exists()
+def test_the_real_repository_holds_exactly_one_adjudication(record):
+    """Flo's ACCEPT of 14216, and nothing else.
+
+    This test used to assert the log did not exist. It does now: the decision
+    was authorized and applied. What it guards has not changed -- that exactly
+    one human decision is durable and no second one appeared beside it.
+    """
+    log = SpatialAdjudicationLog(
+        str(REPO_ROOT / "evidence" / "reviews" / "spatial_adjudications.json")
+    )
+    entries = log.all()
+    assert len(entries) == 1
+    only = entries[0]
+    assert only["object_id"] == OBJECT_ID
+    assert only["reviewer"] == "Flo"
+    assert only["decision"] == "ACCEPT"
+    assert only["to_review_state"] == "APPROVED"
+    assert only["proof_sha256"] == record["proof_sha256"]
+    # The two axes a review act may not move are recorded as unmoved.
+    assert only["evidence_condition_unchanged"] == "UNKNOWN"
+    assert only["publish_status_unchanged"] == "PUBLISH_BLOCKED"
+    # Cabin 14122 has no entry.
+    assert log.for_object("bellissima-deck14-cabin-14122") == []
 
 
 def test_evaluate_never_writes(record, repo):

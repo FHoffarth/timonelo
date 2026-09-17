@@ -512,10 +512,21 @@ def test_deck14_proof_objects_are_all_publication_blocked():
 
     report = graph.admission_report()
     assert len(report.rejected_nodes) == 244
-    for reasons in report.rejected_nodes.values():
+    for object_id, reasons in report.rejected_nodes.items():
+        # Evidence and publication are what actually keep geometry off a route,
+        # and no human review act moves either.
         assert AdmissionRejection.PUBLISH_BLOCKED in reasons
-        assert AdmissionRejection.REVIEW_NOT_ACCEPTED in reasons
         assert AdmissionRejection.EVIDENCE_NOT_SUPPORTED in reasons
+
+    # One object has been adjudicated by a human: Flo accepted the envelope for
+    # cabin 14216. Its review axis is APPROVED through the projection, so that
+    # one rejection reason is gone and the node is still rejected -- which is
+    # the whole point of keeping the axes separate.
+    adjudicated = report.rejected_nodes["bellissima-deck14-cabin-14216"]
+    assert AdmissionRejection.REVIEW_NOT_ACCEPTED not in adjudicated
+    for object_id, reasons in report.rejected_nodes.items():
+        if object_id != "bellissima-deck14-cabin-14216":
+            assert AdmissionRejection.REVIEW_NOT_ACCEPTED in reasons
 
 
 def test_deck14_routing_on_the_real_proof_is_insufficient_evidence():
