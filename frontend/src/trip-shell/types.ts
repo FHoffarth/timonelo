@@ -112,7 +112,7 @@ export interface TimelineDayViewModel {
   events: TimelineEventViewModel[];
 }
 
-export interface ConfirmedFactViewModel {
+export interface ReferenceFactViewModel {
   label: string;
   value: string;
   category: 'ship' | 'date' | 'port' | 'timing';
@@ -157,7 +157,7 @@ export interface PassengerTripViewModel {
   departure: PortStatusViewModel;
   arrival: PortStatusViewModel;
   timeline: TimelineDayViewModel[];
-  confirmedFacts: ConfirmedFactViewModel[];
+  referenceFacts: ReferenceFactViewModel[];
   pendingFacts: PendingFactViewModel[];
   genericPortFacilities: GenericFacilityViewModel[];
   beforeYouGo: BeforeYouGoItemViewModel[];

@@ -14,7 +14,8 @@ describe('Passenger Trip Shell v1 Truth-Copy & Boundary Tests (ADR-0002)', () =>
     const vm = buildPassengerTripViewModel(goldenPack, goldenResult);
     const html = renderToStaticMarkup(<TripShell viewModel={vm} />);
     expect(html).not.toContain('All voyage details are verified');
-    expect(html).toContain('Some trip details are confirmed from official sources.');
+    expect(html).not.toContain('confirmed from official sources');
+    expect(vm.trustSummary.verifiedCount).toBe(0);
   });
 
   // 2. "Confirmed Voyage" is absent if unresolved gaps exist
@@ -22,7 +23,7 @@ describe('Passenger Trip Shell v1 Truth-Copy & Boundary Tests (ADR-0002)', () =>
     const vm = buildPassengerTripViewModel(goldenPack, goldenResult);
     const html = renderToStaticMarkup(<TripShell viewModel={vm} />);
     expect(html).not.toContain('Confirmed Voyage');
-    expect(html).toContain('Core trip details confirmed');
+    expect(html).toContain('Unverified reference data');
   });
 
   // 3. No automatic-update promise appears
@@ -32,7 +33,7 @@ describe('Passenger Trip Shell v1 Truth-Copy & Boundary Tests (ADR-0002)', () =>
     expect(html).not.toContain('update this automatically');
     expect(html).not.toContain('will appear here automatically');
     expect(html).not.toContain('automatically as official port schedules become available');
-    expect(html).toContain('Check again closer to departure');
+    expect(html).not.toContain('Check again closer to departure');
   });
 
   // 4. No unsupported 30-60 day passenger claim appears
@@ -68,14 +69,15 @@ describe('Passenger Trip Shell v1 Truth-Copy & Boundary Tests (ADR-0002)', () =>
     const html = renderToStaticMarkup(<TripShell viewModel={vm} />);
     expect(html).toContain('PORT INFORMATION (DESTINATION)');
     expect(html).toContain('東京国際クルーズターミナル');
-    expect(html).toContain('Known port facility — not yet confirmed for your sailing.');
+    expect(html).toContain('not verified or assigned to this voyage');
   });
 
   // 8. Verified/pending counts do not imply full-trip verification
   it('scopes verified and pending counts without claiming complete verification', () => {
     const vm = buildPassengerTripViewModel(goldenPack, goldenResult);
     const html = renderToStaticMarkup(<TripShell viewModel={vm} />);
-    expect(html).toContain('8 confirmed facts');
+    expect(html).toContain('5 reference details');
+    expect(html).not.toContain('confirmed facts');
     expect(html).toContain('4 details pending');
     expect(html).not.toContain('Trip fully verified');
     expect(html).not.toContain('Fully verified trip');

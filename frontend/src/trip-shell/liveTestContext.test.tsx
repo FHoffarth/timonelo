@@ -131,8 +131,8 @@ describe('BC-2 C: My Cruise renders the live-test trip', () => {
     expect(html).toMatch(/2026/);
   });
 
-  it('is framed as a live-test trip, not a demo preview', () => {
-    expect(html).toMatch(/Live-test trip/i);
+  it('is framed as a past reference voyage', () => {
+    expect(html).toMatch(/Past reference voyage/i);
     expect(html).not.toMatch(/Reference Voyage Preview/i);
   });
 

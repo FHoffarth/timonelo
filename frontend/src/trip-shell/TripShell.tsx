@@ -4,7 +4,7 @@ import {
   MapPin,
   Calendar,
   Clock,
-  ShieldCheck,
+  Info,
   ChevronDown,
   ChevronUp,
   FileText,
@@ -36,8 +36,8 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
               </span>
             </div>
 
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200/50">
-              <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 text-[#5B6570] text-xs font-medium border border-slate-200/50">
+              <Info className="w-3.5 h-3.5" />
               <span>{viewModel.trustSummary.statusBadge}</span>
             </div>
           </div>
@@ -210,17 +210,17 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Confirmed Overview */}
         <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#0C1B2A]/10 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <h2 className="text-sm font-bold text-[#0C1B2A]">What is confirmed</h2>
+              <Info className="w-4 h-4 text-[#5B6570]" />
+              <h2 className="text-sm font-bold text-[#0C1B2A]">Reference details</h2>
             </div>
-            <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/40">
-              {viewModel.trustSummary.verifiedCount} confirmed facts
+            <span className="text-[11px] font-mono text-[#5B6570] bg-slate-50 px-2 py-0.5 rounded border border-slate-200/40">
+              {viewModel.referenceFacts.length} reference details
             </span>
           </div>
           <div className="space-y-2.5">
-            {viewModel.confirmedFacts.map((fact, idx) => (
+            {viewModel.referenceFacts.map((fact, idx) => (
               <div key={idx} className="flex items-center justify-between text-xs py-1 border-b border-slate-100 last:border-0">
                 <span className="text-[#5B6570]">{fact.label}</span>
                 <span className="font-semibold text-[#0C1B2A] text-right">{fact.value}</span>
@@ -231,7 +231,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
 
         {/* Pending Details */}
         <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#0C1B2A]/10 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#C58A46]" />
               <h2 className="text-sm font-bold text-[#0C1B2A]">Details not available yet</h2>
@@ -243,7 +243,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
           <div className="space-y-3">
             {viewModel.pendingFacts.map((pending, idx) => (
               <div key={idx} className="bg-amber-50/50 rounded-xl p-3 text-xs space-y-1 border border-amber-200/40">
-                <div className="flex items-center justify-between font-semibold text-[#0C1B2A]">
+                <div className="flex flex-wrap items-center justify-between gap-2 font-semibold text-[#0C1B2A]">
                   <span>{pending.label}</span>
                   <span className="text-[10px] font-mono text-[#C58A46] uppercase px-2 py-0.5 rounded bg-amber-100/60">
                     {pending.statusText}
@@ -277,7 +277,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
                   {viewModel.arrival.city} Port Facilities
                 </h3>
                 <p className="text-xs text-[#5B6570] leading-relaxed">
-                  The following facilities are registered in the destination port. Your specific arrival berth has not been confirmed yet.
+                  These facilities are listed in reference data. Their status and assignment to this voyage are not verified here.
                 </p>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
             <div className="grid grid-cols-1 gap-3 pt-2">
               {viewModel.genericPortFacilities.map((facility, idx) => (
                 <div key={idx} className="bg-slate-50 rounded-xl p-4 text-xs space-y-1 border border-slate-100">
-                  <div className="flex items-center justify-between font-semibold text-[#0C1B2A]">
+                  <div className="flex flex-wrap items-center justify-between gap-2 font-semibold text-[#0C1B2A]">
                     <span className="text-sm">{facility.name}</span>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-[#5B6570]">
                       {facility.facilityType}
@@ -304,7 +304,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
       {/* 6. Before You Go Checklist */}
       <section className="space-y-3">
         <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B6570] uppercase px-1">
-          BEFORE YOU GO
+          REFERENCE NOTES
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {viewModel.beforeYouGo.map((item, idx) => (
@@ -329,8 +329,8 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
       <section className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-[#0C1B2A]/10 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="p-2 rounded-xl bg-emerald-100 text-emerald-800 shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+            <span className="p-2 rounded-xl bg-slate-100 text-[#5B6570] shrink-0">
+              <Info className="w-5 h-5" />
             </span>
             <div>
               <h2 className="text-sm font-bold text-[#0C1B2A]">
@@ -346,7 +346,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
             onClick={() => setIsTrustDetailsOpen(!isTrustDetailsOpen)}
             className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-slate-100 text-xs font-semibold text-[#0C1B2A] border border-[#0C1B2A]/10 shadow-sm transition-colors cursor-pointer self-start sm:self-auto"
           >
-            <span>Why do we know this?</span>
+            <span>About this reference</span>
             {isTrustDetailsOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>
         </div>
@@ -355,9 +355,9 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
           <div className="pt-4 mt-2 border-t border-slate-200/60 text-xs space-y-3 text-[#5B6570] animate-fadeIn">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-white rounded-xl p-3.5 border border-slate-200/40">
-                <span className="font-semibold text-[#0C1B2A] block mb-1">Evidence & Verification</span>
+                <span className="font-semibold text-[#0C1B2A] block mb-1">Source limitations</span>
                 <p className="leading-relaxed">
-                  Facts are verified against authoritative cruise line booking confirmations and international UNECE port registries.
+                  This page displays a frontend reference fixture. Its values and legacy approval labels are not proof of verified facts or publication approval.
                 </p>
               </div>
 
@@ -372,7 +372,7 @@ export default function TripShell({ viewModel, className = '' }: TripShellProps)
             <div className="flex flex-wrap items-center justify-between gap-2 pt-2 text-[11px] text-slate-400 font-mono">
               <span>{viewModel.trustSummary.governanceNotice}</span>
               {viewModel.trustSummary.lastCheckedDate && (
-                <span>Last checked: {viewModel.trustSummary.lastCheckedDate}</span>
+                <span>Reference gap timestamp: {viewModel.trustSummary.lastCheckedDate}</span>
               )}
             </div>
           </div>

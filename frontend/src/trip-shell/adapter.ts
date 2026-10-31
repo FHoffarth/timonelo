@@ -10,7 +10,7 @@ import {
   PassengerTripViewModel,
   PortStatusViewModel,
   TimelineDayViewModel,
-  ConfirmedFactViewModel,
+  ReferenceFactViewModel,
   PendingFactViewModel,
   GenericFacilityViewModel,
   BeforeYouGoItemViewModel,
@@ -97,7 +97,7 @@ export function buildPassengerTripViewModel(
   const dateRangeLabel = formatDateRange(pack.departure_date, pack.arrival_date);
   const durationLabel = calculateNights(pack.departure_date, pack.arrival_date);
 
-  // Departure View Model - strictly Proven
+  // Reference values carry no verification authority.
   const departure: PortStatusViewModel = {
     city: depLoc.city,
     country: depLoc.country,
@@ -107,11 +107,11 @@ export function buildPassengerTripViewModel(
     timeLabel: pack.check_in_time ? 'Check-in' : null,
     terminalStatusText: 'Not confirmed yet',
     berthStatusText: 'Not assigned yet',
-    isConfirmed: pack.departure_date !== 'UNVERIFIED' && depLoc.city !== 'Location pending',
+    isConfirmed: false,
     unlocode: pack.departure_port_unlocode,
   };
 
-  // Arrival View Model - strictly Proven
+  // Missing terminal and berth assignments remain unknown.
   const arrival: PortStatusViewModel = {
     city: arrLoc.city,
     country: arrLoc.country,
@@ -119,11 +119,11 @@ export function buildPassengerTripViewModel(
     dateFormatted: formatDateShort(pack.arrival_date),
     terminalStatusText: 'Not confirmed yet',
     berthStatusText: 'Not assigned yet',
-    isConfirmed: pack.arrival_date !== 'UNVERIFIED' && arrLoc.city !== 'Location pending',
+    isConfirmed: false,
     unlocode: pack.arrival_port_unlocode,
   };
 
-  // Timeline derivation strictly from verified facts
+  // Timeline describes reference inputs, not confirmed events.
   const timeline: TimelineDayViewModel[] = [];
 
   const depDateObj = parseIsoDate(pack.departure_date);
@@ -135,12 +135,12 @@ export function buildPassengerTripViewModel(
     day1Events.push({
       label: 'Check-in',
       time: pack.check_in_time,
-      note: 'Check-in time from official booking confirmation.',
+      note: 'Check-in time recorded in reference data; not independently verified.',
     });
   } else {
     day1Events.push({
       label: 'Embarkation',
-      note: 'Check-in timing will be updated closer to sailing.',
+      note: 'Check-in time is not available in this reference.',
     });
   }
 
@@ -148,8 +148,8 @@ export function buildPassengerTripViewModel(
     dateFormatted: formatDateShort(pack.departure_date),
     dayOfWeek: depDateObj ? DAY_NAMES[depDateObj.getDay()] : undefined,
     locationTitle: `${depLoc.city}, Embarkation`,
-    status: 'confirmed',
-    statusBadge: 'Confirmed',
+    status: 'info',
+    statusBadge: 'Reference data',
     events: day1Events,
   });
 
@@ -158,18 +158,17 @@ export function buildPassengerTripViewModel(
     dateFormatted: formatDateShort(pack.arrival_date),
     dayOfWeek: arrDateObj ? DAY_NAMES[arrDateObj.getDay()] : undefined,
     locationTitle: `${arrLoc.city}, Destination`,
-    status: 'confirmed',
-    statusBadge: 'Confirmed',
+    status: 'info',
+    statusBadge: 'Reference data',
     events: [
       {
         label: 'Arrival',
-        note: 'Terminal and berth details will be available closer to arrival.',
+        note: 'Terminal and berth details are not established by this reference.',
       },
     ],
   });
 
-  // Confirmed Facts list (passenger-safe)
-  const confirmedFacts: ConfirmedFactViewModel[] = [
+  const referenceFacts: ReferenceFactViewModel[] = [
     {
       label: 'Ship',
       value: shipName,
@@ -188,7 +187,7 @@ export function buildPassengerTripViewModel(
   ];
 
   if (pack.check_in_time) {
-    confirmedFacts.push({
+    referenceFacts.push({
       label: 'Check-in Time',
       value: pack.check_in_time,
       category: 'timing',
@@ -196,7 +195,7 @@ export function buildPassengerTripViewModel(
   }
 
   if (durationLabel) {
-    confirmedFacts.push({
+    referenceFacts.push({
       label: 'Voyage Duration',
       value: durationLabel,
       category: 'date',
@@ -209,13 +208,13 @@ export function buildPassengerTripViewModel(
       label: 'Departure Terminal & Berth',
       statusText: 'Not confirmed yet',
       whyPending: 'Specific departure terminal and berth details are not confirmed yet.',
-      whatNext: 'Check again closer to departure for updated terminal information.',
+      whatNext: 'This reference does not establish the terminal or berth used.',
     },
     {
       label: 'Arrival Terminal & Berth',
       statusText: 'Not confirmed yet',
       whyPending: 'Specific arrival terminal and berth details are not confirmed yet.',
-      whatNext: 'Check again closer to departure for updated terminal information.',
+      whatNext: 'This reference does not establish the terminal or berth used.',
     },
   ];
 
@@ -224,37 +223,37 @@ export function buildPassengerTripViewModel(
     pack.known_generic_infrastructure || []
   ).map(f => ({
     name: f.name,
-    notice: 'Known port facility — not yet confirmed for your sailing.',
+    notice: 'Facility listed in reference data — not verified or assigned to this voyage.',
     facilityType: 'Cruise Terminal',
   }));
 
   // Before You Go Checklist (passenger guidance)
   const beforeYouGo: BeforeYouGoItemViewModel[] = [
     {
-      title: 'Check terminal details closer to departure',
-      description: 'Specific berth assignments are finalized by port authorities closer to travel date.',
+      title: 'Terminal and berth remain unknown',
+      description: 'No voyage-specific assignment is established by this reference.',
       iconName: 'terminal',
     },
     {
-      title: 'Keep your booking confirmation handy',
-      description: 'Have your booking document and travel identification ready for port check-in.',
+      title: 'Reference data is not a booking',
+      description: 'The displayed values are example context, not an independently verified travel record.',
       iconName: 'documents',
     },
     {
-      title: 'Review port travel directions before departure',
-      description: 'Check local transit options to the port area in advance of sailing day.',
+      title: 'No operational travel guidance',
+      description: 'Do not use this reference for current check-in or port travel decisions.',
       iconName: 'port',
     },
   ];
 
   // Trust Summary - Scoped and Measured
-  const verifiedCount = result?.known_facts?.length || confirmedFacts.length;
+  const verifiedCount = 0;
   const pendingCount = result?.gaps?.length || pendingFacts.length;
 
   const trustSummary: TrustSummaryViewModel = {
-    statusBadge: 'Core trip details confirmed',
-    sourceNotice: 'Some trip details are confirmed from official sources. Unconfirmed items are tracked as pending.',
-    governanceNotice: pack.trust_metadata?.governance || 'Governed by Timonelo Evidence Architecture',
+    statusBadge: 'Unverified reference data',
+    sourceNotice: 'These values come from reference data and have not been independently verified. They do not confirm a booking or actual travel.',
+    governanceNotice: 'Reference data does not establish evidence or publication approval.',
     piiNotice: 'Personal booking details are kept out of the reusable trip knowledge shown here.',
     verifiedCount: verifiedCount,
     pendingCount: pendingCount,
@@ -271,7 +270,7 @@ export function buildPassengerTripViewModel(
     departure,
     arrival,
     timeline,
-    confirmedFacts,
+    referenceFacts,
     pendingFacts,
     genericPortFacilities,
     beforeYouGo,
