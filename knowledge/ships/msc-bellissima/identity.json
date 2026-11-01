@@ -6,8 +6,8 @@
     "trust_level": "OFFICIAL"
   },
   "imo_number": {
-    "value": "9766205",
-    "source_id": "src:imo-gisis",
+    "value": "9760524",
+    "source_id": "src:ispra-marine-fuel-report-2024",
     "trust_level": "OFFICIAL"
   },
   "mmsi": {
