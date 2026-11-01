@@ -338,8 +338,8 @@ export default function ShipOverview({
             </p>
             <p className="text-sm text-[#5B6570] leading-relaxed">
               In the meantime, <strong className="text-[#0C1B2A]">My Cruise</strong> shows
-              what is already confirmed about your sailing, and the port guides cover
-              where you dock and how to get around ashore.
+              a past reference voyage with its information status. The port guides
+              are reference browsing, not confirmed stops on your voyage.
             </p>
           </div>
         )}

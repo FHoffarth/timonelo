@@ -14,19 +14,18 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-[#94A3B8] leading-relaxed text-[11px]">
-            Independent, evidence-grounded intelligence for cruise passengers. Ships, cabins, ports, and routes — researched, verified, and scientifically modeled.
+            Cruise information with visible source limitations. Reference material is distinguished from admitted passenger facts.
           </p>
         </div>
 
         <div className="space-y-2">
           <h4 className="font-mono text-[10px] font-bold text-[#C58A46] uppercase tracking-wider">
-            Canonical Knowledge
+            Information status
           </h4>
           <ul className="space-y-1.5 text-[#94A3B8]">
-            <li>W3C Building Topology Ontology (BOT)</li>
-            <li>W3C Provenance Ontology (PROV-O)</li>
-            <li>OGC IndoorGML Spatial Representation</li>
-            <li>JSON-LD Semantic Linked Data</li>
+            <li>Reference material is not a confirmed booking.</li>
+            <li>Unavailable details stay unavailable.</li>
+            <li>Deck and cabin facts require their own evidence checks.</li>
           </ul>
         </div>
 
@@ -38,23 +37,23 @@ export default function Footer() {
             <li>Ship Intelligence & Living Decks</li>
             <li>Independent Port & Tender Guides</li>
             <li>True Cost Math & Beverage Calculator</li>
-            <li>Consular & Schengen Regulations</li>
+            <li>Travel information availability</li>
           </ul>
         </div>
 
         <div className="space-y-2">
           <h4 className="font-mono text-[10px] font-bold text-[#C58A46] uppercase tracking-wider">
-            Integrity Pinning
+            Source limitations
           </h4>
           <p className="text-[#94A3B8] text-[11px] leading-relaxed">
-            Every stateroom and venue statement is pinned with cryptographic SHA-256 evidence digests from official builder general arrangement plans.
+            Some ship and port material is retained as unverified reference data. This beta does not establish current operations, access, travel requirements or cabin geometry from those references.
           </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#94A3B8] gap-4">
         <span>© 2026 Timonelo Platform. All rights reserved. Zero affiliate bias.</span>
-        <span className="font-mono text-[#C58A46]">Design Freeze v1 • Canonical Platform Release</span>
+        <span className="font-mono text-[#C58A46]">Passenger Beta • Reference coverage varies</span>
       </div>
     </footer>
   );
