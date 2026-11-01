@@ -4,6 +4,7 @@
  */
 import { useEffect, useState, type CSSProperties } from 'react';
 import { Ship, Layers, DoorClosed, Waves, Map as MapIcon } from 'lucide-react';
+import { getShipMedia } from './passenger/ShipPhoto';
 
 export type MediaKind = 'ship' | 'deck' | 'cabin' | 'view' | 'plan';
 type Manifest = Record<string, string>;
@@ -33,6 +34,9 @@ export function useMedia() {
   }, []);
 
   return (id: string, isRiver: boolean = false): string | null => {
+    if (id.startsWith('ship:')) {
+      return getShipMedia(id.slice(5).toLowerCase())?.variants.at(-1)?.src ?? null;
+    }
     if (manifest[id]) return manifest[id];
 
     // Fallbacks
@@ -43,12 +47,6 @@ export function useMedia() {
     }
     if (id.startsWith('cabin:')) {
       return manifest['default:stateroom'] ?? '/media/stateroom-interior.jpg';
-    }
-    if (id.startsWith('ship:')) {
-      const slug = id.replace('ship:', '').toLowerCase();
-      if (manifest[id]) return manifest[id];
-      if (manifest[`ship:${slug}`]) return manifest[`ship:${slug}`];
-      return isRiver ? '/media/ms-andorinha-hero.jpg' : '/media/msc-bellissima-hero.jpg';
     }
 
     return null;
