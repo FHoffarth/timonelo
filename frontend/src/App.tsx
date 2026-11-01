@@ -9,7 +9,7 @@ import RouteIntelligencePage from "./components/pages/RouteIntelligencePage";
 import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
 import { ReferenceTripShellPreview } from "./components/pages/TripShellPage";
-import BellissimaGuide from "./passenger/BellissimaGuide";
+import FleetDiscovery from "./passenger/FleetDiscovery";
 import PassengerSearchDialog from "./passenger/PassengerSearchDialog";
 import { LIVE_TEST_TRIP } from "./trip-shell/liveTestContext";
 
@@ -43,6 +43,7 @@ export default function App() {
   // different voyages -- Bellissima, Santorini, an Adriatic route -- so which
   // voyage the product thought you were on depended on which tab you opened.
   const [selectedShipSlug, setSelectedShipSlug] = useState<string>(LIVE_TEST_TRIP.vesselSlug);
+  const [selectedProfileSlug, setSelectedProfileSlug] = useState<string | undefined>();
   const [selectedCabinId, setSelectedCabinId] = useState<string>("14122");
   // No port guide exists for either end of this voyage, so there is no port to
   // default to. Undefined means the Ports surface opens as reference browsing
@@ -62,7 +63,11 @@ export default function App() {
       if (!state?.timonelo || !['home', 'ships', 'cabin', 'ports', 'routes', 'cruise-math', 'travel-info', 'my-cruise'].includes(state.route)) return;
       setCurrentRoute(state.route);
       setIsSearchOpen(false);
-      setSelectedShipSlug(LIVE_TEST_TRIP.vesselSlug);
+      if (state.route === 'ships') {
+        setSelectedProfileSlug(state.param);
+        if (state.param) setSelectedShipSlug(state.param);
+      }
+      if (state.route === 'cabin') setSelectedShipSlug(state.vessel || LIVE_TEST_TRIP.vesselSlug);
       if (state.route === 'cabin') setSelectedCabinId(state.param || '');
       if (state.route === 'ports') setSelectedPortSlug(state.param);
       if (state.route === 'routes') setSelectedRouteSlug(state.param);
@@ -71,18 +76,20 @@ export default function App() {
     return () => window.removeEventListener('popstate', restore);
   }, []);
 
-  const handleNavigate = (route: NavRoute | "cabin", param?: string) => {
-    window.history.pushState({ timonelo: true, route, param }, '');
+  const handleNavigate = (route: NavRoute | "cabin", param?: string, vessel?: string) => {
+    const cabinVessel = vessel || selectedShipSlug;
+    window.history.pushState({ timonelo: true, route, param, vessel: cabinVessel }, '');
+    if (route === 'ships') setSelectedProfileSlug(param);
     if (route === "ships" && param) setSelectedShipSlug(param);
     if (route === "cabin" && param) {
       setSelectedCabinId(param);
-      setSelectedShipSlug(LIVE_TEST_TRIP.vesselSlug);
+      setSelectedShipSlug(cabinVessel);
     }
     if (route === "ports" && param) setSelectedPortSlug(param);
     if (route === "routes" && param) setSelectedRouteSlug(param);
 
     setCurrentRoute(route);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleSearchSubmit = (query: string) => {
@@ -109,7 +116,7 @@ export default function App() {
         )}
 
         {currentRoute === "ships" && (
-          <BellissimaGuide onNavigate={handleNavigate} />
+          <FleetDiscovery selectedSlug={selectedProfileSlug} onNavigate={handleNavigate} />
         )}
 
         {currentRoute === "cabin" && (
@@ -149,14 +156,14 @@ export default function App() {
         )}
       </main>
 
-      {currentRoute !== 'home' && <nav aria-label="Passenger pages" className="max-w-7xl mx-auto w-full px-4 py-6 flex flex-wrap gap-2">{([{ route: 'home', label: 'Home' }, { route: 'my-cruise', label: 'My Cruise' }, { route: 'ships', label: 'Bellissima guide' }, { route: 'routes', label: 'Routes' }, { route: 'ports', label: 'Ports' }, { route: 'travel-info', label: 'Travel Info' }, { route: 'cruise-math', label: 'Cruise Math' }] as const).map(item => <button key={item.route} className="min-h-11 rounded-xl border px-3 text-sm bg-white" onClick={() => handleNavigate(item.route)}>{item.label}</button>)}</nav>}
+      {currentRoute !== 'home' && <nav aria-label="Passenger pages" className="max-w-7xl mx-auto w-full px-4 py-6 flex flex-wrap gap-2">{([{ route: 'home', label: 'Home' }, { route: 'my-cruise', label: 'My Cruise' }, { route: 'ships', label: 'Ships' }, { route: 'routes', label: 'Routes' }, { route: 'ports', label: 'Ports' }, { route: 'travel-info', label: 'Travel Info' }, { route: 'cruise-math', label: 'Cruise Math' }] as const).map(item => <button key={item.route} className="min-h-11 rounded-xl border px-3 text-sm bg-white" onClick={() => handleNavigate(item.route)}>{item.label}</button>)}</nav>}
 
       {/* 3. Colophon Footer */}
       <Footer />
 
       {/* Search Modal Overlay */}
       {isSearchOpen && (
-        <PassengerSearchDialog initialQuery={searchQuery} onClose={() => setIsSearchOpen(false)} onSelect={destination => { setIsSearchOpen(false); handleNavigate(destination.route, destination.param); }} />
+        <PassengerSearchDialog initialQuery={searchQuery} vesselSlug={selectedShipSlug} onClose={() => setIsSearchOpen(false)} onSelect={destination => { setIsSearchOpen(false); handleNavigate(destination.route, destination.param, destination.vesselSlug); }} />
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import { LIVE_TEST_TRIP } from '../trip-shell/liveTestContext';
 import { knowledgeRepository } from '../knowledge';
 import type { NavRoute } from '../components/ui/MainNavbar';
+import { FLEET, getFleetShip } from './fleet';
 
 export interface PassengerDestination {
   kind: 'page' | 'ship' | 'port' | 'cabin' | 'venue';
@@ -8,6 +9,7 @@ export interface PassengerDestination {
   detail: string;
   route: NavRoute | 'cabin';
   param?: string;
+  vesselSlug?: string;
 }
 
 export const PORT_SLUGS = ['barcelona', 'marseille', 'genoa', 'naples', 'messina', 'valletta'] as const;
@@ -15,7 +17,7 @@ export const referenceVenues = knowledgeRepository.getRestaurants(LIVE_TEST_TRIP
   .map((venue: { id: string; name: string }) => ({ id: venue.id, name: venue.name }));
 
 const destinations: PassengerDestination[] = [
-  { kind: 'ship', label: 'MSC Bellissima', detail: 'Ship guide and data availability', route: 'ships', param: LIVE_TEST_TRIP.vesselSlug },
+  ...FLEET.map(ship => ({ kind: 'ship' as const, label: ship.label, detail: 'Ship profile and publication coverage', route: 'ships' as const, param: ship.slug })),
   { kind: 'page', label: 'My Cruise', detail: 'Past Shanghai → Tokyo reference voyage', route: 'my-cruise' },
   { kind: 'page', label: 'Routes', detail: 'Shanghai → Tokyo itinerary availability', route: 'routes' },
   { kind: 'page', label: 'Travel Info', detail: 'Entry requirements availability', route: 'travel-info' },
@@ -25,10 +27,10 @@ const destinations: PassengerDestination[] = [
   ...referenceVenues.map(venue => ({ kind: 'venue' as const, label: venue.name, detail: 'Unverified restaurant reference — ship directory', route: 'ships' as const, param: LIVE_TEST_TRIP.vesselSlug })),
 ];
 
-export function searchPassengerDestinations(query: string): PassengerDestination[] {
+export function searchPassengerDestinations(query: string, vesselSlug = LIVE_TEST_TRIP.vesselSlug): PassengerDestination[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const cabin = q.match(/^(?:cabin\s*)?(\d{4,5})$/);
-  if (cabin) return [{ kind: 'cabin', label: `Cabin ${cabin[1]}`, detail: 'Check availability; this search does not confirm cabin identity', route: 'cabin', param: cabin[1] }];
+  if (cabin) return [{ kind: 'cabin', label: `Cabin ${cabin[1]}`, detail: `${getFleetShip(vesselSlug)?.label ?? 'Unknown ship'} — check availability; this search does not confirm cabin identity`, route: 'cabin', param: cabin[1], vesselSlug }];
   return destinations.filter(item => `${item.label} ${item.detail}`.toLowerCase().includes(q)).slice(0, 12);
 }

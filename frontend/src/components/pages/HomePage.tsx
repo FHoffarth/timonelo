@@ -27,6 +27,7 @@ export default function HomePage({ onNavigate, onSearch }: HomePageProps) {
             <SearchPill placeholder="Bellissima, Genoa, cabin 14122..." onSearch={onSearch} />
           </div>
           <button onClick={() => onNavigate('my-cruise')} className="min-h-11 rounded-full bg-[#0C1B2A] text-white px-5">Open past reference voyage</button>
+          <button onClick={() => onNavigate('ships')} className="min-h-11 rounded-full border border-[#0C1B2A]/20 px-5 ml-2">Browse MSC ships</button>
         </div>
       </section>
 

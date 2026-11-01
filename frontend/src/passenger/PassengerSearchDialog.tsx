@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { searchPassengerDestinations, type PassengerDestination } from './search';
 
-export default function PassengerSearchDialog({ initialQuery, onSelect, onClose }: {
+export default function PassengerSearchDialog({ initialQuery, vesselSlug, onSelect, onClose }: {
   initialQuery: string;
+  vesselSlug?: string;
   onSelect: (destination: PassengerDestination) => void;
   onClose: () => void;
 }) {
@@ -13,7 +14,7 @@ export default function PassengerSearchDialog({ initialQuery, onSelect, onClose 
     dialog.current?.showModal();
     input.current?.focus();
   }, []);
-  const results = searchPassengerDestinations(query);
+  const results = searchPassengerDestinations(query, vesselSlug);
   return (
     <dialog ref={dialog} onCancel={onClose} aria-labelledby="passenger-search-title" className="m-auto w-[calc(100%-2rem)] max-w-xl max-h-[80dvh] overflow-y-auto rounded-3xl bg-white p-5 text-[#0C1B2A] shadow-xl backdrop:bg-[#0C1B2A]/60">
       <div className="flex items-center justify-between gap-3">

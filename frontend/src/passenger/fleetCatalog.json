@@ -1,0 +1,11 @@
+[
+  { "slug": "msc-bellissima", "label": "MSC Bellissima", "operatorId": "msc" },
+  { "slug": "msc-meraviglia", "label": "MSC Meraviglia", "operatorId": "msc" },
+  { "slug": "msc-grandiosa", "label": "MSC Grandiosa", "operatorId": "msc" },
+  { "slug": "msc-euribia", "label": "MSC Euribia", "operatorId": "msc" },
+  { "slug": "msc-virtuosa", "label": "MSC Virtuosa", "operatorId": "msc" },
+  { "slug": "msc-world-europa", "label": "MSC World Europa", "operatorId": "msc" },
+  { "slug": "msc-world-america", "label": "MSC World America", "operatorId": "msc" },
+  { "slug": "msc-seascape", "label": "MSC Seascape", "operatorId": "msc" },
+  { "slug": "msc-seashore", "label": "MSC Seashore", "operatorId": "msc" }
+]

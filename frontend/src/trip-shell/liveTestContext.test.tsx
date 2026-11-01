@@ -241,6 +241,6 @@ describe('BC-2 J: search entries inherit the same context', () => {
   it('the unmatched fallback and entity select both use the live-test vessel', () => {
     expect(appSource).not.toMatch(/handleNavigate\("ships",\s*"msc-bellissima"\)/);
     expect(searchPassengerDestinations('Bellissima')[0]).toMatchObject({ route: 'ships', param: LIVE_TEST_TRIP.vesselSlug });
-    expect(appSource).toMatch(/setSelectedShipSlug\(LIVE_TEST_TRIP\.vesselSlug\)/);
+    expect(searchPassengerDestinations('14122')[0].vesselSlug).toBe(LIVE_TEST_TRIP.vesselSlug);
   });
 });

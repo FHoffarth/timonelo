@@ -15,6 +15,7 @@ htmlcov/
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+frontend/public/data/fleet.publication.json
 node_modules/
 dist/
 
