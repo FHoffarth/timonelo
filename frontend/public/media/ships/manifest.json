@@ -1,0 +1,448 @@
+{
+  "schema": "timonelo.licensed-ship-media.v1",
+  "rights_basis": "Individual Commons file-page licenses, not human knowledge publication approval.",
+  "ships": [
+    {
+      "ship": "msc-bellissima",
+      "title": "MSC Bellissima docked.jpg",
+      "author": "Gérard",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Bellissima_docked.jpg",
+      "source_revision": 1243572128,
+      "file_timestamp": "2025-11-07T15:09:20Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/MSC_Bellissima_docked.jpg",
+      "original_sha1": "955c29ec19bfdf78fdc148bdafc116472a2e7b99",
+      "download": {
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/MSC_Bellissima_docked.jpg",
+        "rendition": "original",
+        "sha256": "e950227c8c2245ca8262d86a7eda886f0b28c4bbf1675ddbd69ef8b79c50863d"
+      },
+      "retrieved_at": "2026-11-01T14:46:12.474192+00:00",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rendition_license": "CC0-1.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC Bellissima docked near Aqaba",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-bellissima-320.webp",
+          "width": 320,
+          "height": 156,
+          "bytes": 9172,
+          "sha256": "53c9527c65e62c28e48085e4feaa1e7ec76444c8d5069bc285c5f81fdcc1e3ec"
+        },
+        {
+          "src": "/media/ships/msc-bellissima-640.webp",
+          "width": 640,
+          "height": 311,
+          "bytes": 38036,
+          "sha256": "356c874ad93eed71aaa03136964585ab5e10864d334ae1e86d313fa9a25606db"
+        },
+        {
+          "src": "/media/ships/msc-bellissima-1280.webp",
+          "width": 1280,
+          "height": 622,
+          "bytes": 158366,
+          "sha256": "562a9d91b6518fa3e0e270d35b7fa4debfb2ce0665310905a95c680aa79b1973"
+        }
+      ]
+    },
+    {
+      "ship": "msc-euribia",
+      "title": "MSC Euribia in Rotterdam.jpg",
+      "author": "Gerd Fahrenhorst",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Euribia_in_Rotterdam.jpg",
+      "source_revision": 1177068923,
+      "file_timestamp": "2024-02-07T09:26:20Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/MSC_Euribia_in_Rotterdam.jpg",
+      "original_sha1": "0b18fd6ef50fe3bb45e0742c6fdf47169407d877",
+      "download": {
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/MSC_Euribia_in_Rotterdam.jpg",
+        "rendition": "original",
+        "sha256": "a17b398d803f0f9b6777c00cc81dbd58ad3e5aed21c6b6c5f18f72b91e21c6e0"
+      },
+      "retrieved_at": "2026-11-01T14:46:13.459132+00:00",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rendition_license": "CC-BY-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Cropped detail of superstructure; hull artwork excluded. Resized, WebP conversion; metadata removed.",
+      "crop_pixels": [
+        700,
+        1000,
+        3400,
+        1700
+      ],
+      "depiction": "MSC Euribia in Rotterdam",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-euribia-320.webp",
+          "width": 320,
+          "height": 83,
+          "bytes": 6648,
+          "sha256": "b7d0c367ad0495217dd3066bdda3fd93dedd90392d54396ee33f2b74381ff542"
+        },
+        {
+          "src": "/media/ships/msc-euribia-640.webp",
+          "width": 640,
+          "height": 166,
+          "bytes": 24456,
+          "sha256": "990d67e6b494aea45b4f286a2ec428ac5b26bcfc1c065599c470797693a3605d"
+        },
+        {
+          "src": "/media/ships/msc-euribia-1280.webp",
+          "width": 1280,
+          "height": 332,
+          "bytes": 89954,
+          "sha256": "a3031157d815d89d5d8f8209701a3d964e408d099f0ae1f7889a96ccf6758185"
+        }
+      ]
+    },
+    {
+      "ship": "msc-grandiosa",
+      "title": "MSC Grandiosa.jpg",
+      "author": "Blattlausi",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Grandiosa.jpg",
+      "source_revision": 1255016021,
+      "file_timestamp": "2019-11-08T22:07:49Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/MSC_Grandiosa.jpg",
+      "original_sha1": "34464c0558308355b771f567d51b6583d340df1a",
+      "download": {
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/MSC_Grandiosa.jpg",
+        "rendition": "original",
+        "sha256": "7505f174c072b89e03623b16364ab5ec25bb97feb7741efc74fc7dade41417a9"
+      },
+      "retrieved_at": "2026-11-01T14:46:15.207604+00:00",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rendition_license": "CC-BY-SA-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC Grandiosa is one of the biggest cruise ships",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-grandiosa-320.webp",
+          "width": 320,
+          "height": 176,
+          "bytes": 11798,
+          "sha256": "fbb685b2f3bc13006fcccec012d0dbfa6bc001a23839af8ebbbf2121f3e3b947"
+        },
+        {
+          "src": "/media/ships/msc-grandiosa-640.webp",
+          "width": 640,
+          "height": 352,
+          "bytes": 45258,
+          "sha256": "03bade0b11f7d150ceac790868503465826223f6458bcf8a50fa97b63daa93f4"
+        },
+        {
+          "src": "/media/ships/msc-grandiosa-1280.webp",
+          "width": 1280,
+          "height": 703,
+          "bytes": 215130,
+          "sha256": "7380e003dfe1d8502aa4b8a0a550d23a40ef70b4514c59d5bab1d0d7aa4bb747"
+        }
+      ]
+    },
+    {
+      "ship": "msc-meraviglia",
+      "title": "MSC Meraviglia in Marseille.jpg",
+      "author": "Fudebnt07",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Meraviglia_in_Marseille.jpg",
+      "source_revision": 1291421305,
+      "file_timestamp": "2026-10-13T22:58:31Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/MSC_Meraviglia_in_Marseille.jpg",
+      "original_sha1": "6187cfe6c707a513fad02e02eb7364ed82a563d4",
+      "download": {
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/MSC_Meraviglia_in_Marseille.jpg",
+        "rendition": "original",
+        "sha256": "bdb8660be8947d69fe94df796f9d8d77a69e4bd2f80d96016db12c9575165014"
+      },
+      "retrieved_at": "2026-11-01T14:46:18.084223+00:00",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rendition_license": "CC0-1.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC Meraviglia in Marseille, September 2026",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-meraviglia-320.webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 17102,
+          "sha256": "735bd59c3d01a666b78fa69712850bbcf266a76e20527083c33da86e92837585"
+        },
+        {
+          "src": "/media/ships/msc-meraviglia-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 60412,
+          "sha256": "b387f8cbccec2834635763a79d1d89cb34dc6815de38cd00f9494554569b6e3d"
+        },
+        {
+          "src": "/media/ships/msc-meraviglia-1280.webp",
+          "width": 1280,
+          "height": 1707,
+          "bytes": 207224,
+          "sha256": "d09fd3eff11aa1a8642f82c97a0ada028129d35a574a9ffeaeee1aafb459d365"
+        }
+      ]
+    },
+    {
+      "ship": "msc-seascape",
+      "title": "MSC Seascape.jpg",
+      "author": "BATTLEPT",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Seascape.jpg",
+      "source_revision": 952400866,
+      "file_timestamp": "2024-09-12T11:17:27Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/MSC_Seascape.jpg",
+      "original_sha1": "2df734465a423bf53e3955345699f11b19c67669",
+      "download": {
+        "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/MSC_Seascape.jpg/1280px-MSC_Seascape.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "rendition": "Commons 1280px thumbnail; original file not downloaded",
+        "sha256": "4cac4e8efcfee48b79c6ad0cc0e12dae1449cc09f052093ca85072732d65f788"
+      },
+      "retrieved_at": "2026-11-01T14:46:19.433727+00:00",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rendition_license": "CC-BY-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Left edge cropped to exclude beachgoers. Resized, WebP conversion; metadata removed.",
+      "crop_pixels": [
+        300,
+        0,
+        1280,
+        960
+      ],
+      "depiction": "MSC seascape",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-seascape-320.webp",
+          "width": 320,
+          "height": 313,
+          "bytes": 22136,
+          "sha256": "d68d7b7d23e81d0a0da863bf7654358cdb727dc5e76361e248cc2283ce758600"
+        },
+        {
+          "src": "/media/ships/msc-seascape-640.webp",
+          "width": 640,
+          "height": 627,
+          "bytes": 89002,
+          "sha256": "5b379c24f411c864d9a25d6751c67b3f7c1dc8c0b04572bcb7b71c37c17573b6"
+        },
+        {
+          "src": "/media/ships/msc-seascape-980.webp",
+          "width": 980,
+          "height": 960,
+          "bytes": 206660,
+          "sha256": "0f2748e1ba7b6d4e064f6f1f819e48809bb6f7feda6b29255d9d915f8603a1fc"
+        }
+      ]
+    },
+    {
+      "ship": "msc-seashore",
+      "title": "Msc seashore.jpg",
+      "author": "Lello28",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Msc_seashore.jpg",
+      "source_revision": 1045748386,
+      "file_timestamp": "2021-08-24T12:12:10Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Msc_seashore.jpg",
+      "original_sha1": "2859d725a5a79c983b91f18a30b0814f9393b30b",
+      "download": {
+        "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Msc_seashore.jpg/1280px-Msc_seashore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "rendition": "Commons 1280px thumbnail; original file not downloaded",
+        "sha256": "fbfd374bf75f61bcd8bb05d0d8b7a222e6c5f679f679e25135606b49eb74b00e"
+      },
+      "retrieved_at": "2026-11-01T14:46:20.596858+00:00",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rendition_license": "CC-BY-SA-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "Msc Seashore in arrivo nel porto di Genova",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-seashore-320.webp",
+          "width": 320,
+          "height": 180,
+          "bytes": 10082,
+          "sha256": "b9b47f0c9fb4123b2691e2f5da36d1858f0168233efda82c84c42f4e7fc2a5e3"
+        },
+        {
+          "src": "/media/ships/msc-seashore-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 45752,
+          "sha256": "11ea7558789d86721cf40e02d725a23f16188c049d7856c4338313d50166c6b6"
+        },
+        {
+          "src": "/media/ships/msc-seashore-1280.webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 204662,
+          "sha256": "3ae9dbae8bb4934c7823c23d6c079b1ad335526e87bc7da4effe6a8f492a5365"
+        }
+      ]
+    },
+    {
+      "ship": "msc-virtuosa",
+      "title": "MSC Virtuosa.jpg",
+      "author": "Jkg52-wiki",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_Virtuosa.jpg",
+      "source_revision": 1103475180,
+      "file_timestamp": "2023-02-26T20:59:10Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/MSC_Virtuosa.jpg",
+      "original_sha1": "6389a97625e0b4359aa5a9c6cac801c8f77d84a0",
+      "download": {
+        "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/MSC_Virtuosa.jpg/1280px-MSC_Virtuosa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "rendition": "Commons 1280px thumbnail; original file not downloaded",
+        "sha256": "088f2c4c3deb8dbf3fa2f0137c7ac6a1ac2dd654ea60543f545df7354bc051c5"
+      },
+      "retrieved_at": "2026-11-01T14:46:22.069093+00:00",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rendition_license": "CC-BY-SA-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC Virtuosa, 330 Meter lang, 43 Meter breit, Tiefgang 8,75 Meter. Stapellauf 2019",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-virtuosa-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 20672,
+          "sha256": "23f29e49aa4da53c7fa456d35c9aab1b3295acc41d3c8ac261382d0cf884e768"
+        },
+        {
+          "src": "/media/ships/msc-virtuosa-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 69126,
+          "sha256": "39746d0b745d727a2e82eddb2e12c8a86002b1b179676104f9ca4b47410f70ac"
+        },
+        {
+          "src": "/media/ships/msc-virtuosa-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 228118,
+          "sha256": "78dc12375ac0638951319b78137f1063372f59dfa45f7f674e6f746265c4e8be"
+        }
+      ]
+    },
+    {
+      "ship": "msc-world-america",
+      "title": "MSC World America.jpg",
+      "author": "JPD115",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_World_America.jpg",
+      "source_revision": 1156147959,
+      "file_timestamp": "2025-03-27T18:15:51Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/MSC_World_America.jpg",
+      "original_sha1": "4000c2568f985ab45ad27b67dbb250ab77ab68de",
+      "download": {
+        "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/MSC_World_America.jpg/1280px-MSC_World_America.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "rendition": "Commons 1280px thumbnail; original file not downloaded",
+        "sha256": "248252abc1f444dd860186423877f8ae17aac05150eb4e49b772955aa7d48017"
+      },
+      "retrieved_at": "2026-11-01T14:46:23.267695+00:00",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rendition_license": "CC-BY-SA-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC World America ship on the day of its delivery to Saint-Nazaire",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-world-america-320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 9856,
+          "sha256": "8f6976f9d5d100023d042efc84f84f7ac8c6d9341be92e3f0e5bcf6098e53f3e"
+        },
+        {
+          "src": "/media/ships/msc-world-america-640.webp",
+          "width": 640,
+          "height": 426,
+          "bytes": 42624,
+          "sha256": "eb0cdd7e278befc21c537a8965fb7c45002ca83aad6147bf65cdd14fbd0932f0"
+        },
+        {
+          "src": "/media/ships/msc-world-america-1280.webp",
+          "width": 1280,
+          "height": 853,
+          "bytes": 184878,
+          "sha256": "f75cd876f043435b0db80690d4817728fa39c66a951c5f5b3ba374578f3c27cd"
+        }
+      ]
+    },
+    {
+      "ship": "msc-world-europa",
+      "title": "MSC World Europa (ship, 2022).jpg",
+      "author": "Yair Haklai",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MSC_World_Europa_(ship,_2022).jpg",
+      "source_revision": 1226880086,
+      "file_timestamp": "2023-10-13T15:45:34Z",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/MSC_World_Europa_%28ship%2C_2022%29.jpg",
+      "original_sha1": "7e884233b01b94777559d6174d9c6089d2d63878",
+      "download": {
+        "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/MSC_World_Europa_%28ship%2C_2022%29.jpg/1280px-MSC_World_Europa_%28ship%2C_2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "rendition": "Commons 1280px thumbnail; original file not downloaded",
+        "sha256": "521e8e065c5edbb6f215a4dff0a0aebf8de01f150b5fc39b917d705bec11d1b9"
+      },
+      "retrieved_at": "2026-11-01T14:46:24.823015+00:00",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rendition_license": "CC-BY-SA-4.0",
+      "publication_status": "LICENSE_DOCUMENTED",
+      "changes": "Resized, WebP conversion; metadata removed.",
+      "crop_pixels": null,
+      "depiction": "MSC World Europa (ship, 2022), Naples",
+      "identity_check": "File-page description and visual inspection of ship photograph; catalog illustration, not canonical vessel identity evidence.",
+      "limitations": "Historical photograph; no current itinerary, operation, accessibility or endorsement claim.",
+      "variants": [
+        {
+          "src": "/media/ships/msc-world-europa-320.webp",
+          "width": 320,
+          "height": 295,
+          "bytes": 22818,
+          "sha256": "d629b157f52bfb37ac767a442df4f91b9199778d413c37f6edb96103ea5d8325"
+        },
+        {
+          "src": "/media/ships/msc-world-europa-640.webp",
+          "width": 640,
+          "height": 590,
+          "bytes": 77344,
+          "sha256": "d499a9d144dc30c6b184b1def4e611eb71377b18ed66e0cfc45c6fe34065de87"
+        },
+        {
+          "src": "/media/ships/msc-world-europa-1280.webp",
+          "width": 1280,
+          "height": 1180,
+          "bytes": 216404,
+          "sha256": "4a3bed025f029aaef4ede3ce5c9beb50a3ede2b79d724cf4bed652c5fe9e52ac"
+        }
+      ]
+    }
+  ]
+}

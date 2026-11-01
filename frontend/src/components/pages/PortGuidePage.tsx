@@ -76,6 +76,7 @@ export default function PortGuidePage({
               your voyage — we have not yet researched {LIVE_TEST_TRIP.departure.city}{" "}
               or {LIVE_TEST_TRIP.arrival.city}.
             </p>
+            <p className="text-xs text-[#5B6570] mt-2">Unverified repository reference. Confirm current terminal operations, fares and emergency information with the relevant authorities before relying on them.</p>
           </div>
 
           {/* Quick Port Switcher */}
@@ -130,12 +131,12 @@ export default function PortGuidePage({
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
             <div>
               <span className="px-2.5 py-1 rounded bg-[#C58A46] text-white text-[11px] font-mono font-bold uppercase tracking-wider">
-                UN/LOCODE: {canonicalPortSlug.toUpperCase()}
+                Reference: {canonicalPortSlug.toUpperCase()}
               </span>
               <h3 className="font-display text-2xl font-bold mt-2">{portData.country} Turnaround & Transit Hub</h3>
             </div>
             <div className="hidden sm:block text-right text-xs text-slate-300">
-              <div>Verified Authority: {portData.provenance?.verification_authority || "Port Authority Register"}</div>
+              <div>Repository attribution: {portData.provenance?.verification_authority || "Not available"}</div>
             </div>
           </div>
         </div>
@@ -143,7 +144,7 @@ export default function PortGuidePage({
 
       {/* 3. Sub Navigation Tabs */}
       <div className="max-w-7xl mx-auto w-full px-6">
-        <SubTabBar tabs={tabs} activeTab={activeTab} onSelectTab={setActiveTab} />
+        <SubTabBar tabs={tabs} activeTab={activeTab} onSelectTab={setActiveTab} className="flex-wrap gap-y-3" />
       </div>
 
       {/* 4. Tab Content */}

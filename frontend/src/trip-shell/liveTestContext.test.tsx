@@ -29,6 +29,7 @@ import RouteIntelligencePage from '../components/pages/RouteIntelligencePage';
 import CruiseMathPage from '../components/pages/CruiseMathPage';
 import PortGuidePage from '../components/pages/PortGuidePage';
 import { ReferenceTripShellPreview } from '../components/pages/TripShellPage';
+import { searchPassengerDestinations } from '../passenger/search';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const appSource = readFileSync(resolve(here, '../App.tsx'), 'utf8');
@@ -229,17 +230,17 @@ describe('BC-2 I: Port guides are reference material', () => {
 describe('BC-2 J: search entries inherit the same context', () => {
   it('port keywords open reference browsing, not a preselected port', () => {
     expect(appSource).not.toMatch(/handleNavigate\("ports",\s*q\.includes\("genoa"\)/);
-    expect(appSource).toMatch(/handleNavigate\("ports"\)/);
+    expect(searchPassengerDestinations('Genoa')[0]).toMatchObject({ route: 'ports', param: 'genoa', kind: 'port' });
   });
 
   it('route keywords no longer resolve to another voyage\'s itinerary', () => {
     expect(appSource).not.toMatch(/handleNavigate\("routes",\s*"7-night-adriatic-aegean"\)/);
-    expect(appSource).toMatch(/handleNavigate\("routes"\)/);
+    expect(searchPassengerDestinations('Routes')[0]).toMatchObject({ route: 'routes' });
   });
 
   it('the unmatched fallback and entity select both use the live-test vessel', () => {
     expect(appSource).not.toMatch(/handleNavigate\("ships",\s*"msc-bellissima"\)/);
-    expect(appSource).toMatch(/handleNavigate\("ships",\s*LIVE_TEST_TRIP\.vesselSlug\)/);
-    expect(appSource).toMatch(/setSelectedShipSlug\(LIVE_TEST_TRIP\.vesselSlug\)/);
+    expect(searchPassengerDestinations('Bellissima')[0]).toMatchObject({ route: 'ships', param: LIVE_TEST_TRIP.vesselSlug });
+    expect(searchPassengerDestinations('14122')[0].vesselSlug).toBe(LIVE_TEST_TRIP.vesselSlug);
   });
 });

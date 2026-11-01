@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import MainNavbar, { NavRoute } from "./components/ui/MainNavbar";
 import SpatialProofViewer from "./spatial-proof/SpatialProofViewer";
 import Footer from "./components/ui/Footer";
@@ -9,12 +9,9 @@ import RouteIntelligencePage from "./components/pages/RouteIntelligencePage";
 import CruiseMathPage from "./components/pages/CruiseMathPage";
 import TravelInfoPage from "./components/pages/TravelInfoPage";
 import { ReferenceTripShellPreview } from "./components/pages/TripShellPage";
-import { PassengerShipOverview } from "./components/pages/ShipOverviewPage";
-import SemanticSearchBar from "./semantic-deck/components/SemanticSearchBar";
-import { TimoneloSpatialApiClient } from "./semantic-deck/apiClient";
-import { SemanticEntity } from "./semantic-deck/types";
+import FleetDiscovery from "./passenger/FleetDiscovery";
+import PassengerSearchDialog from "./passenger/PassengerSearchDialog";
 import { LIVE_TEST_TRIP } from "./trip-shell/liveTestContext";
-import { X } from "lucide-react";
 
 // Internal review tool (dev-only lazy import, completely stripped from production build)
 const DeckReviewPage = import.meta.env.DEV
@@ -46,6 +43,7 @@ export default function App() {
   // different voyages -- Bellissima, Santorini, an Adriatic route -- so which
   // voyage the product thought you were on depended on which tab you opened.
   const [selectedShipSlug, setSelectedShipSlug] = useState<string>(LIVE_TEST_TRIP.vesselSlug);
+  const [selectedProfileSlug, setSelectedProfileSlug] = useState<string | undefined>();
   const [selectedCabinId, setSelectedCabinId] = useState<string>("14122");
   // No port guide exists for either end of this voyage, so there is no port to
   // default to. Undefined means the Ports surface opens as reference browsing
@@ -56,48 +54,47 @@ export default function App() {
   const [selectedRouteSlug, setSelectedRouteSlug] = useState<string | undefined>(undefined);
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const apiClient = new TimoneloSpatialApiClient("msc-bellissima");
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleNavigate = (route: NavRoute | "cabin", param?: string) => {
+  useEffect(() => {
+    window.history.replaceState({ timonelo: true, route: 'home' }, '');
+    const restore = (event: PopStateEvent) => {
+      const state = event.state;
+      if (!state?.timonelo || !['home', 'ships', 'cabin', 'ports', 'routes', 'cruise-math', 'travel-info', 'my-cruise'].includes(state.route)) return;
+      setCurrentRoute(state.route);
+      setIsSearchOpen(false);
+      if (state.route === 'ships') {
+        setSelectedProfileSlug(state.param);
+        if (state.param) setSelectedShipSlug(state.param);
+      }
+      if (state.route === 'cabin') setSelectedShipSlug(state.vessel || LIVE_TEST_TRIP.vesselSlug);
+      if (state.route === 'cabin') setSelectedCabinId(state.param || '');
+      if (state.route === 'ports') setSelectedPortSlug(state.param);
+      if (state.route === 'routes') setSelectedRouteSlug(state.param);
+    };
+    window.addEventListener('popstate', restore);
+    return () => window.removeEventListener('popstate', restore);
+  }, []);
+
+  const handleNavigate = (route: NavRoute | "cabin", param?: string, vessel?: string) => {
+    const cabinVessel = vessel || selectedShipSlug;
+    window.history.pushState({ timonelo: true, route, param, vessel: cabinVessel }, '');
+    if (route === 'ships') setSelectedProfileSlug(param);
     if (route === "ships" && param) setSelectedShipSlug(param);
-    if (route === "cabin" && param) setSelectedCabinId(param);
+    if (route === "cabin" && param) {
+      setSelectedCabinId(param);
+      setSelectedShipSlug(cabinVessel);
+    }
     if (route === "ports" && param) setSelectedPortSlug(param);
     if (route === "routes" && param) setSelectedRouteSlug(param);
 
     setCurrentRoute(route);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleGlobalSearchSelect = (entity: SemanticEntity) => {
-    setIsSearchOpen(false);
-    setSelectedCabinId(entity.id);
-    setSelectedShipSlug(LIVE_TEST_TRIP.vesselSlug);
-    setCurrentRoute("cabin");
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleSearchSubmit = (query: string) => {
-    const q = query.toLowerCase();
-    if (q.includes("cabin") || /^\d{4,5}$/.test(q)) {
-      const match = q.match(/\d{4,5}/);
-      const cabinId = match ? match[0] : "14122";
-      handleNavigate("cabin", cabinId);
-    } else if (q.includes("port") || q.includes("santorini") || q.includes("genoa")) {
-      // Searching a port name opens the Ports surface, which frames itself as
-      // reference browsing. Naming a port must not make it a stop on this
-      // voyage, so nothing is preselected as "yours".
-      handleNavigate("ports");
-    } else if (q.includes("route") || q.includes("adriatic") || q.includes("aegean")) {
-      // No route dataset exists for this voyage. Search used to hand the
-      // Adriatic keyword straight to a Western Mediterranean itinerary and
-      // present it as the passenger's; the surface now says it has nothing.
-      handleNavigate("routes");
-    } else if (q.includes("math") || q.includes("drink") || q.includes("price") || q.includes("cost")) {
-      handleNavigate("cruise-math");
-    } else if (q.includes("visa") || q.includes("travel") || q.includes("passport")) {
-      handleNavigate("travel-info");
-    } else {
-      handleNavigate("ships", LIVE_TEST_TRIP.vesselSlug);
-    }
+    setSearchQuery(query);
+    setIsSearchOpen(true);
   };
 
   return (
@@ -106,7 +103,7 @@ export default function App() {
       <MainNavbar
         currentRoute={currentRoute as NavRoute}
         onNavigate={handleNavigate}
-        onOpenSearch={() => setIsSearchOpen(true)}
+        onOpenSearch={() => handleSearchSubmit('')}
       />
 
       {/* 2. Page Switcher */}
@@ -119,7 +116,7 @@ export default function App() {
         )}
 
         {currentRoute === "ships" && (
-          <PassengerShipOverview vesselId={selectedShipSlug} />
+          <FleetDiscovery selectedSlug={selectedProfileSlug} onNavigate={handleNavigate} />
         )}
 
         {currentRoute === "cabin" && (
@@ -159,32 +156,14 @@ export default function App() {
         )}
       </main>
 
+      {currentRoute !== 'home' && <nav aria-label="Passenger pages" className="max-w-7xl mx-auto w-full px-4 py-6 flex flex-wrap gap-2">{([{ route: 'home', label: 'Home' }, { route: 'my-cruise', label: 'My Cruise' }, { route: 'ships', label: 'Ships' }, { route: 'routes', label: 'Routes' }, { route: 'ports', label: 'Ports' }, { route: 'travel-info', label: 'Travel Info' }, { route: 'cruise-math', label: 'Cruise Math' }] as const).map(item => <button key={item.route} className="min-h-11 rounded-xl border px-3 text-sm bg-white" onClick={() => handleNavigate(item.route)}>{item.label}</button>)}</nav>}
+
       {/* 3. Colophon Footer */}
       <Footer />
 
       {/* Search Modal Overlay */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-[#0C1B2A]/60 backdrop-blur-sm flex items-start justify-center pt-24 px-6 animate-fadeIn">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-xl shadow-2xl border border-[#0C1B2A]/10 space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="eyebrow-tag">UNIVERSAL INTELLIGENCE SEARCH</span>
-              <button
-                onClick={() => setIsSearchOpen(false)}
-                className="p-1.5 rounded-full hover:bg-slate-100 text-slate-500 cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-            <SemanticSearchBar
-              onSearch={(q) => apiClient.searchEntities(q)}
-              onSelectEntity={handleGlobalSearchSelect}
-            />
-            <div className="pt-2 text-[11px] text-[#5B6570] flex items-center justify-between">
-              <span>Try searching "14122", "Santorini", "Balcony", "Bellissima", or "Drink Packages"</span>
-              <span className="font-mono text-[#C58A46]">ESC to close</span>
-            </div>
-          </div>
-        </div>
+        <PassengerSearchDialog initialQuery={searchQuery} vesselSlug={selectedShipSlug} onClose={() => setIsSearchOpen(false)} onSelect={destination => { setIsSearchOpen(false); handleNavigate(destination.route, destination.param, destination.vesselSlug); }} />
       )}
     </div>
   );

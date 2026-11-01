@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "python -B ../scripts/export_passenger_fleet.py",
     "dev": "vite",
+    "prebuild": "python -B ../scripts/export_passenger_fleet.py",
     "build": "vite build",
+    "check:public-assets": "node scripts/public-assets.mjs",
+    "test:public-assets": "node --test scripts/public-assets.test.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

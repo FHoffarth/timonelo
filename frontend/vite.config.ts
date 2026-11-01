@@ -1,10 +1,11 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import { publicMediaPlugin } from './scripts/public-assets.mjs';
 
 export default defineConfig({
   base: '/',
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), publicMediaPlugin()],
   server: {
     host: '0.0.0.0',
     port: 5173,

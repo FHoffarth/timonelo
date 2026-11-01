@@ -1,0 +1,5 @@
+{
+  "max_age_seconds": 600,
+  "refresh_interval_seconds": 30,
+  "request_timeout_seconds": 5
+}
