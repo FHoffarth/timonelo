@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import shutil
 
 import pytest
 
@@ -37,11 +38,13 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
 ARTIFACTS_ROOT = REPO_ROOT / "evidence" / "artifacts"
 INDEX_PATH = ARTIFACTS_ROOT / "index.json"
 
-BELLISSIMA_IMO = "IMO9766205"
+BELLISSIMA_IMO = "IMO9760524"
+ART0002_RECORDED_IMO = "IMO9766205"
 GRANDIOSA_IMO = "IMO9803613"
 
-#: The two artifacts whose own cover page names their subject vessel.
-ATTRIBUTED = {"ART-0001", "ART-0002"}
+# ART-0001 alone received the owner-authorized correction. ART-0002's recorded
+# attribution is preserved, not inherited from the corrected ship identity.
+ATTRIBUTED = {"ART-0001": BELLISSIMA_IMO, "ART-0002": ART0002_RECORDED_IMO}
 
 
 @pytest.fixture()
@@ -65,9 +68,11 @@ def _artifact(**overrides) -> Artifact:
 # -- 1. correctly attributed artifact -> true for the correct vessel ---------
 
 def test_attributed_artifact_establishes_its_own_vessel(registry):
-    assert registry.artifact_establishes_vessel("ART-0001", BELLISSIMA_IMO) is True
-    assert registry.artifact_establishes_vessel("ART-0002", BELLISSIMA_IMO) is True
-    assert registry.vessels_established_by("ART-0001") == (BELLISSIMA_IMO,)
+    for artifact_id, recorded_imo in ATTRIBUTED.items():
+        assert registry.artifact_establishes_vessel(artifact_id, recorded_imo) is True
+        assert registry.vessels_established_by(artifact_id) == (recorded_imo,)
+    assert registry.artifact_establishes_vessel("ART-0001", ART0002_RECORDED_IMO) is False
+    assert registry.artifact_establishes_vessel("ART-0002", BELLISSIMA_IMO) is False
 
 
 # -- 2. THE COUNTEREXAMPLE: same artifact -> false for a sister vessel -------
@@ -183,9 +188,10 @@ def test_mutating_a_returned_artifact_cannot_widen_attribution(registry):
 
 def test_ontology_identity_does_not_influence_the_answer(registry):
     """Asking on behalf of Grandiosa does not make the answer Grandiosa."""
-    for asking_vessel in (GRANDIOSA_IMO, BELLISSIMA_IMO):
-        answer = registry.artifact_establishes_vessel("ART-0001", asking_vessel)
-        assert answer is (asking_vessel == BELLISSIMA_IMO)
+    for artifact_id, recorded_imo in ATTRIBUTED.items():
+        for asking_vessel in (GRANDIOSA_IMO, BELLISSIMA_IMO, ART0002_RECORDED_IMO):
+            answer = registry.artifact_establishes_vessel(artifact_id, asking_vessel)
+            assert answer is (asking_vessel == recorded_imo)
 
 
 # -- 7. malformed / invalid IMO rejected ------------------------------------
@@ -302,6 +308,8 @@ def test_registry_load_refuses_non_ascii_attribution(identity, tmp_path):
 def test_ascii_canonical_forms_are_still_accepted():
     """The fix must not narrow the forms the primitive already supported."""
     for accepted in ("IMO9766205", "9766205", "imo 9766205", " IMO9766205 "):
+        assert normalize_vessel_imo(accepted) == ART0002_RECORDED_IMO
+    for accepted in ("IMO9760524", "9760524", "imo 9760524", " IMO9760524 "):
         assert normalize_vessel_imo(accepted) == BELLISSIMA_IMO
 
 
@@ -310,7 +318,7 @@ def test_ascii_canonical_forms_are_still_accepted():
 def test_duplicate_and_unordered_attribution_normalizes_deterministically():
     a = _artifact(subject_vessels=[BELLISSIMA_IMO, BELLISSIMA_IMO, GRANDIOSA_IMO])
     b = _artifact(subject_vessels=[GRANDIOSA_IMO, BELLISSIMA_IMO])
-    c = _artifact(subject_vessels=["9766205", "imo 9803613"])
+    c = _artifact(subject_vessels=["9760524", "imo 9803613"])
     assert a.subject_vessels == b.subject_vessels == c.subject_vessels
     assert a.subject_vessels == (BELLISSIMA_IMO, GRANDIOSA_IMO)  # sorted
     assert normalize_subject_vessels(None) == ()
@@ -331,7 +339,7 @@ def test_unattributed_records_carry_no_empty_assertion(registry):
     raw = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
     for artifact_id, record in raw.items():
         if artifact_id in ATTRIBUTED:
-            assert record["subject_vessels"] == [BELLISSIMA_IMO]
+            assert record["subject_vessels"] == [ATTRIBUTED[artifact_id]]
         else:
             assert "subject_vessels" not in record
     assert set(raw) == {f"ART-{n:04d}" for n in range(1, 8)}
@@ -342,7 +350,43 @@ def test_only_evidenced_artifacts_are_attributed(registry):
     for artifact_id in sorted(ATTRIBUTED):
         assert registry.resolve_path(artifact_id) is not None
         assert registry.verify(artifact_id) is True
-        assert registry.vessels_established_by(artifact_id) == (BELLISSIMA_IMO,)
+        assert registry.vessels_established_by(artifact_id) == (ATTRIBUTED[artifact_id],)
+
+
+def test_attribution_correction_does_not_promote_existing_statements(tmp_path):
+    """Compare live authority with the pre-correction attribution on held data.
+
+    Only the private copy is changed back. Neither side creates evidence,
+    changes review state, or invokes a publication transition.
+    """
+    from timonelo.evidence.workspace import Workspace
+
+    previous_root = tmp_path / "previous-evidence"
+    shutil.copytree(REPO_ROOT / "evidence", previous_root)
+    previous_index = previous_root / "artifacts" / "index.json"
+    records = json.loads(previous_index.read_text(encoding="utf-8"))
+    assert records["ART-0001"]["subject_vessels"] == [BELLISSIMA_IMO]
+    assert records["ART-0002"]["subject_vessels"] == [ART0002_RECORDED_IMO]
+    records["ART-0001"]["subject_vessels"] = [ART0002_RECORDED_IMO]
+    previous_index.write_text(json.dumps(records), encoding="utf-8")
+
+    def current_states(workspace):
+        result = {}
+        for statement in workspace.editor.all():
+            verdict = workspace.editor.authority.evaluate(statement)
+            result[statement.statement_id] = (
+                statement.to_dict(), verdict.admitted, verdict.reason_codes
+            )
+        return result
+
+    previous = current_states(Workspace(str(previous_root)))
+    corrected = current_states(Workspace(str(REPO_ROOT / "evidence")))
+    assert len(corrected) == 410
+    assert corrected == previous
+    dependents = [row for row in corrected.values()
+                  if row[0]["artifact_id"] == "ART-0001"]
+    assert len(dependents) == 303
+    assert all(not row[1] for row in dependents)
 
 
 # -- 10. existing SHA verification behaviour unchanged ----------------------
