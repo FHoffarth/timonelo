@@ -36,7 +36,7 @@ class TestCruiseIntelligenceDatabase(unittest.TestCase):
         self.assertIn("msc-bellissima", ships)
         bellissima = ships["msc-bellissima"]
         imo_val = (bellissima.get("imo") or bellissima.get("imo_number", {}))["value"]
-        self.assertEqual(imo_val, "9766205")
+        self.assertEqual(imo_val, "9760524")
         self.assertEqual(bellissima["flag_state"]["value"], "Malta")
 
     def test_port_intelligence_integrity(self):

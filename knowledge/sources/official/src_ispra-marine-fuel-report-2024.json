@@ -1,0 +1,11 @@
+{
+  "source_id": "src:ispra-marine-fuel-report-2024",
+  "name": "ISPRA 2024 annual marine-fuel report: Annex II vessel list for 2023",
+  "owner": "Istituto Superiore per la Protezione e la Ricerca Ambientale (ISPRA)",
+  "category": "GOVERNMENT_MARITIME",
+  "website": "https://www.isprambiente.gov.it/files2024/pubblicazioni/documenti-tecnici/relazione-tenore-di-zolfo.pdf#page=45",
+  "access_method": "PDF",
+  "last_retrieved": "2026-11-01",
+  "terms": "Source-catalogue citation only; no source artwork is redistributed. The remotely inspected report is not registered as a held Evidence Artifact or EvidenceEvent by this candidate.",
+  "notes": "Published June 2024, reporting on 2023. Annex II, physical PDF page 45 / printed page 43: MSC BELLISSIMA, Malta, Passenger ship, IMO 9760524. Two adjacent rows are one source, not independent corroboration. The date above is the Phase 2 remote access date, not a human-review date or a claim of current registry status. IMO-only Product Owner decision dated 2026-11-01 and supporting/counterevidence are documented in reports/golden-ship-identity-decision/DECISION_AND_CHANGE_PLAN.md; candidate scope and preserved decision-record hash are in reports/golden-ship-identity-decision/CANDIDATE.md. No GISIS retrieval, MMSI/call-sign approval, artifact reassignment, statement admission or publication is asserted."
+}
