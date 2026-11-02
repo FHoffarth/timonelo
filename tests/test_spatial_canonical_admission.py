@@ -58,7 +58,7 @@ from timonelo.spatial.admission import (
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
 ARTIFACTS_ROOT = REPO_ROOT / "evidence" / "artifacts"
 
-BELLISSIMA_IMO = "IMO9766205"
+BELLISSIMA_IMO = "IMO9760524"
 GRANDIOSA_IMO = "IMO9803613"
 ANDORINHA_ENI = "ENI02338573"
 
@@ -401,8 +401,9 @@ def test_bellissima_fails_admission_on_unregistered_evidence(registry):
 
     result = evaluate_admission(create_bellissima_ontology(), registry=registry)
     assert result.admitted is False
-    # Identity resolved, so evidence really was examined.
-    assert result.vessel_imo == BELLISSIMA_IMO
+    # The legacy ontology is unchanged by the ART-0001 metadata correction.
+    # Its numeric identity parses, but none of its cited artifacts is registered.
+    assert result.vessel_imo == "IMO9766205"
     assert result.vessel_rejection is None
     assert result.links_examined > 5000
     assert set(result.reason_codes) == {AdmissionRejection.ARTIFACT_NOT_REGISTERED}
