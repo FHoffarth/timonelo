@@ -1,0 +1,17 @@
+{
+  "all_410_statement_states_authority_and_reasons_unchanged": true,
+  "art1_dependents": 303,
+  "art1_dependent_authoritative": 0,
+  "bellissima_candidates": 398,
+  "bellissima_authoritative_facts": 0,
+  "art1_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+  "art1_subjects": [
+    "IMO9760524"
+  ],
+  "art2_subjects": [
+    "IMO9766205"
+  ],
+  "prepared_claims": 8,
+  "human_decisions": 0,
+  "snapshot_written": false
+}

@@ -1,0 +1,15 @@
+# Golden Ship delivery - bounded sprint plan
+
+Spec: owner attachment 9e4b39d4-f32c-4b56-af7e-e66404b3fe2b, Golden Ship Delivery Sprint, 2026-11-02. Baseline develop 87ea0f10d351a397a39053da57b65c0580bc296f; original correction c5e1557beeb8b324db7406919253d789a5cd91fc. Dedicated branch feat/golden-ship-delivery. No changes in prior worktrees.
+
+Design decision (engineer's call within the owner's autonomous scope): retain FleetProfile, licensed ShipPhoto and usePublicationSnapshot. Improve Bellissima's section navigation and readable published deck facts; expose neither pending values nor fabricated identity/specifications. Keep review candidates in non-public reports, source-bound to ART-0001. Do not add an engine, component framework or public review endpoint. An empty, honest profile remains empty until genuine review/publication.
+
+- [x] Reproduce PR60 CI failure. Five positive spatial tests used old IMO; 35 pass after corrected fixture plus explicit unchanged legacy-ontology expectation. Original correction preserved; follow-up 5eeed8c pushed normally to PR60.
+- [x] PR60 head 5eeed8c3d4a25821a2980e279ac3389fa5f5e06b passed all four jobs; normal merge 1432a3ae7ceee14f636f1e35aba9bda1b24be42c completed. Post-merge CI 41508671580 green. main remains 4373248689f9f077462a081e47bdb04d5ca25513. No GitHub deployment record for the feature head; Railway safety rests on the existing owner confirmation, not a new runtime inspection. Feature worktree fast-forwarded to the content-identical merge; original worktrees untouched.
+- [x] Prepare eight ART-0001 documentary claims, exact locators and null human decisions; preserve both previous packets, ART2 and all canonical statements/events/reviews. Owner batch question submitted; no answer is consent.
+- [x] Minimal Bellissima presentation and meaningful render regressions; no pending claim values in public bundle.
+- [x] Consolidated validation: backend1159passed/1skip/2subtests; frontend207passed; asset tests10passed; build+asset guard PASS; TS282->282, no new diagnostic. Browser1440/390/375/320 no overflow, licensed photo/credits present, navigation through My Cruise/fleet/profile works, no console errors. 13 protected URLs404; snapshot local no-store.
+- [x] One final independent scoped review completed with no blocking findings. Minor mojibake in this heading corrected. Reviewer did not repeat tests or source-authenticity research.
+- [x] Validated candidate ready for the authorized normal commit/push/PR sequence; integration results are recorded by the corresponding GitHub PR. Human publication remains paused. No main/deployment/public release.
+
+Ruling: owner explicitly delegated routine implementation choices and Git steps; no additional design-approval loop. Human claim decisions remain an independent hard gate. PR60 failure is new; only its concrete test-fixture defect is corrected. Legacy ontology and all production policy are untouched. Work on unrelated safe presentation continues while human decisions are pending.
