@@ -70,11 +70,13 @@ describe('fleet discovery boundary', () => {
       statement_id: 'STM-DISPLAY', entity_id: 'venue:MSC-BELLISSIMA:fixture-lounge',
       question_id: 'Q-TEST', statement_type: 'deck.venue_present', section: 'venues' as const,
       value: [5, 6], artifact_id: 'ART-DISPLAY', page: 3, locator: 'Synthetic display locator',
-      publish_status: 'PUBLISH_ALLOWED',
+      publish_status: 'PUBLISH_ALLOWED', source_edition: '11.2025 DEU',
     }] };
     const html = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={profile} onNavigate={() => {}} />);
     expect(html).toContain('Decks 5 &amp; 6');
     expect(html).toContain('Published deck location');
+    expect(html).toContain('Source edition: 11.2025 DEU');
+    expect(html).toContain('not current operations');
     expect(html).toContain('ART-DISPLAY, page 3');
     expect(html).toContain('Synthetic display locator');
     const unavailable = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={undefined} onNavigate={() => {}} />);

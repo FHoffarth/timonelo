@@ -46,6 +46,9 @@ def project_fleet(workspace, catalog, as_of: str):
                           'section': section, 'value': s.value,
                           'publish_status': s.publish_status.value,
                           'artifact_id': s.artifact_id, 'page': s.page, 'locator': s.locator})
+            edition = getattr(artifact, 'version', None)
+            if isinstance(edition, str) and edition.strip():
+                facts[-1]['source_edition'] = edition
             sources[s.artifact_id] = {'artifact_id': s.artifact_id,
                                      'sha256': artifact.sha256, 'filename': artifact.filename}
         sections = {f['section'] for f in facts}

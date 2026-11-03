@@ -25,13 +25,15 @@ def test_only_current_truth_engine_selection_with_reverifiable_nonprivate_proven
     s = N(statement_id="STM-X", entity_id="venue:MSC-BELLISSIMA:x", question_id="Q-X",
           statement_type="deck.venue_present", artifact_id="ART-X", value=[6], page=4, locator="row X",
           evidence_event_ids=["EVT-X"], publish_status=N(value="PUBLISH_ALLOWED"))
-    a = N(artifact_id="ART-X", sha256="a" * 64, filename="map.pdf", private_source=False)
+    a = N(artifact_id="ART-X", sha256="a" * 64, filename="map.pdf", private_source=False,
+          version="TEST SOURCE EDITION")
     ws = N(editor=N(all=lambda: [s], is_currently_authoritative=lambda _: True),
            registry=N(list_all=lambda: [a], get=lambda _: a, verify=lambda _: True),
            events=N(all=lambda: [N(event_id="EVT-X", artifact_sha256="a" * 64)]),
            engine=N(answer=lambda *args, **kwargs: N(known=True, provenance=N(statement_id="STM-X"))))
     data = project_fleet(ws, CATALOG, "2026-11-01")
     assert len(data["ships"]["msc-bellissima"]["facts"]) == 1
+    assert data["ships"]["msc-bellissima"]["facts"][0]["source_edition"] == "TEST SOURCE EDITION"
     assert data["ships"]["msc-meraviglia"]["facts"] == []
     # Deck facts alone cannot manufacture a fully admitted identity or level 1.
     assert data["ships"]["msc-bellissima"]["level"] == 0

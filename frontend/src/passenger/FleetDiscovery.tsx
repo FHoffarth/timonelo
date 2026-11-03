@@ -31,8 +31,8 @@ export function FleetProfile({ ship, profile, onNavigate }: { ship: FleetShip; p
       {sections.map(section => <a key={section} href={`#${ship.slug}-${section}`} className="min-w-0 min-h-11 rounded-xl border bg-white px-3 py-3 text-sm leading-relaxed hover:border-[#C58A46] focus-visible:outline-offset-4">{bellissimaSections[section]}</a>)}
     </nav>}
     {['msc-bellissima', 'msc-euribia'].includes(ship.slug) && <section className="rounded-2xl border border-[#C58A46]/40 bg-[#F8F0E5] p-5 sm:p-6 space-y-3" aria-label="Review preparation">
-      <p className="text-xs uppercase tracking-widest text-[#79552E]">Human review pending</p><h2 className="font-display text-2xl">{bellissima ? 'Passenger information, under review' : 'The next layer: cabins & dining'}</h2>
-      <p className="text-sm leading-relaxed">{bellissima ? 'Source observations about dining, entertainment and practical orientation are prepared for human review. Pending details are not published facts and stay withheld until the evidence, review and publication gates are satisfied.' : 'Four source observations are prepared for independent human review: a source-edition cabin count and three restaurant deck assignments. Their values remain withheld from this public profile until the regular evidence, review and publication gates are satisfied.'}</p>
+      <p className="text-xs uppercase tracking-widest text-[#79552E]">Human review pending</p><h2 className="font-display text-2xl">{bellissima ? profile?.facts.length ? 'More information, under review' : 'Passenger information, under review' : 'The next layer: cabins & dining'}</h2>
+      <p className="text-sm leading-relaxed">{bellissima ? profile?.facts.length ? 'Published facts appear below with their source trace. Other observations remain under review; pending details are withheld until their own evidence, review and publication gates are satisfied.' : 'Source observations about dining, entertainment and practical orientation are prepared for human review. Pending details are not published facts and stay withheld until the evidence, review and publication gates are satisfied.' : 'Four source observations are prepared for independent human review: a source-edition cabin count and three restaurant deck assignments. Their values remain withheld from this public profile until the regular evidence, review and publication gates are satisfied.'}</p>
       <p className="text-sm">Not confirmed. No current capacity, geometry, accessibility or availability is inferred.</p>
     </section>}
     <div className="grid sm:grid-cols-2 gap-4">{sections.map(section => {
@@ -45,6 +45,7 @@ export function FleetProfile({ ship, profile, onNavigate }: { ship: FleetShip; p
             <p className="font-semibold capitalize">{f.entity_id.split(':').at(-1)?.replaceAll('-', ' ')}</p>
             {location && <p className="text-xs text-[#5B6570]">Published deck location</p>}
             <p>{location ?? (typeof f.value === 'string' ? f.value : JSON.stringify(f.value))}</p>
+            {location && f.source_edition && <p className="text-xs text-[#5B6570]">Source edition: {f.source_edition}. Describes this plan edition, not current operations.</p>}
             <details><summary className="min-h-11 cursor-pointer">Source and publication trace</summary><p>{f.statement_id} · {f.question_id} · {f.artifact_id}, page {f.page ?? 'not specified'}</p><p>{f.statement_type}</p><p>{f.locator}</p></details>
           </article>;
         }) : <p className="text-sm text-[#5B6570]">No published {section} information available. Nothing is inferred from another ship.</p>}
