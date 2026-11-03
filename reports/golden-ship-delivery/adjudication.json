@@ -1,0 +1,360 @@
+{
+  "schema": "timonelo.internal-human-review-batch.v1",
+  "prepared_by": "Codex AI; no human decisions recorded",
+  "basis": "ART-0001 correction integrated through PR60, merge 1432a3ae7ceee14f636f1e35aba9bda1b24be42c",
+  "original_packet_sha256": "f0b763b59aca7213fe10e1506d192ed99bb8a09cb800a10e527906f9fa5a479d",
+  "source": "ART-0001; MSC Bellissima Deckpläne; MSC Cruises; 11.2025 DEU",
+  "origin_limit": "Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+  "records": [
+    {
+      "id": "GSB-P1-017",
+      "name": "Guest Service",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Guest Service on deck(s) 5 of MSC Bellissima.",
+      "value": [
+        5
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 5 / OPERA column; reception label in central atrium area",
+      "pdf_point_boxes": [
+        [
+          166.27,
+          479.05,
+          198.4,
+          484.47
+        ]
+      ],
+      "observed_text": "Infinity\nReception-Guest Service",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-007",
+      "name": "Le Cerisier",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Le Cerisier on deck(s) 6 of MSC Bellissima.",
+      "value": [
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 6 / MUSICA column; vertically printed restaurant name, lower half",
+      "pdf_point_boxes": [
+        [
+          326.21,
+          609.26,
+          331.63,
+          623.11
+        ]
+      ],
+      "observed_text": "Le Cerisier",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-008",
+      "name": "Lighthouse Restaurant",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Lighthouse Restaurant on deck(s) 6 of MSC Bellissima.",
+      "value": [
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 6 / MUSICA column; restaurant label at bottom of deck drawing",
+      "pdf_point_boxes": [
+        [
+          279.84,
+          698.92,
+          309.83,
+          704.34
+        ]
+      ],
+      "observed_text": "Lighthouse Restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-009",
+      "name": "Posidonia Restaurant",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Posidonia Restaurant on deck(s) 5 of MSC Bellissima.",
+      "value": [
+        5
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 5 / OPERA column; restaurant label in lower half",
+      "pdf_point_boxes": [
+        [
+          168.73,
+          595.77,
+          197.0,
+          601.18
+        ]
+      ],
+      "observed_text": "Posidonia Restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-010",
+      "name": "Marketplace Buffet",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Marketplace Buffet on deck(s) 15 of MSC Bellissima.",
+      "value": [
+        15
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 5,
+      "locator": "Deck 15 / PREZIOSA column; two buffet-side labels in lower half",
+      "pdf_point_boxes": [
+        [
+          153.15,
+          597.12,
+          158.57,
+          622.59
+        ],
+        [
+          210.7,
+          597.12,
+          216.12,
+          622.59
+        ]
+      ],
+      "observed_text": "Marketplace Buffet / Marketplace Buffet",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-011",
+      "name": "London Theatre",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels London Theatre on deck(s) 5, 6 of MSC Bellissima.",
+      "value": [
+        5,
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Both Deck 5 / OPERA and Deck 6 / MUSICA columns, theatre labels near top",
+      "pdf_point_boxes": [
+        [
+          285.08,
+          245.75,
+          305.96,
+          251.17
+        ],
+        [
+          172.37,
+          265.63,
+          193.29,
+          271.05
+        ]
+      ],
+      "observed_text": "London Theatre / London Theatre",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-012",
+      "name": "Carousel Lounge",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Carousel Lounge on deck(s) 7 of MSC Bellissima.",
+      "value": [
+        7
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 7 / FANTASIA column; Carousel / Lounge label at bottom",
+      "pdf_point_boxes": [
+        [
+          400.73,
+          722.12,
+          412.04,
+          727.53
+        ]
+      ],
+      "observed_text": "Carousel\nLounge",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    },
+    {
+      "id": "GSB-P1-018",
+      "name": "MSC Excursions",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels MSC Excursions on deck(s) 5, 6 of MSC Bellissima.",
+      "value": [
+        5,
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Both Deck 5 / OPERA and Deck 6 / MUSICA columns; two excursions labels",
+      "pdf_point_boxes": [
+        [
+          296.83,
+          407.82,
+          302.24,
+          428.48
+        ],
+        [
+          150.48,
+          468.81,
+          155.9,
+          489.5
+        ]
+      ],
+      "observed_text": "Gal\nMSC Excursions / Panoramic Lift\nMSC Excursions",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_class_eligible": true,
+      "held_digest_verified": true,
+      "vessel_attribution_eligible": true,
+      "human_decision": null,
+      "human_reviewer": null,
+      "human_decided_on": null,
+      "human_rationale": null,
+      "recommendation_only": "APPROVE_SOURCE_EDITION_READING_IF_HUMAN_CONFIRMS; otherwise DEFER or REJECT",
+      "canonical_admission": false,
+      "publication": "NOT_AUTHORIZED",
+      "source_change_requires_review": "New ART-0001 observation binding; never silently retarget the original ART-0002 statement or original blocked claim.",
+      "limits": [
+        "Edition-specific plan observation, not current operating status.",
+        "No hours, access, route, accessibility, live availability or spatial geometry claim.",
+        "Source origin is owner attestation, not independently verified byte-origin."
+      ],
+      "conflicts": "No differing deck label found in the reused eight-observation comparison; no exhaustive current-edition conflict clearance."
+    }
+  ],
+  "human_decisions_recorded": 0,
+  "publication_authorized": false
+}

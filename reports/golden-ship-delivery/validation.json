@@ -1,0 +1,73 @@
+{
+  "validation_date": "2026-11-03",
+  "scope": "Golden Ship Delivery: Bellissima only",
+  "integrated_attribution_pr": 60,
+  "integrated_attribution_merge": "1432a3ae7ceee14f636f1e35aba9bda1b24be42c",
+  "attribution_ci_followup": "5eeed8c3d4a25821a2980e279ac3389fa5f5e06b",
+  "original_correction_preserved": "c5e1557beeb8b324db7406919253d789a5cd91fc",
+  "backend": {
+    "passed": 1159,
+    "skipped": 1,
+    "subtests_passed": 2,
+    "seconds": 557.92,
+    "python": "3.14",
+    "note": "Backend tree identical to integrated PR60; frontend/report work adds no backend changes."
+  },
+  "frontend": {
+    "tests": 207,
+    "files": 18,
+    "passed": true
+  },
+  "asset_tests": {
+    "passed": 10
+  },
+  "production_build": "PASS; existing large-chunk warning retained",
+  "public_asset_guard": "PASS",
+  "typecheck": {
+    "baseline": 282,
+    "after": 282,
+    "new": 0,
+    "exit_code": 2,
+    "comparison": "Multiset of file + diagnostic code + message; line/column changes excluded. Existing technical debt, not an absolute green typecheck."
+  },
+  "browser": {
+    "preview": "http://127.0.0.1:5199/",
+    "widths": [
+      1440,
+      390,
+      375,
+      320
+    ],
+    "horizontal_overflow": false,
+    "console_errors": 0,
+    "licensed_bellissima_photo_loaded": true,
+    "attribution_visible": true,
+    "section_links_resolve": true,
+    "journey": "Mobile main navigation -> Ships -> Bellissima; Bellissima -> My Cruise -> mobile Ships -> Bellissima",
+    "my_cruise_reference_semantics_preserved": true,
+    "protected_asset_requests": 13,
+    "protected_status": 404,
+    "snapshot_cache_control": "no-store, max-age=0",
+    "local_snapshot_only": "Regenerated ignored dist/data snapshot for private smoke on Nov3, zero Bellissima facts; not uploaded/deployed."
+  },
+  "independent_review": {
+    "blocking_findings": 0,
+    "minor": "SPRINT heading mojibake fixed",
+    "limits": "Reviewer inspected scoped code/packet; did not repeat suite or authenticity research."
+  },
+  "human_decisions_received": 0,
+  "human_claim_publication": "PAUSED; no response is approval",
+  "public_release": "BLOCKED by historical media-rights and production Snapshot/CDN gates",
+  "snapshot_published": false,
+  "main_modified": false,
+  "deployment_performed": false,
+  "reviewed_source_sha256": {
+    "frontend/src/passenger/FleetDiscovery.tsx": "9d18dbebf97639a144e5e4c3cf5fe03bde7a2955faba85902b3b2897e23bb26d",
+    "frontend/src/passenger/fleet.test.tsx": "84be5cb398abcd737d404da220c1f00d2959496d14469c05426818c2c34e5e6e",
+    "reports/golden-ship-delivery/adjudication.json": "db87ffa25568ee3dd52d610b8f1797e5c2e4e7428895fa3c4eb2b7f1ea973761",
+    "reports/golden-ship-delivery/HUMAN_REVIEW.md": "7ab8ad730bd5c0c473cdb3e04ee706901d2ce3db9ba447658907004ff63ed81e"
+  },
+  "preexisting_worktrees_preserved": 30,
+  "original_and_selected_review_packets_unchanged": true,
+  "all_410_states_verified_again_before_commit": true
+}

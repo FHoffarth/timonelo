@@ -50,4 +50,35 @@ describe('fleet discovery boundary', () => {
       expect(html).not.toMatch(/Posidonia|14122|Shanghai|Deck 14|Bellissima/);
     }
   });
+
+  it('gives Bellissima section links that resolve inside the selected profile', () => {
+    const html = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={undefined} onNavigate={() => {}} />);
+    for (const section of ['identity', 'decks', 'venues', 'cabins']) {
+      expect(html).toContain(`href="#msc-bellissima-${section}"`);
+      expect(html).toContain(`id="msc-bellissima-${section}"`);
+    }
+    expect(html).toContain('Dining, entertainment &amp; services');
+    expect(html).toContain('Publication data unavailable');
+    // The existing, explicitly separate reference directory is not admitted
+    // profile content. Pending claims must not leak into the published sections.
+    expect(html.split('Bellissima reference tools')[0]).not.toMatch(/London Theatre|Posidonia|Le Cerisier|Lighthouse/);
+  });
+
+  it('formats only transported Bellissima deck facts for passengers and preserves their trace', () => {
+    // Synthetic display fixture, not an approved real-world observation.
+    const profile = { candidate_count: 1, level: 0, sources: [], facts: [{
+      statement_id: 'STM-DISPLAY', entity_id: 'venue:MSC-BELLISSIMA:fixture-lounge',
+      question_id: 'Q-TEST', statement_type: 'deck.venue_present', section: 'venues' as const,
+      value: [5, 6], artifact_id: 'ART-DISPLAY', page: 3, locator: 'Synthetic display locator',
+      publish_status: 'PUBLISH_ALLOWED',
+    }] };
+    const html = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={profile} onNavigate={() => {}} />);
+    expect(html).toContain('Decks 5 &amp; 6');
+    expect(html).toContain('Published deck location');
+    expect(html).toContain('ART-DISPLAY, page 3');
+    expect(html).toContain('Synthetic display locator');
+    const unavailable = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={undefined} onNavigate={() => {}} />);
+    expect(unavailable).not.toContain('fixture lounge');
+    expect(unavailable).not.toContain('Published deck location');
+  });
 });
