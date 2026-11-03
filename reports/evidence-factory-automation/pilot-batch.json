@@ -1,0 +1,246 @@
+{
+  "schema": "timonelo.evidence-batch.v1",
+  "baseline": "de8c8d12a6da49cd6bc42f3c489bf130a3b3c613",
+  "source_route": "REGISTERED_LOCAL_ARTIFACT",
+  "vessel_slug": "msc-bellissima",
+  "vessel_imo": "IMO9760524",
+  "origin_limit": "Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+  "claims": [
+    {
+      "id": "GSB-P1-017",
+      "name": "Guest Service",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Guest Service on deck(s) 5 of MSC Bellissima.",
+      "value": [
+        5
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 5 / OPERA column; reception label in central atrium area",
+      "observed_text": "Infinity\nReception-Guest Service",
+      "entity_id": "venue:MSC-BELLISSIMA:reception-guest-service",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          166.27,
+          479.05,
+          198.4,
+          484.47
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-007",
+      "name": "Le Cerisier",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Le Cerisier on deck(s) 6 of MSC Bellissima.",
+      "value": [
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 6 / MUSICA column; vertically printed restaurant name, lower half",
+      "observed_text": "Le Cerisier",
+      "entity_id": "venue:MSC-BELLISSIMA:le-cerisier",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          326.21,
+          609.26,
+          331.63,
+          623.11
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-008",
+      "name": "Lighthouse Restaurant",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Lighthouse Restaurant on deck(s) 6 of MSC Bellissima.",
+      "value": [
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 6 / MUSICA column; restaurant label at bottom of deck drawing",
+      "observed_text": "Lighthouse Restaurant",
+      "entity_id": "venue:MSC-BELLISSIMA:lighthouse-restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          279.84,
+          698.92,
+          309.83,
+          704.34
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-009",
+      "name": "Posidonia Restaurant",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Posidonia Restaurant on deck(s) 5 of MSC Bellissima.",
+      "value": [
+        5
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 5 / OPERA column; restaurant label in lower half",
+      "observed_text": "Posidonia Restaurant",
+      "entity_id": "venue:MSC-BELLISSIMA:posidonia-restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          168.73,
+          595.77,
+          197.0,
+          601.18
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-010",
+      "name": "Marketplace Buffet",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Marketplace Buffet on deck(s) 15 of MSC Bellissima.",
+      "value": [
+        15
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 5,
+      "locator": "Deck 15 / PREZIOSA column; two buffet-side labels in lower half",
+      "observed_text": "Marketplace Buffet / Marketplace Buffet",
+      "entity_id": "venue:MSC-BELLISSIMA:marketplace-buffet",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          153.15,
+          597.12,
+          158.57,
+          622.59
+        ],
+        [
+          210.7,
+          597.12,
+          216.12,
+          622.59
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-011",
+      "name": "London Theatre",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels London Theatre on deck(s) 5, 6 of MSC Bellissima.",
+      "value": [
+        5,
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Both Deck 5 / OPERA and Deck 6 / MUSICA columns, theatre labels near top",
+      "observed_text": "London Theatre / London Theatre",
+      "entity_id": "venue:MSC-BELLISSIMA:london-theatre",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          285.08,
+          245.75,
+          305.96,
+          251.17
+        ],
+        [
+          172.37,
+          265.63,
+          193.29,
+          271.05
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-012",
+      "name": "Carousel Lounge",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels Carousel Lounge on deck(s) 7 of MSC Bellissima.",
+      "value": [
+        7
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Deck 7 / FANTASIA column; Carousel / Lounge label at bottom",
+      "observed_text": "Carousel\nLounge",
+      "entity_id": "venue:MSC-BELLISSIMA:carousel-lounge",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          400.73,
+          722.12,
+          412.04,
+          727.53
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "GSB-P1-018",
+      "name": "MSC Excursions",
+      "exact_claim": "ART-0001 (11.2025 DEU) labels MSC Excursions on deck(s) 5, 6 of MSC Bellissima.",
+      "value": [
+        5,
+        6
+      ],
+      "artifact_id": "ART-0001",
+      "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+      "target_vessel": "IMO9760524",
+      "page": 3,
+      "locator": "Both Deck 5 / OPERA and Deck 6 / MUSICA columns; two excursions labels",
+      "observed_text": "Gal\nMSC Excursions / Panoramic Lift\nMSC Excursions",
+      "entity_id": "venue:MSC-BELLISSIMA:msc-excursions",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          296.83,
+          407.82,
+          302.24,
+          428.48
+        ],
+        [
+          150.48,
+          468.81,
+          155.9,
+          489.5
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    }
+  ]
+}
