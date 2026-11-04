@@ -214,5 +214,119 @@
     "observed_value": "14:00",
     "question_id": "Q-0037",
     "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:reception-guest-service",
+    "event_id": "EVT-BATCH-cbbb5c46edab1047101a",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 5 / OPERA column; reception label in central atrium area; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-017; binding SHA-256 cbbb5c46edab1047101a1a03a715f48f988ed42f8a468655d9f51e05c8b17a87.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      5
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:le-cerisier",
+    "event_id": "EVT-BATCH-93d1063d8c74334bb027",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 6 / MUSICA column; vertically printed restaurant name, lower half; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-007; binding SHA-256 93d1063d8c74334bb0272a4c6f9dff48127e27b5a6ad2db8e93b339983f8513b.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      6
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:lighthouse-restaurant",
+    "event_id": "EVT-BATCH-cf0b21ed00563a770500",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 6 / MUSICA column; restaurant label at bottom of deck drawing; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-008; binding SHA-256 cf0b21ed00563a770500d5359721122b7410c8759d6ff4727099460f489f4c79.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      6
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:posidonia-restaurant",
+    "event_id": "EVT-BATCH-7ec40f51674d4a0845b0",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 5 / OPERA column; restaurant label in lower half; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-009; binding SHA-256 7ec40f51674d4a0845b04ee1937771b58a62e5f1b75831f77c5586d86b5716c7.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      5
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:marketplace-buffet",
+    "event_id": "EVT-BATCH-6f505372d8f1267b4268",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 5; Deck 15 / PREZIOSA column; two buffet-side labels in lower half; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-010; binding SHA-256 6f505372d8f1267b426828652cfd6cb4f284a9283f70cc493d18315cdc5ee28c.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      15
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:london-theatre",
+    "event_id": "EVT-BATCH-7a19d4e222ce4f998468",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Both Deck 5 / OPERA and Deck 6 / MUSICA columns, theatre labels near top; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-011; binding SHA-256 7a19d4e222ce4f998468c6e9a10509fc5dee485e6fac44957cccd7ff14c716d8.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      5,
+      6
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:carousel-lounge",
+    "event_id": "EVT-BATCH-eb7fec84bd2d5f64b2f9",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 7 / FANTASIA column; Carousel / Lounge label at bottom; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-012; binding SHA-256 eb7fec84bd2d5f64b2f94733d94072a05b0942883bbef76c15b148e4c4d6b587.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      7
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
+  },
+  {
+    "artifact_sha256": "085d363b2ea6b4d1187fefa3125c861b104d33ec1c062732659a5ed8d2e2f5c0",
+    "entity_id": "venue:MSC-BELLISSIMA:msc-excursions",
+    "event_id": "EVT-BATCH-ad27f5b1507b66b45c8b",
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Both Deck 5 / OPERA and Deck 6 / MUSICA columns; two excursions labels; edition-specific observation, not current operations",
+    "notes": "Actual registered-PDF reading; claim GSB-P1-018; binding SHA-256 ad27f5b1507b66b45c8b92418cc941a6b484a484398834a73cbe144bc55fd5f9.",
+    "observed_by": "Codex AI / registered PDF observation",
+    "observed_on": "2026-11-03",
+    "observed_value": [
+      5,
+      6
+    ],
+    "question_id": "Q-0016",
+    "supersedes": null
   }
 ]

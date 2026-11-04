@@ -81,6 +81,8 @@ _FEATURE_TYPES = {
     "cabin.bunk_or_convertible_sofa",
 }
 
+_HISTORICAL_ART1_IDS = tuple(f"STM-{n:04d}" for n in range(1, 114))
+
 
 def test_art_0002_resolves_from_the_canonical_sha_vault():
     registry = ArtifactRegistry(str(ARTIFACTS))
@@ -468,10 +470,8 @@ def test_art_0001_is_untouched_by_this_intake():
     assert registry.verify("ART-0001")
 
     raw = _statements()
-    affected = [
-        s for s in raw.values()
-        if s["artifact_id"] == "ART-0001" and s["statement_type"] not in _FEATURE_TYPES
-    ]
+    affected = [raw[sid] for sid in _HISTORICAL_ART1_IDS]
+    assert all(s["artifact_id"] == "ART-0001" and s["statement_type"] not in _FEATURE_TYPES for s in affected)
     assert len(affected) == 113
     # Still persisted in their original schema: rewriting them would be a
     # silent mutation of accepted facts.
