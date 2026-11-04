@@ -1,0 +1,630 @@
+{
+  "schema": "timonelo.fleet-identity-matrix.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "not_obtained": "IMO GISIS, Transport Malta register, Equasis, ITU MARS and class-society records were not read. Neither was any MSC page; MSC hosts refused automated requests.",
+  "check_digit_note": "Every IMO number tested, seeds and candidates alike, passes the check digit, so the check separates nothing here.",
+  "ships": {
+    "msc-grandiosa": {
+      "slug": "msc-grandiosa",
+      "name": "MSC Grandiosa",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9803613",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9803613",
+          "status": "MATCHES_SEED",
+          "evidence_classes": [
+            "INSURER_FIRST_PARTY"
+          ],
+          "evidence": [
+            {
+              "source": "S-STEAMSHIP-GRANDIOSA",
+              "observed": "IMO 9803613, Valletta, GT 181541, Compania Naviera Vista 3 S.A."
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248803613",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "215325000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA3613",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5063",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-virtuosa": {
+      "slug": "msc-virtuosa",
+      "name": "MSC Virtuosa",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9803625",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9803625",
+          "status": "MATCHES_SEED",
+          "evidence_classes": [
+            "INSURER_FIRST_PARTY"
+          ],
+          "evidence": [
+            {
+              "source": "S-STEAMSHIP-VIRTUOSA",
+              "observed": "IMO 9803625, Valletta, GT 181541, Compania Naviera Vista 4"
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248803625",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "215610000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA3625",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5209",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-euribia": {
+      "slug": "msc-euribia",
+      "name": "MSC Euribia",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9901544",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9901544",
+          "status": "MATCHES_SEED",
+          "evidence_classes": [
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-VF-EURIBIA",
+              "observed": "IMO 9901544"
+            },
+            {
+              "source": "S-MARINELINK-EURIBIA",
+              "observed": "IMO 9901544"
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248901544",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": null,
+          "status": "UNRESOLVED_CONTRADICTION",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "256261000, row amended 12-Jun-24"
+            },
+            {
+              "source": "S-VF-EURIBIA",
+              "observed": "256281000"
+            },
+            {
+              "source": "S-MARINELINK-EURIBIA",
+              "observed": "256281000"
+            },
+            {
+              "source": "S-MAGICPORT-EURIBIA",
+              "observed": "256281000"
+            },
+            {
+              "source": "S-WIKI-EURIBIA",
+              "observed": "256281000"
+            }
+          ],
+          "note": "CONTRADICTION. The government row says 256261000; every tracker says 256281000. The numbers differ by one digit. Trackers read MMSI off live AIS, which favours 256281000 and suggests a transcription slip in the index, but that is an inference. ITU MARS would settle it and was not obtained."
+        },
+        "call_sign": {
+          "repo_seed": "9HA1544",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5782",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            },
+            {
+              "source": "S-MARINELINK-EURIBIA",
+              "observed": "9HA5782"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-world-europa": {
+      "slug": "msc-world-europa",
+      "name": "MSC World Europa",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9837420",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9837420",
+          "status": "MATCHES_SEED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INSURER_FIRST_PARTY"
+          ],
+          "evidence": [
+            {
+              "source": "S-ISPRA-24",
+              "observed": "Annex II, physical page 44"
+            },
+            {
+              "source": "S-STEAMSHIP-WORLD-EUROPA",
+              "observed": "IMO 9837420, Valletta, GT 215863, Compania Naviera World 1"
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248837420",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "256070000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA7420",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5682",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-world-america": {
+      "slug": "msc-world-america",
+      "name": "MSC World America",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9837432",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9837432",
+          "status": "MATCHES_SEED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-CBP",
+              "observed": "search-index reading only"
+            },
+            {
+              "source": "S-VF-WORLD-AMERICA",
+              "observed": "IMO 9837432"
+            },
+            {
+              "source": "S-MVT-WORLD-AMERICA",
+              "observed": "IMO 9837432"
+            }
+          ],
+          "note": "Stray records treated as data errors: TrustedDocks shows a tug under this number and another listing shows MMSI 314151622 for Idyllic Ocean."
+        },
+        "mmsi": {
+          "repo_seed": "248837432",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "249193000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 18-Feb-25"
+            },
+            {
+              "source": "S-MVT-WORLD-AMERICA",
+              "observed": "249193000"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA7432",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA6157",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 18-Feb-25"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-meraviglia": {
+      "slug": "msc-meraviglia",
+      "name": "MSC Meraviglia",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9660463",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9760512",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "INSURER_FIRST_PARTY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-STEAMSHIP-MERAVIGLIA",
+              "observed": "IMO 9760512, Valletta, GT 171598, Compania Naviera Vista 1"
+            },
+            {
+              "source": "S-VF-MERAVIGLIA",
+              "observed": "IMO 9760512"
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248660463",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "249973000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            },
+            {
+              "source": "S-VF-MERAVIGLIA",
+              "observed": "249973000"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA0463",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA4455",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-seascape": {
+      "slug": "msc-seascape",
+      "name": "MSC Seascape",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9805348",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9843807",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-CBP",
+              "observed": "search-index reading only"
+            },
+            {
+              "source": "S-USEBASE-SEASCAPE",
+              "observed": "IMO 9843807 with 9HA5677"
+            },
+            {
+              "source": "S-VF-SEASCAPE",
+              "observed": "IMO 9843807"
+            },
+            {
+              "source": "S-SHIPSPOT",
+              "observed": "IMO 9843807"
+            }
+          ],
+          "note": "Counterevidence: the Wikipedia infobox and luxurycruiseconnections give 9843792, which belongs to MSC Seashore. CruiseShipTracking gives 9745366 and 9745354, which no other source supports."
+        },
+        "mmsi": {
+          "repo_seed": "248805348",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "256059000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            },
+            {
+              "source": "S-VF-SEASCAPE",
+              "observed": "256059000"
+            },
+            {
+              "source": "S-SHIPSPOT",
+              "observed": "256059000"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA5348",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5677",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 12-Jun-24"
+            },
+            {
+              "source": "S-USEBASE-SEASCAPE",
+              "observed": "9HA5677"
+            }
+          ],
+          "note": null
+        }
+      }
+    },
+    "msc-seashore": {
+      "slug": "msc-seashore",
+      "name": "MSC Seashore",
+      "official_registry_evidence": "NOT_OBTAINED",
+      "msc_operator_evidence": "NOT_OBTAINED",
+      "fields": {
+        "imo_number": {
+          "repo_seed": "9805336",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:imo-gisis",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": false,
+          "candidate": "9843792",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-CBP",
+              "observed": "search-index reading only"
+            },
+            {
+              "source": "S-USEBASE-SEASHORE",
+              "observed": "IMO 9843792 with 9HA5370"
+            },
+            {
+              "source": "S-VF-SEASHORE",
+              "observed": "IMO 9843792"
+            }
+          ],
+          "note": null
+        },
+        "mmsi": {
+          "repo_seed": "248805336",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "215920000",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 16-Jun-24"
+            },
+            {
+              "source": "S-VF-SEASHORE",
+              "observed": "215920000"
+            }
+          ],
+          "note": null
+        },
+        "call_sign": {
+          "repo_seed": "9HA5336",
+          "repo_seed_class": "UNVERIFIED_SEED_VALUE",
+          "repo_seed_source_id": "src:itu-maritime",
+          "repo_seed_trust_level": "OFFICIAL",
+          "repo_seed_is_derived_pattern": true,
+          "candidate": "9HA5370",
+          "status": "CORRECTION_PROPOSED",
+          "evidence_classes": [
+            "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+            "INDEPENDENT_MARITIME_TRACKING"
+          ],
+          "evidence": [
+            {
+              "source": "S-MCA",
+              "observed": "row amended 16-Jun-24"
+            },
+            {
+              "source": "S-USEBASE-SEASHORE",
+              "observed": "9HA5370"
+            }
+          ],
+          "note": null
+        }
+      }
+    }
+  }
+}

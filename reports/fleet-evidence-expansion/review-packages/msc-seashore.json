@@ -1,0 +1,125 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-seashore",
+  "vessel_name": "MSC Seashore",
+  "vessel_identity_state": "BLOCKED_PENDING_OWNER_IDENTITY_DECISION",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-SEASHORE-IMO",
+      "exact_candidate_claim": "MSC Seashore has imo_number 9843792, replacing the repo seed 9805336.",
+      "structured_value": {
+        "value": "9843792",
+        "replaces": "9805336"
+      },
+      "target_record": "knowledge/ships/msc-seashore/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-CBP",
+          "locator": "search-index reading only",
+          "url": "https://www.cbp.gov/sites/default/files/2026-08/CF1400%20-%20Record%20of%20Vessel%20in%20Foreign%20Trade%20-%20Entrances.pdf",
+          "sha256": null
+        },
+        {
+          "source": "S-USEBASE-SEASHORE",
+          "locator": "IMO 9843792 with 9HA5370",
+          "url": "https://open-gov.usebase.io/vessels/9843792-msc-seashore",
+          "sha256": null
+        },
+        {
+          "source": "S-VF-SEASHORE",
+          "locator": "IMO 9843792",
+          "url": "https://www.vesselfinder.com/vessels/details/9843792",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-SEASHORE-MMSI",
+      "exact_candidate_claim": "MSC Seashore has mmsi 215920000, replacing the repo seed 248805336.",
+      "structured_value": {
+        "value": "215920000",
+        "replaces": "248805336"
+      },
+      "target_record": "knowledge/ships/msc-seashore/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 16-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-VF-SEASHORE",
+          "locator": "215920000",
+          "url": "https://www.vesselfinder.com/vessels/details/9843792",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-SEASHORE-CALLSIGN",
+      "exact_candidate_claim": "MSC Seashore has call_sign 9HA5370, replacing the repo seed 9HA5336.",
+      "structured_value": {
+        "value": "9HA5370",
+        "replaces": "9HA5336"
+      },
+      "target_record": "knowledge/ships/msc-seashore/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 16-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-USEBASE-SEASHORE",
+          "locator": "9HA5370",
+          "url": "https://open-gov.usebase.io/vessels/9843792-msc-seashore",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "IDENTITY_AND_SOURCE_BLOCKED: no plan is held and the IMO is unresolved.",
+  "source_edition": null,
+  "acquisition_candidate": {
+    "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-seashore/MSC_SEASHORE_DECKPLAN.pdf",
+    "url_status": "SEEN_IN_SEARCH_INDEX",
+    "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+  },
+  "human_decisions_recorded": 0
+}

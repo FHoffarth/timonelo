@@ -1,0 +1,104 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-world-europa",
+  "vessel_name": "MSC World Europa",
+  "vessel_identity_state": "SEED_IMO_SUPPORTED_RADIO_IDS_NOT_RESOLVED",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-WORLD-EUROPA-IMO",
+      "exact_candidate_claim": "MSC World Europa has imo_number 9837420. The stored value stays; its source_id src:imo-gisis should be replaced because no retrieval record supports it.",
+      "structured_value": {
+        "value": "9837420"
+      },
+      "target_record": "knowledge/ships/msc-world-europa/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-ISPRA-24",
+          "locator": "Annex II, physical page 44",
+          "url": "https://www.isprambiente.gov.it/files2025/pubblicazioni/documenti-tecnici/relazione-zolfo-2024_sitoweb.pdf",
+          "sha256": "21dd9b7a647f8e8082a494244c1a4893c11f15dc95a63d15ce0c9888c1b7be60"
+        },
+        {
+          "source": "S-STEAMSHIP-WORLD-EUROPA",
+          "locator": "IMO 9837420, Valletta, GT 215863, Compania Naviera World 1",
+          "url": "https://www.steamshipmutual.com/msc-world-europa",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INSURER_FIRST_PARTY"
+      ],
+      "status": "MATCHES_SEED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-WORLD-EUROPA-MMSI",
+      "exact_candidate_claim": "MSC World Europa has mmsi 256070000, replacing the repo seed 248837420.",
+      "structured_value": {
+        "value": "256070000",
+        "replaces": "248837420"
+      },
+      "target_record": "knowledge/ships/msc-world-europa/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-WORLD-EUROPA-CALLSIGN",
+      "exact_candidate_claim": "MSC World Europa has call_sign 9HA5682, replacing the repo seed 9HA7420.",
+      "structured_value": {
+        "value": "9HA5682",
+        "replaces": "9HA7420"
+      },
+      "target_record": "knowledge/ships/msc-world-europa/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "SOURCE_BLOCKED: no plan for this ship is held anywhere searched, so no reading can be made from primary bytes.",
+  "source_edition": null,
+  "acquisition_candidate": {
+    "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-world-europa/MSC_WORLD_EUROPA_DECKPLAN.pdf",
+    "url_status": "UNCONFIRMED_PATTERN",
+    "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+  },
+  "human_decisions_recorded": 0
+}

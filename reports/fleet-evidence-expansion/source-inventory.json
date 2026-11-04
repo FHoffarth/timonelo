@@ -1,0 +1,362 @@
+{
+  "schema": "timonelo.fleet-source-inventory.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "search_scope": [
+    "evidence/artifacts/index.json and evidence/raw vault",
+    "knowledge/ships and knowledge/sources",
+    "owner Google Drive, by title and by the MSC Cruises folder, read-only",
+    "local Downloads, Documents and Desktop, PDF names only"
+  ],
+  "search_result_summary": "Two Meraviglia documents exist. No deck plan for the other seven ships was found in any location, and no artifact for any of the eight ships is registered.",
+  "ships": {
+    "msc-grandiosa": {
+      "name": "MSC Grandiosa",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-grandiosa/MSC_GRANDIOSA_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-virtuosa": {
+      "name": "MSC Virtuosa",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-virtuosa/MSC_VIRTUOSA_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-euribia": {
+      "name": "MSC Euribia",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-euribia/MSC_EURIBIA_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-world-europa": {
+      "name": "MSC World Europa",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json",
+        "negative_intelligence.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-world-europa/MSC_WORLD_EUROPA_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-world-america": {
+      "name": "MSC World America",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-world-america/MSC_WORLD_AMERICA_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-meraviglia": {
+      "name": "MSC Meraviglia",
+      "deck_plan_documents": [
+        {
+          "document_name": "MSC_MERAVIGLIA_DECKPLAN_GER.pdf",
+          "source_type": "cruise_line_deck_plan (unregistered)",
+          "edition": "11.2025 DEU",
+          "pdf_created": "2025-11-06",
+          "pdf_modified": "2025-11-11",
+          "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+          "bytes": 1969779,
+          "pages": 6,
+          "acquisition_status": "HELD_IN_REPO_VAULT_UNREGISTERED; identical bytes in the owner's Downloads folder",
+          "held_path": "evidence/raw/sha256/77/77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9.pdf",
+          "artifact_id": null,
+          "vessel_attribution": "Page 1 cover, spaced lettering: M S C  M E R A V I G L I A. Pages 2 and 3 name Galleria Meraviglia and Plaza Meraviglia. The document states no IMO.",
+          "page_locators": "See meraviglia-page-locators.json. Page 3 decks 4-8, page 4 decks 9-13, page 5 decks 14-19 (no deck 17), page 6 edition mark.",
+          "missing_information": "Original download URL, retrieval date, owner attestation, artifact registration, subject_vessels."
+        },
+        {
+          "document_name": "msc-meraviglia-deckplan.pdf",
+          "source_type": "single-sheet plan of unknown route",
+          "edition": "not printed; PDF created 2018-06-22",
+          "sha256": "6c343a1b321319c900df3ff8c4f7d24194fee8d0ca227a74aff1a21f238787f2",
+          "bytes": 658264,
+          "pages": 1,
+          "acquisition_status": "HELD_LOCALLY_OUTSIDE_REPO in energyradar/msc-meraviglia-graph/data/source",
+          "artifact_id": null,
+          "vessel_attribution": "Page text names MSC Meraviglia. Creator metadata is www.konwerter.net, a file converter, so these are not publisher bytes.",
+          "page_locators": "Page 1 only.",
+          "missing_information": "Everything needed for admission. Not recommended as evidence; useful only as a historic comparison."
+        }
+      ],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "bars.json",
+        "cabins.json",
+        "decks.json",
+        "entertainment.json",
+        "extraction_manifest.json",
+        "graph.json",
+        "identity.json",
+        "kids.json",
+        "lounges.json",
+        "negative_intelligence.json",
+        "operations.json",
+        "pools.json",
+        "public_areas.json",
+        "restaurants.json",
+        "semantic_cleanup_inventory.jsonl",
+        "spa.json",
+        "sports.json",
+        "technical.json",
+        "venues.json"
+      ],
+      "deck_plan_status": "HELD_UNREGISTERED",
+      "acquisition_candidate": null
+    },
+    "msc-seascape": {
+      "name": "MSC Seascape",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-seascape/MSC_SEASCAPE_DECKPLAN.pdf",
+        "url_status": "UNCONFIRMED_PATTERN",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    },
+    "msc-seashore": {
+      "name": "MSC Seashore",
+      "deck_plan_documents": [],
+      "registered_artifacts": [],
+      "knowledge_records": [
+        "identity.json"
+      ],
+      "deck_plan_status": "NOT_HELD",
+      "acquisition_candidate": {
+        "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-seashore/MSC_SEASHORE_DECKPLAN.pdf",
+        "url_status": "SEEN_IN_SEARCH_INDEX",
+        "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+      }
+    }
+  },
+  "identity_sources": {
+    "S-MCA": {
+      "evidence_class": "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+      "publisher": "UK Maritime and Coastguard Agency",
+      "title": "International search and rescue index, August (CSV)",
+      "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+      "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0",
+      "held": "SCRATCH_COPY_NOT_COMMITTED",
+      "limits": "Carries call sign and MMSI, no IMO. Rows are human-maintained; amendment dates are per row. Bound to a vessel by name only. A later index may exist."
+    },
+    "S-ISPRA-23": {
+      "evidence_class": "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+      "publisher": "ISPRA (Italy)",
+      "title": "Sulphur content report, 2023 data, Annex II",
+      "url": "https://www.isprambiente.gov.it/files2024/pubblicazioni/documenti-tecnici/relazione-tenore-di-zolfo.pdf",
+      "sha256": "db571941bb66aa3443ce260c98e7c181be5be35c720a1a4e9e280e56641b2906",
+      "held": "SCRATCH_COPY_NOT_COMMITTED",
+      "limits": "Lists only ships sampled that year. No target ship found by name scan."
+    },
+    "S-ISPRA-24": {
+      "evidence_class": "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+      "publisher": "ISPRA (Italy)",
+      "title": "Sulphur content report, 2024 data, Annex II",
+      "url": "https://www.isprambiente.gov.it/files2025/pubblicazioni/documenti-tecnici/relazione-zolfo-2024_sitoweb.pdf",
+      "sha256": "21dd9b7a647f8e8082a494244c1a4893c11f15dc95a63d15ce0c9888c1b7be60",
+      "held": "SCRATCH_COPY_NOT_COMMITTED",
+      "limits": "Physical page 44 lists MSC WORLD EUROPA, Malta, Passenger ship, 9837420. Only target ship present."
+    },
+    "S-CBP": {
+      "evidence_class": "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+      "publisher": "US Customs and Border Protection",
+      "title": "CF-1400 Record of Vessel in Foreign Trade, Entrances (2026-08 file)",
+      "url": "https://www.cbp.gov/sites/default/files/2026-08/CF1400%20-%20Record%20of%20Vessel%20in%20Foreign%20Trade%20-%20Entrances.pdf",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Direct retrieval returned HTTP 403, so only a search-index reading of noisy OCR was seen. It reported Seashore, Seascape and World America by IMO, and Seascape with 9HA5677 at Galveston on 8/23/2026. Rows were not read by this package; an owner must open the file."
+    },
+    "S-USEBASE-SEASCAPE": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "usebase open-gov aggregator",
+      "title": "MSC SEASCAPE record",
+      "url": "https://open-gov.usebase.io/vessels/9843807-msc-seascape",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Third-party compilation of CBP CF-1400, USCG COFR and sanctions lists. States no ITU MARS record is attached."
+    },
+    "S-USEBASE-SEASHORE": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "usebase open-gov aggregator",
+      "title": "MSC SEASHORE record",
+      "url": "https://open-gov.usebase.io/vessels/9843792-msc-seashore",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Third-party compilation of CBP CF-1400, USCG COFR and sanctions lists. States no ITU MARS record is attached."
+    },
+    "S-WIKI-SEASCAPE": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "Wikipedia",
+      "title": "MSC Seascape infobox",
+      "url": "https://en.wikipedia.org/wiki/MSC_Seascape",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Counterevidence: lists 9843792, the number every other source gives to MSC Seashore."
+    },
+    "S-SHIPSPOT": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "Shipspotting",
+      "title": "MSC SEASCAPE photo record",
+      "url": "https://www.shipspotting.com/photos/3497437",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Community record: IMO 9843807, 9HA5677, MMSI 256059000, RINA class."
+    },
+    "S-STEAMSHIP-GRANDIOSA": {
+      "evidence_class": "INSURER_FIRST_PARTY",
+      "publisher": "Steamship Mutual",
+      "title": "Entered ship page, msc-grandiosa",
+      "url": "https://www.steamshipmutual.com/msc-grandiosa",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "P&I insurer's own record, on risk 20-Feb-2026 to 20-Feb-2027. Not a registry and not an MSC statement."
+    },
+    "S-STEAMSHIP-VIRTUOSA": {
+      "evidence_class": "INSURER_FIRST_PARTY",
+      "publisher": "Steamship Mutual",
+      "title": "Entered ship page, msc-virtuosa",
+      "url": "https://www.steamshipmutual.com/msc-virtuosa",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "P&I insurer's own record, on risk 20-Feb-2026 to 20-Feb-2027. Not a registry and not an MSC statement."
+    },
+    "S-STEAMSHIP-WORLD-EUROPA": {
+      "evidence_class": "INSURER_FIRST_PARTY",
+      "publisher": "Steamship Mutual",
+      "title": "Entered ship page, msc-world-europa",
+      "url": "https://www.steamshipmutual.com/msc-world-europa",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "P&I insurer's own record, on risk 20-Feb-2026 to 20-Feb-2027. Not a registry and not an MSC statement."
+    },
+    "S-STEAMSHIP-MERAVIGLIA": {
+      "evidence_class": "INSURER_FIRST_PARTY",
+      "publisher": "Steamship Mutual",
+      "title": "Entered ship page, msc-meraviglia",
+      "url": "https://www.steamshipmutual.com/msc-meraviglia",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "P&I insurer's own record, on risk 20-Feb-2026 to 20-Feb-2027. Not a registry and not an MSC statement."
+    },
+    "S-VF-SEASCAPE": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "VesselFinder",
+      "title": "Vessel page 9843807",
+      "url": "https://www.vesselfinder.com/vessels/details/9843807",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial AIS tracker. Identity fields are not registry extracts."
+    },
+    "S-VF-SEASHORE": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "VesselFinder",
+      "title": "Vessel page 9843792",
+      "url": "https://www.vesselfinder.com/vessels/details/9843792",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial AIS tracker. Identity fields are not registry extracts."
+    },
+    "S-VF-WORLD-AMERICA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "VesselFinder",
+      "title": "Vessel page 9837432",
+      "url": "https://www.vesselfinder.com/vessels/details/9837432",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial AIS tracker. Identity fields are not registry extracts."
+    },
+    "S-VF-EURIBIA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "VesselFinder",
+      "title": "Vessel page 9901544",
+      "url": "https://www.vesselfinder.com/vessels/details/9901544",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial AIS tracker. Identity fields are not registry extracts."
+    },
+    "S-VF-MERAVIGLIA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "VesselFinder",
+      "title": "Vessel page 9760512",
+      "url": "https://www.vesselfinder.com/vessels/details/9760512",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial AIS tracker. Identity fields are not registry extracts."
+    },
+    "S-MARINELINK-EURIBIA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "MarineLink",
+      "title": "Vessel page 256281000",
+      "url": "https://ports.marinelink.com/vessels/vessel/256281000",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial listing. Counterpart to the MCA Euribia MMSI."
+    },
+    "S-MAGICPORT-EURIBIA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "MagicPort",
+      "title": "Vessel page 256281000",
+      "url": "https://magicport.ai/vessels/passenger/msc-euribia-mmsi-256281000",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial listing. Counterpart to the MCA Euribia MMSI."
+    },
+    "S-WIKI-EURIBIA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "Wikipedia",
+      "title": "MSC Euribia infobox",
+      "url": "https://en.wikipedia.org/wiki/MSC_Euribia",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Tertiary. Gives 256281000."
+    },
+    "S-MVT-WORLD-AMERICA": {
+      "evidence_class": "INDEPENDENT_MARITIME_TRACKING",
+      "publisher": "MarineVesselTraffic",
+      "title": "MSC WORLD AMERICA record",
+      "url": "https://www.marinevesseltraffic.com/ship-owner-manager-ism-data/MSC-WORLD-AMERICA/9837432/249193000",
+      "sha256": null,
+      "held": "NOT_HELD",
+      "limits": "Commercial listing."
+    }
+  }
+}

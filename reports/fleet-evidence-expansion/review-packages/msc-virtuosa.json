@@ -1,0 +1,97 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-virtuosa",
+  "vessel_name": "MSC Virtuosa",
+  "vessel_identity_state": "SEED_IMO_SUPPORTED_RADIO_IDS_NOT_RESOLVED",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-VIRTUOSA-IMO",
+      "exact_candidate_claim": "MSC Virtuosa has imo_number 9803625. The stored value stays; its source_id src:imo-gisis should be replaced because no retrieval record supports it.",
+      "structured_value": {
+        "value": "9803625"
+      },
+      "target_record": "knowledge/ships/msc-virtuosa/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-STEAMSHIP-VIRTUOSA",
+          "locator": "IMO 9803625, Valletta, GT 181541, Compania Naviera Vista 4",
+          "url": "https://www.steamshipmutual.com/msc-virtuosa",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "INSURER_FIRST_PARTY"
+      ],
+      "status": "MATCHES_SEED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-VIRTUOSA-MMSI",
+      "exact_candidate_claim": "MSC Virtuosa has mmsi 215610000, replacing the repo seed 248803625.",
+      "structured_value": {
+        "value": "215610000",
+        "replaces": "248803625"
+      },
+      "target_record": "knowledge/ships/msc-virtuosa/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-VIRTUOSA-CALLSIGN",
+      "exact_candidate_claim": "MSC Virtuosa has call_sign 9HA5209, replacing the repo seed 9HA3625.",
+      "structured_value": {
+        "value": "9HA5209",
+        "replaces": "9HA3625"
+      },
+      "target_record": "knowledge/ships/msc-virtuosa/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "SOURCE_BLOCKED: no plan for this ship is held anywhere searched, so no reading can be made from primary bytes.",
+  "source_edition": null,
+  "acquisition_candidate": {
+    "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-virtuosa/MSC_VIRTUOSA_DECKPLAN.pdf",
+    "url_status": "UNCONFIRMED_PATTERN",
+    "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+  },
+  "human_decisions_recorded": 0
+}

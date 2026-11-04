@@ -1,0 +1,137 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-seascape",
+  "vessel_name": "MSC Seascape",
+  "vessel_identity_state": "BLOCKED_PENDING_OWNER_IDENTITY_DECISION",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-SEASCAPE-IMO",
+      "exact_candidate_claim": "MSC Seascape has imo_number 9843807, replacing the repo seed 9805348.",
+      "structured_value": {
+        "value": "9843807",
+        "replaces": "9805348"
+      },
+      "target_record": "knowledge/ships/msc-seascape/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-CBP",
+          "locator": "search-index reading only",
+          "url": "https://www.cbp.gov/sites/default/files/2026-08/CF1400%20-%20Record%20of%20Vessel%20in%20Foreign%20Trade%20-%20Entrances.pdf",
+          "sha256": null
+        },
+        {
+          "source": "S-USEBASE-SEASCAPE",
+          "locator": "IMO 9843807 with 9HA5677",
+          "url": "https://open-gov.usebase.io/vessels/9843807-msc-seascape",
+          "sha256": null
+        },
+        {
+          "source": "S-VF-SEASCAPE",
+          "locator": "IMO 9843807",
+          "url": "https://www.vesselfinder.com/vessels/details/9843807",
+          "sha256": null
+        },
+        {
+          "source": "S-SHIPSPOT",
+          "locator": "IMO 9843807",
+          "url": "https://www.shipspotting.com/photos/3497437",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_SEARCH_EXCERPT_ONLY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it. Counterevidence: the Wikipedia infobox and luxurycruiseconnections give 9843792, which belongs to MSC Seashore. CruiseShipTracking gives 9745366 and 9745354, which no other source supports.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-SEASCAPE-MMSI",
+      "exact_candidate_claim": "MSC Seascape has mmsi 256059000, replacing the repo seed 248805348.",
+      "structured_value": {
+        "value": "256059000",
+        "replaces": "248805348"
+      },
+      "target_record": "knowledge/ships/msc-seascape/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-VF-SEASCAPE",
+          "locator": "256059000",
+          "url": "https://www.vesselfinder.com/vessels/details/9843807",
+          "sha256": null
+        },
+        {
+          "source": "S-SHIPSPOT",
+          "locator": "256059000",
+          "url": "https://www.shipspotting.com/photos/3497437",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-SEASCAPE-CALLSIGN",
+      "exact_candidate_claim": "MSC Seascape has call_sign 9HA5677, replacing the repo seed 9HA5348.",
+      "structured_value": {
+        "value": "9HA5677",
+        "replaces": "9HA5348"
+      },
+      "target_record": "knowledge/ships/msc-seascape/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-USEBASE-SEASCAPE",
+          "locator": "9HA5677",
+          "url": "https://open-gov.usebase.io/vessels/9843807-msc-seascape",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "IDENTITY_AND_SOURCE_BLOCKED: no plan is held and the IMO is unresolved.",
+  "source_edition": null,
+  "acquisition_candidate": {
+    "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-seascape/MSC_SEASCAPE_DECKPLAN.pdf",
+    "url_status": "UNCONFIRMED_PATTERN",
+    "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+  },
+  "human_decisions_recorded": 0
+}

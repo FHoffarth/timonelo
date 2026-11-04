@@ -1,0 +1,138 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-euribia",
+  "vessel_name": "MSC Euribia",
+  "vessel_identity_state": "SEED_IMO_SUPPORTED_RADIO_IDS_NOT_RESOLVED",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-EURIBIA-IMO",
+      "exact_candidate_claim": "MSC Euribia has imo_number 9901544. The stored value stays; its source_id src:imo-gisis should be replaced because no retrieval record supports it.",
+      "structured_value": {
+        "value": "9901544"
+      },
+      "target_record": "knowledge/ships/msc-euribia/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-VF-EURIBIA",
+          "locator": "IMO 9901544",
+          "url": "https://www.vesselfinder.com/vessels/details/9901544",
+          "sha256": null
+        },
+        {
+          "source": "S-MARINELINK-EURIBIA",
+          "locator": "IMO 9901544",
+          "url": "https://ports.marinelink.com/vessels/vessel/256281000",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "MATCHES_SEED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-EURIBIA-MMSI",
+      "exact_candidate_claim": "Resolve the mmsi of MSC Euribia: the repo seed 248901544 is a derived pattern and sources disagree on the replacement.",
+      "structured_value": {
+        "candidates": [
+          "256261000",
+          "256281000"
+        ],
+        "chosen": null
+      },
+      "target_record": "knowledge/ships/msc-euribia/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "256261000, row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-VF-EURIBIA",
+          "locator": "256281000",
+          "url": "https://www.vesselfinder.com/vessels/details/9901544",
+          "sha256": null
+        },
+        {
+          "source": "S-MARINELINK-EURIBIA",
+          "locator": "256281000",
+          "url": "https://ports.marinelink.com/vessels/vessel/256281000",
+          "sha256": null
+        },
+        {
+          "source": "S-MAGICPORT-EURIBIA",
+          "locator": "256281000",
+          "url": "https://magicport.ai/vessels/passenger/msc-euribia-mmsi-256281000",
+          "sha256": null
+        },
+        {
+          "source": "S-WIKI-EURIBIA",
+          "locator": "256281000",
+          "url": "https://en.wikipedia.org/wiki/MSC_Euribia",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "UNRESOLVED_CONTRADICTION",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it. CONTRADICTION. The government row says 256261000; every tracker says 256281000. The numbers differ by one digit. Trackers read MMSI off live AIS, which favours 256281000 and suggests a transcription slip in the index, but that is an inference. ITU MARS would settle it and was not obtained.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-EURIBIA-CALLSIGN",
+      "exact_candidate_claim": "MSC Euribia has call_sign 9HA5782, replacing the repo seed 9HA1544.",
+      "structured_value": {
+        "value": "9HA5782",
+        "replaces": "9HA1544"
+      },
+      "target_record": "knowledge/ships/msc-euribia/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-MARINELINK-EURIBIA",
+          "locator": "9HA5782",
+          "url": "https://ports.marinelink.com/vessels/vessel/256281000",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "SOURCE_BLOCKED: no plan for this ship is held anywhere searched, so no reading can be made from primary bytes.",
+  "source_edition": null,
+  "acquisition_candidate": {
+    "url": "https://www.msccruises.co.uk/content/dam/msc-cruises/b2c-assets/fleet/msc-euribia/MSC_EURIBIA_DECKPLAN.pdf",
+    "url_status": "UNCONFIRMED_PATTERN",
+    "automated_retrieval": "HTTP 401 for the probed MSC URLs; not attempted further"
+  },
+  "human_decisions_recorded": 0
+}

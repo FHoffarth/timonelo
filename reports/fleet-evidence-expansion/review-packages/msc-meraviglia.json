@@ -1,0 +1,108 @@
+{
+  "schema": "timonelo.fleet-review-package.v0",
+  "prepared_on": "2026-11-04",
+  "repo_baseline": "6be38ab4abcfdb844220b6ee260cdaa3678a77fb",
+  "vessel_slug": "msc-meraviglia",
+  "vessel_name": "MSC Meraviglia",
+  "vessel_identity_state": "BLOCKED_PENDING_OWNER_IDENTITY_DECISION",
+  "admission_state": "NOT_ADMISSION_READY",
+  "identity_candidates": [
+    {
+      "id": "FEP-ID-MERAVIGLIA-IMO",
+      "exact_candidate_claim": "MSC Meraviglia has imo_number 9760512, replacing the repo seed 9660463.",
+      "structured_value": {
+        "value": "9760512",
+        "replaces": "9660463"
+      },
+      "target_record": "knowledge/ships/msc-meraviglia/identity.json#/imo_number",
+      "source_locators": [
+        {
+          "source": "S-STEAMSHIP-MERAVIGLIA",
+          "locator": "IMO 9760512, Valletta, GT 171598, Compania Naviera Vista 1",
+          "url": "https://www.steamshipmutual.com/msc-meraviglia",
+          "sha256": null
+        },
+        {
+          "source": "S-VF-MERAVIGLIA",
+          "locator": "IMO 9760512",
+          "url": "https://www.vesselfinder.com/vessels/details/9760512",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "INSURER_FIRST_PARTY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-MERAVIGLIA-MMSI",
+      "exact_candidate_claim": "MSC Meraviglia has mmsi 249973000, replacing the repo seed 248660463.",
+      "structured_value": {
+        "value": "249973000",
+        "replaces": "248660463"
+      },
+      "target_record": "knowledge/ships/msc-meraviglia/identity.json#/mmsi",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        },
+        {
+          "source": "S-VF-MERAVIGLIA",
+          "locator": "249973000",
+          "url": "https://www.vesselfinder.com/vessels/details/9760512",
+          "sha256": null
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY",
+        "INDEPENDENT_MARITIME_TRACKING"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "id": "FEP-ID-MERAVIGLIA-CALLSIGN",
+      "exact_candidate_claim": "MSC Meraviglia has call_sign 9HA4455, replacing the repo seed 9HA0463.",
+      "structured_value": {
+        "value": "9HA4455",
+        "replaces": "9HA0463"
+      },
+      "target_record": "knowledge/ships/msc-meraviglia/identity.json#/call_sign",
+      "source_locators": [
+        {
+          "source": "S-MCA",
+          "locator": "row amended 12-Jun-24",
+          "url": "https://assets.publishing.service.gov.uk/media/6aa25d214e17456e2cdf528c/International-search-and-rescue-index-August.csv",
+          "sha256": "e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0"
+        }
+      ],
+      "evidence_classes": [
+        "OFFICIAL_GOVERNMENT_NON_REGISTRY"
+      ],
+      "status": "CORRECTION_PROPOSED",
+      "evidence_limitations": "No registry or MSC record was read. Candidate values come from the listed sources only and bind to the ship by name, except where a source states the IMO beside it.",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ],
+  "deck_location_candidates": [],
+  "deck_location_block": "IDENTITY_BLOCKED: a plan is held, but no batch may be built until the IMO is resolved. Locators are in meraviglia-page-locators.json.",
+  "source_edition": "11.2025 DEU",
+  "acquisition_candidate": null,
+  "human_decisions_recorded": 0
+}
