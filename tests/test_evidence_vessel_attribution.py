@@ -26,6 +26,9 @@ import shutil
 
 import pytest
 
+# Reuse the frozen private pre-apply fixture; no mutable live-store assumption.
+from tests.test_evidence_factory_batch import pre_apply_root
+
 from timonelo.evidence.registry import (
     Artifact,
     ArtifactRegistry,
@@ -353,8 +356,8 @@ def test_only_evidenced_artifacts_are_attributed(registry):
         assert registry.vessels_established_by(artifact_id) == (ATTRIBUTED[artifact_id],)
 
 
-def test_attribution_correction_does_not_promote_existing_statements(tmp_path):
-    """Compare live authority with the pre-correction attribution on held data.
+def test_attribution_correction_does_not_promote_existing_statements(tmp_path, pre_apply_root):
+    """Compare the historical 410-record cohort across attribution correction.
 
     Only the private copy is changed back. Neither side creates evidence,
     changes review state, or invokes a publication transition.
@@ -362,13 +365,17 @@ def test_attribution_correction_does_not_promote_existing_statements(tmp_path):
     from timonelo.evidence.workspace import Workspace
 
     previous_root = tmp_path / "previous-evidence"
-    shutil.copytree(REPO_ROOT / "evidence", previous_root)
+    corrected_root = tmp_path / "corrected-evidence"
+    shutil.copytree(pre_apply_root / "evidence", previous_root)
+    shutil.copytree(pre_apply_root / "evidence", corrected_root)
     previous_index = previous_root / "artifacts" / "index.json"
     records = json.loads(previous_index.read_text(encoding="utf-8"))
     assert records["ART-0001"]["subject_vessels"] == [BELLISSIMA_IMO]
     assert records["ART-0002"]["subject_vessels"] == [ART0002_RECORDED_IMO]
+    original_art2 = records["ART-0002"].copy()
     records["ART-0001"]["subject_vessels"] = [ART0002_RECORDED_IMO]
     previous_index.write_text(json.dumps(records), encoding="utf-8")
+    assert json.loads(previous_index.read_text(encoding="utf-8"))["ART-0002"] == original_art2
 
     def current_states(workspace):
         result = {}
@@ -380,13 +387,56 @@ def test_attribution_correction_does_not_promote_existing_statements(tmp_path):
         return result
 
     previous = current_states(Workspace(str(previous_root)))
-    corrected = current_states(Workspace(str(REPO_ROOT / "evidence")))
+    corrected = current_states(Workspace(str(corrected_root)))
     assert len(corrected) == 410
     assert corrected == previous
     dependents = [row for row in corrected.values()
                   if row[0]["artifact_id"] == "ART-0001"]
     assert len(dependents) == 303
     assert all(not row[1] for row in dependents)
+
+
+def test_later_admissions_preserve_original_records_authority_and_art2(tmp_path, pre_apply_root):
+    """Later approved records are additions, not an expansion of old quarantine."""
+    from timonelo.evidence.workspace import Workspace
+
+    historical = json.loads((pre_apply_root / "evidence/statements/statements.json").read_text(encoding="utf8"))
+    current = json.loads((REPO_ROOT / "evidence/statements/statements.json").read_text(encoding="utf8"))
+    assert len(historical) == 410
+    assert {sid: current[sid] for sid in historical} == historical
+    old_root, current_root = tmp_path / "historical", tmp_path / "current"
+    shutil.copytree(pre_apply_root / "evidence", old_root)
+    shutil.copytree(REPO_ROOT / "evidence", current_root)
+    old_ws, current_ws = Workspace(str(old_root)), Workspace(str(current_root))
+    assert old_ws.registry.get("ART-0002").to_dict() == current_ws.registry.get("ART-0002").to_dict()
+    old_art2 = pathlib.Path(old_ws.registry.resolve_path("ART-0002"))
+    current_art2 = pathlib.Path(current_ws.registry.resolve_path("ART-0002"))
+    assert old_art2.read_bytes() == current_art2.read_bytes()
+    for sid in historical:
+        old, now = old_ws.editor.get(sid), current_ws.editor.get(sid)
+        before, after = old_ws.editor.authority.evaluate(old), current_ws.editor.authority.evaluate(now)
+        assert old.to_dict() == now.to_dict()
+        assert (before.admitted, before.reason_codes) == (after.admitted, after.reason_codes)
+    claims = json.loads((REPO_ROOT / "reports/evidence-factory-automation/pilot-batch.json").read_text(encoding="utf8"))["claims"]
+    pilot_ids = {f"STM-{n:04d}" for n in range(411, 419)}
+    present = set(current) & pilot_ids
+    assert present in (set(), pilot_ids), "partial canonical pilot"
+    # Both supported repository states are exercised by the pre/post suites.
+    # No total count is imposed on future unrelated, properly admitted records.
+    for sid, claim in zip(sorted(pilot_ids), claims):
+        if sid not in present:
+            continue
+        statement = current_ws.editor.get(sid)
+        assert statement.artifact_id == claim["artifact_id"] == "ART-0001"
+        assert statement.entity_id == claim["entity_id"] and statement.value == claim["value"]
+        assert statement.question_id == claim["question_id"]
+        assert statement.statement_type == claim["statement_type"]
+        assert statement.page == claim["page"] and claim["locator"] in statement.locator
+        assert current_ws.editor.authority.evaluate(statement).admitted
+        approvals = [e for e in current_ws.reviews.history(sid) if e.to_state == "APPROVED"]
+        assert len(approvals) == 1
+        assert approvals[0].actor == "Product Owner" and approvals[0].occurred_on == "2026-11-03"
+        assert claim["id"] in approvals[0].note
 
 
 # -- 10. existing SHA verification behaviour unchanged ----------------------

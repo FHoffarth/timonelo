@@ -3174,5 +3174,197 @@
     "occurred_on": "2026-08-23",
     "statement_id": "STM-0410",
     "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0411",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0411",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-017; binding cbbb5c46edab1047101a1a03a715f48f988ed42f8a468655d9f51e05c8b17a87; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0411",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0412",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0412",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-007; binding 93d1063d8c74334bb0272a4c6f9dff48127e27b5a6ad2db8e93b339983f8513b; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0412",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0413",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0413",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-008; binding cf0b21ed00563a770500d5359721122b7410c8759d6ff4727099460f489f4c79; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0413",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0414",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0414",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-009; binding 7ec40f51674d4a0845b04ee1937771b58a62e5f1b75831f77c5586d86b5716c7; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0414",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0415",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0415",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-010; binding 6f505372d8f1267b426828652cfd6cb4f284a9283f70cc493d18315cdc5ee28c; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0415",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0416",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0416",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-011; binding 7a19d4e222ce4f998468c6e9a10509fc5dee485e6fac44957cccd7ff14c716d8; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0416",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0417",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0417",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-012; binding eb7fec84bd2d5f64b2f94733d94072a05b0942883bbef76c15b148e4c4d6b587; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0417",
+    "to_state": "APPROVED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "CONDITION:UNKNOWN",
+    "note": "Registered digest, source region and exact claim binding verified.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0418",
+    "to_state": "CONDITION:SUPPORTED"
+  },
+  {
+    "actor": "Codex AI / registered PDF observation",
+    "from_state": "DRAFT",
+    "note": "Submit the actually recorded owner decision.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0418",
+    "to_state": "UNDER_REVIEW"
+  },
+  {
+    "actor": "Product Owner",
+    "from_state": "UNDER_REVIEW",
+    "note": "GSB-P1-018; binding ad27f5b1507b66b45c8b92418cc941a6b484a484398834a73cbe144bc55fd5f9; The Product Owner has personally reviewed the source and explicitly approved the following eight observations on 2026-11-03: 017 Guest Service Deck5;007 Le Cerisier Deck6;008 Lighthouse Restaurant Deck6;009 Posidonia Restaurant Deck5;010 Marketplace Buffet Deck15;011 London Theatre Decks5-6;012 Carousel Lounge Deck7;018 MSC Excursions Decks5-6. Review decision: APPROVE for each individual observation. Review scope is strictly limited to the named venue and deck assignment in ART-0001, edition11.2025 DEU. No confirmation of opening hours, current availability, accessibility, operational status or other venue characteristics.",
+    "occurred_on": "2026-11-03",
+    "statement_id": "STM-0418",
+    "to_state": "APPROVED"
   }
 ]

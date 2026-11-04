@@ -77,6 +77,8 @@ _FEATURE_TYPES = {
     "cabin.bunk_or_convertible_sofa",
 }
 
+_HISTORICAL_ART1_IDS = tuple(f"STM-{n:04d}" for n in range(1, 114))
+
 
 def test_canonical_sha_vault_resolves_and_verifies_without_copy(tmp_path):
     content = b"canonical source bytes"
@@ -218,10 +220,10 @@ def test_meraviglia_sha_vault_artifact_remains_intact():
 
 def test_verified_artifact_does_not_bypass_bellissima_claim_quarantine():
     workspace = Workspace(str(REPO_ROOT / "evidence"))
-    statements = [
-        s for s in workspace.statements_for_artifact("ART-0001")
-        if s.statement_type not in _FEATURE_TYPES
-    ]
+    # Artifact possession must not release the original quarantined cohort;
+    # later individually reviewed venue additions have their own lifecycle.
+    statements = [workspace.editor.get(sid) for sid in _HISTORICAL_ART1_IDS]
+    assert all(s.artifact_id == "ART-0001" and s.statement_type not in _FEATURE_TYPES for s in statements)
 
     assert workspace.registry.verify("ART-0001") is True
     assert len(statements) == 113

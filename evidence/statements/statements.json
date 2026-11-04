@@ -9380,5 +9380,231 @@
     "valid_from": null,
     "valid_until": null,
     "value": "14:00"
+  },
+  "STM-0411": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:reception-guest-service",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-cbbb5c46edab1047101a"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 5 / OPERA column; reception label in central atrium area; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-017; SOURCE_EDITION_VENUE_DECK_ONLY; binding cbbb5c46edab1047101a1a03a715f48f988ed42f8a468655d9f51e05c8b17a87; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0411",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      5
+    ]
+  },
+  "STM-0412": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:le-cerisier",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-93d1063d8c74334bb027"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 6 / MUSICA column; vertically printed restaurant name, lower half; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-007; SOURCE_EDITION_VENUE_DECK_ONLY; binding 93d1063d8c74334bb0272a4c6f9dff48127e27b5a6ad2db8e93b339983f8513b; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0412",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      6
+    ]
+  },
+  "STM-0413": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:lighthouse-restaurant",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-cf0b21ed00563a770500"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 6 / MUSICA column; restaurant label at bottom of deck drawing; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-008; SOURCE_EDITION_VENUE_DECK_ONLY; binding cf0b21ed00563a770500d5359721122b7410c8759d6ff4727099460f489f4c79; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0413",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      6
+    ]
+  },
+  "STM-0414": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:posidonia-restaurant",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-7ec40f51674d4a0845b0"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 5 / OPERA column; restaurant label in lower half; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-009; SOURCE_EDITION_VENUE_DECK_ONLY; binding 7ec40f51674d4a0845b04ee1937771b58a62e5f1b75831f77c5586d86b5716c7; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0414",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      5
+    ]
+  },
+  "STM-0415": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:marketplace-buffet",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-6f505372d8f1267b4268"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 5; Deck 15 / PREZIOSA column; two buffet-side labels in lower half; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-010; SOURCE_EDITION_VENUE_DECK_ONLY; binding 6f505372d8f1267b426828652cfd6cb4f284a9283f70cc493d18315cdc5ee28c; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 5,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0415",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      15
+    ]
+  },
+  "STM-0416": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:london-theatre",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-7a19d4e222ce4f998468"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Both Deck 5 / OPERA and Deck 6 / MUSICA columns, theatre labels near top; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-011; SOURCE_EDITION_VENUE_DECK_ONLY; binding 7a19d4e222ce4f998468c6e9a10509fc5dee485e6fac44957cccd7ff14c716d8; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0416",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      5,
+      6
+    ]
+  },
+  "STM-0417": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:carousel-lounge",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-eb7fec84bd2d5f64b2f9"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Deck 7 / FANTASIA column; Carousel / Lounge label at bottom; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-012; SOURCE_EDITION_VENUE_DECK_ONLY; binding eb7fec84bd2d5f64b2f94733d94072a05b0942883bbef76c15b148e4c4d6b587; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0417",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      7
+    ]
+  },
+  "STM-0418": {
+    "artifact_id": "ART-0001",
+    "derivation": "LOCAL",
+    "derivation_note": "",
+    "entity_id": "venue:MSC-BELLISSIMA:msc-excursions",
+    "evidence_condition": "SUPPORTED",
+    "evidence_event_ids": [
+      "EVT-BATCH-ad27f5b1507b66b45c8b"
+    ],
+    "human_review_state": "APPROVED",
+    "input_statement_ids": [],
+    "locator": "ART-0001; source edition 11.2025 DEU; physical page 3; Both Deck 5 / OPERA and Deck 6 / MUSICA columns; two excursions labels; edition-specific observation, not current operations",
+    "method": "DIRECT",
+    "note": "GSB-P1-018; SOURCE_EDITION_VENUE_DECK_ONLY; binding ad27f5b1507b66b45c8b92418cc941a6b484a484398834a73cbe144bc55fd5f9; Owner attests direct MSC website download. Historical URL and independent byte-origin verification unavailable.",
+    "page": 3,
+    "publish_status": "PUBLISH_ALLOWED",
+    "question_id": "Q-0016",
+    "read_by": "Codex AI / registered PDF observation",
+    "read_on": "2026-11-03",
+    "rule_hash": null,
+    "statement_id": "STM-0418",
+    "statement_type": "deck.venue_present",
+    "valid_from": null,
+    "valid_until": null,
+    "value": [
+      5,
+      6
+    ]
   }
 }

@@ -62,9 +62,12 @@ _FEATURE_TYPES = {
     "cabin.bunk_or_convertible_sofa",
 }
 
+# The original source-identity-repair cohort, not all future ART-0001 claims.
+_HISTORICAL_ART1_IDS = tuple(f"STM-{n:04d}" for n in range(1, 114))
+
 
 def _art_0001_statements(workspace: Workspace):
-    """The intake cohort: ART-0001 claims other than the cabin-feature layer.
+    """The original 113 intake records, identified independently of additions.
 
     These tests describe the claim set that existed when ART-0001's source
     identity was repaired, and assert it is quarantined by evidence condition
@@ -73,10 +76,9 @@ def _art_0001_statements(workspace: Workspace):
     (DRAFT / PUBLISH_BLOCKED), so including them would change what is being
     measured rather than extend it.
     """
-    return [
-        s for s in workspace.statements_for_artifact("ART-0001")
-        if s.statement_type not in _FEATURE_TYPES
-    ]
+    statements = [workspace.editor.get(sid) for sid in _HISTORICAL_ART1_IDS]
+    assert all(s.artifact_id == "ART-0001" and s.statement_type not in _FEATURE_TYPES for s in statements)
+    return statements
 
 
 def test_art_0001_registry_path_resolves_to_exact_physical_bytes():
@@ -158,11 +160,8 @@ def test_art_0001_inventory_and_historical_states_remain_auditable():
             encoding="utf-8"
         )
     )
-    affected = [
-        record for record in raw.values()
-        if record["artifact_id"] == "ART-0001"
-        and record["statement_type"] not in _FEATURE_TYPES
-    ]
+    affected = [raw[sid] for sid in _HISTORICAL_ART1_IDS]
+    assert all(r["artifact_id"] == "ART-0001" and r["statement_type"] not in _FEATURE_TYPES for r in affected)
 
     assert len(affected) == 113
     assert Counter(record["review_state"] for record in affected) == {
@@ -248,7 +247,7 @@ def test_review_reference_mismatch_is_the_superseded_duplicate_read():
     artifact_review_ids = {
         entry.statement_id
         for entry in workspace.reviews.all()
-        if "ART-0001" in entry.note
+        if "ART-0001" in entry.note and entry.statement_id in affected_ids
     }
 
     assert len(affected_ids) == 113
