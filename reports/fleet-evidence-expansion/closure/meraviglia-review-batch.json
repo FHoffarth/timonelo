@@ -1,0 +1,306 @@
+{
+  "schema": "timonelo.fleet-review-batch.v0",
+  "target_contract": "timonelo.evidence-batch.v1",
+  "state": "REVIEW_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+  "source_route": "NOT_ROUTED_UNREGISTERED_SOURCE",
+  "vessel_slug": "msc-meraviglia",
+  "vessel_imo_candidate": "IMO9760512",
+  "vessel_imo_stored": "IMO9660463",
+  "preconditions": [
+    "Owner decides the Meraviglia IMO (ID-1).",
+    "Owner states the plan's origin (SRC-1).",
+    "The plan is registered through a supported intake route, giving a real artifact ID.",
+    "Claims are rebuilt with that artifact ID. Decision bindings match exact JSON, so a decision taken on these claims cannot be replayed."
+  ],
+  "origin_limit": "Held bytes match the owner's downloaded file. Source URL, retrieval date and owner attestation are not recorded.",
+  "reading_method": "Label text read with the factory's own box routine; column placement checked by eye on page renders for the two pages used.",
+  "claims": [
+    {
+      "id": "MER-DK-01",
+      "name": "Broadway Theatre",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Broadway Theatre on deck(s) 5, 6 of MSC Meraviglia.",
+      "value": [
+        5,
+        6
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 5 / COLOSSEO column and Deck 6 / PETRA column; theatre labels in the forward section",
+      "observed_text": "Broadway Theatre / Broadway Theatre",
+      "entity_id": "venue:MSC-MERAVIGLIA:broadway-theatre",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          171.22,
+          265.63,
+          194.45,
+          271.05
+        ],
+        [
+          281.94,
+          245.35,
+          309.09,
+          251.31
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-02",
+      "name": "Waves Restaurant",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Waves Restaurant on deck(s) 5 of MSC Meraviglia.",
+      "value": [
+        5
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 5 / COLOSSEO column; restaurant label in the aft half",
+      "observed_text": "Waves Restaurant",
+      "entity_id": "venue:MSC-MERAVIGLIA:waves-restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          171.44,
+          595.77,
+          194.29,
+          601.18
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-03",
+      "name": "Panorama Restaurant",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Panorama Restaurant on deck(s) 6 of MSC Meraviglia.",
+      "value": [
+        6
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 6 / PETRA column; restaurant label at the aft end",
+      "observed_text": "Panorama Restaurant",
+      "entity_id": "venue:MSC-MERAVIGLIA:panorama-restaurant",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          278.63,
+          699.47,
+          311.03,
+          705.43
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-04",
+      "name": "Butcher's Cut",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Butcher's Cut on deck(s) 7 of MSC Meraviglia.",
+      "value": [
+        7
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 7 / TAJ MAHAL column; vertically printed label, starboard of the galleria",
+      "observed_text": "Butcher's Cut",
+      "entity_id": "venue:MSC-MERAVIGLIA:butchers-cut",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          422.45,
+          433.78,
+          427.87,
+          451.06
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-05",
+      "name": "Kaito Teppanyaki",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Kaito Teppanyaki on deck(s) 7 of MSC Meraviglia.",
+      "value": [
+        7
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 7 / TAJ MAHAL column; vertically printed label, port of the galleria",
+      "observed_text": "Kaito Teppanyaki",
+      "entity_id": "venue:MSC-MERAVIGLIA:kaito-teppanyaki",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          380.83,
+          438.68,
+          386.25,
+          460.81
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-06",
+      "name": "Casino Imperiale",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Casino Imperiale on deck(s) 7 of MSC Meraviglia.",
+      "value": [
+        7
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 7 / TAJ MAHAL column; label in the aft half",
+      "observed_text": "Casino Imperiale",
+      "entity_id": "venue:MSC-MERAVIGLIA:casino-imperiale",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          395.31,
+          604.29,
+          417.24,
+          609.7
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-07",
+      "name": "Carousel Lounge",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Carousel Lounge on deck(s) 7 of MSC Meraviglia.",
+      "value": [
+        7
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 3,
+      "locator": "Deck 7 / TAJ MAHAL column; two-line Carousel / Lounge label at the aft end",
+      "observed_text": "Carousel\nLounge",
+      "entity_id": "venue:MSC-MERAVIGLIA:carousel-lounge",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          400.73,
+          722.12,
+          412.04,
+          727.53
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    },
+    {
+      "id": "MER-DK-08",
+      "name": "Marketplace Buffet",
+      "exact_claim": "Unregistered plan 77f5a51b2465 (11.2025 DEU) labels Marketplace Buffet on deck(s) 15 of MSC Meraviglia.",
+      "value": [
+        15
+      ],
+      "artifact_id": null,
+      "artifact_sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+      "target_vessel": "IMO9760512",
+      "page": 5,
+      "locator": "Deck 15 / TOUR EIFFEL column; two vertically printed buffet-side labels in the aft half",
+      "observed_text": "Marketplace Buffet / Marketplace Buffet",
+      "entity_id": "venue:MSC-MERAVIGLIA:marketplace-buffet",
+      "question_id": "Q-0016",
+      "statement_type": "deck.venue_present",
+      "source_version": "11.2025 DEU",
+      "source_boxes": [
+        [
+          153.15,
+          596.73,
+          158.57,
+          622.29
+        ],
+        [
+          210.7,
+          596.73,
+          216.12,
+          622.29
+        ]
+      ],
+      "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+    }
+  ],
+  "decisions": [
+    {
+      "claim_id": "MER-DK-01",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-02",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-03",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-04",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-05",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-06",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-07",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    },
+    {
+      "claim_id": "MER-DK-08",
+      "decision": null,
+      "reviewer": null,
+      "review_date": null,
+      "decision_reason": null
+    }
+  ]
+}

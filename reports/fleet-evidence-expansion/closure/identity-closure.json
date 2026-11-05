@@ -1,0 +1,281 @@
+{
+  "schema": "timonelo.fleet-identity-closure.v0",
+  "checked_on": "2026-11-05",
+  "source_hierarchy": [
+    "NOT_OBTAINED: IMO GISIS and the Transport Malta register, both needing an account or unavailable to this review",
+    "ITU MARS ship station list, https://mmsapp.itu.int/mmsapp/ShipStation/list, read through its public search",
+    "USCG PSIX vessel search, https://cgmix.uscg.mil/PSIX/PSIXSearch.aspx, last update shown 2 November 2026",
+    "UK MCA SAR index, October 2026, sha256 e3c7a3ce52870e7f0c5d34328942b8042183894cd71bf4fe7d927612c6c6f1a0",
+    "Insurer, tracker and tertiary records in ../identity-evidence-matrix.json"
+  ],
+  "limits": [
+    "ITU and USCG rows were transcribed from live pages and not hashed.",
+    "ITU update dates are shown without a stated format, so day and month order is unknown.",
+    "ITU MARS is a radio-station notification list and USCG PSIX is a port-state record; neither is a flag register."
+  ],
+  "seed_imo_lookups": {
+    "9660463": {
+      "itu_mars": "No record found",
+      "uscg_psix_name_search": "not listed under the ship's name"
+    },
+    "9805348": {
+      "itu_mars": "No record found",
+      "uscg_psix_name_search": "not listed under the ship's name"
+    },
+    "9805336": {
+      "itu_mars": "No record found",
+      "uscg_psix_name_search": "not listed under the ship's name"
+    }
+  },
+  "ships": {
+    "msc-grandiosa": {
+      "itu_mars_row": {
+        "ship_name": "MSC GRANDIOSA",
+        "call_sign": "9HA5063",
+        "mmsi": "215325000",
+        "administration": "MLT",
+        "vessel_id_number": "9803613",
+        "update_date_as_displayed": "02/11/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC GRANDIOSA",
+        "status": "Active",
+        "vin": "9803613",
+        "call_sign": "9HA5063",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "2019"
+      },
+      "repo_values": {
+        "imo": "9803613",
+        "mmsi": "248803613",
+        "call_sign": "9HA3613"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": true,
+      "radio_ids_state": "VERIFIED_ITU_AND_USCG_CALL_SIGN"
+    },
+    "msc-virtuosa": {
+      "itu_mars_row": {
+        "ship_name": "MSC VIRTUOSA",
+        "call_sign": "9HA5209",
+        "mmsi": "215610000",
+        "administration": "MLT",
+        "vessel_id_number": "9803625",
+        "update_date_as_displayed": "03/02/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC VIRTUOSA",
+        "status": "Active",
+        "vin": "9803625",
+        "call_sign": "N/A",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "N/A"
+      },
+      "repo_values": {
+        "imo": "9803625",
+        "mmsi": "248803625",
+        "call_sign": "9HA3625"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": true,
+      "radio_ids_state": "VERIFIED_ITU"
+    },
+    "msc-euribia": {
+      "itu_mars_row": {
+        "ship_name": "MSC EURIBIA",
+        "call_sign": "9HA5782",
+        "mmsi": "256281000",
+        "administration": "MLT",
+        "vessel_id_number": "9901544",
+        "update_date_as_displayed": "06/01/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC EURIBIA",
+        "status": "Active",
+        "vin": "9901544",
+        "call_sign": "N/A",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "N/A"
+      },
+      "repo_values": {
+        "imo": "9901544",
+        "mmsi": "248901544",
+        "call_sign": "9HA1544"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": true,
+      "radio_ids_state": "VERIFIED_ITU",
+      "mmsi_conflict": {
+        "government_index_value": "256261000",
+        "government_index": "UK MCA SAR index, October 2026 file, row last amended 12-Jun-24",
+        "itu_row_for_256261000": {
+          "ship_name": "HOUBARA",
+          "call_sign": "9HB9271",
+          "mmsi": "256261000",
+          "administration": "MLT",
+          "update_date_as_displayed": "02/09/2024"
+        },
+        "resolution": "256281000 is the current ITU assignment for this ship. 256261000 is currently assigned by ITU to a different ship.",
+        "history": "NOT_ESTABLISHED. ITU shows current rows only, and no earlier MCA index could be retrieved, so nothing shows 256261000 was ever assigned to MSC Euribia."
+      }
+    },
+    "msc-world-europa": {
+      "itu_mars_row": {
+        "ship_name": "MSC WORLD EUROPA",
+        "call_sign": "9HA5682",
+        "mmsi": "256070000",
+        "administration": "MLT",
+        "vessel_id_number": "9837420",
+        "update_date_as_displayed": "02/11/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC WORLD EUROPA",
+        "status": "Active",
+        "vin": "9837420",
+        "call_sign": "N/A",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "N/A"
+      },
+      "repo_values": {
+        "imo": "9837420",
+        "mmsi": "248837420",
+        "call_sign": "9HA7420"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": true,
+      "radio_ids_state": "VERIFIED_ITU"
+    },
+    "msc-world-america": {
+      "itu_mars_row": {
+        "ship_name": "MSC WORLD AMERICA",
+        "call_sign": "9HA6157",
+        "mmsi": "249193000",
+        "administration": "MLT",
+        "vessel_id_number": "9837432",
+        "update_date_as_displayed": "01/08/2025"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC WORLD AMERICA",
+        "status": "Active",
+        "vin": "9837432",
+        "call_sign": "9HA6157",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "2024"
+      },
+      "repo_values": {
+        "imo": "9837432",
+        "mmsi": "248837432",
+        "call_sign": "9HA7432"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": true,
+      "radio_ids_state": "VERIFIED_ITU_AND_USCG_CALL_SIGN"
+    },
+    "msc-meraviglia": {
+      "itu_mars_row": {
+        "ship_name": "MSC MERAVIGLIA",
+        "call_sign": "9HA4455",
+        "mmsi": "249973000",
+        "administration": "MLT",
+        "vessel_id_number": "9760512",
+        "update_date_as_displayed": "01/07/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC MERAVIGLIA",
+        "status": "Active",
+        "vin": "9760512",
+        "call_sign": "9HA4455",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "2017"
+      },
+      "repo_values": {
+        "imo": "9660463",
+        "mmsi": "248660463",
+        "call_sign": "9HA0463"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": false,
+      "radio_ids_state": "VERIFIED_ITU_AND_USCG_CALL_SIGN",
+      "uscg_other_rows": [
+        {
+          "vessel_name": "MSC MERAVIGLIA",
+          "status": "Active",
+          "vin": "9534690",
+          "call_sign": "N/A",
+          "flag": "PANAMA",
+          "build_year": "N/A"
+        },
+        {
+          "vessel_name": "MSC MERAVIGLIA",
+          "status": "Active",
+          "vin": "MSC MERAVIGLIA",
+          "call_sign": "N/A",
+          "service": "Passenger (Inspected)",
+          "flag": "SWITZERLAND",
+          "build_year": "N/A"
+        }
+      ],
+      "unresolved_note": "Two further PSIX rows share the name. Neither matches ITU, the insurer or the MCA. They are retained, not explained."
+    },
+    "msc-seascape": {
+      "itu_mars_row": {
+        "ship_name": "MSC SEASCAPE",
+        "call_sign": "9HA5677",
+        "mmsi": "256059000",
+        "administration": "MLT",
+        "vessel_id_number": "9843807",
+        "update_date_as_displayed": "04/05/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC SEASCAPE",
+        "status": "Active",
+        "vin": "9843807",
+        "call_sign": "9HA5677",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "N/A"
+      },
+      "repo_values": {
+        "imo": "9805348",
+        "mmsi": "248805348",
+        "call_sign": "9HA5348"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": false,
+      "radio_ids_state": "VERIFIED_ITU_AND_USCG_CALL_SIGN"
+    },
+    "msc-seashore": {
+      "itu_mars_row": {
+        "ship_name": "MSC SEASHORE",
+        "call_sign": "9HA5370",
+        "mmsi": "215920000",
+        "administration": "MLT",
+        "vessel_id_number": "9843792",
+        "update_date_as_displayed": "01/04/2026"
+      },
+      "uscg_psix_row": {
+        "vessel_name": "MSC SEASHORE",
+        "status": "Active",
+        "vin": "9843792",
+        "call_sign": "9HA5370",
+        "service": "Passenger (Inspected)",
+        "flag": "MALTA",
+        "build_year": "2021"
+      },
+      "repo_values": {
+        "imo": "9805336",
+        "mmsi": "248805336",
+        "call_sign": "9HA5336"
+      },
+      "imo_state": "VERIFIED_ITU_AND_USCG_AGREE",
+      "repo_imo_matches": false,
+      "radio_ids_state": "VERIFIED_ITU_AND_USCG_CALL_SIGN"
+    }
+  }
+}
