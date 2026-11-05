@@ -1,0 +1,6029 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-seascape",
+  "name": "MSC SEASCAPE",
+  "verified_imo": "IMO9843807",
+  "stored_imo": "IMO9805348",
+  "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+ },
+ "source": {
+  "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC SEASCAPE SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "NEEDS REVIEW",
+ "first_review_batch": [
+  {
+   "id": "SC-MAP-01",
+   "name": "CHORA THEATRE",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CHORA THEATRE on deck(s) 6, 7.",
+   "value": [
+    6,
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 9,
+   "locator": "Page 9, table 'Fun', row 'CHORA THEATRE', printed deck '6-7'",
+   "observed_text": "CHORA THEATRE\n6-7",
+   "entity_id": "venue:MSC-SEASCAPE:chora-theatre",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     525.14,
+     286.84,
+     527.98
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-02",
+   "name": "MARKETPLACE BUFFET & RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MARKETPLACE BUFFET & RESTAURANT on deck(s) 16.",
+   "value": [
+    16
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET & RESTAURANT', printed deck '16'",
+   "observed_text": "MARKETPLACE BUFFET & RESTAURANT\n16",
+   "entity_id": "venue:MSC-SEASCAPE:marketplace-buffet-and-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.12,
+     379.54,
+     502.38,
+     382.39
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-03",
+   "name": "MSC SIGNATURE CASINO",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 5,
+   "locator": "Page 5, table 'Bars', row 'MSC SIGNATURE CASINO', printed deck '7'",
+   "observed_text": "MSC SIGNATURE CASINO\n7",
+   "entity_id": "venue:MSC-SEASCAPE:msc-signature-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     427.9,
+     286.84,
+     430.74
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-04",
+   "name": "AEGEAN RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints AEGEAN RESTAURANT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'AEGEAN RESTAURANT', printed deck '7'",
+   "observed_text": "AEGEAN RESTAURANT\n7",
+   "entity_id": "venue:MSC-SEASCAPE:aegean-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.54,
+     367.59,
+     287.8,
+     370.43
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-05",
+   "name": "BUTCHER'S CUT",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BUTCHER'S CUT on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '8'",
+   "observed_text": "BUTCHER'S CUT\n8",
+   "entity_id": "venue:MSC-SEASCAPE:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.54,
+     379.54,
+     287.8,
+     382.39
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-06",
+   "name": "CALA JONDAL RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CALA JONDAL RESTAURANT on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'CALA JONDAL RESTAURANT', printed deck '6'",
+   "observed_text": "CALA JONDAL RESTAURANT\n6",
+   "entity_id": "venue:MSC-SEASCAPE:cala-jondal-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.54,
+     391.45,
+     287.8,
+     394.29
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-07",
+   "name": "CHEF'S COURT RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CHEF'S COURT RESTAURANT on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"CHEF'S COURT RESTAURANT\", printed deck '8'",
+   "observed_text": "CHEF'S COURT RESTAURANT\n8",
+   "entity_id": "venue:MSC-SEASCAPE:chefs-court-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.54,
+     403.35,
+     287.8,
+     406.2
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SC-MAP-08",
+   "name": "KAITO SUSHI BAR",
+   "exact_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints KAITO SUSHI BAR on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+   "target_vessel": "IMO9843807",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '8'",
+   "observed_text": "KAITO SUSHI BAR\n8",
+   "entity_id": "venue:MSC-SEASCAPE:kaito-sushi-bar",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.54,
+     427.16,
+     287.8,
+     430.01
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "SC-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SC-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "TENDER ACCESS",
+   "index_decks": [
+    4
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ACCESSORIES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints ACCESSORIES on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     370.58,
+     287.4,
+     373.42
+    ],
+    "text": "Page 6, table 'Shops', row 'ACCESSORIES', printed deck '6'",
+    "observed_text": "ACCESSORIES\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:accessories"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ADVENTURE TRAIL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints ADVENTURE TRAIL on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     465.56,
+     286.84,
+     468.41
+    ],
+    "text": "Page 9, table 'Fun', row 'ADVENTURE TRAIL', printed deck '19'",
+    "observed_text": "ADVENTURE TRAIL\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:adventure-trail"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AEGEAN RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints AEGEAN RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     367.59,
+     287.8,
+     370.43
+    ],
+    "text": "Page 4, table 'Restaurants', row 'AEGEAN RESTAURANT', printed deck '7'",
+    "observed_text": "AEGEAN RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:aegean-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BABY CLUB CHICCO (under 3 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.55,
+     485.39,
+     287.82,
+     488.24
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO (under 3 years)', printed deck '18'",
+    "observed_text": "BABY CLUB CHICCO (under 3 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BARBER SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BARBER SHOP on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     361.65,
+     286.42,
+     364.5
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BARBER SHOP', printed deck '8'",
+    "observed_text": "BARBER SHOP\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:barber-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAT HERO VR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BEAT HERO VR on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     477.51,
+     286.84,
+     480.36
+    ],
+    "text": "Page 9, table 'Fun', row 'BEAT HERO VR', printed deck '18'",
+    "observed_text": "BEAT HERO VR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:beat-hero-vr"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAUTY SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BEAUTY SERVICES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     373.6,
+     286.42,
+     376.45
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BEAUTY SERVICES', printed deck '8'",
+    "observed_text": "BEAUTY SERVICES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:beauty-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOULEVARD DU CABARET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BOULEVARD DU CABARET on deck(s) 7.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     489.42,
+     286.84,
+     492.27
+    ],
+    "text": "Page 9, table 'Fun', row 'BOULEVARD DU CABARET', printed deck '7'",
+    "observed_text": "BOULEVARD DU CABARET\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:boulevard-du-cabaret"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     382.53,
+     287.4,
+     385.38
+    ],
+    "text": "Page 6, table 'Shops', row 'BOUTIQUE', printed deck '6'",
+    "observed_text": "BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BRIDGE OF SIGHS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BRIDGE OF SIGHS on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     501.32,
+     286.84,
+     504.17
+    ],
+    "text": "Page 9, table 'Fun', row 'BRIDGE OF SIGHS', printed deck '16'",
+    "observed_text": "BRIDGE OF SIGHS\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:bridge-of-sighs"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BROADCASTING ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BROADCASTING ROOM on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     513.23,
+     286.84,
+     516.08
+    ],
+    "text": "Page 9, table 'Fun', row 'BROADCASTING ROOM', printed deck '8'",
+    "observed_text": "BROADCASTING ROOM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:broadcasting-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER'S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints BUTCHER'S CUT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     379.54,
+     287.8,
+     382.39
+    ],
+    "text": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '8'",
+    "observed_text": "BUTCHER'S CUT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CALA JONDAL RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CALA JONDAL RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     391.45,
+     287.8,
+     394.29
+    ],
+    "text": "Page 4, table 'Restaurants', row 'CALA JONDAL RESTAURANT', printed deck '6'",
+    "observed_text": "CALA JONDAL RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:cala-jondal-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHAMPAGNE & WINE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CHAMPAGNE & WINE BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     368.32,
+     286.84,
+     371.17
+    ],
+    "text": "Page 5, table 'Bars', row 'CHAMPAGNE & WINE BAR', printed deck '7'",
+    "observed_text": "CHAMPAGNE & WINE BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:champagne-and-wine-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHEF'S COURT RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CHEF'S COURT RESTAURANT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     403.35,
+     287.8,
+     406.2
+    ],
+    "text": "Page 4, table 'Restaurants', row \"CHEF'S COURT RESTAURANT\", printed deck '8'",
+    "observed_text": "CHEF'S COURT RESTAURANT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:chefs-court-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHORA THEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    7
+   ],
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CHORA THEATRE on deck(s) 6, 7.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     525.14,
+     286.84,
+     527.98
+    ],
+    "text": "Page 9, table 'Fun', row 'CHORA THEATRE', printed deck '6-7'",
+    "observed_text": "CHORA THEATRE\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:chora-theatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "COCKTAIL BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints COCKTAIL BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     380.27,
+     286.84,
+     383.12
+    ],
+    "text": "Page 5, table 'Bars', row 'COCKTAIL BAR', printed deck '8'",
+    "observed_text": "COCKTAIL BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:cocktail-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints CONCIERGE AREA on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     305.96,
+     500.29,
+     308.8
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '16'",
+    "observed_text": "CONCIERGE AREA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DUTY FREE *",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints DUTY FREE * on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     394.44,
+     287.4,
+     397.28
+    ],
+    "text": "Page 6, table 'Shops', row 'DUTY FREE *', printed deck '6'",
+    "observed_text": "DUTY FREE*\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:duty-free"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EMOTIONS - IMMERSIVE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints EMOTIONS - IMMERSIVE GALLERY on deck(s) 5.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     537.04,
+     286.84,
+     539.89
+    ],
+    "text": "Page 9, table 'Fun', row 'EMOTIONS - IMMERSIVE GALLERY', printed deck '5'",
+    "observed_text": "EMOTIONS - IMMERSIVE GALLERY\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:emotions-immersive-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FASHION JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints FASHION JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     406.34,
+     287.4,
+     409.19
+    ],
+    "text": "Page 6, table 'Shops', row 'FASHION JEWELLERY', printed deck '8'",
+    "observed_text": "FASHION JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:fashion-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints FINE JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     418.25,
+     287.4,
+     421.1
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE JEWELLERY', printed deck '8'",
+    "observed_text": "FINE JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:fine-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints HAIR SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     385.51,
+     286.42,
+     388.36
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '8'",
+    "observed_text": "HAIR SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HALL OF GAMES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints HALL OF GAMES on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     548.95,
+     286.84,
+     551.79
+    ],
+    "text": "Page 9, table 'Fun', row 'HALL OF GAMES', printed deck '18'",
+    "observed_text": "HALL OF GAMES\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:hall-of-games"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     415.26,
+     287.8,
+     418.11
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '8'",
+    "observed_text": "HOLA! TACOS & CANTINA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints HORIZON BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     415.94,
+     501.42,
+     418.79
+    ],
+    "text": "Page 5, table 'Bars', row 'HORIZON BAR', printed deck '19'",
+    "observed_text": "HORIZON BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:horizon-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints INFINITY BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     427.9,
+     501.42,
+     430.74
+    ],
+    "text": "Page 5, table 'Bars', row 'INFINITY BAR', printed deck '8'",
+    "observed_text": "INFINITY BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:infinity-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BRIDGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints INFINITY BRIDGE on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     560.85,
+     286.84,
+     563.7
+    ],
+    "text": "Page 9, table 'Fun', row 'INFINITY BRIDGE', printed deck '8'",
+    "observed_text": "INFINITY BRIDGE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:infinity-bridge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints INFINITY POOL on deck(s) 8.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     296.57,
+     286.84,
+     299.42
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'INFINITY POOL', printed deck '8'",
+    "observed_text": "INFINITY POOL\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:infinity-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY WHIRLPOOLS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints INFINITY WHIRLPOOLS on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     397.42,
+     286.42,
+     400.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'INFINITY WHIRLPOOLS', printed deck '8'",
+    "observed_text": "INFINITY WHIRLPOOLS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:infinity-whirlpools"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INTERACTIVE XD CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "7"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     584.66,
+     286.84,
+     587.51
+    ],
+    "text": "Page 9, table 'Fun', row 'INTERACTIVE XD CINEMA', printed deck '18'",
+    "observed_text": "INTERACTIVE XD CINEMA\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 7"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:interactive-xd-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints IRIS GALERIE on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     430.15,
+     287.4,
+     433.0
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '8'",
+    "observed_text": "IRIS GALERIE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL BEACH BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints JUNGLE POOL BEACH BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     392.18,
+     286.84,
+     395.03
+    ],
+    "text": "Page 5, table 'Bars', row 'JUNGLE POOL BEACH BAR', printed deck '16'",
+    "observed_text": "JUNGLE POOL BEACH BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:jungle-pool-beach-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16,
+    18
+   ],
+   "printed_tokens": [
+    "16-18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints JUNGLE POOL LOUNGE on deck(s) 16, 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     308.53,
+     286.84,
+     311.38
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'JUNGLE POOL LOUNGE', printed deck '16-18'",
+    "observed_text": "JUNGLE POOL LOUNGE\n16-18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16-18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16-18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16-18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16,
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:jungle-pool-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL LOUNGE WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints JUNGLE POOL LOUNGE WHIRLPOOL BATH on deck(s) 16.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     409.32,
+     286.42,
+     412.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'JUNGLE POOL LOUNGE WHIRLPOOL BATH', printed deck '16'",
+    "observed_text": "JUNGLE POOL LOUNGE WHIRLPOOL BATH\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:jungle-pool-lounge-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIORS CLUB (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints JUNIORS CLUB (7 to 11 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.55,
+     592.54,
+     287.82,
+     595.39
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIORS CLUB (7 to 11 years)', printed deck '18'",
+    "observed_text": "JUNIORS CLUB (7 to 11 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:juniors-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints KAITO SUSHI BAR on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     427.16,
+     287.8,
+     430.01
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '8'",
+    "observed_text": "KAITO SUSHI BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints KAITO TEPPANYAKI on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     367.64,
+     502.38,
+     370.48
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '8'",
+    "observed_text": "KAITO TEPPANYAKI\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE CABARET ROUGE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": null,
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     404.09,
+     286.84,
+     406.93
+    ],
+    "text": "Page 5, table 'Bars', row 'LE CABARET ROUGE', printed deck '6-7'",
+    "observed_text": "LE CABARET ROUGE\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6-7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:le-cabaret-rouge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LIBERTY PLAZA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints LIBERTY PLAZA on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     442.06,
+     287.4,
+     444.91
+    ],
+    "text": "Page 6, table 'Shops', row 'LIBERTY PLAZA', printed deck '8'",
+    "observed_text": "LIBERTY PLAZA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:liberty-plaza"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LOFT CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints LOFT CAFÉ on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     415.99,
+     286.84,
+     418.84
+    ],
+    "text": "Page 5, table 'Bars', row 'LOFT CAFÉ', printed deck '8'",
+    "observed_text": "LOFT CAFÉ\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:loft-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARINA BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MARINA BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     439.8,
+     501.42,
+     442.65
+    ],
+    "text": "Page 5, table 'Bars', row 'MARINA BAR', printed deck '18'",
+    "observed_text": "MARINA BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:marina-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARINA POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MARINA POOL on deck(s) 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     320.43,
+     286.84,
+     323.28
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MARINA POOL', printed deck '18'",
+    "observed_text": "MARINA POOL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:marina-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARINA POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MARINA POOL WHIRLPOOL BATH on deck(s) 18.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     421.23,
+     286.42,
+     424.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MARINA POOL WHIRLPOOL BATH', printed deck '18'",
+    "observed_text": "MARINA POOL WHIRLPOOL BATH\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:marina-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BUFFET & RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MARKETPLACE BUFFET & RESTAURANT on deck(s) 16.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     379.54,
+     502.38,
+     382.39
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET & RESTAURANT', printed deck '16'",
+    "observed_text": "MARKETPLACE BUFFET & RESTAURANT\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:marketplace-buffet-and-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASSAGES & TREATMENTS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MASSAGES & TREATMENTS on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     433.13,
+     286.42,
+     435.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MASSAGES & TREATMENTS', printed deck '8'",
+    "observed_text": "MASSAGES & TREATMENTS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:massages-and-treatments"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA CENTRE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MEDI SPA CENTRE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     361.65,
+     501.0,
+     364.5
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA CENTRE', printed deck '8'",
+    "observed_text": "MEDI SPA CENTRE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:medi-spa-centre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MINI CLUB (3 to 6 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     473.44,
+     502.4,
+     476.28
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB (3 to 6 years)', printed deck '18'",
+    "observed_text": "MINI CLUB (3 to 6 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:mini-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC AUREA SPA on deck(s) 8.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     317.91,
+     500.29,
+     320.76
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '8'",
+    "observed_text": "MSC AUREA SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    8
+   ],
+   "printed_tokens": [
+    "6-8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC EXCURSIONS on deck(s) 6, 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     453.96,
+     287.41,
+     456.81
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '6-8'",
+    "observed_text": "MSC EXCURSIONS\n6-8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     501.32,
+     501.42,
+     504.17
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '18'",
+    "observed_text": "MSC FORMULA RACER\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 18, index [7]"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 8.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     332.34,
+     286.84,
+     335.19
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '8'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM®\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC SHOP on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     370.58,
+     501.99,
+     373.42
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '8'",
+    "observed_text": "MSC SHOP\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SIGNATURE CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     427.9,
+     286.84,
+     430.74
+    ],
+    "text": "Page 5, table 'Bars', row 'MSC SIGNATURE CASINO', printed deck '7'",
+    "observed_text": "MSC SIGNATURE CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-signature-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SPORTS ARENA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC SPORTS ARENA on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     344.24,
+     286.84,
+     347.09
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC SPORTS ARENA', printed deck '20'",
+    "observed_text": "MSC SPORTS ARENA\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-sports-arena"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     329.82,
+     500.29,
+     332.66
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC YACHT CLUB POOL on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     341.72,
+     500.29,
+     344.57
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB POOL', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-yacht-club-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 18.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     353.63,
+     500.29,
+     356.48
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '18'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints MSC YACHT CLUB SUNDECK & POOL on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     365.53,
+     500.29,
+     368.38
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & POOL', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:msc-yacht-club-sundeck-and-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints NAIL SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     373.6,
+     501.0,
+     376.45
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SALON', printed deck '8'",
+    "observed_text": "NAIL SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:nail-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OCEAN CAY RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints OCEAN CAY RESTAURANT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     391.45,
+     502.38,
+     394.29
+    ],
+    "text": "Page 4, table 'Restaurants', row 'OCEAN CAY RESTAURANT', printed deck '8'",
+    "observed_text": "OCEAN CAY RESTAURANT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:ocean-cay-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PERFUMES & COSMETICS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints PERFUMES & COSMETICS on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     382.53,
+     501.99,
+     385.38
+    ],
+    "text": "Page 6, table 'Shops', row 'PERFUMES & COSMETICS', printed deck '6'",
+    "observed_text": "PERFUMES & COSMETICS\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:perfumes-and-cosmetics"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PIRATES COVE AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18,
+    19
+   ],
+   "printed_tokens": [
+    "18-19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints PIRATES COVE AQUAPARK on deck(s) 18, 19.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     356.15,
+     286.84,
+     359.0
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'PIRATES COVE AQUAPARK', printed deck '18-19'",
+    "observed_text": "PIRATES COVE AQUAPARK\n18-19"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18-19"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18-19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18,
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:pirates-cove-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints RECEPTION on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     385.51,
+     501.0,
+     388.36
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '8'",
+    "observed_text": "RECEPTION\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ROBOTRON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints ROBOTRON on deck(s) 20.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     548.95,
+     501.42,
+     551.79
+    ],
+    "text": "Page 9, table 'Fun', row 'ROBOTRON', printed deck '20'",
+    "observed_text": "ROBOTRON\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:robotron"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SEASCAPE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SEASCAPE BAR on deck(s) 5.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     439.8,
+     286.84,
+     442.65
+    ],
+    "text": "Page 5, table 'Bars', row 'SEASCAPE BAR', printed deck '5'",
+    "observed_text": "SEASCAPE BAR\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:seascape-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHINE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SHINE BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     451.71,
+     286.84,
+     454.56
+    ],
+    "text": "Page 5, table 'Bars', row 'SHINE BAR', printed deck '6'",
+    "observed_text": "SHINE BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:shine-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SKY BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     451.71,
+     501.42,
+     454.56
+    ],
+    "text": "Page 5, table 'Bars', row 'SKY BAR', printed deck '16'",
+    "observed_text": "SKY BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:sky-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKYLINE RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SKYLINE RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     403.35,
+     502.38,
+     406.2
+    ],
+    "text": "Page 4, table 'Restaurants', row 'SKYLINE RESTAURANT', printed deck '7'",
+    "observed_text": "SKYLINE RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:skyline-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SPA BOUTIQUE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     397.42,
+     501.0,
+     400.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SPA BOUTIQUE', printed deck '8'",
+    "observed_text": "SPA BOUTIQUE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:spa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints SPORTS BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     463.61,
+     286.84,
+     466.46
+    ],
+    "text": "Page 5, table 'Bars', row 'SPORTS BAR', printed deck '8'",
+    "observed_text": "SPORTS BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:sports-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEEN CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TEEN CLUB (15 to 17 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     533.01,
+     502.4,
+     535.86
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEEN CLUB (15 to 17 years)', printed deck '18'",
+    "observed_text": "TEEN CLUB (15 to 17 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:teen-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THE GALLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     394.44,
+     501.99,
+     397.28
+    ],
+    "text": "Page 6, table 'Shops', row 'THE GALLERY', printed deck '8'",
+    "observed_text": "THE GALLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:the-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE GREEN WAVE RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THE GREEN WAVE RESTAURANT on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     415.26,
+     502.38,
+     418.11
+    ],
+    "text": "Page 4, table 'Restaurants', row 'THE GREEN WAVE RESTAURANT', printed deck '5'",
+    "observed_text": "THE GREEN WAVE RESTAURANT\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:the-green-wave-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 5.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     406.34,
+     501.99,
+     409.19
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '5'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THE STUDIO on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     544.92,
+     502.4,
+     547.77
+    ],
+    "text": "Page 10, table 'Family Areas', row 'THE STUDIO', printed deck '18'",
+    "observed_text": "THE STUDIO\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:the-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE WINE CELLAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THE WINE CELLAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     475.52,
+     286.84,
+     478.37
+    ],
+    "text": "Page 5, table 'Bars', row 'THE WINE CELLAR', printed deck '8'",
+    "observed_text": "THE WINE CELLAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:the-wine-cellar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints THERMAL AREA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     409.32,
+     501.0,
+     412.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '8'",
+    "observed_text": "THERMAL AREA \n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIME VALLÉE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TIME VALLÉE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     418.25,
+     501.99,
+     421.1
+    ],
+    "text": "Page 6, table 'Shops', row 'TIME VALLÉE', printed deck '6'",
+    "observed_text": "TIME VALLÉE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:time-vallee"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIMELESS STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TIMELESS STUDIO on deck(s) 5.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     430.15,
+     501.99,
+     433.0
+    ],
+    "text": "Page 6, table 'Shops', row 'TIMELESS STUDIO', printed deck '5'",
+    "observed_text": "TIMELESS STUDIO\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:timeless-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIMES SQUARE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TIMES SQUARE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     442.06,
+     501.99,
+     444.91
+    ],
+    "text": "Page 6, table 'Shops', row 'TIMES SQUARE', printed deck '6'",
+    "observed_text": "TIMES SQUARE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:times-square"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TOP 19 BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     463.61,
+     501.42,
+     466.46
+    ],
+    "text": "Page 5, table 'Bars', row 'TOP 19 BAR', printed deck '19'",
+    "observed_text": "TOP 19 BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:top-19-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TOP 19 EXCLUSIVE SOLARIUM on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     421.23,
+     501.01,
+     424.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 19 EXCLUSIVE SOLARIUM', printed deck '19'",
+    "observed_text": "TOP 19 EXCLUSIVE SOLARIUM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:top-19-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints TOP SAIL LOUNGE on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.16,
+     377.44,
+     500.29,
+     380.29
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '16'",
+    "observed_text": "TOP SAIL LOUNGE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "UPTOWN LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints UPTOWN LOUNGE on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     368.37,
+     501.42,
+     371.22
+    ],
+    "text": "Page 5, table 'Bars', row 'UPTOWN LOUNGE', printed deck '8'",
+    "observed_text": "UPTOWN LOUNGE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:uptown-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VENCHI 1878 CHOCOLATE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints VENCHI 1878 CHOCOLATE BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     380.27,
+     501.42,
+     383.12
+    ],
+    "text": "Page 5, table 'Bars', row 'VENCHI 1878 CHOCOLATE BAR', printed deck '6'",
+    "observed_text": "VENCHI 1878 CHOCOLATE BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:venchi-1878-chocolate-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VENCHI 1878 GELATO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints VENCHI 1878 GELATO on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     474.62,
+     501.42,
+     477.47
+    ],
+    "text": "Page 5, table 'Bars', row 'VENCHI 1878 GELATO', printed deck '8'",
+    "observed_text": "VENCHI 1878 GELATO\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:venchi-1878-gelato"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VR RAFTING",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints VR RAFTING on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     596.57,
+     501.42,
+     599.42
+    ],
+    "text": "Page 9, table 'Fun', row 'VR RAFTING', printed deck '18'",
+    "observed_text": "VR RAFTING\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:vr-rafting"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WATCHES & SUNGLASSES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints WATCHES & SUNGLASSES on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     453.96,
+     501.99,
+     456.81
+    ],
+    "text": "Page 6, table 'Shops', row 'WATCHES & SUNGLASSES', printed deck '7'",
+    "observed_text": "WATCHES & SUNGLASSES\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:watches-and-sunglasses"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WATERFRONT BOARDWALK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints WATERFRONT BOARDWALK on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     608.47,
+     501.42,
+     611.32
+    ],
+    "text": "Page 9, table 'Fun', row 'WATERFRONT BOARDWALK', printed deck '8'",
+    "observed_text": "WATERFRONT BOARDWALK\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASCAPE:waterfront-boardwalk"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seascape",
+    "name": "MSC SEASCAPE",
+    "verified_imo": "IMO9843807",
+    "stored_imo": "IMO9805348",
+    "identity_state": "BLOCKED_STORED_IMO_9805348_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASCAPE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASCAPE (SHA-256 35f9f46f2e54, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     592.54,
+     502.4,
+     595.39
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '18'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASCAPE:young-club"
+  }
+ ]
+}

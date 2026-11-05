@@ -1,0 +1,5864 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-virtuosa",
+  "name": "MSC VIRTUOSA",
+  "verified_imo": "IMO9803625",
+  "stored_imo": "IMO9803625",
+  "identity_state": "CANONICAL_MATCHES_VERIFIED"
+ },
+ "source": {
+  "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC VIRTUOSA SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "ELIGIBLE CANDIDATE",
+ "first_review_batch": [
+  {
+   "id": "VI-MAP-01",
+   "name": "LE GRAND THÉÂTRE",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints LE GRAND THÉÂTRE on deck(s) 5, 6.",
+   "value": [
+    5,
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 9,
+   "locator": "Page 9, table 'Fun', row 'LE GRAND THÉÂTRE', printed deck '5-6'",
+   "observed_text": "LE GRAND THÉÂTRE\n5-6",
+   "entity_id": "venue:MSC-VIRTUOSA:le-grand-theatre",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     308.72,
+     365.68,
+     501.99,
+     368.53
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-02",
+   "name": "MARKETPLACE BUFFET",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "value": [
+    15
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+   "observed_text": "MARKETPLACE BUFFET\n15",
+   "entity_id": "venue:MSC-VIRTUOSA:marketplace-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     366.51,
+     502.52,
+     369.36
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-03",
+   "name": "RED GEM CASINO",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints RED GEM CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 5,
+   "locator": "Page 5, table 'Bars - Lounges', row 'RED GEM CASINO', printed deck '7'",
+   "observed_text": "RED GEM CASINO\n7",
+   "entity_id": "venue:MSC-VIRTUOSA:red-gem-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     489.82,
+     286.84,
+     492.66
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-04",
+   "name": "BLUE DANUBE",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BLUE DANUBE on deck(s) 5.",
+   "value": [
+    5
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'BLUE DANUBE', printed deck '5'",
+   "observed_text": "BLUE DANUBE\n5",
+   "entity_id": "venue:MSC-VIRTUOSA:blue-danube",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     342.65,
+     286.84,
+     345.5
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-05",
+   "name": "BUTCHER’S CUT",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BUTCHER’S CUT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'BUTCHER’S CUT', printed deck '7'",
+   "observed_text": "BUTCHER’S CUT\n7",
+   "entity_id": "venue:MSC-VIRTUOSA:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     354.61,
+     286.84,
+     357.45
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-06",
+   "name": "CAROUSEL LOUNGE",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+   "observed_text": "CAROUSEL LOUNGE\n7",
+   "entity_id": "venue:MSC-VIRTUOSA:carousel-lounge",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     366.51,
+     286.84,
+     369.36
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-07",
+   "name": "HOLA! TACOS & CANTINA",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '6'",
+   "observed_text": "HOLA! TACOS & CANTINA\n6",
+   "entity_id": "venue:MSC-VIRTUOSA:hola-tacos-and-cantina",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     378.42,
+     286.84,
+     381.27
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "VI-MAP-08",
+   "name": "IL CAMPO RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+   "target_vessel": "IMO9803625",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+   "observed_text": "IL CAMPO RESTAURANT\n7",
+   "entity_id": "venue:MSC-VIRTUOSA:il-campo-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     390.32,
+     286.84,
+     393.17
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "VI-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "VI-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "ART WALL",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC BUSINESS CENTRE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MSC FOUNDATION",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MSC TEENS LAB",
+   "index_decks": [
+    18
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "TENDER ACCESS",
+   "index_decks": [
+    4
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR NORTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATMOSPHERE BAR NORTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     442.14,
+     502.52,
+     444.99
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR NORTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR NORTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:atmosphere-bar-north"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR SOUTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATMOSPHERE BAR SOUTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     454.1,
+     502.52,
+     456.95
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR SOUTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR SOUTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:atmosphere-bar-south"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE ICE CREAM BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATMOSPHERE ICE CREAM BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     466.0,
+     502.52,
+     468.85
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE ICE CREAM BAR', printed deck '15'",
+    "observed_text": "ATMOSPHERE ICE CREAM BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:atmosphere-ice-cream-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATMOSPHERE POOL on deck(s) 15.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     308.22,
+     286.84,
+     311.07
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'ATMOSPHERE POOL', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "15"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:atmosphere-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATMOSPHERE POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     361.46,
+     286.84,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'ATMOSPHERE POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:atmosphere-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATTIC CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints ATTIC CLUB on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     370.71,
+     286.84,
+     373.56
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATTIC CLUB', printed deck '18'",
+    "observed_text": "ATTIC CLUB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:attic-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO ® (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BABY CLUB CHICCO ® (under 3 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     446.71,
+     287.4,
+     449.56
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO ® (under 3 years)', printed deck '18'",
+    "observed_text": "BABY CLUB CHICCO® (under 3 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BARBER SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BARBER SHOP on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     373.42,
+     286.84,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BARBER SHOP', printed deck '7'",
+    "observed_text": "BARBER SHOP\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:barber-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAUTY SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BEAUTY SERVICES on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     385.32,
+     286.84,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BEAUTY SERVICES', printed deck '7'",
+    "observed_text": "BEAUTY SERVICES\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:beauty-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BLUE DANUBE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BLUE DANUBE on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     342.65,
+     286.84,
+     345.5
+    ],
+    "text": "Page 4, table 'Restaurants', row 'BLUE DANUBE', printed deck '5'",
+    "observed_text": "BLUE DANUBE\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:blue-danube"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOWLING",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BOWLING on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     389.49,
+     287.4,
+     392.34
+    ],
+    "text": "Page 9, table 'Fun', row 'BOWLING', printed deck '16'",
+    "observed_text": "BOWLING\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:bowling"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER’S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints BUTCHER’S CUT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     354.61,
+     286.84,
+     357.45
+    ],
+    "text": "Page 4, table 'Restaurants', row 'BUTCHER’S CUT', printed deck '7'",
+    "observed_text": "BUTCHER’S CUT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CAROUSEL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     366.51,
+     286.84,
+     369.36
+    ],
+    "text": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+    "observed_text": "CAROUSEL LOUNGE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    },
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:carousel-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHAMPAGNE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints CHAMPAGNE BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     394.57,
+     286.84,
+     397.42
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'CHAMPAGNE BAR', printed deck '7'",
+    "observed_text": "CHAMPAGNE BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:champagne-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints CONCIERGE AREA on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     321.59,
+     500.95,
+     324.44
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '16'",
+    "observed_text": "CONCIERGE AREA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOREMILAND",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints DOREMILAND on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     470.52,
+     287.4,
+     473.37
+    ],
+    "text": "Page 10, table 'Family Areas', row 'DOREMILAND', printed deck '18'",
+    "observed_text": "DOREMILAND\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:doremiland"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EFFY SHOP – JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints EFFY SHOP – JEWELLERY on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     366.3,
+     286.84,
+     369.14
+    ],
+    "text": "Page 6, table 'Shops', row 'EFFY SHOP – JEWELLERY', printed deck '7'",
+    "observed_text": "EFFY SHOP – JEWELLERY\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:effy-shop-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EMOTIONS - IMMERSIVE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints EMOTIONS - IMMERSIVE GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     413.31,
+     287.4,
+     416.15
+    ],
+    "text": "Page 9, table 'Fun', row 'EMOTIONS - IMMERSIVE GALLERY', printed deck '6'",
+    "observed_text": "EMOTIONS - IMMERSIVE GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:emotions-immersive-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FASHION JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints FASHION JEWELLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     378.25,
+     286.84,
+     381.1
+    ],
+    "text": "Page 6, table 'Shops', row 'FASHION JEWELLERY', printed deck '6'",
+    "observed_text": "FASHION JEWELLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:fashion-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GALLERIA VIRTUOSA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    7
+   ],
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints GALLERIA VIRTUOSA on deck(s) 6, 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     390.16,
+     286.84,
+     393.01
+    ],
+    "text": "Page 6, table 'Shops', row 'GALLERIA VIRTUOSA', printed deck '6-7'",
+    "observed_text": "GALLERIA VIRTUOSA\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:galleria-virtuosa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HAIR SALON on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     397.23,
+     286.84,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '7'",
+    "observed_text": "HAIR SALON\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HIMALAYAN BRIDGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HIMALAYAN BRIDGE on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     437.12,
+     287.4,
+     439.96
+    ],
+    "text": "Page 9, table 'Fun', row 'HIMALAYAN BRIDGE', printed deck '19'",
+    "observed_text": "HIMALAYAN BRIDGE \n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:himalayan-bridge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     378.42,
+     286.84,
+     381.27
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '6'",
+    "observed_text": "HOLA! TACOS & CANTINA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLOGATE ARENA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HOLOGATE ARENA on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     449.02,
+     287.4,
+     451.87
+    ],
+    "text": "Page 9, table 'Fun', row 'HOLOGATE ARENA', printed deck '16'",
+    "observed_text": "HOLOGATE ARENA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:hologate-arena"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON AMPHITHEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "16-18"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     460.93,
+     287.41,
+     463.77
+    ],
+    "text": "Page 9, table 'Fun', row 'HORIZON AMPHITHEATRE', printed deck '16-18'",
+    "observed_text": "HORIZON AMPHITHEATRE \n16-18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16-18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16-18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 16-18, index [16]"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:horizon-amphitheatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HORIZON BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     477.91,
+     502.52,
+     480.76
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'HORIZON BAR', printed deck '18'",
+    "observed_text": "HORIZON BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:horizon-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints HORIZON POOL on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     332.08,
+     286.84,
+     334.93
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'HORIZON POOL', printed deck '16'",
+    "observed_text": "HORIZON POOL\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:horizon-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IL CAMPO RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     390.32,
+     286.84,
+     393.17
+    ],
+    "text": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+    "observed_text": "IL CAMPO RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:il-campo-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INDOCHINE RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints INDOCHINE RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     402.23,
+     286.84,
+     405.08
+    ],
+    "text": "Page 4, table 'Restaurants', row 'INDOCHINE RESTAURANT', printed deck '6'",
+    "observed_text": "INDOCHINE RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:indochine-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints INFINITY BAR on deck(s) 5.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     406.48,
+     286.84,
+     409.32
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'INFINITY BAR', printed deck '5'",
+    "observed_text": "INFINITY BAR\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:infinity-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INTERACTIVE XD CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints INTERACTIVE XD CINEMA on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     484.74,
+     287.4,
+     487.59
+    ],
+    "text": "Page 9, table 'Fun', row 'INTERACTIVE XD CINEMA', printed deck '16'",
+    "observed_text": "INTERACTIVE XD CINEMA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:interactive-xd-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints IRIS GALERIE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     402.06,
+     286.84,
+     404.91
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '6'",
+    "observed_text": "IRIS GALERIE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CHOCOLAT & CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints JEAN-PHILIPPE CHOCOLAT & CAFÉ on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     418.38,
+     286.84,
+     421.23
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CHOCOLAT & CAFÉ', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CHOCOLAT & CAFÉ\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:jean-philippe-chocolat-and-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CRÊPES & GELATO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints JEAN-PHILIPPE CRÊPES & GELATO on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     430.29,
+     286.84,
+     433.14
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CRÊPES & GELATO', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CRÊPES & GELATO\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:jean-philippe-crepes-and-gelato"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIOR CLUB LEGO ® (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints JUNIOR CLUB LEGO ® (7 to 11 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     553.86,
+     287.4,
+     556.71
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIOR CLUB LEGO ® (7 to 11 years)', printed deck '18'",
+    "observed_text": "JUNIOR CLUB LEGO® (7 to 11 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:junior-club-lego"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     342.65,
+     502.52,
+     345.5
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+    "observed_text": "KAITO SUSHI BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints KAITO TEPPANYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     354.61,
+     502.52,
+     357.45
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '7'",
+    "observed_text": "KAITO TEPPANYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "L’ATELIER BAR & ART",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints L’ATELIER BAR & ART on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     442.19,
+     286.84,
+     445.04
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'L’ATELIER BAR & ART', printed deck '6'",
+    "observed_text": "L’ATELIER BAR & ART\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:latelier-bar-and-art"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE GRAND THÉÂTRE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints LE GRAND THÉÂTRE on deck(s) 5, 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     365.68,
+     501.99,
+     368.53
+    ],
+    "text": "Page 9, table 'Fun', row 'LE GRAND THÉÂTRE', printed deck '5-6'",
+    "observed_text": "LE GRAND THÉÂTRE\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5-6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:le-grand-theatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LUXURY PLAZA (Duty Free)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints LUXURY PLAZA (Duty Free) on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     413.97,
+     286.84,
+     416.82
+    ],
+    "text": "Page 6, table 'Shops', row 'LUXURY PLAZA (Duty Free)', printed deck '6'",
+    "observed_text": "LUXURY PLAZA (Duty Free)\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:luxury-plaza"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MARKETPLACE BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     454.1,
+     286.84,
+     456.95
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MARKETPLACE BAR', printed deck '15'",
+    "observed_text": "MARKETPLACE BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:marketplace-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     366.51,
+     502.52,
+     369.36
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+    "observed_text": "MARKETPLACE BUFFET\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:marketplace-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASSAGES & TREATMENTS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MASSAGES & TREATMENTS on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     409.13,
+     286.84,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MASSAGES & TREATMENTS', printed deck '7'",
+    "observed_text": "MASSAGES & TREATMENTS\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:massages-and-treatments"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASTERS OF THE SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MASTERS OF THE SEA on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     466.0,
+     286.84,
+     468.85
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MASTERS OF THE SEA', printed deck '7'",
+    "observed_text": "MASTERS OF THE SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:masters-of-the-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MEDI SPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     421.04,
+     286.84,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA', printed deck '7'",
+    "observed_text": "MEDI SPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:medi-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB LEGO ® (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MINI CLUB LEGO ® (3 to 6 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     434.8,
+     501.99,
+     437.65
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB LEGO ® (3 to 6 years)', printed deck '18'",
+    "observed_text": "MINI CLUB LEGO® (3 to 6 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:mini-club-lego"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINUETTO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MINUETTO on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     378.42,
+     502.52,
+     381.27
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MINUETTO', printed deck '6'",
+    "observed_text": "MINUETTO\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:minuetto"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC AUREA SPA on deck(s) 7.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     333.54,
+     500.94,
+     336.39
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '7'",
+    "observed_text": "MSC AUREA SPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC EXCURSIONS on deck(s) 5, 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     425.87,
+     286.84,
+     428.72
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '5-6'",
+    "observed_text": "MSC EXCURSIONS\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC FORMULA RACER on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     377.59,
+     501.99,
+     380.44
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '16'",
+    "observed_text": "MSC FORMULA RACER\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     343.99,
+     286.84,
+     346.84
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '16'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM® \n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC SHOP on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     366.35,
+     501.42,
+     369.19
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '6'",
+    "observed_text": "MSC SHOP \n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC STARSHIP CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC STARSHIP CLUB on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     477.91,
+     286.84,
+     480.76
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MSC STARSHIP CLUB', printed deck '6'",
+    "observed_text": "MSC STARSHIP CLUB\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-starship-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC TEEN LAB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC TEEN LAB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     459.39,
+     501.99,
+     462.24
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MSC TEEN LAB', printed deck '18'",
+    "observed_text": "MSC TEEN LAB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-teen-lab"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     345.45,
+     500.95,
+     348.3
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC YACHT CLUB POOL on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     357.35,
+     500.95,
+     360.2
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB POOL', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB POOL\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-yacht-club-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 18.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     369.26,
+     500.95,
+     372.11
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '18'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints MSC YACHT CLUB SUNDECK & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     381.17,
+     500.95,
+     384.01
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & BAR \n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:msc-yacht-club-sundeck-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints NAIL SALON on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     432.94,
+     286.84,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SALON', printed deck '7'",
+    "observed_text": "NAIL SALON\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:nail-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PHOTO GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints PHOTO GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     378.25,
+     501.42,
+     381.1
+    ],
+    "text": "Page 6, table 'Shops', row 'PHOTO GALLERY', printed deck '6'",
+    "observed_text": "PHOTO GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:photo-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "POWER WALKING TRACK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints POWER WALKING TRACK on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     355.89,
+     286.84,
+     358.74
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'POWER WALKING TRACK', printed deck '16'",
+    "observed_text": "POWER WALKING TRACK\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:power-walking-track"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints RECEPTION on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     361.46,
+     501.42,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '7'",
+    "observed_text": "RECEPTION\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RED GEM CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints RED GEM CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     489.82,
+     286.84,
+     492.66
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'RED GEM CASINO', printed deck '7'",
+    "observed_text": "RED GEM CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:red-gem-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SAVANNAH AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SAVANNAH AQUAPARK on deck(s) 19.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     367.8,
+     286.84,
+     370.65
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'SAVANNAH AQUAPARK', printed deck '19'",
+    "observed_text": "SAVANNAH AQUAPARK\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "19"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:savannah-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SAVANNAH BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SAVANNAH BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     489.82,
+     502.52,
+     492.66
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SAVANNAH BAR', printed deck '19'",
+    "observed_text": "SAVANNAH BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:savannah-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHOP@MSCAUREASPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SHOP@MSCAUREASPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     385.32,
+     501.42,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SHOP@MSCAUREASPA', printed deck '7'",
+    "observed_text": "SHOP@MSCAUREASPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:shop-mscaureaspa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKY LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SKY LOUNGE on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     501.72,
+     286.84,
+     504.57
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SKY LOUNGE', printed deck '18'",
+    "observed_text": "SKY LOUNGE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:sky-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SOLARIUM on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     397.23,
+     501.42,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM', printed deck '7'",
+    "observed_text": "SOLARIUM\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SOLARIUM WHIRLPOOL BATH on deck(s) 16.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     409.13,
+     501.42,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM WHIRLPOOL BATH', printed deck '16'",
+    "observed_text": "SOLARIUM WHIRLPOOL BATH\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:solarium-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTPLEX",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SPORTPLEX on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     379.7,
+     286.84,
+     382.55
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'SPORTPLEX', printed deck '16'",
+    "observed_text": "SPORTPLEX\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:sportplex"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints SPORTS BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     370.76,
+     502.52,
+     373.61
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SPORTS BAR', printed deck '16'",
+    "observed_text": "SPORTS BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:sports-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEEN CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TEEN CLUB (15 to 17 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     507.01,
+     501.99,
+     509.86
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEEN CLUB (15 to 17 years)', printed deck '18'",
+    "observed_text": "TEEN CLUB (15 to 17 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:teen-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE ART WALL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints THE ART WALL on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     425.21,
+     501.99,
+     428.06
+    ],
+    "text": "Page 9, table 'Fun', row 'THE ART WALL', printed deck '6'",
+    "observed_text": "THE ART WALL\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:the-art-wall"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     402.06,
+     501.42,
+     404.91
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '6'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE OPERA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints THE OPERA on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     390.32,
+     502.52,
+     393.17
+    ],
+    "text": "Page 4, table 'Restaurants', row 'THE OPERA', printed deck '6'",
+    "observed_text": "THE OPERA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:the-opera"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE SIMPHONY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints THE SIMPHONY on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     402.23,
+     502.52,
+     405.08
+    ],
+    "text": "Page 4, table 'Restaurants', row 'THE SIMPHONY', printed deck '6'",
+    "observed_text": "THE SIMPHONY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:the-simphony"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints THERMAL AREA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     421.04,
+     501.42,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '7'",
+    "observed_text": "THERMAL AREA \n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TOP 19 EXCLUSIVE SOLARIUM on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     432.94,
+     501.42,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 19 EXCLUSIVE SOLARIUM', printed deck '19'",
+    "observed_text": "TOP 19 EXCLUSIVE SOLARIUM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:top-19-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TOP SAIL LOUNGE on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     393.07,
+     500.95,
+     395.92
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '16'",
+    "observed_text": "TOP SAIL LOUNGE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TROPICAL BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TROPICAL BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     382.67,
+     502.52,
+     385.51
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'TROPICAL BAR', printed deck '15'",
+    "observed_text": "TROPICAL BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:tropical-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TROPICAL POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TROPICAL POOL on deck(s) 15.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     391.61,
+     286.84,
+     394.46
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'TROPICAL POOL', printed deck '15'",
+    "observed_text": "TROPICAL POOL\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "15"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:tropical-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TROPICAL POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TROPICAL POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     373.42,
+     501.42,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TROPICAL POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "TROPICAL POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:tropical-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TV STUDIO & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints TV STUDIO & BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     394.57,
+     502.52,
+     397.42
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'TV STUDIO & BAR', printed deck '7'",
+    "observed_text": "TV STUDIO & BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:tv-studio-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUAL GAMES ARCADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints VIRTUAL GAMES ARCADE on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     460.93,
+     501.99,
+     463.77
+    ],
+    "text": "Page 9, table 'Fun', row 'VIRTUAL GAMES ARCADE', printed deck '16'",
+    "observed_text": "VIRTUAL GAMES ARCADE \n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:virtual-games-arcade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUOSA BAR & LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints VIRTUOSA BAR & LOUNGE on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     406.48,
+     502.52,
+     409.32
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'VIRTUOSA BAR & LOUNGE', printed deck '6'",
+    "observed_text": "VIRTUOSA BAR & LOUNGE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:virtuosa-bar-and-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUOSA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints VIRTUOSA BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     413.97,
+     501.42,
+     416.82
+    ],
+    "text": "Page 6, table 'Shops', row 'VIRTUOSA BOUTIQUE', printed deck '6'",
+    "observed_text": "VIRTUOSA BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:virtuosa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WEB CREATOR ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints WEB CREATOR ROOM on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     472.83,
+     501.99,
+     475.68
+    ],
+    "text": "Page 9, table 'Fun', row 'WEB CREATOR ROOM', printed deck '18'",
+    "observed_text": "WEB CREATOR ROOM\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-VIRTUOSA:web-creator-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-virtuosa",
+    "name": "MSC VIRTUOSA",
+    "verified_imo": "IMO9803625",
+    "stored_imo": "IMO9803625",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC VIRTUOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC VIRTUOSA (SHA-256 d87c22e83f3a, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     554.64,
+     501.99,
+     557.48
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '18'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-VIRTUOSA:young-club"
+  }
+ ]
+}
