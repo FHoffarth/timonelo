@@ -57,20 +57,17 @@ def _write_pdf(path: str, text: str = "TIMONELO FIXTURE - NOT A SHIP DOCUMENT") 
 
 class PipelineCase(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        authority.DOCUMENT_CLASSES.setdefault(FIXTURE_CLASS, authority.DocumentClass(
-            FIXTURE_CLASS, "Pipeline fixture", 0.80,
-            authority.ValidityScope.STRUCTURAL, authority.Acquisition.PUBLIC,
-            authority.UsePermission.CITE_AND_STORE))
-        authority.AUTHORITY.setdefault(FIXTURE_TYPE, (FIXTURE_CLASS,))
-
     def setUp(self):
         # authority.AUTHORITY and DOCUMENT_CLASSES are module-global and are
         # mutated by workspace loading. Without snapshot/restore, fixtures from
         # one test file silently overwrite another's entries.
         self._AUTH_SNAPSHOT = dict(authority.AUTHORITY)
         self._CLASS_SNAPSHOT = dict(authority.DOCUMENT_CLASSES)
+        authority.DOCUMENT_CLASSES[FIXTURE_CLASS] = authority.DocumentClass(
+            FIXTURE_CLASS, "Pipeline fixture", 0.80,
+            authority.ValidityScope.STRUCTURAL, authority.Acquisition.PUBLIC,
+            authority.UsePermission.CITE_AND_STORE)
+        authority.AUTHORITY[FIXTURE_TYPE] = (FIXTURE_CLASS,)
         self.tmp = tempfile.mkdtemp()
         self.pdf = _write_pdf(os.path.join(self.tmp, "fixture.pdf"))
         self.registry = ArtifactRegistry(os.path.join(self.tmp, "artifacts"))
@@ -189,7 +186,7 @@ class TestImporter(PipelineCase):
 
     def test_verify_detects_substitution(self):
         art = self._import()
-        with open(self.registry.blob_path(art.artifact_id), "w") as f:
+        with open(self.registry.resolve_path(art.artifact_id), "w") as f:
             f.write("substituted")
         self.assertFalse(self.registry.verify(art.artifact_id))
 

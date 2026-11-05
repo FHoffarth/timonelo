@@ -2,10 +2,9 @@
 End-to-end evidence pipeline tests.
 
 The artifact used here is a fixture file created by the test itself. It is
-deliberately NOT a ship document: the digests are genuinely computed from real
-bytes, while no claim about any real vessel is fabricated. When the first
-Bellissima source document is acquired it is registered the same way, with no
-code change.
+explicitly synthetic, with a vessel identifier for exercising ownership checks.
+Its digests are computed from real bytes. It is temporary test evidence only;
+it never enters canonical vessel knowledge.
 """
 
 import os
@@ -73,7 +72,7 @@ class PipelineTestCase(unittest.TestCase):
         self.tmp = tempfile.mkdtemp()
         self.doc = os.path.join(self.tmp, "fixture_document.txt")
         with open(self.doc, "w", encoding="utf-8") as f:
-            f.write("Timonelo pipeline fixture. Not a ship document.\n")
+            f.write("Synthetic Timonelo pipeline fixture: MSC Bellissima IMO9760524.\n")
         self.store = ArtifactStore(os.path.join(self.tmp, "artifacts"))
         self.registry = build_registry()
         self.log = EvidenceEventLog(
@@ -89,6 +88,7 @@ class PipelineTestCase(unittest.TestCase):
         return self.store.add(
             self.doc, document_class=FIXTURE_CLASS,
             obtained_on="2026-08-17", obtained_from="test fixture",
+            subject_vessels=("IMO9760524",),
         )
 
 
@@ -124,7 +124,7 @@ class TestEventLog(PipelineTestCase):
         with self.assertRaises(ValueError) as ctx:
             self.log.append(EvidenceEvent(
                 event_id="E1", artifact_sha256="a" * 64, locator="p1",
-                entity_id="cabin:X:1", question_id="Q-0001",
+                entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
                 observed_value=14, observed_by="tester", observed_on="2026-08-17",
             ))
         self.assertIn("not in the store", str(ctx.exception))
@@ -134,7 +134,7 @@ class TestEventLog(PipelineTestCase):
         with self.assertRaises(ValueError):
             self.log.append(EvidenceEvent(
                 event_id="E1", artifact_sha256=a.sha256, locator="",
-                entity_id="cabin:X:1", question_id="Q-0001",
+                entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
                 observed_value=14, observed_by="tester", observed_on="2026-08-17",
             ))
 
@@ -144,7 +144,7 @@ class TestEventLog(PipelineTestCase):
         with self.assertRaises(ValueError) as ctx:
             self.log.append(EvidenceEvent(
                 event_id="E1", artifact_sha256=a.sha256, locator="p1",
-                entity_id="cabin:X:1", question_id="Q-0002",   # area
+                entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0002",   # area
                 observed_value=19.0, observed_by="tester", observed_on="2026-08-17",
             ))
         self.assertIn("cannot support", str(ctx.exception))
@@ -153,12 +153,12 @@ class TestEventLog(PipelineTestCase):
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="p1",
-            entity_id="cabin:X:1", question_id="Q-0001",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             observed_value=14, observed_by="t", observed_on="2026-01-01",
         ))
         self.log.append(EvidenceEvent(
             event_id="E2", artifact_sha256=a.sha256, locator="p2",
-            entity_id="cabin:X:1", question_id="Q-0001",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             observed_value=15, observed_by="t", observed_on="2026-06-01",
         ))
         self.assertEqual(len(self.log.all(as_of="2026-03-01")), 1)
@@ -171,18 +171,18 @@ class TestTruthEngine(PipelineTestCase):
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="page 1",
-            entity_id="cabin:X:1", question_id="Q-0001",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             observed_value=14, observed_by="tester", observed_on="2026-08-17",
         ))
         return self.engine.add_statement(Statement(
-            statement_id="S1", entity_id="cabin:X:1", question_id="Q-0001",
+            statement_id="S1", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             value=14, method=Method.DIRECT, derivation=Derivation.LOCAL,
             evidence_event_ids=("E1",),
         ))
 
     def test_unpublished_statement_is_unknown(self):
         self.seed_direct()
-        ans = self.engine.answer("cabin:X:1", "Q-0001")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001")
         self.assertFalse(ans.known)
 
     def test_cannot_publish_without_review(self):
@@ -195,14 +195,14 @@ class TestTruthEngine(PipelineTestCase):
         self.engine.set_evidence_condition("S1", EvidenceCondition.SUPPORTED)
         self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
         self.engine.publish("S1")
-        ans = self.engine.answer("cabin:X:1", "Q-0001")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001")
         self.assertTrue(ans.known)
         self.assertEqual(ans.value, 14)
 
     def test_direct_statement_requires_evidence(self):
         with self.assertRaises(ValueError):
             self.engine.add_statement(Statement(
-                statement_id="S9", entity_id="cabin:X:1", question_id="Q-0001",
+                statement_id="S9", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
                 value=14, method=Method.DIRECT, derivation=Derivation.LOCAL,
             ))
 
@@ -210,7 +210,7 @@ class TestTruthEngine(PipelineTestCase):
         self.seed_direct()
         with self.assertRaises(ValueError):
             self.engine.add_statement(Statement(
-                statement_id="S2", entity_id="cabin:X:1", question_id="Q-0003",
+                statement_id="S2", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0003",
                 value=True, method=Method.INFERRED, derivation=Derivation.LOCAL,
                 input_statement_ids=("S1",),
             ))
@@ -218,7 +218,7 @@ class TestTruthEngine(PipelineTestCase):
     def test_confidence_never_exceeds_premises(self):
         self.seed_direct()
         self.engine.add_statement(Statement(
-            statement_id="S2", entity_id="cabin:X:1", question_id="Q-0003",
+            statement_id="S2", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0003",
             value=True, method=Method.INFERRED, derivation=Derivation.LOCAL,
             input_statement_ids=("S1",), rule_hash=NOISE_RULE_HASH,
         ))
@@ -231,12 +231,12 @@ class TestTruthEngine(PipelineTestCase):
         self.assertFalse(hasattr(self.engine._statements["S1"], "confidence"))
 
     def test_unknown_question_reports_guidance(self):
-        ans = self.engine.answer("cabin:X:1", "Q-0002")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0002")
         self.assertFalse(ans.known)
         self.assertIn("dimensioned", ans.unknown_guidance)
 
     def test_coverage_is_zero_on_empty_engine(self):
-        cov = self.engine.coverage("cabin:X:1", "cabin")
+        cov = self.engine.coverage("cabin:MSC-BELLISSIMA:14001", "cabin")
         self.assertEqual(cov["questions_answerable"], 0)
         self.assertEqual(cov["coverage"], 0.0)
         self.assertEqual(len(cov["unknown_question_ids"]), 3)
@@ -268,7 +268,7 @@ class TestTruthEngine(PipelineTestCase):
 class TestLanguageLayer(PipelineTestCase):
 
     def test_unknown_renders_explicitly(self):
-        ans = self.engine.answer("cabin:X:1", "Q-0002")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0002")
         out = language.render(ans, "Stateroom area")
         self.assertIn("UNKNOWN", out)
 
@@ -276,18 +276,18 @@ class TestLanguageLayer(PipelineTestCase):
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="page 1",
-            entity_id="cabin:X:1", question_id="Q-0001",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             observed_value=14, observed_by="t", observed_on="2026-08-17",
         ))
         self.engine.add_statement(Statement(
-            statement_id="S1", entity_id="cabin:X:1", question_id="Q-0001",
+            statement_id="S1", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             value=14, method=Method.DIRECT, derivation=Derivation.LOCAL,
             evidence_event_ids=("E1",),
         ))
         self.engine.set_evidence_condition("S1", EvidenceCondition.SUPPORTED)
         self.engine.set_human_review_state("S1", HumanReviewState.APPROVED)
         self.engine.publish("S1")
-        ans = self.engine.answer("cabin:X:1", "Q-0001")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001")
         out = language.render(ans, "Deck")
         self.assertNotIn(str(ans.confidence), out)
         self.assertNotIn("%", out)
@@ -302,18 +302,18 @@ class TestLanguageLayer(PipelineTestCase):
         a = self.register_artifact()
         self.log.append(EvidenceEvent(
             event_id="E1", artifact_sha256=a.sha256, locator="page 1",
-            entity_id="cabin:X:1", question_id="Q-0003",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0003",
             # The observation must record what the statement claims; an event
             # reading True cannot support a claim of "buffet overhead".
             observed_value="buffet overhead", observed_by="t", observed_on="2026-08-17",
         ))
         self.engine.add_statement(Statement(
-            statement_id="S1", entity_id="cabin:X:1", question_id="Q-0003",
+            statement_id="S1", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0003",
             value="buffet overhead", method=Method.DIRECT,
             derivation=Derivation.LOCAL, evidence_event_ids=("E1",),
         ))
         self.engine.add_statement(Statement(
-            statement_id="S2", entity_id="cabin:X:1", question_id="Q-0003",
+            statement_id="S2", entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0003",
             value="morning noise likely", method=Method.INFERRED,
             derivation=Derivation.LOCAL, input_statement_ids=("S1",),
             rule_hash=NOISE_RULE_HASH,
@@ -322,7 +322,7 @@ class TestLanguageLayer(PipelineTestCase):
             self.engine.set_evidence_condition(sid, EvidenceCondition.SUPPORTED)
             self.engine.set_human_review_state(sid, HumanReviewState.APPROVED)
             self.engine.publish(sid)
-        ans = self.engine.answer("cabin:X:1", "Q-0003")
+        ans = self.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0003")
         out = language.render(ans, "Morning noise")
         self.assertIn("—", out)  # hedged, not a bare declarative
 

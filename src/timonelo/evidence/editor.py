@@ -31,6 +31,7 @@ from timonelo.evidence.publication import (
     require_statement_publication_admission,
 )
 from timonelo.evidence.registry import ArtifactRegistry
+from timonelo.evidence.vessel_ownership import entity_key, normalized_principal
 from timonelo.evidence.conflicts import (
     ConflictError,
     ConflictLog,
@@ -60,6 +61,8 @@ class StatementEditor:
                  conflict_log: Optional[ConflictLog] = None,
                  events=None, questions=None):
         self.path = path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(path)
         self.registry = registry
         self.review_log = review_log
         self.conflict_log = conflict_log
@@ -186,6 +189,7 @@ class StatementEditor:
         rule_hash: Optional[str] = None,
     ) -> Statement:
         """Author one statement in DRAFT with UNKNOWN evidence condition."""
+        self._writer_boundary.require()
         try:
             canonical_method = Method(method)
         except ValueError:
@@ -252,7 +256,7 @@ class StatementEditor:
             for existing in self._by_id.values():
                 if existing.statement_id == statement.statement_id:
                     continue
-                if existing.entity_id != entity_id or existing.question_id != question_id:
+                if entity_key(existing.entity_id) != entity_key(entity_id) or existing.question_id != question_id:
                     continue
                 if existing.statement_type != statement_type:
                     continue
@@ -285,6 +289,7 @@ class StatementEditor:
         note: str = "",
     ) -> Statement:
         """Explicitly set or update the evidence condition of a statement with full audit trail."""
+        self._writer_boundary.require()
         if not actor:
             raise EditorError("Setting evidence condition requires a named actor.")
         if not occurred_on:
@@ -316,6 +321,7 @@ class StatementEditor:
         note: str = "",
     ) -> Statement:
         """Advance a statement through human review workflow."""
+        self._writer_boundary.require()
         current = self._by_id[statement_id]
 
         self.review_log.transition(
@@ -339,6 +345,7 @@ class StatementEditor:
         note: str = "",
     ) -> Statement:
         """Publish an approved and supported statement so it can answer passenger queries."""
+        self._writer_boundary.require()
         current = self._by_id[statement_id]
 
         if current.state != HumanReviewState.APPROVED and current.state != HumanReviewState.APPROVED.value:
@@ -351,7 +358,7 @@ class StatementEditor:
                 f"{statement_id} has evidence condition {current.evidence_condition} and cannot be "
                 "published. Evidence condition must be SUPPORTED first."
             )
-        if actor == current.read_by:
+        if normalized_principal(actor) == normalized_principal(current.read_by):
             raise EditorError(
                 f"{actor} read this statement and cannot also publish it. "
                 "Review is only meaningful with a second pair of eyes."
@@ -388,6 +395,7 @@ class StatementEditor:
         return len(self._by_id)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump({k: v.to_dict() for k, v in self._by_id.items()}, self.path)
 
     def resolve_conflict(

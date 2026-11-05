@@ -1,17 +1,25 @@
 """Read-only passenger build projection. All truth decisions remain canonical."""
 from __future__ import annotations
 
-import re
+from pathlib import Path
+
+from timonelo.evidence.vessel_ownership import canonical_entity, validate_ownership
 
 
 def project_fleet(workspace, catalog, as_of: str):
     statements = workspace.editor.all()
     profiles = {}
+    workspace_root = Path(workspace.root).resolve().parent if getattr(workspace, 'root', None) else None
+    ownership_root = workspace_root if workspace_root and (workspace_root / 'knowledge/ships').is_dir() else None
     for ship in catalog:
         slug = ship['slug']
-        # Whole entity segment, not a sister-ship or substring match.
-        belongs = re.compile(r'(?:^|:)' + re.escape(slug) + r'(?=:|$)', re.I)
-        candidates = [s for s in statements if belongs.search(s.entity_id)]
+        candidates = []
+        for statement in statements:
+            try:
+                if canonical_entity(statement.entity_id)[1] == slug:
+                    candidates.append(statement)
+            except ValueError:
+                continue
         facts = []
         sources = {}
         for s in candidates:
@@ -25,6 +33,12 @@ def project_fleet(workspace, catalog, as_of: str):
             if not s.artifact_id:
                 continue
             artifact = workspace.registry.get(s.artifact_id)
+            try:
+                validate_ownership(s.entity_id, artifact, target_slug=slug,
+                                   target_imo=ship.get('imo'), root=ownership_root,
+                                   statement_type=s.statement_type)
+            except ValueError:
+                continue
             if artifact.private_source or not workspace.registry.verify(s.artifact_id):
                 continue
             events = {e.event_id: e for e in workspace.events.all()}

@@ -101,9 +101,16 @@ def seed_backed_statements(ws_dir: Path, statements: dict) -> None:
             continue
         document_class = classes[0]
 
+        # This fixture's only ship subject is explicitly Bellissima. Port
+        # documents stay unattributed; publication must never infer a vessel
+        # from the statement that is asking to be published.
+        fixture_subjects = (
+            ["IMO9760524"] if record["entity_id"] == "ship:MSC-BELLISSIMA" else None
+        )
         source = ws_dir / f"seed_source_{index}.txt"
         source.write_text(
-            f"{record['entity_id']} {record['question_id']} {record['value']}",
+            ("TEST_FIXTURE MSC Bellissima IMO 9760524\n" if fixture_subjects else "")
+            + f"{record['entity_id']} {record['question_id']} {record['value']}",
             encoding="utf-8",
         )
         artifact = registry.register(
@@ -111,6 +118,7 @@ def seed_backed_statements(ws_dir: Path, statements: dict) -> None:
             document_class=document_class,
             acquired_on="2026-08-23",
             acquisition_method="test fixture",
+            subject_vessels=fixture_subjects,
         )
 
         event_id = f"EVT-SEED-{index:03d}"
@@ -284,13 +292,23 @@ def test_new_voyage_intake_in_isolated_workspace_with_parsed_claims(tmp_path):
     isolated_ws = Workspace(str(ws_dir))
 
     sample_file = tmp_path / "test_booking.pdf"
-    sample_file.write_bytes(b"%PDF-1.4 test booking confirmation")
+    import fitz
+    with fitz.open() as document:
+        page = document.new_page()
+        page.insert_text((40, 40), (
+            "TEST_FIXTURE booking confirmation - MSC Bellissima IMO 9760524\n"
+            "Departure: 2026-11-15 Shanghai, China\n"
+            "Arrival: 2026-11-20 Tokyo, Japan\n"
+            "Check in: 11:30"
+        ))
+        document.save(sample_file)
     art = isolated_ws.registry.register(
         path=str(sample_file),
         document_class="official_cruise_operator_booking_confirmation",
         acquired_on="2026-08-23",
         acquisition_method="test_fixture",
         publisher="MSC Cruises",
+        subject_vessels=["IMO9760524"],
     )
 
     claims = (

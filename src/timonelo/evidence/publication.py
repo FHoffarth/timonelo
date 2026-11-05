@@ -68,6 +68,7 @@ from timonelo.evidence.models import (
 )
 from timonelo.evidence import authority
 from timonelo.evidence.registry import RegistryError, sha256_of_file
+from timonelo.evidence.vessel_ownership import VESSEL_KINDS, validate_ownership
 
 #: A rule hash is content-addressed, exactly like `EvidenceLink.sha256`: a
 #: SHA-256 of the rule that produced the inference. Mirroring that model's
@@ -122,6 +123,7 @@ class PublicationRejection(str, Enum):
     EVENT_ARTIFACT_DIGEST_MISMATCH = "EVENT_ARTIFACT_DIGEST_MISMATCH"
     INELIGIBLE_DOCUMENT_CLASS = "INELIGIBLE_DOCUMENT_CLASS"
     EVIDENCE_DOES_NOT_SUPPORT_CLAIM = "EVIDENCE_DOES_NOT_SUPPORT_CLAIM"
+    VESSEL_OWNERSHIP_INVALID = "VESSEL_OWNERSHIP_INVALID"
     NOT_PUBLISHABLE_BY_PERMISSION = "NOT_PUBLISHABLE_BY_PERMISSION"
     INFERRED_INVALID_RULE_HASH = "INFERRED_INVALID_RULE_HASH"
     INFERRED_RULE_PROVENANCE_UNRESOLVABLE = "INFERRED_RULE_PROVENANCE_UNRESOLVABLE"
@@ -343,6 +345,20 @@ def _verify_event(
             f"{event_id} cites artifact {digest[:12]} which is not registered",
         ))
         return
+
+    # A matching event value does not establish which ship owns that value.
+    entity_kind = statement.entity_id.split(':', 1)[0].casefold()
+    statement_kind = statement.statement_type.split('.', 1)[0]
+    if entity_kind in VESSEL_KINDS or statement_kind in VESSEL_KINDS:
+        try:
+            from pathlib import Path
+            root = Path(registry.root).resolve().parents[1] if hasattr(registry, 'root') else None
+            if root is not None and not (root / 'knowledge/ships').is_dir():
+                root = None
+            validate_ownership(statement.entity_id, artifact, root=root,
+                               statement_type=statement.statement_type)
+        except ValueError as exc:
+            result.reasons.append((PublicationRejection.VESSEL_OWNERSHIP_INVALID, str(exc)))
 
     # Two artifact models exist: `registry.Artifact` carries an artifact_id,
     # while `artifacts.ArtifactStore` keys purely on the digest. Address the
@@ -568,6 +584,12 @@ def evaluate_statement_publication_admission(
     sites that are gates.
     """
     result = PublicationAdmissionResult(statement_id=statement.statement_id)
+    from timonelo.evidence.canonical_boundary import require_registry_available
+    try:
+        require_registry_available(registry)
+    except ValueError as exc:
+        result.reasons.append((PublicationRejection.NO_VALIDATION_CONTEXT, str(exc)))
+        return result
     _check_axes(statement, result)
 
     if statement.method is Method.INFERRED:
@@ -584,6 +606,10 @@ def evaluate_statement_publication_admission(
     else:
         _check_events(statement, result, events, registry, questions)
 
+    try:
+        require_registry_available(registry)
+    except ValueError as exc:
+        result.reasons.append((PublicationRejection.NO_VALIDATION_CONTEXT, str(exc)))
     result.admitted = not result.reasons
     return result
 
@@ -642,6 +668,9 @@ class PublicationAuthority:
         self.registry = registry
         self.questions = questions
         self._statements = statements
+        from timonelo.evidence.canonical_boundary import repository_for_registry, generation
+        self._canonical_root = repository_for_registry(registry)
+        self._canonical_generation = generation(self._canonical_root)
 
     @property
     def has_context(self) -> bool:
@@ -674,6 +703,13 @@ class PublicationAuthority:
 
     def evaluate(self, statement: Statement) -> PublicationAdmissionResult:
         """The current admission verdict for one statement."""
+        from timonelo.evidence.canonical_boundary import require_available
+        try:
+            require_available(self._canonical_root, self._canonical_generation)
+        except ValueError as exc:
+            result = PublicationAdmissionResult(statement_id=statement.statement_id)
+            result.reasons.append((PublicationRejection.NO_VALIDATION_CONTEXT, str(exc)))
+            return result
         missing = self.missing_context
         if missing:
             result = PublicationAdmissionResult(statement_id=statement.statement_id)
@@ -684,13 +720,19 @@ class PublicationAuthority:
             ))
             result.admitted = False
             return result
-        return evaluate_statement_publication_admission(
+        result = evaluate_statement_publication_admission(
             statement,
             events=self.events,
             registry=self.registry,
             questions=self.questions,
             statements_by_id=self.statements_by_id(),
         )
+        try:
+            require_available(self._canonical_root, self._canonical_generation)
+        except ValueError as exc:
+            result.reasons.append((PublicationRejection.NO_VALIDATION_CONTEXT, str(exc)))
+            result.admitted = False
+        return result
 
     def is_currently_authoritative(self, statement: Statement) -> bool:
         """The single question every truth-bearing consumer must ask.

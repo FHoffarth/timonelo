@@ -35,6 +35,11 @@ class Workspace:
 
     def __init__(self, root: str = DEFAULT_ROOT):
         self.root = root
+        from pathlib import Path
+        from timonelo.evidence.canonical_boundary import generation, require_available
+        boundary = Path(root).resolve().parent
+        revision = generation(boundary)
+        require_available(boundary, revision)
         # Workspace-declared document classes load before anything reads the
         # matrix, so a curator can add a class without editing source.
         authority.load_workspace_classes(
@@ -55,6 +60,7 @@ class Workspace:
             events=self.events, questions=self.questions)
         self.engine = TruthEngine(self.questions, self.editor, self.registry,
                                   self.conflicts)
+        require_available(boundary, revision)
 
     # -- structured APIs ------------------------------------------------------
 

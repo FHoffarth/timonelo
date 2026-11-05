@@ -539,8 +539,8 @@ def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
     pdf_a = _write_pdf(str(tmp_path / "a.pdf"), "A")
     pdf_b = _write_pdf(str(tmp_path / "b.pdf"), "B")
     reg = ArtifactRegistry(str(tmp_path / "artifacts"))
-    art_a = reg.register(pdf_a, "cruise_line_deck_plan", "2026-08-17", "test")
-    art_b = reg.register(pdf_b, "cruise_line_deck_plan", "2026-08-17", "test")
+    art_a = reg.register(pdf_a, "cruise_line_deck_plan", "2026-08-17", "test", subject_vessels=("IMO9760524",))
+    art_b = reg.register(pdf_b, "cruise_line_deck_plan", "2026-08-17", "test", subject_vessels=("IMO9760524",))
     rlog = ReviewLog(str(tmp_path / "reviews.json"))
     clog = ConflictLog(str(tmp_path / "conflicts.json"))
     qreg = QuestionRegistry("test")
@@ -551,10 +551,10 @@ def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
 
     # Statement 1 published. Publication needs evidence, so the fixture records
     # a real observation against the artifact the statement already cites.
-    s1 = editor.create("c:1", "Q-1", "cabin.deck", 14, art_a.artifact_id, "p1", "reader.1", "2026-08-17")
+    s1 = editor.create("cabin:MSC-BELLISSIMA:14001", "Q-1", "cabin.deck", 14, art_a.artifact_id, "p1", "reader.1", "2026-08-17")
     elog.append(EvidenceEvent(
         event_id="E-G10", artifact_sha256=art_a.sha256, locator="p1",
-        entity_id="c:1", question_id="Q-1", observed_value=14,
+        entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-1", observed_value=14,
         observed_by="reader.1", observed_on="2026-08-17"))
     editor._by_id[s1.statement_id] = _replace(
         editor.get(s1.statement_id), evidence_event_ids=("E-G10",))
@@ -564,7 +564,7 @@ def test_task_g10_conflict_resolution_does_not_mutate_axes(tmp_path):
     editor.publish(s1.statement_id, "reviewer.1", "2026-08-17")
 
     # Statement 2 created (disagrees, starts UNKNOWN condition)
-    s2 = editor.create("c:1", "Q-1", "cabin.deck", 15, art_b.artifact_id, "p1", "reader.2", "2026-08-17")
+    s2 = editor.create("cabin:MSC-BELLISSIMA:14001", "Q-1", "cabin.deck", 15, art_b.artifact_id, "p1", "reader.2", "2026-08-17")
     conflicts = clog.all()
     assert len(conflicts) == 1
 

@@ -32,7 +32,7 @@ export function FleetProfile({ ship, profile, onNavigate }: { ship: FleetShip; p
     </nav>}
     {['msc-bellissima', 'msc-euribia'].includes(ship.slug) && <section className="rounded-2xl border border-[#C58A46]/40 bg-[#F8F0E5] p-5 sm:p-6 space-y-3" aria-label="Review preparation">
       <p className="text-xs uppercase tracking-widest text-[#79552E]">Human review pending</p><h2 className="font-display text-2xl">{bellissima ? profile?.facts.length ? 'More information, under review' : 'Passenger information, under review' : 'The next layer: cabins & dining'}</h2>
-      <p className="text-sm leading-relaxed">{bellissima ? profile?.facts.length ? 'Published facts appear below with their source trace. Other observations remain under review; pending details are withheld until their own evidence, review and publication gates are satisfied.' : 'Source observations about dining, entertainment and practical orientation are prepared for human review. Pending details are not published facts and stay withheld until the evidence, review and publication gates are satisfied.' : 'Four source observations are prepared for independent human review: a source-edition cabin count and three restaurant deck assignments. Their values remain withheld from this public profile until the regular evidence, review and publication gates are satisfied.'}</p>
+      <p className="text-sm leading-relaxed">{bellissima ? profile?.facts.length ? 'Published facts appear below with their source trace. Other observations remain under review; pending details are withheld until their own evidence, review and publication gates are satisfied.' : 'Source observations about dining, entertainment and practical orientation are prepared for human review. Pending details are not published facts and stay withheld until the evidence, review and publication gates are satisfied.' : 'Source observations are prepared for independent human review. Pending details remain withheld from this public profile until their evidence, review and publication gates are satisfied.'}</p>
       <p className="text-sm">Not confirmed. No current capacity, geometry, accessibility or availability is inferred.</p>
     </section>}
     <div className="grid sm:grid-cols-2 gap-4">{sections.map(section => {
@@ -40,7 +40,7 @@ export function FleetProfile({ ship, profile, onNavigate }: { ship: FleetShip; p
       return <section key={section} id={`${ship.slug}-${section}`} className="min-w-0 scroll-mt-24 rounded-2xl border bg-white p-4 sm:p-6 space-y-3">
         <h2 className="font-display text-2xl">{bellissima ? bellissimaSections[section] : section === 'identity' ? 'Ship identity' : section}</h2>
         {facts.length ? facts.map(f => {
-          const location = bellissima ? deckLocation(f) : null;
+          const location = deckLocation(f);
           return <article key={f.statement_id} className="text-sm break-words space-y-2 border-t pt-3">
             <p className="font-semibold capitalize">{f.entity_id.split(':').at(-1)?.replaceAll('-', ' ')}</p>
             {location && <p className="text-xs text-[#5B6570]">Published deck location</p>}

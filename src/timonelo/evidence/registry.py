@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import os
 import shutil
+import tempfile
 from dataclasses import dataclass, field, replace
 from typing import Dict, Iterable, List, Optional, Tuple
 
@@ -197,6 +198,9 @@ class ArtifactRegistry:
 
     def __init__(self, root: str):
         self.root = root
+        from pathlib import Path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(Path(root) / "index.json")
         self.blobs = os.path.join(root, "blobs")
         self.index_path = os.path.join(root, "index.json")
         os.makedirs(self.blobs, exist_ok=True)
@@ -234,6 +238,7 @@ class ArtifactRegistry:
         subject_vessels: Optional[Iterable[str]] = None,
     ) -> Artifact:
         """Register a held document. Digest and size are computed, never given."""
+        self._writer_boundary.require()
         if not os.path.isfile(path):
             raise RegistryError(
                 f"No file at {path!r}. An evidence chain cannot begin with a "
@@ -263,9 +268,19 @@ class ArtifactRegistry:
 
         digest = sha256_of_file(path)
         if digest in self._id_by_sha:
-            # Same bytes already held. Return the existing entry rather than
-            # issuing a second ID for one document.
-            return self._by_id[self._id_by_sha[digest]]
+            existing = self._by_id[self._id_by_sha[digest]]
+            # Omission retrieves the immutable original record; an explicitly
+            # supplied set is an assertion and must agree, including empty.
+            if subject_vessels is not None and attributed != existing.subject_vessels:
+                raise RegistryError(
+                    "Conflicting subject attribution for already registered digest; "
+                    "registration cannot relabel an existing artifact."
+                )
+            # An immutable private reference must never be materialized in the
+            # public SHA vault as a side effect of duplicate registration.
+            if not existing.private_source:
+                self._store_in_vault(path, existing)
+            return existing
 
         artifact = Artifact(
             artifact_id=self._next_id(),
@@ -282,11 +297,43 @@ class ArtifactRegistry:
             notes=notes,
             subject_vessels=attributed,
         )
-        shutil.copy2(path, os.path.join(self.blobs, digest))
+        self._store_in_vault(path, artifact)
         self._by_id[artifact.artifact_id] = artifact
         self._id_by_sha[digest] = artifact.artifact_id
         self._flush()
         return artifact
+
+    def _store_in_vault(self, path: str, artifact: Artifact) -> None:
+        """Retain one verified copy in the governed sibling SHA vault.
+
+        Existing vault bytes are authoritative: corrupt or ambiguous storage
+        is refused, never overwritten or hidden by a second representation.
+        Validate the copied snapshot before issuing an index entry, so a source
+        changing during import cannot register different bytes under its hash.
+        """
+        candidates = self._vault_candidates(artifact)
+        if candidates:
+            if len(candidates) != 1 or not self._matches_identity(candidates[0], artifact):
+                raise RegistryError("Existing SHA vault content is corrupt or ambiguous.")
+            return
+        with open(path, "rb") as source:
+            suffix = ".pdf" if source.read(5) == b"%PDF-" else ""
+        directory = os.path.join(
+            os.path.dirname(os.path.abspath(self.root)),
+            "raw", "sha256", artifact.sha256[:2],
+        )
+        os.makedirs(directory, exist_ok=True)
+        target = os.path.join(directory, artifact.sha256 + suffix)
+        fd, temporary = tempfile.mkstemp(prefix=".intake-", dir=directory)
+        os.close(fd)
+        try:
+            shutil.copyfile(path, temporary)
+            if not self._matches_identity(temporary, artifact):
+                raise RegistryError("Source bytes changed during registration.")
+            os.replace(temporary, target)
+        finally:
+            if os.path.exists(temporary):
+                os.remove(temporary)
 
     # -- lookup ---------------------------------------------------------------
 
@@ -450,6 +497,7 @@ class ArtifactRegistry:
         return len(self._by_id)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump(
             {k: v.to_dict() for k, v in self._by_id.items()}, self.index_path
         )

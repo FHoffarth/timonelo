@@ -18,9 +18,10 @@ import hashlib
 import os
 import shutil
 from dataclasses import dataclass
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple, Iterable
 
 from timonelo.canonical import canonical_dump, canonical_dumps
+from timonelo.evidence.registry import normalize_subject_vessels, normalize_vessel_imo
 
 CHUNK = 1 << 20
 
@@ -51,9 +52,19 @@ class Artifact:
     edition: Optional[str] = None
     published_on: Optional[str] = None
     notes: str = ""
+    subject_vessels: Tuple[str, ...] = ()
+
+    def __post_init__(self):
+        object.__setattr__(self, 'subject_vessels', normalize_subject_vessels(self.subject_vessels))
+
+    def establishes_vessel(self, vessel_imo):
+        try:
+            return normalize_vessel_imo(vessel_imo) in self.subject_vessels
+        except ValueError:
+            return False
 
     def to_dict(self) -> Dict[str, object]:
-        return {
+        result = {
             "sha256": self.sha256,
             "filename": self.filename,
             "document_class": self.document_class,
@@ -63,6 +74,9 @@ class Artifact:
             "published_on": self.published_on,
             "notes": self.notes,
         }
+        if self.subject_vessels:
+            result['subject_vessels'] = list(self.subject_vessels)
+        return result
 
     @staticmethod
     def from_dict(d: Dict[str, object]) -> "Artifact":
@@ -75,6 +89,7 @@ class Artifact:
             edition=d.get("edition"),          # type: ignore[arg-type]
             published_on=d.get("published_on"),  # type: ignore[arg-type]
             notes=str(d.get("notes", "")),
+            subject_vessels=d.get('subject_vessels', ()),
         )
 
 
@@ -86,6 +101,9 @@ class ArtifactStore:
 
     def __init__(self, root: str):
         self.root = root
+        from pathlib import Path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(Path(root) / "index.json")
         self.blobs = os.path.join(root, "blobs")
         self.index_path = os.path.join(root, "index.json")
         os.makedirs(self.blobs, exist_ok=True)
@@ -105,8 +123,10 @@ class ArtifactStore:
         edition: Optional[str] = None,
         published_on: Optional[str] = None,
         notes: str = "",
+        subject_vessels: Optional[Iterable[str]] = None,
     ) -> Artifact:
         """Register a document. The file must exist; its digest is computed here."""
+        self._writer_boundary.require()
         if not os.path.isfile(path):
             raise FileNotFoundError(
                 f"No artifact at {path!r}. An evidence chain cannot be started "
@@ -116,7 +136,10 @@ class ArtifactStore:
             raise ValueError(f"Artifact at {path!r} is empty.")
 
         digest = sha256_of_file(path)
+        subjects = normalize_subject_vessels(subject_vessels)
         if digest in self._index:
+            if subject_vessels is not None and subjects != self._index[digest].subject_vessels:
+                raise ValueError('Existing bytes have conflicting vessel attribution.')
             return self._index[digest]
 
         shutil.copy2(path, os.path.join(self.blobs, digest))
@@ -129,6 +152,7 @@ class ArtifactStore:
             edition=edition,
             published_on=published_on,
             notes=notes,
+            subject_vessels=subjects,
         )
         self._index[digest] = artifact
         self._flush()
@@ -163,4 +187,5 @@ class ArtifactStore:
         return len(self._index)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump({k: v.to_dict() for k, v in self._index.items()}, self.index_path)

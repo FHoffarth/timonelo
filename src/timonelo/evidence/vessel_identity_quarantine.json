@@ -1,0 +1,239 @@
+{
+  "schema": "timonelo.vessel-identity-quarantine.v1",
+  "audit_date": "2026-11-04",
+  "scope": "Eight non-Bellissima launch identities; no authoritative records edited; private candidate preparation remains permitted.",
+  "identities": [
+    {
+      "slug": "msc-meraviglia",
+      "status": "unresolved",
+      "canonical_admission": false,
+      "authoritative_imo": "9660463",
+      "candidate_imo": "9760512",
+      "candidate_approval": false,
+      "authoritative_mmsi": "248660463",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-meraviglia/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "Persisted IMO conflicts with an unapproved candidate identifier from the integrity-hardening task; canonical vessel admission is blocked pending independent identity evidence. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-grandiosa",
+      "status": "audit_only",
+      "canonical_admission": true,
+      "authoritative_imo": "9803613",
+      "candidate_imo": null,
+      "candidate_approval": false,
+      "authoritative_mmsi": "248803613",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-grandiosa/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "IMO is unchanged by this audit; audit_only is not verification or approval. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-euribia",
+      "status": "audit_only",
+      "canonical_admission": true,
+      "authoritative_imo": "9901544",
+      "candidate_imo": null,
+      "candidate_approval": false,
+      "authoritative_mmsi": "248901544",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-euribia/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "IMO is unchanged by this audit; audit_only is not verification or approval. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-virtuosa",
+      "status": "audit_only",
+      "canonical_admission": true,
+      "authoritative_imo": "9803625",
+      "candidate_imo": null,
+      "candidate_approval": false,
+      "authoritative_mmsi": "248803625",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-virtuosa/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "IMO is unchanged by this audit; audit_only is not verification or approval. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-world-europa",
+      "status": "audit_only",
+      "canonical_admission": true,
+      "authoritative_imo": "9837420",
+      "candidate_imo": null,
+      "candidate_approval": false,
+      "authoritative_mmsi": "248837420",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-world-europa/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "IMO is unchanged by this audit; audit_only is not verification or approval. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-world-america",
+      "status": "audit_only",
+      "canonical_admission": true,
+      "authoritative_imo": "9837432",
+      "candidate_imo": null,
+      "candidate_approval": false,
+      "authoritative_mmsi": "248837432",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-world-america/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "IMO is unchanged by this audit; audit_only is not verification or approval. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-seascape",
+      "status": "unresolved",
+      "canonical_admission": false,
+      "authoritative_imo": "9805348",
+      "candidate_imo": "9843807",
+      "candidate_approval": false,
+      "authoritative_mmsi": "248805348",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-seascape/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "Persisted IMO conflicts with an unapproved candidate identifier from the integrity-hardening task; canonical vessel admission is blocked pending independent identity evidence. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    },
+    {
+      "slug": "msc-seashore",
+      "status": "unresolved",
+      "canonical_admission": false,
+      "authoritative_imo": "9805336",
+      "candidate_imo": "9843792",
+      "candidate_approval": false,
+      "authoritative_mmsi": "248805336",
+      "mmsi_status": "unresolved",
+      "mmsi_admission": false,
+      "evidence": [
+        {
+          "path": "knowledge/ships/msc-seashore/identity.json",
+          "fields": [
+            "imo_number",
+            "mmsi"
+          ],
+          "source_ids": [
+            "src:imo-gisis",
+            "src:itu-maritime"
+          ]
+        },
+        {
+          "observation": "Persisted MMSI equals 248 followed by the final six digits of the persisted IMO. This repeated pattern is an audit signal, not proof of a real assignment.",
+          "matches_pattern": true
+        }
+      ],
+      "reason": "Persisted IMO conflicts with an unapproved candidate identifier from the integrity-hardening task; canonical vessel admission is blocked pending independent identity evidence. MMSI has no assignment evidence recorded in this audit; a source label alone cannot establish the assignment. MMSI statements remain blocked pending evidence and review."
+    }
+  ]
+}

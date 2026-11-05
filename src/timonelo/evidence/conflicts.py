@@ -36,6 +36,7 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Sequence
 
 from timonelo.canonical import canonical_dump
+from timonelo.evidence.vessel_ownership import entity_key
 
 
 class ConflictStatus(str, Enum):
@@ -95,6 +96,8 @@ class ConflictLog:
 
     def __init__(self, path: str):
         self.path = path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(path)
         self._by_id: Dict[str, Conflict] = {}
         self._history: List[Dict[str, Any]] = []
         self._detection_runs: List[Dict[str, Any]] = []
@@ -177,6 +180,7 @@ class ConflictLog:
         occurred_on: str,
         note: str,
     ) -> Conflict:
+        self._writer_boundary.require()
         c = self.get(conflict_id)
         if not c.is_open:
             raise ConflictError(
@@ -232,7 +236,7 @@ class ConflictLog:
     def open_for_question(self, entity_id: str, question_id: str) -> List[Conflict]:
         return [
             c for c in self.all()
-            if c.is_open and c.entity_id == entity_id and c.question_id == question_id
+            if c.is_open and entity_key(c.entity_id) == entity_key(entity_id) and c.question_id == question_id
         ]
 
     def history(self, conflict_id: Optional[str] = None) -> List[Dict[str, Any]]:
@@ -244,6 +248,7 @@ class ConflictLog:
         return len(self._by_id)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump(
             {"conflicts": {k: v.to_dict() for k, v in self._by_id.items()},
              "history": self._history,

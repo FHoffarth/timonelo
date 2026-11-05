@@ -8,14 +8,13 @@ and terminal operator specifications.
 from __future__ import annotations
 
 import os
-import shutil
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
 from timonelo.evidence import authority
 from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.models import Statement
-from timonelo.evidence.registry import Artifact, ArtifactRegistry, sha256_of_file
+from timonelo.evidence.registry import Artifact, ArtifactRegistry
 from timonelo.evidence.workspace import Workspace
 from timonelo.ontology.models import (
     Derivation,
@@ -85,24 +84,10 @@ def ingest_port_source(
         notes=source.notes,
     )
 
-    # 2. Also ensure raw copy exists in SHA vault for long-term audit
-    digest = artifact.sha256
-    vault_dir = os.path.join(workspace.root, "raw", "sha256", digest[:2])
-    os.makedirs(vault_dir, exist_ok=True)
-    ext = os.path.splitext(source.path)[1]
-    vault_target = os.path.join(vault_dir, f"{digest}{ext}")
-    if not os.path.isfile(vault_target):
-        shutil.copy2(source.path, vault_target)
+    # The registry owns SHA-vault storage; intake must not create an ambiguous
+    # second copy under a filename-derived extension or delete held evidence.
 
-    # Clean legacy blobs folder to maintain vault purity
-    blob_file = os.path.join(workspace.registry.blobs, digest)
-    if os.path.isfile(blob_file):
-        try:
-            os.remove(blob_file)
-        except OSError:
-            pass
-
-    # 3. Create EvidenceEvents and Statements with strict authority and question validation
+    # 2. Create EvidenceEvents and Statements with strict authority and question validation
     created_events: List[EvidenceEvent] = []
     created_statements: List[Statement] = []
     for claim in claims:

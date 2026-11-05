@@ -69,6 +69,8 @@ class ReviewLog:
 
     def __init__(self, path: str):
         self.path = path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(path)
         self._entries: List[ReviewEntry] = []
         if os.path.exists(path):
             import json
@@ -84,6 +86,7 @@ class ReviewLog:
         occurred_on: str,
         note: str = "",
     ) -> ReviewEntry:
+        self._writer_boundary.require()
         if to_state not in ALLOWED[from_state]:
             raise ReviewError(
                 f"{from_state.value} -> {to_state.value} is not an allowed "
@@ -113,6 +116,7 @@ class ReviewLog:
         occurred_on: str,
         note: str = "",
     ) -> ReviewEntry:
+        self._writer_boundary.require()
         if not actor:
             raise ReviewError("An evidence verification transition requires a named actor.")
         entry = ReviewEntry(
@@ -134,4 +138,5 @@ class ReviewLog:
         return list(self._entries)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump([e.to_dict() for e in self._entries], self.path)
