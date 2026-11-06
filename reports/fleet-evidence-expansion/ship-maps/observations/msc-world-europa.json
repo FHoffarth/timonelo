@@ -1,0 +1,5786 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-world-europa",
+  "name": "MSC WORLD EUROPA",
+  "verified_imo": "IMO9837420",
+  "stored_imo": "IMO9837420",
+  "identity_state": "CANONICAL_MATCHES_VERIFIED"
+ },
+ "source": {
+  "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC WORLD EUROPA SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "ELIGIBLE CANDIDATE",
+ "first_review_batch": [
+  {
+   "id": "EU-MAP-01",
+   "name": "IL MERCATO BUFFET",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints IL MERCATO BUFFET on deck(s) 18.",
+   "value": [
+    18
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'IL MERCATO BUFFET', printed deck '18'",
+   "observed_text": "IL MERCATO BUFFET\n18",
+   "entity_id": "venue:MSC-WORLD-EUROPA:il-mercato-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     406.18,
+     286.84,
+     411.53
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-02",
+   "name": "MSC SIGNATURE CASINO",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 5,
+   "locator": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+   "observed_text": "MSC SIGNATURE CASINO\n7",
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-signature-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     423.39,
+     286.84,
+     428.74
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-03",
+   "name": "BUBBLES RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BUBBLES RESTAURANT on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'BUBBLES RESTAURANT', printed deck '6'",
+   "observed_text": "BUBBLES RESTAURANT\n6",
+   "entity_id": "venue:MSC-WORLD-EUROPA:bubbles-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     334.76,
+     286.84,
+     340.11
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-04",
+   "name": "BUTCHER'S CUT",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BUTCHER'S CUT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '7'",
+   "observed_text": "BUTCHER'S CUT\n7",
+   "entity_id": "venue:MSC-WORLD-EUROPA:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     346.66,
+     286.84,
+     352.01
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-05",
+   "name": "CHEF'S GARDEN KITCHEN",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints CHEF'S GARDEN KITCHEN on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"CHEF'S GARDEN KITCHEN\", printed deck '8'",
+   "observed_text": "CHEF'S GARDEN KITCHEN\n8",
+   "entity_id": "venue:MSC-WORLD-EUROPA:chefs-garden-kitchen",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     358.57,
+     286.84,
+     363.92
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-06",
+   "name": "HEXAGON RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HEXAGON RESTAURANT on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HEXAGON RESTAURANT', printed deck '6'",
+   "observed_text": "HEXAGON RESTAURANT\n6",
+   "entity_id": "venue:MSC-WORLD-EUROPA:hexagon-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     382.37,
+     286.84,
+     387.73
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-07",
+   "name": "HOLA! TACOS & CANTINA",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '7'",
+   "observed_text": "HOLA! TACOS & CANTINA\n7",
+   "entity_id": "venue:MSC-WORLD-EUROPA:hola-tacos-and-cantina",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     394.28,
+     286.84,
+     399.63
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "EU-MAP-08",
+   "name": "KAITO SUSHI BAR",
+   "exact_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+   "target_vessel": "IMO9837420",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+   "observed_text": "KAITO SUSHI BAR\n7",
+   "entity_id": "venue:MSC-WORLD-EUROPA:kaito-sushi-bar",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     334.76,
+     502.52,
+     340.11
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "EU-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "EU-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "EXIT",
+   "index_decks": [
+    4,
+    5
+   ]
+  },
+  {
+   "key": "EXIT WITH SHORE GANGWAY",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC AUREA SPA RECEPTION",
+   "index_decks": [
+    8
+   ]
+  },
+  {
+   "key": "MSC BUSINESS CENTRE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MSC FOUNDATION",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "SPORTPLEX",
+   "index_decks": [
+    20
+   ]
+  },
+  {
+   "key": "WORLD GALLERIA",
+   "index_decks": [
+    6,
+    7,
+    8
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "5D CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints 5D CINEMA on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     336.13,
+     286.84,
+     341.48
+    ],
+    "text": "Page 9, table 'Fun', row '5D CINEMA', printed deck '6'",
+    "observed_text": "5D CINEMA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:5d-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALIS AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints AURORA BOREALIS AQUAPARK on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     297.46,
+     286.75,
+     302.81
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'AURORA BOREALIS AQUAPARK', printed deck '20'",
+    "observed_text": "AURORA BOREALIS AQUAPARK\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:aurora-borealis-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALIS WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints AURORA BOREALIS WHIRLPOOL BATH on deck(s) 20.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     359.2,
+     286.84,
+     364.56
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'AURORA BOREALIS WHIRLPOOL BATH', printed deck '20'",
+    "observed_text": "AURORA BOREALIS WHIRLPOOL BATH\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:aurora-borealis-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BABY CLUB CHICCO (under 3 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     385.71,
+     287.41,
+     391.06
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO (under 3 years)', printed deck '19'",
+    "observed_text": "BABY CLUB CHICCO (under 3 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BOTANIC GARDEN BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     411.44,
+     502.52,
+     416.79
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'BOTANIC GARDEN BAR', printed deck '19'",
+    "observed_text": "BOTANIC GARDEN BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:botanic-garden-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "18-19"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     309.41,
+     286.75,
+     314.76
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'BOTANIC GARDEN POOL', printed deck '18'",
+    "observed_text": "BOTANIC GARDEN POOL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18,
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 18-19"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:botanic-garden-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BOTANIC GARDEN POOL WHIRLPOOL BATH on deck(s) 18.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     372.32,
+     286.84,
+     387.27
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BOTANIC GARDEN POOL WHIRLPOOL BATH', printed deck '18'",
+    "observed_text": "BOTANIC GARDEN POOL  \nWHIRLPOOL BATH\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:botanic-garden-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     338.95,
+     286.84,
+     344.3
+    ],
+    "text": "Page 6, table 'Shops', row 'BOUTIQUE', printed deck '6'",
+    "observed_text": "BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUBBLES RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BUBBLES RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     334.76,
+     286.84,
+     340.11
+    ],
+    "text": "Page 4, table 'Restaurants', row 'BUBBLES RESTAURANT', printed deck '6'",
+    "observed_text": "BUBBLES RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:bubbles-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER'S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints BUTCHER'S CUT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     346.66,
+     286.84,
+     352.01
+    ],
+    "text": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '7'",
+    "observed_text": "BUTCHER'S CUT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHEF'S GARDEN KITCHEN",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints CHEF'S GARDEN KITCHEN on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     358.57,
+     286.84,
+     363.92
+    ],
+    "text": "Page 4, table 'Restaurants', row \"CHEF'S GARDEN KITCHEN\", printed deck '8'",
+    "observed_text": "CHEF'S GARDEN KITCHEN\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:chefs-garden-kitchen"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "COFFEE EMPORIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints COFFEE EMPORIUM on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     351.92,
+     286.84,
+     357.27
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'COFFEE EMPORIUM', printed deck '8'",
+    "observed_text": "COFFEE EMPORIUM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:coffee-emporium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints CONCIERGE AREA on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     317.06,
+     500.94,
+     322.42
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '19'",
+    "observed_text": "CONCIERGE AREA\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOLCE VITA BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints DOLCE VITA BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     363.87,
+     286.84,
+     369.22
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'DOLCE VITA BAR', printed deck '6'",
+    "observed_text": "DOLCE VITA BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:dolce-vita-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOREMILAND",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints DOREMILAND on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     409.52,
+     287.41,
+     414.87
+    ],
+    "text": "Page 10, table 'Family Areas', row 'DOREMILAND', printed deck '19'",
+    "observed_text": "DOREMILAND\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:doremiland"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ELIXIR - MIXOLOGY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints ELIXIR - MIXOLOGY BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     375.78,
+     286.84,
+     381.13
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ELIXIR - MIXOLOGY BAR', printed deck '8'",
+    "observed_text": "ELIXIR - MIXOLOGY BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:elixir-mixology-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ESAGONO RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints ESAGONO RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     370.47,
+     286.84,
+     375.82
+    ],
+    "text": "Page 4, table 'Restaurants', row 'ESAGONO RESTAURANT', printed deck '6'",
+    "observed_text": "ESAGONO RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:esagono-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints FINE JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     350.9,
+     286.84,
+     356.25
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE JEWELLERY', printed deck '8'",
+    "observed_text": "FINE JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:fine-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FIZZ - CHAMPAGNE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints FIZZ - CHAMPAGNE BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     387.68,
+     286.84,
+     393.03
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'FIZZ - CHAMPAGNE BAR', printed deck '8'",
+    "observed_text": "FIZZ - CHAMPAGNE BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:fizz-champagne-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GAMES ARCADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints GAMES ARCADE on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     371.89,
+     286.84,
+     377.24
+    ],
+    "text": "Page 9, table 'Fun', row 'GAMES ARCADE', printed deck '6'",
+    "observed_text": "GAMES ARCADE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:games-arcade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GENTLEMEN'S BARBER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints GENTLEMEN'S BARBER on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     394.97,
+     286.84,
+     400.32
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row \"GENTLEMEN'S BARBER\", printed deck '7'",
+    "observed_text": "GENTLEMEN'S BARBER\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:gentlemens-barber"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HAIR SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     406.88,
+     286.84,
+     412.23
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '8'",
+    "observed_text": "HAIR SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HALL OF GAMES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HALL OF GAMES on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     383.79,
+     286.84,
+     389.15
+    ],
+    "text": "Page 9, table 'Fun', row 'HALL OF GAMES', printed deck '19'",
+    "observed_text": "HALL OF GAMES\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:hall-of-games"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HEXAGON RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HEXAGON RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     382.37,
+     286.84,
+     387.73
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HEXAGON RESTAURANT', printed deck '6'",
+    "observed_text": "HEXAGON RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:hexagon-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     394.28,
+     286.84,
+     399.63
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '7'",
+    "observed_text": "HOLA! TACOS & CANTINA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IL MERCATO BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints IL MERCATO BUFFET on deck(s) 18.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     406.18,
+     286.84,
+     411.53
+    ],
+    "text": "Page 4, table 'Restaurants', row 'IL MERCATO BUFFET', printed deck '18'",
+    "observed_text": "IL MERCATO BUFFET\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:il-mercato-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints IRIS GALERIE on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     362.8,
+     286.84,
+     368.15
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '7'",
+    "observed_text": "IRIS GALERIE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CHOCOLAT & CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints JEAN-PHILIPPE CHOCOLAT & CAFÉ on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     399.58,
+     286.84,
+     404.94
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CHOCOLAT & CAFÉ', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CHOCOLAT & CAFÉ\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:jean-philippe-chocolat-and-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIORS CLUB (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints JUNIORS CLUB (7 to 11 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     445.23,
+     287.41,
+     450.58
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIORS CLUB (7 to 11 years)', printed deck '19'",
+    "observed_text": "JUNIORS CLUB (7 to 11 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:juniors-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     334.76,
+     502.52,
+     340.11
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+    "observed_text": "KAITO SUSHI BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints KAITO TEPPANYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     346.66,
+     502.52,
+     352.01
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '7'",
+    "observed_text": "KAITO TEPPANYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KID’S POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints KID’S POOL on deck(s) 20.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     457.14,
+     287.41,
+     462.49
+    ],
+    "text": "Page 10, table 'Family Areas', row 'KID’S POOL', printed deck '20'",
+    "observed_text": "KID’S POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:kids-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA BRASSERIE BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     358.57,
+     502.52,
+     363.92
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA BRASSERIE BUFFET', printed deck '19'",
+    "observed_text": "LA BRASSERIE BUFFET\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 19, index [20]"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:la-brasserie-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA FOGLIA RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LA FOGLIA RESTAURANT on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     370.47,
+     502.52,
+     375.82
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA FOGLIA RESTAURANT', printed deck '5'",
+    "observed_text": "LA FOGLIA RESTAURANT\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:la-foglia-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PESCADERIA - FISH MARKET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LA PESCADERIA - FISH MARKET on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     382.37,
+     502.52,
+     387.73
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA PESCADERIA - FISH MARKET', printed deck '8'",
+    "observed_text": "LA PESCADERIA - FISH MARKET\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:la-pescaderia-fish-market"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PLAGE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "18-19"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     321.31,
+     286.75,
+     326.66
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'LA PLAGE', printed deck '18'",
+    "observed_text": "LA PLAGE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18,
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 18-19"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:la-plage"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PLAGE WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LA PLAGE WHIRLPOOL BATH on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     418.78,
+     286.83,
+     424.13
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'LA PLAGE WHIRLPOOL BATH', printed deck '19'",
+    "observed_text": "LA PLAGE WHIRLPOOL BATH\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:la-plage-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LEGO ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LEGO ROOM on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     480.94,
+     287.41,
+     486.3
+    ],
+    "text": "Page 10, table 'Family Areas', row 'LEGO ROOM', printed deck '19'",
+    "observed_text": "LEGO ROOM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:lego-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LES DUNES RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LES DUNES RESTAURANT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     394.28,
+     502.52,
+     399.63
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LES DUNES RESTAURANT', printed deck '8'",
+    "observed_text": "LES DUNES RESTAURANT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:les-dunes-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LUXURY ACCESSORIES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints LUXURY ACCESSORIES on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     374.7,
+     286.84,
+     380.06
+    ],
+    "text": "Page 6, table 'Shops', row 'LUXURY ACCESSORIES', printed deck '8'",
+    "observed_text": "LUXURY ACCESSORIES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:luxury-accessories"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASTERS OF THE SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MASTERS OF THE SEA on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     411.49,
+     286.84,
+     416.84
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MASTERS OF THE SEA', printed deck '7'",
+    "observed_text": "MASTERS OF THE SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:masters-of-the-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MEDI SPA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     430.68,
+     286.83,
+     436.04
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA', printed deck '8'",
+    "observed_text": "MEDI SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:medi-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MINI CLUB (3 to 6 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     492.85,
+     287.4,
+     498.2
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB (3 to 6 years)', printed deck '19'",
+    "observed_text": "MINI CLUB (3 to 6 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:mini-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC AUREA SPA on deck(s) 8.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     329.02,
+     500.94,
+     334.37
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '8'",
+    "observed_text": "MSC AUREA SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    8
+   ],
+   "printed_tokens": [
+    "6-8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC EXCURSIONS on deck(s) 6, 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     386.61,
+     286.84,
+     391.96
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '6-8'",
+    "observed_text": "MSC EXCURSIONS\n6-8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC FORMULA RACER on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     407.6,
+     286.84,
+     412.95
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '19'",
+    "observed_text": "MSC FORMULA RACER\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     333.22,
+     286.75,
+     338.57
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '20'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM® \n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC LUNA PARK ARENA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC LUNA PARK ARENA on deck(s) 5, 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     419.51,
+     286.84,
+     424.86
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC LUNA PARK ARENA', printed deck '5-6'",
+    "observed_text": "MSC LUNA PARK ARENA\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5-6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-luna-park-arena"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC SHOP on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     398.51,
+     286.84,
+     403.86
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '7'",
+    "observed_text": "MSC SHOP\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SIGNATURE CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     423.39,
+     286.84,
+     428.74
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+    "observed_text": "MSC SIGNATURE CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-signature-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SPORTPLEX",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "20",
+    "20-21"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     345.13,
+     286.75,
+     350.48
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC SPORTPLEX', printed deck '20'",
+    "observed_text": "MSC SPORTPLEX\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20-21"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20-21"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 20, 20-21",
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-sportplex"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    21
+   ],
+   "printed_tokens": [
+    "21"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 21.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     340.92,
+     500.94,
+     346.27
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '21'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n21"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "21"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     21
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB LANAI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    21
+   ],
+   "printed_tokens": [
+    "21"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC YACHT CLUB LANAI on deck(s) 21.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     352.82,
+     500.94,
+     358.18
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB LANAI', printed deck '21'",
+    "observed_text": "MSC YACHT CLUB LANAI\n21"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "21"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     21
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-yacht-club-lanai"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     364.73,
+     500.94,
+     370.08
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    22
+   ],
+   "printed_tokens": [
+    "22"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints MSC YACHT CLUB SUNDECK & POOL on deck(s) 22.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     376.63,
+     500.94,
+     381.98
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & POOL', printed deck '22'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & POOL\n22"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "22"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     22
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:msc-yacht-club-sundeck-and-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints NAIL SERVICES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     359.2,
+     502.52,
+     364.56
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SERVICES', printed deck '8'",
+    "observed_text": "NAIL SERVICES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:nail-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OMEGA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints OMEGA on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     338.99,
+     502.52,
+     344.35
+    ],
+    "text": "Page 6, table 'Shops', row 'OMEGA', printed deck '8'",
+    "observed_text": "OMEGA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:omega"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PANORAMA LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints PANORAMA LOUNGE on deck(s) 7.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     348.08,
+     501.42,
+     353.43
+    ],
+    "text": "Page 9, table 'Fun', row 'PANORAMA LOUNGE', printed deck '7'",
+    "observed_text": "PANORAMA LOUNGE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:panorama-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PIZZA & BURGER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints PIZZA & BURGER on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     406.18,
+     502.52,
+     411.53
+    ],
+    "text": "Page 4, table 'Restaurants', row 'PIZZA & BURGER', printed deck '6'",
+    "observed_text": "PIZZA & BURGER\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:pizza-and-burger"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RAJ POLO TEA HOUSE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     435.3,
+     286.84,
+     440.65
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'RAJ POLO TEA HOUSE', printed deck '8'",
+    "observed_text": "RAJ POLO TEA HOUSE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 8, index [7]"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:raj-polo-tea-house"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints RECEPTION on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     371.16,
+     502.52,
+     376.51
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '8'",
+    "observed_text": "RECEPTION\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RIVE DROITE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints RIVE DROITE on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     423.39,
+     502.52,
+     428.74
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'RIVE DROITE', printed deck '18'",
+    "observed_text": "RIVE DROITE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:rive-droite"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RIVE GAUCHE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints RIVE GAUCHE on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     435.3,
+     502.52,
+     440.65
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'RIVE GAUCHE', printed deck '18'",
+    "observed_text": "RIVE GAUCHE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:rive-gauche"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHOPPING GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints SHOPPING GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     350.9,
+     502.52,
+     356.25
+    ],
+    "text": "Page 6, table 'Shops', row 'SHOPPING GALLERY', printed deck '6'",
+    "observed_text": "SHOPPING GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:shopping-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints SOLARIUM on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     383.06,
+     502.52,
+     388.41
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM', printed deck '8'",
+    "observed_text": "SOLARIUM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints SPA BOUTIQUE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     394.96,
+     502.52,
+     400.32
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SPA BOUTIQUE', printed deck '8'",
+    "observed_text": "SPA BOUTIQUE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:spa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SURFER'S BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints SURFER'S BAR on deck(s) 20.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     447.2,
+     502.52,
+     452.55
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row \"SURFER'S BAR\", printed deck '20'",
+    "observed_text": "SURFER'S BAR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:surfers-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SWEET TEMPTATIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints SWEET TEMPTATIONS on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     447.2,
+     286.84,
+     452.55
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SWEET TEMPTATIONS', printed deck '8'",
+    "observed_text": "SWEET TEMPTATIONS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:sweet-temptations"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEENS CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints TEENS CLUB (15 to 17 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     409.52,
+     501.99,
+     414.87
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEENS CLUB (15 to 17 years)', printed deck '19'",
+    "observed_text": "TEENS CLUB (15 to 17 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:teens-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE BOX BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THE BOX BAR on deck(s) 20.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     459.1,
+     286.84,
+     464.46
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE BOX BAR', printed deck '20'",
+    "observed_text": "THE BOX BAR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:the-box-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE GIN PROJECT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THE GIN PROJECT on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     471.01,
+     286.84,
+     476.36
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE GIN PROJECT', printed deck '8'",
+    "observed_text": "THE GIN PROJECT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:the-gin-project"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     362.8,
+     502.52,
+     368.15
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '7'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE LANAI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THE LANAI BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     351.92,
+     502.52,
+     357.27
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE LANAI BAR', printed deck '8'",
+    "observed_text": "THE LANAI BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:the-lanai-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THE STUDIO on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     421.42,
+     501.99,
+     426.78
+    ],
+    "text": "Page 10, table 'Family Areas', row 'THE STUDIO', printed deck '19'",
+    "observed_text": "THE STUDIO\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:the-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints THERMAL AREA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     406.87,
+     502.52,
+     412.22
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '8'",
+    "observed_text": "THERMAL AREA \n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 20 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints TOP 20 EXCLUSIVE SOLARIUM on deck(s) 20.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     430.68,
+     502.52,
+     436.03
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 20 EXCLUSIVE SOLARIUM', printed deck '20'",
+    "observed_text": "TOP 20 EXCLUSIVE SOLARIUM\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:top-20-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints TOP SAIL LOUNGE on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     388.54,
+     500.94,
+     393.89
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '19'",
+    "observed_text": "TOP SAIL LOUNGE\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TREATMENT SUITES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints TREATMENT SUITES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     418.77,
+     502.52,
+     424.12
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TREATMENT SUITES', printed deck '8'",
+    "observed_text": "TREATMENT SUITES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:treatment-suites"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TV STUDIO & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints TV STUDIO & BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     363.87,
+     502.52,
+     369.22
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'TV STUDIO & BAR', printed deck '7'",
+    "observed_text": "TV STUDIO & BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:tv-studio-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VENOM DROP @ THE SPIRAL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints VENOM DROP @ THE SPIRAL on deck(s) 20.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     371.89,
+     501.42,
+     377.24
+    ],
+    "text": "Page 9, table 'Fun', row 'VENOM DROP @ THE SPIRAL', printed deck '20'",
+    "observed_text": "VENOM DROP @ THE SPIRAL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:venom-drop-the-spiral"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD OF WATCHES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints WORLD OF WATCHES on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     374.7,
+     502.52,
+     380.06
+    ],
+    "text": "Page 6, table 'Shops', row 'WORLD OF WATCHES', printed deck '8'",
+    "observed_text": "WORLD OF WATCHES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:world-of-watches"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD PROMENADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints WORLD PROMENADE on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     395.7,
+     501.42,
+     401.05
+    ],
+    "text": "Page 9, table 'Fun', row 'WORLD PROMENADE', printed deck '8'",
+    "observed_text": "WORLD PROMENADE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:world-promenade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD THEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-7",
+    "7"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     407.6,
+     501.42,
+     412.95
+    ],
+    "text": "Page 9, table 'Fun', row 'WORLD THEATRE', printed deck '7'",
+    "observed_text": "WORLD THEATRE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 6-7, 7"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:world-theatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     469.04,
+     501.98,
+     474.39
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '19'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-EUROPA:young-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEN BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints ZEN BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     459.1,
+     502.52,
+     464.46
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ZEN BAR', printed deck '18'",
+    "observed_text": "ZEN BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:zen-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEN POOL (Adults-only Zen area)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints ZEN POOL (Adults-only Zen area) on deck(s) 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     357.03,
+     286.74,
+     362.38
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'ZEN POOL (Adults-only Zen area)', printed deck '18'",
+    "observed_text": "ZEN POOL (Adults-only Zen area)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:zen-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-europa",
+    "name": "MSC WORLD EUROPA",
+    "verified_imo": "IMO9837420",
+    "stored_imo": "IMO9837420",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD EUROPA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEST - JUICE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD EUROPA (SHA-256 e8825bda8c88, version unknown) prints ZEST - JUICE BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     375.78,
+     502.52,
+     381.13
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ZEST - JUICE BAR', printed deck '8'",
+    "observed_text": "ZEST - JUICE BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-EUROPA:zest-juice-bar"
+  }
+ ]
+}

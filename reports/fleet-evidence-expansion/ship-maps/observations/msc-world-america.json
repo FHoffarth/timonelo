@@ -1,0 +1,5736 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-world-america",
+  "name": "MSC WORLD AMERICA",
+  "verified_imo": "IMO9837432",
+  "stored_imo": "IMO9837432",
+  "identity_state": "CANONICAL_MATCHES_VERIFIED"
+ },
+ "source": {
+  "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC WORLD AMERICA SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "ELIGIBLE CANDIDATE",
+ "first_review_batch": [
+  {
+   "id": "AM-MAP-01",
+   "name": "IL MERCATO BUFFET",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints IL MERCATO BUFFET on deck(s) 18.",
+   "value": [
+    18
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'IL MERCATO BUFFET', printed deck '18'",
+   "observed_text": "IL MERCATO BUFFET\n18",
+   "entity_id": "venue:MSC-WORLD-AMERICA:il-mercato-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     408.44,
+     286.84,
+     411.29
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-02",
+   "name": "LA BRASSERIE BUFFET",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA BRASSERIE BUFFET on deck(s) 19.",
+   "value": [
+    19
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'LA BRASSERIE BUFFET', printed deck '19'",
+   "observed_text": "LA BRASSERIE BUFFET\n19",
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-brasserie-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     360.82,
+     502.52,
+     363.67
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-03",
+   "name": "MSC SIGNATURE CASINO",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 5,
+   "locator": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+   "observed_text": "MSC SIGNATURE CASINO\n7",
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-signature-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     425.65,
+     286.84,
+     428.49
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-04",
+   "name": "BUBBLES RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BUBBLES RESTAURANT on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'BUBBLES RESTAURANT', printed deck '6'",
+   "observed_text": "BUBBLES RESTAURANT\n6",
+   "entity_id": "venue:MSC-WORLD-AMERICA:bubbles-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     337.01,
+     286.84,
+     339.86
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-05",
+   "name": "BUTCHER'S CUT",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BUTCHER'S CUT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '7'",
+   "observed_text": "BUTCHER'S CUT\n7",
+   "entity_id": "venue:MSC-WORLD-AMERICA:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     348.92,
+     286.84,
+     351.77
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-06",
+   "name": "EATALY",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints EATALY on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'EATALY', printed deck '8'",
+   "observed_text": "EATALY\n8",
+   "entity_id": "venue:MSC-WORLD-AMERICA:eataly",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     360.82,
+     286.84,
+     363.67
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-07",
+   "name": "HOLA! TACOS & CANTINA",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '7'",
+   "observed_text": "HOLA! TACOS & CANTINA\n7",
+   "entity_id": "venue:MSC-WORLD-AMERICA:hola-tacos-and-cantina",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     396.53,
+     286.84,
+     399.38
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "AM-MAP-08",
+   "name": "KAITO SUSHI BAR",
+   "exact_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+   "target_vessel": "IMO9837432",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+   "observed_text": "KAITO SUSHI BAR\n7",
+   "entity_id": "venue:MSC-WORLD-AMERICA:kaito-sushi-bar",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     336.97,
+     502.52,
+     339.81
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "AM-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "AM-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "ALL-STARS SPORTS BAR",
+   "index_decks": [
+    8
+   ]
+  },
+  {
+   "key": "CLIFFHANGER",
+   "index_decks": [
+    20
+   ]
+  },
+  {
+   "key": "EXAGON RESTAURANT",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "EXIT",
+   "index_decks": [
+    4,
+    5
+   ]
+  },
+  {
+   "key": "EXIT WITH SHORE GANGWAY",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MAR AZUL BAR",
+   "index_decks": [
+    18
+   ]
+  },
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC AUREA SPA RECEPTION",
+   "index_decks": [
+    8
+   ]
+  },
+  {
+   "key": "MSC BUSINESS CENTRE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "MSC FOUNDATION",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "THE HARBOUR BAR & BITES",
+   "index_decks": [
+    20
+   ]
+  },
+  {
+   "key": "THE LOFT COMEDY & LIVE MUSIC",
+   "index_decks": [
+    8
+   ]
+  },
+  {
+   "key": "TIME VALLEE",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "WORLD GALLERIA",
+   "index_decks": [
+    6,
+    7
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALIS AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints AURORA BOREALIS AQUAPARK on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     299.71,
+     286.75,
+     302.56
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'AURORA BOREALIS AQUAPARK', printed deck '20'",
+    "observed_text": "AURORA BOREALIS AQUAPARK\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:aurora-borealis-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALIS WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints AURORA BOREALIS WHIRLPOOL BATH on deck(s) 20.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     361.46,
+     286.84,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'AURORA BOREALIS WHIRLPOOL BATH', printed deck '20'",
+    "observed_text": "AURORA BOREALIS WHIRLPOOL BATH\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:aurora-borealis-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BABY CLUB CHICCO (under 3 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     375.97,
+     287.41,
+     378.82
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO (under 3 years)', printed deck '19'",
+    "observed_text": "BABY CLUB CHICCO (under 3 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BOTANIC GARDEN BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     401.79,
+     502.52,
+     404.64
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'BOTANIC GARDEN BAR', printed deck '19'",
+    "observed_text": "BOTANIC GARDEN BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:botanic-garden-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "18-19"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     311.66,
+     286.75,
+     314.51
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'BOTANIC GARDEN POOL', printed deck '18'",
+    "observed_text": "BOTANIC GARDEN POOL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 18-19"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:botanic-garden-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOTANIC GARDEN POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BOTANIC GARDEN POOL WHIRLPOOL BATH on deck(s) 18.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     374.57,
+     286.84,
+     387.02
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BOTANIC GARDEN POOL WHIRLPOOL BATH', printed deck '18'",
+    "observed_text": "BOTANIC GARDEN POOL  \nWHIRLPOOL BATH\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:botanic-garden-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     341.2,
+     286.84,
+     344.05
+    ],
+    "text": "Page 6, table 'Shops', row 'BOUTIQUE', printed deck '6'",
+    "observed_text": "BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUBBLES RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BUBBLES RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     337.01,
+     286.84,
+     339.86
+    ],
+    "text": "Page 4, table 'Restaurants', row 'BUBBLES RESTAURANT', printed deck '6'",
+    "observed_text": "BUBBLES RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:bubbles-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER'S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints BUTCHER'S CUT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     348.92,
+     286.84,
+     351.77
+    ],
+    "text": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '7'",
+    "observed_text": "BUTCHER'S CUT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "COFFEE EMPORIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints COFFEE EMPORIUM on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     354.17,
+     286.84,
+     357.02
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'COFFEE EMPORIUM', printed deck '8'",
+    "observed_text": "COFFEE EMPORIUM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:coffee-emporium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOLCE VITA BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints DOLCE VITA BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     366.13,
+     286.84,
+     368.97
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'DOLCE VITA BAR', printed deck '6'",
+    "observed_text": "DOLCE VITA BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:dolce-vita-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOREMILAND",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints DOREMILAND on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     399.78,
+     287.41,
+     402.62
+    ],
+    "text": "Page 10, table 'Family Areas', row 'DOREMILAND', printed deck '19'",
+    "observed_text": "DOREMILAND\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:doremiland"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EATALY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints EATALY on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     360.82,
+     286.84,
+     363.67
+    ],
+    "text": "Page 4, table 'Restaurants', row 'EATALY', printed deck '8'",
+    "observed_text": "EATALY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:eataly"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ELIXIR - MIXOLOGY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints ELIXIR - MIXOLOGY BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     378.03,
+     286.84,
+     380.88
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ELIXIR - MIXOLOGY BAR', printed deck '8'",
+    "observed_text": "ELIXIR - MIXOLOGY BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:elixir-mixology-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ESAGONO RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints ESAGONO RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     372.73,
+     286.84,
+     375.57
+    ],
+    "text": "Page 4, table 'Restaurants', row 'ESAGONO RESTAURANT', printed deck '6'",
+    "observed_text": "ESAGONO RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:esagono-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints FINE JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     353.15,
+     286.84,
+     356.0
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE JEWELLERY', printed deck '8'",
+    "observed_text": "FINE JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:fine-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FIZZ - CHAMPAGNE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints FIZZ - CHAMPAGNE BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     389.93,
+     286.84,
+     392.78
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'FIZZ - CHAMPAGNE BAR', printed deck '8'",
+    "observed_text": "FIZZ - CHAMPAGNE BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:fizz-champagne-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GAMES ARCADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints GAMES ARCADE on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     362.24,
+     286.84,
+     365.09
+    ],
+    "text": "Page 9, table 'Fun', row 'GAMES ARCADE', printed deck '6'",
+    "observed_text": "GAMES ARCADE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:games-arcade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GENTLEMEN'S BARBER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints GENTLEMEN'S BARBER on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     397.23,
+     286.84,
+     400.08
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row \"GENTLEMEN'S BARBER\", printed deck '7'",
+    "observed_text": "GENTLEMEN'S BARBER\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:gentlemens-barber"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints HAIR SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     409.13,
+     286.84,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '8'",
+    "observed_text": "HAIR SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HALL OF GAMES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints HALL OF GAMES on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     374.15,
+     286.84,
+     377.0
+    ],
+    "text": "Page 9, table 'Fun', row 'HALL OF GAMES', printed deck '19'",
+    "observed_text": "HALL OF GAMES\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:hall-of-games"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HEXAGON RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints HEXAGON RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     384.63,
+     286.84,
+     387.48
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HEXAGON RESTAURANT', printed deck '6'",
+    "observed_text": "HEXAGON RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:hexagon-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     396.53,
+     286.84,
+     399.38
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '7'",
+    "observed_text": "HOLA! TACOS & CANTINA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IL MERCATO BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints IL MERCATO BUFFET on deck(s) 18.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     408.44,
+     286.84,
+     411.29
+    ],
+    "text": "Page 4, table 'Restaurants', row 'IL MERCATO BUFFET', printed deck '18'",
+    "observed_text": "IL MERCATO BUFFET\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:il-mercato-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints IRIS GALERIE on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     365.06,
+     286.84,
+     367.91
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '7'",
+    "observed_text": "IRIS GALERIE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JAW DROP @ THE SPIRAL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints JAW DROP @ THE SPIRAL on deck(s) 20.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     386.05,
+     286.84,
+     388.9
+    ],
+    "text": "Page 9, table 'Fun', row 'JAW DROP @ THE SPIRAL', printed deck '20'",
+    "observed_text": "JAW DROP @ THE SPIRAL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:jaw-drop-the-spiral"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CHOCOLAT & CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints JEAN-PHILIPPE CHOCOLAT & CAFÉ on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     401.84,
+     286.84,
+     404.69
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CHOCOLAT & CAFÉ', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CHOCOLAT & CAFÉ\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:jean-philippe-chocolat-and-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIORS CLUB (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints JUNIORS CLUB (7 to 11 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     447.39,
+     287.41,
+     450.24
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIORS CLUB (7 to 11 years)', printed deck '19'",
+    "observed_text": "JUNIORS CLUB (7 to 11 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:juniors-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     336.97,
+     502.52,
+     339.81
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+    "observed_text": "KAITO SUSHI BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints KAITO TEPPANYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     348.92,
+     502.52,
+     351.77
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '7'",
+    "observed_text": "KAITO TEPPANYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KID’S POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints KID’S POOL on deck(s) 20.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     459.3,
+     287.41,
+     462.14
+    ],
+    "text": "Page 10, table 'Family Areas', row 'KID’S POOL', printed deck '20'",
+    "observed_text": "KID’S POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:kids-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA BOCA GRILL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA BOCA GRILL on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     425.65,
+     502.52,
+     428.49
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'LA BOCA GRILL', printed deck '18'",
+    "observed_text": "LA BOCA GRILL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-boca-grill"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA BRASSERIE BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA BRASSERIE BUFFET on deck(s) 19.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     360.82,
+     502.52,
+     363.67
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA BRASSERIE BUFFET', printed deck '19'",
+    "observed_text": "LA BRASSERIE BUFFET\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-brasserie-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA FOGLIA RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA FOGLIA RESTAURANT on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     372.73,
+     502.52,
+     375.57
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA FOGLIA RESTAURANT', printed deck '5'",
+    "observed_text": "LA FOGLIA RESTAURANT\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-foglia-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PERLA BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA PERLA BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     413.74,
+     502.52,
+     416.59
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'LA PERLA BAR', printed deck '18'",
+    "observed_text": "LA PERLA BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-perla-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PLAGE WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LA PLAGE WHIRLPOOL BATH on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.58,
+     421.04,
+     286.83,
+     423.88
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'LA PLAGE WHIRLPOOL BATH', printed deck '19'",
+    "observed_text": "LA PLAGE WHIRLPOOL BATH\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:la-plage-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LEGO ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LEGO ROOM on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     483.1,
+     287.41,
+     485.95
+    ],
+    "text": "Page 10, table 'Family Areas', row 'LEGO ROOM', printed deck '19'",
+    "observed_text": "LEGO ROOM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:lego-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LES DUNES RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LES DUNES RESTAURANT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     384.63,
+     502.52,
+     387.48
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LES DUNES RESTAURANT', printed deck '8'",
+    "observed_text": "LES DUNES RESTAURANT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:les-dunes-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LUXURY ACCESSORIES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints LUXURY ACCESSORIES on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     376.96,
+     286.84,
+     379.81
+    ],
+    "text": "Page 6, table 'Shops', row 'LUXURY ACCESSORIES', printed deck '8'",
+    "observed_text": "LUXURY ACCESSORIES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:luxury-accessories"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MAR AZUL",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "18-19"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     323.57,
+     286.75,
+     326.42
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MAR AZUL', printed deck '18'",
+    "observed_text": "MAR AZUL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 18-19"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:mar-azul"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASTERS OF THE SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MASTERS OF THE SEA on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     413.74,
+     286.84,
+     416.59
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MASTERS OF THE SEA', printed deck '7'",
+    "observed_text": "MASTERS OF THE SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:masters-of-the-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MEDI SPA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     432.94,
+     286.83,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA', printed deck '8'",
+    "observed_text": "MEDI SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:medi-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MINI CLUB (3 to 6 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     376.06,
+     501.98,
+     378.91
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB (3 to 6 years)', printed deck '19'",
+    "observed_text": "MINI CLUB (3 to 6 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:mini-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC AUREA SPA on deck(s) 8.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     319.32,
+     500.94,
+     322.17
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '8'",
+    "observed_text": "MSC AUREA SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-8"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     388.86,
+     286.84,
+     391.71
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '6-8'",
+    "observed_text": "MSC EXCURSIONS\n6-8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 6-8, index [6]"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC FORMULA RACER on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     397.96,
+     286.84,
+     400.8
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '19'",
+    "observed_text": "MSC FORMULA RACER\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     335.47,
+     286.75,
+     338.33
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '20'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM® \n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC LUNA PARK ARENA",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     409.86,
+     286.84,
+     412.71
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC LUNA PARK ARENA', printed deck '5-6'",
+    "observed_text": "MSC LUNA PARK ARENA\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5-6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 5-6, index [5]"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-luna-park-arena"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC SHOP on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     400.77,
+     286.84,
+     403.62
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '7'",
+    "observed_text": "MSC SHOP\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SIGNATURE CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     425.65,
+     286.84,
+     428.49
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+    "observed_text": "MSC SIGNATURE CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-signature-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SPORTPLEX",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "20",
+    "20-21"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     347.38,
+     286.75,
+     350.23
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC SPORTPLEX', printed deck '20'",
+    "observed_text": "MSC SPORTPLEX\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20-21"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20-21"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 20, 20-21"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-sportplex"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC YACHT CLUB CONCIERGE AREA on deck(s) 19.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     331.27,
+     500.94,
+     334.12
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB CONCIERGE AREA', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB CONCIERGE AREA\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "21"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     343.18,
+     500.94,
+     346.02
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '21'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n21"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "21"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20,
+     21
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 21, index [20, 21]"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB LANAI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    21
+   ],
+   "printed_tokens": [
+    "21"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC YACHT CLUB LANAI on deck(s) 21.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     355.08,
+     500.94,
+     357.93
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB LANAI', printed deck '21'",
+    "observed_text": "MSC YACHT CLUB LANAI\n21"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "21"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     21
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-lanai"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 20.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     366.98,
+     500.94,
+     369.83
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    22
+   ],
+   "printed_tokens": [
+    "22"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC YACHT CLUB SUNDECK & POOL on deck(s) 22.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     378.89,
+     500.94,
+     381.74
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & POOL', printed deck '22'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & POOL\n22"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "22"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     22
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-sundeck-and-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints MSC YACHT CLUB TOP SAIL LOUNGE on deck(s) 19.",
+   "locator": {
+    "page": 17,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.81,
+     390.79,
+     500.94,
+     393.64
+    ],
+    "text": "Page 17, table 'MSC Yacht Club', row 'MSC YACHT CLUB TOP SAIL LOUNGE', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB TOP SAIL LOUNGE\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 17,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:msc-yacht-club-top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints NAIL SERVICES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     361.46,
+     502.52,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SERVICES', printed deck '8'",
+    "observed_text": "NAIL SERVICES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:nail-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OMEGA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints OMEGA on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     341.25,
+     502.52,
+     344.1
+    ],
+    "text": "Page 6, table 'Shops', row 'OMEGA', printed deck '8'",
+    "observed_text": "OMEGA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:omega"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PANORAMA LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     362.24,
+     501.42,
+     365.09
+    ],
+    "text": "Page 9, table 'Fun', row 'PANORAMA LOUNGE', printed deck '7'",
+    "observed_text": "PANORAMA LOUNGE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 7, index [6]"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:panorama-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PAXOS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints PAXOS on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     408.44,
+     502.52,
+     411.29
+    ],
+    "text": "Page 4, table 'Restaurants', row 'PAXOS', printed deck '8'",
+    "observed_text": "PAXOS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:paxos"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PIZZA & BURGER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints PIZZA & BURGER on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     396.53,
+     502.52,
+     399.38
+    ],
+    "text": "Page 4, table 'Restaurants', row 'PIZZA & BURGER', printed deck '6'",
+    "observed_text": "PIZZA & BURGER\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:pizza-and-burger"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints RECEPTION on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     373.41,
+     502.52,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '8'",
+    "observed_text": "RECEPTION\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHOPPING GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints SHOPPING GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     353.15,
+     502.52,
+     356.0
+    ],
+    "text": "Page 6, table 'Shops', row 'SHOPPING GALLERY', printed deck '6'",
+    "observed_text": "SHOPPING GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:shopping-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints SOLARIUM on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     385.32,
+     502.52,
+     388.16
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM', printed deck '8'",
+    "observed_text": "SOLARIUM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints SPA BOUTIQUE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     397.22,
+     502.52,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SPA BOUTIQUE', printed deck '8'",
+    "observed_text": "SPA BOUTIQUE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:spa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SWEET TEMPTATIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints SWEET TEMPTATIONS on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     437.55,
+     286.84,
+     440.4
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SWEET TEMPTATIONS', printed deck '8'",
+    "observed_text": "SWEET TEMPTATIONS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:sweet-temptations"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEENS CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints TEENS CLUB (15 to 17 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     435.58,
+     501.98,
+     438.43
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEENS CLUB (15 to 17 years)', printed deck '19'",
+    "observed_text": "TEENS CLUB (15 to 17 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:teens-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE BOX BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE BOX BAR on deck(s) 20.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     449.45,
+     286.84,
+     452.3
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE BOX BAR', printed deck '20'",
+    "observed_text": "THE BOX BAR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-box-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE GIN PROJECT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE GIN PROJECT on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     461.36,
+     286.84,
+     464.21
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE GIN PROJECT', printed deck '8'",
+    "observed_text": "THE GIN PROJECT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-gin-project"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HARBOUR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE HARBOUR on deck(s) 20.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     437.55,
+     502.52,
+     440.4
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE HARBOUR', printed deck '20'",
+    "observed_text": "THE HARBOUR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-harbour"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     365.06,
+     502.52,
+     367.91
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '7'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE LANAI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE LANAI BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     473.26,
+     286.84,
+     476.11
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE LANAI BAR', printed deck '8'",
+    "observed_text": "THE LANAI BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-lanai-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE LOFT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE LOFT on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     354.17,
+     502.52,
+     357.02
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'THE LOFT', printed deck '8'",
+    "observed_text": "THE LOFT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-loft"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THE STUDIO on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     447.49,
+     501.98,
+     450.34
+    ],
+    "text": "Page 10, table 'Family Areas', row 'THE STUDIO', printed deck '19'",
+    "observed_text": "THE STUDIO\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:the-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints THERMAL AREA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     409.12,
+     502.52,
+     411.97
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '8'",
+    "observed_text": "THERMAL AREA \n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 20 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints TOP 20 EXCLUSIVE SOLARIUM on deck(s) 20.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     432.93,
+     502.52,
+     435.78
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 20 EXCLUSIVE SOLARIUM', printed deck '20'",
+    "observed_text": "TOP 20 EXCLUSIVE SOLARIUM\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:top-20-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TREATMENT SUITES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints TREATMENT SUITES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     309.26,
+     421.03,
+     502.52,
+     423.88
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TREATMENT SUITES', printed deck '8'",
+    "observed_text": "TREATMENT SUITES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:treatment-suites"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUAL ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints VIRTUAL ROOM on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     459.39,
+     501.98,
+     462.24
+    ],
+    "text": "Page 10, table 'Family Areas', row 'VIRTUAL ROOM', printed deck '19'",
+    "observed_text": "VIRTUAL ROOM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:virtual-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD OF WATCHES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints WORLD OF WATCHES on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     309.26,
+     376.96,
+     502.52,
+     379.81
+    ],
+    "text": "Page 6, table 'Shops', row 'WORLD OF WATCHES', printed deck '8'",
+    "observed_text": "WORLD OF WATCHES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:world-of-watches"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD PROMENADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints WORLD PROMENADE on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     386.05,
+     501.42,
+     388.9
+    ],
+    "text": "Page 9, table 'Fun', row 'WORLD PROMENADE', printed deck '8'",
+    "observed_text": "WORLD PROMENADE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:world-promenade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WORLD THEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-7",
+    "7"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     397.96,
+     501.42,
+     400.8
+    ],
+    "text": "Page 9, table 'Fun', row 'WORLD THEATRE', printed deck '7'",
+    "observed_text": "WORLD THEATRE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 6-7, 7"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:world-theatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 19.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     483.2,
+     501.97,
+     486.05
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '19'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-WORLD-AMERICA:young-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEN BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints ZEN BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     449.45,
+     502.52,
+     452.3
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ZEN BAR', printed deck '18'",
+    "observed_text": "ZEN BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:zen-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEN POOL (Adults-only Zen area)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints ZEN POOL (Adults-only Zen area) on deck(s) 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.48,
+     359.29,
+     286.74,
+     362.14
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'ZEN POOL (Adults-only Zen area)', printed deck '18'",
+    "observed_text": "ZEN POOL (Adults-only Zen area)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:zen-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-world-america",
+    "name": "MSC WORLD AMERICA",
+    "verified_imo": "IMO9837432",
+    "stored_imo": "IMO9837432",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC WORLD AMERICA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ZEST - JUICE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC WORLD AMERICA (SHA-256 f17d25c23930, version unknown) prints ZEST - JUICE BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     366.13,
+     502.52,
+     368.97
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ZEST - JUICE BAR', printed deck '8'",
+    "observed_text": "ZEST - JUICE BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 3,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-WORLD-AMERICA:zest-juice-bar"
+  }
+ ]
+}

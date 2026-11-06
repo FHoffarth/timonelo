@@ -1,0 +1,6029 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-seashore",
+  "name": "MSC SEASHORE",
+  "verified_imo": "IMO9843792",
+  "stored_imo": "IMO9805336",
+  "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+ },
+ "source": {
+  "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC SEASHORE SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "NEEDS REVIEW",
+ "first_review_batch": [
+  {
+   "id": "SH-MAP-01",
+   "name": "MARKETPLACE BUFFET & RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MARKETPLACE BUFFET & RESTAURANT on deck(s) 16.",
+   "value": [
+    16
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET & RESTAURANT', printed deck '16'",
+   "observed_text": "MARKETPLACE BUFFET & RESTAURANT\n16",
+   "entity_id": "venue:MSC-SEASHORE:marketplace-buffet-and-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.12,
+     377.28,
+     502.38,
+     382.63
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-02",
+   "name": "MSC SIGNATURE CASINO",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 5,
+   "locator": "Page 5, table 'Bars', row 'MSC SIGNATURE CASINO', printed deck '7'",
+   "observed_text": "MSC SIGNATURE CASINO\n7",
+   "entity_id": "venue:MSC-SEASHORE:msc-signature-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     425.63,
+     286.84,
+     430.98
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-03",
+   "name": "BUTCHER'S CUT",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BUTCHER'S CUT on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '8'",
+   "observed_text": "BUTCHER'S CUT\n8",
+   "entity_id": "venue:MSC-SEASHORE:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.53,
+     377.28,
+     287.8,
+     382.63
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-04",
+   "name": "CENTRAL PARK RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CENTRAL PARK RESTAURANT on deck(s) 5.",
+   "value": [
+    5
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'CENTRAL PARK RESTAURANT', printed deck '5'",
+   "observed_text": "CENTRAL PARK RESTAURANT\n5",
+   "entity_id": "venue:MSC-SEASHORE:central-park-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.53,
+     389.18,
+     287.8,
+     394.54
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-05",
+   "name": "CHEF'S COURT",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CHEF'S COURT on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row \"CHEF'S COURT\", printed deck '8'",
+   "observed_text": "CHEF'S COURT\n8",
+   "entity_id": "venue:MSC-SEASHORE:chefs-court",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.53,
+     401.09,
+     287.8,
+     406.44
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-06",
+   "name": "OCEAN CAY RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints OCEAN CAY RESTAURANT on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'OCEAN CAY RESTAURANT', printed deck '8'",
+   "observed_text": "OCEAN CAY RESTAURANT\n8",
+   "entity_id": "venue:MSC-SEASHORE:ocean-cay-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.12,
+     389.19,
+     502.38,
+     394.54
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-07",
+   "name": "RED CACTUS BBQ & RIBS",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints RED CACTUS BBQ & RIBS on deck(s) 8.",
+   "value": [
+    8
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'RED CACTUS BBQ & RIBS', printed deck '8'",
+   "observed_text": "RED CACTUS BBQ & RIBS\n8",
+   "entity_id": "venue:MSC-SEASHORE:red-cactus-bbq-and-ribs",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.12,
+     401.09,
+     502.38,
+     406.44
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "SH-MAP-08",
+   "name": "THE CHICKEN MAN",
+   "exact_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE CHICKEN MAN on deck(s) 18.",
+   "value": [
+    18
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+   "target_vessel": "IMO9843792",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'THE CHICKEN MAN', printed deck '18'",
+   "observed_text": "THE CHICKEN MAN\n18",
+   "entity_id": "venue:MSC-SEASHORE:the-chicken-man",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.12,
+     412.99,
+     502.38,
+     418.35
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "SH-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "SH-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "5 AVENUE RESTAURANT",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "MADISON THEATRE",
+   "index_decks": [
+    6,
+    7
+   ]
+  },
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "SEASHORE RECEPTION GUEST SERVICE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "TENDER ACCESS",
+   "index_decks": [
+    4
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "5 AVENUE RESTAURANT TH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints 5 AVENUE RESTAURANT TH on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.54,
+     365.33,
+     287.8,
+     370.68
+    ],
+    "text": "Page 4, table 'Restaurants', row '5 AVENUE RESTAURANT TH', printed deck '7'",
+    "observed_text": "5TH AVENUE RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:5-avenue-restaurant-th"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ACCESSORIES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints ACCESSORIES on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     368.32,
+     287.41,
+     373.67
+    ],
+    "text": "Page 6, table 'Shops', row 'ACCESSORIES', printed deck '6'",
+    "observed_text": "ACCESSORIES\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:accessories"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ADVENTURE TRAIL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints ADVENTURE TRAIL on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     438.84,
+     286.84,
+     444.19
+    ],
+    "text": "Page 9, table 'Fun', row 'ADVENTURE TRAIL', printed deck '19'",
+    "observed_text": "ADVENTURE TRAIL\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:adventure-trail"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BABY CLUB CHICCO (under 3 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.55,
+     483.13,
+     287.82,
+     488.48
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO (under 3 years)', printed deck '18'",
+    "observed_text": "BABY CLUB CHICCO (under 3 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BARBER SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BARBER SHOP on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     359.39,
+     286.43,
+     364.75
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BARBER SHOP', printed deck '8'",
+    "observed_text": "BARBER SHOP\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:barber-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAT HERO VR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BEAT HERO VR on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     450.79,
+     286.84,
+     456.14
+    ],
+    "text": "Page 9, table 'Fun', row 'BEAT HERO VR', printed deck '18'",
+    "observed_text": "BEAT HERO VR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:beat-hero-vr"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAUTY SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BEAUTY SERVICES on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     371.35,
+     286.43,
+     376.7
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BEAUTY SERVICES', printed deck '8'",
+    "observed_text": "BEAUTY SERVICES\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:beauty-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOULEVARD DU CABARET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BOULEVARD DU CABARET on deck(s) 7.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     462.7,
+     286.84,
+     468.05
+    ],
+    "text": "Page 9, table 'Fun', row 'BOULEVARD DU CABARET', printed deck '7'",
+    "observed_text": "BOULEVARD DU CABARET\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:boulevard-du-cabaret"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     380.27,
+     287.41,
+     385.62
+    ],
+    "text": "Page 6, table 'Shops', row 'BOUTIQUE', printed deck '6'",
+    "observed_text": "BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BRIDGE OF SIGHS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BRIDGE OF SIGHS on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     474.6,
+     286.84,
+     479.95
+    ],
+    "text": "Page 9, table 'Fun', row 'BRIDGE OF SIGHS', printed deck '16'",
+    "observed_text": "BRIDGE OF SIGHS\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:bridge-of-sighs"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BROADCASTING ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BROADCASTING ROOM on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     486.5,
+     286.84,
+     491.86
+    ],
+    "text": "Page 9, table 'Fun', row 'BROADCASTING ROOM', printed deck '8'",
+    "observed_text": "BROADCASTING ROOM\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:broadcasting-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BROOKLYN CAFÈ",
+   "other_printed_labels": [
+    "BROOKLYN CAFÉ"
+   ],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BROOKLYN CAFÈ on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     366.06,
+     286.84,
+     371.42
+    ],
+    "text": "Page 5, table 'Bars', row 'BROOKLYN CAFÈ', printed deck '8'",
+    "observed_text": "BROOKLYN CAFÈ\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:brooklyn-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER'S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints BUTCHER'S CUT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     377.28,
+     287.8,
+     382.63
+    ],
+    "text": "Page 4, table 'Restaurants', row \"BUTCHER'S CUT\", printed deck '8'",
+    "observed_text": "BUTCHER'S CUT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CENTRAL PARK RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CENTRAL PARK RESTAURANT on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     389.18,
+     287.8,
+     394.54
+    ],
+    "text": "Page 4, table 'Restaurants', row 'CENTRAL PARK RESTAURANT', printed deck '5'",
+    "observed_text": "CENTRAL PARK RESTAURANT\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:central-park-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHAMPAGNE & WINE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CHAMPAGNE & WINE BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     378.02,
+     286.84,
+     383.37
+    ],
+    "text": "Page 5, table 'Bars', row 'CHAMPAGNE & WINE BAR', printed deck '7'",
+    "observed_text": "CHAMPAGNE & WINE BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:champagne-and-wine-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHEF'S COURT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CHEF'S COURT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     401.09,
+     287.8,
+     406.44
+    ],
+    "text": "Page 4, table 'Restaurants', row \"CHEF'S COURT\", printed deck '8'",
+    "observed_text": "CHEF'S COURT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:chefs-court"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "COCKTAIL BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints COCKTAIL BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     389.92,
+     286.84,
+     395.27
+    ],
+    "text": "Page 5, table 'Bars', row 'COCKTAIL BAR', printed deck '8'",
+    "observed_text": "COCKTAIL BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:cocktail-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints CONCIERGE AREA on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     303.7,
+     500.28,
+     309.05
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '16'",
+    "observed_text": "CONCIERGE AREA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DUTY FREE *",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints DUTY FREE * on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     392.18,
+     287.4,
+     397.53
+    ],
+    "text": "Page 6, table 'Shops', row 'DUTY FREE *', printed deck '6'",
+    "observed_text": "DUTY FREE*\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:duty-free"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EMOTIONS - IMMERSIVE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints EMOTIONS - IMMERSIVE GALLERY on deck(s) 5.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     510.31,
+     286.84,
+     515.66
+    ],
+    "text": "Page 9, table 'Fun', row 'EMOTIONS - IMMERSIVE GALLERY', printed deck '5'",
+    "observed_text": "EMOTIONS - IMMERSIVE GALLERY\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:emotions-immersive-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FASHION JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints FASHION JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     404.08,
+     287.4,
+     409.44
+    ],
+    "text": "Page 6, table 'Shops', row 'FASHION JEWELLERY', printed deck '8'",
+    "observed_text": "FASHION JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:fashion-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints FINE JEWELLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     415.99,
+     287.4,
+     421.34
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE JEWELLERY', printed deck '8'",
+    "observed_text": "FINE JEWELLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:fine-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE WATCHES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints FINE WATCHES on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     427.89,
+     287.4,
+     433.24
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE WATCHES', printed deck '6'",
+    "observed_text": "FINE WATCHES \n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:fine-watches"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints HAIR SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     383.25,
+     286.43,
+     388.6
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '8'",
+    "observed_text": "HAIR SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HALL OF GAMES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints HALL OF GAMES on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     522.22,
+     286.84,
+     527.57
+    ],
+    "text": "Page 9, table 'Fun', row 'HALL OF GAMES', printed deck '18'",
+    "observed_text": "HALL OF GAMES\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:hall-of-games"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     412.99,
+     287.8,
+     418.34
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '8'",
+    "observed_text": "HOLA! TACOS & CANTINA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints HORIZON BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     413.68,
+     501.42,
+     419.03
+    ],
+    "text": "Page 5, table 'Bars', row 'HORIZON BAR', printed deck '19'",
+    "observed_text": "HORIZON BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:horizon-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints INFINITY BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     425.63,
+     501.42,
+     430.98
+    ],
+    "text": "Page 5, table 'Bars', row 'INFINITY BAR', printed deck '8'",
+    "observed_text": "INFINITY BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:infinity-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BRIDGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints INFINITY BRIDGE on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     534.12,
+     286.84,
+     539.47
+    ],
+    "text": "Page 9, table 'Fun', row 'INFINITY BRIDGE', printed deck '8'",
+    "observed_text": "INFINITY BRIDGE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:infinity-bridge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints INFINITY POOL on deck(s) 8.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.58,
+     294.32,
+     286.84,
+     299.67
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'INFINITY POOL', printed deck '8'",
+    "observed_text": "INFINITY POOL\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:infinity-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY WHIRLPOOLS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints INFINITY WHIRLPOOLS on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     395.15,
+     286.43,
+     400.51
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'INFINITY WHIRLPOOLS', printed deck '8'",
+    "observed_text": "INFINITY WHIRLPOOLS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:infinity-whirlpools"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INTERACTIVE XD CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18",
+    "7"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     93.57,
+     557.93,
+     286.84,
+     563.28
+    ],
+    "text": "Page 9, table 'Fun', row 'INTERACTIVE XD CINEMA', printed deck '18'",
+    "observed_text": "INTERACTIVE XD CINEMA\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 18, 7"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:interactive-xd-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints IRIS GALERIE on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     439.8,
+     287.4,
+     445.15
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '8'",
+    "observed_text": "IRIS GALERIE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL BEACH BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints JUNGLE POOL BEACH BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     401.82,
+     286.84,
+     407.18
+    ],
+    "text": "Page 5, table 'Bars', row 'JUNGLE POOL BEACH BAR', printed deck '16'",
+    "observed_text": "JUNGLE POOL BEACH BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:jungle-pool-beach-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16,
+    18
+   ],
+   "printed_tokens": [
+    "16-18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints JUNGLE POOL LOUNGE on deck(s) 16, 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.58,
+     306.27,
+     286.85,
+     311.62
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'JUNGLE POOL LOUNGE', printed deck '16-18'",
+    "observed_text": "JUNGLE POOL LOUNGE\n16-18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16-18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16-18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16-18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16,
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:jungle-pool-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNGLE POOL LOUNGE WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints JUNGLE POOL LOUNGE WHIRLPOOL BATH on deck(s) 16.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     407.06,
+     286.43,
+     412.41
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'JUNGLE POOL LOUNGE WHIRLPOOL BATH', printed deck '16'",
+    "observed_text": "JUNGLE POOL LOUNGE WHIRLPOOL BATH\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:jungle-pool-lounge-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIORS CLUB (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints JUNIORS CLUB (7 to 11 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.55,
+     590.27,
+     287.82,
+     595.62
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIORS CLUB (7 to 11 years)', printed deck '18'",
+    "observed_text": "JUNIORS CLUB (7 to 11 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:juniors-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints KAITO SUSHI BAR on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     424.9,
+     287.8,
+     430.25
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '8'",
+    "observed_text": "KAITO SUSHI BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints KAITO TEPPANYAKI on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     94.53,
+     436.8,
+     287.8,
+     442.15
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '8'",
+    "observed_text": "KAITO TEPPANYAKI\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE CABARET ROUGE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": null,
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     413.73,
+     286.84,
+     419.08
+    ],
+    "text": "Page 5, table 'Bars', row 'LE CABARET ROUGE', printed deck '6-7'",
+    "observed_text": "LE CABARET ROUGE\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6-7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:le-cabaret-rouge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LIBERTY PLAZA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints LIBERTY PLAZA on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     94.14,
+     451.7,
+     287.4,
+     457.05
+    ],
+    "text": "Page 6, table 'Shops', row 'LIBERTY PLAZA', printed deck '8'",
+    "observed_text": "LIBERTY PLAZA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:liberty-plaza"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LONG ISLAND BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints LONG ISLAND BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     437.53,
+     501.42,
+     442.89
+    ],
+    "text": "Page 5, table 'Bars', row 'LONG ISLAND BAR', printed deck '18'",
+    "observed_text": "LONG ISLAND BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:long-island-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LONG ISLAND POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints LONG ISLAND POOL on deck(s) 18.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.58,
+     318.17,
+     286.84,
+     323.52
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'LONG ISLAND POOL', printed deck '18'",
+    "observed_text": "LONG ISLAND POOL\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:long-island-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LONG ISLAND POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints LONG ISLAND POOL WHIRLPOOL BATH on deck(s) 18.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     418.96,
+     286.43,
+     424.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'LONG ISLAND POOL WHIRLPOOL BATH', printed deck '18'",
+    "observed_text": "LONG ISLAND POOL WHIRLPOOL BATH\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:long-island-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MADISON THEATER",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     462.7,
+     501.42,
+     468.05
+    ],
+    "text": "Page 9, table 'Fun', row 'MADISON THEATER', printed deck '6-7'",
+    "observed_text": "MADISON THEATER\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:madison-theater"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MANHATTAN RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MANHATTAN RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     365.33,
+     502.38,
+     370.68
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MANHATTAN RESTAURANT', printed deck '7'",
+    "observed_text": "MANHATTAN RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:manhattan-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BUFFET & RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MARKETPLACE BUFFET & RESTAURANT on deck(s) 16.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     377.28,
+     502.38,
+     382.63
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET & RESTAURANT', printed deck '16'",
+    "observed_text": "MARKETPLACE BUFFET & RESTAURANT\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:marketplace-buffet-and-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASSAGES & TREATMENTS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MASSAGES & TREATMENTS on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.16,
+     430.87,
+     286.43,
+     436.22
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MASSAGES & TREATMENTS', printed deck '8'",
+    "observed_text": "MASSAGES & TREATMENTS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:massages-and-treatments"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA CENTRE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MEDI SPA CENTRE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     359.39,
+     501.01,
+     364.75
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA CENTRE', printed deck '8'",
+    "observed_text": "MEDI SPA CENTRE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:medi-spa-centre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MINI CLUB (3 to 6 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     483.13,
+     502.4,
+     488.48
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB (3 to 6 years)', printed deck '18'",
+    "observed_text": "MINI CLUB (3 to 6 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:mini-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC AUREA BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     461.34,
+     501.42,
+     466.69
+    ],
+    "text": "Page 5, table 'Bars', row 'MSC AUREA BAR', printed deck '19'",
+    "observed_text": "MSC AUREA BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:msc-aurea-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC AUREA SPA on deck(s) 8.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     315.65,
+     500.28,
+     321.0
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '8'",
+    "observed_text": "MSC AUREA SPA\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    8
+   ],
+   "printed_tokens": [
+    "6-8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC EXCURSIONS on deck(s) 6, 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     368.32,
+     501.99,
+     373.67
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '6-8'",
+    "observed_text": "MSC EXCURSIONS\n6-8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     474.6,
+     501.42,
+     479.95
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '18'",
+    "observed_text": "MSC FORMULA RACER\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 18, index [7]"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 8.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.58,
+     330.08,
+     286.84,
+     335.43
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '8'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM®\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC SHOP on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     380.27,
+     501.99,
+     385.62
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '8'",
+    "observed_text": "MSC SHOP\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SIGNATURE CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     425.63,
+     286.84,
+     430.98
+    ],
+    "text": "Page 5, table 'Bars', row 'MSC SIGNATURE CASINO', printed deck '7'",
+    "observed_text": "MSC SIGNATURE CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-signature-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SPORTS ARENA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC SPORTS ARENA on deck(s) 20.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     341.99,
+     286.84,
+     347.34
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC SPORTS ARENA', printed deck '20'",
+    "observed_text": "MSC SPORTS ARENA\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "20"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "20"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-sports-arena"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     327.56,
+     500.28,
+     332.91
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC YACHT CLUB POOL on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     339.46,
+     500.28,
+     344.81
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB POOL', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-yacht-club-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 18.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     351.36,
+     500.28,
+     356.72
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '18'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    20
+   ],
+   "printed_tokens": [
+    "20"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints MSC YACHT CLUB SUNDECK & POOL on deck(s) 20.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     363.27,
+     500.28,
+     368.62
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & POOL', printed deck '20'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & POOL\n20"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "20"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     20
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:msc-yacht-club-sundeck-and-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints NAIL SALON on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     371.35,
+     501.01,
+     376.7
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SALON', printed deck '8'",
+    "observed_text": "NAIL SALON\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:nail-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OCEAN CAY RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints OCEAN CAY RESTAURANT on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     389.19,
+     502.38,
+     394.54
+    ],
+    "text": "Page 4, table 'Restaurants', row 'OCEAN CAY RESTAURANT', printed deck '8'",
+    "observed_text": "OCEAN CAY RESTAURANT\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:ocean-cay-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PERFUMES & COSMETICS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints PERFUMES & COSMETICS on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     392.18,
+     501.99,
+     397.53
+    ],
+    "text": "Page 6, table 'Shops', row 'PERFUMES & COSMETICS', printed deck '6'",
+    "observed_text": "PERFUMES & COSMETICS\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:perfumes-and-cosmetics"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PIRATES COVE AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18,
+    19
+   ],
+   "printed_tokens": [
+    "18-19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints PIRATES COVE AQUAPARK on deck(s) 18, 19.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     353.89,
+     286.84,
+     359.24
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'PIRATES COVE AQUAPARK', printed deck '18-19'",
+    "observed_text": "PIRATES COVE AQUAPARK\n18-19"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "18-19"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18-19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18-19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18,
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:pirates-cove-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints RECEPTION on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     383.25,
+     501.01,
+     388.6
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '8'",
+    "observed_text": "RECEPTION\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RED CACTUS BBQ & RIBS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints RED CACTUS BBQ & RIBS on deck(s) 8.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     401.09,
+     502.38,
+     406.44
+    ],
+    "text": "Page 4, table 'Restaurants', row 'RED CACTUS BBQ & RIBS', printed deck '8'",
+    "observed_text": "RED CACTUS BBQ & RIBS\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:red-cactus-bbq-and-ribs"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SEASHORE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints SEASHORE BAR on deck(s) 5.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     437.54,
+     286.84,
+     442.89
+    ],
+    "text": "Page 5, table 'Bars', row 'SEASHORE BAR', printed deck '5'",
+    "observed_text": "SEASHORE BAR\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:seashore-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHINE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints SHINE BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     449.44,
+     286.84,
+     454.79
+    ],
+    "text": "Page 5, table 'Bars', row 'SHINE BAR', printed deck '6'",
+    "observed_text": "SHINE BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:shine-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints SKY BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     449.44,
+     501.42,
+     454.79
+    ],
+    "text": "Page 5, table 'Bars', row 'SKY BAR', printed deck '16'",
+    "observed_text": "SKY BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:sky-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints SPA BOUTIQUE on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     395.15,
+     501.01,
+     400.51
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SPA BOUTIQUE', printed deck '8'",
+    "observed_text": "SPA BOUTIQUE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:spa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints SPORTS BAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     461.34,
+     286.84,
+     466.7
+    ],
+    "text": "Page 5, table 'Bars', row 'SPORTS BAR', printed deck '8'",
+    "observed_text": "SPORTS BAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:sports-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEEN CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TEEN CLUB (15 to 17 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     530.75,
+     502.4,
+     536.1
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEEN CLUB (15 to 17 years)', printed deck '18'",
+    "observed_text": "TEEN CLUB (15 to 17 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:teen-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE CHICKEN MAN",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE CHICKEN MAN on deck(s) 18.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     412.99,
+     502.38,
+     418.35
+    ],
+    "text": "Page 4, table 'Restaurants', row 'THE CHICKEN MAN', printed deck '18'",
+    "observed_text": "THE CHICKEN MAN\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:the-chicken-man"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE GALLERY on deck(s) 8.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     404.08,
+     501.99,
+     409.43
+    ],
+    "text": "Page 6, table 'Shops', row 'THE GALLERY', printed deck '8'",
+    "observed_text": "THE GALLERY\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:the-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 5.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     415.98,
+     501.99,
+     421.34
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '5'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE STUDIO on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     542.65,
+     502.4,
+     548.0
+    ],
+    "text": "Page 10, table 'Family Areas', row 'THE STUDIO', printed deck '18'",
+    "observed_text": "THE STUDIO\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:the-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE WINE CELLAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THE WINE CELLAR on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     93.57,
+     473.25,
+     286.84,
+     478.6
+    ],
+    "text": "Page 5, table 'Bars', row 'THE WINE CELLAR', printed deck '8'",
+    "observed_text": "THE WINE CELLAR\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:the-wine-cellar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints THERMAL AREA on deck(s) 8.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     407.06,
+     501.01,
+     412.41
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '8'",
+    "observed_text": "THERMAL AREA \n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIMELESS STUDIO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TIMELESS STUDIO on deck(s) 5.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     427.89,
+     501.99,
+     433.24
+    ],
+    "text": "Page 6, table 'Shops', row 'TIMELESS STUDIO', printed deck '5'",
+    "observed_text": "TIMELESS STUDIO\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:timeless-studio"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIMES SQUARE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TIMES SQUARE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     439.79,
+     501.99,
+     445.14
+    ],
+    "text": "Page 6, table 'Shops', row 'TIMES SQUARE', printed deck '6'",
+    "observed_text": "TIMES SQUARE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:times-square"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TOP 19 EXCLUSIVE SOLARIUM on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     307.74,
+     418.96,
+     501.01,
+     424.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 19 EXCLUSIVE SOLARIUM', printed deck '19'",
+    "observed_text": "TOP 19 EXCLUSIVE SOLARIUM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:top-19-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TOP SAIL LOUNGE on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.15,
+     375.17,
+     500.28,
+     380.52
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '16'",
+    "observed_text": "TOP SAIL LOUNGE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TRIBECA RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints TRIBECA RESTAURANT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.12,
+     424.9,
+     502.38,
+     430.25
+    ],
+    "text": "Page 4, table 'Restaurants', row 'TRIBECA RESTAURANT', printed deck '6'",
+    "observed_text": "TRIBECA RESTAURANT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:tribeca-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "UPTOWN LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints UPTOWN LOUNGE on deck(s) 8.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     366.11,
+     501.42,
+     371.46
+    ],
+    "text": "Page 5, table 'Bars', row 'UPTOWN LOUNGE', printed deck '8'",
+    "observed_text": "UPTOWN LOUNGE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "8"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     8
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:uptown-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VENCHI 1878 CHOCOLATE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints VENCHI 1878 CHOCOLATE BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars",
+    "row_box": [
+     308.16,
+     378.02,
+     501.42,
+     383.37
+    ],
+    "text": "Page 5, table 'Bars', row 'VENCHI 1878 CHOCOLATE BAR', printed deck '6'",
+    "observed_text": "VENCHI 1878 CHOCOLATE BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:venchi-1878-chocolate-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VR RAFTING",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints VR RAFTING on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     557.93,
+     501.42,
+     563.28
+    ],
+    "text": "Page 9, table 'Fun', row 'VR RAFTING', printed deck '18'",
+    "observed_text": "VR RAFTING\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:vr-rafting"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WATCHES & SUNGLASSES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints WATCHES & SUNGLASSES on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     451.7,
+     501.99,
+     457.05
+    ],
+    "text": "Page 6, table 'Shops', row 'WATCHES & SUNGLASSES', printed deck '7'",
+    "observed_text": "WATCHES & SUNGLASSES\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:watches-and-sunglasses"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WATERFRONT PROMENADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    8
+   ],
+   "printed_tokens": [
+    "8"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints WATERFRONT PROMENADE on deck(s) 8.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.16,
+     569.83,
+     501.42,
+     575.18
+    ],
+    "text": "Page 9, table 'Fun', row 'WATERFRONT PROMENADE', printed deck '8'",
+    "observed_text": "WATERFRONT PROMENADE\n8"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "8"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-SEASHORE:waterfront-promenade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-seashore",
+    "name": "MSC SEASHORE",
+    "verified_imo": "IMO9843792",
+    "stored_imo": "IMO9805336",
+    "identity_state": "BLOCKED_STORED_IMO_9805336_AWAITS_OWNER_DECISION"
+   },
+   "source": {
+    "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC SEASHORE SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC SEASHORE (SHA-256 cedd7c9d5e77, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     309.14,
+     578.36,
+     502.4,
+     583.72
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '18'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-SEASHORE:young-club"
+  }
+ ]
+}

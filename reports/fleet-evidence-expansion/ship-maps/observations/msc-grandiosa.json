@@ -1,0 +1,5791 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-grandiosa",
+  "name": "MSC GRANDIOSA",
+  "verified_imo": "IMO9803613",
+  "stored_imo": "IMO9803613",
+  "identity_state": "CANONICAL_MATCHES_VERIFIED"
+ },
+ "source": {
+  "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC GRANDIOSA SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "ELIGIBLE CANDIDATE",
+ "first_review_batch": [
+  {
+   "id": "GR-MAP-01",
+   "name": "THÉÂTRE LA COMÉDIE",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints THÉÂTRE LA COMÉDIE on deck(s) 5, 6.",
+   "value": [
+    5,
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 9,
+   "locator": "Page 9, table 'Fun', row 'THÉÂTRE LA COMÉDIE', printed deck '5-6'",
+   "observed_text": "THÉÂTRE LA COMÉDIE \n5-6",
+   "entity_id": "venue:MSC-GRANDIOSA:theatre-la-comedie",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     308.72,
+     413.31,
+     501.99,
+     416.15
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-02",
+   "name": "MARKETPLACE BUFFET",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "value": [
+    15
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+   "observed_text": "MARKETPLACE BUFFET\n15",
+   "entity_id": "venue:MSC-GRANDIOSA:marketplace-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     390.32,
+     502.52,
+     393.17
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-03",
+   "name": "LE GRAND CASINO",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LE GRAND CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 5,
+   "locator": "Page 5, table 'Bars - Lounges', row 'LE GRAND CASINO', printed deck '7'",
+   "observed_text": "LE GRAND CASINO\n7",
+   "entity_id": "venue:MSC-GRANDIOSA:le-grand-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     477.91,
+     286.84,
+     480.76
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-04",
+   "name": "BUTCHER’S CUT",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BUTCHER’S CUT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'BUTCHER’S CUT', printed deck '7'",
+   "observed_text": "BUTCHER’S CUT\n7",
+   "entity_id": "venue:MSC-GRANDIOSA:butchers-cut",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     342.65,
+     286.84,
+     345.5
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-05",
+   "name": "CAROUSEL LOUNGE",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+   "observed_text": "CAROUSEL LOUNGE\n7",
+   "entity_id": "venue:MSC-GRANDIOSA:carousel-lounge",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     354.61,
+     286.84,
+     357.45
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-06",
+   "name": "HOLA! TAPAS BAR",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HOLA! TAPAS BAR on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HOLA! TAPAS BAR', printed deck '6'",
+   "observed_text": "HOLA! TAPAS BAR\n6",
+   "entity_id": "venue:MSC-GRANDIOSA:hola-tapas-bar",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     366.51,
+     286.84,
+     369.36
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-07",
+   "name": "IL CAMPO RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+   "observed_text": "IL CAMPO RESTAURANT\n7",
+   "entity_id": "venue:MSC-GRANDIOSA:il-campo-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     378.42,
+     286.84,
+     381.27
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "GR-MAP-08",
+   "name": "KAITO SUSHI BAR",
+   "exact_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+   "target_vessel": "IMO9803613",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+   "observed_text": "KAITO SUSHI BAR\n7",
+   "entity_id": "venue:MSC-GRANDIOSA:kaito-sushi-bar",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.57,
+     390.32,
+     286.84,
+     393.17
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "GR-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "GR-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC BUSINESS CENTRE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MSC FOUNDATION",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "TENDER ACCESS",
+   "index_decks": [
+    4
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR NORTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATMOSPHERE BAR NORTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     442.14,
+     502.52,
+     444.99
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR NORTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR NORTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:atmosphere-bar-north"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR SOUTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATMOSPHERE BAR SOUTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     454.1,
+     502.52,
+     456.95
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR SOUTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR SOUTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:atmosphere-bar-south"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE ICE CREAM BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATMOSPHERE ICE CREAM BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     466.0,
+     502.52,
+     468.85
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE ICE CREAM BAR', printed deck '15'",
+    "observed_text": "ATMOSPHERE ICE CREAM BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:atmosphere-ice-cream-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATMOSPHERE POOL on deck(s) 15.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     308.22,
+     286.84,
+     311.07
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'ATMOSPHERE POOL', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "15"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:atmosphere-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATMOSPHERE POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     361.46,
+     286.84,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'ATMOSPHERE POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:atmosphere-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATTIC CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints ATTIC CLUB on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     370.71,
+     286.84,
+     373.56
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATTIC CLUB', printed deck '18'",
+    "observed_text": "ATTIC CLUB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:attic-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BABY CLUB CHICCO ® on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     446.71,
+     287.4,
+     449.56
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO ®', printed deck '18'",
+    "observed_text": "BABY CLUB CHICCO®\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:baby-club-chicco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BARBER SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BARBER SHOP on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     373.42,
+     286.84,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BARBER SHOP', printed deck '7'",
+    "observed_text": "BARBER SHOP\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:barber-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAUTY SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BEAUTY SERVICES on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     385.32,
+     286.84,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BEAUTY SERVICES', printed deck '7'",
+    "observed_text": "BEAUTY SERVICES\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:beauty-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOWLING",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BOWLING on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     389.49,
+     287.4,
+     392.34
+    ],
+    "text": "Page 9, table 'Fun', row 'BOWLING', printed deck '16'",
+    "observed_text": "BOWLING\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:bowling"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BUTCHER’S CUT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints BUTCHER’S CUT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     342.65,
+     286.84,
+     345.5
+    ],
+    "text": "Page 4, table 'Restaurants', row 'BUTCHER’S CUT', printed deck '7'",
+    "observed_text": "BUTCHER’S CUT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:butchers-cut"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CAROUSEL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     354.61,
+     286.84,
+     357.45
+    ],
+    "text": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+    "observed_text": "CAROUSEL LOUNGE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    },
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:carousel-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHAMPAGNE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints CHAMPAGNE BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     394.57,
+     286.84,
+     397.42
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'CHAMPAGNE BAR', printed deck '7'",
+    "observed_text": "CHAMPAGNE BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:champagne-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints CONCIERGE AREA on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     321.59,
+     500.95,
+     324.44
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '16'",
+    "observed_text": "CONCIERGE AREA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DOREMI LAB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints DOREMI LAB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     470.52,
+     287.4,
+     473.37
+    ],
+    "text": "Page 10, table 'Family Areas', row 'DOREMI LAB', printed deck '18'",
+    "observed_text": "DOREMI LAB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:doremi-lab"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EDGE - COCKTAIL BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints EDGE - COCKTAIL BAR on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     406.48,
+     286.84,
+     409.32
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'EDGE - COCKTAIL BAR', printed deck '6'",
+    "observed_text": "EDGE - COCKTAIL BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:edge-cocktail-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EMOTIONS - IMMERSIVE GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints EMOTIONS - IMMERSIVE GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     413.31,
+     287.4,
+     416.15
+    ],
+    "text": "Page 9, table 'Fun', row 'EMOTIONS - IMMERSIVE GALLERY', printed deck '6'",
+    "observed_text": "EMOTIONS - IMMERSIVE GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:emotions-immersive-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FASHION JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints FASHION JEWELLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     362.35,
+     286.84,
+     365.2
+    ],
+    "text": "Page 6, table 'Shops', row 'FASHION JEWELLERY', printed deck '6'",
+    "observed_text": "FASHION JEWELLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:fashion-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FITNESS CLASSES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints FITNESS CLASSES on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     320.18,
+     286.84,
+     323.03
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'FITNESS CLASSES', printed deck '16'",
+    "observed_text": "FITNESS CLASSES\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:fitness-classes"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GALLERIA GRANDIOSA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    7
+   ],
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints GALLERIA GRANDIOSA on deck(s) 6, 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     374.26,
+     286.84,
+     377.11
+    ],
+    "text": "Page 6, table 'Shops', row 'GALLERIA GRANDIOSA', printed deck '6-7'",
+    "observed_text": "GALLERIA GRANDIOSA\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:galleria-grandiosa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GRANDIOSA BAR & LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints GRANDIOSA BAR & LOUNGE on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     418.38,
+     286.84,
+     421.23
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'GRANDIOSA BAR & LOUNGE', printed deck '6'",
+    "observed_text": "GRANDIOSA BAR & LOUNGE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:grandiosa-bar-and-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GRANDIOSA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints GRANDIOSA BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     386.17,
+     286.84,
+     389.01
+    ],
+    "text": "Page 6, table 'Shops', row 'GRANDIOSA BOUTIQUE', printed deck '6'",
+    "observed_text": "GRANDIOSA BOUTIQUE \n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:grandiosa-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HAIR SALON on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     397.23,
+     286.84,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '7'",
+    "observed_text": "HAIR SALON\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HIMALAYAN BRIDGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HIMALAYAN BRIDGE on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     437.12,
+     287.4,
+     439.96
+    ],
+    "text": "Page 9, table 'Fun', row 'HIMALAYAN BRIDGE', printed deck '19'",
+    "observed_text": "HIMALAYAN BRIDGE \n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:himalayan-bridge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TAPAS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HOLA! TAPAS BAR on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     366.51,
+     286.84,
+     369.36
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TAPAS BAR', printed deck '6'",
+    "observed_text": "HOLA! TAPAS BAR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:hola-tapas-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON AMPHITHEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "16-18"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     449.02,
+     287.41,
+     451.87
+    ],
+    "text": "Page 9, table 'Fun', row 'HORIZON AMPHITHEATRE', printed deck '16-18'",
+    "observed_text": "HORIZON AMPHITHEATRE \n16-18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16-18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16-18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 16-18, index [16]"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:horizon-amphitheatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HORIZON BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     477.91,
+     502.52,
+     480.76
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'HORIZON BAR', printed deck '18'",
+    "observed_text": "HORIZON BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:horizon-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints HORIZON POOL on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     332.08,
+     286.84,
+     334.93
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'HORIZON POOL', printed deck '16'",
+    "observed_text": "HORIZON POOL\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:horizon-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IL CAMPO RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     378.42,
+     286.84,
+     381.27
+    ],
+    "text": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+    "observed_text": "IL CAMPO RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:il-campo-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints INFINITY BAR on deck(s) 5.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     430.29,
+     286.84,
+     433.14
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'INFINITY BAR', printed deck '5'",
+    "observed_text": "INFINITY BAR\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:infinity-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INTERACTIVE XD CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints INTERACTIVE XD CINEMA on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     472.83,
+     287.4,
+     475.68
+    ],
+    "text": "Page 9, table 'Fun', row 'INTERACTIVE XD CINEMA', printed deck '16'",
+    "observed_text": "INTERACTIVE XD CINEMA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:interactive-xd-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints IRIS GALERIE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     398.07,
+     286.84,
+     400.92
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '6'",
+    "observed_text": "IRIS GALERIE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CHOCOLAT & CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints JEAN-PHILIPPE CHOCOLAT & CAFÉ on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     442.19,
+     286.84,
+     445.04
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CHOCOLAT & CAFÉ', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CHOCOLAT & CAFÉ\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:jean-philippe-chocolat-and-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CRÊPES & GELATO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints JEAN-PHILIPPE CRÊPES & GELATO on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     454.1,
+     286.84,
+     456.95
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CRÊPES & GELATO', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CRÊPES & GELATO\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:jean-philippe-crepes-and-gelato"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIOR CLUB LEGO ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints JUNIOR CLUB LEGO ® on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     541.95,
+     287.4,
+     544.8
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIOR CLUB LEGO ®', printed deck '18'",
+    "observed_text": "JUNIOR CLUB LEGO®\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:junior-club-lego"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     390.32,
+     286.84,
+     393.17
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+    "observed_text": "KAITO SUSHI BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints KAITO TEPPANYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.57,
+     402.23,
+     286.84,
+     405.08
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '7'",
+    "observed_text": "KAITO TEPPANYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "L’ATELIER BISTROT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints L’ATELIER BISTROT on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     342.65,
+     502.52,
+     345.5
+    ],
+    "text": "Page 4, table 'Restaurants', row 'L’ATELIER BISTROT', printed deck '6'",
+    "observed_text": "L’ATELIER BISTROT\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    },
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:latelier-bistrot"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA GALLERIA (Duty Free * )",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LA GALLERIA (Duty Free * ) on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.57,
+     409.98,
+     286.84,
+     412.82
+    ],
+    "text": "Page 6, table 'Shops', row 'LA GALLERIA (Duty Free * )', printed deck '6'",
+    "observed_text": "LA GALLERIA (Duty Free*)\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:la-galleria"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA LOGGIA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LA LOGGIA on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     354.61,
+     502.52,
+     357.45
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA LOGGIA', printed deck '6'",
+    "observed_text": "LA LOGGIA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:la-loggia"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LA PERLA GRIGIA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LA PERLA GRIGIA on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     366.51,
+     502.52,
+     369.36
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LA PERLA GRIGIA', printed deck '6'",
+    "observed_text": "LA PERLA GRIGIA \n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:la-perla-grigia"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE GRAND CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LE GRAND CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     477.91,
+     286.84,
+     480.76
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'LE GRAND CASINO', printed deck '7'",
+    "observed_text": "LE GRAND CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:le-grand-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE PERLE GRISE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints LE PERLE GRISE on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     378.42,
+     502.52,
+     381.27
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LE PERLE GRISE', printed deck '6'",
+    "observed_text": "LE PERLE GRISE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:le-perle-grise"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MARKETPLACE BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     489.82,
+     286.84,
+     492.66
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MARKETPLACE BAR', printed deck '15'",
+    "observed_text": "MARKETPLACE BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:marketplace-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     390.32,
+     502.52,
+     393.17
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+    "observed_text": "MARKETPLACE BUFFET\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:marketplace-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASSAGES & TREATMENTS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MASSAGES & TREATMENTS on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     409.13,
+     286.84,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MASSAGES & TREATMENTS', printed deck '7'",
+    "observed_text": "MASSAGES & TREATMENTS\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:massages-and-treatments"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASTERS OF THE SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MASTERS OF THE SEA on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     501.72,
+     286.84,
+     504.57
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MASTERS OF THE SEA', printed deck '7'",
+    "observed_text": "MASTERS OF THE SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:masters-of-the-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MEDI SPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     421.04,
+     286.84,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA', printed deck '7'",
+    "observed_text": "MEDI SPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:medi-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB LEGO ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MINI CLUB LEGO ® on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     94.14,
+     553.86,
+     287.4,
+     556.71
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB LEGO ®', printed deck '18'",
+    "observed_text": "MINI CLUB LEGO®\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:mini-club-lego"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC AUREA SPA on deck(s) 7.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     333.54,
+     500.94,
+     336.39
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC AUREA SPA', printed deck '7'",
+    "observed_text": "MSC AUREA SPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-aurea-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC AUREA SPA RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC AUREA SPA RECEPTION on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.57,
+     432.94,
+     286.84,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MSC AUREA SPA RECEPTION', printed deck '7'",
+    "observed_text": "MSC AUREA SPA RECEPTION\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-aurea-spa-reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC EXCURSIONS on deck(s) 5, 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     362.3,
+     501.42,
+     365.15
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '5-6'",
+    "observed_text": "MSC EXCURSIONS\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC FORMULA RACER on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     365.68,
+     501.99,
+     368.53
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '16'",
+    "observed_text": "MSC FORMULA RACER\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     343.99,
+     286.84,
+     346.84
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '16'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM® \n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC SHOP on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     374.26,
+     501.42,
+     377.11
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '6'",
+    "observed_text": "MSC SHOP \n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     345.45,
+     500.95,
+     348.3
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC YACHT CLUB POOL on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     357.35,
+     500.95,
+     360.2
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB POOL', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB POOL\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-yacht-club-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 18.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     369.26,
+     500.95,
+     372.11
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '18'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints MSC YACHT CLUB SUNDECK & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     381.17,
+     500.95,
+     384.01
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & BAR \n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:msc-yacht-club-sundeck-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints NAIL SALON on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     361.46,
+     501.42,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SALON', printed deck '7'",
+    "observed_text": "NAIL SALON\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:nail-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OUTLET AT SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints OUTLET AT SEA on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     386.17,
+     501.42,
+     389.01
+    ],
+    "text": "Page 6, table 'Shops', row 'OUTLET AT SEA', printed deck '7'",
+    "observed_text": "OUTLET AT SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:outlet-at-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PHOTO GALLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints PHOTO GALLERY on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     398.07,
+     501.42,
+     400.92
+    ],
+    "text": "Page 6, table 'Shops', row 'PHOTO GALLERY', printed deck '6'",
+    "observed_text": "PHOTO GALLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:photo-gallery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PIAZZA DEL LUSSO (Duty Free * )",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints PIAZZA DEL LUSSO (Duty Free * ) on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.16,
+     409.98,
+     501.42,
+     412.82
+    ],
+    "text": "Page 6, table 'Shops', row 'PIAZZA DEL LUSSO (Duty Free * )', printed deck '6'",
+    "observed_text": "PIAZZA DEL LUSSO (Duty Free*)\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:piazza-del-lusso"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "POWER WALKING TRACK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints POWER WALKING TRACK on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     355.89,
+     286.84,
+     358.74
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'POWER WALKING TRACK', printed deck '16'",
+    "observed_text": "POWER WALKING TRACK\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:power-walking-track"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "PURPLE CRAB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints PURPLE CRAB on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.26,
+     402.23,
+     502.52,
+     405.08
+    ],
+    "text": "Page 4, table 'Restaurants', row 'PURPLE CRAB', printed deck '5'",
+    "observed_text": "PURPLE CRAB\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:purple-crab"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SAFARI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SAFARI BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     370.71,
+     502.52,
+     373.56
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SAFARI BAR', printed deck '15'",
+    "observed_text": "SAFARI BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:safari-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SAFARI POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "15",
+    "16"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     367.8,
+     286.84,
+     370.65
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'SAFARI POOL', printed deck '16'",
+    "observed_text": "SAFARI POOL\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "TABLES_DISAGREE: 15, 16"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:safari-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SAFARI POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SAFARI POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     373.42,
+     501.42,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SAFARI POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "SAFARI POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:safari-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHOP@MSCAUREASPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SHOP@MSCAUREASPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     385.32,
+     501.42,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SHOP@MSCAUREASPA', printed deck '7'",
+    "observed_text": "SHOP@MSCAUREASPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:shop-mscaureaspa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKY LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SKY LOUNGE on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     382.67,
+     502.52,
+     385.51
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SKY LOUNGE', printed deck '18'",
+    "observed_text": "SKY LOUNGE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:sky-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SOLARIUM on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     397.23,
+     501.42,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM', printed deck '7'",
+    "observed_text": "SOLARIUM\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SOLARIUM WHIRLPOOL BATH on deck(s) 16.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     409.13,
+     501.42,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM WHIRLPOOL BATH', printed deck '16'",
+    "observed_text": "SOLARIUM WHIRLPOOL BATH\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:solarium-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTPLEX",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SPORTPLEX on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     379.7,
+     286.84,
+     382.55
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'SPORTPLEX', printed deck '16'",
+    "observed_text": "SPORTPLEX\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:sportplex"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints SPORTS BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     394.57,
+     502.52,
+     397.42
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SPORTS BAR', printed deck '16'",
+    "observed_text": "SPORTS BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:sports-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEEN CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints TEEN CLUB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     470.52,
+     501.99,
+     473.37
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEEN CLUB', printed deck '18'",
+    "observed_text": "TEEN CLUB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:teen-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE ART WALL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints THE ART WALL on deck(s) 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     401.4,
+     501.99,
+     404.25
+    ],
+    "text": "Page 9, table 'Fun', row 'THE ART WALL', printed deck '6'",
+    "observed_text": "THE ART WALL\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:the-art-wall"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THÉÂTRE LA COMÉDIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints THÉÂTRE LA COMÉDIE on deck(s) 5, 6.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     413.31,
+     501.99,
+     416.15
+    ],
+    "text": "Page 9, table 'Fun', row 'THÉÂTRE LA COMÉDIE', printed deck '5-6'",
+    "observed_text": "THÉÂTRE LA COMÉDIE \n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5-6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:theatre-la-comedie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints THERMAL AREA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     421.04,
+     501.42,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '7'",
+    "observed_text": "THERMAL AREA \n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints TOP 19 EXCLUSIVE SOLARIUM on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.16,
+     432.94,
+     501.42,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 19 EXCLUSIVE SOLARIUM', printed deck '19'",
+    "observed_text": "TOP 19 EXCLUSIVE SOLARIUM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:top-19-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints TOP SAIL LOUNGE on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     393.07,
+     500.95,
+     395.92
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '16'",
+    "observed_text": "TOP SAIL LOUNGE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TV STUDIO & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints TV STUDIO & BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     406.48,
+     502.52,
+     409.32
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'TV STUDIO & BAR', printed deck '7'",
+    "observed_text": "TV STUDIO & BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:tv-studio-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUAL GAMES ARCADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints VIRTUAL GAMES ARCADE on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     437.12,
+     501.99,
+     439.96
+    ],
+    "text": "Page 9, table 'Fun', row 'VIRTUAL GAMES ARCADE', printed deck '16'",
+    "observed_text": "VIRTUAL GAMES ARCADE \n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:virtual-games-arcade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VR MAZE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints VR MAZE on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     449.02,
+     501.99,
+     451.87
+    ],
+    "text": "Page 9, table 'Fun', row 'VR MAZE', printed deck '16'",
+    "observed_text": "VR MAZE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:vr-maze"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WEB CREATOR ROOM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints WEB CREATOR ROOM on deck(s) 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     460.93,
+     501.99,
+     463.77
+    ],
+    "text": "Page 9, table 'Fun', row 'WEB CREATOR ROOM', printed deck '18'",
+    "observed_text": "WEB CREATOR ROOM\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:web-creator-room"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WILD FOREST AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints WILD FOREST AQUAPARK on deck(s) 19.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     391.61,
+     286.84,
+     394.46
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'WILD FOREST AQUAPARK', printed deck '19'",
+    "observed_text": "WILD FOREST AQUAPARK\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "19"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:wild-forest-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "WILD FOREST BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints WILD FOREST BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     489.82,
+     502.52,
+     492.66
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'WILD FOREST BAR', printed deck '19'",
+    "observed_text": "WILD FOREST BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-GRANDIOSA:wild-forest-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-grandiosa",
+    "name": "MSC GRANDIOSA",
+    "verified_imo": "IMO9803613",
+    "stored_imo": "IMO9803613",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC GRANDIOSA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC GRANDIOSA (SHA-256 679270bee3a4, version unknown) prints YOUNG CLUB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     308.72,
+     541.95,
+     501.99,
+     544.8
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB', printed deck '18'",
+    "observed_text": "YOUNG CLUB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-GRANDIOSA:young-club"
+  }
+ ]
+}

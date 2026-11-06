@@ -1,0 +1,5643 @@
+{
+ "schema": "timonelo.ship-map-observations.v0",
+ "state": "RESEARCH_ONLY_NOT_REGISTERED_NOT_ADMITTED",
+ "target_contract": "timonelo.evidence-batch.v1",
+ "vessel": {
+  "slug": "msc-euribia",
+  "name": "MSC EURIBIA",
+  "verified_imo": "IMO9901544",
+  "stored_imo": "IMO9901544",
+  "identity_state": "CANONICAL_MATCHES_VERIFIED"
+ },
+ "source": {
+  "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+  "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+  "retrieved_on": "2026-11-05",
+  "title": "MSC EURIBIA SHIP MAP",
+  "version": null,
+  "version_status": "UNKNOWN_NOT_PRINTED"
+ },
+ "classification": "ELIGIBLE CANDIDATE",
+ "first_review_batch": [
+  {
+   "id": "ER-MAP-01",
+   "name": "HORIZON AMPHITHEATRE",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HORIZON AMPHITHEATRE on deck(s) 16, 18.",
+   "value": [
+    16,
+    18
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 9,
+   "locator": "Page 9, table 'Fun', row 'HORIZON AMPHITHEATRE', printed deck '16-18'",
+   "observed_text": "HORIZON AMPHITHEATRE\n16-18",
+   "entity_id": "venue:MSC-EURIBIA:horizon-amphitheatre",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     94.14,
+     446.26,
+     287.41,
+     449.11
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-02",
+   "name": "MARKETPLACE BUFFET",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "value": [
+    15
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+   "observed_text": "MARKETPLACE BUFFET\n15",
+   "entity_id": "venue:MSC-EURIBIA:marketplace-buffet",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.15,
+     399.81,
+     502.41,
+     402.65
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-03",
+   "name": "MSC SIGNATURE CASINO",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 5,
+   "locator": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+   "observed_text": "MSC SIGNATURE CASINO\n7",
+   "entity_id": "venue:MSC-EURIBIA:msc-signature-casino",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     309.26,
+     370.89,
+     502.52,
+     373.74
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-04",
+   "name": "AURORA BOREALIS",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints AURORA BOREALIS on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'AURORA BOREALIS', printed deck '6'",
+   "observed_text": "AURORA BOREALIS\n6",
+   "entity_id": "venue:MSC-EURIBIA:aurora-borealis",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.47,
+     352.18,
+     286.73,
+     355.03
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-05",
+   "name": "CAROUSEL LOUNGE",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+   "observed_text": "CAROUSEL LOUNGE\n7",
+   "entity_id": "venue:MSC-EURIBIA:carousel-lounge",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.47,
+     364.09,
+     286.73,
+     366.94
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-06",
+   "name": "GREEN ORCHID",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints GREEN ORCHID on deck(s) 5.",
+   "value": [
+    5
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'GREEN ORCHID', printed deck '5'",
+   "observed_text": "GREEN ORCHID\n5",
+   "entity_id": "venue:MSC-EURIBIA:green-orchid",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.47,
+     387.9,
+     286.73,
+     390.75
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-07",
+   "name": "HOLA! TACOS & CANTINA",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 6.",
+   "value": [
+    6
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '6'",
+   "observed_text": "HOLA! TACOS & CANTINA\n6",
+   "entity_id": "venue:MSC-EURIBIA:hola-tacos-and-cantina",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.47,
+     399.81,
+     286.73,
+     402.65
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  },
+  {
+   "id": "ER-MAP-08",
+   "name": "IL CAMPO RESTAURANT",
+   "exact_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "value": [
+    7
+   ],
+   "artifact_id": null,
+   "artifact_sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+   "target_vessel": "IMO9901544",
+   "page": 4,
+   "locator": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+   "observed_text": "IL CAMPO RESTAURANT\n7",
+   "entity_id": "venue:MSC-EURIBIA:il-campo-restaurant",
+   "question_id": "Q-0016",
+   "statement_type": "deck.venue_present",
+   "source_version": null,
+   "source_boxes": [
+    [
+     93.47,
+     411.71,
+     286.73,
+     414.56
+    ]
+   ],
+   "scope": "SOURCE_EDITION_VENUE_DECK_ONLY"
+  }
+ ],
+ "decisions": [
+  {
+   "claim_id": "ER-MAP-01",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-02",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-03",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-04",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-05",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-06",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-07",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  },
+  {
+   "claim_id": "ER-MAP-08",
+   "decision": null,
+   "reviewer": null,
+   "review_date": null,
+   "decision_reason": null
+  }
+ ],
+ "index_only_labels": [
+  {
+   "key": "COLORADO RESTAURANT",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "INFINITY ATRIUM",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MEDICAL CENTRE",
+   "index_decks": [
+    4
+   ]
+  },
+  {
+   "key": "MSC AUREA SPA",
+   "index_decks": [
+    7
+   ]
+  },
+  {
+   "key": "MSC BUSINESS CENTRE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MSC FOUNDATION",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "MSC FUTURE CRUISE",
+   "index_decks": [
+    6
+   ]
+  },
+  {
+   "key": "RECEPTION GUEST SERVICE",
+   "index_decks": [
+    5
+   ]
+  },
+  {
+   "key": "TENDER ACCESS",
+   "index_decks": [
+    4,
+    5
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR NORTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATMOSPHERE BAR NORTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     442.28,
+     502.52,
+     445.13
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR NORTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR NORTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:atmosphere-bar-north"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE BAR SOUTH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATMOSPHERE BAR SOUTH on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     454.23,
+     502.52,
+     457.08
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE BAR SOUTH', printed deck '15'",
+    "observed_text": "ATMOSPHERE BAR SOUTH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:atmosphere-bar-south"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE ICE CREAM BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATMOSPHERE ICE CREAM BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     466.14,
+     502.52,
+     468.99
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATMOSPHERE ICE CREAM BAR', printed deck '15'",
+    "observed_text": "ATMOSPHERE ICE CREAM BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:atmosphere-ice-cream-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATMOSPHERE POOL on deck(s) 15.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     308.27,
+     286.84,
+     311.12
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'ATMOSPHERE POOL', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "15"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:atmosphere-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATMOSPHERE POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATMOSPHERE POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     361.46,
+     286.31,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'ATMOSPHERE POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "ATMOSPHERE POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:atmosphere-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "ATTIC CLUB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints ATTIC CLUB on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     370.84,
+     286.84,
+     373.69
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'ATTIC CLUB', printed deck '18'",
+    "observed_text": "ATTIC CLUB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:attic-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints AURORA BOREALE on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     340.23,
+     286.73,
+     343.08
+    ],
+    "text": "Page 4, table 'Restaurants', row 'AURORA BOREALE', printed deck '6'",
+    "observed_text": "AURORA BOREALE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:aurora-boreale"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "AURORA BOREALIS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints AURORA BOREALIS on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     352.18,
+     286.73,
+     355.03
+    ],
+    "text": "Page 4, table 'Restaurants', row 'AURORA BOREALIS', printed deck '6'",
+    "observed_text": "AURORA BOREALIS\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:aurora-borealis"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BABY CLUB CHICCO ECO + (under 3 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BABY CLUB CHICCO ECO + (under 3 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     93.34,
+     429.85,
+     286.61,
+     432.69
+    ],
+    "text": "Page 10, table 'Family Areas', row 'BABY CLUB CHICCO ECO + (under 3 years)', printed deck '18'",
+    "observed_text": "BABY CLUB CHICCO ECO + (under 3 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:baby-club-chicco-eco"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BAMBOO BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BAMBOO BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     382.8,
+     286.84,
+     385.65
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'BAMBOO BAR', printed deck '15'",
+    "observed_text": "BAMBOO BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:bamboo-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BAMBOO POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BAMBOO POOL on deck(s) 15.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     320.18,
+     286.84,
+     323.03
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'BAMBOO POOL', printed deck '15'",
+    "observed_text": "BAMBOO POOL\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "15"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "15"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:bamboo-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BAMBOO POOL WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BAMBOO POOL WHIRLPOOL BATH on deck(s) 15.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     373.42,
+     286.31,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BAMBOO POOL WHIRLPOOL BATH', printed deck '15'",
+    "observed_text": "BAMBOO POOL WHIRLPOOL BATH\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:bamboo-pool-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BARBER SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BARBER SHOP on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     385.32,
+     286.3,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BARBER SHOP', printed deck '7'",
+    "observed_text": "BARBER SHOP\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:barber-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BEAUTY SERVICES",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BEAUTY SERVICES on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     397.23,
+     286.3,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'BEAUTY SERVICES', printed deck '7'",
+    "observed_text": "BEAUTY SERVICES\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:beauty-services"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "BOWLING",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints BOWLING on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     374.83,
+     287.4,
+     377.68
+    ],
+    "text": "Page 9, table 'Fun', row 'BOWLING', printed deck '16'",
+    "observed_text": "BOWLING\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:bowling"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CAROUSEL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints CAROUSEL LOUNGE on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     364.09,
+     286.73,
+     366.94
+    ],
+    "text": "Page 4, table 'Restaurants', row 'CAROUSEL LOUNGE', printed deck '7'",
+    "observed_text": "CAROUSEL LOUNGE\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    },
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:carousel-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CHAMPAGNE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints CHAMPAGNE BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     406.61,
+     286.84,
+     409.46
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'CHAMPAGNE BAR', printed deck '7'",
+    "observed_text": "CHAMPAGNE BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:champagne-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "COLORADO RIVER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints COLORADO RIVER on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     376.0,
+     286.73,
+     378.84
+    ],
+    "text": "Page 4, table 'Restaurants', row 'COLORADO RIVER', printed deck '6'",
+    "observed_text": "COLORADO RIVER\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:colorado-river"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "CONCIERGE AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints CONCIERGE AREA on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     321.59,
+     500.95,
+     324.44
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'CONCIERGE AREA', printed deck '16'",
+    "observed_text": "CONCIERGE AREA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:concierge-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "DELPHI THEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     398.64,
+     287.41,
+     401.49
+    ],
+    "text": "Page 9, table 'Fun', row 'DELPHI THEATRE', printed deck '5-6'",
+    "observed_text": "DELPHI THEATRE\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "5-6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 5-6, index [6]"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:delphi-theatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EURIBIA BAR & LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints EURIBIA BAR & LOUNGE on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     418.52,
+     286.84,
+     421.36
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'EURIBIA BAR & LOUNGE', printed deck '6'",
+    "observed_text": "EURIBIA BAR & LOUNGE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:euribia-bar-and-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "EURIBIA BOUTIQUE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints EURIBIA BOUTIQUE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     366.3,
+     286.3,
+     369.14
+    ],
+    "text": "Page 6, table 'Shops', row 'EURIBIA BOUTIQUE', printed deck '6'",
+    "observed_text": "EURIBIA BOUTIQUE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:euribia-boutique"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FASHION JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     378.25,
+     286.3,
+     381.1
+    ],
+    "text": "Page 6, table 'Shops', row 'FASHION JEWELLERY', printed deck '6'",
+    "observed_text": "FASHION JEWELLERY\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 6, index [6, 7]"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:fashion-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "FINE JEWELLERY",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints FINE JEWELLERY on deck(s) 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     390.16,
+     286.3,
+     393.01
+    ],
+    "text": "Page 6, table 'Shops', row 'FINE JEWELLERY', printed deck '7'",
+    "observed_text": "FINE JEWELLERY\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:fine-jewellery"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GALLERIA EURIBIA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6,
+    7
+   ],
+   "printed_tokens": [
+    "6-7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints GALLERIA EURIBIA on deck(s) 6, 7.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     402.06,
+     286.31,
+     404.91
+    ],
+    "text": "Page 6, table 'Shops', row 'GALLERIA EURIBIA', printed deck '6-7'",
+    "observed_text": "GALLERIA EURIBIA\n6-7"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6-7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6-7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6,
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:galleria-euribia"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "GREEN ORCHID",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints GREEN ORCHID on deck(s) 5.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     387.9,
+     286.73,
+     390.75
+    ],
+    "text": "Page 4, table 'Restaurants', row 'GREEN ORCHID', printed deck '5'",
+    "observed_text": "GREEN ORCHID\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:green-orchid"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HAIR SALON",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HAIR SALON on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     409.13,
+     286.3,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'HAIR SALON', printed deck '7'",
+    "observed_text": "HAIR SALON\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:hair-salon"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HELIOS WINE MAKER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HELIOS WINE MAKER on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     430.42,
+     286.84,
+     433.27
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'HELIOS WINE MAKER', printed deck '6'",
+    "observed_text": "HELIOS WINE MAKER\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:helios-wine-maker"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HIMALAYAN BRIDGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HIMALAYAN BRIDGE on deck(s) 19.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     422.45,
+     287.4,
+     425.3
+    ],
+    "text": "Page 9, table 'Fun', row 'HIMALAYAN BRIDGE', printed deck '19'",
+    "observed_text": "HIMALAYAN BRIDGE\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:himalayan-bridge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLA! TACOS & CANTINA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HOLA! TACOS & CANTINA on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     399.81,
+     286.73,
+     402.65
+    ],
+    "text": "Page 4, table 'Restaurants', row 'HOLA! TACOS & CANTINA', printed deck '6'",
+    "observed_text": "HOLA! TACOS & CANTINA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:hola-tacos-and-cantina"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HOLOGATE BLITZ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HOLOGATE BLITZ on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     434.36,
+     287.4,
+     437.21
+    ],
+    "text": "Page 9, table 'Fun', row 'HOLOGATE BLITZ', printed deck '16'",
+    "observed_text": "HOLOGATE BLITZ\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:hologate-blitz"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON AMPHITHEATRE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16,
+    18
+   ],
+   "printed_tokens": [
+    "16-18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HORIZON AMPHITHEATRE on deck(s) 16, 18.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     94.14,
+     446.26,
+     287.41,
+     449.11
+    ],
+    "text": "Page 9, table 'Fun', row 'HORIZON AMPHITHEATRE', printed deck '16-18'",
+    "observed_text": "HORIZON AMPHITHEATRE\n16-18"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16-18"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16-18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16,
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:horizon-amphitheatre"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HORIZON BAR on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     478.04,
+     502.52,
+     480.89
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'HORIZON BAR', printed deck '18'",
+    "observed_text": "HORIZON BAR\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:horizon-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "HORIZON POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints HORIZON POOL on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     332.08,
+     286.84,
+     334.93
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'HORIZON POOL', printed deck '16'",
+    "observed_text": "HORIZON POOL\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:horizon-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IL CAMPO RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints IL CAMPO RESTAURANT on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     93.47,
+     411.71,
+     286.73,
+     414.56
+    ],
+    "text": "Page 4, table 'Restaurants', row 'IL CAMPO RESTAURANT', printed deck '7'",
+    "observed_text": "IL CAMPO RESTAURANT\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:il-campo-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INFINITY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5
+   ],
+   "printed_tokens": [
+    "5"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints INFINITY BAR on deck(s) 5.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     442.33,
+     286.84,
+     445.18
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'INFINITY BAR', printed deck '5'",
+    "observed_text": "INFINITY BAR\n5"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "5"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:infinity-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "INTERACTIVE XD CINEMA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints INTERACTIVE XD CINEMA on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     351.02,
+     501.99,
+     353.87
+    ],
+    "text": "Page 9, table 'Fun', row 'INTERACTIVE XD CINEMA', printed deck '16'",
+    "observed_text": "INTERACTIVE XD CINEMA\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:interactive-xd-cinema"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "IRIS GALERIE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints IRIS GALERIE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     413.97,
+     286.3,
+     416.82
+    ],
+    "text": "Page 6, table 'Shops', row 'IRIS GALERIE', printed deck '6'",
+    "observed_text": "IRIS GALERIE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:iris-galerie"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CHOCOLAT & CAFÉ",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints JEAN-PHILIPPE CHOCOLAT & CAFÉ on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     454.23,
+     286.84,
+     457.08
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CHOCOLAT & CAFÉ', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CHOCOLAT & CAFÉ\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:jean-philippe-chocolat-and-cafe"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JEAN-PHILIPPE CRÊPES & GELATO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints JEAN-PHILIPPE CRÊPES & GELATO on deck(s) 6.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     466.14,
+     286.84,
+     468.99
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'JEAN-PHILIPPE CRÊPES & GELATO', printed deck '6'",
+    "observed_text": "JEAN-PHILIPPE CRÊPES & GELATO\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:jean-philippe-crepes-and-gelato"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "JUNIORS CLUB (7 to 11 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints JUNIORS CLUB (7 to 11 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     93.34,
+     548.9,
+     286.61,
+     551.75
+    ],
+    "text": "Page 10, table 'Family Areas', row 'JUNIORS CLUB (7 to 11 years)', printed deck '18'",
+    "observed_text": "JUNIORS CLUB (7 to 11 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:juniors-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO ROBATAYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints KAITO ROBATAYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     364.09,
+     502.41,
+     366.94
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO ROBATAYAKI', printed deck '7'",
+    "observed_text": "KAITO ROBATAYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:kaito-robatayaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO SUSHI BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints KAITO SUSHI BAR on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     340.28,
+     502.41,
+     343.13
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO SUSHI BAR', printed deck '7'",
+    "observed_text": "KAITO SUSHI BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:kaito-sushi-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "KAITO TEPPANYAKI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints KAITO TEPPANYAKI on deck(s) 7.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     352.18,
+     502.41,
+     355.03
+    ],
+    "text": "Page 4, table 'Restaurants', row 'KAITO TEPPANYAKI', printed deck '7'",
+    "observed_text": "KAITO TEPPANYAKI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:kaito-teppanyaki"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "L'ATELIER DU VOYAGEUR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints L'ATELIER DU VOYAGEUR on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     376.0,
+     502.41,
+     378.84
+    ],
+    "text": "Page 4, table 'Restaurants', row \"L'ATELIER DU VOYAGEUR\", printed deck '6'",
+    "observed_text": "L'ATELIER DU VOYAGEUR\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    },
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "6"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:latelier-du-voyageur"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LE GRILL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints LE GRILL on deck(s) 6.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     387.9,
+     502.41,
+     390.75
+    ],
+    "text": "Page 4, table 'Restaurants', row 'LE GRILL', printed deck '6'",
+    "observed_text": "LE GRILL\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:le-grill"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "LUXURY PLAZA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints LUXURY PLAZA on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     93.04,
+     425.87,
+     286.3,
+     428.72
+    ],
+    "text": "Page 6, table 'Shops', row 'LUXURY PLAZA', printed deck '6'",
+    "observed_text": "LUXURY PLAZA\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:luxury-plaza"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MARKETPLACE BAR on deck(s) 15.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     489.95,
+     286.84,
+     492.8
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MARKETPLACE BAR', printed deck '15'",
+    "observed_text": "MARKETPLACE BAR\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:marketplace-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MARKETPLACE BUFFET",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    15
+   ],
+   "printed_tokens": [
+    "15"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MARKETPLACE BUFFET on deck(s) 15.",
+   "locator": {
+    "page": 4,
+    "table": "Restaurants",
+    "row_box": [
+     309.15,
+     399.81,
+     502.41,
+     402.65
+    ],
+    "text": "Page 4, table 'Restaurants', row 'MARKETPLACE BUFFET', printed deck '15'",
+    "observed_text": "MARKETPLACE BUFFET\n15"
+   },
+   "all_table_rows": [
+    {
+     "page": 4,
+     "table": "Restaurants",
+     "token": "15"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     15
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:marketplace-buffet"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASSAGES & TREATMENTS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MASSAGES & TREATMENTS on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     421.04,
+     286.3,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MASSAGES & TREATMENTS', printed deck '7'",
+    "observed_text": "MASSAGES & TREATMENTS\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:massages-and-treatments"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MASTERS OF THE SEA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MASTERS OF THE SEA on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     93.57,
+     501.86,
+     286.84,
+     504.7
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MASTERS OF THE SEA', printed deck '7'",
+    "observed_text": "MASTERS OF THE SEA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:masters-of-the-sea"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MEDI SPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MEDI SPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     93.04,
+     432.94,
+     286.3,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'MEDI SPA', printed deck '7'",
+    "observed_text": "MEDI SPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:medi-spa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MINI CLUB (3 to 6 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MINI CLUB (3 to 6 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     307.92,
+     405.98,
+     501.19,
+     408.83
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MINI CLUB (3 to 6 years)', printed deck '18'",
+    "observed_text": "MINI CLUB (3 to 6 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:mini-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC EXCURSIONS",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    5,
+    6
+   ],
+   "printed_tokens": [
+    "5-6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC EXCURSIONS on deck(s) 5, 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     366.35,
+     501.99,
+     369.19
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC EXCURSIONS', printed deck '5-6'",
+    "observed_text": "MSC EXCURSIONS\n5-6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "5-6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     5,
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-excursions"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FORMULA RACER",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC FORMULA RACER on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     374.83,
+     501.99,
+     377.68
+    ],
+    "text": "Page 9, table 'Fun', row 'MSC FORMULA RACER', printed deck '16'",
+    "observed_text": "MSC FORMULA RACER\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-formula-racer"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC FOUNDATION LAB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC FOUNDATION LAB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     307.92,
+     429.85,
+     501.19,
+     432.69
+    ],
+    "text": "Page 10, table 'Family Areas', row 'MSC FOUNDATION LAB', printed deck '18'",
+    "observed_text": "MSC FOUNDATION LAB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-foundation-lab"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC GYM POWERED BY TECHNOGYM ®",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC GYM POWERED BY TECHNOGYM ® on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     343.99,
+     286.84,
+     346.84
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'MSC GYM POWERED BY TECHNOGYM ®', printed deck '16'",
+    "observed_text": "MSC GYM POWERED BY TECHNOGYM®\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-gym-powered-by-technogym"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SHOP",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC SHOP on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     378.25,
+     501.99,
+     381.1
+    ],
+    "text": "Page 6, table 'Shops', row 'MSC SHOP', printed deck '6'",
+    "observed_text": "MSC SHOP\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-shop"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC SIGNATURE CASINO",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC SIGNATURE CASINO on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     370.89,
+     502.52,
+     373.74
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'MSC SIGNATURE CASINO', printed deck '7'",
+    "observed_text": "MSC SIGNATURE CASINO\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-signature-casino"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB GRILL & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC YACHT CLUB GRILL & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     333.54,
+     500.95,
+     336.39
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB GRILL & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB GRILL & BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-yacht-club-grill-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB POOL",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC YACHT CLUB POOL on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     345.45,
+     500.95,
+     348.3
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB POOL', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB POOL\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-yacht-club-pool"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB RESTAURANT",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC YACHT CLUB RESTAURANT on deck(s) 18.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     357.35,
+     500.95,
+     360.2
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB RESTAURANT', printed deck '18'",
+    "observed_text": "MSC YACHT CLUB RESTAURANT\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-yacht-club-restaurant"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "MSC YACHT CLUB SUNDECK & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints MSC YACHT CLUB SUNDECK & BAR on deck(s) 19.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     369.26,
+     500.95,
+     372.11
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'MSC YACHT CLUB SUNDECK & BAR', printed deck '19'",
+    "observed_text": "MSC YACHT CLUB SUNDECK & BAR \n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:msc-yacht-club-sundeck-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "NAIL SALON BY OPI",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints NAIL SALON BY OPI on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     361.46,
+     501.99,
+     364.31
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'NAIL SALON BY OPI', printed deck '7'",
+    "observed_text": "NAIL SALON BY OPI\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:nail-salon-by-opi"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OCEAN CAY AQUAPARK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints OCEAN CAY AQUAPARK on deck(s) 19.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     355.89,
+     286.84,
+     358.74
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'OCEAN CAY AQUAPARK', printed deck '19'",
+    "observed_text": "OCEAN CAY AQUAPARK\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "19"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:ocean-cay-aquapark"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "OCEAN CAY BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints OCEAN CAY BAR on deck(s) 19.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     489.95,
+     502.52,
+     492.8
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'OCEAN CAY BAR', printed deck '19'",
+    "observed_text": "OCEAN CAY BAR\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "19"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:ocean-cay-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "POWER WALKING TRACK",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints POWER WALKING TRACK on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     367.8,
+     286.84,
+     370.65
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'POWER WALKING TRACK', printed deck '16'",
+    "observed_text": "POWER WALKING TRACK\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:power-walking-track"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "RECEPTION",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints RECEPTION on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     373.42,
+     501.99,
+     376.26
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'RECEPTION', printed deck '7'",
+    "observed_text": "RECEPTION\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:reception"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SHOP@MSCAUREASPA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints SHOP@MSCAUREASPA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     385.32,
+     501.99,
+     388.17
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SHOP@MSCAUREASPA', printed deck '7'",
+    "observed_text": "SHOP@MSCAUREASPA\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:shop-mscaureaspa"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SKY LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints SKY LOUNGE on deck(s) 18.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     382.8,
+     502.52,
+     385.65
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SKY LOUNGE', printed deck '18'",
+    "observed_text": "SKY LOUNGE\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     18
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:sky-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints SOLARIUM on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     397.23,
+     501.99,
+     400.07
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM', printed deck '7'",
+    "observed_text": "SOLARIUM\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SOLARIUM WHIRLPOOL BATH",
+   "other_printed_labels": [],
+   "structured_deck_value": null,
+   "printed_tokens": [
+    "15-16"
+   ],
+   "status": "CONFLICT",
+   "generated_claim": null,
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     409.13,
+     501.99,
+     411.98
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'SOLARIUM WHIRLPOOL BATH', printed deck '15-16'",
+    "observed_text": "SOLARIUM WHIRLPOOL BATH\n15-16"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "15-16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "INDEX_DISAGREES: table 15-16, index [16]"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:solarium-whirlpool-bath"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTPLEX",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints SPORTPLEX on deck(s) 16.",
+   "locator": {
+    "page": 8,
+    "table": "SPORT & FITNESS",
+    "row_box": [
+     93.57,
+     379.7,
+     286.84,
+     382.55
+    ],
+    "text": "Page 8, table 'SPORT & FITNESS', row 'SPORTPLEX', printed deck '16'",
+    "observed_text": "SPORTPLEX\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 8,
+     "table": "SPORT & FITNESS",
+     "token": "16"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:sportplex"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "SPORTS BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints SPORTS BAR on deck(s) 16.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     394.71,
+     502.52,
+     397.55
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'SPORTS BAR', printed deck '16'",
+    "observed_text": "SPORTS BAR\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:sports-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEENS CLUB (15 to 17 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TEENS CLUB (15 to 17 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     307.92,
+     489.37,
+     501.19,
+     492.22
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEENS CLUB (15 to 17 years)', printed deck '18'",
+    "observed_text": "TEENS CLUB (15 to 17 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:teens-club"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TEENS LAB",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TEENS LAB on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     307.92,
+     501.28,
+     501.19,
+     504.13
+    ],
+    "text": "Page 10, table 'Family Areas', row 'TEENS LAB', printed deck '18'",
+    "observed_text": "TEENS LAB\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:teens-lab"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THE HUB - PHOTO & DIGIT@L",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints THE HUB - PHOTO & DIGIT@L on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     402.06,
+     501.99,
+     404.91
+    ],
+    "text": "Page 6, table 'Shops', row 'THE HUB - PHOTO & DIGIT@L', printed deck '6'",
+    "observed_text": "THE HUB - PHOTO & DIGIT@L\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     6
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:the-hub-photo-and-digit-l"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "THERMAL AREA",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints THERMAL AREA on deck(s) 7.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     421.04,
+     501.99,
+     423.89
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'THERMAL AREA', printed deck '7'",
+    "observed_text": "THERMAL AREA \n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:thermal-area"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TIME VALLÉE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    6
+   ],
+   "printed_tokens": [
+    "6"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TIME VALLÉE on deck(s) 6.",
+   "locator": {
+    "page": 6,
+    "table": "Shops",
+    "row_box": [
+     308.72,
+     413.97,
+     501.99,
+     416.82
+    ],
+    "text": "Page 6, table 'Shops', row 'TIME VALLÉE', printed deck '6'",
+    "observed_text": "TIME VALLÉE\n6"
+   },
+   "all_table_rows": [
+    {
+     "page": 6,
+     "table": "Shops",
+     "token": "6"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:time-vallee"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP 19 EXCLUSIVE SOLARIUM",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    19
+   ],
+   "printed_tokens": [
+    "19"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TOP 19 EXCLUSIVE SOLARIUM on deck(s) 19.",
+   "locator": {
+    "page": 7,
+    "table": "SPA & BEAUTY",
+    "row_box": [
+     308.72,
+     432.94,
+     501.99,
+     435.79
+    ],
+    "text": "Page 7, table 'SPA & BEAUTY', row 'TOP 19 EXCLUSIVE SOLARIUM', printed deck '19'",
+    "observed_text": "TOP 19 EXCLUSIVE SOLARIUM\n19"
+   },
+   "all_table_rows": [
+    {
+     "page": 7,
+     "table": "SPA & BEAUTY",
+     "token": "19"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     19
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:top-19-exclusive-solarium"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TOP SAIL LOUNGE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TOP SAIL LOUNGE on deck(s) 16.",
+   "locator": {
+    "page": 3,
+    "table": "MSC Yacht Club",
+    "row_box": [
+     308.82,
+     381.17,
+     500.95,
+     384.01
+    ],
+    "text": "Page 3, table 'MSC Yacht Club', row 'TOP SAIL LOUNGE', printed deck '16'",
+    "observed_text": "TOP SAIL LOUNGE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 3,
+     "table": "MSC Yacht Club",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:top-sail-lounge"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "TV STUDIO & BAR",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    7
+   ],
+   "printed_tokens": [
+    "7"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints TV STUDIO & BAR on deck(s) 7.",
+   "locator": {
+    "page": 5,
+    "table": "Bars - Lounges",
+    "row_box": [
+     309.26,
+     406.61,
+     502.52,
+     409.46
+    ],
+    "text": "Page 5, table 'Bars - Lounges', row 'TV STUDIO & BAR', printed deck '7'",
+    "observed_text": "TV STUDIO & BAR\n7"
+   },
+   "all_table_rows": [
+    {
+     "page": 5,
+     "table": "Bars - Lounges",
+     "token": "7"
+    },
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "7"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "7"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     7
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:tv-studio-and-bar"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "VIRTUAL GAMES ARCADE",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    16
+   ],
+   "printed_tokens": [
+    "16"
+   ],
+   "status": "AGREED",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints VIRTUAL GAMES ARCADE on deck(s) 16.",
+   "locator": {
+    "page": 9,
+    "table": "Fun",
+    "row_box": [
+     308.72,
+     434.36,
+     501.99,
+     437.21
+    ],
+    "text": "Page 9, table 'Fun', row 'VIRTUAL GAMES ARCADE', printed deck '16'",
+    "observed_text": "VIRTUAL GAMES ARCADE\n16"
+   },
+   "all_table_rows": [
+    {
+     "page": 9,
+     "table": "Fun",
+     "token": "16"
+    },
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "16"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": [
+     16
+    ]
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [],
+   "entity_id": "venue:MSC-EURIBIA:virtual-games-arcade"
+  },
+  {
+   "vessel": {
+    "slug": "msc-euribia",
+    "name": "MSC EURIBIA",
+    "verified_imo": "IMO9901544",
+    "stored_imo": "IMO9901544",
+    "identity_state": "CANONICAL_MATCHES_VERIFIED"
+   },
+   "source": {
+    "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "title": "MSC EURIBIA SHIP MAP",
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED"
+   },
+   "exact_label": "YOUNG CLUB (12 to 14 years)",
+   "other_printed_labels": [],
+   "structured_deck_value": [
+    18
+   ],
+   "printed_tokens": [
+    "18"
+   ],
+   "status": "TABLE_ONLY",
+   "generated_claim": "The official MSC ship map for MSC EURIBIA (SHA-256 4ea7b06bf513, version unknown) prints YOUNG CLUB (12 to 14 years) on deck(s) 18.",
+   "locator": {
+    "page": 10,
+    "table": "Family Areas",
+    "row_box": [
+     307.92,
+     537.0,
+     501.19,
+     539.84
+    ],
+    "text": "Page 10, table 'Family Areas', row 'YOUNG CLUB (12 to 14 years)', printed deck '18'",
+    "observed_text": "YOUNG CLUB (12 to 14 years)\n18"
+   },
+   "all_table_rows": [
+    {
+     "page": 10,
+     "table": "Family Areas",
+     "token": "18"
+    }
+   ],
+   "deck_index": {
+    "page": 2,
+    "decks_listed": []
+   },
+   "source_version_status": "UNKNOWN_NOT_PRINTED",
+   "provenance_limitations": [
+    "No edition or version is printed; PDF metadata dates are production data, not an edition.",
+    "The map prints no IMO; vessel attribution comes from its title.",
+    "Deck assignment only; no position, distance, adjacency or current-operations claim.",
+    "Cite-only; source artwork is not redistributable."
+   ],
+   "unresolved_conflicts": [
+    "NOT_IN_DECK_INDEX"
+   ],
+   "entity_id": "venue:MSC-EURIBIA:young-club"
+  }
+ ]
+}
