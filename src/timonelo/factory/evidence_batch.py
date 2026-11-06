@@ -25,6 +25,7 @@ from timonelo.evidence.events import EvidenceEvent
 from timonelo.evidence.fleet_projection import project_fleet
 from timonelo.evidence.publication_snapshot import make_snapshot
 from timonelo.evidence.registry import normalize_vessel_imo
+from timonelo.evidence.vessel_ownership import (canonical_entity, canonical_vessel, validate_ownership, normalized_principal)
 from timonelo.evidence.workspace import Workspace
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState
 
@@ -66,6 +67,23 @@ def _workspace(root):
     return Workspace(str(root / "evidence"))
 
 
+def render_claim(claim, vessel_name):
+    """Deterministic human wording bound to the exact structured deck value."""
+    value = claim.get("value")
+    if (not isinstance(value, list) or not value or
+            any(type(v) is not int for v in value) or sorted(set(value)) != value):
+        raise BatchError("NON_CANONICAL_DECK_VALUE")
+    return (f"{claim['artifact_id']} ({claim['source_version']}) labels {claim['name']} "
+            f"on deck(s) {', '.join(str(v) for v in value)} of {vessel_name}.")
+
+
+def _principal(value):
+    try:
+        return normalized_principal(value)
+    except ValueError:
+        return ""
+
+
 def _document_reading(path, claim):
     # Existing optional dev dependency, not a new runtime/import route.
     import fitz
@@ -86,6 +104,19 @@ def _document_reading(path, claim):
             if rect.is_empty or not page.rect.contains(rect):
                 raise BatchError("SOURCE_BOXES_INVALID")
             fragments.append(page.get_textbox(rect + (-2, -2, 2, 2)).strip())
+        # The nearest printed DECK heading identifies each observed column.
+        # No column is inferred from the claim's supplied locator or prose.
+        headings = []
+        for block in page.get_text("blocks"):
+            match = re.search(r"\bDECK\s+(\d+)\b", block[4], re.I)
+            if match:
+                headings.append(((block[0] + block[2]) / 2, int(match.group(1))))
+        if not headings:
+            raise BatchError("SOURCE_DECK_COLUMN_UNRESOLVABLE")
+        observed_decks = {min(headings, key=lambda h: abs(h[0] - (box[0] + box[2]) / 2))[1]
+                          for box in boxes}
+        if observed_decks != set(claim["value"]):
+            raise BatchError("SOURCE_DECK_COLUMN_MISMATCH")
         actual = " / ".join(fragments)
         if " ".join(actual.split()) != " ".join(claim["observed_text"].split()):
             raise BatchError("SOURCE_OBSERVATION_CHANGED")
@@ -125,7 +156,7 @@ def _inspect_batch(root, batch, decisions, ws):
     if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
         raise BatchError("INVALID_VESSEL_SLUG")
     identity = json.loads((root / "knowledge/ships" / slug / "identity.json").read_text(encoding="utf8"))
-    vessel = normalize_vessel_imo(identity["imo_number"]["value"])
+    vessel = canonical_vessel(slug, root=root)
     if vessel != batch.get("vessel_imo"):
         raise BatchError("CANONICAL_VESSEL_IDENTITY_MISMATCH")
     if not isinstance(batch.get("origin_limit"), str) or not batch["origin_limit"].strip():
@@ -144,6 +175,14 @@ def _inspect_batch(root, batch, decisions, ws):
             metadata_valid = False
     except (TypeError, ValueError):
         metadata_valid = False
+    # Trust anchors are reviewed, version-controlled human decisions, never a
+    # caller claiming the display name "Product Owner". New decision batches
+    # require their own reviewed registration; changing claims invalidates reuse.
+    trusted_path = Path(__file__).resolve().parents[3] / "reports/evidence-factory-automation/pilot-approvals.json"
+    trusted = json.loads(trusted_path.read_text(encoding="utf8"))
+    if _hash(trusted) != "63363cd26a08484f5cf454480d41e6ee0351ca29590fd44723caf6e4ab84744f":
+        raise BatchError("TRUSTED_DECISION_LEDGER_CHANGED")
+    trusted_by_id = {d["claim_id"]: d for d in trusted["decisions"]}
     rows, sources, seen = [], {}, set()
     for claim in claims:
         row = {"claim_id": claim["id"], "claim": deepcopy(claim), "reasons": [],
@@ -158,16 +197,34 @@ def _inspect_batch(root, batch, decisions, ws):
                 reasons.append("INVALID_HUMAN_DECISION")
             if not metadata_valid:
                 reasons.append("MISSING_HUMAN_REVIEW_METADATA")
-            if decisions.get("reviewer") == READER:
+            if (decision.get("decision") == "APPROVE" and
+                    batch.get("origin_limit") != trusted.get("source_origin_limitation")):
+                reasons.append("SOURCE_ORIGIN_LIMITATION_MISMATCH")
+            if decision.get("decision") == "APPROVE" and (
+                trusted_by_id.get(claim["id"]) != decision or
+                _principal(decisions.get("reviewer", "")) != _principal(trusted["reviewer"]) or
+                decisions.get("review_date") != trusted["review_date"] or
+                decisions.get("owner_review_statement") != trusted["owner_review_statement"] or
+                decisions.get("publication_processing_authorization") != trusted["publication_processing_authorization"]):
+                reasons.append("UNREGISTERED_HUMAN_APPROVAL")
+            if _principal(decisions.get("reviewer", "")) == _principal(READER):
                 reasons.append("REVIEWER_EQUALS_SOURCE_READER")
         try:
             if (claim.get("scope") != SCOPE or claim.get("statement_type") != "deck.venue_present" or
                     not isinstance(claim.get("value"), list) or not claim["value"] or
                     not all(type(v) is int for v in claim["value"])):
                 raise BatchError("UNSUPPORTED_OBSERVATION_SCOPE")
-            if claim["target_vessel"] != vessel or slug not in claim["entity_id"].casefold().split(":"):
+            if claim["target_vessel"] != vessel or canonical_entity(claim["entity_id"])[1] != slug:
                 raise BatchError("CLAIM_VESSEL_MISMATCH")
             artifact = ws.registry.get(claim["artifact_id"])
+            validate_ownership(claim["entity_id"], artifact, target_slug=slug,
+                               target_imo=vessel, root=root, statement_type=claim["statement_type"])
+            if claim.get("exact_claim") != render_claim(claim, identity["name"]["value"]):
+                reasons.append("CLAIM_TEXT_VALUE_MISMATCH")
+            for existing in ws.editor.all():
+                if (existing.entity_id.casefold() == claim["entity_id"].casefold() and
+                        existing.question_id == claim["question_id"] and values_disagree(existing.value, claim["value"])):
+                    reasons.append("CONTRADICTORY_EXISTING_CLAIM")
             if artifact.sha256 != claim["artifact_sha256"]:
                 raise BatchError("ARTIFACT_SHA_MISMATCH")
             if not claim["source_version"] or artifact.version != claim["source_version"]:
@@ -189,7 +246,7 @@ def _inspect_batch(root, batch, decisions, ws):
                 raise BatchError("DUPLICATE_SELECTED_CLAIM")
             seen.add(key)
             for existing in ws.editor.all():
-                if existing.entity_id == claim["entity_id"] and existing.question_id == claim["question_id"]:
+                if existing.entity_id.casefold() == claim["entity_id"].casefold() and existing.question_id == claim["question_id"]:
                     row["existing_statement_ids"].append(existing.statement_id)
                     if values_disagree(existing.value, claim["value"]):
                         reasons.append("CONTRADICTORY_EXISTING_CLAIM")
@@ -214,6 +271,20 @@ def _inspect_batch(root, batch, decisions, ws):
         elif decision and decision["decision"] == "REJECT":
             row["status"] = "REJECTED"
         rows.append(row)
+    # Evaluate all selected pairs before ANY write, refusing both sides.
+    groups = {}
+    for row in rows:
+        c = row["claim"]
+        groups.setdefault((c.get("entity_id", "").casefold(), c.get("question_id")), []).append(row)
+    for group in groups.values():
+        if len(group) < 2:
+            continue
+        contradictory = any(values_disagree(a["claim"].get("value"), b["claim"].get("value"))
+                            for a in group for b in group)
+        code = "CONTRADICTORY_SELECTED_CLAIM" if contradictory else "DUPLICATE_SELECTED_CLAIM"
+        for row in group:
+            row["reasons"].append(code)
+            row["status"] = "BLOCKED"
     return {"claims": rows, "sources": list(sources.values()),
             "unused_decision_ids": sorted(set(by_id) - {c["id"] for c in claims})}
 
@@ -308,17 +379,22 @@ def process_private_batch(source_root, batch, decisions, output_dir):
     output.mkdir(parents=True)
     canonical_dump(result, str(output / "result.json"))
     canonical_dump(decisions, str(output / "decision-records.json"))
+    by_decision = {d["claim_id"]: d for d in decisions.get("decisions", [])}
+    canonical_dump({"schema": "timonelo.batch-decision-ledger.v1", "decision_sha256": _hash(decisions),
+                    "records": [{"claim_id": row["claim_id"], "submitted_decision": by_decision.get(row["claim_id"]),
+                                 "result": row["status"], "reasons": row["reasons"]} for row in rows]},
+                   str(output / "decision-ledger.json"))
     canonical_dump(snapshot, str(output / "private.snapshot.json"))
     exceptions = [r for r in rows if r["status"] != "ADMITTED"]
     lines = ["# Private Evidence Factory batch", "", "No canonical apply or public publication.",
              "", "## Unresolved exceptions"]
     lines += ([f"- {r['claim_id']}: {r['status']} - {', '.join(r['reasons']) or 'No matching human APPROVE decision.'}" for r in exceptions]
               if exceptions else ["None. All selected claims passed the existing gates with the recorded human decisions."])
-    lines += ["", "## Selected claims", "", "| ID | Claim | Source / locator | Decision result |",
-              "|---|---|---|---|"]
+    lines += ["", "## Selected claims", "", "| ID | Claim | Entity / vessel | Source / locator | Decision result |",
+              "|---|---|---|---|---|"]
     for row in rows:
         c = row["claim"]
-        lines.append(f"| {c['id']} | {c['exact_claim']} | {c['artifact_id']} / {c['locator']} | {row['status']} |")
+        lines.append(f"| {c['id']} | {c['exact_claim']} | {c['entity_id']} / {c['target_vessel']} / value {c['value']} | {c['artifact_id']} / SHA-256 {c['artifact_sha256']} / {c['locator']} | {row['status']} |")
     (output / "review-package.md").write_text("\n".join(lines) + "\n", encoding="utf8")
     return result
 

@@ -32,7 +32,8 @@ export function parseFleetProjection(value: unknown): FleetProjection | null {
           !text(f.statement_type) || !['identity', 'decks', 'venues', 'cabins'].includes(String(f.section)) ||
           !text(f.artifact_id) || !text(f.locator) || !text(f.publish_status) || !(f.page === null || Number.isInteger(f.page)) || !('value' in f)) return null;
       if (f.source_edition !== undefined && !text(f.source_edition)) return null;
-      if (!f.entity_id.toLowerCase().split(':').includes(ship.slug)) return null;
+      const entity = /^(vessel|ship|deck|venue|cabin|voyage):(msc-[a-z0-9]+(?:-[a-z0-9]+)*)(?::([a-z0-9]+(?:[-_][a-z0-9]+)*))?$/i.exec(f.entity_id);
+      if (!entity || f.entity_id !== f.entity_id.trim() || entity[2].toLowerCase() !== ship.slug || (!['vessel', 'ship'].includes(entity[1].toLowerCase()) && !entity[3])) return null;
       if (!p.sources.some(s => record(s) && s.artifact_id === f.artifact_id)) return null;
     }
     if (!p.sources.every(s => record(s) && text(s.artifact_id) && text(s.filename) && typeof s.sha256 === 'string' && /^[a-f0-9]{64}$/.test(s.sha256))) return null;

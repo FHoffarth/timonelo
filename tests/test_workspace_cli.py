@@ -253,7 +253,7 @@ class TestProvenanceTrace(WorkspaceCase):
         ws = Workspace(self.root)
         self.assertEqual(ws.editor.demoted_on_load, [])
 
-        with open(ws.registry.blob_path("ART-0001"), "w") as f:
+        with open(ws.registry.resolve_path("ART-0001"), "w") as f:
             f.write("substituted")
 
         tampered = Workspace(self.root)
@@ -332,7 +332,7 @@ class TestInspectionAPIs(WorkspaceCase):
     def test_integrity_report_catches_substitution(self):
         self._import()
         ws = Workspace(self.root)
-        with open(ws.registry.blob_path("ART-0001"), "w") as f:
+        with open(ws.registry.resolve_path("ART-0001"), "w") as f:
             f.write("substituted")
         report = ws.artifacts_api.integrity_report()
         self.assertFalse(report["all_intact"])

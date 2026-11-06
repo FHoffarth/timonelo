@@ -26,7 +26,8 @@ def test_only_current_truth_engine_selection_with_reverifiable_nonprivate_proven
           statement_type="deck.venue_present", artifact_id="ART-X", value=[6], page=4, locator="row X",
           evidence_event_ids=["EVT-X"], publish_status=N(value="PUBLISH_ALLOWED"))
     a = N(artifact_id="ART-X", sha256="a" * 64, filename="map.pdf", private_source=False,
-          version="TEST SOURCE EDITION")
+          version="TEST SOURCE EDITION", subject_vessels=("IMO9760524",))
+    a.establishes_vessel = lambda imo: imo in a.subject_vessels
     ws = N(editor=N(all=lambda: [s], is_currently_authoritative=lambda _: True),
            registry=N(list_all=lambda: [a], get=lambda _: a, verify=lambda _: True),
            events=N(all=lambda: [N(event_id="EVT-X", artifact_sha256="a" * 64)]),
@@ -42,6 +43,50 @@ def test_only_current_truth_engine_selection_with_reverifiable_nonprivate_proven
     a.private_source = False
     a.sha256 = "b" * 64
     assert project_fleet(ws, CATALOG, "2026-11-01")["ships"]["msc-bellissima"]["facts"] == []
+
+
+def test_projection_refuses_wrong_artifact_vessel_and_misplaced_slug():
+    s = N(statement_id="STM-X", entity_id="venue:msc-bellissima:x", question_id="Q-X",
+          statement_type="deck.venue_present", artifact_id="ART-X", value=[6], page=4,
+          locator="test-only fixture", evidence_event_ids=["EVT-X"],
+          publish_status=N(value="PUBLISH_ALLOWED"))
+    a = N(artifact_id="ART-X", sha256="a" * 64, filename="map.pdf", private_source=False,
+          subject_vessels=("IMO9901544",))
+    a.establishes_vessel = lambda imo: imo in a.subject_vessels
+    ws = N(editor=N(all=lambda: [s], is_currently_authoritative=lambda _: True),
+           registry=N(get=lambda _: a, verify=lambda _: True),
+           events=N(all=lambda: [N(event_id="EVT-X", artifact_sha256="a" * 64)]),
+           engine=N(answer=lambda *args, **kwargs: N(known=True, provenance=N(statement_id="STM-X"))))
+    assert project_fleet(ws, CATALOG, "2026-11-01")["ships"]["msc-bellissima"]["facts"] == []
+    a.subject_vessels = ("IMO9760524",)
+    s.entity_id = "venue:msc-euribia:msc-bellissima"
+    result = project_fleet(ws, CATALOG, "2026-11-01")["ships"]["msc-bellissima"]
+    assert result["facts"] == []
+    assert result["candidate_count"] == 0
+
+
+def test_projection_withholds_quarantined_imo_and_unsupported_mmsi():
+    import json
+
+    root = Path(__file__).resolve().parents[1]
+    rows = json.loads((root / "src/timonelo/evidence/vessel_identity_quarantine.json").read_text())["identities"]
+    assert len(rows) == 8
+    for row in rows:
+        slug = row["slug"]
+        s = N(statement_id="STM-TEST", entity_id=f"vessel:{slug}", question_id="Q-TEST",
+              statement_type="vessel.mmsi", artifact_id="ART-TEST", value=row["authoritative_mmsi"],
+              page=1, locator="Synthetic identity fixture", evidence_event_ids=["EVT-TEST"],
+              publish_status=N(value="PUBLISH_ALLOWED"))
+        a = N(sha256="a" * 64, filename="synthetic.pdf", private_source=False,
+              establishes_vessel=lambda imo: imo == "IMO" + row["authoritative_imo"])
+        ws = N(editor=N(all=lambda: [s], is_currently_authoritative=lambda _: True),
+               registry=N(get=lambda _: a, verify=lambda _: True),
+               events=N(all=lambda: [N(event_id="EVT-TEST", artifact_sha256="a" * 64)]),
+               engine=N(answer=lambda *args, **kwargs: N(known=True, provenance=N(statement_id="STM-TEST"))))
+        assert project_fleet(ws, [{"slug": slug}], "2026-11-04")["ships"][slug]["facts"] == []
+        if row["canonical_admission"] is False:
+            s.statement_type = "vessel.name"
+            assert project_fleet(ws, [{"slug": slug}], "2026-11-04")["ships"][slug]["facts"] == []
 
 
 def test_missing_store_removes_previous_snapshot_and_blocks_generation(tmp_path):

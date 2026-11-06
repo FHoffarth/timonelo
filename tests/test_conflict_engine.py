@@ -35,8 +35,8 @@ class ConflictCase(unittest.TestCase):
         self.root = tempfile.mkdtemp()
         for d in ("artifacts/blobs", "statements", "reviews", "registry", "documents"):
             os.makedirs(os.path.join(self.root, d), exist_ok=True)
-        self.pdf_a = _write_pdf(os.path.join(self.root, "documents", "a.pdf"), "SOURCE A")
-        self.pdf_b = _write_pdf(os.path.join(self.root, "documents", "b.pdf"), "SOURCE B")
+        self.pdf_a = _write_pdf(os.path.join(self.root, "documents", "a.pdf"), "SYNTHETIC FIXTURE SOURCE A - MSC Bellissima IMO9760524")
+        self.pdf_b = _write_pdf(os.path.join(self.root, "documents", "b.pdf"), "SYNTHETIC FIXTURE SOURCE B - MSC Bellissima IMO9760524")
         canonical_dump({
             "document_classes": {CLASS: {
                 "label": "Conflict fixture", "reliability": 0.80,
@@ -53,10 +53,12 @@ class ConflictCase(unittest.TestCase):
         self.ws = Workspace(self.root)
         self.a = self.ws.import_artifact(
             self.pdf_a, document_class=CLASS, acquired_on="2026-08-17",
-            acquisition_method="test")
+            acquisition_method="test", subject_vessels=("IMO9760524",),
+            source_identity_pages={"IMO9760524": 1})
         self.b = self.ws.import_artifact(
             self.pdf_b, document_class=CLASS, acquired_on="2026-08-17",
-            acquisition_method="test")
+            acquisition_method="test", subject_vessels=("IMO9760524",),
+            source_identity_pages={"IMO9760524": 1})
 
     def tearDown(self):
         authority.AUTHORITY.clear(); authority.AUTHORITY.update(self._AUTH_SNAPSHOT)
@@ -75,7 +77,7 @@ class ConflictCase(unittest.TestCase):
         valid_until=None,
     ):
         return self.ws.create_statement(
-            entity_id="cabin:1", question_id="Q-0001",
+            entity_id="cabin:MSC-BELLISSIMA:14001", question_id="Q-0001",
             statement_type="fixture.deck", value=value,
             artifact_id=artifact.artifact_id, page=1, locator="p1",
             read_by=reader, read_on=on,
@@ -208,7 +210,7 @@ class TestPassengerView(ConflictCase):
     def test_passenger_still_sees_published_value(self):
         self._publish(self._stmt(14, self.a))
         self._stmt(15, self.b, reader="reader.two")
-        ans = self.ws.engine.answer("cabin:1", "Q-0001")
+        ans = self.ws.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001")
         self.assertTrue(ans.known)
         self.assertEqual(ans.value, 14)
 
@@ -216,19 +218,19 @@ class TestPassengerView(ConflictCase):
         """Serving a contested value as uncontested would strengthen it."""
         self._publish(self._stmt(14, self.a))
         self._stmt(15, self.b, reader="reader.two")
-        ans = self.ws.engine.answer("cabin:1", "Q-0001")
+        ans = self.ws.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001")
         self.assertTrue(ans.contested)
         self.assertEqual(len(ans.conflict_ids), 1)
 
     def test_trace_discloses_the_contest(self):
         self._publish(self._stmt(14, self.a))
         self._stmt(15, self.b, reader="reader.two")
-        trace = self.ws.format_trace(self.ws.engine.answer("cabin:1", "Q-0001"))
+        trace = self.ws.format_trace(self.ws.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001"))
         self.assertIn("CONTESTED", trace)
 
     def test_uncontested_answer_is_not_flagged(self):
         self._publish(self._stmt(14, self.a))
-        self.assertFalse(self.ws.engine.answer("cabin:1", "Q-0001").contested)
+        self.assertFalse(self.ws.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001").contested)
 
 
 class TestResolution(ConflictCase):
@@ -293,7 +295,7 @@ class TestResolution(ConflictCase):
         self.ws.editor.resolve_conflict(
             self.conflict.conflict_id, self.s1.statement_id,
             "reviewer.two", "2026-08-18", "confirmed")
-        self.assertFalse(self.ws.engine.answer("cabin:1", "Q-0001").contested)
+        self.assertFalse(self.ws.engine.answer("cabin:MSC-BELLISSIMA:14001", "Q-0001").contested)
 
     def test_resolved_conflict_cannot_be_reopened(self):
         self.ws.editor.resolve_conflict(

@@ -41,6 +41,11 @@ describe('fleet discovery boundary', () => {
     expect(html).toContain('Test table row');
     projection.ships['msc-meraviglia'] = projection.ships['msc-bellissima'];
     expect(parseFleetProjection(projection)).toBeNull();
+    projection.ships['msc-meraviglia'] = { candidate_count: 0, level: 0, facts: [], sources: [] };
+    for (const entity of ['venue:msc-euribia:msc-bellissima', 'venue:msc-bellissima:x:msc-euribia', 'venue:msc-bellissima:x\n']) {
+      projection.ships['msc-bellissima'].facts[0].entity_id = entity;
+      expect(parseFleetProjection(projection)).toBeNull();
+    }
   });
   it('does not borrow Bellissima material for another ship or for a failed projection', () => {
     for (const ship of FLEET.filter(s => s.slug !== 'msc-bellissima')) {
@@ -64,7 +69,7 @@ describe('fleet discovery boundary', () => {
     expect(html.split('Bellissima reference tools')[0]).not.toMatch(/London Theatre|Posidonia|Le Cerisier|Lighthouse/);
   });
 
-  it('formats only transported Bellissima deck facts for passengers and preserves their trace', () => {
+  it('formats transported deck facts for every ship and preserves their edition and trace', () => {
     // Synthetic display fixture, not an approved real-world observation.
     const profile = { candidate_count: 1, level: 0, sources: [], facts: [{
       statement_id: 'STM-DISPLAY', entity_id: 'venue:MSC-BELLISSIMA:fixture-lounge',
@@ -82,5 +87,12 @@ describe('fleet discovery boundary', () => {
     const unavailable = renderToStaticMarkup(<FleetProfile ship={FLEET[0]} profile={undefined} onNavigate={() => {}} />);
     expect(unavailable).not.toContain('fixture lounge');
     expect(unavailable).not.toContain('Published deck location');
+    for (const ship of FLEET) {
+      const scoped = { ...profile, facts: profile.facts.map(f => ({ ...f, entity_id: `venue:${ship.slug}:fixture-lounge` })) };
+      const shipHtml = renderToStaticMarkup(<FleetProfile ship={ship} profile={scoped} onNavigate={() => {}} />);
+      expect(shipHtml).toContain('Decks 5 &amp; 6');
+      expect(shipHtml).toContain('Source edition: 11.2025 DEU');
+      expect(shipHtml).not.toContain('Four source observations');
+    }
   });
 });

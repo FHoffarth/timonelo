@@ -61,6 +61,8 @@ class EvidenceEventLog:
 
     def __init__(self, path: str, store: ArtifactStore, registry=None):
         self.path = path
+        from timonelo.evidence.canonical_boundary import boundary_for_file
+        self._writer_boundary = boundary_for_file(path)
         self.store = store
         self.registry = registry
         self._events: List[EvidenceEvent] = []
@@ -69,6 +71,7 @@ class EvidenceEventLog:
                 self._events = [EvidenceEvent.from_dict(e) for e in json.load(f)]
 
     def append(self, event: EvidenceEvent) -> EvidenceEvent:
+        self._writer_boundary.require()
         if any(e.event_id == event.event_id for e in self._events):
             raise ValueError(f"Duplicate event_id {event.event_id!r}")
 
@@ -117,4 +120,5 @@ class EvidenceEventLog:
         return len(self._events)
 
     def _flush(self) -> None:
+        self._writer_boundary.require()
         canonical_dump([e.to_dict() for e in self._events], self.path)
