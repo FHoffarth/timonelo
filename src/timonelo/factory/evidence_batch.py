@@ -28,6 +28,7 @@ from timonelo.evidence.registry import normalize_vessel_imo
 from timonelo.evidence.vessel_ownership import (canonical_entity, canonical_vessel, validate_ownership, normalized_principal)
 from timonelo.evidence.workspace import Workspace
 from timonelo.ontology.models import EvidenceCondition, HumanReviewState
+from timonelo.factory.source_revision import require_source_revision
 
 READER = "Codex AI / registered PDF observation"
 SCOPE = "SOURCE_EDITION_VENUE_DECK_ONLY"
@@ -73,7 +74,14 @@ def render_claim(claim, vessel_name):
     if (not isinstance(value, list) or not value or
             any(type(v) is not int for v in value) or sorted(set(value)) != value):
         raise BatchError("NON_CANONICAL_DECK_VALUE")
-    return (f"{claim['artifact_id']} ({claim['source_version']}) labels {claim['name']} "
+    version = claim['source_version']
+    if version is None:
+        revision = claim.get('source_revision', {})
+        if (revision.get('edition_status') != 'UNKNOWN' or revision.get('printed_edition') is not None or
+                revision.get('artifact_sha256') != claim.get('artifact_sha256')):
+            raise BatchError('SOURCE_REVISION_MISMATCH')
+        version = f"printed edition unknown; SHA-256 {claim['artifact_sha256']}"
+    return (f"{claim['artifact_id']} ({version}) labels {claim['name']} "
             f"on deck(s) {', '.join(str(v) for v in value)} of {vessel_name}.")
 
 
@@ -85,6 +93,9 @@ def _principal(value):
 
 
 def _document_reading(path, claim):
+    if claim.get('source_layout') == 'OFFICIAL_SHIP_MAP_TABLE_INDEX':
+        from timonelo.factory.ship_map_reading import verify_map_reading
+        return verify_map_reading(path, claim)
     # Existing optional dev dependency, not a new runtime/import route.
     import fitz
     with fitz.open(path) as doc:
@@ -217,6 +228,9 @@ def _inspect_batch(root, batch, decisions, ws):
             if claim["target_vessel"] != vessel or canonical_entity(claim["entity_id"])[1] != slug:
                 raise BatchError("CLAIM_VESSEL_MISMATCH")
             artifact = ws.registry.get(claim["artifact_id"])
+            if (claim.get('source_layout') == 'OFFICIAL_SHIP_MAP_TABLE_INDEX' and
+                    artifact.document_class != 'official_ship_map'):
+                raise BatchError('SOURCE_LAYOUT_CLASS_MISMATCH')
             validate_ownership(claim["entity_id"], artifact, target_slug=slug,
                                target_imo=vessel, root=root, statement_type=claim["statement_type"])
             if claim.get("exact_claim") != render_claim(claim, identity["name"]["value"]):
@@ -227,8 +241,7 @@ def _inspect_batch(root, batch, decisions, ws):
                     reasons.append("CONTRADICTORY_EXISTING_CLAIM")
             if artifact.sha256 != claim["artifact_sha256"]:
                 raise BatchError("ARTIFACT_SHA_MISMATCH")
-            if not claim["source_version"] or artifact.version != claim["source_version"]:
-                raise BatchError("SOURCE_VERSION_MISMATCH")
+            require_source_revision(artifact, claim)
             if not ws.registry.artifact_establishes_vessel(artifact.artifact_id, vessel):
                 raise BatchError("ARTIFACT_NOT_ATTRIBUTED_TO_VESSEL")
             if len([a for a in ws.registry.list_all() if a.sha256 == artifact.sha256]) != 1:
@@ -315,7 +328,9 @@ def process_private_batch(source_root, batch, decisions, output_dir):
                 continue
             claim = row["claim"]
             fingerprint = _hash(claim)
-            locator = (f"{claim['artifact_id']}; source edition {claim['source_version']}; physical page {claim['page']}; "
+            edition = (f"source edition {claim['source_version']}" if claim['source_version'] is not None
+                       else f"printed edition unknown; source SHA-256 {claim['artifact_sha256']}")
+            locator = (f"{claim['artifact_id']}; {edition}; physical page {claim['page']}; "
                        f"{claim['locator']}; edition-specific observation, not current operations")
             event = ws.events.append(EvidenceEvent(
                 event_id="EVT-BATCH-" + fingerprint[:20], artifact_sha256=claim["artifact_sha256"],

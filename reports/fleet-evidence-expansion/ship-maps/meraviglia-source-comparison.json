@@ -1,0 +1,202 @@
+{
+  "schema": "timonelo.meraviglia-source-comparison.v0",
+  "use": "Comparison only. The held plan stays the source of MER-DK claims, and neither document replaces the other.",
+  "held_plan": {
+    "sha256": "77f5a51b2465cf0aa7264a1262a768b58cd43609390a9e21e74be8286d2a45e9",
+    "edition": "11.2025 DEU",
+    "document_type": "cruise_line_deck_plan",
+    "state": "UNREGISTERED"
+  },
+  "ship_map": {
+    "url": "https://service.msccruises.com/images/shipmap/pdfs/mr_en-gb.pdf",
+    "retrieved_on": "2026-11-05",
+    "sha256": "7f9aad35066b6d2021ea19c40930da9ca9c226343a31718f868e7ca8a9089916",
+    "bytes": 1153958,
+    "cover_title": "MSC MERAVIGLIA SHIP MAP",
+    "pages": 10,
+    "version": null,
+    "version_status": "UNKNOWN_NOT_PRINTED",
+    "pdf_metadata": {
+      "creator": "Adobe InDesign 18.5 (Macintosh)",
+      "producer": "GPL Ghostscript 10.05.1",
+      "creationDate": "D:20250821145945+02'00'",
+      "modDate": "D:20250821145945+02'00'"
+    },
+    "state": "NOT_A_SOURCE_FOR_MER_DK_CLAIMS"
+  },
+  "comparison": [
+    {
+      "claim_id": "MER-DK-01",
+      "venue": "Broadway Theatre",
+      "held_plan_value": [
+        5,
+        6
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        6
+      ],
+      "map_tokens": [
+        "6"
+      ],
+      "map_pages": [
+        9,
+        10
+      ],
+      "map_index_decks": [
+        6
+      ],
+      "agreement": "DIFFER"
+    },
+    {
+      "claim_id": "MER-DK-02",
+      "venue": "Waves Restaurant",
+      "held_plan_value": [
+        5
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        5
+      ],
+      "map_tokens": [
+        "5"
+      ],
+      "map_pages": [
+        4
+      ],
+      "map_index_decks": [
+        5
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-03",
+      "venue": "Panorama Restaurant",
+      "held_plan_value": [
+        6
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        6
+      ],
+      "map_tokens": [
+        "6"
+      ],
+      "map_pages": [
+        4
+      ],
+      "map_index_decks": [
+        6
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-04",
+      "venue": "Butcher's Cut",
+      "held_plan_value": [
+        7
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        7
+      ],
+      "map_tokens": [
+        "7"
+      ],
+      "map_pages": [
+        4
+      ],
+      "map_index_decks": [
+        7
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-05",
+      "venue": "Kaito Teppanyaki",
+      "held_plan_value": [
+        7
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        7
+      ],
+      "map_tokens": [
+        "7"
+      ],
+      "map_pages": [
+        4
+      ],
+      "map_index_decks": [
+        7
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-06",
+      "venue": "Casino Imperiale",
+      "held_plan_value": [
+        7
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        7
+      ],
+      "map_tokens": [
+        "7"
+      ],
+      "map_pages": [
+        5,
+        9
+      ],
+      "map_index_decks": [
+        7
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-07",
+      "venue": "Carousel Lounge",
+      "held_plan_value": [
+        7
+      ],
+      "held_plan_page": 3,
+      "map_value": [
+        7
+      ],
+      "map_tokens": [
+        "7"
+      ],
+      "map_pages": [
+        4,
+        5,
+        9
+      ],
+      "map_index_decks": [
+        7
+      ],
+      "agreement": "AGREE"
+    },
+    {
+      "claim_id": "MER-DK-08",
+      "venue": "Marketplace Buffet",
+      "held_plan_value": [
+        15
+      ],
+      "held_plan_page": 5,
+      "map_value": [
+        15
+      ],
+      "map_tokens": [
+        "15"
+      ],
+      "map_pages": [
+        4
+      ],
+      "map_index_decks": [
+        15
+      ],
+      "agreement": "AGREE"
+    }
+  ]
+}

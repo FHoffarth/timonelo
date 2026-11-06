@@ -1,0 +1,760 @@
+{
+  "schema": "timonelo.ship-map-register.v0",
+  "documents": [
+    {
+      "slug": "msc-grandiosa",
+      "vessel": "MSC GRANDIOSA",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/gr_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 1194308,
+      "sha256": "679270bee3a41efdbd5dcb6eab4ce53c45c2d51713166f8e5e9e3b1592e5f2bb",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:59:37 GMT",
+      "etag": "\"89ad6173965dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC GRANDIOSA SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 18.5 (Macintosh)",
+        "producer": "GPL Ghostscript 10.05.1",
+        "creationDate": "D:20250821145805+02'00'",
+        "modDate": "D:20250821145805+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        15,
+        16,
+        18,
+        19
+      ],
+      "table_rows_read": 116,
+      "distinct_labels": 87,
+      "counts": {
+        "AGREED": 67,
+        "TABLE_ONLY": 18,
+        "CONFLICT": 2
+      },
+      "index_only_labels": [
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC BUSINESS CENTRE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MSC FOUNDATION",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "TENDER ACCESS",
+          "index_decks": [
+            4
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "ELIGIBLE CANDIDATE",
+        "reason": "Official domain, inspected content, exact title match, canonical IMO verified, version recorded as unknown.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "PASS_BY_TITLE",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "67 agreed, 18 single reading, 2 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-virtuosa",
+      "vessel": "MSC VIRTUOSA",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/vi_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 1213843,
+      "sha256": "d87c22e83f3a7e07bb59e0776aa05b2a9d0912bbd6e908d76c5162c9b6a282a0",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:55:02 GMT",
+      "etag": "\"1191b0733865dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC VIRTUOSA SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 18.5 (Macintosh)",
+        "producer": "GPL Ghostscript 10.05.1",
+        "creationDate": "D:20250821150703+02'00'",
+        "modDate": "D:20250821150703+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        15,
+        16,
+        18,
+        19
+      ],
+      "table_rows_read": 116,
+      "distinct_labels": 88,
+      "counts": {
+        "AGREED": 66,
+        "TABLE_ONLY": 21,
+        "CONFLICT": 1
+      },
+      "index_only_labels": [
+        {
+          "key": "ART WALL",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC BUSINESS CENTRE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MSC FOUNDATION",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MSC TEENS LAB",
+          "index_decks": [
+            18
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "TENDER ACCESS",
+          "index_decks": [
+            4
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "ELIGIBLE CANDIDATE",
+        "reason": "Official domain, inspected content, exact title match, canonical IMO verified, version recorded as unknown.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "PASS_BY_TITLE",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "66 agreed, 21 single reading, 1 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-euribia",
+      "vessel": "MSC EURIBIA",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/er_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 1326727,
+      "sha256": "4ea7b06bf513e63aa7ee42931e629cd890ef1deb55348ff73596c38a2e837782",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:57:43 GMT",
+      "etag": "\"fc8a93d33865dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC EURIBIA SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 18.5 (Macintosh)",
+        "producer": "GPL Ghostscript 10.05.1",
+        "creationDate": "D:20250821145623+02'00'",
+        "modDate": "D:20250821145623+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        15,
+        16,
+        18,
+        19
+      ],
+      "table_rows_read": 115,
+      "distinct_labels": 84,
+      "counts": {
+        "AGREED": 59,
+        "TABLE_ONLY": 22,
+        "CONFLICT": 3
+      },
+      "index_only_labels": [
+        {
+          "key": "COLORADO RESTAURANT",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "INFINITY ATRIUM",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC AUREA SPA",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "MSC BUSINESS CENTRE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MSC FOUNDATION",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "TENDER ACCESS",
+          "index_decks": [
+            4,
+            5
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "ELIGIBLE CANDIDATE",
+        "reason": "Official domain, inspected content, exact title match, canonical IMO verified, version recorded as unknown.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "PASS_BY_TITLE",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "59 agreed, 22 single reading, 3 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-world-europa",
+      "vessel": "MSC WORLD EUROPA",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/eu_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 3154119,
+      "sha256": "e8825bda8c88f529e987f79a9d28813482e582779157b84c3b70cd12619bd702",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 11:00:36 GMT",
+      "etag": "\"df29f23a3965dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC WORLD EUROPA SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 20.5 (Macintosh)",
+        "producer": "Adobe PDF Library 17.0",
+        "creationDate": "D:20250828163317+02'00'",
+        "modDate": "D:20250828163328+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "table_rows_read": 108,
+      "distinct_labels": 87,
+      "counts": {
+        "AGREED": 63,
+        "TABLE_ONLY": 18,
+        "CONFLICT": 6
+      },
+      "index_only_labels": [
+        {
+          "key": "EXIT",
+          "index_decks": [
+            4,
+            5
+          ]
+        },
+        {
+          "key": "EXIT WITH SHORE GANGWAY",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC AUREA SPA RECEPTION",
+          "index_decks": [
+            8
+          ]
+        },
+        {
+          "key": "MSC BUSINESS CENTRE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MSC FOUNDATION",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "SPORTPLEX",
+          "index_decks": [
+            20
+          ]
+        },
+        {
+          "key": "WORLD GALLERIA",
+          "index_decks": [
+            6,
+            7,
+            8
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "ELIGIBLE CANDIDATE",
+        "reason": "Official domain, inspected content, exact title match, canonical IMO verified, version recorded as unknown.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "PASS_BY_TITLE",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "63 agreed, 18 single reading, 6 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-world-america",
+      "vessel": "MSC WORLD AMERICA",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/am_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 1541888,
+      "sha256": "f17d25c23930d1d357b8a239c4362d016f89c90c31298e5202ae2893f4727330",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:44:14 GMT",
+      "etag": "\"767b32f13665dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC WORLD AMERICA SHIP MAP",
+      "pages": 17,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 20.2 (Macintosh)",
+        "producer": "GPL Ghostscript 10.05.1",
+        "creationDate": "D:20250821145408+02'00'",
+        "modDate": "D:20250821145408+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        3
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "table_rows_read": 103,
+      "distinct_labels": 86,
+      "counts": {
+        "AGREED": 55,
+        "TABLE_ONLY": 23,
+        "CONFLICT": 8
+      },
+      "index_only_labels": [
+        {
+          "key": "ALL-STARS SPORTS BAR",
+          "index_decks": [
+            8
+          ]
+        },
+        {
+          "key": "CLIFFHANGER",
+          "index_decks": [
+            20
+          ]
+        },
+        {
+          "key": "EXAGON RESTAURANT",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "EXIT",
+          "index_decks": [
+            4,
+            5
+          ]
+        },
+        {
+          "key": "EXIT WITH SHORE GANGWAY",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MAR AZUL BAR",
+          "index_decks": [
+            18
+          ]
+        },
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC AUREA SPA RECEPTION",
+          "index_decks": [
+            8
+          ]
+        },
+        {
+          "key": "MSC BUSINESS CENTRE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "MSC FOUNDATION",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            6
+          ]
+        },
+        {
+          "key": "THE HARBOUR BAR & BITES",
+          "index_decks": [
+            20
+          ]
+        },
+        {
+          "key": "THE LOFT COMEDY & LIVE MUSIC",
+          "index_decks": [
+            8
+          ]
+        },
+        {
+          "key": "TIME VALLEE",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "WORLD GALLERIA",
+          "index_decks": [
+            6,
+            7
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "ELIGIBLE CANDIDATE",
+        "reason": "Official domain, inspected content, exact title match, canonical IMO verified, version recorded as unknown.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "PASS_BY_TITLE",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "55 agreed, 23 single reading, 8 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-seascape",
+      "vessel": "MSC SEASCAPE",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/sc_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 1232452,
+      "sha256": "35f9f46f2e5477cb9fb65ed4bf4c2b7fbe5e3f5a335b4c0f684ba92885323ef7",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:53:02 GMT",
+      "etag": "\"9acc52c3865dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC SEASCAPE SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 18.5 (Macintosh)",
+        "producer": "GPL Ghostscript 10.05.1",
+        "creationDate": "D:20250821150347+02'00'",
+        "modDate": "D:20250821150347+02'00'"
+      },
+      "foreign_ship_names_in_text": [],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        18,
+        19,
+        20
+      ],
+      "table_rows_read": 120,
+      "distinct_labels": 91,
+      "counts": {
+        "AGREED": 61,
+        "TABLE_ONLY": 28,
+        "CONFLICT": 2
+      },
+      "index_only_labels": [
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "RECEPTION GUEST SERVICE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "TENDER ACCESS",
+          "index_decks": [
+            4
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "NEEDS REVIEW",
+        "reason": "Stored IMO 9805348 differs from verified 9843807; owner decision pending.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "BLOCKED_CANONICAL_IMO",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "61 agreed, 28 single reading, 2 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    },
+    {
+      "slug": "msc-seashore",
+      "vessel": "MSC SEASHORE",
+      "url": "https://service.msccruises.com/images/shipmap/pdfs/sh_en-gb.pdf",
+      "retrieved_on": "2026-11-05",
+      "http_status": 200,
+      "bytes": 2587869,
+      "sha256": "cedd7c9d5e778bb8c1020a00183c356afc11ae9f3849f7f509b9640249d509ce",
+      "content_type": "application/pdf",
+      "server_last_modified": "Mon, 26 Oct 2026 10:53:12 GMT",
+      "etag": "\"17eb51323865dd1:0\"",
+      "document_type": "official_ship_map",
+      "cover_title": "MSC SEASHORE SHIP MAP",
+      "pages": 10,
+      "language_from_filename": "en-GB",
+      "version": null,
+      "version_status": "UNKNOWN_NOT_PRINTED",
+      "pdf_metadata": {
+        "creator": "Adobe InDesign 21.4 (Macintosh)",
+        "producer": "Adobe PDF Library 18.0",
+        "creationDate": "D:20260609163324+02'00'",
+        "modDate": "D:20260609163644+02'00'"
+      },
+      "foreign_ship_names_in_text": [
+        "SEASCAPE"
+      ],
+      "deck_index_page": [
+        2
+      ],
+      "decks_with_index_headings": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        18,
+        19,
+        20
+      ],
+      "table_rows_read": 118,
+      "distinct_labels": 91,
+      "counts": {
+        "AGREED": 57,
+        "TABLE_ONLY": 32,
+        "CONFLICT": 2
+      },
+      "index_only_labels": [
+        {
+          "key": "5 AVENUE RESTAURANT",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "MADISON THEATRE",
+          "index_decks": [
+            6,
+            7
+          ]
+        },
+        {
+          "key": "MEDICAL CENTRE",
+          "index_decks": [
+            4
+          ]
+        },
+        {
+          "key": "MSC FUTURE CRUISE",
+          "index_decks": [
+            7
+          ]
+        },
+        {
+          "key": "SEASHORE RECEPTION GUEST SERVICE",
+          "index_decks": [
+            5
+          ]
+        },
+        {
+          "key": "TENDER ACCESS",
+          "index_decks": [
+            4
+          ]
+        }
+      ],
+      "eligibility": {
+        "classification": "NEEDS REVIEW",
+        "reason": "Stored IMO 9805336 differs from verified 9843792; owner decision pending.",
+        "source_authenticity": "PASS",
+        "vessel_attribution": "BLOCKED_CANONICAL_IMO",
+        "edition_and_freshness": "UNKNOWN_RECORDED",
+        "claim_support": "57 agreed, 32 single reading, 2 rejected",
+        "governance": "CITE_ONLY_NO_ARTIFACT_NO_DECISIONS"
+      }
+    }
+  ]
+}
